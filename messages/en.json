@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "philosophy": "Philosophy",
+    "services": "Services",
+    "process": "Process",
+    "about": "About",
+    "contact": "Contact",
+    "request": "Request"
+  },
+  "hero": {
+    "location": "Hamburg · Atelier",
+    "title": "I create",
+    "titleItalic": "state",
+    "titleEnd": "through clothing",
+    "description": "Custom tailoring and author's pieces. Clothing as an extension of personality. 37 years in the profession.",
+    "orderButton": "Order a piece",
+    "portfolioButton": "Portfolio",
+    "experience": "37+ years of experience",
+    "individual": "Individual approach",
+    "scroll": "SCROLL",
+    "nameFull": "NATALIA KHRESHKOVA",
+    "role": "Designer · Pattern maker"
+  },
+  "philosophy": {
+    "label": "Philosophy",
+    "title": "Clothing as",
+    "titleItalic": "extension",
+    "titleEnd": "of personality",
+    "description": "For me, costume, silhouette, fabric — this is a way to support a person, their inner world, character and energy. Form, color, print and proportions come together so that the image harmoniously merges with the personality and enhances it.",
+    "values": {
+      "depth": {
+        "title": "Depth",
+        "text": "Each piece is created with an understanding of the person — their figure, inner state and character."
+      },
+      "meaning": {
+        "title": "Meaning",
+        "text": "Clothing is timeless because it reflects the personality and inner state of a person."
+      },
+      "respect": {
+        "title": "Respect",
+        "text": "For the person, their body, their history. A conscious approach to creating an image."
+      }
+    }
+  },
+  "services": {
+    "label": "Services",
+    "title": "What I",
+    "titleItalic": "create",
+    "items": {
+      "01": {
+        "title": "Custom tailoring",
+        "description": "I create clothing according to individual measurements. I work with form, proportions, fit and comfort. I take into account lifestyle, character and inner state of a person."
+      },
+      "02": {
+        "title": "Author's pieces",
+        "description": "I develop and sew unique pieces in a single copy. Each piece is created by me personally — from idea to final stitch."
+      },
+      "03": {
+        "title": "Mini collections",
+        "description": "I create limited series of pieces. Each model is thoughtfully designed constructively and aesthetically. Exclusivity and high level of execution are maintained."
+      },
+      "04": {
+        "title": "Upcycling",
+        "description": "I work with items that the client already has. I recut and rethink them. I create a new modern piece with different energy."
+      },
+      "05": {
+        "title": "Author's prints",
+        "description": "I create prints taking into account the construction of the piece. The print is designed and placed strictly in those zones where it is conceived by the designer or client."
+      },
+      "06": {
+        "title": "Full cycle",
+        "description": "I accompany the piece from idea to finished result. I combine artistic vision, design precision and technology."
+      },
+      "07": {
+        "title": "Brand support",
+        "description": "I help designers develop models. I work on silhouettes, construction and styling. I develop professional patterns."
+      }
+    }
+  },
+  "process": {
+    "label": "Process",
+    "title": "From idea to",
+    "titleItalic": "result",
+    "steps": {
+      "01": {
+        "title": "Consultation",
+        "description": "We discuss lifestyle, desires and vision"
+      },
+      "02": {
+        "title": "Creation",
+        "description": "Sketch development and material selection"
+      },
+      "03": {
+        "title": "Fittings",
+        "description": "Precise fit and piece adjustment"
+      },
+      "04": {
+        "title": "Result",
+        "description": "Finished piece, created especially for you"
+      }
+    },
+    "gallery": {
+      "project": "Project",
+      "item": "Author's piece"
+    }
+  },
+  "about": {
+    "label": "About me",
+    "name": "Natalia",
+    "nameItalic": "Khreshkova",
+    "description1": "Founder and director of the design atelier «Nataliia», working on the principle of a European fashion house.",
+    "description2": "The basis of my work is the ability to feel a person: their figure, inner state, character and how they want to feel in the created image.",
+    "description3": "Each project is built as an individual process, in which not only form and construction are important, but also the inner request of the client.",
+    "experience": "years of experience",
+    "unique": "unique pieces",
+    "certification": "Certification",
+    "roles": "Designer · Pattern maker · Stylist",
+    "nameFull": "NATALIA KHRESHKOVA",
+    "role": "Designer · Pattern maker",
+    "location": "Hamburg"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's create your",
+    "titleItalic": "perfect",
+    "titleEnd": "image",
+    "description": "Contact me for consultation and discussion of your project",
+    "email": {
+      "title": "Email",
+      "value": "info@nkn-atelier.de"
+    },
+    "phone": {
+      "title": "Phone",
+      "value": "+49 (0) 123 456 789"
+    },
+    "address": {
+      "title": "Address",
+      "value": "Hamburg, Germany"
+    },
+    "startProject": "Start project"
+  },
+  "footer": {
+    "copyright": "© 2026 Natalia Khreshkova. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}

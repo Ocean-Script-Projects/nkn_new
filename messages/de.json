@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "philosophy": "Philosophie",
+    "services": "Dienstleistungen",
+    "process": "Prozess",
+    "about": "Über mich",
+    "contact": "Kontakt",
+    "request": "Anfrage"
+  },
+  "hero": {
+    "location": "Hamburg · Atelier",
+    "title": "Ich schaffe",
+    "titleItalic": "Zustand",
+    "titleEnd": "durch Kleidung",
+    "description": "Maßgeschneiderte Anfertigung und Autorenstücke. Kleidung als Verlängerung der Persönlichkeit. 37 Jahre im Beruf.",
+    "orderButton": "Stück bestellen",
+    "portfolioButton": "Portfolio",
+    "experience": "37+ Jahre Erfahrung",
+    "individual": "Individueller Ansatz",
+    "scroll": "BLÄTTERN",
+    "nameFull": "NATALIA CHRESCHKOWA",
+    "role": "Designerin · Schnittmacherin"
+  },
+  "philosophy": {
+    "label": "Philosophie",
+    "title": "Kleidung als",
+    "titleItalic": "Verlängerung",
+    "titleEnd": "der Persönlichkeit",
+    "description": "Für mich sind Kostüm, Silhouette, Stoff — eine Möglichkeit, den Menschen zu unterstützen, seine innere Welt, seinen Charakter und seine Energie. Form, Farbe, Druck und Proportionen verbinden sich so, dass das Bild harmonisch mit der Persönlichkeit verschmilzt und sie verstärkt.",
+    "values": {
+      "depth": {
+        "title": "Tiefe",
+        "text": "Jedes Stück wird mit dem Verständnis für den Menschen geschaffen — seine Figur, seinen inneren Zustand und seinen Charakter."
+      },
+      "meaning": {
+        "title": "Bedeutung",
+        "text": "Kleidung ist zeitlos, weil sie die Persönlichkeit und den inneren Zustand eines Menschen widerspiegelt."
+      },
+      "respect": {
+        "title": "Respekt",
+        "text": "Für den Menschen, seinen Körper, seine Geschichte. Ein bewusster Ansatz zur Gestaltung eines Bildes."
+      }
+    }
+  },
+  "services": {
+    "label": "Dienstleistungen",
+    "title": "Was ich",
+    "titleItalic": "schaffe",
+    "items": {
+      "01": {
+        "title": "Maßgeschneiderte Anfertigung",
+        "description": "Ich erstelle Kleidung nach individuellen Maßen. Ich arbeite mit Form, Proportionen, Passform und Komfort. Ich berücksichtige Lebensstil, Charakter und inneren Zustand einer Person."
+      },
+      "02": {
+        "title": "Autorenstücke",
+        "description": "Ich entwickle und nähe einzigartige Stücke in einer einzigen Kopie. Jedes Stück wird von mir persönlich erstellt — von der Idee bis zum letzten Stich."
+      },
+      "03": {
+        "title": "Mini-Kollektionen",
+        "description": "Ich erstelle limitierte Serien von Stücken. Jedes Modell ist konstruktiv und ästhetisch durchdacht. Exklusivität und hohes Ausführungsniveau bleiben erhalten."
+      },
+      "04": {
+        "title": "Upcycling",
+        "description": "Ich arbeite mit Kleidungsstücken, die der Kunde bereits hat. Ich schneide sie um und denke sie neu. Ich erstelle ein neues modernes Stück mit anderer Energie."
+      },
+      "05": {
+        "title": "Autorendrucke",
+        "description": "Ich erstelle Drucke unter Berücksichtigung der Konstruktion des Stücks. Der Druck wird entworfen und streng in den Zonen platziert, wo er vom Designer oder Kunden konzipiert wurde."
+      },
+      "06": {
+        "title": "Vollständiger Zyklus",
+        "description": "Ich begleite das Stück von der Idee bis zum fertigen Ergebnis. Ich kombiniere künstlerische Vision, konstruktive Präzision und Technologie."
+      },
+      "07": {
+        "title": "Markenbetreuung",
+        "description": "Ich helfe Designern, Modelle zu entwickeln. Ich arbeite an Silhouetten, Konstruktion und Styling. Ich entwickle professionelle Schnittmuster."
+      }
+    }
+  },
+  "process": {
+    "label": "Prozess",
+    "title": "Von der Idee zum",
+    "titleItalic": "Ergebnis",
+    "steps": {
+      "01": {
+        "title": "Beratung",
+        "description": "Wir besprechen Lebensstil, Wünsche und Vision"
+      },
+      "02": {
+        "title": "Erstellung",
+        "description": "Skizzenentwicklung und Materialauswahl"
+      },
+      "03": {
+        "title": "Anproben",
+        "description": "Präzise Passform und Anpassung des Stücks"
+      },
+      "04": {
+        "title": "Ergebnis",
+        "description": "Fertiges Stück, speziell für Sie erstellt"
+      }
+    },
+    "gallery": {
+      "project": "Projekt",
+      "item": "Autorenstück"
+    }
+  },
+  "about": {
+    "label": "Über mich",
+    "name": "Natalia",
+    "nameItalic": "Chreschkowa",
+    "description1": "Gründerin und Leiterin des Design-Ateliers «Nataliia», das nach dem Prinzip eines europäischen Modehauses arbeitet.",
+    "description2": "Die Grundlage meiner Arbeit ist die Fähigkeit, einen Menschen zu fühlen: seine Figur, seinen inneren Zustand, seinen Charakter und wie er sich im geschaffenen Bild fühlen möchte.",
+    "description3": "Jedes Projekt wird als individueller Prozess aufgebaut, bei dem nicht nur Form und Konstruktion wichtig sind, sondern auch die innere Anfrage des Kunden.",
+    "experience": "Jahre Erfahrung",
+    "unique": "einzigartige Stücke",
+    "certification": "Zertifizierung",
+    "roles": "Designerin · Schnittmacherin · Stylistin",
+    "nameFull": "NATALIA CHRESCHKOWA",
+    "role": "Designerin · Schnittmacherin",
+    "location": "Hamburg"
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Lassen Sie uns Ihr",
+    "titleItalic": "perfektes",
+    "titleEnd": "Image schaffen",
+    "description": "Kontaktieren Sie mich für eine Beratung und Besprechung Ihres Projekts",
+    "email": {
+      "title": "E-Mail",
+      "value": "info@nkn-atelier.de"
+    },
+    "phone": {
+      "title": "Telefon",
+      "value": "+49 (0) 123 456 789"
+    },
+    "address": {
+      "title": "Adresse",
+      "value": "Hamburg, Deutschland"
+    },
+    "startProject": "Projekt starten"
+  },
+  "footer": {
+    "copyright": "© 2026 Natalia Chreschkowa. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen"
+  }
+}
