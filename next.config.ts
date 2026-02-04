@@ -6,8 +6,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  // Uncomment and set basePath when deploying to GitHub Pages project repository
-  // basePath: '/repository-name',
+  basePath: '/nkn_new',
+  assetPrefix: '/nkn_new',
 };
 
 export default nextConfig;

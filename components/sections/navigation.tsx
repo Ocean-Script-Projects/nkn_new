@@ -18,8 +18,10 @@ export default function Navigation() {
   ];
 
   const handleLocaleChange = (newLocale: string) => {
-    const currentPath = pathname.replace(`/${locale}`, '') || '/';
-    window.location.href = `/${newLocale}${currentPath}`;
+    const basePath = '/nkn_new';
+    // Remove basePath and current locale from pathname
+    const pathWithoutBase = pathname.replace(basePath, '').replace(`/${locale}`, '') || '/';
+    window.location.href = `${basePath}/${newLocale}${pathWithoutBase}`;
   };
 
   return (
