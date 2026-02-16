@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "name": "Corset No.01",
+    "category": "corsets",
+    "type": "one-of-one",
+    "image": "https://images.unsplash.com/photo-1649011909199-0a728d3ed89b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+    "descriptionKey": "pieces.corset1"
+  },
+  {
+    "id": "2",
+    "name": "Leather Belt",
+    "category": "belts",
+    "type": "atelier made",
+    "image": "https://images.unsplash.com/photo-1711548244678-be7019032b59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+    "descriptionKey": "pieces.belt1"
+  },
+  {
+    "id": "3",
+    "name": "Silk Scarf",
+    "category": "scarves",
+    "type": "limited",
+    "image": "https://images.unsplash.com/photo-1769509456084-dacd3cde0e20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+    "descriptionKey": "pieces.scarf1"
+  },
+  {
+    "id": "4",
+    "name": "Evening Dress",
+    "category": "dresses",
+    "type": "one-of-one",
+    "image": "https://images.unsplash.com/photo-1759090988109-2ed7abd1eefc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+    "descriptionKey": "pieces.dress1"
+  },
+  {
+    "id": "5",
+    "name": "Corset No.02",
+    "category": "corsets",
+    "type": "atelier made",
+    "image": "https://images.unsplash.com/photo-1649011909199-0a728d3ed89b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+    "descriptionKey": "pieces.corset2"
+  },
+  {
+    "id": "6",
+    "name": "Summer Dress",
+    "category": "dresses",
+    "type": "limited",
+    "image": "https://images.unsplash.com/photo-1759090988109-2ed7abd1eefc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+    "descriptionKey": "pieces.dress2"
+  },
+  {
+    "id": "7",
+    "name": "Wide Belt",
+    "category": "belts",
+    "type": "one-of-one",
+    "image": "https://images.unsplash.com/photo-1711548244678-be7019032b59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+    "descriptionKey": "pieces.belt2"
+  },
+  {
+    "id": "8",
+    "name": "Print Scarf No.3",
+    "category": "scarves",
+    "type": "atelier made",
+    "image": "https://images.unsplash.com/photo-1769509456084-dacd3cde0e20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+    "descriptionKey": "pieces.scarf2"
+  },
+  {
+    "id": "9",
+    "name": "Tailored Dress",
+    "category": "dresses",
+    "type": "one-of-one",
+    "image": "https://images.unsplash.com/photo-1759090988109-2ed7abd1eefc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+    "descriptionKey": "pieces.dress3"
+  }
+]

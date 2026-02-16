@@ -2,8 +2,11 @@
   "nav": {
     "philosophy": "Philosophy",
     "services": "Services",
+    "pieces": "Pieces",
+    "upcycling": "Upcycling",
+    "events": "Events",
     "process": "Process",
-    "about": "About",
+    "about": "Atelier",
     "contact": "Contact",
     "request": "Request"
   },
@@ -142,6 +145,413 @@
   "footer": {
     "copyright": "© 2026 Natalia Khreshkova. All rights reserved.",
     "privacy": "Privacy",
-    "terms": "Terms"
+    "terms": "Terms",
+    "agb": "Terms & Conditions"
+  },
+  "pieces": {
+    "label": "Gallery",
+    "title": "Signature",
+    "titleItalic": "Pieces",
+    "subtitle": "One-of-one · Atelier made · Beyond mass production",
+    "description": "Each piece is created by hand in a single copy or limited series. These are not products — they are the result of craft, philosophy and deep understanding of form.",
+    "categories": {
+      "all": "All",
+      "belts": "Belts",
+      "corsets": "Corsets",
+      "scarves": "Scarves",
+      "dresses": "Dresses",
+      "miniSeries": "Mini series",
+      "oneOfOne": "One-of-one"
+    },
+    "pieces": {
+      "corset1": "Structured corset with hand-stitched details and custom fit",
+      "belt1": "Hand-crafted leather belt with brass hardware",
+      "scarf1": "Custom print silk scarf, limited edition",
+      "dress1": "Bespoke evening dress with architectural silhouette",
+      "corset2": "Modern corset design with traditional tailoring",
+      "dress2": "Light summer dress, mini series of 5 pieces",
+      "belt2": "Statement wide belt in vegetable-tanned leather",
+      "scarf2": "Hand-painted silk scarf with original pattern",
+      "dress3": "Perfectly tailored dress with hidden construction details"
+    },
+    "request": "Request",
+    "process": {
+      "label": "Process",
+      "title": "Made in",
+      "titleItalic": "atelier",
+      "description": "Each piece is created personally, from idea to final stitch. Hand-cut patterns, multiple fittings, attention to every detail.",
+      "experience": "37+ years of craftsmanship"
+    },
+    "upcycling": {
+      "label": "Upcycling",
+      "title": "Upcycling as a way to give garments",
+      "titleItalic": "new meaning",
+      "description": "Transforming existing pieces into something completely new. Sustainable fashion with artistic approach.",
+      "button": "Explore upcycling"
+    },
+    "cta": {
+      "title": "Looking for a",
+      "titleItalic": "custom piece?",
+      "description": "Describe your idea — I will suggest a solution",
+      "button": "Request a piece"
+    },
+    "modal": {
+      "label": "Request",
+      "title": "Request this piece",
+      "interest": "What are you interested in?",
+      "selectOption": "Select option",
+      "similar": "Similar piece",
+      "custom": "Custom version",
+      "fitting": "Fitting / Consultation",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "contact": "Preferred contact",
+      "contactPlaceholder": "Telegram / WhatsApp / Email",
+      "message": "Message",
+      "messagePlaceholder": "Tell me more about what you're looking for...",
+      "submit": "Submit request",
+      "cancel": "Cancel",
+      "footer": "I will get back to you personally"
+    }
+  },
+  "upcycling": {
+    "label": "Sustainable",
+    "title": "Upcycling —",
+    "titleItalic": "conscious",
+    "titleEnd": "transformation",
+    "subtitle1": "Giving existing garments new form,",
+    "subtitle2": "function and energy",
+    "description": "I work with items that you already have. I recut and rethink them — with new energy, modern aesthetics and deep respect for the history of the piece.",
+    "badge": "Eco-conscious",
+    "badgeDescription": "Sustainable approach to fashion",
+    "philosophy": {
+      "label": "Philosophy",
+      "title": "Rethinking",
+      "titleItalic": "instead of consumption",
+      "values": [
+        "Careful attitude towards nature",
+        "Respect for already created form",
+        "Rethinking instead of consumption",
+        "New energy and function"
+      ]
+    },
+    "slider": {
+      "label": "Transformation",
+      "title": "Before & After",
+      "before": "Before",
+      "after": "After",
+      "caption": "Not repair. Reconstruction."
+    },
+    "process": {
+      "label": "Process",
+      "title": "How it",
+      "titleItalic": "works",
+      "steps": {
+        "01": {
+          "title": "Analysis",
+          "description": "Analysis of form, fabric, construction"
+        },
+        "02": {
+          "title": "Reconstruction",
+          "description": "Recutting, reworking, new logic of the piece"
+        },
+        "03": {
+          "title": "Design decision",
+          "description": "Aesthetics, fit, functionality"
+        },
+        "04": {
+          "title": "New life",
+          "description": "Modern piece with new energy"
+        }
+      }
+    },
+    "categories": {
+      "title": "What can be",
+      "titleItalic": "transformed",
+      "footer": "Each project is individual and discussed personally",
+      "01": {
+        "title": "Jackets & coats",
+        "description": "Reconstruction of outerwear with new silhouette"
+      },
+      "02": {
+        "title": "Dresses",
+        "description": "Transformation into modern shapes and fits"
+      },
+      "03": {
+        "title": "Shirts & trousers",
+        "description": "Redesign of classic garments"
+      },
+      "04": {
+        "title": "Personal archive",
+        "description": "Giving new meaning to cherished pieces"
+      }
+    },
+    "quote": {
+      "text1": "Upcycling is not about",
+      "text2": "saving clothes.",
+      "text3": "It is about redefining",
+      "text4": "meaning.",
+      "author": "NATALIA KHRESHKOVA"
+    },
+    "faq": {
+      "label": "FAQ",
+      "title": "Frequently asked questions",
+      "01": {
+        "question": "How does the process start?",
+        "answer": "We begin with a consultation where you show me the garment and describe your vision. I analyze the piece, assess its potential, and suggest transformation options. Then we discuss the concept and agree on the direction."
+      },
+      "02": {
+        "question": "How long does upcycling take?",
+        "answer": "Typically 2-4 weeks, depending on the complexity. Simple reconstructions take less time, while complete transformations with new construction require more work. I will give you a timeline after our initial consultation."
+      },
+      "03": {
+        "question": "Is it possible to fully change the garment?",
+        "answer": "Yes. Upcycling can range from subtle updates to complete reconstruction. I can change the silhouette, add or remove elements, combine multiple pieces, or create something entirely new while respecting the original fabric and history."
+      },
+      "04": {
+        "question": "Do you work with both women's and men's clothing?",
+        "answer": "Yes, I work with all types of garments regardless of original gender categorization. What matters is the quality of the fabric, the construction potential, and your vision for transformation."
+      },
+      "05": {
+        "question": "What if the fabric is damaged?",
+        "answer": "Damaged areas can often be incorporated into the new design or removed during reconstruction. Sometimes imperfections become part of the story. I will assess the condition during consultation and suggest the best approach."
+      }
+    },
+    "cta": {
+      "title": "Start the",
+      "titleItalic": "transformation",
+      "description": "Describe the garment and your idea — I will suggest a solution"
+    },
+    "form": {
+      "garment": "What do you want to transform?",
+      "garmentPlaceholder": "Describe the garment: type, condition, what you envision...",
+      "contact": "Preferred contact",
+      "contactPlaceholder": "Telegram / WhatsApp / Email",
+      "message": "Additional message",
+      "messagePlaceholder": "Any additional details or questions...",
+      "submit": "Submit request",
+      "footer": "I will get back to you personally within 24 hours"
+    },
+    "success": "Thank you! I will get back to you personally."
+  },
+  "events": {
+    "title": "Creative Events",
+    "comingSoon": "Coming soon..."
+  },
+  "servicesPage": {
+    "hero": {
+      "label": "Services",
+      "title": "Seven",
+      "titleItalic": "directions",
+      "subtitle": "From bespoke tailoring to brand consulting",
+      "description": "Each direction is deep work with form, construction and meaning. From bespoke tailoring to brand consulting.",
+      "badge1": "full cycle",
+      "badge2": "37+ years",
+      "badge3": "atelier practice",
+      "badgeTitle": "7 Directions",
+      "badgeDesc": "Professional atelier services"
+    },
+    "services": {
+      "01": {
+        "title": "Custom tailoring",
+        "subtitle": "Custom Tailoring",
+        "shortDesc": "I create clothing to individual measurements, considering figure, lifestyle and inner state.",
+        "fullDesc": "I work with form, proportions, fit and comfort. Each piece is created with deep understanding of the person — their figure, character, lifestyle. I conduct several fittings for perfect fit. I select fabrics and hardware, considering both aesthetics and practicality.",
+        "features": ["Individual measurements", "Sketch development", "2-3 fittings", "Perfect fit", "Fabric and hardware selection", "Professional finishing"]
+      },
+      "02": {
+        "title": "Author's pieces One-of-One",
+        "subtitle": "Unique Pieces",
+        "shortDesc": "I develop and sew unique pieces in a single copy — from idea to final stitch.",
+        "fullDesc": "Each One-of-One piece is an artistic statement. I create the concept, think through form, construction and decorative elements. I work with unusual fabrics, combine textures, apply author's techniques.",
+        "features": ["Unique concept", "Author's development", "Exclusive materials", "Complex techniques", "Single copy", "Artistic value"]
+      },
+      "03": {
+        "title": "Limited series",
+        "subtitle": "Limited Series",
+        "shortDesc": "I create limited series of pieces — each model is thoughtfully designed constructively and aesthetically.",
+        "fullDesc": "I develop capsule collections of 3 to 15 pieces. Each model goes through full development cycle: from sketch to pattern making.",
+        "features": ["3-15 pieces per series", "Professional patterns", "High quality execution", "Exclusivity", "Full development cycle", "Concept testing"]
+      },
+      "04": {
+        "title": "Upcycling",
+        "subtitle": "Sustainable Fashion",
+        "shortDesc": "I work with items you already have. I recut and rethink them with new energy.",
+        "fullDesc": "I give garments a second life through rethinking form and function. I analyze the piece: fabric condition, construction, potential.",
+        "features": ["Analysis of original piece", "New design concept", "Preservation of valuable elements", "Modern aesthetics", "Sustainability", "Unique story"]
+      },
+      "05": {
+        "title": "Author's prints",
+        "subtitle": "Custom Prints",
+        "shortDesc": "I create prints considering the construction — the print is placed exactly where intended.",
+        "fullDesc": "I design the print as part of the overall composition. I work with digital print, screen printing, hand painting.",
+        "features": ["Print concept development", "Integration with construction", "Various print techniques", "Color development", "Precise placement", "Author's approach"]
+      },
+      "06": {
+        "title": "Full cycle development",
+        "subtitle": "Full Cycle Development",
+        "shortDesc": "I accompany the piece from idea to finished result, combining artistic vision and technology.",
+        "fullDesc": "I lead the project at all stages: concept, sketch, material selection, pattern making, cutting, sewing, fittings, final finishing.",
+        "features": ["Concept and sketching", "Pattern making", "Material selection", "Sewing and fittings", "Technical documentation", "Final finishing"]
+      },
+      "07": {
+        "title": "Brand consulting",
+        "subtitle": "Brand Consulting",
+        "shortDesc": "I help designers develop models, work on silhouettes, construction and professional patterns.",
+        "fullDesc": "I consult young brands and designers at the collection development stage. I develop patterns, correct fit, propose technical solutions.",
+        "features": ["Development consulting", "Silhouette refinement", "Pattern making", "Technical solutions", "Knowledge transfer", "Support at all stages"]
+      }
+    },
+    "moreButton": "Learn more",
+    "modal": {
+      "whatIncluded": "What's included",
+      "orderService": "Order service",
+      "close": "Close"
+    },
+    "form": {
+      "label": "Request",
+      "title": "Let's start",
+      "titleItalic": "collaboration",
+      "description": "Fill out the form and I will contact you to discuss your project details",
+      "name": "Your name",
+      "email": "Email",
+      "phone": "Phone",
+      "service": "Service",
+      "message": "Message",
+      "namePlaceholder": "Anna Smith",
+      "emailPlaceholder": "anna@example.com",
+      "phonePlaceholder": "+49 123 456 7890",
+      "servicePlaceholder": "Select service",
+      "messagePlaceholder": "Tell us about your project...",
+      "submit": "Submit request"
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "label": "Atelier",
+      "title": "Natalia",
+      "titleItalic": "Khreshkova",
+      "subtitle": "Designer · Tailor · Atelier practice",
+      "badge1": "atelier practice",
+      "badge2": "handmade",
+      "badge3": "full cycle"
+    },
+    "story": {
+      "p1": "For me, clothing is not decoration. It is structure, proportion and meaning.",
+      "p2": "I work with form and construction, not trends. Each garment is built around the person — their body, lifestyle and inner sense of self.",
+      "p3": "My approach is rooted in traditional tailoring, but my thinking is contemporary. I value precision, fit and the quiet confidence that comes from wearing something made specifically for you.",
+      "p4": "I have been doing this for over 37 years — not following fashion, but creating it in dialogue with each client.",
+      "footer": "37+ years in tailoring and atelier practice"
+    },
+    "philosophy": { "label": "Philosophy", "title": "My approach" },
+    "principles": {
+      "01": { "title": "Form & Fit", "description": "Proportions, balance and comfort", "detail": "Every garment is built around the body, not trends" },
+      "02": { "title": "Material & Meaning", "description": "Fabric, texture and purpose", "detail": "The right material gives life to the idea" },
+      "03": { "title": "Structure & Craft", "description": "Construction, precision and handwork", "detail": "Quality is in the details invisible to the eye" }
+    },
+    "process": {
+      "title": "Full cycle",
+      "titleItalic": "atelier practice",
+      "subtitle": "From the first conversation to the final fitting — every step is personal and precise",
+      "steps": {
+        "01": { "step": "Idea", "detail": "Understanding vision and needs" },
+        "02": { "step": "Sketch", "detail": "Translating concept into form" },
+        "03": { "step": "Pattern", "detail": "Creating precise construction" },
+        "04": { "step": "Sewing", "detail": "Bringing garment to life" },
+        "05": { "step": "Final fitting", "detail": "Perfecting every detail" }
+      },
+      "footer": "Every garment passes through my hands at every stage"
+    },
+    "atelierDetails": { "label": "atelier details" },
+    "b2b": {
+      "label": "B2B",
+      "title": "For designers",
+      "titleItalic": "& brands",
+      "description": "I work with designers and brands who value craft, precision and thoughtful construction",
+      "items": ["Model development and silhouette refinement", "Professional pattern making and grading", "First sample creation and fitting", "Construction consulting for production", "Technical specification and documentation"],
+      "cta": "Discuss collaboration"
+    },
+    "quote": { "text": "Clothing is not decoration. It is structure, meaning and personality.", "author": "NATALIA KHRESHKOVA" },
+    "cta": { "title": "Work", "titleItalic": "with me", "description": "If you are looking for a personal approach and thoughtful work with form — leave a request", "button": "Leave a request" },
+    "seo": { "title": "Atelier designer Hamburg", "description": "Professional atelier practice with over 37 years of experience. Bespoke tailoring, pattern making and garment construction." },
+    "modal": {
+      "title": "Let's",
+      "titleItalic": "talk",
+      "description": "Tell me about your project and I will get back to you personally",
+      "name": "Your name",
+      "contact": "Preferred contact",
+      "contactPlaceholder": "Telegram / WhatsApp / Email",
+      "projectType": "Project type",
+      "projectTypePlaceholder": "Select type",
+      "projectTypes": { "bespoke": "Bespoke garment", "upcycling": "Upcycling", "prints": "Print design", "collaboration": "Brand collaboration", "other": "Other" },
+      "message": "Tell me about your project",
+      "messagePlaceholder": "Describe your idea or project...",
+      "submit": "Send request"
+    },
+    "success": "Thank you! I will get back to you personally."
+  },
+  "contactPage": {
+    "hero": { "label": "Contact", "title": "Start the", "titleItalic": "conversation", "description": "Describe your request — I will respond personally." },
+    "telegram": { "title": "Telegram", "description": "Fastest way to reach me. I respond within 24 hours.", "button": "Write on Telegram" },
+    "email": { "title": "Email", "description": "For detailed requests and collaborations.", "button": "Send email" },
+    "form": {
+      "label": "Request",
+      "title": "Atelier",
+      "titleItalic": "request",
+      "description": "Tell me about your project and I will respond personally",
+      "servicesLabel": "What are you interested in?",
+      "services": ["Bespoke tailoring", "Upcycling", "Custom prints", "Piece from catalog", "Collaboration"],
+      "name": "Your name",
+      "contact": "Preferred contact",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your idea, garment, or request...",
+      "submit": "Send request",
+      "footer": "I will get back to you personally within 24–48 hours"
+    },
+    "faq": {
+      "label": "FAQ",
+      "title": "Common questions",
+      "01": { "question": "How does the process start?", "answer": "With a personal request. You describe your idea or need, and I respond with suggestions for how we can work together." },
+      "02": { "question": "How long does tailoring take?", "answer": "It depends on the project. A simple alteration may take 1-2 weeks, while a fully bespoke garment requires 4-8 weeks." },
+      "03": { "question": "Do you work with men's garments?", "answer": "Yes. I work with all types of garments regardless of gender categorization." }
+    },
+    "location": { "label": "Atelier", "title": "Hamburg, Deutschland", "description": "Visits are arranged individually. Please contact me to schedule a consultation." },
+    "quote": { "text": "Every garment begins with a conversation." },
+    "seo": { "title": "Contact atelier Hamburg", "description": "Contact NKN atelier for bespoke tailoring, custom garment design and personal consultations. Hamburg, Germany." },
+    "success": "Thank you! I will get back to you personally."
+  },
+  "privacyPage": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: February 2026",
+    "intro": "NKN Atelier respects your privacy. This policy describes how we collect, use and protect your data.",
+    "sections": {
+      "data": { "title": "Data collection", "content": "We collect only the information you provide when contacting us: name, contact details and the content of your request. This data is used solely to respond to your inquiries and manage your project." },
+      "storage": { "title": "Storage and security", "content": "Your data is stored securely and not shared with third parties without your consent. We take measures to protect personal information." },
+      "rights": { "title": "Your rights", "content": "You have the right to request access to your data, its correction or deletion. Contact us to exercise these rights." },
+      "contact": { "title": "Contact", "content": "For privacy questions: info@nkn-atelier.de" }
+    }
+  },
+  "termsPage": {
+    "title": "Terms of Use",
+    "lastUpdated": "Last updated: February 2026",
+    "intro": "By using the NKN Atelier website, you agree to the following terms.",
+    "sections": {
+      "services": { "title": "Services", "content": "Information on the site is for informational purposes. Terms of collaboration and service delivery are discussed individually for each project." },
+      "content": { "title": "Content", "content": "All site materials — photos, texts, design — are the intellectual property of NKN Atelier and are protected by copyright." },
+      "links": { "title": "Links", "content": "The site may contain links to external resources. We are not responsible for the content and privacy policy of third-party sites." },
+      "changes": { "title": "Changes", "content": "We reserve the right to modify the terms of use. The current version is always available on this page." }
+    }
+  },
+  "agbPage": {
+    "title": "Terms & Conditions",
+    "lastUpdated": "Last updated: February 2026",
+    "intro": "These terms govern the collaboration when ordering NKN atelier services — bespoke tailoring, author's pieces, upcycling and consultations.",
+    "sections": {
+      "order": { "title": "Order and agreements", "content": "An order is confirmed after discussing details and agreeing on terms. Advance payment or deposit is discussed individually depending on the scope of work." },
+      "fittings": { "title": "Fittings", "content": "For bespoke tailoring, 2–3 fittings are held. Dates are agreed in advance. The client is obliged to attend fittings at the agreed times." },
+      "delivery": { "title": "Timelines and delivery", "content": "Completion times are indicative and may depend on project complexity and atelier workload. The finished work is handed over after full payment." },
+      "payment": { "title": "Payment", "content": "Payment is made as agreed — in stages or in full. Bank transfer and other methods are accepted by agreement." },
+      "returns": { "title": "Returns and alterations", "content": "Individually made garments cannot be returned. Corrections and adjustments within the agreed scope are carried out by mutual consent." }
+    }
   }
 }

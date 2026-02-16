@@ -1,4 +1,8 @@
 import type { NextConfig } from 'next';
+import path from 'path';
+
+const isProduction = process.env.NODE_ENV === 'production';
+const basePath = isProduction ? '/nkn_new' : '';
 
 const nextConfig: NextConfig = {
   output: 'export',
@@ -6,8 +10,11 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  basePath: '/nkn_new',
-  assetPrefix: '/nkn_new',
+  ...(basePath && { basePath }),
+  ...(basePath && { assetPrefix: basePath }),
+  turbopack: {
+    root: path.resolve(process.cwd()),
+  },
 };
 
 export default nextConfig;

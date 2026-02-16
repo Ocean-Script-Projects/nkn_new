@@ -55,7 +55,7 @@ export function useTranslations(namespace: keyof Messages) {
 
   const section = context.messages[namespace] as Record<string, unknown>;
 
-  return function t(key: string): string {
+  return function t(key: string): string | string[] {
     const keys = key.split('.');
     let value: unknown = section;
 
@@ -67,6 +67,10 @@ export function useTranslations(namespace: keyof Messages) {
       }
     }
 
+    if (Array.isArray(value)) {
+      return value as string[];
+    }
+    
     return typeof value === 'string' ? value : key;
   };
 }

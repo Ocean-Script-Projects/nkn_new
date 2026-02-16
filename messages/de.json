@@ -2,8 +2,11 @@
   "nav": {
     "philosophy": "Philosophie",
     "services": "Dienstleistungen",
+    "pieces": "Stücke",
+    "upcycling": "Upcycling",
+    "events": "Veranstaltungen",
     "process": "Prozess",
-    "about": "Über mich",
+    "about": "Atelier",
     "contact": "Kontakt",
     "request": "Anfrage"
   },
@@ -142,6 +145,413 @@
   "footer": {
     "copyright": "© 2026 Natalia Chreschkowa. Alle Rechte vorbehalten.",
     "privacy": "Datenschutz",
-    "terms": "Nutzungsbedingungen"
+    "terms": "Nutzungsbedingungen",
+    "agb": "AGB"
+  },
+  "pieces": {
+    "label": "Galerie",
+    "title": "Signature",
+    "titleItalic": "Stücke",
+    "subtitle": "One-of-one · Atelier made · Beyond mass production",
+    "description": "Jedes Stück wird von Hand in einer einzigen Kopie oder limitierten Serie hergestellt. Das sind keine Produkte — sie sind das Ergebnis von Handwerk, Philosophie und tiefem Verständnis der Form.",
+    "categories": {
+      "all": "Alle",
+      "belts": "Gürtel",
+      "corsets": "Korsetts",
+      "scarves": "Schals",
+      "dresses": "Kleider",
+      "miniSeries": "Mini-Serien",
+      "oneOfOne": "One-of-one"
+    },
+    "pieces": {
+      "corset1": "Strukturiertes Korsett mit handgenähten Details und maßgeschneiderter Passform",
+      "belt1": "Handgefertigter Ledergürtel mit Messingbeschlägen",
+      "scarf1": "Maßgeschneiderter Seidenschal, limitierte Auflage",
+      "dress1": "Maßgeschneidertes Abendkleid mit architektonischer Silhouette",
+      "corset2": "Modernes Korsett-Design mit traditioneller Schneiderei",
+      "dress2": "Leichtes Sommerkleid, Mini-Serie von 5 Stücken",
+      "belt2": "Statement-Breitgürtel aus pflanzlich gegerbtem Leder",
+      "scarf2": "Handbemalter Seidenschal mit originalem Muster",
+      "dress3": "Perfekt zugeschnittenes Kleid mit versteckten Konstruktionsdetails"
+    },
+    "request": "Anfrage",
+    "process": {
+      "label": "Prozess",
+      "title": "Made in",
+      "titleItalic": "atelier",
+      "description": "Jedes Stück wird persönlich erstellt, von der Idee bis zum letzten Stich. Handgeschnittene Schnittmuster, mehrere Anproben, Aufmerksamkeit für jedes Detail.",
+      "experience": "37+ Jahre Handwerkskunst"
+    },
+    "upcycling": {
+      "label": "Upcycling",
+      "title": "Upcycling als Möglichkeit, Kleidungsstücken",
+      "titleItalic": "neue Bedeutung zu geben",
+      "description": "Umwandlung bestehender Stücke in etwas völlig Neues. Nachhaltige Mode mit künstlerischem Ansatz.",
+      "button": "Upcycling erkunden"
+    },
+    "cta": {
+      "title": "Auf der Suche nach einem",
+      "titleItalic": "maßgeschneiderten Stück?",
+      "description": "Beschreiben Sie Ihre Idee — ich werde eine Lösung vorschlagen",
+      "button": "Stück anfragen"
+    },
+    "modal": {
+      "label": "Anfrage",
+      "title": "Dieses Stück anfragen",
+      "interest": "Wofür interessieren Sie sich?",
+      "selectOption": "Option auswählen",
+      "similar": "Ähnliches Stück",
+      "custom": "Maßgeschneiderte Version",
+      "fitting": "Anprobe / Beratung",
+      "name": "Name",
+      "namePlaceholder": "Ihr Name",
+      "contact": "Bevorzugter Kontakt",
+      "contactPlaceholder": "Telegram / WhatsApp / E-Mail",
+      "message": "Nachricht",
+      "messagePlaceholder": "Erzählen Sie mir mehr über das, wonach Sie suchen...",
+      "submit": "Anfrage senden",
+      "cancel": "Abbrechen",
+      "footer": "Ich werde mich persönlich bei Ihnen melden"
+    }
+  },
+  "upcycling": {
+    "label": "Nachhaltig",
+    "title": "Upcycling —",
+    "titleItalic": "bewusste",
+    "titleEnd": "Transformation",
+    "subtitle1": "Bestehenden Kleidungsstücken neue Form,",
+    "subtitle2": "Funktion und Energie geben",
+    "description": "Ich arbeite mit Kleidungsstücken, die Sie bereits haben. Ich schneide sie um und denke sie neu — mit neuer Energie, moderner Ästhetik und tiefem Respekt für die Geschichte des Stücks.",
+    "badge": "Öko-bewusst",
+    "badgeDescription": "Nachhaltiger Ansatz zur Mode",
+    "philosophy": {
+      "label": "Philosophie",
+      "title": "Umdenken",
+      "titleItalic": "statt Konsum",
+      "values": [
+        "Sorgfältiger Umgang mit der Natur",
+        "Respekt vor bereits geschaffener Form",
+        "Umdenken statt Konsum",
+        "Neue Energie und Funktion"
+      ]
+    },
+    "slider": {
+      "label": "Transformation",
+      "title": "Vorher & Nachher",
+      "before": "Vorher",
+      "after": "Nachher",
+      "caption": "Nicht reparieren. Rekonstruieren."
+    },
+    "process": {
+      "label": "Prozess",
+      "title": "Wie es",
+      "titleItalic": "funktioniert",
+      "steps": {
+        "01": {
+          "title": "Analyse",
+          "description": "Analyse von Form, Stoff, Konstruktion"
+        },
+        "02": {
+          "title": "Rekonstruktion",
+          "description": "Umschneiden, Überarbeitung, neue Logik des Stücks"
+        },
+        "03": {
+          "title": "Design-Entscheidung",
+          "description": "Ästhetik, Passform, Funktionalität"
+        },
+        "04": {
+          "title": "Neues Leben",
+          "description": "Modernes Stück mit neuer Energie"
+        }
+      }
+    },
+    "categories": {
+      "title": "Was kann",
+      "titleItalic": "transformiert werden",
+      "footer": "Jedes Projekt ist individuell und wird persönlich besprochen",
+      "01": {
+        "title": "Jacken & Mäntel",
+        "description": "Rekonstruktion von Oberbekleidung mit neuer Silhouette"
+      },
+      "02": {
+        "title": "Kleider",
+        "description": "Transformation in moderne Formen und Passformen"
+      },
+      "03": {
+        "title": "Hemden & Hosen",
+        "description": "Neugestaltung klassischer Kleidungsstücke"
+      },
+      "04": {
+        "title": "Persönliches Archiv",
+        "description": "Geliebten Stücken neue Bedeutung geben"
+      }
+    },
+    "quote": {
+      "text1": "Upcycling geht nicht darum,",
+      "text2": "Kleidung zu retten.",
+      "text3": "Es geht darum, Bedeutung",
+      "text4": "neu zu definieren.",
+      "author": "NATALIA CHRESCHKOWA"
+    },
+    "faq": {
+      "label": "FAQ",
+      "title": "Häufig gestellte Fragen",
+      "01": {
+        "question": "Wie beginnt der Prozess?",
+        "answer": "Wir beginnen mit einer Beratung, bei der Sie mir das Kleidungsstück zeigen und Ihre Vision beschreiben. Ich analysiere das Stück, bewerte sein Potenzial und schlage Transformationsoptionen vor. Dann besprechen wir das Konzept und stimmen die Richtung ab."
+      },
+      "02": {
+        "question": "Wie lange dauert Upcycling?",
+        "answer": "Typischerweise 2-4 Wochen, abhängig von der Komplexität. Einfache Rekonstruktionen dauern weniger Zeit, während vollständige Transformationen mit neuer Konstruktion mehr Arbeit erfordern. Ich gebe Ihnen einen Zeitplan nach unserer ersten Beratung."
+      },
+      "03": {
+        "question": "Ist es möglich, das Kleidungsstück vollständig zu ändern?",
+        "answer": "Ja. Upcycling kann von subtilen Updates bis zur vollständigen Rekonstruktion reichen. Ich kann die Silhouette ändern, Elemente hinzufügen oder entfernen, mehrere Stücke kombinieren oder etwas völlig Neues schaffen, während ich den ursprünglichen Stoff und die Geschichte respektiere."
+      },
+      "04": {
+        "question": "Arbeiten Sie mit sowohl Damen- als auch Herrenkleidung?",
+        "answer": "Ja, ich arbeite mit allen Arten von Kleidungsstücken unabhängig von der ursprünglichen Geschlechterkategorisierung. Was zählt, ist die Qualität des Stoffes, das Konstruktionspotenzial und Ihre Vision für die Transformation."
+      },
+      "05": {
+        "question": "Was ist, wenn der Stoff beschädigt ist?",
+        "answer": "Beschädigte Bereiche können oft in das neue Design integriert oder während der Rekonstruktion entfernt werden. Manchmal werden Unvollkommenheiten Teil der Geschichte. Ich werde den Zustand während der Beratung beurteilen und den besten Ansatz vorschlagen."
+      }
+    },
+    "cta": {
+      "title": "Beginnen Sie die",
+      "titleItalic": "Transformation",
+      "description": "Beschreiben Sie das Kleidungsstück und Ihre Idee — ich werde eine Lösung vorschlagen"
+    },
+    "form": {
+      "garment": "Was möchten Sie transformieren?",
+      "garmentPlaceholder": "Beschreiben Sie das Kleidungsstück: Typ, Zustand, was Sie sich vorstellen...",
+      "contact": "Bevorzugter Kontakt",
+      "contactPlaceholder": "Telegram / WhatsApp / E-Mail",
+      "message": "Zusätzliche Nachricht",
+      "messagePlaceholder": "Weitere Details oder Fragen...",
+      "submit": "Anfrage senden",
+      "footer": "Ich werde mich persönlich innerhalb von 24 Stunden bei Ihnen melden"
+    },
+    "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden."
+  },
+  "events": {
+    "title": "Kreative Veranstaltungen",
+    "comingSoon": "Demnächst..."
+  },
+  "servicesPage": {
+    "hero": {
+      "label": "Dienstleistungen",
+      "title": "Sieben",
+      "titleItalic": "Richtungen",
+      "subtitle": "Von Maßschneiderei bis Markenberatung",
+      "description": "Jede Richtung ist tiefgehende Arbeit mit Form, Konstruktion und Bedeutung. Von Maßschneiderei bis Markenbetreuung.",
+      "badge1": "Vollzyklus",
+      "badge2": "37+ Jahre",
+      "badge3": "Atelier-Praxis",
+      "badgeTitle": "7 Richtungen",
+      "badgeDesc": "Professionelle Atelier-Dienstleistungen"
+    },
+    "services": {
+      "01": {
+        "title": "Maßgeschneiderte Anfertigung",
+        "subtitle": "Custom Tailoring",
+        "shortDesc": "Ich erstelle Kleidung nach individuellen Maßen unter Berücksichtigung von Figur, Lebensstil und innerem Zustand.",
+        "fullDesc": "Ich arbeite mit Form, Proportionen, Passform und Komfort. Jedes Stück wird mit tiefem Verständnis für den Menschen geschaffen — seine Figur, seinen Charakter, seinen Lebensstil.",
+        "features": ["Individuelle Maßnahme", "Skizzenentwicklung", "2-3 Anproben", "Perfekte Passform", "Stoff- und Futterauswahl", "Professionelle Verarbeitung"]
+      },
+      "02": {
+        "title": "Autorenstücke One-of-One",
+        "subtitle": "Unique Pieces",
+        "shortDesc": "Ich entwickle und nähe einzigartige Stücke in einer einzigen Kopie — von der Idee bis zum letzten Stich.",
+        "fullDesc": "Jedes One-of-One-Stück ist ein künstlerisches Statement. Ich erstelle das Konzept, denke Form, Konstruktion und dekorative Elemente durch.",
+        "features": ["Einzigartiges Konzept", "Autorentwicklung", "Exklusive Materialien", "Komplexe Techniken", "Einzelstück", "Künstlerischer Wert"]
+      },
+      "03": {
+        "title": "Limitierte Serien",
+        "subtitle": "Limited Series",
+        "shortDesc": "Ich erstelle limitierte Serien von Stücken — jedes Modell ist konstruktiv und ästhetisch durchdacht.",
+        "fullDesc": "Ich entwickle Kapselkollektionen von 3 bis 15 Stücken. Jedes Modell durchläuft den vollen Entwicklungszyklus.",
+        "features": ["3-15 Stücke pro Serie", "Professionelle Schnittmuster", "Hohe Ausführungsqualität", "Exklusivität", "Voller Entwicklungszyklus", "Konzept-Test"]
+      },
+      "04": {
+        "title": "Upcycling",
+        "subtitle": "Sustainable Fashion",
+        "shortDesc": "Ich arbeite mit Kleidungsstücken, die Sie bereits haben. Ich schneide sie um und denke sie mit neuer Energie neu.",
+        "fullDesc": "Ich gebe Kleidungsstücken ein zweites Leben durch Neubewertung von Form und Funktion. Ich analysiere das Stück: Stoffzustand, Konstruktion, Potenzial.",
+        "features": ["Analyse des Originals", "Neues Designkonzept", "Bewahrung wertvoller Elemente", "Moderne Ästhetik", "Nachhaltigkeit", "Einzigartige Geschichte"]
+      },
+      "05": {
+        "title": "Autorendrucke",
+        "subtitle": "Custom Prints",
+        "shortDesc": "Ich erstelle Drucke unter Berücksichtigung der Konstruktion — der Druck wird genau dort platziert, wo vorgesehen.",
+        "fullDesc": "Ich entwerfe den Druck als Teil der Gesamtkomposition. Ich arbeite mit Digitaldruck, Siebdruck, Handmalerei.",
+        "features": ["Druckkonzeptentwicklung", "Integration in Konstruktion", "Verschiedene Drucktechniken", "Farbentwicklung", "Präzise Platzierung", "Autorenansatz"]
+      },
+      "06": {
+        "title": "Vollständige Zyklusentwicklung",
+        "subtitle": "Full Cycle Development",
+        "shortDesc": "Ich begleite das Stück von der Idee bis zum fertigen Ergebnis und verbinde künstlerische Vision und Technologie.",
+        "fullDesc": "Ich führe das Projekt in allen Phasen: Konzept, Skizze, Materialauswahl, Schnittmuster, Zuschnitt, Nähen, Anproben, Endverarbeitung.",
+        "features": ["Konzept und Skizzierung", "Schnittmustererstellung", "Materialauswahl", "Nähen und Anproben", "Technische Dokumentation", "Endverarbeitung"]
+      },
+      "07": {
+        "title": "Markenberatung",
+        "subtitle": "Brand Consulting",
+        "shortDesc": "Ich helfe Designern, Modelle zu entwickeln, arbeite an Silhouetten, Konstruktion und professionellen Schnittmustern.",
+        "fullDesc": "Ich berate junge Marken und Designer in der Kollektionsentwicklung. Ich entwickle Schnittmuster, korrigiere die Passform, schlage technische Lösungen vor.",
+        "features": ["Entwicklungsberatung", "Silhouettenverfeinerung", "Schnittmustererstellung", "Technische Lösungen", "Wissensweitergabe", "Unterstützung in allen Phasen"]
+      }
+    },
+    "moreButton": "Mehr erfahren",
+    "modal": {
+      "whatIncluded": "Was enthalten ist",
+      "orderService": "Dienstleistung bestellen",
+      "close": "Schließen"
+    },
+    "form": {
+      "label": "Anfrage",
+      "title": "Beginnen wir die",
+      "titleItalic": "Zusammenarbeit",
+      "description": "Füllen Sie das Formular aus und ich werde mich mit Ihnen in Verbindung setzen",
+      "name": "Ihr Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "service": "Dienstleistung",
+      "message": "Nachricht",
+      "namePlaceholder": "Anna Müller",
+      "emailPlaceholder": "anna@example.com",
+      "phonePlaceholder": "+49 123 456 7890",
+      "servicePlaceholder": "Dienstleistung auswählen",
+      "messagePlaceholder": "Erzählen Sie von Ihrem Projekt...",
+      "submit": "Anfrage senden"
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "label": "Atelier",
+      "title": "Natalia",
+      "titleItalic": "Chreschkowa",
+      "subtitle": "Designerin · Schneiderin · Atelier-Praxis",
+      "badge1": "Atelier-Praxis",
+      "badge2": "handgefertigt",
+      "badge3": "Vollzyklus"
+    },
+    "story": {
+      "p1": "Für mich ist Kleidung keine Dekoration. Es ist Struktur, Proportion und Bedeutung.",
+      "p2": "Ich arbeite mit Form und Konstruktion, nicht mit Trends. Jedes Kleidungsstück wird um den Menschen herum gebaut — seinen Körper, Lebensstil und inneres Selbstgefühl.",
+      "p3": "Mein Ansatz wurzelt in traditionellem Schneiderhandwerk, aber mein Denken ist zeitgenössisch. Ich schätze Präzision, Passform und die ruhige Zuversicht, die etwas speziell für Sie Gefertigtes vermittelt.",
+      "p4": "Ich mache das seit über 37 Jahren — folge nicht der Mode, sondern schaffe sie im Dialog mit jedem Kunden.",
+      "footer": "37+ Jahre im Schneiderhandwerk und in der Atelier-Praxis"
+    },
+    "philosophy": { "label": "Philosophie", "title": "Mein Ansatz" },
+    "principles": {
+      "01": { "title": "Form & Passform", "description": "Proportionen, Balance und Komfort", "detail": "Jedes Kleidungsstück wird um den Körper herum gebaut, nicht um Trends" },
+      "02": { "title": "Material & Bedeutung", "description": "Stoff, Textur und Zweck", "detail": "Das richtige Material erweckt die Idee zum Leben" },
+      "03": { "title": "Struktur & Handwerk", "description": "Konstruktion, Präzision und Handarbeit", "detail": "Qualität steckt in den Details, die das Auge nicht sieht" }
+    },
+    "process": {
+      "title": "Vollzyklus",
+      "titleItalic": "Atelier-Praxis",
+      "subtitle": "Vom ersten Gespräch bis zur Endanprobe — jeder Schritt ist persönlich und präzise",
+      "steps": {
+        "01": { "step": "Idee", "detail": "Verständnis von Vision und Bedürfnissen" },
+        "02": { "step": "Skizze", "detail": "Übersetzung des Konzepts in Form" },
+        "03": { "step": "Schnittmuster", "detail": "Erstellung präziser Konstruktion" },
+        "04": { "step": "Nähen", "detail": "Kleidungsstück zum Leben erwecken" },
+        "05": { "step": "Endanprobe", "detail": "Perfektionierung jedes Details" }
+      },
+      "footer": "Jedes Kleidungsstück geht in jeder Phase durch meine Hände"
+    },
+    "atelierDetails": { "label": "Atelier-Details" },
+    "b2b": {
+      "label": "B2B",
+      "title": "Für Designer",
+      "titleItalic": "& Marken",
+      "description": "Ich arbeite mit Designern und Marken, die Handwerk, Präzision und durchdachte Konstruktion schätzen",
+      "items": ["Modellentwicklung und Silhouettenverfeinerung", "Professionelles Schnittmuster und Gradierung", "Erstmuster und Anprobe", "Konstruktionsberatung für die Produktion", "Technische Spezifikation und Dokumentation"],
+      "cta": "Zusammenarbeit besprechen"
+    },
+    "quote": { "text": "Kleidung ist keine Dekoration. Es ist Struktur, Bedeutung und Persönlichkeit.", "author": "NATALIA CHRESCHKOWA" },
+    "cta": { "title": "Arbeiten Sie", "titleItalic": "mit mir", "description": "Wenn Sie einen persönlichen Ansatz und durchdachte Arbeit mit Form suchen — hinterlassen Sie eine Anfrage", "button": "Anfrage hinterlassen" },
+    "seo": { "title": "Atelier-Designerin Hamburg", "description": "Professionelle Atelier-Praxis mit über 37 Jahren Erfahrung. Maßschneiderei, Schnittmuster und Kleidungsherstellung." },
+    "modal": {
+      "title": "Lassen Sie uns",
+      "titleItalic": "reden",
+      "description": "Erzählen Sie mir von Ihrem Projekt — ich melde mich persönlich bei Ihnen",
+      "name": "Ihr Name",
+      "contact": "Bevorzugter Kontakt",
+      "contactPlaceholder": "Telegram / WhatsApp / E-Mail",
+      "projectType": "Projekttyp",
+      "projectTypePlaceholder": "Typ auswählen",
+      "projectTypes": { "bespoke": "Maßgefertigtes Kleidungsstück", "upcycling": "Upcycling", "prints": "Druckdesign", "collaboration": "Markenkooperation", "other": "Sonstiges" },
+      "message": "Erzählen Sie von Ihrem Projekt",
+      "messagePlaceholder": "Beschreiben Sie Ihre Idee oder Ihr Projekt...",
+      "submit": "Anfrage senden"
+    },
+    "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden."
+  },
+  "contactPage": {
+    "hero": { "label": "Kontakt", "title": "Beginnen Sie das", "titleItalic": "Gespräch", "description": "Beschreiben Sie Ihre Anfrage — ich antworte persönlich." },
+    "telegram": { "title": "Telegram", "description": "Schnellster Weg, mich zu erreichen. Ich antworte innerhalb von 24 Stunden.", "button": "Bei Telegram schreiben" },
+    "email": { "title": "E-Mail", "description": "Für detaillierte Anfragen und Kooperationen.", "button": "E-Mail senden" },
+    "form": {
+      "label": "Anfrage",
+      "title": "Atelier",
+      "titleItalic": "Anfrage",
+      "description": "Erzählen Sie von Ihrem Projekt — ich antworte persönlich",
+      "servicesLabel": "Wofür interessieren Sie sich?",
+      "services": ["Maßschneiderei", "Upcycling", "Autorendrucke", "Stück aus dem Katalog", "Kooperation"],
+      "name": "Ihr Name",
+      "contact": "Bevorzugter Kontakt",
+      "message": "Nachricht",
+      "messagePlaceholder": "Erzählen Sie von Ihrer Idee, dem Kleidungsstück oder Ihrer Anfrage...",
+      "submit": "Anfrage senden",
+      "footer": "Ich melde mich persönlich innerhalb von 24–48 Stunden"
+    },
+    "faq": {
+      "label": "FAQ",
+      "title": "Häufige Fragen",
+      "01": { "question": "Wie beginnt der Prozess?", "answer": "Mit einer persönlichen Anfrage. Sie beschreiben Ihre Idee oder Ihr Anliegen, ich antworte mit Vorschlägen für unsere Zusammenarbeit." },
+      "02": { "question": "Wie lange dauert die Schneiderei?", "answer": "Das hängt vom Projekt ab. Eine einfache Änderung dauert 1–2 Wochen, ein vollständig maßgefertigtes Kleidungsstück 4–8 Wochen." },
+      "03": { "question": "Arbeiten Sie mit Herrenkleidung?", "answer": "Ja. Ich arbeite mit allen Arten von Kleidung unabhängig von der Geschlechterkategorisierung." }
+    },
+    "location": { "label": "Atelier", "title": "Hamburg, Deutschland", "description": "Besuche werden individuell vereinbart. Bitte kontaktieren Sie mich für eine Beratung." },
+    "quote": { "text": "Jedes Kleidungsstück beginnt mit einem Gespräch." },
+    "seo": { "title": "Kontakt Atelier Hamburg", "description": "Kontaktieren Sie das NKN-Atelier für Maßschneiderei, individuelles Kleidungsdesign und persönliche Beratung. Hamburg, Deutschland." },
+    "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden."
+  },
+  "privacyPage": {
+    "title": "Datenschutzerklärung",
+    "lastUpdated": "Letzte Aktualisierung: Februar 2026",
+    "intro": "NKN Atelier respektiert Ihre Privatsphäre. Diese Richtlinie beschreibt, wie wir Ihre Daten erfassen, verwenden und schützen.",
+    "sections": {
+      "data": { "title": "Datenerfassung", "content": "Wir erfassen nur die Informationen, die Sie bei der Kontaktaufnahme angeben: Name, Kontaktdaten und Inhalt Ihrer Anfrage. Diese Daten werden ausschließlich zur Beantwortung Ihrer Anfragen und zur Projektdurchführung verwendet." },
+      "storage": { "title": "Speicherung und Sicherheit", "content": "Ihre Daten werden sicher gespeichert und ohne Ihre Zustimmung nicht an Dritte weitergegeben. Wir ergreifen Maßnahmen zum Schutz personenbezogener Daten." },
+      "rights": { "title": "Ihre Rechte", "content": "Sie haben das Recht, Zugang zu Ihren Daten, deren Berichtigung oder Löschung zu verlangen. Kontaktieren Sie uns, um diese Rechte auszuüben." },
+      "contact": { "title": "Kontakt", "content": "Bei Datenschutzfragen: info@nkn-atelier.de" }
+    }
+  },
+  "termsPage": {
+    "title": "Nutzungsbedingungen",
+    "lastUpdated": "Letzte Aktualisierung: Februar 2026",
+    "intro": "Durch die Nutzung der NKN Atelier-Website stimmen Sie den folgenden Bedingungen zu.",
+    "sections": {
+      "services": { "title": "Dienstleistungen", "content": "Die Informationen auf der Website dienen nur zu Informationszwecken. Die Bedingungen für die Zusammenarbeit und Erbringung von Dienstleistungen werden individuell für jedes Projekt besprochen." },
+      "content": { "title": "Inhalte", "content": "Alle Materialien der Website — Fotos, Texte, Design — sind geistiges Eigentum von NKN Atelier und urheberrechtlich geschützt." },
+      "links": { "title": "Links", "content": "Die Website kann Links zu externen Ressourcen enthalten. Wir sind nicht verantwortlich für den Inhalt und die Datenschutzrichtlinie von Drittanbieter-Websites." },
+      "changes": { "title": "Änderungen", "content": "Wir behalten uns das Recht vor, die Nutzungsbedingungen zu ändern. Die aktuelle Version ist immer auf dieser Seite verfügbar." }
+    }
+  },
+  "agbPage": {
+    "title": "AGB — Allgemeine Geschäftsbedingungen",
+    "lastUpdated": "Letzte Aktualisierung: Februar 2026",
+    "intro": "Diese Bedingungen regeln die Zusammenarbeit bei der Bestellung von NKN Atelier-Dienstleistungen — Maßschneiderei, Autorenstücke, Upcycling und Beratungen.",
+    "sections": {
+      "order": { "title": "Bestellung und Vereinbarungen", "content": "Eine Bestellung wird nach Besprechung der Details und Einigung über die Bedingungen bestätigt. Anzahlung oder Anzahlungszahlung wird je nach Arbeitsumfang individuell besprochen." },
+      "fittings": { "title": "Anproben", "content": "Bei Maßschneiderei werden 2–3 Anproben durchgeführt. Termine werden rechtzeitig vereinbart. Der Kunde verpflichtet sich, zu den vereinbarten Zeiten zu den Anproben zu erscheinen." },
+      "delivery": { "title": "Zeitrahmen und Übergabe", "content": "Fertigstellungszeiten sind Richtwerte und können von der Projekkomplexität und der Atelierauslastung abhängen. Die fertige Arbeit wird nach vollständiger Zahlung übergeben." },
+      "payment": { "title": "Zahlung", "content": "Die Zahlung erfolgt wie vereinbart — in Raten oder vollständig. Überweisung und andere Zahlungsmethoden werden nach Vereinbarung akzeptiert." },
+      "returns": { "title": "Rückgabe und Änderungen", "content": "Individuell angefertigte Kleidungsstücke können nicht zurückgegeben werden. Korrekturen und Anpassungen im vereinbarten Rahmen erfolgen im gegenseitigen Einvernehmen." }
+    }
   }
 }

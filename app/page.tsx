@@ -5,8 +5,8 @@ import { defaultLocale } from '@/lib/i18n-config';
 
 export default function RootPage() {
   useEffect(() => {
-    const basePath = '/nkn_new';
-    window.location.href = `${basePath}/${defaultLocale}/`;
+    // Используем относительный путь, который будет работать с любым basePath
+    window.location.href = `/${defaultLocale}/`;
   }, []);
 
   return null;

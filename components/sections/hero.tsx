@@ -68,15 +68,31 @@ export default function HeroSection() {
           transition={{ duration: 10, repeat: Infinity }}
         />
 
-        {[...Array(15)].map((_, i) => (
+        {[
+          { left: 10, top: 20, duration: 6, delay: 0 },
+          { left: 25, top: 15, duration: 7, delay: 0.5 },
+          { left: 40, top: 30, duration: 5, delay: 1 },
+          { left: 55, top: 10, duration: 8, delay: 1.5 },
+          { left: 70, top: 25, duration: 6, delay: 2 },
+          { left: 85, top: 35, duration: 7, delay: 2.5 },
+          { left: 15, top: 50, duration: 5, delay: 3 },
+          { left: 30, top: 45, duration: 8, delay: 3.5 },
+          { left: 50, top: 60, duration: 6, delay: 4 },
+          { left: 65, top: 55, duration: 7, delay: 4.5 },
+          { left: 80, top: 70, duration: 5, delay: 0.2 },
+          { left: 20, top: 75, duration: 8, delay: 0.7 },
+          { left: 45, top: 80, duration: 6, delay: 1.2 },
+          { left: 60, top: 85, duration: 7, delay: 1.7 },
+          { left: 75, top: 90, duration: 5, delay: 2.2 },
+        ].map((particle, i) => (
           <motion.div
             key={i}
             className={`absolute w-1 h-1 rounded-full ${
               i % 6 === 0 ? 'bg-[#DC2626]' : 'bg-[#C4A574]'
             }`}
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${particle.left}%`,
+              top: `${particle.top}%`,
             }}
             animate={{
               y: [0, -100, 0],
@@ -84,9 +100,9 @@ export default function HeroSection() {
               scale: [0, 1.5, 0],
             }}
             transition={{
-              duration: 5 + Math.random() * 5,
+              duration: particle.duration,
               repeat: Infinity,
-              delay: Math.random() * 5,
+              delay: particle.delay,
             }}
           />
         ))}

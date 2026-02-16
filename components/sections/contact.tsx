@@ -18,7 +18,7 @@ export default function ContactSection() {
       icon: Phone,
       title: t('phone.title'),
       value: t('phone.value'),
-      link: `tel:${t('phone.value').replace(/\s/g, '')}`,
+      link: `tel:${String(t('phone.value')).replace(/\s/g, '')}`,
     },
     {
       icon: MapPin,
@@ -84,7 +84,7 @@ export default function ContactSection() {
             const Icon = contact.icon;
             return (
               <motion.a
-                key={contact.title}
+                key={String(contact.title)}
                 href={contact.link}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
