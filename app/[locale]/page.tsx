@@ -2,6 +2,8 @@ import Navigation from '@/components/sections/navigation';
 import HeroSection from '@/components/sections/hero';
 import PhilosophySection from '@/components/sections/philosophy';
 import ServicesSection from '@/components/sections/services';
+import FeaturedPiecesSection from '@/components/sections/featured-pieces';
+import FeaturedEventsSection from '@/components/sections/featured-events';
 import ProcessSection from '@/components/sections/process';
 import AboutSection from '@/components/sections/about';
 import ContactSection from '@/components/sections/contact';
@@ -14,6 +16,8 @@ export default function HomePage() {
       <HeroSection />
       <PhilosophySection />
       <ServicesSection />
+      <FeaturedPiecesSection />
+      <FeaturedEventsSection />
       <ProcessSection />
       <AboutSection />
       <ContactSection />

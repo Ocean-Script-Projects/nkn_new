@@ -1,18 +1,18 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'motion/react';
 import { useTranslations, useLocale, locales } from '@/lib/i18n';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import ContactRequestModal from '@/components/shared/ContactRequestModal';
+import Image from 'next/image';
+import { useRequestModal } from '@/lib/request-modal-context';
 
 export default function Navigation() {
   const t = useTranslations('nav');
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
-  const [showRequestModal, setShowRequestModal] = useState(false);
+  const { openRequestModal } = useRequestModal();
 
   const menuItems = [
     { key: 'services', href: '/services' },
@@ -46,18 +46,18 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <Link href={`/${locale}`}>
             <motion.div
-              className="flex items-center gap-2 sm:gap-3 cursor-pointer"
+              className="flex items-center cursor-pointer"
               whileHover={{ scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 400 }}
             >
-              <div className="relative">
-                <span className="text-2xl sm:text-3xl tracking-[0.35em] font-light">NKN</span>
-                <motion.div
-                  className="absolute -right-1 -top-1 w-2 h-2 bg-[#DC2626] rounded-full"
-                  animate={{ scale: [1, 1.4, 1], opacity: [0.7, 1, 0.7] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                />
-              </div>
+              <Image
+                src="/images/big_logo.png"
+                alt="NKN"
+                width={80}
+                height={36}
+                className="h-8 sm:h-9 w-auto object-contain"
+                priority
+              />
             </motion.div>
           </Link>
 
@@ -107,7 +107,7 @@ export default function Navigation() {
             </div>
 
             <motion.button
-              onClick={() => setShowRequestModal(true)}
+              onClick={() => openRequestModal()}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="relative group px-5 sm:px-7 py-2 sm:py-2.5 bg-black text-white rounded-full text-xs sm:text-sm tracking-wider overflow-hidden"
@@ -120,8 +120,6 @@ export default function Navigation() {
               />
               <span className="relative z-10">{t('request')}</span>
             </motion.button>
-
-            <ContactRequestModal isOpen={showRequestModal} onClose={() => setShowRequestModal(false)} />
 
             <motion.button
               whileTap={{ scale: 0.9 }}

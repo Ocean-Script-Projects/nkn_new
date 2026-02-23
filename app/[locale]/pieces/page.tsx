@@ -8,7 +8,7 @@ import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import PieceCard from '@/components/pieces/PieceCard';
 import CategoryFilter, { Category } from '@/components/pieces/CategoryFilter';
-import RequestModal from '@/components/pieces/RequestModal';
+import PieceDetailModal from '@/components/pieces/PieceDetailModal';
 import PageHeader from '@/components/shared/PageHeader';
 import CTASection from '@/components/shared/CTASection';
 import Link from 'next/link';
@@ -27,7 +27,7 @@ export default function PiecesPage() {
   const t = useTranslations('pieces');
   const locale = useLocale();
   const [selectedCategory, setSelectedCategory] = useState<Category>('all');
-  const [selectedPiece, setSelectedPiece] = useState<Piece | null>(null);
+  const [selectedPieceForDetail, setSelectedPieceForDetail] = useState<Piece | null>(null);
 
   const categories: { id: Category; label: string }[] = [
     { id: 'all', label: String(t('categories.all')) },
@@ -51,16 +51,6 @@ export default function PiecesPage() {
     if (selectedCategory === 'all') return pieces;
     return pieces.filter(p => p.category === selectedCategory || p.type === selectedCategory);
   }, [pieces, selectedCategory]);
-
-  const handleSubmit = (data: {
-    interest: string;
-    name: string;
-    contact: string;
-    message: string;
-  }) => {
-    console.log('Request submitted:', { piece: selectedPiece?.name, ...data });
-    setSelectedPiece(null);
-  };
 
   return (
     <div className="min-h-screen bg-[#FAF9F6]">
@@ -101,14 +91,15 @@ export default function PiecesPage() {
         <div className="max-w-7xl mx-auto">
           <motion.div
             layout
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10"
+            className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6"
           >
             <AnimatePresence mode="popLayout">
               {filteredPieces.map((piece, i) => (
                 <PieceCard
                   key={piece.id}
                   piece={piece}
-                  onRequest={() => setSelectedPiece(piece)}
+                  onRequest={() => setSelectedPieceForDetail(piece)}
+                  onClick={() => setSelectedPieceForDetail(piece)}
                   index={i}
                 />
               ))}
@@ -239,13 +230,13 @@ export default function PiecesPage() {
         description={String(t('cta.description'))}
         buttonText={String(t('cta.button'))}
         buttonHref={`/${locale}/contact`}
+        openModal
       />
 
-      <RequestModal
-        piece={selectedPiece}
-        isOpen={!!selectedPiece}
-        onClose={() => setSelectedPiece(null)}
-        onSubmit={handleSubmit}
+      <PieceDetailModal
+        piece={selectedPieceForDetail}
+        isOpen={!!selectedPieceForDetail}
+        onClose={() => setSelectedPieceForDetail(null)}
       />
 
       <Footer />

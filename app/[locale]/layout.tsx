@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { I18nProvider } from '@/lib/i18n';
 import { locales } from '@/lib/i18n-config';
+import RequestModalProviderWrapper from '@/components/providers/RequestModalProviderWrapper';
 import '../globals.css';
 
 export function generateStaticParams() {
@@ -24,7 +25,9 @@ export default async function LocaleLayout({
     <html lang={locale} suppressHydrationWarning>
       <body>
         <I18nProvider locale={locale}>
-          {children}
+          <RequestModalProviderWrapper>
+            {children}
+          </RequestModalProviderWrapper>
         </I18nProvider>
       </body>
     </html>

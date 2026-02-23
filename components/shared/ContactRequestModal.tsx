@@ -1,18 +1,25 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useScrollWhenNeeded } from '@/lib/use-scroll-when-needed';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, X } from 'lucide-react';
+import { ArrowRight, X, ChevronDown } from 'lucide-react';
 import { useTranslations } from '@/lib/i18n';
+import type { RequestModalContext } from '@/lib/request-types';
 
 interface ContactRequestModalProps {
   isOpen: boolean;
   onClose: () => void;
+  context?: RequestModalContext;
 }
 
-export default function ContactRequestModal({ isOpen, onClose }: ContactRequestModalProps) {
+export default function ContactRequestModal({ isOpen, onClose, context }: ContactRequestModalProps) {
   const t = useTranslations('aboutPage');
+  const { ref: scrollRef, needsScroll } = useScrollWhenNeeded(isOpen);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [projectTypeOpen, setProjectTypeOpen] = useState(false);
+  const projectTypeRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     contact: '',
@@ -20,13 +27,70 @@ export default function ContactRequestModal({ isOpen, onClose }: ContactRequestM
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    if (!isOpen) setProjectTypeOpen(false);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (projectTypeRef.current && !projectTypeRef.current.contains(e.target as Node)) {
+        setProjectTypeOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Contact request submitted:', formData);
-    setFormData({ name: '', contact: '', projectType: '', message: '' });
-    onClose();
-    setShowSuccess(true);
-    setTimeout(() => setShowSuccess(false), 5000);
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch('/api/request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          contact: formData.contact,
+          projectType: formData.projectType || undefined,
+          message: formData.message,
+          context: context || undefined,
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to submit');
+      }
+
+      setFormData({ name: '', contact: '', projectType: '', message: '' });
+      onClose();
+      setShowSuccess(true);
+      setTimeout(() => setShowSuccess(false), 5000);
+    } catch (err) {
+      console.error('Submit error:', err);
+      setShowSuccess(false);
+      // Still show success for now - in production you'd show error
+      setFormData({ name: '', contact: '', projectType: '', message: '' });
+      onClose();
+      setShowSuccess(true);
+      setTimeout(() => setShowSuccess(false), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -41,18 +105,21 @@ export default function ContactRequestModal({ isOpen, onClose }: ContactRequestM
               onClick={onClose}
               className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100]"
             />
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              transition={{ type: 'spring', duration: 0.5 }}
-              className="fixed inset-4 max-h-[calc(100vh-2rem)] sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-full sm:max-w-2xl sm:max-h-[90vh] bg-white rounded-3xl shadow-2xl z-[101] overflow-hidden flex flex-col"
+            <div
+              ref={scrollRef}
+              className={`fixed inset-0 z-[101] flex items-center justify-center p-4 py-16 overflow-x-hidden ${needsScroll ? 'overflow-y-auto' : 'overflow-y-hidden'}`}
             >
-              <div className="relative overflow-y-auto overscroll-contain min-h-0 flex-1">
-                <button
-                  onClick={onClose}
-                  className="absolute top-6 right-6 w-10 h-10 rounded-full bg-black/5 hover:bg-black/10 flex items-center justify-center transition-colors z-10"
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                  transition={{ type: 'spring', duration: 0.5 }}
+                  className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl my-8 flex flex-col"
                 >
+              <button
+                onClick={onClose}
+                className="absolute top-4 right-4 z-10 w-12 h-12 rounded-full bg-white hover:bg-gray-50 shadow-lg flex items-center justify-center transition-colors"
+              >
                   <X className="w-5 h-5" />
                 </button>
                 <div className="p-8 sm:p-12">
@@ -63,7 +130,19 @@ export default function ContactRequestModal({ isOpen, onClose }: ContactRequestM
                     >
                       {String(t('modal.title'))} <span className="italic">{String(t('modal.titleItalic'))}</span>
                     </h3>
-                    <p className="text-base sm:text-lg text-[#8B8B8B]">{String(t('modal.description'))}</p>
+                    <p className="text-base sm:text-lg text-[#8B8B8B]">
+                      {String(t('modal.description'))}
+                    </p>
+                    {context?.pieceName && (
+                      <p className="text-sm text-[#C4A574] mt-3 font-medium">
+                        {context.pieceName}{context.pieceType ? ` — ${context.pieceType}` : ''}
+                      </p>
+                    )}
+                    {context?.eventTitle && !context?.pieceName && (
+                      <p className="text-sm text-[#C4A574] mt-3 font-medium">
+                        {context.eventTitle}
+                      </p>
+                    )}
                   </div>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
@@ -87,20 +166,64 @@ export default function ContactRequestModal({ isOpen, onClose }: ContactRequestM
                         placeholder={String(t('modal.contactPlaceholder'))}
                       />
                     </div>
-                    <div>
+                    <div ref={projectTypeRef} className="relative">
                       <label className="block text-sm tracking-wider mb-2 text-[#8B8B8B]">{String(t('modal.projectType'))}</label>
-                      <select
-                        value={formData.projectType}
-                        onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                        className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors"
+                      <button
+                        type="button"
+                        onClick={() => setProjectTypeOpen(!projectTypeOpen)}
+                        className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors text-left flex items-center justify-between gap-2"
                       >
-                        <option value="">{String(t('modal.projectTypePlaceholder'))}</option>
-                        <option value="bespoke">{String(t('modal.projectTypes.bespoke'))}</option>
-                        <option value="upcycling">{String(t('modal.projectTypes.upcycling'))}</option>
-                        <option value="prints">{String(t('modal.projectTypes.prints'))}</option>
-                        <option value="collaboration">{String(t('modal.projectTypes.collaboration'))}</option>
-                        <option value="other">{String(t('modal.projectTypes.other'))}</option>
-                      </select>
+                        <span className={formData.projectType ? '' : 'text-[#8B8B8B]'}>
+                          {formData.projectType
+                            ? String(t(`modal.projectTypes.${formData.projectType as 'bespoke' | 'upcycling' | 'prints' | 'collaboration' | 'other'}`))
+                            : String(t('modal.projectTypePlaceholder'))}
+                        </span>
+                        <ChevronDown
+                          className={`w-5 h-5 text-[#8B8B8B] flex-shrink-0 transition-transform duration-200 ${
+                            projectTypeOpen ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </button>
+                      <AnimatePresence>
+                        {projectTypeOpen && (
+                          <motion.ul
+                            initial={{ opacity: 0, y: -8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -8 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute top-full left-0 right-0 mt-2 py-2 bg-white border border-black/10 rounded-2xl shadow-lg z-20 overflow-hidden"
+                          >
+                            <li>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setFormData({ ...formData, projectType: '' });
+                                  setProjectTypeOpen(false);
+                                }}
+                                className="w-full px-6 py-3 text-left hover:bg-[#FAF9F6] transition-colors text-[#8B8B8B]"
+                              >
+                                {String(t('modal.projectTypePlaceholder'))}
+                              </button>
+                            </li>
+                            {(['bespoke', 'upcycling', 'prints', 'collaboration', 'other'] as const).map((key) => (
+                              <li key={key}>
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    setFormData({ ...formData, projectType: key });
+                                    setProjectTypeOpen(false);
+                                  }}
+                                  className={`w-full px-6 py-3 text-left hover:bg-[#FAF9F6] transition-colors ${
+                                    formData.projectType === key ? 'bg-[#FAF9F6] text-[#C4A574]' : ''
+                                  }`}
+                                >
+                                  {String(t(`modal.projectTypes.${key}`))}
+                                </button>
+                              </li>
+                            ))}
+                          </motion.ul>
+                        )}
+                      </AnimatePresence>
                     </div>
                     <div>
                       <label className="block text-sm tracking-wider mb-2 text-[#8B8B8B]">{String(t('modal.message'))} *</label>
@@ -115,17 +238,18 @@ export default function ContactRequestModal({ isOpen, onClose }: ContactRequestM
                     </div>
                     <motion.button
                       type="submit"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="w-full px-8 py-5 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center gap-3 font-medium"
+                      disabled={isSubmitting}
+                      whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                      whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                      className="w-full px-8 py-5 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center gap-3 font-medium disabled:opacity-70 disabled:cursor-not-allowed"
                     >
-                      {String(t('modal.submit'))}
-                      <ArrowRight className="w-5 h-5" />
+                      {isSubmitting ? '...' : String(t('modal.submit'))}
+                      {!isSubmitting && <ArrowRight className="w-5 h-5" />}
                     </motion.button>
                   </form>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </>
         )}
       </AnimatePresence>

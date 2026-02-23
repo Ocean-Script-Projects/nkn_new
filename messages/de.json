@@ -45,6 +45,21 @@
       }
     }
   },
+  "featuredEvents": {
+    "label": "Veranstaltungen",
+    "title": "Kommende",
+    "titleItalic": "Events",
+    "description": "Ausstellungen, Workshops, Trunk Shows. Erleben Sie einzigartige Mode-Erlebnisse.",
+    "viewAll": "Alle Veranstaltungen anzeigen"
+  },
+  "featuredPieces": {
+    "label": "Stücke",
+    "title": "Signaturen",
+    "titleItalic": "Stücke",
+    "description": "Jedes Stück wird von Hand in einer einzigen Kopie oder limitierten Serie gefertigt. Entdecken Sie die Kollektion.",
+    "viewAll": "Alle Stücke anzeigen",
+    "viewItem": "Ansehen"
+  },
   "services": {
     "label": "Dienstleistungen",
     "title": "Was ich",
@@ -335,8 +350,46 @@
     "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden."
   },
   "events": {
-    "title": "Kreative Veranstaltungen",
-    "comingSoon": "Demnächst..."
+    "label": "Veranstaltungen",
+    "title": "Kreative",
+    "titleItalic": "Events",
+    "description": "Ausstellungen, Workshops, Trunk Shows und Offene Ateliertage. Erleben Sie einzigartige Mode-Erlebnisse.",
+    "sectionLabel": "Kommend",
+    "sectionTitle": "Veranstaltungskalender",
+    "sectionDescription": "Entdecken Sie, wo Sie das Atelier treffen, die Stücke sehen und an kreativen Projekten teilnehmen können.",
+    "types": {
+      "exhibition": "Ausstellung",
+      "workshop": "Workshop",
+      "trunk-show": "Trunk Show",
+      "open-studio": "Offenes Atelier"
+    },
+    "items": {
+      "01": {
+        "title": "Frühjahrskollektion Vorschau",
+        "description": "Präsentation neuer Einzelstücke und limitierter Serien. Treffen Sie die Designerin, probieren Sie die Stücke und besprechen Sie individuelle Aufträge."
+      },
+      "02": {
+        "title": "Workshop Korsettbau",
+        "description": "Praktischer Workshop zu Korsettkonstruktion und Anprobe. Lernen Sie professionelle Techniken vom Schnittmuster bis zum fertigen Stück."
+      },
+      "03": {
+        "title": "Trunk Show Berlin",
+        "description": "Exklusive Vorschau der Atelier-Kollektion in Berlin. Nur nach Terminvereinbarung."
+      },
+      "04": {
+        "title": "Tag der offenen Tür",
+        "description": "Besuchen Sie das Atelier, erkunden Sie den Arbeitsraum, sehen Sie Stoffe und besprechen Sie Ihr Projekt. Kaffee und Gespräch."
+      }
+    },
+    "cta": {
+      "title": "Möchten Sie teilnehmen?",
+      "titleItalic": "Kontaktieren Sie mich",
+      "description": "Kontaktieren Sie mich zur Anmeldung für Veranstaltungen oder für eine private Präsentation.",
+      "button": "Kontakt"
+    },
+    "featured": {
+      "viewItem": "Ansehen"
+    }
   },
   "servicesPage": {
     "hero": {

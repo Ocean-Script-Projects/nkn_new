@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { useRequestModal } from '@/lib/request-modal-context';
 
 interface CTASectionProps {
   title: string;
@@ -12,6 +13,8 @@ interface CTASectionProps {
   buttonHref: string;
   gradientFrom?: string;
   gradientTo?: string;
+  /** When true, button opens request modal instead of linking */
+  openModal?: boolean;
 }
 
 export default function CTASection({
@@ -21,8 +24,10 @@ export default function CTASection({
   buttonText,
   buttonHref,
   gradientFrom = '#C4A574',
-  gradientTo = '#8B7355'
+  gradientTo = '#8B7355',
+  openModal = false,
 }: CTASectionProps) {
+  const { openRequestModal } = useRequestModal();
   return (
     <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-black text-white relative overflow-hidden">
       <motion.div
@@ -53,8 +58,9 @@ export default function CTASection({
             {description}
           </p>
 
-          <Link href={buttonHref}>
+          {openModal ? (
             <motion.button
+              onClick={() => openRequestModal()}
               whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.98 }}
               className="px-10 sm:px-12 py-5 sm:py-6 rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow inline-flex items-center gap-3"
@@ -65,7 +71,21 @@ export default function CTASection({
               {buttonText}
               <ArrowRight className="w-5 h-5" />
             </motion.button>
-          </Link>
+          ) : (
+            <Link href={buttonHref}>
+              <motion.button
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-10 sm:px-12 py-5 sm:py-6 rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow inline-flex items-center gap-3"
+                style={{
+                  background: `linear-gradient(to right, ${gradientFrom}, ${gradientTo})`,
+                }}
+              >
+                {buttonText}
+                <ArrowRight className="w-5 h-5" />
+              </motion.button>
+            </Link>
+          )}
         </motion.div>
       </div>
     </section>

@@ -86,12 +86,6 @@ export default function ServicesSection() {
                     <p className="text-[#8B8B8B] leading-relaxed">
                       {t(`items.${num}.description`)}
                     </p>
-
-                    <motion.div
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: activeService === i ? 1 : 0 }}
-                      className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C4A574] to-[#8B7355] origin-left"
-                    />
                   </div>
                 </motion.div>
               </motion.div>

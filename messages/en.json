@@ -45,6 +45,21 @@
       }
     }
   },
+  "featuredEvents": {
+    "label": "Events",
+    "title": "Upcoming",
+    "titleItalic": "Events",
+    "description": "Exhibitions, workshops, trunk shows. Join us for unique fashion experiences.",
+    "viewAll": "View all events"
+  },
+  "featuredPieces": {
+    "label": "Pieces",
+    "title": "Signature",
+    "titleItalic": "Pieces",
+    "description": "Each piece is created by hand in a single copy or limited series. Explore the collection.",
+    "viewAll": "View all pieces",
+    "viewItem": "View"
+  },
   "services": {
     "label": "Services",
     "title": "What I",
@@ -335,8 +350,46 @@
     "success": "Thank you! I will get back to you personally."
   },
   "events": {
-    "title": "Creative Events",
-    "comingSoon": "Coming soon..."
+    "label": "Events",
+    "title": "Creative",
+    "titleItalic": "Events",
+    "description": "Exhibitions, workshops, trunk shows and open studio days. Join us for unique fashion experiences.",
+    "sectionLabel": "Upcoming",
+    "sectionTitle": "Events Calendar",
+    "sectionDescription": "Discover where you can meet the atelier, see the pieces and take part in creative projects.",
+    "types": {
+      "exhibition": "Exhibition",
+      "workshop": "Workshop",
+      "trunk-show": "Trunk Show",
+      "open-studio": "Open Studio"
+    },
+    "items": {
+      "01": {
+        "title": "Spring Collection Preview",
+        "description": "Presentation of new one-of-one pieces and limited series. Meet the designer, try on pieces and discuss custom orders."
+      },
+      "02": {
+        "title": "Corset Construction Workshop",
+        "description": "A hands-on workshop on corset construction and fitting. Learn professional techniques from pattern to final piece."
+      },
+      "03": {
+        "title": "Trunk Show Berlin",
+        "description": "Exclusive preview of the atelier collection in Berlin. By appointment only."
+      },
+      "04": {
+        "title": "Open Studio Day",
+        "description": "Visit the atelier, explore the workspace, see fabrics and discuss your project. Coffee and conversation."
+      }
+    },
+    "cta": {
+      "title": "Want to take part?",
+      "titleItalic": "Get in touch",
+      "description": "Contact me to register for events or to host a private presentation.",
+      "button": "Contact"
+    },
+    "featured": {
+      "viewItem": "View"
+    }
   },
   "servicesPage": {
     "hero": {
