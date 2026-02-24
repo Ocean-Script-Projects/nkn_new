@@ -162,69 +162,71 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                         className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors"
                       />
                     </div>
-                    <div ref={contactMethodRef} className="relative">
-                      <label className="block text-sm tracking-wider mb-2 text-[#8B8B8B]">{String(t('modal.contact'))} *</label>
-                      <button
-                        type="button"
-                        onClick={() => setContactMethodOpen(!contactMethodOpen)}
-                        className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors text-left flex items-center justify-between gap-2"
-                      >
-                        <span className={formData.contactMethod ? '' : 'text-[#8B8B8B]'}>
-                          {formData.contactMethod
-                            ? String(t(`modal.contactOptions.${formData.contactMethod}`))
-                            : String(t('modal.contactPlaceholder'))}
-                        </span>
-                        <ChevronDown
-                          className={`w-5 h-5 text-[#8B8B8B] flex-shrink-0 transition-transform duration-200 ${
-                            contactMethodOpen ? 'rotate-180' : ''
-                          }`}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div ref={contactMethodRef} className="relative">
+                        <label className="block text-sm tracking-wider mb-2 text-[#8B8B8B]">{String(t('modal.contact'))} *</label>
+                        <button
+                          type="button"
+                          onClick={() => setContactMethodOpen(!contactMethodOpen)}
+                          className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors text-left flex items-center justify-between gap-2"
+                        >
+                          <span className={formData.contactMethod ? '' : 'text-[#8B8B8B]'}>
+                            {formData.contactMethod
+                              ? String(t(`modal.contactOptions.${formData.contactMethod}`))
+                              : String(t('modal.contactPlaceholder'))}
+                          </span>
+                          <ChevronDown
+                            className={`w-5 h-5 text-[#8B8B8B] flex-shrink-0 transition-transform duration-200 ${
+                              contactMethodOpen ? 'rotate-180' : ''
+                            }`}
+                          />
+                        </button>
+                        <AnimatePresence>
+                          {contactMethodOpen && (
+                            <motion.ul
+                              initial={{ opacity: 0, y: -8 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: -8 }}
+                              transition={{ duration: 0.2 }}
+                              className="absolute top-full left-0 right-0 mt-2 py-2 bg-white border border-black/10 rounded-2xl shadow-lg z-20 overflow-hidden"
+                            >
+                              {(['telegram', 'whatsapp', 'email'] as const).map((method) => (
+                                <li key={method}>
+                                  <button
+                                    type="button"
+                                    onClick={() => {
+                                      setFormData({ ...formData, contactMethod: method });
+                                      setContactMethodOpen(false);
+                                    }}
+                                    className={`w-full px-6 py-3 text-left hover:bg-[#FAF9F6] transition-colors ${
+                                      formData.contactMethod === method ? 'bg-[#FAF9F6] text-[#C4A574]' : ''
+                                    }`}
+                                  >
+                                    {String(t(`modal.contactOptions.${method}`))}
+                                  </button>
+                                </li>
+                              ))}
+                            </motion.ul>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                      <div>
+                        <label className="block text-sm tracking-wider mb-2 text-[#8B8B8B]">{String(t('modal.contactValue'))}</label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.contact}
+                          onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
+                          className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors"
+                          placeholder={
+                            formData.contactMethod === 'email'
+                              ? String(t('modal.contactValuePlaceholderEmail'))
+                              : formData.contactMethod === 'telegram'
+                              ? String(t('modal.contactValuePlaceholderTelegram'))
+                              : String(t('modal.contactValuePlaceholderWhatsapp'))
+                          }
                         />
-                      </button>
-                      <AnimatePresence>
-                        {contactMethodOpen && (
-                          <motion.ul
-                            initial={{ opacity: 0, y: -8 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -8 }}
-                            transition={{ duration: 0.2 }}
-                            className="absolute top-full left-0 right-0 mt-2 py-2 bg-white border border-black/10 rounded-2xl shadow-lg z-20 overflow-hidden"
-                          >
-                            {(['telegram', 'whatsapp', 'email'] as const).map((method) => (
-                              <li key={method}>
-                                <button
-                                  type="button"
-                                  onClick={() => {
-                                    setFormData({ ...formData, contactMethod: method });
-                                    setContactMethodOpen(false);
-                                  }}
-                                  className={`w-full px-6 py-3 text-left hover:bg-[#FAF9F6] transition-colors ${
-                                    formData.contactMethod === method ? 'bg-[#FAF9F6] text-[#C4A574]' : ''
-                                  }`}
-                                >
-                                  {String(t(`modal.contactOptions.${method}`))}
-                                </button>
-                              </li>
-                            ))}
-                          </motion.ul>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                    <div>
-                      <label className="block text-sm tracking-wider mb-2 text-[#8B8B8B]">{String(t('modal.contactValue'))}</label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.contact}
-                        onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
-                        className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors"
-                        placeholder={
-                          formData.contactMethod === 'email'
-                            ? String(t('modal.contactValuePlaceholderEmail'))
-                            : formData.contactMethod === 'telegram'
-                            ? String(t('modal.contactValuePlaceholderTelegram'))
-                            : String(t('modal.contactValuePlaceholderWhatsapp'))
-                        }
-                      />
+                      </div>
                     </div>
                     <div ref={projectTypeRef} className="relative">
                       <label className="block text-sm tracking-wider mb-2 text-[#8B8B8B]">{String(t('modal.projectType'))}</label>
