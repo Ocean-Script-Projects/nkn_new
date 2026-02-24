@@ -66,8 +66,19 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="text-center text-white/40 text-xs tracking-wider border-t border-white/5 pt-6">
-            {t('copyright')}
+          <div className="text-center border-t border-white/5 pt-6">
+            <p className="text-white/40 text-xs tracking-wider">
+              {t('copyright')}
+              <span className="mx-2 text-white/20">·</span>
+              <a
+                href="https://ocean-script.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/40 hover:text-white/70 transition-colors"
+              >
+                Created by Ocean Script
+              </a>
+            </p>
           </div>
         </div>
       </div>
