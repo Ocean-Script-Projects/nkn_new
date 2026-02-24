@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Leaf, Scissors, Eye, Sparkles, ChevronDown, Check } from 'lucide-react';
 import { useTranslations } from '@/lib/i18n';
@@ -15,11 +15,24 @@ export default function UpcyclingPage() {
   const [isDragging, setIsDragging] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [contactMethodOpen, setContactMethodOpen] = useState(false);
+  const contactMethodRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({
     garment: '',
+    contactMethod: 'telegram' as 'telegram' | 'whatsapp' | 'email',
     contact: '',
     message: ''
   });
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (contactMethodRef.current && !contactMethodRef.current.contains(e.target as Node)) {
+        setContactMethodOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const process = [
     {
@@ -102,7 +115,7 @@ export default function UpcyclingPage() {
     e.preventDefault();
     console.log('Upcycling request submitted:', formData);
     setShowSuccessMessage(true);
-    setFormData({ garment: '', contact: '', message: '' });
+    setFormData({ garment: '', contactMethod: 'telegram', contact: '', message: '' });
     setTimeout(() => {
       setShowSuccessMessage(false);
     }, 5000);
@@ -129,7 +142,7 @@ export default function UpcyclingPage() {
         hasBackgroundOrbs
       >
         <div className="relative">
-          <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
             <ImageWithFallback
               src="https://images.unsplash.com/photo-1751121543103-f42ef3515e02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
               alt="Upcycling transformation"
@@ -374,28 +387,17 @@ export default function UpcyclingPage() {
       {/* WHAT CAN BE UPCYCLED - Cards */}
       <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12 sm:mb-16"
-          >
+          <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6" style={{ fontFamily: 'serif' }}>
               {t('categories.title')} <span className="italic">{t('categories.titleItalic')}</span>
             </h2>
-          </motion.div>
+          </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {categories.map((cat, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                whileHover={{ y: -8 }}
-                className="bg-white rounded-3xl p-8 border border-black/5 hover:border-[#059669]/30 transition-all duration-500 shadow-lg hover:shadow-2xl"
+                className="bg-white rounded-3xl p-8 border border-black/5 hover:border-[#059669]/30 transition-all duration-500 shadow-lg hover:shadow-2xl hover:-translate-y-2"
               >
                 <div className="w-12 h-12 rounded-xl bg-[#059669]/10 flex items-center justify-center mb-6">
                   <Leaf className="w-6 h-6 text-[#059669]" />
@@ -408,19 +410,13 @@ export default function UpcyclingPage() {
                 <p className="text-sm sm:text-base text-[#8B8B8B] leading-relaxed">
                   {cat.description}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-center text-base sm:text-lg text-[#8B8B8B] mt-12 sm:mt-16 italic"
-          >
+          <p className="text-center text-base sm:text-lg text-[#8B8B8B] mt-12 sm:mt-16 italic">
             {t('categories.footer')}
-          </motion.p>
+          </p>
         </div>
       </section>
 
@@ -589,14 +585,74 @@ export default function UpcyclingPage() {
               <label className="block text-sm tracking-wider mb-2 text-white/80">
                 {t('form.contact')} *
               </label>
-              <input
-                type="text"
-                required
-                value={formData.contact}
-                onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
-                className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-2xl focus:border-white focus:outline-none transition-colors text-white placeholder:text-white/40 backdrop-blur-sm"
-                placeholder={String(t('form.contactPlaceholder'))}
-              />
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div ref={contactMethodRef} className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setContactMethodOpen(!contactMethodOpen)}
+                    className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-2xl focus:border-white focus:outline-none transition-colors text-left flex items-center justify-between gap-2 text-white"
+                  >
+                    <span>
+                      {formData.contactMethod === 'telegram'
+                        ? String(t('form.contactTelegram'))
+                        : formData.contactMethod === 'email'
+                        ? String(t('form.contactEmail'))
+                        : String(t('form.contactWhatsapp'))}
+                    </span>
+                    <ChevronDown
+                      className={`w-5 h-5 text-white/70 flex-shrink-0 transition-transform duration-200 ${
+                        contactMethodOpen ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {contactMethodOpen && (
+                      <motion.ul
+                        initial={{ opacity: 0, y: -8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-0 right-0 mt-2 py-2 bg-[#1a1a1a] border border-white/20 rounded-2xl shadow-xl z-20 overflow-hidden"
+                      >
+                        {(['telegram', 'whatsapp', 'email'] as const).map((method) => (
+                          <li key={method}>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setFormData({ ...formData, contactMethod: method });
+                                setContactMethodOpen(false);
+                              }}
+                              className={`w-full px-6 py-3 text-left hover:bg-white/10 transition-colors text-white ${
+                                formData.contactMethod === method ? 'bg-white/10 text-[#059669]' : ''
+                              }`}
+                            >
+                              {method === 'telegram'
+                                ? String(t('form.contactTelegram'))
+                                : method === 'email'
+                                ? String(t('form.contactEmail'))
+                                : String(t('form.contactWhatsapp'))}
+                            </button>
+                          </li>
+                        ))}
+                      </motion.ul>
+                    )}
+                  </AnimatePresence>
+                </div>
+                <input
+                  type="text"
+                  required
+                  value={formData.contact}
+                  onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
+                  className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-2xl focus:border-white focus:outline-none transition-colors text-white placeholder:text-white/40 backdrop-blur-sm"
+                  placeholder={
+                    formData.contactMethod === 'email'
+                      ? String(t('form.contactValuePlaceholderEmail'))
+                      : formData.contactMethod === 'telegram'
+                      ? String(t('form.contactValuePlaceholderTelegram'))
+                      : String(t('form.contactValuePlaceholderWhatsapp'))
+                  }
+                />
+              </div>
             </div>
 
             <div>

@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslations, useLocale } from '@/lib/i18n';
 
 const footerNavItems = [
@@ -24,8 +25,14 @@ export default function Footer() {
         <div className="flex flex-col gap-8 md:gap-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-white/50 text-sm">
             <div className="flex items-center gap-3">
-              <Link href={`/${locale}`}>
-                <span className="text-xl tracking-[0.35em] text-white hover:text-white/90 transition-colors cursor-pointer">NKN</span>
+              <Link href={`/${locale}`} className="block">
+                <Image
+                  src="/images/short_logo.png"
+                  alt="NKN"
+                  width={64}
+                  height={28}
+                  className="h-7 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                />
               </Link>
               <motion.div
                 className="w-2 h-2 bg-[#DC2626] rounded-full"

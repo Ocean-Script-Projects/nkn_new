@@ -58,7 +58,7 @@ export default function AboutPage() {
             transition={{ duration: 1, delay: 0.4 }}
             className="relative order-first lg:order-none"
           >
-            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
                 alt="Natalia Khreshkova portrait"

@@ -78,7 +78,7 @@ export default function ServicesPage() {
           labelColor="#C4A574"
         >
           <div className="relative">
-            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
                 alt="Atelier workspace"
@@ -109,68 +109,49 @@ export default function ServicesPage() {
         </PageHeader>
 
         {/* SERVICES GRID */}
-        <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
+        <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
               {services.map((service, i) => {
                 const Icon = service.icon;
-                const isSelected = selectedService === i;
 
                 return (
                   <motion.div
                     key={service.number}
-                    initial={{ opacity: 0, y: 60 }}
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: i * 0.08 }}
-                    viewport={{ once: true, margin: '-50px' }}
-                    className={`relative group ${i === 0 ? 'md:col-span-2' : ''}`}
+                    transition={{ duration: 0.5, delay: i * 0.07 }}
+                    viewport={{ once: true, margin: '-40px' }}
+                    className="relative group"
                   >
                     <motion.div
                       onClick={() => setSelectedService(i)}
                       whileHover={{ y: -6 }}
-                      className="relative bg-white rounded-[2.5rem] p-8 sm:p-10 lg:p-12 border border-black/5 hover:border-[#C4A574]/30 cursor-pointer overflow-hidden transition-all duration-500 h-full"
-                      style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.03)' }}
+                      className="relative bg-white rounded-[1.75rem] p-6 sm:p-8 border border-black/5 hover:border-[#C4A574]/25 cursor-pointer overflow-hidden transition-all duration-400 h-full shadow-sm hover:shadow-xl"
                     >
-                      <motion.div
-                        className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-700`}
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-[0.06] transition-opacity duration-500`}
                       />
 
-                      <motion.div
-                        className="absolute top-6 right-6 text-8xl sm:text-9xl font-light opacity-[0.03] pointer-events-none select-none"
+                      <div
+                        className="absolute top-6 right-6 text-7xl sm:text-8xl font-light opacity-[0.06] pointer-events-none select-none"
                         style={{ fontFamily: 'serif' }}
-                        animate={{ y: [0, -10, 0] }}
-                        transition={{ duration: 8, repeat: Infinity, delay: i * 0.5 }}
                       >
                         {service.number}
-                      </motion.div>
+                      </div>
 
                       <div className="relative z-10">
-                        <div className="mb-6">
-                          <motion.div
-                            whileHover={{ scale: 1.1, rotate: 5 }}
-                            transition={{ type: 'spring', stiffness: 300 }}
-                            className={`relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl sm:rounded-3xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-xl flex-shrink-0`}
+                        <div className="mb-5">
+                          <div
+                            className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg flex-shrink-0`}
                           >
-                            <Icon className="w-10 h-10 sm:w-12 sm:h-12 text-white" strokeWidth={1.5} />
-
-                            <motion.div
-                              className={`absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br ${service.color}`}
-                              animate={{
-                                scale: [1, 1.15, 1],
-                                opacity: [0.5, 0, 0.5],
-                              }}
-                              transition={{
-                                duration: 3,
-                                repeat: Infinity,
-                                delay: i * 0.3,
-                              }}
-                            />
-                          </motion.div>
+                            <Icon className="w-8 h-8 sm:w-9 sm:h-9 text-white" strokeWidth={1.5} />
+                          </div>
                         </div>
 
-                        <div className="mb-5">
+                        <div className="mb-4">
                           <h3
-                            className="text-2xl sm:text-3xl lg:text-4xl mb-2 tracking-tight leading-tight"
+                            className="text-xl sm:text-2xl lg:text-3xl mb-1.5 tracking-tight leading-tight"
                             style={{ fontFamily: 'serif' }}
                           >
                             {service.title}
@@ -180,7 +161,7 @@ export default function ServicesPage() {
                           </div>
                         </div>
 
-                        <p className="text-[#8B8B8B] text-base sm:text-lg leading-relaxed mb-6">
+                        <p className="text-[#8B8B8B] text-sm sm:text-base leading-relaxed mb-5">
                           {service.shortDesc}
                         </p>
 
@@ -189,25 +170,23 @@ export default function ServicesPage() {
                             e.stopPropagation();
                             setSelectedService(i);
                           }}
-                          whileHover={{ scale: 1.05, x: 5 }}
+                          whileHover={{ scale: 1.02, x: 4 }}
                           whileTap={{ scale: 0.98 }}
                           className="group/btn flex items-center gap-3 text-sm sm:text-base tracking-wider text-black font-medium"
                         >
                           {t('moreButton')}
-                          <motion.div
-                            className={`w-10 h-10 rounded-full bg-gradient-to-br ${service.color} flex items-center justify-center shadow-md`}
-                            whileHover={{ rotate: 45 }}
-                            transition={{ duration: 0.3 }}
+                          <div
+                            className={`w-9 h-9 rounded-full bg-gradient-to-br ${service.color} flex items-center justify-center shadow-md group-hover/btn:scale-110 transition-transform`}
                           >
-                            <ArrowRight className="w-5 h-5 text-white" />
-                          </motion.div>
+                            <ArrowRight className="w-4 h-4 text-white" />
+                          </div>
                         </motion.button>
                       </div>
 
-                      <motion.div
-                        className="absolute bottom-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      <div
+                        className="absolute bottom-0 right-0 w-40 h-40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                         style={{
-                          background: `radial-gradient(circle at bottom right, ${service.accentColor}15, transparent)`,
+                          background: `radial-gradient(circle at bottom right, ${service.accentColor}18, transparent 60%)`,
                         }}
                       />
                     </motion.div>

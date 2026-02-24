@@ -60,8 +60,8 @@ export default function ProcessSection() {
               <motion.div whileHover={{ y: -5 }} className="text-center">
                 <div className="relative inline-block mb-6">
                   <motion.div
-                    whileHover={{ scale: 1.1, rotate: 90 }}
-                    className="w-20 h-20 rounded-full border-2 border-[#C4A574] flex items-center justify-center"
+                    whileHover={{ scale: 1.1 }}
+                    className="relative z-10 w-20 h-20 rounded-full border-2 border-[#C4A574] flex items-center justify-center"
                   >
                     <span className="text-2xl text-[#C4A574] tracking-wider">{step.num}</span>
                   </motion.div>
@@ -71,7 +71,7 @@ export default function ProcessSection() {
                       whileInView={{ scaleX: 1 }}
                       transition={{ duration: 1, delay: 0.5 + i * 0.2 }}
                       viewport={{ once: true }}
-                      className="hidden md:block absolute top-1/2 left-full w-full h-px bg-gradient-to-r from-[#C4A574] to-transparent origin-left"
+                      className="hidden md:block absolute top-1/2 left-[calc(100%+12px)] w-full h-px bg-gradient-to-r from-[#C4A574] to-transparent origin-left -translate-y-1/2"
                     />
                   )}
                 </div>

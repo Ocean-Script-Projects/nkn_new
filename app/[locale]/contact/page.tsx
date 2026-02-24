@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Send, Mail, MessageCircle, ChevronDown, Check } from 'lucide-react';
 import Navigation from '@/components/sections/navigation';
@@ -21,10 +21,23 @@ export default function ContactPage() {
     message: '',
   });
 
+  const [contactMethodOpen, setContactMethodOpen] = useState(false);
+  const contactMethodRef = useRef<HTMLDivElement>(null);
+
   const servicesRaw = t('form.services');
   const services = Array.isArray(servicesRaw) ? servicesRaw : [servicesRaw];
 
   const faqIds = ['01', '02', '03'] as const;
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (contactMethodRef.current && !contactMethodRef.current.contains(e.target as Node)) {
+        setContactMethodOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const toggleService = (service: string) => {
     setSelectedService((prev) =>
@@ -65,7 +78,7 @@ export default function ContactPage() {
             transition={{ duration: 1, delay: 0.4 }}
             className="relative order-first lg:order-none"
           >
-            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
                 alt="Atelier workspace"
@@ -245,17 +258,58 @@ export default function ContactPage() {
                       {t('form.contact')} *
                     </label>
                     <div className="grid sm:grid-cols-2 gap-4">
-                      <select
-                        value={formData.contactMethod}
-                        onChange={(e) =>
-                          setFormData({ ...formData, contactMethod: e.target.value })
-                        }
-                        className="px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors text-base"
-                      >
-                        <option value="telegram">Telegram</option>
-                        <option value="whatsapp">WhatsApp</option>
-                        <option value="email">Email</option>
-                      </select>
+                      <div ref={contactMethodRef} className="relative">
+                        <button
+                          type="button"
+                          onClick={() => setContactMethodOpen(!contactMethodOpen)}
+                          className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors text-base text-left flex items-center justify-between gap-2"
+                        >
+                          <span>
+                            {formData.contactMethod === 'telegram'
+                              ? String(t('form.contactTelegram'))
+                              : formData.contactMethod === 'email'
+                              ? String(t('form.contactEmail'))
+                              : String(t('form.contactWhatsapp'))}
+                          </span>
+                          <ChevronDown
+                            className={`w-5 h-5 text-[#8B8B8B] flex-shrink-0 transition-transform duration-200 ${
+                              contactMethodOpen ? 'rotate-180' : ''
+                            }`}
+                          />
+                        </button>
+                        <AnimatePresence>
+                          {contactMethodOpen && (
+                            <motion.ul
+                              initial={{ opacity: 0, y: -8 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: -8 }}
+                              transition={{ duration: 0.2 }}
+                              className="absolute top-full left-0 right-0 mt-2 py-2 bg-white border border-black/10 rounded-2xl shadow-lg z-20 overflow-hidden"
+                            >
+                              {(['telegram', 'whatsapp', 'email'] as const).map((method) => (
+                                <li key={method}>
+                                  <button
+                                    type="button"
+                                    onClick={() => {
+                                      setFormData({ ...formData, contactMethod: method });
+                                      setContactMethodOpen(false);
+                                    }}
+                                    className={`w-full px-6 py-3 text-left hover:bg-[#FAF9F6] transition-colors ${
+                                      formData.contactMethod === method ? 'bg-[#FAF9F6] text-[#C4A574]' : ''
+                                    }`}
+                                  >
+                                    {method === 'telegram'
+                                      ? String(t('form.contactTelegram'))
+                                      : method === 'email'
+                                      ? String(t('form.contactEmail'))
+                                      : String(t('form.contactWhatsapp'))}
+                                  </button>
+                                </li>
+                              ))}
+                            </motion.ul>
+                          )}
+                        </AnimatePresence>
+                      </div>
 
                       <input
                         type="text"

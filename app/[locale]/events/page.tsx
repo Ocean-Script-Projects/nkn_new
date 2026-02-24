@@ -41,7 +41,7 @@ export default function EventsPage() {
           transition={{ duration: 1, delay: 0.4 }}
           className="relative"
         >
-          <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
             <ImageWithFallback
               src="https://images.unsplash.com/photo-1557804506-669a67965ba0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
               alt="Creative event"

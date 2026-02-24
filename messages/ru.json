@@ -15,10 +15,10 @@
     "title": "Создаю",
     "titleItalic": "состояние",
     "titleEnd": "через одежду",
-    "description": "Индивидуальный пошив и авторские изделия. Одежда как продолжение личности. 37 лет в профессии.",
+    "description": "Каждое изделие создаётся лично — от идеи до последнего стежка. Ручная раскройка, несколько примерок, внимание к каждой детали.",
     "orderButton": "Заказать изделие",
     "portfolioButton": "Портфолио",
-    "experience": "37+ лет опыта",
+    "experience": "37+ лет мастерства",
     "individual": "Индивидуальный подход",
     "scroll": "ЛИСТАЙТЕ",
     "nameFull": "НАТАЛЬЯ ХРЕШКОВА",
@@ -192,16 +192,16 @@
     "request": "Запрос",
     "process": {
       "label": "Процесс",
-      "title": "Made in",
-      "titleItalic": "atelier",
-      "description": "Each piece is created personally, from idea to final stitch. Hand-cut patterns, multiple fittings, attention to every detail.",
-      "experience": "37+ years of craftsmanship"
+      "title": "Создано в",
+      "titleItalic": "ателье",
+      "description": "Каждое изделие создаётся лично — от идеи до последнего стежка. Ручная раскройка, несколько примерок, внимание к каждой детали.",
+      "experience": "37+ лет мастерства"
     },
     "upcycling": {
       "label": "Апсайклинг",
-      "title": "Upcycling as a way to give garments",
-      "titleItalic": "new meaning",
-      "description": "Transforming existing pieces into something completely new. Sustainable fashion with artistic approach.",
+      "title": "Апсайклинг как способ придать вещам",
+      "titleItalic": "новый смысл",
+      "description": "Превращение существующих вещей во что-то совершенно новое. Устойчивая мода с художественным подходом.",
       "button": "Изучить апсайклинг"
     },
     "cta": {
@@ -283,7 +283,7 @@
     "categories": {
       "title": "Что можно",
       "titleItalic": "трансформировать",
-      "footer": "Each project is individual and discussed personally",
+      "footer": "Каждый проект индивидуален и обсуждается лично",
       "01": {
         "title": "Пиджаки и пальто",
         "description": "Реконструкция верхней одежды с новым силуэтом"
@@ -302,10 +302,10 @@
       }
     },
     "quote": {
-      "text1": "Upcycling is not about",
-      "text2": "saving clothes.",
-      "text3": "It is about redefining",
-      "text4": "meaning.",
+      "text1": "Апсайклинг — не про",
+      "text2": "спасение одежды.",
+      "text3": "Он про переосмысление",
+      "text4": "смысла.",
       "author": "НАТАЛЬЯ ХРЕШКОВА"
     },
     "faq": {
@@ -342,6 +342,12 @@
       "garmentPlaceholder": "Опишите вещь: тип, состояние, что вы представляете...",
       "contact": "Предпочтительный контакт",
       "contactPlaceholder": "Telegram / WhatsApp / Email",
+      "contactTelegram": "Telegram",
+      "contactWhatsapp": "WhatsApp",
+      "contactEmail": "Email",
+      "contactValuePlaceholderTelegram": "@username",
+      "contactValuePlaceholderWhatsapp": "+49...",
+      "contactValuePlaceholderEmail": "your@email.com",
       "message": "Дополнительное сообщение",
       "messagePlaceholder": "Любые дополнительные детали или вопросы...",
       "submit": "Отправить запрос",
@@ -536,7 +542,12 @@
       "description": "Расскажите о вашем проекте — я свяжусь с вами лично",
       "name": "Ваше имя",
       "contact": "Предпочтительный контакт",
-      "contactPlaceholder": "Telegram / WhatsApp / Email",
+      "contactPlaceholder": "Выберите способ",
+      "contactOptions": { "telegram": "Telegram", "whatsapp": "WhatsApp", "email": "Email" },
+      "contactValue": "Контакт (ник / номер / email)",
+      "contactValuePlaceholderTelegram": "@username",
+      "contactValuePlaceholderWhatsapp": "+49...",
+      "contactValuePlaceholderEmail": "your@email.com",
       "projectType": "Тип проекта",
       "projectTypePlaceholder": "Выберите тип",
       "projectTypes": { "bespoke": "Индивидуальное изделие", "upcycling": "Апсайклинг", "prints": "Дизайн принтов", "collaboration": "Сотрудничество с брендом", "other": "Другое" },
@@ -559,6 +570,9 @@
       "services": ["Индивидуальный пошив", "Апсайклинг", "Авторские принты", "Изделие из каталога", "Сотрудничество"],
       "name": "Ваше имя",
       "contact": "Предпочтительный контакт",
+      "contactTelegram": "Telegram",
+      "contactWhatsapp": "WhatsApp",
+      "contactEmail": "Email",
       "message": "Сообщение",
       "messagePlaceholder": "Расскажите о вашей идее, изделии или запросе...",
       "submit": "Отправить заявку",

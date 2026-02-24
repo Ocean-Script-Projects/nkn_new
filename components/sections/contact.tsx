@@ -3,9 +3,11 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 import { useTranslations } from '@/lib/i18n';
+import { useRequestModal } from '@/lib/request-modal-context';
 
 export default function ContactSection() {
   const t = useTranslations('contact');
+  const { openRequestModal } = useRequestModal();
 
   const contacts = [
     {
@@ -46,24 +48,12 @@ export default function ContactSection() {
       />
 
       <div className="max-w-5xl mx-auto relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-3 mb-8"
-          >
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-3 mb-8">
             <div className="h-px w-8 bg-[#C4A574]" />
             <span className="text-[#C4A574] text-sm tracking-[0.4em] uppercase">{t('label')}</span>
             <div className="h-px w-8 bg-[#C4A574]" />
-          </motion.div>
+          </div>
 
           <h2 className="text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight" style={{ fontFamily: 'serif' }}>
             {t('title')} <br />
@@ -71,44 +61,29 @@ export default function ContactSection() {
           </h2>
 
           <p className="text-xl text-white/70 max-w-2xl mx-auto">{t('description')}</p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8 mb-16"
-        >
-          {contacts.map((contact, i) => {
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {contacts.map((contact) => {
             const Icon = contact.icon;
             return (
-              <motion.a
+              <a
                 key={String(contact.title)}
                 href={contact.link}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5, scale: 1.05 }}
-                className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#C4A574]/50 transition-all group"
+                className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#C4A574]/50 transition-all group block hover:-translate-y-1"
               >
                 <Icon className="w-8 h-8 text-[#C4A574] mb-4 group-hover:scale-110 transition-transform" />
                 <div className="text-sm text-white/50 mb-2 tracking-wider">{contact.title}</div>
                 <div className="text-lg tracking-wide">{contact.value}</div>
-              </motion.a>
+              </a>
             );
           })}
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
+        <div className="text-center">
           <motion.button
+            type="button"
+            onClick={() => openRequestModal()}
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.98 }}
             className="group relative px-12 py-6 bg-[#C4A574] text-black rounded-full overflow-hidden text-lg tracking-wider"
@@ -127,17 +102,16 @@ export default function ContactSection() {
 
           <div className="flex items-center justify-center gap-6 mt-12">
             {[Instagram, Facebook].map((Icon, i) => (
-              <motion.a
+              <a
                 key={i}
                 href="#"
-                whileHover={{ scale: 1.2, y: -3 }}
-                className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:border-[#C4A574] hover:bg-[#C4A574]/10 transition-all"
+                className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:border-[#C4A574] hover:bg-[#C4A574]/10 hover:scale-110 transition-all"
               >
                 <Icon className="w-5 h-5" />
-              </motion.a>
+              </a>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -19,16 +19,22 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
   const [showSuccess, setShowSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [projectTypeOpen, setProjectTypeOpen] = useState(false);
+  const [contactMethodOpen, setContactMethodOpen] = useState(false);
   const projectTypeRef = useRef<HTMLDivElement>(null);
+  const contactMethodRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({
     name: '',
+    contactMethod: 'telegram' as 'telegram' | 'email' | 'whatsapp',
     contact: '',
     projectType: '',
     message: '',
   });
 
   useEffect(() => {
-    if (!isOpen) setProjectTypeOpen(false);
+    if (!isOpen) {
+      setProjectTypeOpen(false);
+      setContactMethodOpen(false);
+    }
   }, [isOpen]);
 
   useEffect(() => {
@@ -47,9 +53,9 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (projectTypeRef.current && !projectTypeRef.current.contains(e.target as Node)) {
-        setProjectTypeOpen(false);
-      }
+      const target = e.target as Node;
+      if (projectTypeRef.current && !projectTypeRef.current.contains(target)) setProjectTypeOpen(false);
+      if (contactMethodRef.current && !contactMethodRef.current.contains(target)) setContactMethodOpen(false);
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
@@ -65,6 +71,7 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: formData.name,
+          contactMethod: formData.contactMethod,
           contact: formData.contact,
           projectType: formData.projectType || undefined,
           message: formData.message,
@@ -76,7 +83,7 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
         throw new Error('Failed to submit');
       }
 
-      setFormData({ name: '', contact: '', projectType: '', message: '' });
+      setFormData({ name: '', contactMethod: 'telegram', contact: '', projectType: '', message: '' });
       onClose();
       setShowSuccess(true);
       setTimeout(() => setShowSuccess(false), 5000);
@@ -84,7 +91,7 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
       console.error('Submit error:', err);
       setShowSuccess(false);
       // Still show success for now - in production you'd show error
-      setFormData({ name: '', contact: '', projectType: '', message: '' });
+      setFormData({ name: '', contactMethod: 'telegram', contact: '', projectType: '', message: '' });
       onClose();
       setShowSuccess(true);
       setTimeout(() => setShowSuccess(false), 5000);
@@ -107,14 +114,14 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
             />
             <div
               ref={scrollRef}
-              className={`fixed inset-0 z-[101] flex items-center justify-center p-4 py-16 overflow-x-hidden ${needsScroll ? 'overflow-y-auto' : 'overflow-y-hidden'}`}
+              className={`fixed inset-0 z-[101] min-h-screen flex items-center justify-center p-4 py-16 overflow-x-hidden ${needsScroll ? 'overflow-y-auto' : 'overflow-y-hidden'}`}
             >
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9, y: 20 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.9, y: 20 }}
                   transition={{ type: 'spring', duration: 0.5 }}
-                  className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl my-8 flex flex-col"
+                  className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl my-8 flex flex-col mx-auto flex-shrink-0"
                 >
               <button
                 onClick={onClose}
@@ -155,15 +162,68 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                         className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors"
                       />
                     </div>
-                    <div>
+                    <div ref={contactMethodRef} className="relative">
                       <label className="block text-sm tracking-wider mb-2 text-[#8B8B8B]">{String(t('modal.contact'))} *</label>
+                      <button
+                        type="button"
+                        onClick={() => setContactMethodOpen(!contactMethodOpen)}
+                        className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors text-left flex items-center justify-between gap-2"
+                      >
+                        <span className={formData.contactMethod ? '' : 'text-[#8B8B8B]'}>
+                          {formData.contactMethod
+                            ? String(t(`modal.contactOptions.${formData.contactMethod}`))
+                            : String(t('modal.contactPlaceholder'))}
+                        </span>
+                        <ChevronDown
+                          className={`w-5 h-5 text-[#8B8B8B] flex-shrink-0 transition-transform duration-200 ${
+                            contactMethodOpen ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </button>
+                      <AnimatePresence>
+                        {contactMethodOpen && (
+                          <motion.ul
+                            initial={{ opacity: 0, y: -8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -8 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute top-full left-0 right-0 mt-2 py-2 bg-white border border-black/10 rounded-2xl shadow-lg z-20 overflow-hidden"
+                          >
+                            {(['telegram', 'whatsapp', 'email'] as const).map((method) => (
+                              <li key={method}>
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    setFormData({ ...formData, contactMethod: method });
+                                    setContactMethodOpen(false);
+                                  }}
+                                  className={`w-full px-6 py-3 text-left hover:bg-[#FAF9F6] transition-colors ${
+                                    formData.contactMethod === method ? 'bg-[#FAF9F6] text-[#C4A574]' : ''
+                                  }`}
+                                >
+                                  {String(t(`modal.contactOptions.${method}`))}
+                                </button>
+                              </li>
+                            ))}
+                          </motion.ul>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                    <div>
+                      <label className="block text-sm tracking-wider mb-2 text-[#8B8B8B]">{String(t('modal.contactValue'))}</label>
                       <input
                         type="text"
                         required
                         value={formData.contact}
                         onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
                         className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors"
-                        placeholder={String(t('modal.contactPlaceholder'))}
+                        placeholder={
+                          formData.contactMethod === 'email'
+                            ? String(t('modal.contactValuePlaceholderEmail'))
+                            : formData.contactMethod === 'telegram'
+                            ? String(t('modal.contactValuePlaceholderTelegram'))
+                            : String(t('modal.contactValuePlaceholderWhatsapp'))
+                        }
                       />
                     </div>
                     <div ref={projectTypeRef} className="relative">
