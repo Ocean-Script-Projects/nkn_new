@@ -195,7 +195,7 @@ export default function PiecesPage() {
                   {t('upcycling.description')}
                 </p>
 
-                <Link href={`/${locale}/upcycling`}>
+                <Link href={`/${locale}/upcycling`} className="inline-block mt-6 sm:mt-8">
                   <motion.button
                     whileHover={{ scale: 1.05, x: 5 }}
                     whileTap={{ scale: 0.98 }}
