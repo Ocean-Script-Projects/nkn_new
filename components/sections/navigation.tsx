@@ -53,9 +53,10 @@ export default function Navigation() {
               <Image
                 src="/images/big_logo.png"
                 alt="NKN"
-                width={80}
-                height={36}
-                className="h-8 sm:h-9 w-auto object-contain"
+                width={140}
+                height={63}
+                style={{ height: '3rem', width: 'auto', maxWidth: 'none' }}
+                className="object-contain"
                 priority
               />
             </motion.div>
