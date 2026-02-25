@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations, useLocale } from '@/lib/i18n';
 
 const footerNavItems = [
@@ -26,12 +26,11 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-white/50 text-sm">
             <div className="flex items-center gap-3">
               <Link href={`/${locale}`} className="block">
-                <Image
+                <ImageWithFallback
                   src="/images/short_logo.png"
                   alt="NKN"
-                  width={64}
-                  height={28}
-                  className="h-7 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  style={{ height: '1.75rem', width: 'auto' }}
+                  className="object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
               </Link>
               <motion.div
