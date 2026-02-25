@@ -20,8 +20,8 @@ const getBasePath = () => {
 };
 
 // Helper function to add basePath to absolute paths
-const addBasePath = (src: string | undefined): string => {
-  if (!src) return '';
+const addBasePath = (src: string | Blob | undefined): string | Blob | undefined => {
+  if (!src || typeof src !== 'string') return src;
   // Only add basePath to absolute paths starting with /
   if (src.startsWith('/') && !src.startsWith('//') && !src.startsWith('http')) {
     const basePath = getBasePath();
