@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import { useTranslations, useLocale, locales } from '@/lib/i18n';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
+import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useRequestModal } from '@/lib/request-modal-context';
 
 export default function Navigation() {
@@ -50,14 +50,11 @@ export default function Navigation() {
               whileHover={{ scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 400 }}
             >
-              <Image
+              <ImageWithFallback
                 src="/images/big_logo.png"
                 alt="NKN"
-                width={140}
-                height={63}
                 style={{ height: '3rem', width: 'auto', maxWidth: 'none' }}
                 className="object-contain"
-                priority
               />
             </motion.div>
           </Link>
