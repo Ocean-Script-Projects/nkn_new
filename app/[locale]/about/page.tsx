@@ -117,15 +117,17 @@ export default function AboutPage() {
                     {t('story.p3')}
                   </motion.p>
 
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed"
-                  >
-                    {t('story.p4')}
-                  </motion.p>
+                  {String(t('story.p4')).trim() && (
+                    <motion.p
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: 0.3 }}
+                      className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed"
+                    >
+                      {t('story.p4')}
+                    </motion.p>
+                  )}
                 </div>
 
                 <motion.div
@@ -159,6 +161,50 @@ export default function AboutPage() {
                 </div>
               </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* POSITION */}
+        <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-[#FAF9F6]">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="h-px w-8 bg-[#C4A574]" />
+              <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+                {t('position.label')}
+              </span>
+              <div className="h-px w-8 bg-[#C4A574]" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl tracking-tight mb-8" style={{ fontFamily: 'serif' }}>
+              {t('position.title')}
+            </h2>
+            <p className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed mb-6">
+              {t('position.text1')}
+            </p>
+            <p className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed">
+              {t('position.text2')}
+            </p>
+          </div>
+        </section>
+
+        {/* PROFESSIONAL BASIS */}
+        <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-white">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="h-px w-8 bg-[#C4A574]" />
+              <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+                {t('professional.label')}
+              </span>
+              <div className="h-px w-8 bg-[#C4A574]" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl tracking-tight mb-8" style={{ fontFamily: 'serif' }}>
+              {t('professional.title')}
+            </h2>
+            <p className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed mb-6">
+              {t('professional.text1')}
+            </p>
+            <p className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed">
+              {t('professional.text2')}
+            </p>
           </div>
         </section>
 

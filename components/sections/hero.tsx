@@ -1,317 +1,114 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'motion/react';
-import { ArrowRight, Sparkles } from 'lucide-react';
-import { useTranslations } from '@/lib/i18n';
-import { ImageWithFallback } from '@/components/image-with-fallback';
+import { useEffect, useState, useCallback } from 'react';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import { useTranslations, useLocale } from '@/lib/i18n';
+import { useRequestModal } from '@/lib/request-modal-context';
+
+const REMOTE =
+  'https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?auto=format&fit=crop&w=1000&h=1250&q=85';
+const REMOTE_FALLBACK =
+  'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&h=1250&q=85';
 
 export default function HeroSection() {
   const t = useTranslations('hero');
-  const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
+  const locale = useLocale();
+  const { openRequestModal } = useRequestModal();
+  const [src, setSrc] = useState(REMOTE);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const local = window.location.pathname.startsWith('/nkn_new')
+      ? '/nkn_new/images/hero.jpg'
+      : '/images/hero.jpg';
+    const probe = new Image();
+    probe.onload = () => setSrc(local);
+    probe.onerror = () => {};
+    probe.src = local;
+  }, []);
+
+  const onImgError = useCallback(() => {
+    setSrc((s) => (s.includes('images/hero.jpg') ? REMOTE : s === REMOTE ? REMOTE_FALLBACK : REMOTE));
+  }, []);
 
   return (
-    <motion.section
-      style={{ opacity, scale }}
-      className="relative min-h-screen flex items-center pt-20 sm:pt-24 md:pt-28 pb-16 sm:pb-20 px-4 sm:px-6 md:px-12"
-    >
-      <motion.div
-        className="absolute left-8 sm:left-12 md:left-16 top-1/2 -translate-y-1/2 overflow-hidden pointer-events-none"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.5, delay: 0.3 }}
-      >
-        <motion.div
-          className="flex flex-col gap-0 font-light select-none"
-          style={{ fontFamily: 'serif' }}
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-        >
-          {['N', 'K', 'N'].map((letter, i) => (
-            <motion.span
-              key={i}
-              className="text-[16vw] sm:text-[14vw] md:text-[12vw] lg:text-[10vw] leading-[0.85]"
-              style={{
-                color: 'rgba(0, 0, 0, 0.04)',
-                WebkitTextStroke: '1.5px rgba(196, 165, 116, 0.12)',
-              }}
-              animate={{ opacity: [0.7, 1, 0.7] }}
-              transition={{ duration: 3, repeat: Infinity, delay: i * 0.3 }}
-            >
-              {letter}
-            </motion.span>
-          ))}
-        </motion.div>
-      </motion.div>
+    <section className="relative bg-[#FAF9F6] pb-14 pt-28 sm:pb-16 sm:pt-32 md:pt-36 lg:pb-20 lg:pt-32 xl:pb-24 xl:pt-36">
+      <div className="mx-auto w-full max-w-[1360px] px-5 sm:px-8 lg:px-10 xl:px-14 lg:grid lg:grid-cols-[1fr_minmax(272px,380px)] lg:grid-rows-[auto_auto] lg:items-stretch lg:gap-x-12 lg:gap-y-10 xl:grid-cols-[1fr_minmax(300px,440px)] xl:gap-x-16 xl:gap-y-12">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b border-black/[0.06] pb-4 lg:col-span-2 lg:row-start-1">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#8f6d42] sm:text-xs">
+            {t('location')}
+          </p>
+          <p className="text-[10px] uppercase tracking-[0.22em] text-neutral-400 sm:text-[11px]">
+            {t('experience')} <span className="text-neutral-300">·</span> {t('individual')}
+          </p>
+        </div>
 
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-1/4 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-gradient-to-br from-[#C4A574]/10 to-transparent rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-            x: [0, 50, 0],
-            y: [0, 30, 0],
-          }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
-
-        <motion.div
-          className="absolute bottom-1/3 left-1/4 w-48 sm:w-64 h-48 sm:h-64 bg-gradient-to-br from-[#DC2626]/10 to-transparent rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.2, 0.4, 0.2],
-            x: [0, -30, 0],
-            y: [0, 20, 0],
-          }}
-          transition={{ duration: 10, repeat: Infinity }}
-        />
-
-        {[
-          { left: 10, top: 20, duration: 6, delay: 0 },
-          { left: 25, top: 15, duration: 7, delay: 0.5 },
-          { left: 40, top: 30, duration: 5, delay: 1 },
-          { left: 55, top: 10, duration: 8, delay: 1.5 },
-          { left: 70, top: 25, duration: 6, delay: 2 },
-          { left: 85, top: 35, duration: 7, delay: 2.5 },
-          { left: 15, top: 50, duration: 5, delay: 3 },
-          { left: 30, top: 45, duration: 8, delay: 3.5 },
-          { left: 50, top: 60, duration: 6, delay: 4 },
-          { left: 65, top: 55, duration: 7, delay: 4.5 },
-          { left: 80, top: 70, duration: 5, delay: 0.2 },
-          { left: 20, top: 75, duration: 8, delay: 0.7 },
-          { left: 45, top: 80, duration: 6, delay: 1.2 },
-          { left: 60, top: 85, duration: 7, delay: 1.7 },
-          { left: 75, top: 90, duration: 5, delay: 2.2 },
-        ].map((particle, i) => (
-          <motion.div
-            key={i}
-            className={`absolute w-1 h-1 rounded-full ${
-              i % 6 === 0 ? 'bg-[#DC2626]' : 'bg-[#C4A574]'
-            }`}
-            style={{
-              left: `${particle.left}%`,
-              top: `${particle.top}%`,
-            }}
-            animate={{
-              y: [0, -100, 0],
-              opacity: [0, 0.6, 0],
-              scale: [0, 1.5, 0],
-            }}
-            transition={{
-              duration: particle.duration,
-              repeat: Infinity,
-              delay: particle.delay,
-            }}
-          />
-        ))}
-      </div>
-
-      <div className="max-w-7xl mx-auto w-full relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.6, 0.05, 0.01, 0.9] }}
-            className="space-y-6 sm:space-y-8 md:space-y-10"
+        {/* Левый блок: на lg+ по вертикали по центру относительно высоты фото */}
+        <div className="mt-6 flex w-full max-w-lg flex-col gap-8 lg:col-start-1 lg:row-start-2 lg:mt-0 lg:max-w-none lg:justify-center lg:gap-8 lg:pr-2 lg:pt-2 xl:gap-10 xl:pr-4">
+          <h1
+            className="max-w-[18ch] font-serif text-[clamp(1.7rem,4.2vw,3.35rem)] font-normal leading-[1.08] tracking-tight text-neutral-950 sm:max-w-[21ch] lg:max-w-[20ch] xl:max-w-[22ch] xl:text-[clamp(1.95rem,3.8vw,3.65rem)]"
+            style={{ fontFamily: 'serif' }}
           >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="flex items-center gap-3"
-            >
-              <motion.div
-                className="h-px w-8 sm:w-12 bg-gradient-to-r from-[#C4A574] to-transparent"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 1, delay: 0.6 }}
-              />
-              <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.3em] sm:tracking-[0.4em] uppercase">
-                {t('location')}
-              </span>
-            </motion.div>
-
-            <motion.div className="space-y-3 sm:space-y-4">
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, delay: 0.7 }}
-                className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl tracking-tight leading-[0.95]"
-                style={{ fontFamily: 'serif' }}
-              >
-                {t('title')} <br />
-                <motion.span
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.9, delay: 0.85 }}
-                  className="italic"
-                >
-                  {t('titleItalic')}
-                </motion.span>{' '}
-                <br />
-                {t('titleEnd')}
-              </motion.h1>
-            </motion.div>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="text-[#8B8B8B] text-base sm:text-lg md:text-xl leading-relaxed max-w-lg"
-            >
+            <span className="block">{t('title')}</span>
+            <span className="mt-1 block italic text-neutral-800">{t('titleItalic')}</span>
+            {String(t('titleEnd')).trim() ? <span className="mt-1 block">{t('titleEnd')}</span> : null}
+          </h1>
+          <div className="w-full max-w-lg lg:max-w-md xl:max-w-lg">
+            <p className="text-sm leading-relaxed text-neutral-600 sm:text-base xl:text-[1.06rem]">
               {t('description')}
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-              className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-5 pt-4 sm:pt-6"
-            >
-              <motion.button
-                whileHover={{ scale: 1.05, y: -3 }}
-                whileTap={{ scale: 0.98 }}
-                className="group relative px-8 sm:px-10 py-4 sm:py-5 bg-black text-white rounded-full overflow-hidden text-sm sm:text-base"
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <button
+                type="button"
+                onClick={() => openRequestModal()}
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-neutral-950 px-6 py-3 text-xs font-medium text-white shadow-md shadow-black/15 ring-1 ring-black/10 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-black hover:shadow-lg hover:shadow-[#8f6d42]/20 hover:ring-[#C4A574]/30 active:translate-y-0 active:scale-[0.98] sm:text-sm"
               >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-[#C4A574] to-[#8B7355]"
-                  initial={{ x: '-100%' }}
-                  whileHover={{ x: '0%' }}
-                  transition={{ duration: 0.4 }}
+                <span className="relative z-10">{t('orderButton')}</span>
+                <ArrowRight
+                  className="relative z-10 h-4 w-4 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-1"
+                  aria-hidden
                 />
-                <span className="relative z-10 flex items-center justify-center gap-3 tracking-wider">
-                  {t('orderButton')}
-                  <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </motion.button>
-
-              <motion.button
-                whileHover={{ scale: 1.05, y: -3 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-8 sm:px-10 py-4 sm:py-5 border-2 border-black rounded-full tracking-wider hover:bg-black hover:text-white transition-all duration-300 text-sm sm:text-base"
+                <span
+                  className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{
+                    background:
+                      'linear-gradient(105deg, transparent 40%, rgba(196,165,116,0.12) 50%, transparent 60%)',
+                  }}
+                  aria-hidden
+                />
+              </button>
+              <Link
+                href={`/${locale}/pieces`}
+                className="inline-flex items-center rounded-full border border-neutral-900/20 bg-white px-6 py-3 text-xs font-medium text-neutral-900 shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-[#C4A574]/50 hover:bg-[#FDFCFA] hover:text-[#5c4a32] hover:shadow-md hover:shadow-[#C4A574]/10 active:translate-y-0 active:scale-[0.98] sm:text-sm"
               >
                 {t('portfolioButton')}
-              </motion.button>
-            </motion.div>
+              </Link>
+            </div>
+          </div>
+        </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1.4 }}
-              className="flex flex-wrap items-center gap-4 sm:gap-8 pt-2 sm:pt-4 text-xs tracking-widest text-[#8B8B8B]"
-            >
-              <div className="flex items-center gap-2">
-                <motion.div
-                  className="w-1.5 h-1.5 bg-[#DC2626] rounded-full"
-                  animate={{ scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
-                <span>{t('experience')}</span>
+        {/* Правая колонка: фото задаёт высоту строки; левый блок визуально по центру */}
+        <div className="mt-10 w-full lg:col-start-2 lg:row-start-2 lg:mt-0 lg:self-start">
+          <div className="mx-auto max-w-[340px] overflow-hidden rounded-2xl shadow-[0_20px_48px_-16px_rgba(0,0,0,0.18)] ring-1 ring-black/[0.07] lg:mx-0 lg:max-w-[300px] xl:max-w-[420px] xl:rounded-3xl min-[1536px]:max-w-none">
+            {/* Ноутбук: выше по высоте; xl+: пропорция 3/4 */}
+            <div className="relative aspect-[3/4] w-full max-h-[min(44vh,380px)] bg-neutral-100 sm:max-h-[min(46vh,400px)] lg:aspect-auto lg:h-[min(40vh,380px)] lg:max-h-[380px] lg:w-[280px] xl:aspect-[3/4] xl:h-auto xl:max-h-[min(46vh,460px)] xl:min-h-[360px] xl:w-full min-[1536px]:min-h-[400px] min-[1536px]:max-h-[min(52vh,520px)]">
+              <img
+                src={src}
+                alt={String(t('nameFull'))}
+                className="absolute inset-0 h-full w-full object-cover object-top"
+                loading="eager"
+                decoding="async"
+                onError={onImgError}
+              />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/80 via-black/35 to-transparent px-4 pb-3 pt-14">
+                <p className="text-[9px] tracking-[0.22em] text-white/85">{t('nameFull')}</p>
+                <p className="mt-0.5 text-sm font-medium text-white">{t('role')}</p>
               </div>
-              <span className="opacity-40 hidden sm:inline">•</span>
-              <span className="hidden sm:inline">{t('individual')}</span>
-              <span className="opacity-40 hidden sm:inline">•</span>
-              <span>Hamburg</span>
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.5, ease: [0.6, 0.05, 0.01, 0.9] }}
-            className="relative mt-8 lg:mt-0 flex justify-center lg:justify-end"
-          >
-            <motion.div
-              whileHover={{ y: -10, rotateY: 5 }}
-              transition={{ type: 'spring', stiffness: 200 }}
-              className="relative bg-white rounded-[2.5rem] overflow-hidden shadow-2xl border border-black/5 w-full max-w-md"
-              style={{ perspective: '1000px' }}
-            >
-              <div className="relative aspect-[3/4]">
-                <ImageWithFallback
-                  src="/images/hero.jpg"
-                  alt="Natalia Khreshkova"
-                  className="w-full h-full object-cover"
-                />
-
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"
-                  animate={{ opacity: [0.6, 0.8, 0.6] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                />
-
-                <motion.div
-                  className="absolute top-5 right-5 w-16 h-16 sm:w-18 sm:h-18 rounded-full bg-gradient-to-br from-[#C4A574] to-[#8B7355] flex items-center justify-center shadow-xl"
-                  animate={{ y: [0, -8, 0], rotate: [0, 5, 0] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
-                  <Sparkles className="w-8 h-8 sm:w-9 sm:h-9 text-white" />
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.3 }}
-                  className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-xl rounded-xl p-5 sm:p-6 border border-black/5"
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <div>
-                      <div className="text-[10px] sm:text-xs tracking-[0.3em] text-[#8B8B8B] mb-1">
-                        {t('nameFull')}
-                      </div>
-                      <div className="text-sm sm:text-base tracking-wide">{t('role')}</div>
-                    </div>
-                    <motion.div
-                      className="w-3 h-3 bg-[#DC2626] rounded-full"
-                      animate={{ scale: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    />
-                  </div>
-
-                  <div className="flex items-center gap-2 text-xs sm:text-sm text-[#8B8B8B]">
-                    <motion.div className="flex items-center gap-1.5" whileHover={{ scale: 1.05 }}>
-                      <div className="w-1.5 h-1.5 bg-[#C4A574] rounded-full" />
-                      <span className="tracking-wider">{t('experience')}</span>
-                    </motion.div>
-                    <span className="opacity-40">•</span>
-                    <span className="tracking-wider">{t('location')}</span>
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="absolute -z-10 -right-8 -top-8 w-48 sm:w-56 h-48 sm:h-56 bg-gradient-to-br from-[#C4A574]/20 to-transparent rounded-full blur-3xl"
-              animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
-              transition={{ duration: 5, repeat: Infinity }}
-            />
-
-            <motion.div
-              className="absolute -z-10 -left-8 -bottom-8 w-48 sm:w-56 h-48 sm:h-56 bg-gradient-to-br from-[#DC2626]/15 to-transparent rounded-full blur-3xl"
-              animate={{ scale: [1, 1.4, 1], opacity: [0.2, 0.4, 0.2] }}
-              transition={{ duration: 6, repeat: Infinity, delay: 1 }}
-            />
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 hidden sm:flex"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-col items-center gap-2 text-[#8B8B8B]"
-        >
-          <span className="text-xs tracking-widest">{t('scroll')}</span>
-          <div className="w-px h-12 bg-gradient-to-b from-[#C4A574] to-transparent" />
-        </motion.div>
-      </motion.div>
-    </motion.section>
+    </section>
   );
 }

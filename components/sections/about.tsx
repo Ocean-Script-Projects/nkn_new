@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { useTranslations } from '@/lib/i18n';
+import DecorativeLogo from '@/components/shared/DecorativeLogo';
 
 export default function AboutSection() {
   const t = useTranslations('about');
@@ -11,6 +12,7 @@ export default function AboutSection() {
       id="about"
       className="py-32 px-6 md:px-12 bg-gradient-to-br from-[#FAF9F6] to-white relative overflow-hidden"
     >
+      <DecorativeLogo variant="big" position="bottom-right" />
       <div className="absolute inset-0 opacity-[0.03]">
         <div
           className="absolute inset-0"

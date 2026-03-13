@@ -2,21 +2,24 @@
   "nav": {
     "philosophy": "Philosophie",
     "services": "Dienstleistungen",
+    "bespoke": "Maßschneiderei",
     "pieces": "Stücke",
+    "prints": "Drucke",
     "upcycling": "Upcycling",
+    "collaboration": "Zusammenarbeit",
     "events": "Veranstaltungen",
     "process": "Prozess",
-    "about": "Atelier",
+    "about": "Über mich",
     "contact": "Kontakt",
     "request": "Anfrage"
   },
   "hero": {
     "location": "Hamburg · Atelier",
-    "title": "Ich schaffe",
-    "titleItalic": "Zustand",
-    "titleEnd": "durch Kleidung",
-    "description": "Maßgeschneiderte Anfertigung und Autorenstücke. Kleidung als Verlängerung der Persönlichkeit. 37 Jahre im Beruf.",
-    "orderButton": "Stück bestellen",
+    "title": "Ich schaffe Zustand",
+    "titleItalic": "durch Kleidung.",
+    "titleEnd": "",
+    "description": "Kleidung ist ein starkes Mittel, um die Persönlichkeit auszudrücken. Sie unterstreicht die Einzigartigkeit und stärkt das innere Selbstvertrauen.",
+    "orderButton": "Beratung anfragen",
     "portfolioButton": "Portfolio",
     "experience": "37+ Jahre Erfahrung",
     "individual": "Individueller Ansatz",
@@ -61,25 +64,26 @@
     "viewItem": "Ansehen"
   },
   "services": {
-    "label": "Dienstleistungen",
-    "title": "Was ich",
-    "titleItalic": "schaffe",
+    "label": "Hauptarbeitsrichtungen",
+    "title": "Individualität zeigt sich",
+    "titleItalic": "in den Details.",
+    "titleSub": "In der Konstruktion. Im Stoff. In den Proportionen.",
     "items": {
       "01": {
         "title": "Maßgeschneiderte Anfertigung",
-        "description": "Ich erstelle Kleidung nach individuellen Maßen. Ich arbeite mit Form, Proportionen, Passform und Komfort. Ich berücksichtige Lebensstil, Charakter und inneren Zustand einer Person."
+        "description": "Individuelle Konstruktion unter Berücksichtigung von Figur, Charakter und Lebensstil. Die äußere Form spiegelt die innere Tiefe wider."
       },
       "02": {
         "title": "Autorenstücke",
-        "description": "Ich entwickle und nähe einzigartige Stücke in einer einzigen Kopie. Jedes Stück wird von mir persönlich erstellt — von der Idee bis zum letzten Stich."
+        "description": "Stücke in Einzelanfertigung oder limitierter Auflage."
       },
       "03": {
-        "title": "Mini-Kollektionen",
-        "description": "Ich erstelle limitierte Serien von Stücken. Jedes Modell ist konstruktiv und ästhetisch durchdacht. Exklusivität und hohes Ausführungsniveau bleiben erhalten."
+        "title": "Upcycling",
+        "description": "Neugestaltung von Kleidung aus Ihrem Kleiderschrank. Moderne Form und neuer Ausdruck."
       },
       "04": {
-        "title": "Upcycling",
-        "description": "Ich arbeite mit Kleidungsstücken, die der Kunde bereits hat. Ich schneide sie um und denke sie neu. Ich erstelle ein neues modernes Stück mit anderer Energie."
+        "title": "Autorendrucke",
+        "description": "Der Druck ist Teil der Konstruktion. Wird unter Berücksichtigung von Form und Proportionen entwickelt. Unterstreicht Individualität und Charakter."
       },
       "05": {
         "title": "Autorendrucke",
@@ -164,11 +168,21 @@
     "agb": "AGB"
   },
   "pieces": {
-    "label": "Galerie",
-    "title": "Signature",
-    "titleItalic": "Stücke",
-    "subtitle": "One-of-one · Atelier made · Beyond mass production",
-    "description": "Jedes Stück wird von Hand in einer einzigen Kopie oder limitierten Serie hergestellt. Das sind keine Produkte — sie sind das Ergebnis von Handwerk, Philosophie und tiefem Verständnis der Form.",
+    "label": "Stücke",
+    "title": "Autoren",
+    "titleItalic": "stücke",
+    "subtitle": "In Einzelanfertigung oder limitierter Auflage",
+    "description": "Autorenstücke sind Modelle in Einzelanfertigung oder limitierter Stückzahl. Individuelle Anpassung mit Auswahl eines Autorendrucks für Sie ist möglich.",
+    "productStatus": {
+      "oneOfOne": "Einzelstück.",
+      "limited": "Limitierte Auflage.",
+      "custom": "Individuelle Anpassung für Sie. Wahl eines Autorendrucks oder Erstellung eines Drucks nach Ihren Wünschen möglich."
+    },
+    "productButton": {
+      "book": "Reservieren",
+      "order": "Bestellung aufgeben",
+      "orderCustom": "Individuelle Bestellung aufgeben"
+    },
     "categories": {
       "all": "Alle",
       "belts": "Gürtel",
@@ -397,6 +411,71 @@
       "viewItem": "Ansehen"
     }
   },
+  "bespokePage": {
+    "hero": {
+      "label": "Maßschneiderei",
+      "title": "Individuelle",
+      "titleItalic": "Anfertigung",
+      "description": "Individuell gefertigte Kleidung spiegelt Persönlichkeit, Charakter und innere Tiefe wider."
+    },
+    "intro": {
+      "p1": "Maßschneiderei steht immer für Status und Selbstachtung.",
+      "p2": "Es ist die Wahl derer, denen die Übereinstimmung von äußerem Erscheinungsbild und innerem Zustand wichtig ist. Individuell gefertigte Kleidung spiegelt Persönlichkeit, Charakter und innere Tiefe wider. Sie unterstreicht die Einzigartigkeit und macht sie sichtbar. Das Stück wird ausschließlich für Sie gefertigt.",
+      "p3": "Der kreative Prozess beginnt mit dem Dialog."
+    },
+    "offline": {
+      "title": "Offline-Anfertigung",
+      "subtitle": "So läuft die Arbeit ab",
+      "steps": {
+        "01": {
+          "title": "Anfrage und Beratung",
+          "description": "Sie hinterlassen eine Anfrage. Ich melde mich bei Ihnen und führe eine 30-minütige kostenlose Beratung durch."
+        },
+        "02": {
+          "title": "Erstes Treffen",
+          "description": "Wir vereinbaren Datum und Uhrzeit. Wir besprechen Modell, Verwendungszweck, Stoff, Beschläge und alle Details. Bei Bedarf stimmen wir den Druck ab. Ich führe eine professionelle Figurenanalyse durch und nehme Ihre Maße."
+        },
+        "03": {
+          "title": "Konstruktion und Anproben",
+          "description": "Es wird eine individuelle Konstruktion des Stücks entwickelt. Die Anzahl der Anproben hängt von der Modellkomplexität ab."
+        },
+        "04": {
+          "title": "Fertiges Stück",
+          "description": "Nach der letzten Anprobe erhalten Sie ein exklusiv für Sie gefertigtes Stück."
+        }
+      }
+    },
+    "online": {
+      "title": "Online-Anfertigung",
+      "subtitle": "So läuft die Arbeit ab",
+      "steps": {
+        "01": {
+          "title": "Anfrage und Beratung",
+          "description": "Sie hinterlassen eine Anfrage. Ich melde mich bei Ihnen und führe eine 30-minütige kostenlose Beratung durch."
+        },
+        "02": {
+          "title": "Erstes Treffen",
+          "description": "Wir vereinbaren Datum und Uhrzeit — online. Wir legen Modell, Verwendungszweck, Stoff und alle Details fest. Bei Bedarf stimmen wir den Druck ab."
+        },
+        "03": {
+          "title": "Maßnahme",
+          "description": "Sie erhalten eine detaillierte Anleitung zur Maßnahme. Bei Bedarf erfolgt der Prozess per Video."
+        },
+        "04": {
+          "title": "Konstruktion und Fernanprobe",
+          "description": "Das Stück wird nach individueller Konstruktion entwickelt. Die Arbeit wird von regelmäßiger Kommunikation begleitet. Die Anzahl der Abstimmungsschritte hängt von der Modellkomplexität ab."
+        },
+        "05": {
+          "title": "Fertiges Stück",
+          "description": "Nach Abschluss der Arbeit wird das Stück Ihnen per Post zugesandt."
+        }
+      }
+    },
+    "cta": {
+      "description": "Hinterlassen Sie eine Anfrage — ich führe eine kostenlose Beratung durch und wir besprechen Ihr Projekt.",
+      "button": "Beratung anfragen"
+    }
+  },
   "servicesPage": {
     "hero": {
       "label": "Dienstleistungen",
@@ -496,11 +575,23 @@
       "badge3": "Vollzyklus"
     },
     "story": {
-      "p1": "Für mich ist Kleidung keine Dekoration. Es ist Struktur, Proportion und Bedeutung.",
-      "p2": "Ich arbeite mit Form und Konstruktion, nicht mit Trends. Jedes Kleidungsstück wird um den Menschen herum gebaut — seinen Körper, Lebensstil und inneres Selbstgefühl.",
-      "p3": "Mein Ansatz wurzelt in traditionellem Schneiderhandwerk, aber mein Denken ist zeitgenössisch. Ich schätze Präzision, Passform und die ruhige Zuversicht, die etwas speziell für Sie Gefertigtes vermittelt.",
-      "p4": "Ich mache das seit über 37 Jahren — folge nicht der Mode, sondern schaffe sie im Dialog mit jedem Kunden.",
+      "p1": "Ich bin Natalia NKN Chreschkowa, Gründerin und Leiterin eines Design-Ateliers nach Art eines „Modehauses“ (Ukraine).",
+      "p2": "Schnittmacherin für Damen- und Herrenbekleidung jeder Komplexität. 37 Jahre Berufspraxis. Designerin von Autorendrucken auf Stoff und Autorin eines eigenen Online-Schneidersystems.",
+      "p3": "Ich schaffe nicht nur Kleidung — ich schaffe Zustand durch Form, die die Persönlichkeit verstärkt und offenbart. Ich arbeite mit Kunden weltweit. Heute entwickle ich ein Autorenstudio in Deutschland.",
+      "p4": "",
       "footer": "37+ Jahre im Schneiderhandwerk und in der Atelier-Praxis"
+    },
+    "position": {
+      "label": "Position",
+      "title": "Jeder Mensch ist einzigartig",
+      "text1": "Jeder Mensch ist von Natur aus einzigartig. Für mich ist Kleidung die Balance zwischen Innerem und Äußerem. Das äußere Erscheinungsbild soll die Tiefe der Persönlichkeit widerspiegeln und ihre Fortsetzung werden.",
+      "text2": "Durch Konstruktion, Silhouette und Proportionen verstärke ich die Individualität und helfe der Persönlichkeit, sich zu zeigen. Wenn das Äußere dem Inneren entspricht, entsteht ein Zustand von Halt und natürlicher Ganzheit."
+    },
+    "professional": {
+      "label": "Professionelle Grundlage",
+      "title": "Jeder Auftrag beginnt mit dem Dialog",
+      "text1": "Es ist mir wichtig, den Menschen zu hören — seinen Charakter, Lebensstil und inneren Rhythmus zu verstehen. Auch wenn es Ihnen schwerfällt genau zu formulieren, welches Stück Sie wollen, kann ich Ihre Anfrage hören und verstehen.",
+      "text2": "In der gemeinsamen Arbeit finden wir das Stück, das für Sie ideal wird. Die Arbeit ist tief und systematisch, in warmer und respektvoller Atmosphäre. Jedes Detail im Stück spiegelt die Persönlichkeit wider und verstärkt ihre Wirkung. Mein Motto: Ästhetik, Komfort und Funktionalität."
     },
     "philosophy": { "label": "Philosophie", "title": "Mein Ansatz" },
     "principles": {
@@ -553,6 +644,48 @@
       "submit": "Anfrage senden"
     },
     "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden."
+  },
+  "collaborationPage": {
+    "hero": {
+      "label": "Zusammenarbeit",
+      "title": "Zusammenarbeit",
+      "titleItalic": "",
+      "description": "Professionelle Begleitung von Designern und Markenstart.",
+      "tagline": "Konstruktion ist das Fundament jedes Stücks. Eine gut durchdachte Basis bestimmt Sitz und Produktqualität. Ich entwickle die Konstruktion, erstelle Schnittmuster, forme die Größentabelle, nähe die Probestücke und bereite das Modell für den Start vor. Ich baue das Markensystem von der Idee bis zum fertigen Stück auf. Die Marke beginnt mit präziser Konstruktion."
+    },
+    "cta": {
+      "title": "Zusammenarbeit besprechen",
+      "description": "Kontaktieren Sie mich für Ihr Projekt."
+    }
+  },
+  "printsPage": {
+    "hero": {
+      "label": "Drucke",
+      "title": "Autoren",
+      "titleItalic": "drucke",
+      "subtitle": "Druck als Teil der Konstruktion und des Charakters des Stücks."
+    },
+    "intro": "Ich erstelle Autorendrucke und entwickle sie unter Berücksichtigung von Form und Silhouette. Jeder Druck arbeitet mit der Konstruktion, unterstreicht die Individualität, verstärkt das Bild und schafft Ganzheit.",
+    "subheading": "Druck als Ausdrucksmittel.",
+    "directionsTitle": "Arbeitsrichtungen mit Drucken",
+    "directions": {
+      "01": {
+        "title": "Individueller Druck für Sie",
+        "description": "Entwicklung Ihres eigenen Drucks möglich — in jedem Thema, unter Berücksichtigung Ihrer Wünsche und der Stückaufgabe. Der Druck entsteht als Teil des Gesamtkonzepts. Thema, Platzierung und Größe werden detailliert ausgearbeitet. Aus einem solchen Druck entsteht ein einzigartiges Stück, das Sie widerspiegelt."
+      },
+      "02": {
+        "title": "Fertige Designer-Drucke",
+        "description": "Meine Autorendrucke für verschiedene Stücke und Kollektionen sind verfügbar. Sie können einen bestehenden Druck wählen und ein Stück darauf basierend anfertigen lassen."
+      },
+      "03": {
+        "title": "Drucke für Designer und Marken",
+        "description": "Ich entwickle Drucke für Kollektionskonzept und Marken-DNA. Die Arbeit umfasst Ideenanalyse und Anpassung in der Gesamtkomposition an die konkrete Stückkonstruktion."
+      }
+    },
+    "ctaButton": "Projekt besprechen",
+    "ctaTitle": "Druck oder Kollektion besprechen?",
+    "ctaDescription": "Beschreiben Sie kurz Ihre Aufgabe — ich antworte persönlich mit dem nächsten Schritt.",
+    "ctaNote": "Antwort innerhalb 24–48 Std. · Hamburg"
   },
   "contactPage": {
     "hero": { "label": "Kontakt", "title": "Beginnen Sie das", "titleItalic": "Gespräch", "description": "Beschreiben Sie Ihre Anfrage — ich antworte persönlich." },

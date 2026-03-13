@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { useScrollWhenNeeded } from '@/lib/use-scroll-when-needed';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, X, ChevronDown } from 'lucide-react';
 import { useTranslations } from '@/lib/i18n';
@@ -15,7 +14,6 @@ interface ContactRequestModalProps {
 
 export default function ContactRequestModal({ isOpen, onClose, context }: ContactRequestModalProps) {
   const t = useTranslations('aboutPage');
-  const { ref: scrollRef, needsScroll } = useScrollWhenNeeded(isOpen);
   const [showSuccess, setShowSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [projectTypeOpen, setProjectTypeOpen] = useState(false);
@@ -106,69 +104,70 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
         {isOpen && (
           <>
             <motion.div
+              role="presentation"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-3 backdrop-blur-sm sm:p-5"
               onClick={onClose}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100]"
-            />
-            <div
-              ref={scrollRef}
-              className={`fixed inset-0 z-[101] min-h-screen flex items-center justify-center p-4 py-16 overflow-x-hidden ${needsScroll ? 'overflow-y-auto' : 'overflow-y-hidden'}`}
             >
+              <div className="relative z-[1] flex max-h-full w-full min-h-0 items-center justify-center overflow-x-hidden overflow-y-auto">
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  initial={{ opacity: 0, scale: 0.97, y: 10 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                  transition={{ type: 'spring', duration: 0.5 }}
-                  className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl my-8 flex flex-col mx-auto flex-shrink-0"
+                  exit={{ opacity: 0, scale: 0.97, y: 10 }}
+                  transition={{ type: 'spring', duration: 0.45 }}
+                  role="dialog"
+                  aria-modal="true"
+                  className="relative mx-auto w-full max-w-2xl flex-shrink-0 rounded-2xl bg-white shadow-2xl sm:rounded-3xl"
+                  onClick={(e) => e.stopPropagation()}
                 >
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 z-10 w-12 h-12 rounded-full bg-white hover:bg-gray-50 shadow-lg flex items-center justify-center transition-colors"
+                className="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-white hover:bg-gray-50 shadow-lg flex items-center justify-center transition-colors"
               >
                   <X className="w-5 h-5" />
                 </button>
-                <div className="p-8 sm:p-12">
-                  <div className="mb-8">
+                <div className="p-6 sm:p-8 lg:p-10 pt-14 sm:pt-16">
+                  <div className="mb-5 sm:mb-6">
                     <h3
-                      className="text-3xl sm:text-4xl md:text-5xl mb-4 tracking-tight"
+                      className="text-2xl sm:text-3xl md:text-4xl mb-2 tracking-tight leading-tight"
                       style={{ fontFamily: 'serif' }}
                     >
                       {String(t('modal.title'))} <span className="italic">{String(t('modal.titleItalic'))}</span>
                     </h3>
-                    <p className="text-base sm:text-lg text-[#8B8B8B]">
+                    <p className="text-sm sm:text-base text-[#8B8B8B] leading-relaxed max-w-xl">
                       {String(t('modal.description'))}
                     </p>
                     {context?.pieceName && (
-                      <p className="text-sm text-[#C4A574] mt-3 font-medium">
+                      <p className="text-sm text-[#C4A574] mt-2 font-medium truncate">
                         {context.pieceName}{context.pieceType ? ` — ${context.pieceType}` : ''}
                       </p>
                     )}
                     {context?.eventTitle && !context?.pieceName && (
-                      <p className="text-sm text-[#C4A574] mt-3 font-medium">
+                      <p className="text-sm text-[#C4A574] mt-2 font-medium truncate">
                         {context.eventTitle}
                       </p>
                     )}
                   </div>
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                     <div>
-                      <label className="block text-sm tracking-wider mb-2 text-[#8B8B8B]">{String(t('modal.name'))} *</label>
+                      <label className="block text-xs sm:text-sm tracking-wider mb-1.5 text-[#8B8B8B]">{String(t('modal.name'))} *</label>
                       <input
                         type="text"
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors text-base"
                       />
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div ref={contactMethodRef} className="relative">
-                        <label className="block text-sm tracking-wider mb-2 text-[#8B8B8B]">{String(t('modal.contact'))} *</label>
+                      <div ref={contactMethodRef} className="relative min-w-0">
+                        <label className="block text-xs sm:text-sm tracking-wider mb-1.5 text-[#8B8B8B]">{String(t('modal.contact'))} *</label>
                         <button
                           type="button"
                           onClick={() => setContactMethodOpen(!contactMethodOpen)}
-                          className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors text-left flex items-center justify-between gap-2"
+                          className="w-full px-4 py-3 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors text-left flex items-center justify-between gap-2 text-sm sm:text-base"
                         >
                           <span className={formData.contactMethod ? '' : 'text-[#8B8B8B]'}>
                             {formData.contactMethod
@@ -198,7 +197,7 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                                       setFormData({ ...formData, contactMethod: method });
                                       setContactMethodOpen(false);
                                     }}
-                                    className={`w-full px-6 py-3 text-left hover:bg-[#FAF9F6] transition-colors ${
+                                    className={`w-full px-4 py-3 text-left text-base hover:bg-[#FAF9F6] transition-colors ${
                                       formData.contactMethod === method ? 'bg-[#FAF9F6] text-[#C4A574]' : ''
                                     }`}
                                   >
@@ -210,14 +209,14 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                           )}
                         </AnimatePresence>
                       </div>
-                      <div>
-                        <label className="block text-sm tracking-wider mb-2 text-[#8B8B8B]">{String(t('modal.contactValue'))}</label>
+                      <div className="min-w-0">
+                        <label className="block text-xs sm:text-sm tracking-wider mb-1.5 text-[#8B8B8B]">{String(t('modal.contactValue'))}</label>
                         <input
                           type="text"
                           required
                           value={formData.contact}
                           onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
-                          className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors text-sm sm:text-base"
                           placeholder={
                             formData.contactMethod === 'email'
                               ? String(t('modal.contactValuePlaceholderEmail'))
@@ -229,11 +228,11 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                       </div>
                     </div>
                     <div ref={projectTypeRef} className="relative">
-                      <label className="block text-sm tracking-wider mb-2 text-[#8B8B8B]">{String(t('modal.projectType'))}</label>
+                      <label className="block text-xs sm:text-sm tracking-wider mb-1.5 text-[#8B8B8B]">{String(t('modal.projectType'))}</label>
                       <button
                         type="button"
                         onClick={() => setProjectTypeOpen(!projectTypeOpen)}
-                        className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors text-left flex items-center justify-between gap-2"
+                        className="w-full px-4 py-3 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors text-left flex items-center justify-between gap-2 text-sm sm:text-base"
                       >
                         <span className={formData.projectType ? '' : 'text-[#8B8B8B]'}>
                           {formData.projectType
@@ -262,7 +261,7 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                                   setFormData({ ...formData, projectType: '' });
                                   setProjectTypeOpen(false);
                                 }}
-                                className="w-full px-6 py-3 text-left hover:bg-[#FAF9F6] transition-colors text-[#8B8B8B]"
+                                className="w-full px-4 py-3 text-left text-base hover:bg-[#FAF9F6] transition-colors text-[#8B8B8B]"
                               >
                                 {String(t('modal.projectTypePlaceholder'))}
                               </button>
@@ -275,7 +274,7 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                                     setFormData({ ...formData, projectType: key });
                                     setProjectTypeOpen(false);
                                   }}
-                                  className={`w-full px-6 py-3 text-left hover:bg-[#FAF9F6] transition-colors ${
+                                  className={`w-full px-4 py-3 text-left text-base hover:bg-[#FAF9F6] transition-colors ${
                                     formData.projectType === key ? 'bg-[#FAF9F6] text-[#C4A574]' : ''
                                   }`}
                                 >
@@ -288,13 +287,13 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                       </AnimatePresence>
                     </div>
                     <div>
-                      <label className="block text-sm tracking-wider mb-2 text-[#8B8B8B]">{String(t('modal.message'))} *</label>
+                      <label className="block text-xs sm:text-sm tracking-wider mb-1.5 text-[#8B8B8B]">{String(t('modal.message'))} *</label>
                       <textarea
                         required
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        rows={4}
-                        className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors resize-none"
+                        rows={3}
+                        className="w-full min-h-[5.5rem] px-4 py-3 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors resize-none text-base leading-snug"
                         placeholder={String(t('modal.messagePlaceholder'))}
                       />
                     </div>
@@ -303,7 +302,7 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                       disabled={isSubmitting}
                       whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                       whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                      className="w-full px-8 py-5 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center gap-3 font-medium disabled:opacity-70 disabled:cursor-not-allowed"
+                      className="w-full px-6 py-3.5 sm:py-4 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center gap-2 font-medium disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? '...' : String(t('modal.submit'))}
                       {!isSubmitting && <ArrowRight className="w-5 h-5" />}
@@ -311,7 +310,8 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                   </form>
                 </div>
               </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </>
         )}
       </AnimatePresence>

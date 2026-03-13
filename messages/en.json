@@ -2,21 +2,24 @@
   "nav": {
     "philosophy": "Philosophy",
     "services": "Services",
+    "bespoke": "Bespoke",
     "pieces": "Pieces",
+    "prints": "Prints",
     "upcycling": "Upcycling",
+    "collaboration": "Collaboration",
     "events": "Events",
     "process": "Process",
-    "about": "Atelier",
+    "about": "About",
     "contact": "Contact",
     "request": "Request"
   },
   "hero": {
     "location": "Hamburg · Atelier",
-    "title": "I create",
-    "titleItalic": "state",
-    "titleEnd": "through clothing",
-    "description": "Custom tailoring and author's pieces. Clothing as an extension of personality. 37 years in the profession.",
-    "orderButton": "Order a piece",
+    "title": "I create state",
+    "titleItalic": "through clothing.",
+    "titleEnd": "",
+    "description": "Clothing is a powerful tool for expressing personality. It highlights uniqueness and strengthens inner confidence.",
+    "orderButton": "Book a consultation",
     "portfolioButton": "Portfolio",
     "experience": "37+ years of experience",
     "individual": "Individual approach",
@@ -61,25 +64,26 @@
     "viewItem": "View"
   },
   "services": {
-    "label": "Services",
-    "title": "What I",
-    "titleItalic": "create",
+    "label": "Main directions",
+    "title": "Individuality shows",
+    "titleItalic": "in the details.",
+    "titleSub": "In construction. In fabric. In proportions.",
     "items": {
       "01": {
-        "title": "Custom tailoring",
-        "description": "I create clothing according to individual measurements. I work with form, proportions, fit and comfort. I take into account lifestyle, character and inner state of a person."
+        "title": "Bespoke tailoring",
+        "description": "Individual construction considering figure, character and lifestyle. Outer form reflects inner depth."
       },
       "02": {
         "title": "Author's pieces",
-        "description": "I develop and sew unique pieces in a single copy. Each piece is created by me personally — from idea to final stitch."
+        "description": "Pieces in a single copy or limited run."
       },
       "03": {
-        "title": "Mini collections",
-        "description": "I create limited series of pieces. Each model is thoughtfully designed constructively and aesthetically. Exclusivity and high level of execution are maintained."
+        "title": "Upcycling",
+        "description": "Rethinking garments from your wardrobe. Modern form and new expression."
       },
       "04": {
-        "title": "Upcycling",
-        "description": "I work with items that the client already has. I recut and rethink them. I create a new modern piece with different energy."
+        "title": "Author's prints",
+        "description": "Print is part of the construction. Developed with form and proportions in mind. Highlights individuality and character."
       },
       "05": {
         "title": "Author's prints",
@@ -164,11 +168,21 @@
     "agb": "Terms & Conditions"
   },
   "pieces": {
-    "label": "Gallery",
-    "title": "Signature",
-    "titleItalic": "Pieces",
-    "subtitle": "One-of-one · Atelier made · Beyond mass production",
-    "description": "Each piece is created by hand in a single copy or limited series. These are not products — they are the result of craft, philosophy and deep understanding of form.",
+    "label": "Pieces",
+    "title": "Author's",
+    "titleItalic": "pieces",
+    "subtitle": "Single copy or limited run",
+    "description": "Author's pieces are models in a single copy or limited quantity. Individual adaptation with selection of an author's print for you is available.",
+    "productStatus": {
+      "oneOfOne": "Single copy.",
+      "limited": "Limited run.",
+      "custom": "Individual adaptation for you. Choice of author's print or creation of a print to your wishes available."
+    },
+    "productButton": {
+      "book": "Reserve",
+      "order": "Place order",
+      "orderCustom": "Place custom order"
+    },
     "categories": {
       "all": "All",
       "belts": "Belts",
@@ -397,6 +411,71 @@
       "viewItem": "View"
     }
   },
+  "bespokePage": {
+    "hero": {
+      "label": "Bespoke tailoring",
+      "title": "Bespoke",
+      "titleItalic": "tailoring",
+      "description": "Individually made clothing reflects personality, character and inner depth."
+    },
+    "intro": {
+      "p1": "Bespoke tailoring is always about status and self-respect.",
+      "p2": "It is the choice of those for whom the match between outer appearance and inner state matters. Individually made clothing reflects personality, character and inner depth. It highlights uniqueness and makes it visible. The piece is made exclusively for you.",
+      "p3": "The creative process begins with dialogue."
+    },
+    "offline": {
+      "title": "Offline tailoring",
+      "subtitle": "How it works",
+      "steps": {
+        "01": {
+          "title": "Request and consultation",
+          "description": "You submit a request. I get in touch and hold a 30-minute free consultation."
+        },
+        "02": {
+          "title": "First meeting",
+          "description": "We set date and time. We discuss the model, purpose of the piece, fabric, hardware and all details. If needed we agree on the print. I carry out a professional figure analysis and take your measurements."
+        },
+        "03": {
+          "title": "Construction and fittings",
+          "description": "An individual construction of the piece is developed. The number of fittings depends on the complexity of the model."
+        },
+        "04": {
+          "title": "Finished piece",
+          "description": "After the final fitting you receive a piece made exclusively for you."
+        }
+      }
+    },
+    "online": {
+      "title": "Online tailoring",
+      "subtitle": "How it works",
+      "steps": {
+        "01": {
+          "title": "Request and consultation",
+          "description": "You submit a request. I get in touch and hold a 30-minute free consultation."
+        },
+        "02": {
+          "title": "First meeting",
+          "description": "We set date and time — online. We define the model, purpose of the piece, fabric and all details. If needed we agree on the print."
+        },
+        "03": {
+          "title": "Taking measurements",
+          "description": "You receive detailed instructions for taking measurements. If needed the process is done via video call."
+        },
+        "04": {
+          "title": "Construction and remote fitting",
+          "description": "The piece is developed to individual construction. The work is accompanied by regular contact. The number of approval stages depends on the complexity of the model."
+        },
+        "05": {
+          "title": "Finished piece",
+          "description": "After completion the piece is sent to you by post."
+        }
+      }
+    },
+    "cta": {
+      "description": "Leave a request — I will hold a free consultation and we will discuss your project.",
+      "button": "Book a consultation"
+    }
+  },
   "servicesPage": {
     "hero": {
       "label": "Services",
@@ -496,11 +575,23 @@
       "badge3": "full cycle"
     },
     "story": {
-      "p1": "For me, clothing is not decoration. It is structure, proportion and meaning.",
-      "p2": "I work with form and construction, not trends. Each garment is built around the person — their body, lifestyle and inner sense of self.",
-      "p3": "My approach is rooted in traditional tailoring, but my thinking is contemporary. I value precision, fit and the quiet confidence that comes from wearing something made specifically for you.",
-      "p4": "I have been doing this for over 37 years — not following fashion, but creating it in dialogue with each client.",
+      "p1": "I am Natalia NKN Khreshkova, founder and director of a design atelier in the style of a «fashion house» (Ukraine).",
+      "p2": "Pattern maker for women's and men's clothing of any complexity. 37 years of professional practice. Designer of author's prints on fabric and author of her own online tailoring system.",
+      "p3": "I create not just clothing — I create state through form that strengthens and reveals personality. I work with clients worldwide. Today I am developing an author's studio in Germany.",
+      "p4": "",
       "footer": "37+ years in tailoring and atelier practice"
+    },
+    "position": {
+      "label": "Position",
+      "title": "Everyone is unique",
+      "text1": "Everyone is unique by nature. For me, clothing is the balance of inner and outer. Outer image should reflect the depth of personality and become its continuation.",
+      "text2": "Through construction, silhouette and proportions I strengthen individuality and help personality to show. When the outer matches the inner, a state of support and natural wholeness appears."
+    },
+    "professional": {
+      "label": "Professional basis",
+      "title": "Every order begins with dialogue",
+      "text1": "It is important for me to hear the person — to understand their character, lifestyle and inner rhythm. Even if you find it hard to say exactly what piece you want, I can hear and understand your request.",
+      "text2": "In the process of working together we find the piece that becomes ideal for you. The work is deep and systematic, in a warm and respectful atmosphere. Every detail in the piece reflects personality and strengthens its expression. My motto: aesthetics, comfort and functionality."
     },
     "philosophy": { "label": "Philosophy", "title": "My approach" },
     "principles": {
@@ -553,6 +644,48 @@
       "submit": "Send request"
     },
     "success": "Thank you! I will get back to you personally."
+  },
+  "collaborationPage": {
+    "hero": {
+      "label": "Collaboration",
+      "title": "Collaboration",
+      "titleItalic": "",
+      "description": "Professional support for designers and brand launch.",
+      "tagline": "Construction is the foundation of every piece. A well-built base determines fit and product quality. I develop the construction, create patterns, form the size range, sew the sample and prepare the model for launch. I build the brand system from idea to finished piece. The brand starts with precise construction."
+    },
+    "cta": {
+      "title": "Discuss collaboration",
+      "description": "Contact me to discuss your project."
+    }
+  },
+  "printsPage": {
+    "hero": {
+      "label": "Prints",
+      "title": "Author's",
+      "titleItalic": "prints",
+      "subtitle": "Print as part of construction and character of the piece."
+    },
+    "intro": "I create author's prints, developing them with form and silhouette in mind. Each print works with the construction, highlights individuality, strengthens the image and creates wholeness.",
+    "subheading": "Print as a means of self-expression.",
+    "directionsTitle": "Directions for working with prints",
+    "directions": {
+      "01": {
+        "title": "Individual print for you",
+        "description": "Development of your own print is possible — in any theme, considering your wishes and the piece's purpose. The print is created as part of the overall concept. Theme, placement and size are worked out in detail. From such a print a unique piece is born that reflects you."
+      },
+      "02": {
+        "title": "Ready designer prints",
+        "description": "My author's prints for various pieces and collections are available. You can choose one of the existing prints and create a piece based on it."
+      },
+      "03": {
+        "title": "Prints for designers and brands",
+        "description": "I develop prints for collection concept and brand DNA. The work includes idea analysis and adaptation in the overall composition to the specific piece construction."
+      }
+    },
+    "ctaButton": "Discuss project",
+    "ctaTitle": "Ready to talk about a print or collection?",
+    "ctaDescription": "In a few words, describe what you need — I’ll reply personally with a next step.",
+    "ctaNote": "Reply within 24–48h · Hamburg"
   },
   "contactPage": {
     "hero": { "label": "Contact", "title": "Start the", "titleItalic": "conversation", "description": "Describe your request — I will respond personally." },

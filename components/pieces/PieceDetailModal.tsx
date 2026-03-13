@@ -45,6 +45,11 @@ export default function PieceDetailModal({ piece, isOpen, onClose }: PieceDetail
   const descKey = piece.descriptionKey?.replace('pieces.', '') || '';
   const description = descKey ? t(`pieces.${descKey}`) : '';
 
+  const statusKey = piece.type === 'one-of-one' ? 'oneOfOne' : 'limited';
+  const buttonKey = piece.type === 'one-of-one' ? 'book' : 'order';
+  const statusText = t(`productStatus.${statusKey}`);
+  const buttonText = t(`productButton.${buttonKey}`);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -89,13 +94,13 @@ export default function PieceDetailModal({ piece, isOpen, onClose }: PieceDetail
 
               <div className="p-6 sm:p-8">
                 <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
-                  {piece.type}
+                  {statusText}
                 </span>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl mt-2 mb-4 tracking-tight" style={{ fontFamily: 'serif' }}>
                   {piece.name}
                 </h2>
                 {description && (
-                  <p className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed mb-8">
+                  <p className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed mb-6">
                     {String(description)}
                   </p>
                 )}
@@ -113,7 +118,7 @@ export default function PieceDetailModal({ piece, isOpen, onClose }: PieceDetail
                   whileTap={{ scale: 0.98 }}
                   className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-base tracking-wider shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center gap-3"
                 >
-                  {t('request')}
+                  {buttonText}
                   <ArrowRight className="w-5 h-5" />
                 </motion.button>
               </div>

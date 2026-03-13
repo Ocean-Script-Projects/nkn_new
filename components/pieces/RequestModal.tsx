@@ -55,9 +55,13 @@ export default function RequestModal({ piece, isOpen, onClose, onSubmit }: Reque
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="fixed inset-4 sm:inset-8 md:inset-16 lg:inset-24 z-50 flex items-center justify-center"
+            className="fixed inset-4 z-50 flex items-center justify-center sm:inset-8 md:inset-16 lg:inset-24"
+            onClick={onClose}
           >
-            <div className="bg-white rounded-[2.5rem] p-8 sm:p-10 md:p-12 max-w-2xl w-full max-h-full overflow-y-auto relative shadow-2xl">
+            <div
+              className="relative max-h-full w-full max-w-2xl overflow-y-auto rounded-[2.5rem] bg-white p-8 shadow-2xl sm:p-10 md:p-12"
+              onClick={(e) => e.stopPropagation()}
+            >
               <motion.button
                 onClick={onClose}
                 whileHover={{ scale: 1.1, rotate: 90 }}

@@ -28,21 +28,31 @@ const addBasePath = (src: string | Blob | undefined, basePath: string): string |
   return src;
 };
 
-export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElement>) {
+type ImageWithFallbackProps = React.ImgHTMLAttributes<HTMLImageElement> & {
+  /** If primary src fails, load this URL once before showing placeholder */
+  fallbackSrc?: string;
+};
+
+export function ImageWithFallback(props: ImageWithFallbackProps) {
   const [didError, setDidError] = useState(false);
+  const [usingFallback, setUsingFallback] = useState(false);
   const [basePath, setBasePath] = useState('');
 
-  // Determine basePath on client side after mount
   useEffect(() => {
     setBasePath(getBasePath());
   }, []);
 
+  const { src, alt, style, className, fallbackSrc, ...rest } = props;
+  const primarySrc = useMemo(() => addBasePath(src, basePath), [src, basePath]);
+  const displaySrc = usingFallback && fallbackSrc ? fallbackSrc : primarySrc;
+
   const handleError = () => {
+    if (fallbackSrc && !usingFallback) {
+      setUsingFallback(true);
+      return;
+    }
     setDidError(true);
   };
-
-  const { src, alt, style, className, ...rest } = props;
-  const imageSrc = useMemo(() => addBasePath(src, basePath), [src, basePath]);
 
   return didError ? (
     <div
@@ -50,10 +60,18 @@ export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElemen
       style={style}
     >
       <div className="flex items-center justify-center w-full h-full">
-        <img src={ERROR_IMG_SRC} alt="Error loading image" {...rest} data-original-url={imageSrc} />
+        <img src={ERROR_IMG_SRC} alt="Error loading image" {...rest} data-original-url={String(primarySrc)} />
       </div>
     </div>
   ) : (
-    <img src={imageSrc} alt={alt} className={className} style={style} {...rest} onError={handleError} />
+    <img
+      key={usingFallback ? 'fb' : 'main'}
+      src={displaySrc as string}
+      alt={alt}
+      className={className}
+      style={style}
+      {...rest}
+      onError={handleError}
+    />
   );
 }

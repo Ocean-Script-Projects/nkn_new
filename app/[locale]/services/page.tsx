@@ -19,7 +19,6 @@ import Footer from '@/components/sections/footer';
 import PageHeader from '@/components/shared/PageHeader';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations } from '@/lib/i18n';
-
 const SERVICE_IDS = ['01', '02', '03', '04', '05', '06', '07'] as const;
 const ICONS = [Scissors, Sparkles, Heart, Leaf, Palette, Layers, Users];
 const COLORS = [
@@ -214,9 +213,13 @@ export default function ServicesPage() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ type: 'spring', duration: 0.5 }}
-                className="fixed inset-4 sm:inset-8 md:inset-16 lg:inset-24 z-50 flex items-center justify-center"
+                className="fixed inset-4 z-50 flex items-center justify-center sm:inset-8 md:inset-16 lg:inset-24"
+                onClick={() => setSelectedService(null)}
               >
-                <div className="bg-white rounded-[2.5rem] p-8 sm:p-10 md:p-12 max-w-4xl w-full max-h-full overflow-y-auto relative shadow-2xl">
+                <div
+                  className="relative max-h-full w-full max-w-4xl overflow-y-auto rounded-[2.5rem] bg-white p-8 shadow-2xl sm:p-10 md:p-12"
+                  onClick={(e) => e.stopPropagation()}
+                >
                   <motion.button
                     onClick={() => setSelectedService(null)}
                     whileHover={{ scale: 1.1, rotate: 90 }}

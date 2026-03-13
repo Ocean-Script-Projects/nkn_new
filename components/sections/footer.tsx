@@ -6,10 +6,11 @@ import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations, useLocale } from '@/lib/i18n';
 
 const footerNavItems = [
-  { key: 'services', href: '/services' },
+  { key: 'bespoke', href: '/bespoke' },
   { key: 'pieces', href: '/pieces' },
+  { key: 'prints', href: '/prints' },
   { key: 'upcycling', href: '/upcycling' },
-  { key: 'events', href: '/events' },
+  { key: 'collaboration', href: '/collaboration' },
   { key: 'about', href: '/about' },
   { key: 'contact', href: '/contact' },
 ];

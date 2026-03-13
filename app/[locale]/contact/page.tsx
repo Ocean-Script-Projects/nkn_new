@@ -180,52 +180,52 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* MAIN FORM */}
-        <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12">
-          <div className="max-w-3xl mx-auto">
+        {/* MAIN FORM — компактнее, чтобы влезало на экран */}
+        <section className="py-10 sm:py-14 md:py-16 px-4 sm:px-6 md:px-12">
+          <div className="max-w-xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.8 }}
             >
-              <div className="bg-white rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl border border-black/5">
-                <div className="text-center mb-10 sm:mb-12">
-                  <div className="flex items-center justify-center gap-3 mb-6">
-                    <div className="h-px w-8 bg-[#C4A574]" />
-                    <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+              <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 md:p-8 shadow-xl border border-black/5">
+                <div className="text-center mb-5 sm:mb-6">
+                  <div className="flex items-center justify-center gap-2 mb-3">
+                    <div className="h-px w-6 bg-[#C4A574]" />
+                    <span className="text-[#C4A574] text-[10px] sm:text-xs tracking-[0.35em] uppercase">
                       {t('form.label')}
                     </span>
-                    <div className="h-px w-8 bg-[#C4A574]" />
+                    <div className="h-px w-6 bg-[#C4A574]" />
                   </div>
 
                   <h2
-                    className="text-3xl sm:text-4xl md:text-5xl mb-4 tracking-tight"
+                    className="text-xl sm:text-2xl md:text-3xl mb-2 tracking-tight leading-tight"
                     style={{ fontFamily: 'serif' }}
                   >
                     {t('form.title')} <span className="italic">{t('form.titleItalic')}</span>
                   </h2>
 
-                  <p className="text-base sm:text-lg text-[#8B8B8B]">
+                  <p className="text-xs sm:text-sm text-[#8B8B8B] leading-snug max-w-md mx-auto">
                     {t('form.description')}
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-8">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                   {/* Services chips */}
                   <div>
-                    <label className="block text-sm tracking-wider mb-4 text-[#8B8B8B]">
+                    <label className="block text-xs tracking-wider mb-2 text-[#8B8B8B]">
                       {t('form.servicesLabel')}
                     </label>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-2">
                       {services.map((service) => (
                         <motion.button
                           key={service}
                           type="button"
                           onClick={() => toggleService(service)}
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className={`px-5 py-3 rounded-full text-sm tracking-wide border transition-all ${
+                          whileHover={{ scale: 1.03 }}
+                          whileTap={{ scale: 0.97 }}
+                          className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm tracking-wide border transition-all ${
                             selectedService.includes(service)
                               ? 'bg-[#C4A574] text-white border-[#C4A574] shadow-lg'
                               : 'bg-[#FAF9F6] text-[#8B8B8B] border-black/10 hover:border-[#C4A574]/30'
@@ -239,7 +239,7 @@ export default function ContactPage() {
 
                   {/* Name */}
                   <div>
-                    <label className="block text-sm tracking-wider mb-3 text-[#8B8B8B]">
+                    <label className="block text-xs tracking-wider mb-1.5 text-[#8B8B8B]">
                       {t('form.name')} *
                     </label>
                     <input
@@ -247,22 +247,22 @@ export default function ContactPage() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors text-base"
+                      className="w-full px-3 py-2 sm:px-4 sm:py-2.5 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors text-sm sm:text-base"
                       placeholder="Name"
                     />
                   </div>
 
                   {/* Preferred contact */}
                   <div>
-                    <label className="block text-sm tracking-wider mb-3 text-[#8B8B8B]">
+                    <label className="block text-xs tracking-wider mb-1.5 text-[#8B8B8B]">
                       {t('form.contact')} *
                     </label>
-                    <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="grid sm:grid-cols-2 gap-2 sm:gap-3">
                       <div ref={contactMethodRef} className="relative">
                         <button
                           type="button"
                           onClick={() => setContactMethodOpen(!contactMethodOpen)}
-                          className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors text-base text-left flex items-center justify-between gap-2"
+                          className="w-full px-3 py-2 sm:px-4 sm:py-2.5 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors text-sm sm:text-base text-left flex items-center justify-between gap-2"
                         >
                           <span>
                             {formData.contactMethod === 'telegram'
@@ -294,7 +294,7 @@ export default function ContactPage() {
                                       setFormData({ ...formData, contactMethod: method });
                                       setContactMethodOpen(false);
                                     }}
-                                    className={`w-full px-6 py-3 text-left hover:bg-[#FAF9F6] transition-colors ${
+                                    className={`w-full px-3 py-2 text-sm text-left hover:bg-[#FAF9F6] transition-colors ${
                                       formData.contactMethod === method ? 'bg-[#FAF9F6] text-[#C4A574]' : ''
                                     }`}
                                   >
@@ -318,7 +318,7 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, contactValue: e.target.value })
                         }
-                        className="px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors text-base"
+                        className="px-3 py-2 sm:px-4 sm:py-2.5 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors text-sm sm:text-base min-w-0"
                         placeholder={
                           formData.contactMethod === 'email'
                             ? 'your@email.com'
@@ -332,15 +332,15 @@ export default function ContactPage() {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-sm tracking-wider mb-3 text-[#8B8B8B]">
+                    <label className="block text-xs tracking-wider mb-1.5 text-[#8B8B8B]">
                       {t('form.message')} *
                     </label>
                     <textarea
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      rows={6}
-                      className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors resize-none text-base leading-relaxed"
+                      rows={4}
+                      className="w-full min-h-[5.5rem] px-3 py-2 sm:px-4 sm:py-2.5 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors resize-y text-sm sm:text-base leading-relaxed"
                       placeholder={String(t('form.messagePlaceholder'))}
                     />
                   </div>
@@ -350,13 +350,13 @@ export default function ContactPage() {
                     type="submit"
                     whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-8 py-5 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center gap-3 font-medium"
+                    className="w-full px-5 py-2.5 sm:py-3 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-sm sm:text-base tracking-wider shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center gap-2 font-medium"
                   >
                     {t('form.submit')}
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                   </motion.button>
 
-                  <p className="text-sm text-[#8B8B8B] text-center italic">
+                  <p className="text-[11px] sm:text-xs text-[#8B8B8B] text-center italic leading-snug">
                     {t('form.footer')}
                   </p>
                 </form>

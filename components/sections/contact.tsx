@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 import { useTranslations } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
+import DecorativeLogo from '@/components/shared/DecorativeLogo';
 
 export default function ContactSection() {
   const t = useTranslations('contact');
@@ -35,6 +36,7 @@ export default function ContactSection() {
       id="contact"
       className="py-32 px-6 md:px-12 bg-black text-white relative overflow-hidden"
     >
+      <DecorativeLogo variant="short" position="top-left" light />
       <motion.div
         className="absolute inset-0 opacity-10"
         animate={{

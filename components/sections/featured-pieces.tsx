@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import Link from 'next/link';
 import PiecePreviewCard from '@/components/pieces/PiecePreviewCard';
+import DecorativeLogo from '@/components/shared/DecorativeLogo';
 import PieceDetailModal from '@/components/pieces/PieceDetailModal';
 import piecesData from '@/data/pieces.json';
 
@@ -32,9 +33,10 @@ export default function FeaturedPiecesSection() {
   return (
     <section
       id="pieces"
-      className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12 bg-white"
+      className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12 bg-white relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
+      <DecorativeLogo variant="short" position="bottom-left" />
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

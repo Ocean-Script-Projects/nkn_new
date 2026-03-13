@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
+import DecorativeLogo from '@/components/shared/DecorativeLogo';
 
 interface PageHeaderProps {
   label: string;
@@ -32,13 +33,14 @@ export default function PageHeader({
 }: PageHeaderProps) {
   return (
     <section className="relative pt-20 sm:pt-24 md:pt-28 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 md:px-12 overflow-hidden">
+      <DecorativeLogo variant="big" position="top-right" subtle className="!top-16 !right-4 md:!top-20 md:!right-8 scale-125 md:scale-135 origin-top-right rotate-[-6deg]" />
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid gap-8 lg:gap-10 min-[1600px]:gap-12 lg:grid-cols-[minmax(0,1fr)_auto] min-[1600px]:grid-cols-2 items-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-6 sm:space-y-8"
+            className="min-w-0 space-y-6 sm:space-y-8"
           >
             <motion.div
               initial={{ opacity: 0, scaleX: 0 }}
@@ -56,11 +58,12 @@ export default function PageHeader({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95]"
+              className="flex min-w-0 max-w-full flex-col items-start gap-0 text-[clamp(1.65rem,4.2vw,4.5rem)] sm:text-5xl md:text-6xl lg:text-[clamp(2.25rem,3.8vw,3.75rem)] xl:text-6xl 2xl:text-7xl tracking-tight leading-[1.08] break-words"
               style={{ fontFamily: 'serif' }}
             >
-              {title} {titleItalic && <><br /><span className="italic">{titleItalic}</span></>}
-              {titleEnd && <><br />{titleEnd}</>}
+              <span className="block w-full">{title}</span>
+              {titleItalic && <span className="block w-full italic">{titleItalic}</span>}
+              {titleEnd && <span className="block w-full">{titleEnd}</span>}
             </motion.h1>
 
             {subtitle && (
@@ -111,7 +114,7 @@ export default function PageHeader({
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="relative order-first lg:order-none"
+              className="relative order-first lg:order-none w-full max-w-[min(100%,380px)] sm:max-w-[400px] xl:max-w-[440px] min-[1600px]:max-w-none min-[1600px]:w-full"
             >
               {children}
             </motion.div>
