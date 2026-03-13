@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { motion } from 'motion/react';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
 import DecorativeLogo from '@/components/shared/DecorativeLogo';
@@ -34,7 +35,29 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#FAF9F6] pb-14 pt-28 sm:pb-16 sm:pt-32 md:pt-36 lg:pb-20 lg:pt-32 xl:pb-24 xl:pt-36">
+    <section className="relative overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-32 md:pt-36 lg:pb-24 lg:pt-32 xl:pb-28 xl:pt-36">
+      {/* Премиальный фон: тёплый градиент + мягкие блики */}
+      <div
+        className="absolute inset-0 bg-[#F7F4EF]"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_85%_15%,rgba(196,165,116,0.09),transparent_55%),radial-gradient(ellipse_60%_50%_at_10%_90%,rgba(139,115,85,0.06),transparent_50%),linear-gradient(180deg,#FBFAF7_0%,#F5F1EA_45%,#F8F6F1_100%)]"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.35]"
+        style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.025) 1px, transparent 0)',
+          backgroundSize: '32px 32px',
+        }}
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#C4A574]/35 to-transparent"
+        aria-hidden
+      />
+
       <DecorativeLogo
         variant="big"
         position="bottom-left"
@@ -45,96 +68,129 @@ export default function HeroSection() {
         variant="short"
         position="top-right"
         subtle
-        className="!top-20 !right-0 opacity-[0.025] md:opacity-[0.04] md:!top-24 md:!right-6 rotate-12"
+        className="!top-20 !right-0 opacity-[0.03] md:opacity-[0.045] md:!top-24 md:!right-8"
       />
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.4]"
-        style={{
-          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.03) 1px, transparent 0)',
-          backgroundSize: '28px 28px',
-        }}
-        aria-hidden
-      />
-      <div className="relative z-10 mx-auto w-full max-w-[1360px] px-5 sm:px-8 lg:px-10 xl:px-14 lg:grid lg:grid-cols-[1fr_minmax(300px,420px)] lg:grid-rows-[auto_auto] lg:items-stretch lg:gap-x-12 lg:gap-y-10 xl:grid-cols-[1fr_minmax(300px,440px)] xl:gap-x-16 xl:gap-y-12">
-        <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b border-black/[0.06] pb-4 lg:col-span-2 lg:row-start-1">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#8f6d42] sm:text-xs">
-            {t('location')}
-          </p>
-          <p className="text-[10px] uppercase tracking-[0.22em] text-neutral-400 sm:text-[11px]">
-            {t('experience')} <span className="text-neutral-300">·</span> {t('individual')}
+
+      <div className="relative z-10 mx-auto w-full max-w-[1360px] px-5 sm:px-8 lg:px-10 xl:px-14 lg:grid lg:grid-cols-[1fr_minmax(300px,420px)] lg:grid-rows-[auto_auto] lg:items-stretch lg:gap-x-14 lg:gap-y-12 xl:grid-cols-[1fr_minmax(300px,440px)] xl:gap-x-20 xl:gap-y-14">
+        {/* Шапка: редакторская линия */}
+        <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-b border-[#C4A574]/20 pb-5 lg:col-span-2 lg:row-start-1">
+          <div className="flex items-center gap-4">
+            <span className="hidden h-px w-10 bg-gradient-to-r from-[#C4A574] to-transparent sm:block" aria-hidden />
+            <p className="text-[10px] font-semibold uppercase tracking-[0.42em] text-[#7a6238] sm:text-[11px]">
+              {t('location')}
+            </p>
+          </div>
+          <p className="text-[9px] font-medium uppercase tracking-[0.28em] text-neutral-400 sm:text-[10px]">
+            {t('experience')} <span className="mx-1.5 inline-block h-1 w-1 rounded-full bg-[#C4A574]/50 align-middle" />{' '}
+            {t('individual')}
           </p>
         </div>
 
-        {/* Левый блок: на lg+ по вертикали по центру относительно высоты фото */}
-        <div className="mt-6 flex w-full max-w-lg flex-col gap-8 lg:col-start-1 lg:row-start-2 lg:mt-0 lg:max-w-none lg:justify-center lg:gap-8 lg:pr-2 lg:pt-2 xl:gap-10 xl:pr-4">
-          <h1
-            className="max-w-[18ch] font-serif text-[clamp(1.7rem,4.2vw,3.35rem)] font-normal leading-[1.08] tracking-tight text-neutral-950 sm:max-w-[21ch] lg:max-w-[20ch] xl:max-w-[22ch] xl:text-[clamp(1.95rem,3.8vw,3.65rem)]"
-            style={{ fontFamily: 'serif' }}
+        {/* Левый блок */}
+        <div className="mt-8 flex w-full max-w-lg flex-col gap-10 lg:col-start-1 lg:row-start-2 lg:mt-0 lg:max-w-none lg:justify-center lg:gap-10 lg:pr-4 xl:gap-12 xl:pr-6">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="relative pl-0 sm:pl-5 lg:pl-6"
           >
-            <span className="block">{t('title')}</span>
-            <span className="mt-1 block italic text-neutral-800">{t('titleItalic')}</span>
-            {String(t('titleEnd')).trim() ? <span className="mt-1 block">{t('titleEnd')}</span> : null}
-          </h1>
-          <div className="w-full max-w-lg lg:max-w-md xl:max-w-lg">
-            <p className="text-sm leading-relaxed text-neutral-600 sm:text-base xl:text-[1.06rem]">
+            <div
+              className="absolute left-0 top-2 hidden h-[min(12rem,55%)] w-px bg-gradient-to-b from-[#C4A574] via-[#C4A574]/40 to-transparent sm:block"
+              aria-hidden
+            />
+            <h1
+              className="max-w-[20ch] font-serif text-[clamp(1.85rem,4.8vw,3.5rem)] font-normal leading-[1.06] tracking-[-0.02em] text-neutral-950 sm:max-w-[22ch] lg:max-w-[22ch] lg:text-[clamp(2rem,4.2vw,3.4rem)] xl:max-w-[24ch] xl:text-[clamp(2.15rem,3.6vw,3.85rem)]"
+              style={{ fontFamily: 'serif' }}
+            >
+              <span className="block">{t('title')}</span>
+              <span className="mt-2 block text-neutral-800 italic">{t('titleItalic')}</span>
+              {String(t('titleEnd')).trim() ? (
+                <span className="mt-2 block text-[0.92em] font-normal tracking-normal text-neutral-700">
+                  {t('titleEnd')}
+                </span>
+              ) : null}
+            </h1>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full max-w-lg border-t border-black/[0.06] pt-8 lg:max-w-md xl:max-w-lg"
+          >
+            <p className="text-[0.9375rem] font-light leading-[1.75] tracking-wide text-neutral-600 sm:text-base xl:text-[1.0625rem]">
               {t('description')}
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
               <button
                 type="button"
                 onClick={() => openRequestModal()}
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-neutral-950 px-6 py-3 text-xs font-medium text-white shadow-md shadow-black/15 ring-1 ring-black/10 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-black hover:shadow-lg hover:shadow-[#8f6d42]/20 hover:ring-[#C4A574]/30 active:translate-y-0 active:scale-[0.98] sm:text-sm"
+                className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full bg-neutral-950 px-7 py-3.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white shadow-[0_12px_32px_-8px_rgba(0,0,0,0.35)] ring-1 ring-black/10 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-black hover:shadow-[0_16px_40px_-10px_rgba(0,0,0,0.4)] hover:ring-[#C4A574]/35 active:translate-y-0 sm:px-8 sm:py-4 sm:text-xs"
               >
                 <span className="relative z-10">{t('orderButton')}</span>
                 <ArrowRight
-                  className="relative z-10 h-4 w-4 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-1"
+                  className="relative z-10 h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5"
                   aria-hidden
                 />
                 <span
                   className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   style={{
                     background:
-                      'linear-gradient(105deg, transparent 40%, rgba(196,165,116,0.12) 50%, transparent 60%)',
+                      'linear-gradient(105deg, transparent 35%, rgba(196,165,116,0.15) 50%, transparent 65%)',
                   }}
                   aria-hidden
                 />
               </button>
               <Link
                 href={`/${locale}/pieces`}
-                className="inline-flex items-center rounded-full border border-neutral-900/20 bg-white px-6 py-3 text-xs font-medium text-neutral-900 shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-[#C4A574]/50 hover:bg-[#FDFCFA] hover:text-[#5c4a32] hover:shadow-md hover:shadow-[#C4A574]/10 active:translate-y-0 active:scale-[0.98] sm:text-sm"
+                className="inline-flex items-center rounded-full border border-neutral-900/15 bg-white/90 px-7 py-3.5 text-[11px] font-medium uppercase tracking-[0.14em] text-neutral-800 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#C4A574]/45 hover:bg-white hover:shadow-md hover:shadow-[#C4A574]/8 sm:px-8 sm:py-4 sm:text-xs"
               >
                 {t('portfolioButton')}
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Правая колонка: фото задаёт высоту строки; левый блок визуально по центру */}
-        <div className="mt-10 w-full lg:col-start-2 lg:row-start-2 lg:mt-0 lg:self-start">
-          <div
-            className="group/image mx-auto max-w-[340px] cursor-default overflow-hidden rounded-2xl shadow-[0_20px_48px_-16px_rgba(0,0,0,0.18)] ring-1 ring-black/[0.07] transition-[box-shadow,transform] duration-500 ease-out hover:shadow-[0_28px_56px_-18px_rgba(0,0,0,0.22)] hover:ring-[#C4A574]/25 lg:mx-0 lg:max-w-[320px] xl:max-w-[420px] xl:rounded-3xl min-[1536px]:max-w-none"
-          >
-            {/* Ноутбук lg: выше по высоте (~460px / 48vh); xl+: пропорция 3/4 */}
-            <div className="relative aspect-[3/4] w-full max-h-[min(44vh,380px)] bg-neutral-100 sm:max-h-[min(46vh,400px)] lg:aspect-auto lg:h-[min(48vh,460px)] lg:max-h-[460px] lg:w-[300px] xl:aspect-[3/4] xl:h-auto xl:max-h-[min(46vh,460px)] xl:min-h-[360px] xl:w-full min-[1536px]:min-h-[400px] min-[1536px]:max-h-[min(52vh,520px)]">
-              <img
-                src={src}
-                alt={String(t('nameFull'))}
-                className="absolute inset-0 h-full w-full object-cover object-top transition-[transform,filter] duration-700 ease-out group-hover/image:scale-[1.045] group-hover/image:brightness-[1.03]"
-                loading="eager"
-                decoding="async"
-                onError={onImgError}
-              />
-              <div
-                className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-[#8f6d42]/0 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover/image:opacity-100 group-hover/image:from-[#8f6d42]/08"
-                aria-hidden
-              />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/80 via-black/35 to-transparent px-4 pb-3 pt-14 transition-opacity duration-300 group-hover/image:from-black/85">
-                <p className="text-[9px] tracking-[0.22em] text-white/85">{t('nameFull')}</p>
-                <p className="mt-0.5 text-sm font-medium text-white">{t('role')}</p>
+        {/* Фото: двойная рамка, объём */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-12 w-full lg:col-start-2 lg:row-start-2 lg:mt-0 lg:self-center"
+        >
+          <div className="relative mx-auto max-w-[340px] lg:mx-0 lg:max-w-[320px] xl:max-w-[420px] min-[1536px]:max-w-none">
+            <div
+              className="absolute -inset-3 rounded-[1.35rem] bg-gradient-to-br from-[#C4A574]/12 via-transparent to-[#8B7355]/10 opacity-80 blur-xl sm:-inset-4 sm:rounded-[1.5rem]"
+              aria-hidden
+            />
+            <div className="group/image relative cursor-default rounded-2xl bg-[#F0EBE3] p-[3px] shadow-[0_24px_56px_-20px_rgba(0,0,0,0.2),0_0_0_1px_rgba(0,0,0,0.04)_inset] ring-1 ring-[#C4A574]/25 transition-[box-shadow,transform] duration-500 ease-out hover:shadow-[0_32px_64px_-24px_rgba(0,0,0,0.28)] hover:ring-[#C4A574]/40 xl:rounded-3xl xl:p-1">
+              <div className="overflow-hidden rounded-[1.15rem] ring-1 ring-white/90 xl:rounded-[1.35rem]">
+                <div className="relative aspect-[3/4] w-full max-h-[min(44vh,380px)] bg-neutral-200/80 sm:max-h-[min(46vh,400px)] lg:aspect-auto lg:h-[min(48vh,460px)] lg:max-h-[460px] lg:w-[300px] xl:aspect-[3/4] xl:h-auto xl:max-h-[min(46vh,480px)] xl:min-h-[380px] xl:w-full min-[1536px]:min-h-[420px] min-[1536px]:max-h-[min(52vh,540px)]">
+                  <img
+                    src={src}
+                    alt={String(t('nameFull'))}
+                    className="absolute inset-0 h-full w-full object-cover object-top transition-[transform,filter] duration-700 ease-out group-hover/image:scale-[1.04] group-hover/image:brightness-[1.04]"
+                    loading="eager"
+                    decoding="async"
+                    onError={onImgError}
+                  />
+                  <div
+                    className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-[#1a1510]/0 via-transparent to-white/[0.03] opacity-0 transition-opacity duration-500 group-hover/image:opacity-100"
+                    aria-hidden
+                  />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/[0.82] via-black/30 to-transparent px-5 pb-4 pt-16">
+                    <div className="origin-bottom transition-transform duration-500 ease-out group-hover/image:-translate-y-1.5">
+                      <p className="text-[9px] font-medium uppercase tracking-[0.28em] text-white/90">
+                        {t('nameFull')}
+                      </p>
+                      <p className="mt-1.5 text-sm font-normal tracking-wide text-white/95">{t('role')}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
