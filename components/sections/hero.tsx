@@ -99,11 +99,11 @@ export default function HeroSection() {
               aria-hidden
             />
             <h1
-              className="max-w-[20ch] font-serif text-[clamp(1.85rem,4.8vw,3.5rem)] font-normal leading-[1.06] tracking-[-0.02em] text-neutral-950 sm:max-w-[22ch] lg:max-w-[22ch] lg:text-[clamp(2rem,4.2vw,3.4rem)] xl:max-w-[24ch] xl:text-[clamp(2.15rem,3.6vw,3.85rem)]"
+              className="max-w-[22ch] font-serif text-[clamp(2.15rem,6.2vw,4.35rem)] font-normal leading-[1.05] tracking-[-0.025em] text-neutral-950 sm:max-w-[24ch] lg:max-w-[26ch] lg:text-[clamp(2.35rem,5.4vw,4.15rem)] xl:max-w-[28ch] xl:text-[clamp(2.6rem,4.8vw,4.85rem)] 2xl:text-[clamp(2.75rem,4.2vw,5.25rem)]"
               style={{ fontFamily: 'serif' }}
             >
               <span className="block">{t('title')}</span>
-              <span className="mt-2 block text-neutral-800 italic">{t('titleItalic')}</span>
+              <span className="mt-2 block text-neutral-800 italic xl:mt-3">{t('titleItalic')}</span>
               {String(t('titleEnd')).trim() ? (
                 <span className="mt-2 block text-[0.92em] font-normal tracking-normal text-neutral-700">
                   {t('titleEnd')}
