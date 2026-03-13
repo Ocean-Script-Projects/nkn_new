@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
+import DecorativeLogo from '@/components/shared/DecorativeLogo';
 
 const REMOTE =
   'https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?auto=format&fit=crop&w=1000&h=1250&q=85';
@@ -33,8 +34,28 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative bg-[#FAF9F6] pb-14 pt-28 sm:pb-16 sm:pt-32 md:pt-36 lg:pb-20 lg:pt-32 xl:pb-24 xl:pt-36">
-      <div className="mx-auto w-full max-w-[1360px] px-5 sm:px-8 lg:px-10 xl:px-14 lg:grid lg:grid-cols-[1fr_minmax(272px,380px)] lg:grid-rows-[auto_auto] lg:items-stretch lg:gap-x-12 lg:gap-y-10 xl:grid-cols-[1fr_minmax(300px,440px)] xl:gap-x-16 xl:gap-y-12">
+    <section className="relative overflow-hidden bg-[#FAF9F6] pb-14 pt-28 sm:pb-16 sm:pt-32 md:pt-36 lg:pb-20 lg:pt-32 xl:pb-24 xl:pt-36">
+      <DecorativeLogo
+        variant="big"
+        position="bottom-left"
+        subtle
+        className="!bottom-6 !left-2 rotate-0 md:!bottom-10 md:!left-6 md:scale-110 lg:scale-125"
+      />
+      <DecorativeLogo
+        variant="short"
+        position="top-right"
+        subtle
+        className="!top-20 !right-0 opacity-[0.025] md:opacity-[0.04] md:!top-24 md:!right-6 rotate-12"
+      />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.4]"
+        style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.03) 1px, transparent 0)',
+          backgroundSize: '28px 28px',
+        }}
+        aria-hidden
+      />
+      <div className="relative z-10 mx-auto w-full max-w-[1360px] px-5 sm:px-8 lg:px-10 xl:px-14 lg:grid lg:grid-cols-[1fr_minmax(300px,420px)] lg:grid-rows-[auto_auto] lg:items-stretch lg:gap-x-12 lg:gap-y-10 xl:grid-cols-[1fr_minmax(300px,440px)] xl:gap-x-16 xl:gap-y-12">
         <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b border-black/[0.06] pb-4 lg:col-span-2 lg:row-start-1">
           <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#8f6d42] sm:text-xs">
             {t('location')}
@@ -90,18 +111,24 @@ export default function HeroSection() {
 
         {/* Правая колонка: фото задаёт высоту строки; левый блок визуально по центру */}
         <div className="mt-10 w-full lg:col-start-2 lg:row-start-2 lg:mt-0 lg:self-start">
-          <div className="mx-auto max-w-[340px] overflow-hidden rounded-2xl shadow-[0_20px_48px_-16px_rgba(0,0,0,0.18)] ring-1 ring-black/[0.07] lg:mx-0 lg:max-w-[300px] xl:max-w-[420px] xl:rounded-3xl min-[1536px]:max-w-none">
-            {/* Ноутбук: выше по высоте; xl+: пропорция 3/4 */}
-            <div className="relative aspect-[3/4] w-full max-h-[min(44vh,380px)] bg-neutral-100 sm:max-h-[min(46vh,400px)] lg:aspect-auto lg:h-[min(40vh,380px)] lg:max-h-[380px] lg:w-[280px] xl:aspect-[3/4] xl:h-auto xl:max-h-[min(46vh,460px)] xl:min-h-[360px] xl:w-full min-[1536px]:min-h-[400px] min-[1536px]:max-h-[min(52vh,520px)]">
+          <div
+            className="group/image mx-auto max-w-[340px] cursor-default overflow-hidden rounded-2xl shadow-[0_20px_48px_-16px_rgba(0,0,0,0.18)] ring-1 ring-black/[0.07] transition-[box-shadow,transform] duration-500 ease-out hover:shadow-[0_28px_56px_-18px_rgba(0,0,0,0.22)] hover:ring-[#C4A574]/25 lg:mx-0 lg:max-w-[320px] xl:max-w-[420px] xl:rounded-3xl min-[1536px]:max-w-none"
+          >
+            {/* Ноутбук lg: выше по высоте (~460px / 48vh); xl+: пропорция 3/4 */}
+            <div className="relative aspect-[3/4] w-full max-h-[min(44vh,380px)] bg-neutral-100 sm:max-h-[min(46vh,400px)] lg:aspect-auto lg:h-[min(48vh,460px)] lg:max-h-[460px] lg:w-[300px] xl:aspect-[3/4] xl:h-auto xl:max-h-[min(46vh,460px)] xl:min-h-[360px] xl:w-full min-[1536px]:min-h-[400px] min-[1536px]:max-h-[min(52vh,520px)]">
               <img
                 src={src}
                 alt={String(t('nameFull'))}
-                className="absolute inset-0 h-full w-full object-cover object-top"
+                className="absolute inset-0 h-full w-full object-cover object-top transition-[transform,filter] duration-700 ease-out group-hover/image:scale-[1.045] group-hover/image:brightness-[1.03]"
                 loading="eager"
                 decoding="async"
                 onError={onImgError}
               />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/80 via-black/35 to-transparent px-4 pb-3 pt-14">
+              <div
+                className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-[#8f6d42]/0 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover/image:opacity-100 group-hover/image:from-[#8f6d42]/08"
+                aria-hidden
+              />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/80 via-black/35 to-transparent px-4 pb-3 pt-14 transition-opacity duration-300 group-hover/image:from-black/85">
                 <p className="text-[9px] tracking-[0.22em] text-white/85">{t('nameFull')}</p>
                 <p className="mt-0.5 text-sm font-medium text-white">{t('role')}</p>
               </div>

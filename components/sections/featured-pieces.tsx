@@ -35,7 +35,6 @@ export default function FeaturedPiecesSection() {
       id="pieces"
       className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12 bg-white relative overflow-hidden"
     >
-      <DecorativeLogo variant="short" position="bottom-left" />
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

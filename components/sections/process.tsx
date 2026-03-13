@@ -3,7 +3,6 @@
 import { motion } from 'motion/react';
 import { useTranslations } from '@/lib/i18n';
 import { ImageWithFallback } from '@/components/image-with-fallback';
-import DecorativeLogo from '@/components/shared/DecorativeLogo';
 
 export default function ProcessSection() {
   const t = useTranslations('process');
@@ -23,7 +22,6 @@ export default function ProcessSection() {
 
   return (
     <section id="process" className="py-32 px-6 md:px-12 bg-white relative overflow-hidden">
-      <DecorativeLogo variant="big" position="top-right" />
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
