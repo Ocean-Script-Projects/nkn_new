@@ -656,10 +656,11 @@
     },
     "b2b": {
       "label": "B2B",
-      "title": "Für Designer",
-      "titleItalic": "& Marken",
-      "description": "Ich arbeite mit Designern und Marken, die Handwerk, Präzision und durchdachte Konstruktion schätzen",
-      "items": ["Modellentwicklung und Silhouettenverfeinerung", "Professionelles Schnittmuster und Gradierung", "Erstmuster und Anprobe", "Konstruktionsberatung für die Produktion", "Technische Spezifikation und Dokumentation"],
+      "title": "Zusammenarbeit",
+      "titleItalic": "B2B",
+      "support": "Professionelle Unterstützung für Designer und Marken bei der Erstellung und dem Launch von Produkten.",
+      "description1": "Ich arbeite mit denen, die Präzision, Ästhetik und durchdachte Konstruktion schätzen.",
+      "description2": "Ich helfe, eine Idee in ein reales Produkt zu übersetzen — mit der richtigen Passform und stimmigen Linien.",
       "cta": "Zusammenarbeit besprechen"
     },
     "cta": {

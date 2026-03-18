@@ -66,15 +66,16 @@ export default function CollaborationPage() {
             }}
             aria-hidden
           />
-          <div className="max-w-5xl mx-auto relative z-10">
+          <div className="max-w-3xl mx-auto relative z-10">
+            {/* Заголовок и подзаголовок — центр */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-center mb-12 sm:mb-16"
+              className="text-center mb-10 sm:mb-12"
             >
-              <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="flex items-center justify-center gap-3 mb-5">
                 <div className="h-px w-8 bg-[#C4A574]" />
                 <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
                   {t('b2b.label')}
@@ -82,42 +83,39 @@ export default function CollaborationPage() {
                 <div className="h-px w-8 bg-[#C4A574]" />
               </div>
               <h2
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-5 sm:mb-6 tracking-tight"
                 style={{ fontFamily: 'serif' }}
               >
                 {t('b2b.title')} <br className="sm:hidden" />
                 <span className="italic">{t('b2b.titleItalic')}</span>
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-[#FAF9F6]/80 max-w-2xl mx-auto leading-relaxed">
-                {t('b2b.description')}
+              <p className="text-base sm:text-lg md:text-xl text-[#FAF9F6]/85 max-w-2xl mx-auto leading-relaxed">
+                {t('b2b.support')}
               </p>
             </motion.div>
+
+            {/* Текстовый блок — левое выравнивание, акцентная полоса */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-6 mb-12"
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="border-l-2 border-[#C4A574]/70 pl-6 sm:pl-8 py-1 mb-12 sm:mb-14"
             >
-              {[0, 1, 2, 3, 4].map((i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className="flex items-start gap-4 border-l-2 border-[#C4A574] pl-6"
-                >
-                  <div className="w-2 h-2 rounded-full bg-[#C4A574] mt-2 flex-shrink-0" aria-hidden />
-                  <p className="text-base sm:text-lg text-[#FAF9F6]/90 leading-relaxed">{t(`b2b.items.${i}`)}</p>
-                </motion.div>
-              ))}
+              <p className="text-base sm:text-lg text-[#FAF9F6]/90 leading-relaxed mb-5">
+                {t('b2b.description1')}
+              </p>
+              <p className="text-base sm:text-lg text-[#FAF9F6]/90 leading-relaxed">
+                {t('b2b.description2')}
+              </p>
             </motion.div>
+
+            {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.25 }}
               className="text-center"
             >
               <motion.button

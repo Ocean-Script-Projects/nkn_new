@@ -656,10 +656,11 @@
     },
     "b2b": {
       "label": "B2B",
-      "title": "For designers",
-      "titleItalic": "& brands",
-      "description": "I work with designers and brands who value craft, precision and thoughtful construction",
-      "items": ["Model development and silhouette refinement", "Professional pattern making and grading", "First sample creation and fitting", "Construction consulting for production", "Technical specification and documentation"],
+      "title": "Collaboration",
+      "titleItalic": "B2B",
+      "support": "Professional support for designers and brands at the stage of creating and launching products.",
+      "description1": "I work with those who value precision, aesthetics and thoughtful construction.",
+      "description2": "I help translate an idea into a real product — with the right fit and logical lines.",
       "cta": "Discuss collaboration"
     },
     "cta": {
