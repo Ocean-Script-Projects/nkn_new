@@ -132,7 +132,7 @@ export default function UpcyclingPage() {
         title={String(t('title'))}
         titleItalic={String(t('titleItalic'))}
         titleEnd={String(t('titleEnd'))}
-        descriptionParagraphs={[t('description1'), t('description2'), t('description3')]}
+        descriptionParagraphs={[String(t('description1')), String(t('description2')), String(t('description3'))]}
         labelColor="#059669"
         hasBackgroundOrbs
       >
