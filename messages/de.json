@@ -651,8 +651,13 @@
       "label": "Zusammenarbeit",
       "title": "Zusammenarbeit",
       "titleItalic": "",
-      "description": "Professionelle Begleitung von Designern und Markenstart.",
-      "tagline": "Konstruktion ist das Fundament jedes Stücks. Eine gut durchdachte Basis bestimmt Sitz und Produktqualität. Ich entwickle die Konstruktion, erstelle Schnittmuster, forme die Größentabelle, nähe die Probestücke und bereite das Modell für den Start vor. Ich baue das Markensystem von der Idee bis zum fertigen Stück auf. Die Marke beginnt mit präziser Konstruktion."
+      "description": "Professionelle Begleitung von Designern und Markenstart."
+    },
+    "approach": {
+      "title": "Arbeitsansatz",
+      "p1": "Konstruktion ist das Fundament jedes Stücks.",
+      "p2": "Eine gut durchdachte Basis bestimmt Sitz und Produktqualität.",
+      "p3": "Ich entwickle die Konstruktion und erstelle Schnittmuster."
     },
     "directions": {
       "label": "Leistungen",
@@ -677,8 +682,9 @@
       "cta": "Zusammenarbeit besprechen"
     },
     "cta": {
-      "title": "Zusammenarbeit besprechen",
-      "description": "Kontaktieren Sie mich für Ihr Projekt."
+      "title": "Bereit, Zusammenarbeit zu besprechen?",
+      "description": "Erzählen Sie von Ihrem Projekt — ich schlage eine professionelle Lösung vor.",
+      "button": "Zusammenarbeit besprechen"
     }
   },
   "printsPage": {

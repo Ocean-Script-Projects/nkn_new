@@ -651,8 +651,13 @@
       "label": "Collaboration",
       "title": "Collaboration",
       "titleItalic": "",
-      "description": "Professional support for designers and brand launch.",
-      "tagline": "Construction is the foundation of every piece. A well-built base determines fit and product quality. I develop the construction, create patterns, form the size range, sew the sample and prepare the model for launch. I build the brand system from idea to finished piece. The brand starts with precise construction."
+      "description": "Professional support for designers and brand launch."
+    },
+    "approach": {
+      "title": "Approach to work",
+      "p1": "Construction is the foundation of every piece.",
+      "p2": "A well-built base determines fit and product quality.",
+      "p3": "I develop the construction and create patterns."
     },
     "directions": {
       "label": "Services",
@@ -677,8 +682,9 @@
       "cta": "Discuss collaboration"
     },
     "cta": {
-      "title": "Discuss collaboration",
-      "description": "Contact me to discuss your project."
+      "title": "Ready to discuss collaboration?",
+      "description": "Tell me about your project — I will suggest a professional solution.",
+      "button": "Discuss collaboration"
     }
   },
   "printsPage": {

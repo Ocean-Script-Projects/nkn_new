@@ -41,29 +41,52 @@ export default function CollaborationPage() {
           </motion.div>
         </PageHeader>
 
-        <section className="relative py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-white overflow-hidden">
-          {/* Лого в углу — не перекрывает текст */}
+        {/* Подход к работе — белый фон + паттерн */}
+        <section className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-white overflow-hidden">
           <div
-            className="absolute bottom-8 right-8 w-48 sm:w-64 h-48 sm:h-64 opacity-[0.08] pointer-events-none"
+            className="absolute inset-0 opacity-[0.04] pointer-events-none"
             style={{
-              backgroundImage: 'url(/images/big_logo.png)',
-              backgroundSize: 'contain',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
+              backgroundImage: 'radial-gradient(circle at 1px 1px, #C4A574 0.5px, transparent 0)',
+              backgroundSize: '24px 24px',
             }}
             aria-hidden
           />
-          <div className="relative z-10 max-w-3xl mx-auto text-center">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-2xl sm:text-3xl md:text-4xl tracking-tight text-[#1a1a1a]"
-              style={{ fontFamily: 'serif' }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-10 sm:mb-12"
             >
-              {t('hero.tagline')}
-            </motion.p>
+              <div className="flex items-center justify-center gap-3 mb-5">
+                <span className="h-px w-8 sm:w-12 bg-[#C4A574]/60" aria-hidden />
+                <span className="text-[10px] sm:text-xs font-medium tracking-[0.3em] uppercase text-[#8B7355]">
+                  {t('approach.title')}
+                </span>
+                <span className="h-px w-8 sm:w-12 bg-[#C4A574]/60" aria-hidden />
+              </div>
+              <p
+                className="text-2xl sm:text-3xl md:text-4xl tracking-tight text-[#1a1a1a] leading-snug mb-10"
+                style={{ fontFamily: 'serif' }}
+              >
+                {t('approach.p1')}
+              </p>
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="border-l-2 border-[#C4A574] pl-6 sm:pl-8 py-1 text-left"
+              >
+                <p className="text-lg sm:text-xl text-[#1a1a1a]/90 leading-relaxed mb-4" style={{ fontFamily: 'serif' }}>
+                  {t('approach.p2')}
+                </p>
+                <p className="text-lg sm:text-xl text-[#1a1a1a]/90 leading-relaxed" style={{ fontFamily: 'serif' }}>
+                  {t('approach.p3')}
+                </p>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
 
@@ -196,6 +219,28 @@ export default function CollaborationPage() {
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
             </motion.div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-[#FAF9F6]">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-2xl sm:text-3xl tracking-tight text-[#1a1a1a] mb-4" style={{ fontFamily: 'serif' }}>
+              {t('cta.title')}
+            </h2>
+            <p className="text-base sm:text-lg text-[#6B6B6B] mb-8 leading-relaxed">
+              {t('cta.description')}
+            </p>
+            <motion.button
+              type="button"
+              onClick={() => openRequestModal()}
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#C4A574] text-white rounded-full text-base sm:text-lg font-medium tracking-wide hover:shadow-lg hover:shadow-[#C4A574]/25 transition-shadow"
+            >
+              {t('cta.button')}
+              <ArrowRight className="w-5 h-5" />
+            </motion.button>
           </div>
         </section>
       </div>
