@@ -654,6 +654,19 @@
       "description": "Professionelle Begleitung von Designern und Markenstart.",
       "tagline": "Konstruktion ist das Fundament jedes Stücks. Eine gut durchdachte Basis bestimmt Sitz und Produktqualität. Ich entwickle die Konstruktion, erstelle Schnittmuster, forme die Größentabelle, nähe die Probestücke und bereite das Modell für den Start vor. Ich baue das Markensystem von der Idee bis zum fertigen Stück auf. Die Marke beginnt mit präziser Konstruktion."
     },
+    "directions": {
+      "label": "Leistungen",
+      "title": "Richtungen der Zusammenarbeit",
+      "items": [
+        "Modellentwicklung und Silhouettenverfeinerung",
+        "Professionelles Schnittmuster",
+        "Erstmuster und Begleitung der Anproben",
+        "Konstruktionsberatung für den Produktionsstart",
+        "Entwicklung von Autorendrucken für das Kollektionskonzept",
+        "Vorbereitung des Modells für den Launch"
+      ],
+      "footer": "Jedes Stück wird als Teil des Markensystems betrachtet."
+    },
     "b2b": {
       "label": "B2B",
       "title": "Zusammenarbeit",

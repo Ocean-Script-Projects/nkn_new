@@ -654,6 +654,19 @@
       "description": "Professional support for designers and brand launch.",
       "tagline": "Construction is the foundation of every piece. A well-built base determines fit and product quality. I develop the construction, create patterns, form the size range, sew the sample and prepare the model for launch. I build the brand system from idea to finished piece. The brand starts with precise construction."
     },
+    "directions": {
+      "label": "Services",
+      "title": "Directions of collaboration",
+      "items": [
+        "Model development and silhouette refinement",
+        "Professional pattern making",
+        "First sample creation and fitting support",
+        "Construction consulting for production launch",
+        "Author's print development for collection concept",
+        "Model preparation for launch"
+      ],
+      "footer": "Each piece is considered as part of the brand system."
+    },
     "b2b": {
       "label": "B2B",
       "title": "Collaboration",
