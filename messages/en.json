@@ -24,7 +24,7 @@
     "experience": "37+ years of experience",
     "individual": "Individual approach",
     "scroll": "SCROLL",
-    "nameFull": "NATALIA KHRESHKOVA",
+    "nameFull": "NATALIIA KHRESHKOVA",
     "role": "Designer · Pattern maker"
   },
   "philosophy": {
@@ -128,7 +128,7 @@
   },
   "about": {
     "label": "About me",
-    "name": "Natalia",
+    "name": "Nataliia",
     "nameItalic": "Khreshkova",
     "description1": "Founder and director of the design atelier «Nataliia», working on the principle of a European fashion house.",
     "description2": "The basis of my work is the ability to feel a person: their figure, inner state, character and how they want to feel in the created image.",
@@ -137,7 +137,7 @@
     "unique": "unique pieces",
     "certification": "Certification",
     "roles": "Designer · Pattern maker · Stylist",
-    "nameFull": "NATALIA KHRESHKOVA",
+    "nameFull": "NATALIIA KHRESHKOVA",
     "role": "Designer · Pattern maker",
     "location": "Hamburg"
   },
@@ -162,7 +162,7 @@
     "startProject": "Start project"
   },
   "footer": {
-    "copyright": "© 2026 Natalia Khreshkova. All rights reserved.",
+    "copyright": "© 2026 Nataliia Khreshkova. All rights reserved.",
     "privacy": "Privacy",
     "terms": "Terms",
     "agb": "Terms & Conditions"
@@ -248,20 +248,21 @@
     "title": "Upcycling —",
     "titleItalic": "conscious",
     "titleEnd": "transformation",
-    "subtitle1": "Giving existing garments new form,",
-    "subtitle2": "function and energy",
-    "description": "I work with items that you already have. I recut and rethink them — with new energy, modern aesthetics and deep respect for the history of the piece.",
+    "description1": "Everyone's wardrobe holds a lot of clothing. But not all of it is actually worn. Pieces can sit for years: too sorry to throw away, yet no longer a pleasure to wear.",
+    "description2": "I suggest revisiting such pieces and giving them a new life.",
+    "description3": "Upcycling is a considered reimagining of a garment: changing shape, fit and details according to your wishes and current trends. The result is a piece that feels current, relevant and works for you again — highlighting individuality and strengthening your image.",
     "badge": "Eco-conscious",
     "badgeDescription": "Sustainable approach to fashion",
     "philosophy": {
       "label": "Philosophy",
-      "title": "Rethinking",
-      "titleItalic": "instead of consumption",
+      "title": "Conscious wardrobe",
+      "titleItalic": "update",
       "values": [
-        "Careful attitude towards nature",
-        "Respect for already created form",
-        "Rethinking instead of consumption",
-        "New energy and function"
+        "Care for nature and resources",
+        "Thoughtful wardrobe refresh without unnecessary purchases",
+        "Reconstruction of garments",
+        "New fit, comfort and functionality",
+        "The piece becomes relevant, modern and comfortable again"
       ]
     },
     "slider": {
@@ -269,7 +270,7 @@
       "title": "Before & After",
       "before": "Before",
       "after": "After",
-      "caption": "Not repair. Reconstruction."
+      "caption": "Transformation through designer reconstruction"
     },
     "process": {
       "label": "Process",
@@ -295,32 +296,32 @@
       }
     },
     "categories": {
-      "title": "What can be",
-      "titleItalic": "transformed",
-      "footer": "Each project is individual and discussed personally",
+      "title": "Pieces that can get",
+      "titleItalic": "a new life",
+      "footer": "Each project is individual",
       "01": {
         "title": "Jackets & coats",
-        "description": "Reconstruction of outerwear with new silhouette"
+        "description": "Changing silhouette, length and details so that outerwear looks modern and lasts for years"
       },
       "02": {
-        "title": "Dresses",
-        "description": "Transformation into modern shapes and fits"
+        "title": "Dresses, shirts & trousers",
+        "description": "New shape and fit so the piece flatters the figure again and matches your style"
       },
       "03": {
-        "title": "Shirts & trousers",
-        "description": "Redesign of classic garments"
+        "title": "Fur & leather pieces",
+        "description": "Changing shape, length or details so the piece becomes current, comfortable and easy to style"
       },
       "04": {
-        "title": "Personal archive",
-        "description": "Giving new meaning to cherished pieces"
+        "title": "Personal pieces with a story",
+        "description": "Careful reconstruction of beloved or meaningful items, giving them new life and a modern feel"
       }
     },
     "quote": {
-      "text1": "Upcycling is not about",
-      "text2": "saving clothes.",
-      "text3": "It is about redefining",
-      "text4": "meaning.",
-      "author": "NATALIA KHRESHKOVA"
+      "text1": "Upcycling is the art of giving a piece a new form,",
+      "text2": "",
+      "text3": "a new sound and a new life.",
+      "text4": "",
+      "author": "NATALIIA KHRESHKOVA"
     },
     "faq": {
       "label": "FAQ",
@@ -347,13 +348,13 @@
       }
     },
     "cta": {
-      "title": "Start the",
-      "titleItalic": "transformation",
-      "description": "Describe the garment and your idea — I will suggest a solution"
+      "title": "Start a new life",
+      "titleItalic": "for your piece",
+      "description": "Tell us which item you want to update — together we will find a relevant design solution."
     },
     "form": {
-      "garment": "What do you want to transform?",
-      "garmentPlaceholder": "Describe the garment: type, condition, what you envision...",
+      "garment": "Which item do you want to update?",
+      "garmentPlaceholder": "Describe the piece: item type, condition, what you would like to change or get as a result.",
       "contact": "Preferred contact",
       "contactPlaceholder": "Telegram / WhatsApp / Email",
       "contactTelegram": "Telegram",
@@ -420,8 +421,8 @@
     },
     "intro": {
       "p1": "Bespoke tailoring is always about status and self-respect.",
-      "p2": "It is the choice of those for whom the match between outer appearance and inner state matters. Individually made clothing reflects personality, character and inner depth. It highlights uniqueness and makes it visible. The piece is made exclusively for you.",
-      "p3": "The creative process begins with dialogue."
+      "p2": "It is the choice of people for whom it matters that outer appearance matches inner state.",
+      "p3": "Such clothing highlights uniqueness and makes it visible. Each piece is made for a specific person and becomes an organic part of their style and life."
     },
     "offline": {
       "title": "Offline tailoring",
@@ -567,19 +568,20 @@
   "aboutPage": {
     "hero": {
       "label": "Atelier",
-      "title": "Natalia",
+      "title": "Nataliia",
       "titleItalic": "Khreshkova",
-      "subtitle": "Designer · Tailor · Atelier practice",
+      "subtitle": "Founder of a design atelier in the style of a fashion house",
       "badge1": "atelier practice",
       "badge2": "handmade",
       "badge3": "full cycle"
     },
-    "story": {
-      "p1": "I am Natalia NKN Khreshkova, founder and director of a design atelier in the style of a «fashion house» (Ukraine).",
-      "p2": "Pattern maker for women's and men's clothing of any complexity. 37 years of professional practice. Designer of author's prints on fabric and author of her own online tailoring system.",
-      "p3": "I create not just clothing — I create state through form that strengthens and reveals personality. I work with clients worldwide. Today I am developing an author's studio in Germany.",
-      "p4": "",
-      "footer": "37+ years in tailoring and atelier practice"
+    "bio": {
+      "p1": "I am Nataliia Khreshkova — founder and director of a design atelier in the style of a fashion house. Fashion designer, pattern maker. 37 years in the fashion industry.",
+      "p2": "I create the right clothing as a tool for inner state. Through form, proportions and precise construction, the piece begins to work for the person. It highlights their individuality and status.",
+      "p3": "A harmonious appearance strengthens and reveals personality.",
+      "p4": "Every piece is born in dialogue with the person. So clothing becomes a natural part of everyday life and works for the result: for impression, for state and for the expression of personality.",
+      "p5": "My clients are worldwide. They receive from me individual looks and pieces that help them feel like themselves.",
+      "p6": "Today I have an author's studio in Germany. And I continue to create clothing with meaning — clothing that reflects the uniqueness of each person."
     },
     "position": {
       "label": "Position",
@@ -595,33 +597,32 @@
     },
     "philosophy": { "label": "Philosophy", "title": "My approach" },
     "principles": {
-      "01": { "title": "Form & Fit", "description": "Proportions, balance and comfort", "detail": "Every garment is built around the body, not trends" },
-      "02": { "title": "Material & Meaning", "description": "Fabric, texture and purpose", "detail": "The right material gives life to the idea" },
-      "03": { "title": "Structure & Craft", "description": "Construction, precision and handwork", "detail": "Quality is in the details invisible to the eye" }
+      "01": {
+        "title": "A system, not a random set",
+        "description": "For me, clothing is not a random set of things. It is a considered system where meaning, function and aesthetics come together. The right piece does not distract from life but helps a person feel appropriate, comfortable and natural in any situation.",
+        "detail": ""
+      },
+      "02": {
+        "title": "Fashion and awareness",
+        "description": "I respect fashion and trends. However, I believe it is important not to follow them literally but to consciously adapt them to the person, their lifestyle and needs. Only then does clothing become a harmonious part of life and truly work for the result.",
+        "detail": ""
+      }
     },
     "process": {
-      "title": "Full cycle",
-      "titleItalic": "atelier practice",
-      "subtitle": "From the first conversation to the final fitting — every step is personal and precise",
+      "title": "THE PATH OF CREATING YOUR GARMENT",
+      "titleItalic": "",
+      "subtitle": "From the first idea to the final fitting — each stage takes place in personal dialogue, attention to detail and precise professional support.",
       "steps": {
-        "01": { "step": "Idea", "detail": "Understanding vision and needs" },
-        "02": { "step": "Sketch", "detail": "Translating concept into form" },
-        "03": { "step": "Pattern", "detail": "Creating precise construction" },
-        "04": { "step": "Sewing", "detail": "Bringing garment to life" },
-        "05": { "step": "Final fitting", "detail": "Perfecting every detail" }
+        "01": { "step": "Dialogue and idea", "detail": "It's not just about creating a piece, but feeling what result it should give." },
+        "02": { "step": "Concept and sketch", "detail": "Form, silhouette and character of the garment come from the shared idea. I translate your desires and feelings into a visual image." },
+        "03": { "step": "Individual construction", "detail": "A precise pattern is created taking into account the particularities of the figure. Construction is the foundation that shapes the fit and freedom of movement." },
+        "04": { "step": "Creating the garment", "detail": "Fabric, trims and thread selection + handwork. Every piece is checked at every stage." },
+        "05": { "step": "Final fitting and completion", "detail": "We bring the look to wholeness — when the garment becomes a natural extension of you." }
       },
-      "footer": "Every garment passes through my hands at every stage"
+      "footer": "BESPOKE TAILORING — not just a finished piece. It's an INVESTMENT in an image that works for your state, impression and expression of personality."
     },
     "atelierDetails": { "label": "atelier details" },
-    "b2b": {
-      "label": "B2B",
-      "title": "For designers",
-      "titleItalic": "& brands",
-      "description": "I work with designers and brands who value craft, precision and thoughtful construction",
-      "items": ["Model development and silhouette refinement", "Professional pattern making and grading", "First sample creation and fitting", "Construction consulting for production", "Technical specification and documentation"],
-      "cta": "Discuss collaboration"
-    },
-    "quote": { "text": "Clothing is not decoration. It is structure, meaning and personality.", "author": "NATALIA KHRESHKOVA" },
+    "quote": { "text": "Clothing is not decoration. It is structure, meaning and personality.", "author": "NATALIIA KHRESHKOVA" },
     "cta": { "title": "Work", "titleItalic": "with me", "description": "If you are looking for a personal approach and thoughtful work with form — leave a request", "button": "Leave a request" },
     "seo": { "title": "Atelier designer Hamburg", "description": "Professional atelier practice with over 37 years of experience. Bespoke tailoring, pattern making and garment construction." },
     "modal": {
@@ -653,6 +654,14 @@
       "description": "Professional support for designers and brand launch.",
       "tagline": "Construction is the foundation of every piece. A well-built base determines fit and product quality. I develop the construction, create patterns, form the size range, sew the sample and prepare the model for launch. I build the brand system from idea to finished piece. The brand starts with precise construction."
     },
+    "b2b": {
+      "label": "B2B",
+      "title": "For designers",
+      "titleItalic": "& brands",
+      "description": "I work with designers and brands who value craft, precision and thoughtful construction",
+      "items": ["Model development and silhouette refinement", "Professional pattern making and grading", "First sample creation and fitting", "Construction consulting for production", "Technical specification and documentation"],
+      "cta": "Discuss collaboration"
+    },
     "cta": {
       "title": "Discuss collaboration",
       "description": "Contact me to discuss your project."
@@ -670,22 +679,28 @@
     "directionsTitle": "Directions for working with prints",
     "directions": {
       "01": {
-        "title": "Individual print for you",
-        "description": "Development of your own print is possible — in any theme, considering your wishes and the piece's purpose. The print is created as part of the overall concept. Theme, placement and size are worked out in detail. From such a print a unique piece is born that reflects you."
+        "title": "Individual print",
+        "description": "Development of a unique design for your piece. Theme, placement and size are worked out in detail."
       },
       "02": {
         "title": "Ready designer prints",
-        "description": "My author's prints for various pieces and collections are available. You can choose one of the existing prints and create a piece based on it."
+        "description": "Choice from my author's print collection to create a stylish and expressive look."
       },
       "03": {
         "title": "Prints for designers and brands",
-        "description": "I develop prints for collection concept and brand DNA. The work includes idea analysis and adaptation in the overall composition to the specific piece construction."
+        "description": "Creation of prints for collections, capsules and individual pieces, aligned with the brand concept and visual identity."
       }
+    },
+    "gallery": {
+      "label": "Gallery",
+      "intro": "A print adds depth and mood to a look, and makes it",
+      "introItalic": "memorable and truly personal.",
+      "subtext": "You can choose a ready-made print or order custom development for your piece"
     },
     "ctaButton": "Discuss project",
     "ctaTitle": "Ready to talk about a print or collection?",
     "ctaDescription": "In a few words, describe what you need — I’ll reply personally with a next step.",
-    "ctaNote": "Reply within 24–48h · Hamburg"
+    "ctaNote": "Reply within 24–48 hours\nGermany · working with clients worldwide"
   },
   "contactPage": {
     "hero": { "label": "Contact", "title": "Start the", "titleItalic": "conversation", "description": "Describe your request — I will respond personally." },

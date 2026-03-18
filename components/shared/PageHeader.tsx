@@ -11,6 +11,10 @@ interface PageHeaderProps {
   titleEnd?: string;
   subtitle?: React.ReactNode;
   description?: string;
+  /** If set, render as multiple paragraphs instead of single description */
+  descriptionParagraphs?: string[];
+  /** 'bio' = lead paragraph + hierarchy (serif, spacing, accent) for about/bio blocks */
+  descriptionVariant?: 'default' | 'bio';
   /** Badges shown as "badge1 • badge2 • badge3" */
   badges?: string[];
   labelColor?: string;
@@ -26,6 +30,8 @@ export default function PageHeader({
   titleEnd,
   subtitle,
   description,
+  descriptionParagraphs,
+  descriptionVariant = 'default',
   badges,
   labelColor = '#C4A574',
   hasBackgroundOrbs = false,
@@ -77,7 +83,47 @@ export default function PageHeader({
               </motion.div>
             )}
 
-            {description && (
+            {descriptionParagraphs && descriptionParagraphs.length > 0 ? (
+              <div
+                className={
+                  descriptionVariant === 'bio'
+                    ? 'space-y-6 sm:space-y-8 max-w-2xl'
+                    : 'space-y-4 max-w-xl'
+                }
+              >
+                {descriptionVariant === 'bio' && (
+                  <div
+                    className="h-px w-12 sm:w-16 bg-gradient-to-r opacity-60"
+                    style={{ background: `linear-gradient(to right, ${labelColor}, transparent)` }}
+                    aria-hidden
+                  />
+                )}
+                {descriptionParagraphs.map((paragraph, i) => {
+                  const isLead = descriptionVariant === 'bio' && i === 0;
+                  const isMid = descriptionVariant === 'bio' && i >= 1 && i <= 2;
+                  return (
+                    <motion.p
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.5 + i * 0.08 }}
+                      className={
+                        isLead
+                          ? 'text-lg sm:text-xl md:text-2xl text-[#1a1a1a] leading-relaxed tracking-tight'
+                          : isMid
+                            ? 'text-base sm:text-lg text-[#4a4a4a] leading-relaxed'
+                            : descriptionVariant === 'bio'
+                              ? 'text-base sm:text-lg text-[#6B6B6B] leading-relaxed'
+                              : 'text-base sm:text-lg md:text-xl text-[#8B8B8B] leading-relaxed'
+                      }
+                      style={isLead ? { fontFamily: 'serif' } : undefined}
+                    >
+                      {paragraph}
+                    </motion.p>
+                  );
+                })}
+              </div>
+            ) : description ? (
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -86,7 +132,7 @@ export default function PageHeader({
               >
                 {description}
               </motion.p>
-            )}
+            ) : null}
 
             {badges && badges.length > 0 && (
               <motion.div

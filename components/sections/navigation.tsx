@@ -135,8 +135,8 @@ export default function Navigation() {
               <ImageWithFallback
                 src="/images/big_logo.png"
                 alt="NKN"
-                style={{ height: '2.75rem', width: 'auto' }}
-                className="object-contain sm:h-[3rem] md:h-[3.25rem]"
+                style={{ height: '3.25rem', width: 'auto' }}
+                className="object-contain sm:h-[3.75rem] md:h-[4rem]"
               />
             </motion.div>
           </Link>

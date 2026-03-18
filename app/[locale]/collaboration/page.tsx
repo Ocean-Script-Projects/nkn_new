@@ -56,6 +56,84 @@ export default function CollaborationPage() {
           </div>
         </section>
 
+        {/* B2B block */}
+        <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-gradient-to-br from-[#2a2a2a] via-[#1a1a1a] to-[#2a2a2a] text-[#FAF9F6] relative overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-5"
+            style={{
+              backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
+              backgroundSize: '50px 50px',
+            }}
+            aria-hidden
+          />
+          <div className="max-w-5xl mx-auto relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12 sm:mb-16"
+            >
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <div className="h-px w-8 bg-[#C4A574]" />
+                <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+                  {t('b2b.label')}
+                </span>
+                <div className="h-px w-8 bg-[#C4A574]" />
+              </div>
+              <h2
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight"
+                style={{ fontFamily: 'serif' }}
+              >
+                {t('b2b.title')} <br className="sm:hidden" />
+                <span className="italic">{t('b2b.titleItalic')}</span>
+              </h2>
+              <p className="text-base sm:text-lg md:text-xl text-[#FAF9F6]/80 max-w-2xl mx-auto leading-relaxed">
+                {t('b2b.description')}
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="space-y-6 mb-12"
+            >
+              {[0, 1, 2, 3, 4].map((i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className="flex items-start gap-4 border-l-2 border-[#C4A574] pl-6"
+                >
+                  <div className="w-2 h-2 rounded-full bg-[#C4A574] mt-2 flex-shrink-0" aria-hidden />
+                  <p className="text-base sm:text-lg text-[#FAF9F6]/90 leading-relaxed">{t(`b2b.items.${i}`)}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-center"
+            >
+              <motion.button
+                type="button"
+                onClick={() => openRequestModal()}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center gap-3 px-10 py-5 bg-[#C4A574] text-white rounded-full text-base sm:text-lg tracking-wider shadow-2xl hover:shadow-[#C4A574]/30 transition-shadow font-medium"
+              >
+                {t('b2b.cta')}
+                <ArrowRight className="w-5 h-5" />
+              </motion.button>
+            </motion.div>
+          </div>
+        </section>
+
         <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-[#FAF9F6]">
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-base sm:text-lg text-[#8B8B8B] mb-10">{t('cta.description')}</p>

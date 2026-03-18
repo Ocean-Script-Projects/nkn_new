@@ -61,6 +61,8 @@ export default function UpcyclingPage() {
     }
   ];
 
+  const philosophyValues = t('philosophy.values') as string[];
+
   const categories = [
     {
       title: t('categories.01.title'),
@@ -130,14 +132,7 @@ export default function UpcyclingPage() {
         title={String(t('title'))}
         titleItalic={String(t('titleItalic'))}
         titleEnd={String(t('titleEnd'))}
-        subtitle={
-          <>
-            {t('subtitle1')}
-            <br />
-            {t('subtitle2')}
-          </>
-        }
-        description={String(t('description'))}
+        descriptionParagraphs={[t('description1'), t('description2'), t('description3')]}
         labelColor="#059669"
         hasBackgroundOrbs
       >
@@ -189,7 +184,7 @@ export default function UpcyclingPage() {
               </h2>
 
               <div className="space-y-6">
-                {(t('philosophy.values') as string[]).map((item: string, i: number) => (
+                {philosophyValues.map((item: string, i: number) => (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, x: -20 }}
@@ -203,7 +198,7 @@ export default function UpcyclingPage() {
                         {item}
                       </p>
                     </div>
-                    {i < 3 && (
+                    {i < philosophyValues.length - 1 && (
                       <div className="h-px bg-gradient-to-r from-[#059669]/20 to-transparent mt-6" />
                     )}
                   </motion.div>
@@ -439,15 +434,17 @@ export default function UpcyclingPage() {
             transition={{ duration: 1 }}
             className="space-y-8"
           >
-            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight" style={{ fontFamily: 'serif' }}>
-              "{t('quote.text1')} <br className="hidden sm:block" />
-              {t('quote.text2')}
-              <br />
-              <span className="italic text-[#059669]">
-                {t('quote.text3')} <br className="hidden sm:block" />
-                {t('quote.text4')}"
-              </span>
-            </div>
+            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-snug tracking-tight text-white/95 max-w-3xl mx-auto" style={{ fontFamily: 'serif' }}>
+              &ldquo;{t('quote.text1')}
+              {t('quote.text2') && <><br className="hidden sm:block" />{t('quote.text2')}</>}
+              {t('quote.text3') && (
+                <>
+                  <br />
+                  <span className="italic text-[#059669]/95">{t('quote.text3')}</span>
+                  {t('quote.text4') && <><br className="hidden sm:block" /><span className="italic text-[#059669]/95">{t('quote.text4')}</span></>}
+                </>
+              )}&rdquo;
+            </p>
 
             <div className="flex items-center justify-center gap-3 pt-4">
               <div className="h-px w-12 bg-[#059669]" />

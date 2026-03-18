@@ -50,32 +50,36 @@ export default function BespokePage() {
         </PageHeader>
 
         {/* INTRO */}
-        <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-white">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
+        <section className="py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-12 bg-white">
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="flex justify-center mb-8">
+              <span className="h-px w-12 bg-[#C4A574]/50" aria-hidden />
+            </div>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-lg sm:text-xl text-[#1a1a1a] leading-relaxed"
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="text-xl sm:text-2xl text-neutral-900 leading-snug font-serif tracking-tight"
+              style={{ fontFamily: 'serif' }}
             >
               {t('intro.p1')}
             </motion.p>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed"
+              transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 text-base sm:text-lg text-neutral-600 leading-relaxed max-w-lg mx-auto"
             >
               {t('intro.p2')}
             </motion.p>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-base text-[#8B8B8B]"
+              transition={{ duration: 0.7, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-4 text-sm sm:text-base text-[#8B8B8B] leading-relaxed max-w-lg mx-auto"
             >
               {t('intro.p3')}
             </motion.p>

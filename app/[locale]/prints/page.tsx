@@ -98,6 +98,72 @@ export default function PrintsPage() {
           </div>
         </section>
 
+        {/* Gallery of author's prints */}
+        <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-[#FAF9F6]">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="flex items-center justify-center gap-3 mb-8"
+            >
+              <span className="h-px w-8 sm:w-12 bg-[#C9973C]/60" aria-hidden />
+              <span className="text-[10px] sm:text-xs font-medium tracking-[0.35em] uppercase text-[#C9973C]">
+                {t('gallery.label')}
+              </span>
+              <span className="h-px w-8 sm:w-12 bg-[#C9973C]/60" aria-hidden />
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="text-xl sm:text-2xl md:text-3xl text-neutral-900 leading-snug tracking-tight mb-8 text-center max-w-2xl mx-auto font-normal"
+              style={{ fontFamily: 'serif' }}
+            >
+              {t('gallery.intro')}{' '}
+              <span className="italic text-neutral-800">{t('gallery.introItalic')}</span>
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.08 }}
+              className="max-w-xl mx-auto mb-12 border-l-2 border-[#C9973C]/50 pl-5 sm:pl-6 py-1"
+            >
+              <p className="text-base sm:text-lg text-[#6B6B6B] leading-relaxed font-sans">
+                {t('gallery.subtext')}
+              </p>
+            </motion.div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
+              {[
+                'https://images.unsplash.com/photo-1558171813-4c088753af8f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+                'https://images.unsplash.com/photo-1562157873-818bc0726f68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+                'https://images.unsplash.com/photo-1513519245088-0e12902e35a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+                'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+                'https://images.unsplash.com/photo-1558171813-1e6a229e35f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+                'https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+              ].map((src, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-20px' }}
+                  transition={{ duration: 0.5, delay: i * 0.06 }}
+                  className="group aspect-square rounded-2xl overflow-hidden bg-neutral-200/80 shadow-md ring-1 ring-black/5"
+                >
+                  <ImageWithFallback
+                    src={src}
+                    alt=""
+                    className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="border-t border-black/[0.06] bg-[#F5F2EC] px-4 py-12 sm:px-6 sm:py-14 md:px-12 md:py-16">
           <div className="mx-auto max-w-2xl">
             <motion.div
@@ -143,7 +209,7 @@ export default function PrintsPage() {
                   {t('ctaButton')}
                   <ArrowRight className="h-5 w-5 shrink-0" />
                 </motion.button>
-                <p className="mt-8 text-xs tracking-wide text-neutral-400">{t('ctaNote')}</p>
+                <p className="mt-8 text-xs tracking-wide text-neutral-400 whitespace-pre-line">{t('ctaNote')}</p>
               </div>
             </motion.div>
           </div>

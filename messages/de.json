@@ -24,7 +24,7 @@
     "experience": "37+ Jahre Erfahrung",
     "individual": "Individueller Ansatz",
     "scroll": "BLÄTTERN",
-    "nameFull": "NATALIA CHRESCHKOWA",
+    "nameFull": "NATALIIA KHRESHKOVA",
     "role": "Designerin · Schnittmacherin"
   },
   "philosophy": {
@@ -128,8 +128,8 @@
   },
   "about": {
     "label": "Über mich",
-    "name": "Natalia",
-    "nameItalic": "Chreschkowa",
+    "name": "Nataliia",
+    "nameItalic": "Khreshkova",
     "description1": "Gründerin und Leiterin des Design-Ateliers «Nataliia», das nach dem Prinzip eines europäischen Modehauses arbeitet.",
     "description2": "Die Grundlage meiner Arbeit ist die Fähigkeit, einen Menschen zu fühlen: seine Figur, seinen inneren Zustand, seinen Charakter und wie er sich im geschaffenen Bild fühlen möchte.",
     "description3": "Jedes Projekt wird als individueller Prozess aufgebaut, bei dem nicht nur Form und Konstruktion wichtig sind, sondern auch die innere Anfrage des Kunden.",
@@ -137,7 +137,7 @@
     "unique": "einzigartige Stücke",
     "certification": "Zertifizierung",
     "roles": "Designerin · Schnittmacherin · Stylistin",
-    "nameFull": "NATALIA CHRESCHKOWA",
+    "nameFull": "NATALIIA KHRESHKOVA",
     "role": "Designerin · Schnittmacherin",
     "location": "Hamburg"
   },
@@ -162,7 +162,7 @@
     "startProject": "Projekt starten"
   },
   "footer": {
-    "copyright": "© 2026 Natalia Chreschkowa. Alle Rechte vorbehalten.",
+    "copyright": "© 2026 Nataliia Khreshkova. Alle Rechte vorbehalten.",
     "privacy": "Datenschutz",
     "terms": "Nutzungsbedingungen",
     "agb": "AGB"
@@ -248,20 +248,21 @@
     "title": "Upcycling —",
     "titleItalic": "bewusste",
     "titleEnd": "Transformation",
-    "subtitle1": "Bestehenden Kleidungsstücken neue Form,",
-    "subtitle2": "Funktion und Energie geben",
-    "description": "Ich arbeite mit Kleidungsstücken, die Sie bereits haben. Ich schneide sie um und denke sie neu — mit neuer Energie, moderner Ästhetik und tiefem Respekt für die Geschichte des Stücks.",
+    "description1": "Im Kleiderschrank eines jeden Menschen liegt viel Kleidung. Doch bei weitem nicht alles wird wirklich getragen. Stücke können jahrelang liegen: wegwerfen tut leid, tragen mag man sie nicht mehr.",
+    "description2": "Ich schlage vor, solche Stücke neu zu betrachten und ihnen ein neues Leben zu geben.",
+    "description3": "Upcycling ist ein behutsames Neuinterpretieren eines Kleidungsstücks: Änderung von Form, Passform und Details unter Berücksichtigung Ihrer Wünsche und modischer Trends. So wird das Stück wieder zeitgemäß, aktuell und arbeitet für Sie — unterstreicht die Individualität und stärkt Ihr Erscheinungsbild.",
     "badge": "Öko-bewusst",
     "badgeDescription": "Nachhaltiger Ansatz zur Mode",
     "philosophy": {
       "label": "Philosophie",
-      "title": "Umdenken",
-      "titleItalic": "statt Konsum",
+      "title": "Bewusste",
+      "titleItalic": "Garderobenerneuerung",
       "values": [
-        "Sorgfältiger Umgang mit der Natur",
-        "Respekt vor bereits geschaffener Form",
-        "Umdenken statt Konsum",
-        "Neue Energie und Funktion"
+        "Achtsamer Umgang mit Natur und Ressourcen",
+        "Vernünftige Garderobenerneuerung ohne überflüssige Käufe",
+        "Rekonstruktion von Kleidungsstücken",
+        "Neue Passform, Komfort und Funktionalität",
+        "Das Stück wird wieder aktuell, modern und angenehm"
       ]
     },
     "slider": {
@@ -269,7 +270,7 @@
       "title": "Vorher & Nachher",
       "before": "Vorher",
       "after": "Nachher",
-      "caption": "Nicht reparieren. Rekonstruieren."
+      "caption": "Transformation durch designerische Rekonstruktion"
     },
     "process": {
       "label": "Prozess",
@@ -295,32 +296,32 @@
       }
     },
     "categories": {
-      "title": "Was kann",
-      "titleItalic": "transformiert werden",
-      "footer": "Jedes Projekt ist individuell und wird persönlich besprochen",
+      "title": "Stücke, die ein",
+      "titleItalic": "neues Leben bekommen können",
+      "footer": "Jedes Projekt ist individuell",
       "01": {
         "title": "Jacken & Mäntel",
-        "description": "Rekonstruktion von Oberbekleidung mit neuer Silhouette"
+        "description": "Änderung von Silhouette, Länge und Details, damit die Oberbekleidung modern wirkt und lange trägt"
       },
       "02": {
-        "title": "Kleider",
-        "description": "Transformation in moderne Formen und Passformen"
+        "title": "Kleider, Hemden & Hosen",
+        "description": "Neue Form und Passform, damit das Stück die Figur wieder betont und zu Ihrem Stil passt"
       },
       "03": {
-        "title": "Hemden & Hosen",
-        "description": "Neugestaltung klassischer Kleidungsstücke"
+        "title": "Pelz- und Lederstücke",
+        "description": "Änderung von Form, Länge oder Details, damit das Stück aktuell, bequem und gut kombinierbar wird"
       },
       "04": {
-        "title": "Persönliches Archiv",
-        "description": "Geliebten Stücken neue Bedeutung geben"
+        "title": "Persönliche Stücke mit Geschichte",
+        "description": "Behutsame Rekonstruktion liebgewonnener oder erinnerungsträchtiger Stücke — mit neuem Leben und zeitgemäßem Klang"
       }
     },
     "quote": {
-      "text1": "Upcycling geht nicht darum,",
-      "text2": "Kleidung zu retten.",
-      "text3": "Es geht darum, Bedeutung",
-      "text4": "neu zu definieren.",
-      "author": "NATALIA CHRESCHKOWA"
+      "text1": "Upcycling ist die Kunst, einem Stück eine neue Form,",
+      "text2": "",
+      "text3": "einen neuen Klang und ein neues Leben zu geben.",
+      "text4": "",
+      "author": "NATALIIA KHRESHKOVA"
     },
     "faq": {
       "label": "FAQ",
@@ -347,13 +348,13 @@
       }
     },
     "cta": {
-      "title": "Beginnen Sie die",
-      "titleItalic": "Transformation",
-      "description": "Beschreiben Sie das Kleidungsstück und Ihre Idee — ich werde eine Lösung vorschlagen"
+      "title": "Geben Sie Ihrem Stück",
+      "titleItalic": "ein neues Leben",
+      "description": "Erzählen Sie, welches Stück Sie erneuern möchten — gemeinsam finden wir eine passende Designlösung."
     },
     "form": {
-      "garment": "Was möchten Sie transformieren?",
-      "garmentPlaceholder": "Beschreiben Sie das Kleidungsstück: Typ, Zustand, was Sie sich vorstellen...",
+      "garment": "Welches Stück möchten Sie erneuern?",
+      "garmentPlaceholder": "Beschreiben Sie das Stück: Art, Zustand, was Sie ändern oder als Ergebnis erhalten möchten.",
       "contact": "Bevorzugter Kontakt",
       "contactPlaceholder": "Telegram / WhatsApp / E-Mail",
       "contactTelegram": "Telegram",
@@ -420,8 +421,8 @@
     },
     "intro": {
       "p1": "Maßschneiderei steht immer für Status und Selbstachtung.",
-      "p2": "Es ist die Wahl derer, denen die Übereinstimmung von äußerem Erscheinungsbild und innerem Zustand wichtig ist. Individuell gefertigte Kleidung spiegelt Persönlichkeit, Charakter und innere Tiefe wider. Sie unterstreicht die Einzigartigkeit und macht sie sichtbar. Das Stück wird ausschließlich für Sie gefertigt.",
-      "p3": "Der kreative Prozess beginnt mit dem Dialog."
+      "p2": "Es ist die Wahl von Menschen, denen wichtig ist, dass das äußere Erscheinungsbild dem inneren Zustand entspricht.",
+      "p3": "Solche Kleidung unterstreicht die Einzigartigkeit und macht sie sichtbar. Jedes Stück wird für einen konkreten Menschen gefertigt und wird zu einem organischen Teil seines Stils und seines Lebens."
     },
     "offline": {
       "title": "Offline-Anfertigung",
@@ -567,19 +568,20 @@
   "aboutPage": {
     "hero": {
       "label": "Atelier",
-      "title": "Natalia",
-      "titleItalic": "Chreschkowa",
-      "subtitle": "Designerin · Schneiderin · Atelier-Praxis",
+      "title": "Nataliia",
+      "titleItalic": "Khreshkova",
+      "subtitle": "Gründerin eines Design-Ateliers nach Art eines Modehauses",
       "badge1": "Atelier-Praxis",
       "badge2": "handgefertigt",
       "badge3": "Vollzyklus"
     },
-    "story": {
-      "p1": "Ich bin Natalia NKN Chreschkowa, Gründerin und Leiterin eines Design-Ateliers nach Art eines „Modehauses“ (Ukraine).",
-      "p2": "Schnittmacherin für Damen- und Herrenbekleidung jeder Komplexität. 37 Jahre Berufspraxis. Designerin von Autorendrucken auf Stoff und Autorin eines eigenen Online-Schneidersystems.",
-      "p3": "Ich schaffe nicht nur Kleidung — ich schaffe Zustand durch Form, die die Persönlichkeit verstärkt und offenbart. Ich arbeite mit Kunden weltweit. Heute entwickle ich ein Autorenstudio in Deutschland.",
-      "p4": "",
-      "footer": "37+ Jahre im Schneiderhandwerk und in der Atelier-Praxis"
+    "bio": {
+      "p1": "Ich bin Nataliia Khreshkova — Gründerin und Leiterin eines Design-Ateliers nach Art eines Modehauses. Modedesignerin, Schnittmacherin. 37 Jahre in der Fashion-Branche.",
+      "p2": "Ich schaffe die richtige Kleidung als Instrument des inneren Zustands. Durch Form, Proportionen und präzise Konstruktion wirkt das Stück für den Menschen. Es unterstreicht seine Individualität und seinen Status.",
+      "p3": "Ein harmonisches Erscheinungsbild verstärkt und offenbart die Persönlichkeit.",
+      "p4": "Jedes Modell entsteht im Dialog mit dem Menschen. So wird Kleidung zum natürlichen Teil des Alltags und wirkt auf das Ergebnis: auf den Eindruck, den Zustand und die Entfaltung der Persönlichkeit.",
+      "p5": "Meine Kunden sind weltweit. Sie erhalten von mir individuelle Looks und Stücke, die ihnen helfen, sie selbst zu sein.",
+      "p6": "Heute habe ich ein Autorenstudio in Deutschland. Und ich schaffe weiter Kleidung mit Bedeutung — Kleidung, die die Einzigartigkeit jedes Menschen widerspiegelt."
     },
     "position": {
       "label": "Position",
@@ -595,33 +597,32 @@
     },
     "philosophy": { "label": "Philosophie", "title": "Mein Ansatz" },
     "principles": {
-      "01": { "title": "Form & Passform", "description": "Proportionen, Balance und Komfort", "detail": "Jedes Kleidungsstück wird um den Körper herum gebaut, nicht um Trends" },
-      "02": { "title": "Material & Bedeutung", "description": "Stoff, Textur und Zweck", "detail": "Das richtige Material erweckt die Idee zum Leben" },
-      "03": { "title": "Struktur & Handwerk", "description": "Konstruktion, Präzision und Handarbeit", "detail": "Qualität steckt in den Details, die das Auge nicht sieht" }
+      "01": {
+        "title": "System, keine zufällige Ansammlung",
+        "description": "Kleidung ist für mich keine zufällige Ansammlung von Dingen. Es ist ein durchdachtes System, in dem Sinn, Funktion und Ästhetik zusammenkommen. Das richtige Stück lenkt nicht vom Leben ab, sondern hilft dem Menschen, sich in jeder Situation passend, wohl und natürlich zu fühlen.",
+        "detail": ""
+      },
+      "02": {
+        "title": "Mode und Bewusstheit",
+        "description": "Ich begegne Mode und Trends mit Respekt. Wichtig finde ich jedoch, ihnen nicht buchstäblich zu folgen, sondern sie bewusst an die Person, die Lebensweise und die Bedürfnisse anzupassen. Nur so wird Kleidung zu einem harmonischen Teil des Lebens und wirkt wirklich für das Ergebnis.",
+        "detail": ""
+      }
     },
     "process": {
-      "title": "Vollzyklus",
-      "titleItalic": "Atelier-Praxis",
-      "subtitle": "Vom ersten Gespräch bis zur Endanprobe — jeder Schritt ist persönlich und präzise",
+      "title": "DER WEG ZU IHREM KLEIDUNGSSTÜCK",
+      "titleItalic": "",
+      "subtitle": "Von der ersten Idee bis zur Endanprobe — jede Phase findet im persönlichen Dialog, mit Aufmerksamkeit für Details und präziser professioneller Begleitung statt.",
       "steps": {
-        "01": { "step": "Idee", "detail": "Verständnis von Vision und Bedürfnissen" },
-        "02": { "step": "Skizze", "detail": "Übersetzung des Konzepts in Form" },
-        "03": { "step": "Schnittmuster", "detail": "Erstellung präziser Konstruktion" },
-        "04": { "step": "Nähen", "detail": "Kleidungsstück zum Leben erwecken" },
-        "05": { "step": "Endanprobe", "detail": "Perfektionierung jedes Details" }
+        "01": { "step": "Dialog und Idee", "detail": "Es geht nicht nur darum, ein Stück zu schaffen, sondern zu spüren, welches Ergebnis es bringen soll." },
+        "02": { "step": "Konzept und Skizze", "detail": "Form, Silhouette und Charakter des Stücks entstehen aus der gemeinsamen Idee. Ich übersetze Ihre Wünsche und Empfindungen in ein visuelles Bild." },
+        "03": { "step": "Individuelle Konstruktion", "detail": "Ein präzises Schnittmuster wird unter Berücksichtigung der Besonderheiten der Figur erstellt. Die Konstruktion ist das Fundament, das die Passform und Bewegungsfreiheit prägt." },
+        "04": { "step": "Anfertigung des Stücks", "detail": "Stoff-, Beschläge- und Garnauswahl + Handarbeit. Jedes Stück wird in jeder Phase kontrolliert." },
+        "05": { "step": "Endanprobe und Fertigstellung", "detail": "Wir bringen das Erscheinungsbild zur Ganzheit — wenn das Stück zu einer natürlichen Verlängerung von Ihnen wird." }
       },
-      "footer": "Jedes Kleidungsstück geht in jeder Phase durch meine Hände"
+      "footer": "MASSANFERTIGUNG — nicht nur ein fertiges Stück. Es ist eine INVESTITION in ein Erscheinungsbild, das für Ihren Zustand, Ihren Eindruck und den Ausdruck Ihrer Persönlichkeit arbeitet."
     },
     "atelierDetails": { "label": "Atelier-Details" },
-    "b2b": {
-      "label": "B2B",
-      "title": "Für Designer",
-      "titleItalic": "& Marken",
-      "description": "Ich arbeite mit Designern und Marken, die Handwerk, Präzision und durchdachte Konstruktion schätzen",
-      "items": ["Modellentwicklung und Silhouettenverfeinerung", "Professionelles Schnittmuster und Gradierung", "Erstmuster und Anprobe", "Konstruktionsberatung für die Produktion", "Technische Spezifikation und Dokumentation"],
-      "cta": "Zusammenarbeit besprechen"
-    },
-    "quote": { "text": "Kleidung ist keine Dekoration. Es ist Struktur, Bedeutung und Persönlichkeit.", "author": "NATALIA CHRESCHKOWA" },
+    "quote": { "text": "Kleidung ist keine Dekoration. Es ist Struktur, Bedeutung und Persönlichkeit.", "author": "NATALIIA KHRESHKOVA" },
     "cta": { "title": "Arbeiten Sie", "titleItalic": "mit mir", "description": "Wenn Sie einen persönlichen Ansatz und durchdachte Arbeit mit Form suchen — hinterlassen Sie eine Anfrage", "button": "Anfrage hinterlassen" },
     "seo": { "title": "Atelier-Designerin Hamburg", "description": "Professionelle Atelier-Praxis mit über 37 Jahren Erfahrung. Maßschneiderei, Schnittmuster und Kleidungsherstellung." },
     "modal": {
@@ -653,6 +654,14 @@
       "description": "Professionelle Begleitung von Designern und Markenstart.",
       "tagline": "Konstruktion ist das Fundament jedes Stücks. Eine gut durchdachte Basis bestimmt Sitz und Produktqualität. Ich entwickle die Konstruktion, erstelle Schnittmuster, forme die Größentabelle, nähe die Probestücke und bereite das Modell für den Start vor. Ich baue das Markensystem von der Idee bis zum fertigen Stück auf. Die Marke beginnt mit präziser Konstruktion."
     },
+    "b2b": {
+      "label": "B2B",
+      "title": "Für Designer",
+      "titleItalic": "& Marken",
+      "description": "Ich arbeite mit Designern und Marken, die Handwerk, Präzision und durchdachte Konstruktion schätzen",
+      "items": ["Modellentwicklung und Silhouettenverfeinerung", "Professionelles Schnittmuster und Gradierung", "Erstmuster und Anprobe", "Konstruktionsberatung für die Produktion", "Technische Spezifikation und Dokumentation"],
+      "cta": "Zusammenarbeit besprechen"
+    },
     "cta": {
       "title": "Zusammenarbeit besprechen",
       "description": "Kontaktieren Sie mich für Ihr Projekt."
@@ -670,22 +679,28 @@
     "directionsTitle": "Arbeitsrichtungen mit Drucken",
     "directions": {
       "01": {
-        "title": "Individueller Druck für Sie",
-        "description": "Entwicklung Ihres eigenen Drucks möglich — in jedem Thema, unter Berücksichtigung Ihrer Wünsche und der Stückaufgabe. Der Druck entsteht als Teil des Gesamtkonzepts. Thema, Platzierung und Größe werden detailliert ausgearbeitet. Aus einem solchen Druck entsteht ein einzigartiges Stück, das Sie widerspiegelt."
+        "title": "Individueller Druck",
+        "description": "Entwicklung eines einzigartigen Motivs für Ihr Stück. Thema, Platzierung und Größe werden detailliert ausgearbeitet."
       },
       "02": {
         "title": "Fertige Designer-Drucke",
-        "description": "Meine Autorendrucke für verschiedene Stücke und Kollektionen sind verfügbar. Sie können einen bestehenden Druck wählen und ein Stück darauf basierend anfertigen lassen."
+        "description": "Auswahl aus meiner Autorenkollektion an Drucken für einen stilvollen und ausdrucksstarken Look."
       },
       "03": {
         "title": "Drucke für Designer und Marken",
-        "description": "Ich entwickle Drucke für Kollektionskonzept und Marken-DNA. Die Arbeit umfasst Ideenanalyse und Anpassung in der Gesamtkomposition an die konkrete Stückkonstruktion."
+        "description": "Erstellung von Drucken für Kollektionen, Kapseln und Einzelstücke — abgestimmt auf Konzept und visuelle Identität der Marke."
       }
+    },
+    "gallery": {
+      "label": "Galerie",
+      "intro": "Ein Druck verleiht dem Look Tiefe, Stimmung und macht ihn",
+      "introItalic": "unvergesslich und ganz persönlich.",
+      "subtext": "Sie können einen fertigen Druck wählen oder eine individuelle Entwicklung für Ihr Stück bestellen"
     },
     "ctaButton": "Projekt besprechen",
     "ctaTitle": "Druck oder Kollektion besprechen?",
     "ctaDescription": "Beschreiben Sie kurz Ihre Aufgabe — ich antworte persönlich mit dem nächsten Schritt.",
-    "ctaNote": "Antwort innerhalb 24–48 Std. · Hamburg"
+    "ctaNote": "Antwort innerhalb 24–48 Stunden\nDeutschland · Arbeit mit Kunden weltweit"
   },
   "contactPage": {
     "hero": { "label": "Kontakt", "title": "Beginnen Sie das", "titleItalic": "Gespräch", "description": "Beschreiben Sie Ihre Anfrage — ich antworte persönlich." },

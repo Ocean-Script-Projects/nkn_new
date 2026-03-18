@@ -23,7 +23,6 @@ export default function AboutPage() {
   const principles = [
     { titleKey: '01', icon: Ruler },
     { titleKey: '02', icon: Sparkles },
-    { titleKey: '03', icon: Scissors },
   ];
 
   const processSteps = ['01', '02', '03', '04', '05'] as const;
@@ -61,7 +60,7 @@ export default function AboutPage() {
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-                alt="Natalia Khreshkova portrait"
+                alt="Nataliia Khreshkova portrait"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
@@ -74,93 +73,43 @@ export default function AboutPage() {
           </motion.div>
         </PageHeader>
 
-        {/* PERSONAL STORY */}
+        {/* BIO — одно описание */}
         <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              {/* Left - Text */}
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: '-100px' }}
-                transition={{ duration: 0.8 }}
-                className="space-y-6 sm:space-y-8"
+          <div className="max-w-2xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.7 }}
+              className="space-y-6 sm:space-y-8"
+            >
+              <div
+                className="h-px w-12 sm:w-16 bg-gradient-to-r opacity-60"
+                style={{ background: 'linear-gradient(to right, #C4A574, transparent)' }}
+                aria-hidden
+              />
+              <p
+                className="text-lg sm:text-xl md:text-2xl text-[#1a1a1a] leading-relaxed tracking-tight"
+                style={{ fontFamily: 'serif' }}
               >
-                <div className="space-y-6">
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-lg sm:text-xl md:text-2xl text-[#1a1a1a] leading-relaxed"
-                  >
-                    {t('story.p1')}
-                  </motion.p>
-
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                    className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed"
-                  >
-                    {t('story.p2')}
-                  </motion.p>
-
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed"
-                  >
-                    {t('story.p3')}
-                  </motion.p>
-
-                  {String(t('story.p4')).trim() && (
-                    <motion.p
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 0.3 }}
-                      className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed"
-                    >
-                      {t('story.p4')}
-                    </motion.p>
-                  )}
-                </div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className="pt-4"
-                >
-                  <div className="h-px w-16 bg-[#C4A574]" />
-                  <p className="text-sm sm:text-base text-[#C4A574] tracking-wider mt-4">
-                    {t('story.footer')}
-                  </p>
-                </motion.div>
-              </motion.div>
-
-              {/* Right - Image */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: '-100px' }}
-                transition={{ duration: 0.8 }}
-                className="relative"
-              >
-                <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                  <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1558769132-cb1aea35ae3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-                    alt="Designer at work"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </motion.div>
-            </div>
+                {t('bio.p1')}
+              </p>
+              <p className="text-base sm:text-lg text-[#4a4a4a] leading-relaxed">
+                {t('bio.p2')}
+              </p>
+              <p className="text-base sm:text-lg text-[#4a4a4a] leading-relaxed">
+                {t('bio.p3')}
+              </p>
+              <p className="text-base sm:text-lg text-[#6B6B6B] leading-relaxed">
+                {t('bio.p4')}
+              </p>
+              <p className="text-base sm:text-lg text-[#6B6B6B] leading-relaxed">
+                {t('bio.p5')}
+              </p>
+              <p className="text-base sm:text-lg text-[#6B6B6B] leading-relaxed">
+                {t('bio.p6')}
+              </p>
+            </motion.div>
           </div>
         </section>
 
@@ -234,7 +183,7 @@ export default function AboutPage() {
               </h2>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
               {principles.map((principle, i) => {
                 const Icon = principle.icon;
                 const key = principle.titleKey;
@@ -263,13 +212,14 @@ export default function AboutPage() {
 
                       <div className="h-px bg-gradient-to-r from-[#C4A574] to-transparent mb-4" />
 
-                      <p className="text-sm sm:text-base text-[#8B8B8B] mb-4 tracking-wide">
+                      <p className="text-sm sm:text-base text-[#8B8B8B] leading-relaxed tracking-wide">
                         {t(`principles.${key}.description`)}
                       </p>
-
-                      <p className="text-sm text-[#8B8B8B] leading-relaxed italic">
-                        {t(`principles.${key}.detail`)}
-                      </p>
+                      {t(`principles.${key}.detail`) && (
+                        <p className="text-sm text-[#8B8B8B] leading-relaxed italic mt-4">
+                          {t(`principles.${key}.detail`)}
+                        </p>
+                      )}
                     </div>
                   </motion.div>
                 );
@@ -299,65 +249,56 @@ export default function AboutPage() {
               </p>
             </motion.div>
 
-            <div className="relative">
-              <motion.div
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5, delay: 0.3 }}
-                className="hidden md:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C4A574] to-transparent origin-left"
+            <div className="relative max-w-3xl mx-auto">
+              {/* Вертикальная линия таймлайна — левее кружков */}
+              <div
+                className="absolute left-[18px] sm:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-[#C4A574]/40 via-[#C4A574]/30 to-transparent"
+                aria-hidden
               />
 
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-6">
+              <ul className="space-y-0">
                 {processSteps.map((id, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-50px' }}
-                    transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className="relative text-center"
+                  <motion.li
+                    key={id}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: '-40px' }}
+                    transition={{ duration: 0.5, delay: i * 0.08 }}
+                    className="group relative flex gap-6 sm:gap-8 items-start rounded-xl py-6 sm:py-8 -mx-2 sm:-mx-3 transition-colors duration-200 hover:bg-[#FAF9F6]/70 min-h-[10rem] sm:min-h-[11rem] border-b border-[#C4A574]/10 last:border-b-0"
                   >
-                    <div className="relative inline-block mb-6">
+                    {/* Круг с номером — увеличен */}
+                    <div className="relative shrink-0">
                       <motion.div
                         initial={{ scale: 0 }}
                         whileInView={{ scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: i * 0.1 + 0.3 }}
-                        className="w-24 h-24 rounded-full bg-gradient-to-br from-[#C4A574] to-[#8B7355] flex items-center justify-center shadow-xl relative z-10"
+                        transition={{ duration: 0.4, delay: i * 0.08 + 0.1 }}
+                        className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#C4A574] to-[#8B7355] flex items-center justify-center shadow-lg shadow-[#C4A574]/25 ring-4 ring-white relative z-10 transition-shadow duration-200 group-hover:shadow-xl group-hover:shadow-[#C4A574]/30"
                       >
                         <span
-                          className="text-white text-xl tracking-wider"
+                          className="text-white text-base sm:text-lg font-medium tracking-wider"
                           style={{ fontFamily: 'serif' }}
                         >
                           {String(i + 1).padStart(2, '0')}
                         </span>
                       </motion.div>
-
-                      <motion.div
-                        className="absolute inset-0 rounded-full bg-[#C4A574]"
-                        animate={{ scale: [1, 1.4, 1], opacity: [0.3, 0, 0.3] }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          delay: i * 0.4,
-                        }}
-                      />
                     </div>
 
-                    <h3
-                      className="text-xl sm:text-2xl mb-2 tracking-tight"
-                      style={{ fontFamily: 'serif' }}
-                    >
-                      {t(`process.steps.${id}.step`)}
-                    </h3>
-
-                    <p className="text-xs sm:text-sm text-[#8B8B8B] leading-relaxed">
-                      {t(`process.steps.${id}.detail`)}
-                    </p>
-                  </motion.div>
+                    {/* Контент */}
+                    <div className="flex-1 min-w-0 pt-1">
+                      <h3
+                        className="text-lg sm:text-xl mb-2 tracking-tight text-neutral-900 transition-colors duration-200 group-hover:text-[#8B7355]"
+                        style={{ fontFamily: 'serif' }}
+                      >
+                        {t(`process.steps.${id}.step`)}
+                      </h3>
+                      <p className="text-sm sm:text-base text-[#6B6B6B] leading-relaxed">
+                        {t(`process.steps.${id}.detail`)}
+                      </p>
+                    </div>
+                  </motion.li>
                 ))}
-              </div>
+              </ul>
             </div>
 
             <motion.div
@@ -434,89 +375,6 @@ export default function AboutPage() {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* B2B BLOCK */}
-        <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-gradient-to-br from-[#2a2a2a] via-[#1a1a1a] to-[#2a2a2a] text-[#FAF9F6] relative overflow-hidden">
-          <motion.div
-            className="absolute inset-0 opacity-5"
-            animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
-            transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }}
-            style={{
-              backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-              backgroundSize: '50px 50px',
-            }}
-          />
-
-          <div className="max-w-5xl mx-auto relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-12 sm:mb-16"
-            >
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="h-px w-8 bg-[#C4A574]" />
-                <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
-                  {t('b2b.label')}
-                </span>
-                <div className="h-px w-8 bg-[#C4A574]" />
-              </div>
-
-              <h2
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight"
-                style={{ fontFamily: 'serif' }}
-              >
-                {t('b2b.title')} <br className="sm:hidden" />
-                <span className="italic">{t('b2b.titleItalic')}</span>
-              </h2>
-
-              <p className="text-base sm:text-lg md:text-xl text-[#FAF9F6]/80 max-w-2xl mx-auto leading-relaxed">
-                {t('b2b.description')}
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-6 mb-12"
-            >
-              {[0, 1, 2, 3, 4].map((i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className="flex items-start gap-4 border-l-2 border-[#C4A574] pl-6"
-                >
-                  <div className="w-2 h-2 rounded-full bg-[#C4A574] mt-2 flex-shrink-0" />
-                  <p className="text-base sm:text-lg text-[#FAF9F6]/90 leading-relaxed">{t(`b2b.items.${i}`)}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-center"
-            >
-              <motion.button
-                onClick={() => setShowContactModal(true)}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-3 px-10 py-5 bg-[#C4A574] text-white rounded-full text-base sm:text-lg tracking-wider shadow-2xl hover:shadow-[#C4A574]/30 transition-shadow font-medium"
-              >
-                {t('b2b.cta')}
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-            </motion.div>
           </div>
         </section>
 
