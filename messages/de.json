@@ -624,7 +624,6 @@
     "atelierDetails": { "label": "Atelier-Details" },
     "quote": { "text": "Kleidung ist keine Dekoration. Es ist Struktur, Bedeutung und Persönlichkeit.", "author": "NATALIIA KHRESHKOVA" },
     "cta": { "title": "Arbeiten Sie", "titleItalic": "mit mir", "description": "Wenn Sie einen persönlichen Ansatz und durchdachte Arbeit mit Form suchen — hinterlassen Sie eine Anfrage", "button": "Anfrage hinterlassen" },
-    "seo": { "title": "Atelier-Designerin Hamburg", "description": "Professionelle Atelier-Praxis mit über 37 Jahren Erfahrung. Maßschneiderei, Schnittmuster und Kleidungsherstellung." },
     "modal": {
       "title": "Lassen Sie uns",
       "titleItalic": "reden",
@@ -680,11 +679,6 @@
       "description1": "Ich arbeite mit denen, die Präzision, Ästhetik und durchdachte Konstruktion schätzen.",
       "description2": "Ich helfe, eine Idee in ein reales Produkt zu übersetzen — mit der richtigen Passform und stimmigen Linien.",
       "cta": "Zusammenarbeit besprechen"
-    },
-    "cta": {
-      "title": "Bereit, Zusammenarbeit zu besprechen?",
-      "description": "Erzählen Sie von Ihrem Projekt — ich schlage eine professionelle Lösung vor.",
-      "button": "Zusammenarbeit besprechen"
     }
   },
   "printsPage": {
@@ -752,7 +746,6 @@
     },
     "location": { "label": "Atelier", "title": "Hamburg, Deutschland", "description": "Besuche werden individuell vereinbart. Bitte kontaktieren Sie mich für eine Beratung." },
     "quote": { "text": "Jedes Kleidungsstück beginnt mit einem Gespräch." },
-    "seo": { "title": "Kontakt Atelier Hamburg", "description": "Kontaktieren Sie das NKN-Atelier für Maßschneiderei, individuelles Kleidungsdesign und persönliche Beratung. Hamburg, Deutschland." },
     "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden."
   },
   "privacyPage": {

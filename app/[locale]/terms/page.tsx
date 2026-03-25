@@ -22,8 +22,8 @@ export default function TermsPage() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="h-px w-8 sm:w-12 bg-gradient-to-r from-[#C4A574] to-transparent" />
-                <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+                <div className="h-px w-8 sm:w-12 bg-gradient-to-r from-brand-mustard to-transparent" />
+                <span className="text-brand-sage text-xs sm:text-sm tracking-[0.4em] uppercase">
                   {t('title')}
                 </span>
               </div>

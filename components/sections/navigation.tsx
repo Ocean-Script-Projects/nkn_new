@@ -184,7 +184,7 @@ export default function Navigation() {
                           onClick={() => setDropdownOpen(false)}
                           className={`flex items-center px-4 py-3 text-[13px] font-medium tracking-wide transition-colors border-l-2 border-transparent ${
                             active
-                              ? 'bg-[#C4A574]/10 text-black border-[#C4A574]'
+                              ? 'bg-brand-mustard/10 text-black border-brand-mustard'
                               : 'text-[#1a1a1a]/70 hover:bg-black/5 hover:text-black hover:border-black/20'
                           }`}
                         >
@@ -239,12 +239,12 @@ export default function Navigation() {
               className="rounded-full bg-black px-5 sm:px-6 py-2.5 text-[12px] sm:text-[13px] font-semibold tracking-widest text-white uppercase overflow-hidden relative group"
             >
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#C4A574] to-[#8B7355]"
+                className="absolute inset-0 bg-brand-mustard"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: '0%' }}
                 transition={{ duration: 0.35 }}
               />
-              <span className="relative z-10">{t('request')}</span>
+              <span className="relative z-10 group-hover:text-brand-mustard-foreground">{t('request')}</span>
             </motion.button>
             <motion.button
               whileTap={{ scale: 0.95 }}

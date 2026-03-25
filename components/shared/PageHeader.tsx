@@ -33,7 +33,7 @@ export default function PageHeader({
   descriptionParagraphs,
   descriptionVariant = 'default',
   badges,
-  labelColor = '#C4A574',
+  labelColor = 'var(--brand-mustard)',
   hasBackgroundOrbs = false,
   children
 }: PageHeaderProps) {

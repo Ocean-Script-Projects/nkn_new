@@ -37,9 +37,9 @@ export default function ProcessSection() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-3 mb-8"
           >
-            <div className="h-px w-8 bg-[#C4A574]" />
-            <span className="text-[#C4A574] text-sm tracking-[0.4em] uppercase">{t('label')}</span>
-            <div className="h-px w-8 bg-[#C4A574]" />
+            <div className="h-px w-8 bg-brand-sage" />
+            <span className="text-brand-sage text-sm tracking-[0.4em] uppercase">{t('label')}</span>
+            <div className="h-px w-8 bg-brand-sage" />
           </motion.div>
 
           <h2 className="text-5xl md:text-6xl mb-6" style={{ fontFamily: 'serif' }}>
@@ -61,9 +61,9 @@ export default function ProcessSection() {
                 <div className="relative inline-block mb-6">
                   <motion.div
                     whileHover={{ scale: 1.1 }}
-                    className="relative z-10 w-20 h-20 rounded-full border-2 border-[#C4A574] flex items-center justify-center"
+                    className="relative z-10 w-20 h-20 rounded-full border-2 border-brand-mustard flex items-center justify-center"
                   >
-                    <span className="text-2xl text-[#C4A574] tracking-wider">{step.num}</span>
+                    <span className="text-2xl text-brand-mustard tracking-wider">{step.num}</span>
                   </motion.div>
                   {i < 3 && (
                     <motion.div
@@ -71,7 +71,7 @@ export default function ProcessSection() {
                       whileInView={{ scaleX: 1 }}
                       transition={{ duration: 1, delay: 0.5 + i * 0.2 }}
                       viewport={{ once: true }}
-                      className="hidden md:block absolute top-1/2 left-[calc(100%+12px)] w-full h-px bg-gradient-to-r from-[#C4A574] to-transparent origin-left -translate-y-1/2"
+                      className="hidden md:block absolute top-1/2 left-[calc(100%+12px)] w-full h-px bg-gradient-to-r from-brand-mustard to-transparent origin-left -translate-y-1/2"
                     />
                   )}
                 </div>

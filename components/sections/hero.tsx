@@ -36,13 +36,10 @@ export default function HeroSection() {
 
   return (
     <section className="relative overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-32 md:pt-36 lg:pb-24 lg:pt-32 xl:pb-28 xl:pt-36">
-      {/* Премиальный фон: тёплый градиент + мягкие блики */}
+      {/* Тёплый нейтральный фон + лёгкий шалфей (без смешения горчицы и шалфея в одном градиенте) */}
+      <div className="absolute inset-0 bg-brand-sage-subtle bg-fabric-grain" aria-hidden />
       <div
-        className="absolute inset-0 bg-[#F7F4EF]"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_85%_15%,rgba(196,165,116,0.09),transparent_55%),radial-gradient(ellipse_60%_50%_at_10%_90%,rgba(139,115,85,0.06),transparent_50%),linear-gradient(180deg,#FBFAF7_0%,#F5F1EA_45%,#F8F6F1_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_85%_65%_at_88%_12%,rgb(119_123_86_/0.07),transparent_58%),radial-gradient(ellipse_55%_45%_at_12%_88%,rgb(119_123_86_/0.05),transparent_52%),linear-gradient(180deg,#fbfaf8_0%,#f4f3ec_100%)]"
         aria-hidden
       />
       <div
@@ -54,7 +51,7 @@ export default function HeroSection() {
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#C4A574]/35 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-sage/35 to-transparent"
         aria-hidden
       />
 
@@ -73,15 +70,15 @@ export default function HeroSection() {
 
       <div className="relative z-10 mx-auto w-full max-w-[1360px] px-5 sm:px-8 lg:px-10 xl:px-14 lg:grid lg:grid-cols-[1fr_minmax(300px,420px)] lg:grid-rows-[auto_auto] lg:items-stretch lg:gap-x-14 lg:gap-y-12 xl:grid-cols-[1fr_minmax(300px,440px)] xl:gap-x-20 xl:gap-y-14">
         {/* Шапка: редакторская линия */}
-        <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-b border-[#C4A574]/20 pb-5 lg:col-span-2 lg:row-start-1">
+        <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-b border-brand-sage/20 pb-5 lg:col-span-2 lg:row-start-1">
           <div className="flex items-center gap-4">
-            <span className="hidden h-px w-10 bg-gradient-to-r from-[#C4A574] to-transparent sm:block" aria-hidden />
-            <p className="text-[10px] font-semibold uppercase tracking-[0.42em] text-[#7a6238] sm:text-[11px]">
+            <span className="hidden h-px w-10 bg-gradient-to-r from-brand-sage to-transparent sm:block" aria-hidden />
+            <p className="text-[10px] font-semibold uppercase tracking-[0.42em] text-brand-sage-muted sm:text-[11px]">
               {t('location')}
             </p>
           </div>
           <p className="text-[9px] font-medium uppercase tracking-[0.28em] text-neutral-400 sm:text-[10px]">
-            {t('experience')} <span className="mx-1.5 inline-block h-1 w-1 rounded-full bg-[#C4A574]/50 align-middle" />{' '}
+            {t('experience')} <span className="mx-1.5 inline-block h-1 w-1 rounded-full bg-brand-mustard/50 align-middle" />{' '}
             {t('individual')}
           </p>
         </div>
@@ -95,7 +92,7 @@ export default function HeroSection() {
             className="relative pl-0 sm:pl-5 lg:pl-6"
           >
             <div
-              className="absolute left-0 top-2 hidden h-[min(12rem,55%)] w-px bg-gradient-to-b from-[#C4A574] via-[#C4A574]/40 to-transparent sm:block"
+              className="absolute left-0 top-2 hidden h-[min(12rem,55%)] w-px bg-gradient-to-b from-brand-mustard via-brand-mustard/40 to-transparent sm:block"
               aria-hidden
             />
             <h1
@@ -125,7 +122,7 @@ export default function HeroSection() {
               <button
                 type="button"
                 onClick={() => openRequestModal()}
-                className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full bg-neutral-950 px-7 py-3.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white shadow-[0_12px_32px_-8px_rgba(0,0,0,0.35)] ring-1 ring-black/10 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-black hover:shadow-[0_16px_40px_-10px_rgba(0,0,0,0.4)] hover:ring-[#C4A574]/35 active:translate-y-0 sm:px-8 sm:py-4 sm:text-xs"
+                className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full bg-neutral-950 px-7 py-3.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white shadow-[0_12px_32px_-8px_rgba(0,0,0,0.35)] ring-1 ring-black/10 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-black hover:shadow-[0_16px_40px_-10px_rgba(0,0,0,0.4)] hover:ring-brand-mustard/35 active:translate-y-0 sm:px-8 sm:py-4 sm:text-xs"
               >
                 <span className="relative z-10">{t('orderButton')}</span>
                 <ArrowRight
@@ -136,14 +133,14 @@ export default function HeroSection() {
                   className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   style={{
                     background:
-                      'linear-gradient(105deg, transparent 35%, rgba(196,165,116,0.15) 50%, transparent 65%)',
+                      'linear-gradient(105deg, transparent 35%, rgba(222,147,42,0.18) 50%, transparent 65%)',
                   }}
                   aria-hidden
                 />
               </button>
               <Link
                 href={`/${locale}/pieces`}
-                className="inline-flex items-center rounded-full border border-neutral-900/15 bg-white/90 px-7 py-3.5 text-[11px] font-medium uppercase tracking-[0.14em] text-neutral-800 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#C4A574]/45 hover:bg-white hover:shadow-md hover:shadow-[#C4A574]/8 sm:px-8 sm:py-4 sm:text-xs"
+                className="inline-flex items-center rounded-full border border-neutral-900/15 bg-white/90 px-7 py-3.5 text-[11px] font-medium uppercase tracking-[0.14em] text-neutral-800 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-mustard/45 hover:bg-white hover:shadow-md hover:shadow-brand-mustard/10 sm:px-8 sm:py-4 sm:text-xs"
               >
                 {t('portfolioButton')}
               </Link>
@@ -160,10 +157,10 @@ export default function HeroSection() {
         >
           <div className="relative mx-auto max-w-[340px] lg:mx-0 lg:max-w-[320px] xl:max-w-[420px] min-[1536px]:max-w-none">
             <div
-              className="absolute -inset-3 rounded-[1.35rem] bg-gradient-to-br from-[#C4A574]/12 via-transparent to-[#8B7355]/10 opacity-80 blur-xl sm:-inset-4 sm:rounded-[1.5rem]"
+              className="absolute -inset-3 rounded-[1.35rem] bg-brand-sage/15 opacity-80 blur-xl sm:-inset-4 sm:rounded-[1.5rem]"
               aria-hidden
             />
-            <div className="group/image relative cursor-default rounded-2xl bg-[#F0EBE3] p-[3px] shadow-[0_24px_56px_-20px_rgba(0,0,0,0.2),0_0_0_1px_rgba(0,0,0,0.04)_inset] ring-1 ring-[#C4A574]/25 transition-[box-shadow,transform] duration-500 ease-out hover:shadow-[0_32px_64px_-24px_rgba(0,0,0,0.28)] hover:ring-[#C4A574]/40 xl:rounded-3xl xl:p-1">
+            <div className="group/image relative cursor-default rounded-2xl bg-[#EDEAE2] p-[3px] shadow-[0_24px_56px_-20px_rgba(0,0,0,0.2),0_0_0_1px_rgba(0,0,0,0.04)_inset] ring-1 ring-brand-sage/25 transition-[box-shadow,transform] duration-500 ease-out hover:shadow-[0_32px_64px_-24px_rgba(0,0,0,0.28)] hover:ring-brand-mustard/35 xl:rounded-3xl xl:p-1">
               <div className="overflow-hidden rounded-[1.15rem] ring-1 ring-white/90 xl:rounded-[1.35rem]">
                 <div className="relative aspect-[3/4] w-full max-h-[min(44vh,380px)] bg-neutral-200/80 sm:max-h-[min(46vh,400px)] lg:aspect-auto lg:h-[min(48vh,460px)] lg:max-h-[460px] lg:w-[300px] xl:aspect-[3/4] xl:h-auto xl:max-h-[min(46vh,480px)] xl:min-h-[380px] xl:w-full min-[1536px]:min-h-[420px] min-[1536px]:max-h-[min(52vh,540px)]">
                   <img

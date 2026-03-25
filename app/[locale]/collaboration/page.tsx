@@ -22,7 +22,7 @@ export default function CollaborationPage() {
           title={String(t('hero.title'))}
           titleItalic={String(t('hero.titleItalic'))}
           description={String(t('hero.description'))}
-          labelColor="#C9973C"
+          labelColor="var(--brand-mustard)"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -46,7 +46,7 @@ export default function CollaborationPage() {
           <div
             className="absolute inset-0 opacity-[0.04] pointer-events-none"
             style={{
-              backgroundImage: 'radial-gradient(circle at 1px 1px, #C4A574 0.5px, transparent 0)',
+              backgroundImage: 'radial-gradient(circle at 1px 1px, var(--brand-sage) 0.5px, transparent 0)',
               backgroundSize: '24px 24px',
             }}
             aria-hidden
@@ -60,11 +60,11 @@ export default function CollaborationPage() {
               className="text-center mb-10 sm:mb-12"
             >
               <div className="flex items-center justify-center gap-3 mb-5">
-                <span className="h-px w-8 sm:w-12 bg-[#C4A574]/60" aria-hidden />
-                <span className="text-[10px] sm:text-xs font-medium tracking-[0.3em] uppercase text-[#8B7355]">
+                <span className="h-px w-8 sm:w-12 bg-brand-mustard/60" aria-hidden />
+                <span className="text-[10px] sm:text-xs font-medium tracking-[0.3em] uppercase text-brand-sage">
                   {t('approach.title')}
                 </span>
-                <span className="h-px w-8 sm:w-12 bg-[#C4A574]/60" aria-hidden />
+                <span className="h-px w-8 sm:w-12 bg-brand-mustard/60" aria-hidden />
               </div>
               <p
                 className="text-2xl sm:text-3xl md:text-4xl tracking-tight text-[#1a1a1a] leading-snug mb-10"
@@ -77,7 +77,7 @@ export default function CollaborationPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="border-l-2 border-[#C4A574] pl-6 sm:pl-8 py-1 text-left"
+                className="border-l-2 border-brand-mustard pl-6 sm:pl-8 py-1 text-left"
               >
                 <p className="text-lg sm:text-xl text-[#1a1a1a]/90 leading-relaxed mb-4" style={{ fontFamily: 'serif' }}>
                   {t('approach.p2')}
@@ -101,11 +101,11 @@ export default function CollaborationPage() {
               className="text-center mb-10 sm:mb-12"
             >
               <div className="flex items-center justify-center gap-3 mb-5">
-                <span className="h-px w-8 sm:w-12 bg-[#8B7355]/70" aria-hidden />
-                <span className="text-xs sm:text-sm font-medium tracking-[0.25em] uppercase text-[#8B7355]">
+                <span className="h-px w-8 sm:w-12 bg-brand-sage/70" aria-hidden />
+                <span className="text-xs sm:text-sm font-medium tracking-[0.25em] uppercase text-brand-sage">
                   {t('directions.label')}
                 </span>
-                <span className="h-px w-8 sm:w-12 bg-[#8B7355]/70" aria-hidden />
+                <span className="h-px w-8 sm:w-12 bg-brand-sage/70" aria-hidden />
               </div>
               <h2
                 className="text-2xl sm:text-3xl md:text-4xl tracking-tight text-[#1a1a1a]"
@@ -120,12 +120,12 @@ export default function CollaborationPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.08 }}
-              className="border-l-2 border-[#C4A574] pl-6 sm:pl-8 py-2 mb-10"
+              className="border-l-2 border-brand-sage pl-6 sm:pl-8 py-2 mb-10"
             >
               <ul className="space-y-5 sm:space-y-6">
                 {[0, 1, 2, 3, 4, 5].map((i) => (
                   <li key={i} className="flex items-start gap-4 text-lg sm:text-xl text-[#1a1a1a] leading-[1.6]">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#C4A574] mt-2 shrink-0" aria-hidden />
+                    <span className="w-2.5 h-2.5 rounded-full bg-brand-mustard mt-2 shrink-0" aria-hidden />
                     <span>{t(`directions.items.${i}`)}</span>
                   </li>
                 ))}
@@ -137,7 +137,7 @@ export default function CollaborationPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="text-center pt-6 border-t border-[#C4A574]/30"
+              className="text-center pt-6 border-t border-brand-sage/30"
             >
               <p className="text-base sm:text-lg text-[#2a2a2a] leading-relaxed italic max-w-xl mx-auto" style={{ fontFamily: 'serif' }}>
                 {t('directions.footer')}
@@ -166,11 +166,11 @@ export default function CollaborationPage() {
               className="text-center mb-10 sm:mb-12"
             >
               <div className="flex items-center justify-center gap-3 mb-5">
-                <div className="h-px w-8 bg-[#C4A574]" />
-                <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+                <div className="h-px w-8 bg-brand-mustard" />
+                <span className="text-brand-mustard text-xs sm:text-sm tracking-[0.4em] uppercase">
                   {t('b2b.label')}
                 </span>
-                <div className="h-px w-8 bg-[#C4A574]" />
+                <div className="h-px w-8 bg-brand-mustard" />
               </div>
               <h2
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-5 sm:mb-6 tracking-tight"
@@ -190,7 +190,7 @@ export default function CollaborationPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="border-l-2 border-[#C4A574]/70 pl-6 sm:pl-8 py-1 mb-12 sm:mb-14"
+              className="border-l-2 border-brand-mustard/70 pl-6 sm:pl-8 py-1 mb-12 sm:mb-14"
             >
               <p className="text-base sm:text-lg text-[#FAF9F6]/90 leading-relaxed mb-5">
                 {t('b2b.description1')}
@@ -213,34 +213,12 @@ export default function CollaborationPage() {
                 onClick={() => openRequestModal()}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-3 px-10 py-5 bg-[#C4A574] text-white rounded-full text-base sm:text-lg tracking-wider shadow-2xl hover:shadow-[#C4A574]/30 transition-shadow font-medium"
+                className="inline-flex items-center gap-3 px-10 py-5 bg-brand-mustard text-brand-mustard-foreground rounded-full text-base sm:text-lg tracking-wider shadow-2xl hover:shadow-brand-mustard/25 transition-shadow font-medium hover:bg-brand-mustard-hover"
               >
                 {t('b2b.cta')}
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
             </motion.div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-[#FAF9F6]">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl tracking-tight text-[#1a1a1a] mb-4" style={{ fontFamily: 'serif' }}>
-              {t('cta.title')}
-            </h2>
-            <p className="text-base sm:text-lg text-[#6B6B6B] mb-8 leading-relaxed">
-              {t('cta.description')}
-            </p>
-            <motion.button
-              type="button"
-              onClick={() => openRequestModal()}
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-[#C4A574] text-white rounded-full text-base sm:text-lg font-medium tracking-wide hover:shadow-lg hover:shadow-[#C4A574]/25 transition-shadow"
-            >
-              {t('cta.button')}
-              <ArrowRight className="w-5 h-5" />
-            </motion.button>
           </div>
         </section>
       </div>

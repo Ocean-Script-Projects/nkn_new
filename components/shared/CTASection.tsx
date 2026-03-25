@@ -11,8 +11,6 @@ interface CTASectionProps {
   description: string;
   buttonText: string;
   buttonHref: string;
-  gradientFrom?: string;
-  gradientTo?: string;
   /** When true, button opens request modal instead of linking */
   openModal?: boolean;
 }
@@ -23,13 +21,13 @@ export default function CTASection({
   description,
   buttonText,
   buttonHref,
-  gradientFrom = '#C4A574',
-  gradientTo = '#8B7355',
   openModal = false,
 }: CTASectionProps) {
   const { openRequestModal } = useRequestModal();
+  const dotPattern = 'radial-gradient(circle, var(--brand-mustard) 1px, transparent 1px)';
+
   return (
-    <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-black text-white relative overflow-hidden">
+    <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-black text-white relative overflow-hidden bg-fabric-grain-dark">
       <motion.div
         className="absolute inset-0 opacity-10"
         animate={{
@@ -37,8 +35,8 @@ export default function CTASection({
         }}
         transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }}
         style={{
-          backgroundImage: `radial-gradient(circle, ${gradientFrom} 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
+          backgroundImage: dotPattern,
+          backgroundSize: '50px 50px',
         }}
       />
 
@@ -51,7 +49,7 @@ export default function CTASection({
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight tracking-tight" style={{ fontFamily: 'serif' }}>
             {title} <br />
-            <span className="italic" style={{ color: gradientFrom }}>{titleItalic}</span>
+            <span className="italic text-brand-mustard">{titleItalic}</span>
           </h2>
 
           <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -63,10 +61,7 @@ export default function CTASection({
               onClick={() => openRequestModal()}
               whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.98 }}
-              className="px-10 sm:px-12 py-5 sm:py-6 rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow inline-flex items-center gap-3"
-              style={{
-                background: `linear-gradient(to right, ${gradientFrom}, ${gradientTo})`,
-              }}
+              className="px-10 sm:px-12 py-5 sm:py-6 rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow inline-flex items-center gap-3 bg-brand-mustard text-brand-mustard-foreground hover:bg-brand-mustard-hover"
             >
               {buttonText}
               <ArrowRight className="w-5 h-5" />
@@ -76,10 +71,7 @@ export default function CTASection({
               <motion.button
                 whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-10 sm:px-12 py-5 sm:py-6 rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow inline-flex items-center gap-3"
-                style={{
-                  background: `linear-gradient(to right, ${gradientFrom}, ${gradientTo})`,
-                }}
+                className="px-10 sm:px-12 py-5 sm:py-6 rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow inline-flex items-center gap-3 bg-brand-mustard text-brand-mustard-foreground hover:bg-brand-mustard-hover"
               >
                 {buttonText}
                 <ArrowRight className="w-5 h-5" />

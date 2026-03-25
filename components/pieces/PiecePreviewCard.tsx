@@ -60,7 +60,7 @@ export default function PiecePreviewCard({ piece, onClick, index }: PiecePreview
             <h3 className="text-lg sm:text-xl mb-1.5 tracking-tight" style={{ fontFamily: 'serif' }}>
               {piece.name}
             </h3>
-            <div className="text-xs sm:text-sm text-[#C4A574] tracking-widest">{piece.type}</div>
+            <div className="text-xs sm:text-sm text-brand-mustard tracking-widest">{piece.type}</div>
           </div>
         </div>
       </motion.div>

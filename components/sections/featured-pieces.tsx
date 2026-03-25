@@ -50,11 +50,11 @@ export default function FeaturedPiecesSection() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-3 mb-6 sm:mb-8"
           >
-            <div className="h-px w-6 sm:w-8 bg-[#C4A574]" />
-            <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.3em] sm:tracking-[0.4em] uppercase">
+            <div className="h-px w-6 sm:w-8 bg-brand-sage" />
+            <span className="text-brand-sage text-xs sm:text-sm tracking-[0.3em] sm:tracking-[0.4em] uppercase">
               {t('label')}
             </span>
-            <div className="h-px w-6 sm:w-8 bg-[#C4A574]" />
+            <div className="h-px w-6 sm:w-8 bg-brand-sage" />
           </motion.div>
 
           <h2 className="text-4xl sm:text-5xl md:text-6xl mb-4 sm:mb-6" style={{ fontFamily: 'serif' }}>
@@ -103,13 +103,15 @@ export default function FeaturedPiecesSection() {
               className="relative inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-black text-white rounded-full text-sm sm:text-base tracking-wider overflow-hidden group"
             >
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#C4A574] to-[#8B7355]"
+                className="absolute inset-0 bg-brand-mustard"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: '0%' }}
                 transition={{ duration: 0.4 }}
               />
-              <span className="relative z-10">{t('viewAll')}</span>
-              <span className="relative z-10 group-hover:translate-x-1 transition-transform">→</span>
+              <span className="relative z-10 group-hover:text-brand-mustard-foreground">{t('viewAll')}</span>
+              <span className="relative z-10 group-hover:translate-x-1 group-hover:text-brand-mustard-foreground transition-transform">
+                →
+              </span>
             </motion.button>
           </Link>
         </motion.div>

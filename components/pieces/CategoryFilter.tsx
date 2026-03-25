@@ -31,7 +31,7 @@ export default function CategoryFilter({ categories, selectedCategory, onSelect 
               onClick={() => onSelect(cat.id)}
               className={`relative px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base tracking-wider transition-colors ${
                 selectedCategory === cat.id
-                  ? 'text-[#C4A574]'
+                  ? 'text-brand-mustard'
                   : 'text-[#8B8B8B] hover:text-black'
               }`}
             >
@@ -39,7 +39,7 @@ export default function CategoryFilter({ categories, selectedCategory, onSelect 
               {selectedCategory === cat.id && (
                 <motion.div
                   layoutId="activeCategory"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#C4A574]"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-mustard"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}

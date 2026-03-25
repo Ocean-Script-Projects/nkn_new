@@ -93,7 +93,7 @@ export default function PieceDetailModal({ piece, isOpen, onClose }: PieceDetail
               </div>
 
               <div className="p-6 sm:p-8">
-                <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+                <span className="text-brand-mustard text-xs sm:text-sm tracking-[0.4em] uppercase">
                   {statusText}
                 </span>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl mt-2 mb-4 tracking-tight" style={{ fontFamily: 'serif' }}>
@@ -116,7 +116,7 @@ export default function PieceDetailModal({ piece, isOpen, onClose }: PieceDetail
                   }}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-base tracking-wider shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center gap-3"
+                  className="w-full sm:w-auto px-8 py-4 bg-brand-mustard text-brand-mustard-foreground rounded-full text-base tracking-wider shadow-lg hover:shadow-xl hover:bg-brand-mustard-hover transition-colors flex items-center justify-center gap-3"
                 >
                   {buttonText}
                   <ArrowRight className="w-5 h-5" />

@@ -70,7 +70,7 @@ export default function ContactPage() {
           title={String(t('hero.title'))}
           titleItalic={String(t('hero.titleItalic'))}
           description={String(t('hero.description'))}
-          labelColor="#C4A574"
+          labelColor="var(--brand-mustard)"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -100,7 +100,7 @@ export default function ContactPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 whileHover={{ y: -4 }}
-                className="relative bg-gradient-to-br from-[#C4A574] to-[#8B7355] text-white rounded-3xl p-8 sm:p-10 shadow-xl overflow-hidden"
+                className="relative bg-brand-sage text-brand-sage-foreground rounded-3xl p-8 sm:p-10 shadow-xl overflow-hidden bg-fabric-grain"
               >
                 <div className="absolute inset-0 opacity-10">
                   <div
@@ -134,7 +134,7 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#8B7355] rounded-full text-sm sm:text-base tracking-wider shadow-lg hover:shadow-xl transition-shadow font-medium"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-sage rounded-full text-sm sm:text-base tracking-wider shadow-lg hover:shadow-xl transition-shadow font-medium"
                   >
                     {t('telegram.button')}
                     <ArrowRight className="w-4 h-4" />
@@ -151,8 +151,8 @@ export default function ContactPage() {
                 whileHover={{ y: -4 }}
                 className="bg-[#FAF9F6] border border-black/10 rounded-3xl p-8 sm:p-10 shadow-lg hover:shadow-2xl transition-shadow"
               >
-                <div className="w-14 h-14 rounded-2xl bg-[#C4A574]/10 flex items-center justify-center mb-6">
-                  <Mail className="w-7 h-7 text-[#C4A574]" />
+                <div className="w-14 h-14 rounded-2xl bg-brand-mustard/10 flex items-center justify-center mb-6">
+                  <Mail className="w-7 h-7 text-brand-mustard" />
                 </div>
 
                 <h3
@@ -192,11 +192,11 @@ export default function ContactPage() {
               <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 md:p-8 shadow-xl border border-black/5">
                 <div className="text-center mb-5 sm:mb-6">
                   <div className="flex items-center justify-center gap-2 mb-3">
-                    <div className="h-px w-6 bg-[#C4A574]" />
-                    <span className="text-[#C4A574] text-[10px] sm:text-xs tracking-[0.35em] uppercase">
+                    <div className="h-px w-6 bg-brand-mustard" />
+                    <span className="text-brand-mustard text-[10px] sm:text-xs tracking-[0.35em] uppercase">
                       {t('form.label')}
                     </span>
-                    <div className="h-px w-6 bg-[#C4A574]" />
+                    <div className="h-px w-6 bg-brand-mustard" />
                   </div>
 
                   <h2
@@ -227,8 +227,8 @@ export default function ContactPage() {
                           whileTap={{ scale: 0.97 }}
                           className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm tracking-wide border transition-all ${
                             selectedService.includes(service)
-                              ? 'bg-[#C4A574] text-white border-[#C4A574] shadow-lg'
-                              : 'bg-[#FAF9F6] text-[#8B8B8B] border-black/10 hover:border-[#C4A574]/30'
+                              ? 'bg-brand-mustard text-brand-mustard-foreground border-brand-mustard shadow-lg'
+                              : 'bg-[#FAF9F6] text-[#8B8B8B] border-black/10 hover:border-brand-mustard/30'
                           }`}
                         >
                           {service}
@@ -247,7 +247,7 @@ export default function ContactPage() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-3 py-2 sm:px-4 sm:py-2.5 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors text-sm sm:text-base"
+                      className="w-full px-3 py-2 sm:px-4 sm:py-2.5 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-brand-mustard focus:outline-none transition-colors text-sm sm:text-base"
                       placeholder="Name"
                     />
                   </div>
@@ -262,7 +262,7 @@ export default function ContactPage() {
                         <button
                           type="button"
                           onClick={() => setContactMethodOpen(!contactMethodOpen)}
-                          className="w-full px-3 py-2 sm:px-4 sm:py-2.5 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors text-sm sm:text-base text-left flex items-center justify-between gap-2"
+                          className="w-full px-3 py-2 sm:px-4 sm:py-2.5 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-brand-mustard focus:outline-none transition-colors text-sm sm:text-base text-left flex items-center justify-between gap-2"
                         >
                           <span>
                             {formData.contactMethod === 'telegram'
@@ -295,7 +295,7 @@ export default function ContactPage() {
                                       setContactMethodOpen(false);
                                     }}
                                     className={`w-full px-3 py-2 text-sm text-left hover:bg-[#FAF9F6] transition-colors ${
-                                      formData.contactMethod === method ? 'bg-[#FAF9F6] text-[#C4A574]' : ''
+                                      formData.contactMethod === method ? 'bg-[#FAF9F6] text-brand-mustard' : ''
                                     }`}
                                   >
                                     {method === 'telegram'
@@ -318,7 +318,7 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, contactValue: e.target.value })
                         }
-                        className="px-3 py-2 sm:px-4 sm:py-2.5 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors text-sm sm:text-base min-w-0"
+                        className="px-3 py-2 sm:px-4 sm:py-2.5 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-brand-mustard focus:outline-none transition-colors text-sm sm:text-base min-w-0"
                         placeholder={
                           formData.contactMethod === 'email'
                             ? 'your@email.com'
@@ -340,7 +340,7 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       rows={4}
-                      className="w-full min-h-[5.5rem] px-3 py-2 sm:px-4 sm:py-2.5 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors resize-y text-sm sm:text-base leading-relaxed"
+                      className="w-full min-h-[5.5rem] px-3 py-2 sm:px-4 sm:py-2.5 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-brand-mustard focus:outline-none transition-colors resize-y text-sm sm:text-base leading-relaxed"
                       placeholder={String(t('form.messagePlaceholder'))}
                     />
                   </div>
@@ -350,7 +350,7 @@ export default function ContactPage() {
                     type="submit"
                     whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-5 py-2.5 sm:py-3 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-sm sm:text-base tracking-wider shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center gap-2 font-medium"
+                    className="w-full px-5 py-2.5 sm:py-3 bg-brand-mustard text-brand-mustard-foreground hover:bg-brand-mustard-hover rounded-full text-sm sm:text-base tracking-wider shadow-lg hover:shadow-xl transition-colors flex items-center justify-center gap-2 font-medium"
                   >
                     {t('form.submit')}
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -376,11 +376,11 @@ export default function ContactPage() {
               className="text-center mb-10 sm:mb-12"
             >
               <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="h-px w-8 bg-[#C4A574]" />
-                <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+                <div className="h-px w-8 bg-brand-mustard" />
+                <span className="text-brand-mustard text-xs sm:text-sm tracking-[0.4em] uppercase">
                   {t('faq.label')}
                 </span>
-                <div className="h-px w-8 bg-[#C4A574]" />
+                <div className="h-px w-8 bg-brand-mustard" />
               </div>
 
               <h2
@@ -410,7 +410,7 @@ export default function ContactPage() {
                       animate={{ rotate: expandedFaq === i ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <ChevronDown className="w-5 h-5 text-[#C4A574] flex-shrink-0" />
+                      <ChevronDown className="w-5 h-5 text-brand-mustard flex-shrink-0" />
                     </motion.div>
                   </button>
 
@@ -448,11 +448,11 @@ export default function ContactPage() {
               className="text-center"
             >
               <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="h-px w-8 bg-[#C4A574]" />
-                <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+                <div className="h-px w-8 bg-brand-mustard" />
+                <span className="text-brand-mustard text-xs sm:text-sm tracking-[0.4em] uppercase">
                   {t('location.label')}
                 </span>
-                <div className="h-px w-8 bg-[#C4A574]" />
+                <div className="h-px w-8 bg-brand-mustard" />
               </div>
 
               <h2
@@ -497,31 +497,11 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-center justify-center gap-3 pt-4">
-                <div className="h-px w-12 bg-[#C4A574]" />
-                <MessageCircle className="w-5 h-5 text-[#C4A574]" />
-                <div className="h-px w-12 bg-[#C4A574]" />
+                <div className="h-px w-12 bg-brand-mustard" />
+                <MessageCircle className="w-5 h-5 text-brand-mustard" />
+                <div className="h-px w-12 bg-brand-mustard" />
               </div>
             </motion.blockquote>
-          </div>
-        </section>
-
-        {/* SEO BLOCK */}
-        <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-12 bg-[#FAF9F6]">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center space-y-4"
-            >
-              <h2 className="text-2xl sm:text-3xl tracking-tight" style={{ fontFamily: 'serif' }}>
-                {t('seo.title')}
-              </h2>
-              <p className="text-sm sm:text-base text-[#8B8B8B] leading-relaxed">
-                {t('seo.description')}
-              </p>
-            </motion.div>
           </div>
         </section>
 
@@ -534,7 +514,7 @@ export default function ContactPage() {
               exit={{ opacity: 0, y: 50 }}
               className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50"
             >
-              <div className="bg-[#C4A574] text-white px-8 py-4 rounded-full shadow-2xl flex items-center gap-3">
+              <div className="bg-brand-mustard text-brand-mustard-foreground px-8 py-4 rounded-full shadow-2xl flex items-center gap-3">
                 <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
                   <Check className="w-4 h-4" />
                 </div>

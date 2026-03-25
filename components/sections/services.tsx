@@ -22,7 +22,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-32 lg:py-16 xl:py-24 2xl:py-32 px-6 md:px-12 bg-[#FAF9F6] relative overflow-hidden"
+      className="py-32 lg:py-16 xl:py-24 2xl:py-32 px-6 md:px-12 bg-brand-sage-subtle relative overflow-hidden"
     >
       <DecorativeLogo variant="big" position="bottom-left" />
       <div className="max-w-7xl mx-auto relative z-10">
@@ -40,9 +40,9 @@ export default function ServicesSection() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-3 mb-8 lg:mb-4 xl:mb-8"
           >
-            <div className="h-px w-8 bg-[#C4A574]" />
-            <span className="text-[#C4A574] text-sm tracking-[0.4em] uppercase">{t('label')}</span>
-            <div className="h-px w-8 bg-[#C4A574]" />
+            <div className="h-px w-8 bg-brand-sage" />
+            <span className="text-brand-sage text-sm tracking-[0.4em] uppercase">{t('label')}</span>
+            <div className="h-px w-8 bg-brand-sage" />
           </motion.div>
 
           <h2
@@ -68,15 +68,15 @@ export default function ServicesSection() {
               >
                 <motion.div
                   whileHover={{ y: -8, scale: 1.02 }}
-                  className="bg-white rounded-3xl p-8 lg:p-5 xl:p-7 2xl:p-8 h-full border border-black/5 hover:border-[#C4A574]/30 transition-all duration-300 relative overflow-hidden flex flex-col lg:rounded-2xl xl:rounded-3xl"
+                  className="bg-white rounded-3xl p-8 lg:p-5 xl:p-7 2xl:p-8 h-full border border-black/5 hover:border-brand-mustard/30 transition-all duration-300 relative overflow-hidden flex flex-col lg:rounded-2xl xl:rounded-3xl"
                 >
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-[#C4A574]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute inset-0 bg-brand-mustard/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   />
 
                   <div className="relative z-10 flex flex-col">
                     <div className="flex items-start justify-between mb-6 lg:mb-3 xl:mb-6">
-                      <span className="text-4xl lg:text-3xl xl:text-4xl text-[#C4A574]/20 font-light tracking-wider">
+                      <span className="text-4xl lg:text-3xl xl:text-4xl text-brand-mustard/20 font-light tracking-wider">
                         {num}
                       </span>
                       <motion.div
@@ -86,7 +86,7 @@ export default function ServicesSection() {
                         }}
                         transition={{ type: 'spring', stiffness: 300 }}
                       >
-                        <Icon className="w-6 h-6 text-[#C4A574]" />
+                        <Icon className="w-6 h-6 text-brand-mustard" />
                       </motion.div>
                     </div>
 

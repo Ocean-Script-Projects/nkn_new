@@ -24,7 +24,7 @@ export default function PrintsPage() {
           title={String(t('hero.title'))}
           titleItalic={String(t('hero.titleItalic'))}
           subtitle={String(t('hero.subtitle'))}
-          labelColor="#C9973C"
+          labelColor="var(--brand-mustard)"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -108,11 +108,11 @@ export default function PrintsPage() {
               transition={{ duration: 0.6 }}
               className="flex items-center justify-center gap-3 mb-8"
             >
-              <span className="h-px w-8 sm:w-12 bg-[#C9973C]/60" aria-hidden />
-              <span className="text-[10px] sm:text-xs font-medium tracking-[0.35em] uppercase text-[#C9973C]">
+              <span className="h-px w-8 sm:w-12 bg-brand-mustard/60" aria-hidden />
+              <span className="text-[10px] sm:text-xs font-medium tracking-[0.35em] uppercase text-brand-mustard">
                 {t('gallery.label')}
               </span>
-              <span className="h-px w-8 sm:w-12 bg-[#C9973C]/60" aria-hidden />
+              <span className="h-px w-8 sm:w-12 bg-brand-mustard/60" aria-hidden />
             </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -130,7 +130,7 @@ export default function PrintsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.08 }}
-              className="max-w-xl mx-auto mb-12 border-l-2 border-[#C9973C]/50 pl-5 sm:pl-6 py-1"
+              className="max-w-xl mx-auto mb-12 border-l-2 border-brand-mustard/50 pl-5 sm:pl-6 py-1"
             >
               <p className="text-base sm:text-lg text-[#6B6B6B] leading-relaxed font-sans">
                 {t('gallery.subtext')}
@@ -175,7 +175,7 @@ export default function PrintsPage() {
             >
               <div
                 className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full opacity-[0.07]"
-                style={{ background: 'radial-gradient(circle, #C9973C 0%, transparent 70%)' }}
+                style={{ background: 'radial-gradient(circle, var(--brand-mustard) 0%, transparent 70%)' }}
                 aria-hidden
               />
               <div
@@ -187,7 +187,7 @@ export default function PrintsPage() {
                 aria-hidden
               />
               <div className="relative z-10">
-                <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.35em] text-[#C9973C]">
+                <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.35em] text-brand-mustard">
                   {t('hero.label')}
                 </p>
                 <h2

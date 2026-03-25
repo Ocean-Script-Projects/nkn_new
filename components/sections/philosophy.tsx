@@ -54,11 +54,11 @@ export default function PhilosophySection() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-3 mb-6 sm:mb-8 lg:mb-4"
           >
-            <div className="h-px w-6 sm:w-8 bg-[#C4A574]" />
-            <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.3em] sm:tracking-[0.4em] uppercase">
+            <div className="h-px w-6 sm:w-8 bg-brand-sage" />
+            <span className="text-brand-sage text-xs sm:text-sm tracking-[0.3em] sm:tracking-[0.4em] uppercase">
               {t('label')}
             </span>
-            <div className="h-px w-6 sm:w-8 bg-[#C4A574]" />
+            <div className="h-px w-6 sm:w-8 bg-brand-sage" />
           </motion.div>
 
           <motion.h2
@@ -102,7 +102,7 @@ export default function PhilosophySection() {
                   className="relative w-20 sm:w-24 h-20 sm:h-24 lg:w-[4.25rem] lg:h-[4.25rem] xl:w-24 xl:h-24 mx-auto mb-6 sm:mb-8 lg:mb-4"
                 >
                   <motion.div
-                    className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#C4A574]/30 to-[#8B7355]/30 blur-xl"
+                    className="absolute inset-0 rounded-2xl bg-brand-sage/25 blur-xl"
                     animate={{
                       scale: [1, 1.2, 1],
                       opacity: [0.4, 0.7, 0.4],
@@ -110,8 +110,15 @@ export default function PhilosophySection() {
                     transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
                   />
 
-                  <div className="relative w-full h-full rounded-2xl bg-gradient-to-br from-[#C4A574] via-[#8B7355] to-[#C4A574] flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-shadow">
-                    <ItemIcon className="w-10 h-10 sm:w-12 sm:h-12 lg:w-10 lg:h-10 xl:w-12 xl:h-12 text-white" strokeWidth={1.5} />
+                  <div className="relative w-full h-full rounded-2xl overflow-hidden flex shadow-xl group-hover:shadow-2xl transition-shadow ring-1 ring-black/10">
+                    <div className="flex-1 bg-brand-mustard" aria-hidden />
+                    <div className="flex-1 bg-brand-sage" aria-hidden />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <ItemIcon
+                        className="w-10 h-10 sm:w-12 sm:h-12 lg:w-10 lg:h-10 xl:w-12 xl:h-12 text-white drop-shadow-[0_1px_2px_rgb(0_0_0_/0.35)]"
+                        strokeWidth={1.5}
+                      />
+                    </div>
 
                     <motion.div
                       className="absolute -top-1 -right-1 w-4 h-4 bg-[#DC2626] rounded-full border-2 border-white shadow-lg"
@@ -121,7 +128,7 @@ export default function PhilosophySection() {
                   </div>
                 </motion.div>
 
-                <h3 className="text-xl sm:text-2xl lg:text-lg xl:text-xl 2xl:text-2xl mb-3 sm:mb-4 lg:mb-2 tracking-wide group-hover:text-[#C4A574] transition-colors">
+                <h3 className="text-xl sm:text-2xl lg:text-lg xl:text-xl 2xl:text-2xl mb-3 sm:mb-4 lg:mb-2 tracking-wide group-hover:text-brand-mustard transition-colors">
                   {t(`values.${item.key}.title`)}
                 </h3>
                 <p className="text-[#8B8B8B] text-sm sm:text-base lg:text-xs xl:text-sm 2xl:text-base leading-relaxed lg:leading-snug">

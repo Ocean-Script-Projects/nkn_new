@@ -21,16 +21,17 @@ import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations } from '@/lib/i18n';
 const SERVICE_IDS = ['01', '02', '03', '04', '05', '06', '07'] as const;
 const ICONS = [Scissors, Sparkles, Heart, Leaf, Palette, Layers, Users];
-const COLORS = [
-  'from-[#C4A574] to-[#B8985E]',
-  'from-[#DC2626] to-[#B91C1C]',
-  'from-[#8B7355] to-[#A8896A]',
-  'from-[#B8985E] to-[#C4A574]',
-  'from-[#A8896A] to-[#8B7355]',
-  'from-[#C4A574] to-[#8B7355]',
-  'from-[#8B7355] to-[#B8985E]',
-];
-const ACCENT_COLORS = ['#C4A574', '#DC2626', '#8B7355', '#B8985E', '#A8896A', '#C4A574', '#8B7355'];
+/** Solid brand accents only — alternate mustard / sage (no gold↔brown gradients). */
+const SOLID_ACCENT_BG = [
+  'bg-brand-mustard',
+  'bg-brand-sage',
+  'bg-brand-mustard',
+  'bg-brand-sage',
+  'bg-brand-mustard',
+  'bg-brand-sage',
+  'bg-brand-mustard',
+] as const;
+const ACCENT_COLORS = ['#de932a', '#dc2626', '#777b56', '#de932a', '#777b56', '#de932a', '#777b56'];
 
 export default function ServicesPage() {
   const t = useTranslations('servicesPage');
@@ -53,8 +54,9 @@ export default function ServicesPage() {
       fullDesc: t(`services.${id}.fullDesc`),
       features: Array.isArray(features) ? features : [features],
       icon: ICONS[i],
-      color: COLORS[i],
+      color: SOLID_ACCENT_BG[i],
       accentColor: ACCENT_COLORS[i],
+      ctaTextClass: i % 2 === 1 ? 'text-brand-sage-foreground' : 'text-brand-mustard-foreground',
     };
   }), [t]);
 
@@ -74,7 +76,7 @@ export default function ServicesPage() {
           subtitle={String(t('hero.subtitle'))}
           description={String(t('hero.description'))}
           badges={[String(t('hero.badge1')), String(t('hero.badge2')), String(t('hero.badge3'))]}
-          labelColor="#C4A574"
+          labelColor="var(--brand-mustard)"
         >
           <div className="relative">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
@@ -91,7 +93,7 @@ export default function ServicesPage() {
                 className="absolute bottom-6 left-6 right-6"
               >
                 <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl">
-                  <div className="flex items-center gap-2 text-[#C4A574] mb-1">
+                  <div className="flex items-center gap-2 text-brand-mustard mb-1">
                     <Scissors className="w-4 h-4" />
                     <span className="text-xs tracking-wider uppercase font-medium">{t('hero.badgeTitle')}</span>
                   </div>
@@ -100,7 +102,7 @@ export default function ServicesPage() {
               </motion.div>
             </div>
             <motion.div
-              className="absolute -z-10 -right-8 -bottom-8 w-64 h-64 bg-gradient-to-br from-[#C4A574]/20 to-transparent rounded-full blur-3xl"
+              className="absolute -z-10 -right-8 -bottom-8 w-64 h-64 bg-brand-sage/20 rounded-full blur-3xl"
               animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
               transition={{ duration: 5, repeat: Infinity }}
             />
@@ -126,10 +128,10 @@ export default function ServicesPage() {
                     <motion.div
                       onClick={() => setSelectedService(i)}
                       whileHover={{ y: -6 }}
-                      className="relative bg-white rounded-[1.75rem] p-6 sm:p-8 border border-black/5 hover:border-[#C4A574]/25 cursor-pointer overflow-hidden transition-all duration-400 h-full shadow-sm hover:shadow-xl"
+                      className="relative bg-white rounded-[1.75rem] p-6 sm:p-8 border border-black/5 hover:border-brand-mustard/25 cursor-pointer overflow-hidden transition-all duration-400 h-full shadow-sm hover:shadow-xl"
                     >
                       <div
-                        className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-[0.06] transition-opacity duration-500`}
+                        className={`absolute inset-0 ${service.color} opacity-0 group-hover:opacity-[0.08] transition-opacity duration-500`}
                       />
 
                       <div
@@ -142,7 +144,7 @@ export default function ServicesPage() {
                       <div className="relative z-10">
                         <div className="mb-5">
                           <div
-                            className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg flex-shrink-0`}
+                            className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl ${service.color} flex items-center justify-center shadow-lg flex-shrink-0`}
                           >
                             <Icon className="w-8 h-8 sm:w-9 sm:h-9 text-white" strokeWidth={1.5} />
                           </div>
@@ -155,7 +157,7 @@ export default function ServicesPage() {
                           >
                             {service.title}
                           </h3>
-                          <div className="text-xs sm:text-sm text-[#C4A574] tracking-widest uppercase">
+                          <div className="text-xs sm:text-sm text-brand-sage tracking-widest uppercase">
                             {service.subtitle}
                           </div>
                         </div>
@@ -175,7 +177,7 @@ export default function ServicesPage() {
                         >
                           {t('moreButton')}
                           <div
-                            className={`w-9 h-9 rounded-full bg-gradient-to-br ${service.color} flex items-center justify-center shadow-md group-hover/btn:scale-110 transition-transform`}
+                            className={`w-9 h-9 rounded-full ${service.color} flex items-center justify-center shadow-md group-hover/btn:scale-110 transition-transform`}
                           >
                             <ArrowRight className="w-4 h-4 text-white" />
                           </div>
@@ -238,13 +240,13 @@ export default function ServicesPage() {
                         <div className="mb-8">
                           <div className="flex items-start gap-6 mb-6">
                             <div
-                              className={`w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-xl flex-shrink-0`}
+                              className={`w-20 h-20 sm:w-24 sm:h-24 rounded-3xl ${service.color} flex items-center justify-center shadow-xl flex-shrink-0`}
                             >
                               <Icon className="w-10 h-10 sm:w-12 sm:h-12 text-white" strokeWidth={1.5} />
                             </div>
 
                             <div>
-                              <div className="text-[#C4A574] text-xs sm:text-sm tracking-[0.3em] mb-2 uppercase">
+                              <div className="text-brand-mustard text-xs sm:text-sm tracking-[0.3em] mb-2 uppercase">
                                 {service.subtitle}
                               </div>
                               <h2
@@ -263,9 +265,9 @@ export default function ServicesPage() {
 
                         <div className="mb-10">
                           <h3 className="text-lg font-medium tracking-wider mb-5 flex items-center gap-3">
-                            <div className="h-px flex-1 bg-gradient-to-r from-[#C4A574] to-transparent" />
+                            <div className="h-px flex-1 bg-gradient-to-r from-brand-sage to-transparent" />
                             <span>{t('modal.whatIncluded')}</span>
-                            <div className="h-px flex-1 bg-gradient-to-l from-[#C4A574] to-transparent" />
+                            <div className="h-px flex-1 bg-gradient-to-l from-brand-sage to-transparent" />
                           </h3>
                           <div className="grid sm:grid-cols-2 gap-4">
                             {service.features.map((feature, idx) => (
@@ -277,7 +279,7 @@ export default function ServicesPage() {
                                 className="flex items-center gap-3"
                               >
                                 <div
-                                  className={`w-6 h-6 rounded-full bg-gradient-to-br ${service.color} flex items-center justify-center flex-shrink-0`}
+                                  className={`w-6 h-6 rounded-full ${service.color} flex items-center justify-center flex-shrink-0`}
                                 >
                                   <Check className="w-4 h-4 text-white" strokeWidth={3} />
                                 </div>
@@ -300,7 +302,7 @@ export default function ServicesPage() {
                             }}
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.98 }}
-                            className={`flex-1 px-8 py-5 bg-gradient-to-r ${service.color} text-white rounded-full text-base sm:text-lg tracking-wider shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center gap-3`}
+                            className={`flex-1 px-8 py-5 ${service.color} ${service.ctaTextClass} rounded-full text-base sm:text-lg tracking-wider shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center gap-3`}
                           >
                             {t('modal.orderService')}
                             <ArrowRight className="w-5 h-5" />
@@ -327,20 +329,20 @@ export default function ServicesPage() {
         {/* REQUEST FORM SECTION */}
         <section
           id="request-form"
-          className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-black text-white relative overflow-hidden"
+          className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-black text-white relative overflow-hidden bg-fabric-grain-dark"
         >
           <motion.div
             className="absolute inset-0 opacity-10"
             animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
             transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }}
             style={{
-              backgroundImage: 'radial-gradient(circle, #C4A574 1px, transparent 1px)',
+              backgroundImage: 'radial-gradient(circle, var(--brand-mustard) 1px, transparent 1px)',
               backgroundSize: '50px 50px',
             }}
           />
 
           <motion.div
-            className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-[#C4A574]/20 to-transparent rounded-full blur-3xl"
+            className="absolute top-1/4 right-1/4 w-96 h-96 bg-brand-sage/20 rounded-full blur-3xl"
             animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
             transition={{ duration: 8, repeat: Infinity }}
           />
@@ -365,11 +367,11 @@ export default function ServicesPage() {
                 viewport={{ once: true }}
                 className="inline-flex items-center gap-4 mb-8"
               >
-                <div className="h-px w-12 bg-gradient-to-r from-transparent via-[#C4A574] to-transparent" />
-                <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+                <div className="h-px w-12 bg-gradient-to-r from-transparent via-brand-mustard to-transparent" />
+                <span className="text-brand-mustard text-xs sm:text-sm tracking-[0.4em] uppercase">
                   {t('form.label')}
                 </span>
-                <div className="h-px w-12 bg-gradient-to-r from-transparent via-[#C4A574] to-transparent" />
+                <div className="h-px w-12 bg-gradient-to-r from-transparent via-brand-mustard to-transparent" />
               </motion.div>
 
               <h2
@@ -377,7 +379,7 @@ export default function ServicesPage() {
                 style={{ fontFamily: 'serif' }}
               >
                 {t('form.title')} <br className="sm:hidden" />
-                <span className="italic text-[#C4A574]">{t('form.titleItalic')}</span>
+                <span className="italic text-brand-mustard">{t('form.titleItalic')}</span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
                 {t('form.description')}
@@ -402,7 +404,7 @@ export default function ServicesPage() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors text-white placeholder:text-white/30"
+                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:border-brand-mustard focus:outline-none transition-colors text-white placeholder:text-white/30"
                     placeholder={String(t('form.namePlaceholder'))}
                   />
                 </div>
@@ -414,7 +416,7 @@ export default function ServicesPage() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors text-white placeholder:text-white/30"
+                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:border-brand-mustard focus:outline-none transition-colors text-white placeholder:text-white/30"
                     placeholder="anna@example.com"
                   />
                 </div>
@@ -427,7 +429,7 @@ export default function ServicesPage() {
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors text-white placeholder:text-white/30"
+                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:border-brand-mustard focus:outline-none transition-colors text-white placeholder:text-white/30"
                     placeholder="+49 123 456 7890"
                   />
                 </div>
@@ -438,10 +440,10 @@ export default function ServicesPage() {
                     required
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors text-white appearance-none cursor-pointer"
+                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:border-brand-mustard focus:outline-none transition-colors text-white appearance-none cursor-pointer"
                     style={{
                       backgroundImage:
-                        "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23C4A574' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E\")",
+                        "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23DE932A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E\")",
                       backgroundRepeat: 'no-repeat',
                       backgroundPosition: 'right 1.5rem center',
                       backgroundSize: '1.25rem',
@@ -464,7 +466,7 @@ export default function ServicesPage() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={6}
-                  className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors text-white placeholder:text-white/30 resize-none"
+                  className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:border-brand-mustard focus:outline-none transition-colors text-white placeholder:text-white/30 resize-none"
                   placeholder={String(t('form.messagePlaceholder'))}
                 />
               </div>
@@ -473,7 +475,7 @@ export default function ServicesPage() {
                 type="submit"
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full sm:w-auto px-12 py-5 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center gap-3 mx-auto"
+                className="w-full sm:w-auto px-12 py-5 bg-brand-mustard text-brand-mustard-foreground rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl hover:bg-brand-mustard-hover transition-colors flex items-center justify-center gap-3 mx-auto"
               >
                 {t('form.submit')}
                 <ArrowRight className="w-5 h-5" />

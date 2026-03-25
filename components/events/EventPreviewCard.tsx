@@ -66,7 +66,7 @@ export default function EventPreviewCard({ event, onClick, index }: EventPreview
               <ArrowRight className="w-4 h-4" />
             </motion.div>
             <div className="absolute top-3 left-3">
-              <span className="px-2.5 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs tracking-widest text-[#C4A574] font-medium">
+              <span className="px-2.5 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs tracking-widest text-brand-mustard font-medium">
                 {typeLabel}
               </span>
             </div>
@@ -80,11 +80,11 @@ export default function EventPreviewCard({ event, onClick, index }: EventPreview
             </h3>
             <div className="flex flex-col gap-1.5 text-xs sm:text-sm text-[#8B8B8B]">
               <div className="flex items-center gap-2">
-                <Calendar className="w-3.5 h-3.5 text-[#C4A574] flex-shrink-0" />
+                <Calendar className="w-3.5 h-3.5 text-brand-mustard flex-shrink-0" />
                 <span>{dateDisplay}</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#C4A574] flex-shrink-0" />
+                <MapPin className="w-3.5 h-3.5 text-brand-mustard flex-shrink-0" />
                 <span>{event.location}</span>
               </div>
             </div>

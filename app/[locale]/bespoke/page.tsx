@@ -30,7 +30,7 @@ export default function BespokePage() {
           title={String(t('hero.title'))}
           titleItalic={String(t('hero.titleItalic'))}
           description={String(t('hero.description'))}
-          labelColor="#C4A574"
+          labelColor="var(--brand-mustard)"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -53,7 +53,7 @@ export default function BespokePage() {
         <section className="py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-12 bg-white">
           <div className="max-w-2xl mx-auto text-center">
             <div className="flex justify-center mb-8">
-              <span className="h-px w-12 bg-[#C4A574]/50" aria-hidden />
+              <span className="h-px w-12 bg-brand-mustard/50" aria-hidden />
             </div>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -101,7 +101,7 @@ export default function BespokePage() {
                 onClick={() => setActiveMode('offline')}
                 className={`flex items-center justify-center gap-3 rounded-2xl px-8 py-4 border-2 transition-all duration-300 ${
                   activeMode === 'offline'
-                    ? 'border-[#C4A574] bg-[#C4A574]/10 text-black'
+                    ? 'border-brand-mustard bg-brand-mustard/10 text-black'
                     : 'border-black/10 bg-white text-[#8B8B8B] hover:border-black/20 hover:text-black'
                 }`}
               >
@@ -131,11 +131,11 @@ export default function BespokePage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -16 }}
                   transition={{ duration: 0.35 }}
-                  className="relative rounded-[2rem] overflow-hidden border border-[#C4A574]/25 bg-gradient-to-br from-[#FAF9F6] to-[#F5F0E8] shadow-xl shadow-black/5"
+                  className="relative rounded-[2rem] overflow-hidden border border-brand-mustard/25 bg-gradient-to-br from-[#FAF9F6] to-[#F5F0E8] shadow-xl shadow-black/5"
                 >
-                  <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-[#C4A574] to-[#8B7355]" />
+                  <div className="absolute top-0 left-0 w-1.5 h-full bg-brand-mustard" />
                   <div className="pl-8 pr-6 py-10 sm:py-12 md:pl-12 md:pr-10">
-                    <p className="text-sm text-[#C4A574] tracking-widest uppercase mb-8">
+                    <p className="text-sm text-brand-mustard tracking-widest uppercase mb-8">
                       {t('offline.subtitle')}
                     </p>
                     <div className="relative">
@@ -151,10 +151,10 @@ export default function BespokePage() {
                             className="relative flex gap-6 sm:gap-8"
                           >
                             {!isLast && (
-                              <div className="absolute left-5 top-14 bottom-0 w-px bg-[#C4A574]/30" />
+                              <div className="absolute left-5 top-14 bottom-0 w-px bg-brand-mustard/30" />
                             )}
-                            <div className="relative z-10 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#C4A574]/20 flex items-center justify-center border-2 border-[#C4A574]/40">
-                              <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#8B7355]" />
+                            <div className="relative z-10 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brand-mustard/20 flex items-center justify-center border-2 border-brand-mustard/40">
+                              <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-brand-sage" />
                             </div>
                             <div className="pb-10 sm:pb-12">
                               <h3 className="text-xl sm:text-2xl font-medium tracking-tight text-black mb-2">

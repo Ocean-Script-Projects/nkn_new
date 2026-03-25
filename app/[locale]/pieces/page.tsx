@@ -62,7 +62,7 @@ export default function PiecesPage() {
         titleItalic={String(t('titleItalic'))}
         subtitle={String(t('subtitle'))}
         description={String(t('description'))}
-        labelColor="#C4A574"
+        labelColor="var(--brand-mustard)"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -134,8 +134,8 @@ export default function PiecesPage() {
               className="space-y-6"
             >
               <div className="flex items-center gap-3">
-                <div className="h-px w-8 bg-[#C4A574]" />
-                <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">{t('process.label')}</span>
+                <div className="h-px w-8 bg-brand-sage" />
+                <span className="text-brand-sage text-xs sm:text-sm tracking-[0.4em] uppercase">{t('process.label')}</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight" style={{ fontFamily: 'serif' }}>
@@ -148,7 +148,7 @@ export default function PiecesPage() {
 
               <div className="flex items-center gap-2 pt-4">
                 <motion.div
-                  className="w-5 h-5 text-[#C4A574]"
+                  className="w-5 h-5 text-brand-mustard"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
                 >
@@ -169,10 +169,10 @@ export default function PiecesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="relative bg-gradient-to-br from-[#059669]/5 to-transparent rounded-[3rem] p-8 sm:p-12 md:p-16 overflow-hidden border border-[#059669]/10"
+            className="relative bg-gradient-to-br from-brand-sage/5 to-transparent rounded-[3rem] p-8 sm:p-12 md:p-16 overflow-hidden border border-brand-sage/10"
           >
             <motion.div
-              className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#059669]/10 to-transparent rounded-full blur-3xl"
+              className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-brand-sage/10 to-transparent rounded-full blur-3xl"
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.3, 0.5, 0.3],
@@ -183,8 +183,8 @@ export default function PiecesPage() {
             <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
-                  <div className="h-px w-8 bg-[#059669]" />
-                  <span className="text-[#059669] text-xs sm:text-sm tracking-[0.4em] uppercase">{t('upcycling.label')}</span>
+                  <div className="h-px w-8 bg-brand-sage" />
+                  <span className="text-brand-sage text-xs sm:text-sm tracking-[0.4em] uppercase">{t('upcycling.label')}</span>
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight" style={{ fontFamily: 'serif' }}>
@@ -199,7 +199,7 @@ export default function PiecesPage() {
                   <motion.button
                     whileHover={{ scale: 1.05, x: 5 }}
                     whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#059669] to-[#047857] text-white rounded-full text-sm sm:text-base tracking-wider shadow-lg hover:shadow-xl transition-shadow"
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-brand-sage text-brand-sage-foreground rounded-full text-sm sm:text-base tracking-wider shadow-lg hover:shadow-xl transition-shadow"
                   >
                     {t('upcycling.button')}
                     <motion.span

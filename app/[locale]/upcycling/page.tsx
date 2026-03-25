@@ -133,7 +133,7 @@ export default function UpcyclingPage() {
         titleItalic={String(t('titleItalic'))}
         titleEnd={String(t('titleEnd'))}
         descriptionParagraphs={[String(t('description1')), String(t('description2')), String(t('description3'))]}
-        labelColor="#059669"
+        labelColor="var(--brand-sage)"
         hasBackgroundOrbs
       >
         <div className="relative">
@@ -151,7 +151,7 @@ export default function UpcyclingPage() {
               className="absolute bottom-6 left-6 right-6"
             >
               <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl">
-                <div className="flex items-center gap-2 text-[#059669] mb-1">
+                <div className="flex items-center gap-2 text-brand-sage mb-1">
                   <Leaf className="w-4 h-4" />
                   <span className="text-xs tracking-wider uppercase font-medium">{t('badge')}</span>
                 </div>
@@ -174,8 +174,8 @@ export default function UpcyclingPage() {
               className="space-y-8"
             >
               <div className="flex items-center gap-3">
-                <div className="h-px w-8 bg-[#C4A574]" />
-                <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">{t('philosophy.label')}</span>
+                <div className="h-px w-8 bg-brand-mustard" />
+                <span className="text-brand-mustard text-xs sm:text-sm tracking-[0.4em] uppercase">{t('philosophy.label')}</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight" style={{ fontFamily: 'serif' }}>
@@ -193,13 +193,13 @@ export default function UpcyclingPage() {
                     transition={{ duration: 0.6, delay: i * 0.1 }}
                   >
                     <div className="flex items-start gap-4">
-                      <div className="w-2 h-2 rounded-full bg-[#059669] mt-2 flex-shrink-0" />
+                      <div className="w-2 h-2 rounded-full bg-brand-sage mt-2 flex-shrink-0" />
                       <p className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed">
                         {item}
                       </p>
                     </div>
                     {i < philosophyValues.length - 1 && (
-                      <div className="h-px bg-gradient-to-r from-[#059669]/20 to-transparent mt-6" />
+                      <div className="h-px bg-gradient-to-r from-brand-sage/20 to-transparent mt-6" />
                     )}
                   </motion.div>
                 ))}
@@ -219,7 +219,7 @@ export default function UpcyclingPage() {
                   alt="Hands working with fabric"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#059669]/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-sage/20 to-transparent" />
               </div>
             </motion.div>
           </div>
@@ -238,11 +238,11 @@ export default function UpcyclingPage() {
           >
             <div className="text-center space-y-4">
               <div className="flex items-center justify-center gap-3">
-                <div className="h-px w-8 bg-[#C4A574]" />
-                <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+                <div className="h-px w-8 bg-brand-mustard" />
+                <span className="text-brand-mustard text-xs sm:text-sm tracking-[0.4em] uppercase">
                   {t('slider.label')}
                 </span>
-                <div className="h-px w-8 bg-[#C4A574]" />
+                <div className="h-px w-8 bg-brand-mustard" />
               </div>
 
               <h2 className="text-3xl sm:text-4xl md:text-5xl tracking-tight" style={{ fontFamily: 'serif' }}>
@@ -280,7 +280,7 @@ export default function UpcyclingPage() {
                   alt="After upcycling"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-6 right-6 px-4 py-2 bg-[#059669] backdrop-blur-sm rounded-full">
+                <div className="absolute top-6 right-6 px-4 py-2 bg-brand-sage text-brand-sage-foreground backdrop-blur-sm rounded-full">
                   <span className="text-white text-sm tracking-wider">{t('slider.after')}</span>
                 </div>
               </div>
@@ -323,9 +323,9 @@ export default function UpcyclingPage() {
             className="text-center mb-12 sm:mb-16 md:mb-20"
           >
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="h-px w-8 bg-[#059669]" />
-              <span className="text-[#059669] text-xs sm:text-sm tracking-[0.4em] uppercase">{t('process.label')}</span>
-              <div className="h-px w-8 bg-[#059669]" />
+              <div className="h-px w-8 bg-brand-sage" />
+              <span className="text-brand-sage text-xs sm:text-sm tracking-[0.4em] uppercase">{t('process.label')}</span>
+              <div className="h-px w-8 bg-brand-sage" />
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight" style={{ fontFamily: 'serif' }}>
@@ -334,7 +334,7 @@ export default function UpcyclingPage() {
           </motion.div>
 
           <div className="relative">
-            <div className="hidden lg:block absolute left-0 right-0 top-16 h-px bg-gradient-to-r from-transparent via-[#059669]/30 to-transparent" />
+            <div className="hidden lg:block absolute left-0 right-0 top-16 h-px bg-gradient-to-r from-transparent via-brand-sage/30 to-transparent" />
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
               {process.map((step, i) => {
@@ -353,13 +353,13 @@ export default function UpcyclingPage() {
                         <motion.div
                           whileHover={{ scale: 1.1, rotate: 5 }}
                           transition={{ type: "spring", stiffness: 300 }}
-                          className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-[#059669] to-[#047857] flex items-center justify-center shadow-xl mx-auto relative z-10"
+                          className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-brand-sage flex items-center justify-center shadow-xl mx-auto relative z-10"
                         >
                           <Icon className="w-10 h-10 sm:w-12 sm:h-12 text-white" strokeWidth={1.5} />
                         </motion.div>
                       </div>
 
-                      <div className="text-5xl font-light text-[#059669]/20" style={{ fontFamily: 'serif' }}>
+                      <div className="text-5xl font-light text-brand-sage/20" style={{ fontFamily: 'serif' }}>
                         {step.number}
                       </div>
 
@@ -392,10 +392,10 @@ export default function UpcyclingPage() {
             {categories.map((cat, i) => (
               <div
                 key={i}
-                className="bg-white rounded-3xl p-8 border border-black/5 hover:border-[#059669]/30 transition-all duration-500 shadow-lg hover:shadow-2xl hover:-translate-y-2"
+                className="bg-white rounded-3xl p-8 border border-black/5 hover:border-brand-sage/30 transition-all duration-500 shadow-lg hover:shadow-2xl hover:-translate-y-2"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#059669]/10 flex items-center justify-center mb-6">
-                  <Leaf className="w-6 h-6 text-[#059669]" />
+                <div className="w-12 h-12 rounded-xl bg-brand-sage/10 flex items-center justify-center mb-6">
+                  <Leaf className="w-6 h-6 text-brand-sage" />
                 </div>
 
                 <h3 className="text-xl sm:text-2xl mb-3 tracking-tight" style={{ fontFamily: 'serif' }}>
@@ -418,7 +418,7 @@ export default function UpcyclingPage() {
       {/* EMOTIONAL BLOCK - Quote */}
       <section className="py-20 sm:py-28 md:py-40 px-4 sm:px-6 md:px-12 bg-gradient-to-br from-[#1a1a1a] via-[#2a2a2a] to-[#1a1a1a] text-[#FAF9F6] relative overflow-hidden">
         <motion.div
-          className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-[#059669]/10 to-transparent rounded-full blur-3xl"
+          className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-brand-sage/10 to-transparent rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.2, 0.4, 0.2],
@@ -440,16 +440,16 @@ export default function UpcyclingPage() {
               {t('quote.text3') && (
                 <>
                   <br />
-                  <span className="italic text-[#059669]/95">{t('quote.text3')}</span>
-                  {t('quote.text4') && <><br className="hidden sm:block" /><span className="italic text-[#059669]/95">{t('quote.text4')}</span></>}
+                  <span className="italic text-brand-sage/95">{t('quote.text3')}</span>
+                  {t('quote.text4') && <><br className="hidden sm:block" /><span className="italic text-brand-sage/95">{t('quote.text4')}</span></>}
                 </>
               )}&rdquo;
             </p>
 
             <div className="flex items-center justify-center gap-3 pt-4">
-              <div className="h-px w-12 bg-[#059669]" />
-              <span className="text-sm tracking-[0.3em] text-[#059669] uppercase">{t('quote.author')}</span>
-              <div className="h-px w-12 bg-[#059669]" />
+              <div className="h-px w-12 bg-brand-sage" />
+              <span className="text-sm tracking-[0.3em] text-brand-sage uppercase">{t('quote.author')}</span>
+              <div className="h-px w-12 bg-brand-sage" />
             </div>
           </motion.blockquote>
         </div>
@@ -466,9 +466,9 @@ export default function UpcyclingPage() {
             className="text-center mb-12 sm:mb-16"
           >
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="h-px w-8 bg-[#059669]" />
-              <span className="text-[#059669] text-xs sm:text-sm tracking-[0.4em] uppercase">{t('faq.label')}</span>
-              <div className="h-px w-8 bg-[#059669]" />
+              <div className="h-px w-8 bg-brand-sage" />
+              <span className="text-brand-sage text-xs sm:text-sm tracking-[0.4em] uppercase">{t('faq.label')}</span>
+              <div className="h-px w-8 bg-brand-sage" />
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl tracking-tight" style={{ fontFamily: 'serif' }}>
@@ -497,7 +497,7 @@ export default function UpcyclingPage() {
                     animate={{ rotate: expandedFaq === i ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <ChevronDown className="w-5 h-5 text-[#059669] flex-shrink-0" />
+                    <ChevronDown className="w-5 h-5 text-brand-sage flex-shrink-0" />
                   </motion.div>
                 </button>
 
@@ -525,7 +525,7 @@ export default function UpcyclingPage() {
       </section>
 
       {/* CTA FORM */}
-      <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-gradient-to-br from-[#C4A574] to-[#8B7355] text-white relative overflow-hidden">
+      <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-brand-sage text-brand-sage-foreground relative overflow-hidden bg-fabric-grain">
         <motion.div
           className="absolute inset-0 opacity-10"
           animate={{
@@ -620,7 +620,7 @@ export default function UpcyclingPage() {
                                 setContactMethodOpen(false);
                               }}
                               className={`w-full px-6 py-3 text-left hover:bg-white/10 transition-colors text-white ${
-                                formData.contactMethod === method ? 'bg-white/10 text-[#059669]' : ''
+                                formData.contactMethod === method ? 'bg-white/10 text-brand-sage' : ''
                               }`}
                             >
                               {method === 'telegram'
@@ -669,7 +669,7 @@ export default function UpcyclingPage() {
               type="submit"
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-12 py-5 bg-white text-[#8B7355] rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center gap-3 mx-auto font-medium"
+              className="w-full sm:w-auto px-12 py-5 bg-white text-brand-sage rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center gap-3 mx-auto font-medium"
             >
               {t('form.submit')}
               <ArrowRight className="w-5 h-5" />
@@ -691,7 +691,7 @@ export default function UpcyclingPage() {
             exit={{ opacity: 0, y: 50 }}
             className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50"
           >
-            <div className="bg-[#059669] text-white px-8 py-4 rounded-full shadow-2xl flex items-center gap-3">
+            <div className="bg-brand-sage text-brand-sage-foreground px-8 py-4 rounded-full shadow-2xl flex items-center gap-3">
               <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
                 <Check className="w-4 h-4" />
               </div>

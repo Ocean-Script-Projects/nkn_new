@@ -624,7 +624,6 @@
     "atelierDetails": { "label": "atelier details" },
     "quote": { "text": "Clothing is not decoration. It is structure, meaning and personality.", "author": "NATALIIA KHRESHKOVA" },
     "cta": { "title": "Work", "titleItalic": "with me", "description": "If you are looking for a personal approach and thoughtful work with form — leave a request", "button": "Leave a request" },
-    "seo": { "title": "Atelier designer Hamburg", "description": "Professional atelier practice with over 37 years of experience. Bespoke tailoring, pattern making and garment construction." },
     "modal": {
       "title": "Let's",
       "titleItalic": "talk",
@@ -680,11 +679,6 @@
       "description1": "I work with those who value precision, aesthetics and thoughtful construction.",
       "description2": "I help translate an idea into a real product — with the right fit and logical lines.",
       "cta": "Discuss collaboration"
-    },
-    "cta": {
-      "title": "Ready to discuss collaboration?",
-      "description": "Tell me about your project — I will suggest a professional solution.",
-      "button": "Discuss collaboration"
     }
   },
   "printsPage": {
@@ -752,7 +746,6 @@
     },
     "location": { "label": "Atelier", "title": "Hamburg, Deutschland", "description": "Visits are arranged individually. Please contact me to schedule a consultation." },
     "quote": { "text": "Every garment begins with a conversation." },
-    "seo": { "title": "Contact atelier Hamburg", "description": "Contact NKN atelier for bespoke tailoring, custom garment design and personal consultations. Hamburg, Germany." },
     "success": "Thank you! I will get back to you personally."
   },
   "privacyPage": {

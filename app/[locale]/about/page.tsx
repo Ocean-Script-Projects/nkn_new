@@ -49,7 +49,7 @@ export default function AboutPage() {
           titleItalic={String(t('hero.titleItalic'))}
           subtitle={String(t('hero.subtitle'))}
           badges={[String(t('hero.badge1')), String(t('hero.badge2')), String(t('hero.badge3'))]}
-          labelColor="#C4A574"
+          labelColor="var(--brand-mustard)"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -66,7 +66,7 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
             <motion.div
-              className="absolute -z-10 -right-8 -bottom-8 w-64 h-64 bg-gradient-to-br from-[#C4A574]/20 to-transparent rounded-full blur-3xl"
+              className="absolute -z-10 -right-8 -bottom-8 w-64 h-64 bg-gradient-to-br from-brand-sage/20 to-transparent rounded-full blur-3xl"
               animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
               transition={{ duration: 5, repeat: Infinity }}
             />
@@ -85,7 +85,7 @@ export default function AboutPage() {
             >
               <div
                 className="h-px w-12 sm:w-16 bg-gradient-to-r opacity-60"
-                style={{ background: 'linear-gradient(to right, #C4A574, transparent)' }}
+                style={{ background: 'linear-gradient(to right, var(--brand-mustard), transparent)' }}
                 aria-hidden
               />
               <p
@@ -117,11 +117,11 @@ export default function AboutPage() {
         <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-[#FAF9F6]">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="h-px w-8 bg-[#C4A574]" />
-              <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+              <div className="h-px w-8 bg-brand-mustard" />
+              <span className="text-brand-mustard text-xs sm:text-sm tracking-[0.4em] uppercase">
                 {t('position.label')}
               </span>
-              <div className="h-px w-8 bg-[#C4A574]" />
+              <div className="h-px w-8 bg-brand-mustard" />
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl tracking-tight mb-8" style={{ fontFamily: 'serif' }}>
               {t('position.title')}
@@ -139,11 +139,11 @@ export default function AboutPage() {
         <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-white">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="h-px w-8 bg-[#C4A574]" />
-              <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+              <div className="h-px w-8 bg-brand-mustard" />
+              <span className="text-brand-mustard text-xs sm:text-sm tracking-[0.4em] uppercase">
                 {t('professional.label')}
               </span>
-              <div className="h-px w-8 bg-[#C4A574]" />
+              <div className="h-px w-8 bg-brand-mustard" />
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl tracking-tight mb-8" style={{ fontFamily: 'serif' }}>
               {t('professional.title')}
@@ -168,11 +168,11 @@ export default function AboutPage() {
               className="text-center mb-12 sm:mb-16 md:mb-20"
             >
               <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="h-px w-8 bg-[#C4A574]" />
-                <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+                <div className="h-px w-8 bg-brand-mustard" />
+                <span className="text-brand-mustard text-xs sm:text-sm tracking-[0.4em] uppercase">
                   {t('philosophy.label')}
                 </span>
-                <div className="h-px w-8 bg-[#C4A574]" />
+                <div className="h-px w-8 bg-brand-mustard" />
               </div>
 
               <h2
@@ -196,10 +196,10 @@ export default function AboutPage() {
                     transition={{ duration: 0.6, delay: i * 0.15 }}
                     className="relative"
                   >
-                    <div className="bg-white rounded-3xl p-8 sm:p-10 border border-black/5 hover:border-[#C4A574]/30 transition-all duration-500 shadow-lg hover:shadow-2xl h-full">
+                    <div className="bg-white rounded-3xl p-8 sm:p-10 border border-black/5 hover:border-brand-mustard/30 transition-all duration-500 shadow-lg hover:shadow-2xl h-full">
                       <div className="mb-6">
-                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#C4A574] to-[#8B7355] flex items-center justify-center">
-                          <Icon className="w-7 h-7 text-white" strokeWidth={1.5} />
+                        <div className="w-14 h-14 rounded-2xl bg-brand-sage flex items-center justify-center">
+                          <Icon className="w-7 h-7 text-brand-sage-foreground" strokeWidth={1.5} />
                         </div>
                       </div>
 
@@ -210,7 +210,7 @@ export default function AboutPage() {
                         {t(`principles.${key}.title`)}
                       </h3>
 
-                      <div className="h-px bg-gradient-to-r from-[#C4A574] to-transparent mb-4" />
+                      <div className="h-px bg-gradient-to-r from-brand-sage to-transparent mb-4" />
 
                       <p className="text-sm sm:text-base text-[#8B8B8B] leading-relaxed tracking-wide">
                         {t(`principles.${key}.description`)}
@@ -252,7 +252,7 @@ export default function AboutPage() {
             <div className="relative max-w-3xl mx-auto">
               {/* Вертикальная линия таймлайна — левее кружков */}
               <div
-                className="absolute left-[18px] sm:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-[#C4A574]/40 via-[#C4A574]/30 to-transparent"
+                className="absolute left-[18px] sm:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-brand-sage/40 via-brand-sage/25 to-transparent"
                 aria-hidden
               />
 
@@ -264,7 +264,7 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: '-40px' }}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="group relative flex gap-6 sm:gap-8 items-start rounded-xl py-6 sm:py-8 -mx-2 sm:-mx-3 transition-colors duration-200 hover:bg-[#FAF9F6]/70 min-h-[10rem] sm:min-h-[11rem] border-b border-[#C4A574]/10 last:border-b-0"
+                    className="group relative flex gap-6 sm:gap-8 items-start rounded-xl py-6 sm:py-8 -mx-2 sm:-mx-3 transition-colors duration-200 hover:bg-[#FAF9F6]/70 min-h-[10rem] sm:min-h-[11rem] border-b border-brand-sage/15 last:border-b-0"
                   >
                     {/* Круг с номером — увеличен */}
                     <div className="relative shrink-0">
@@ -273,7 +273,7 @@ export default function AboutPage() {
                         whileInView={{ scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: i * 0.08 + 0.1 }}
-                        className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#C4A574] to-[#8B7355] flex items-center justify-center shadow-lg shadow-[#C4A574]/25 ring-4 ring-white relative z-10 transition-shadow duration-200 group-hover:shadow-xl group-hover:shadow-[#C4A574]/30"
+                        className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-brand-mustard flex items-center justify-center shadow-lg shadow-brand-mustard/25 ring-4 ring-white relative z-10 transition-shadow duration-200 group-hover:shadow-xl group-hover:shadow-brand-mustard/30"
                       >
                         <span
                           className="text-white text-base sm:text-lg font-medium tracking-wider"
@@ -287,7 +287,7 @@ export default function AboutPage() {
                     {/* Контент */}
                     <div className="flex-1 min-w-0 pt-1">
                       <h3
-                        className="text-lg sm:text-xl mb-2 tracking-tight text-neutral-900 transition-colors duration-200 group-hover:text-[#8B7355]"
+                        className="text-lg sm:text-xl mb-2 tracking-tight text-neutral-900 transition-colors duration-200 group-hover:text-brand-sage"
                         style={{ fontFamily: 'serif' }}
                       >
                         {t(`process.steps.${id}.step`)}
@@ -325,7 +325,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-12 sm:mb-16"
             >
-              <span className="text-xs sm:text-sm text-[#C4A574] tracking-[0.4em] uppercase">
+              <span className="text-xs sm:text-sm text-brand-mustard tracking-[0.4em] uppercase">
                 {t('atelierDetails.label')}
               </span>
             </motion.div>
@@ -396,18 +396,18 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-center justify-center gap-3 pt-4">
-                <div className="h-px w-12 bg-[#C4A574]" />
-                <span className="text-sm tracking-[0.3em] text-[#C4A574] uppercase">
+                <div className="h-px w-12 bg-brand-mustard" />
+                <span className="text-sm tracking-[0.3em] text-brand-mustard uppercase">
                   {t('quote.author')}
                 </span>
-                <div className="h-px w-12 bg-[#C4A574]" />
+                <div className="h-px w-12 bg-brand-mustard" />
               </div>
             </motion.blockquote>
           </div>
         </section>
 
         {/* PERSONAL CTA */}
-        <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-gradient-to-br from-[#C4A574] to-[#8B7355] text-white relative overflow-hidden">
+        <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-brand-sage text-brand-sage-foreground relative overflow-hidden bg-fabric-grain">
           <motion.div
             className="absolute inset-0 opacity-10"
             animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
@@ -440,31 +440,11 @@ export default function AboutPage() {
                 onClick={() => setShowContactModal(true)}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-3 px-10 py-5 bg-white text-[#8B7355] rounded-full text-base sm:text-lg tracking-wider shadow-2xl hover:shadow-white/30 transition-shadow font-medium"
+                className="inline-flex items-center gap-3 px-10 py-5 bg-white text-brand-sage rounded-full text-base sm:text-lg tracking-wider shadow-2xl hover:shadow-white/30 transition-shadow font-medium"
               >
                 {t('cta.button')}
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* SEO BLOCK */}
-        <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-12 bg-white/50">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center space-y-4"
-            >
-              <h2 className="text-2xl sm:text-3xl tracking-tight" style={{ fontFamily: 'serif' }}>
-                {t('seo.title')}
-              </h2>
-              <p className="text-sm sm:text-base text-[#8B8B8B] leading-relaxed">
-                {t('seo.description')}
-              </p>
             </motion.div>
           </div>
         </section>
@@ -519,7 +499,7 @@ export default function AboutPage() {
                           required
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors"
+                          className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-brand-mustard focus:outline-none transition-colors"
                           placeholder="Name"
                         />
                       </div>
@@ -533,7 +513,7 @@ export default function AboutPage() {
                           required
                           value={formData.contact}
                           onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
-                          className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors"
+                          className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-brand-mustard focus:outline-none transition-colors"
                           placeholder={String(t('modal.contactPlaceholder'))}
                         />
                       </div>
@@ -547,7 +527,7 @@ export default function AboutPage() {
                           onChange={(e) =>
                             setFormData({ ...formData, projectType: e.target.value })
                           }
-                          className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors"
+                          className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-brand-mustard focus:outline-none transition-colors"
                         >
                           <option value="">{t('modal.projectTypePlaceholder')}</option>
                           <option value="bespoke">{t('modal.projectTypes.bespoke')}</option>
@@ -569,7 +549,7 @@ export default function AboutPage() {
                             setFormData({ ...formData, message: e.target.value })
                           }
                           rows={4}
-                          className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors resize-none"
+                          className="w-full px-6 py-4 bg-[#FAF9F6] border border-black/10 rounded-2xl focus:border-brand-mustard focus:outline-none transition-colors resize-none"
                           placeholder={String(t('modal.messagePlaceholder'))}
                         />
                       </div>
@@ -578,7 +558,7 @@ export default function AboutPage() {
                         type="submit"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="w-full px-8 py-5 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center gap-3 font-medium"
+                        className="w-full px-8 py-5 bg-brand-mustard text-brand-mustard-foreground hover:bg-brand-mustard-hover rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-colors flex items-center justify-center gap-3 font-medium"
                       >
                         {t('modal.submit')}
                         <ArrowRight className="w-5 h-5" />
@@ -600,7 +580,7 @@ export default function AboutPage() {
               exit={{ opacity: 0, y: 50 }}
               className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[102]"
             >
-              <div className="bg-[#C4A574] text-white px-8 py-4 rounded-full shadow-2xl flex items-center gap-3">
+              <div className="bg-brand-mustard text-brand-mustard-foreground px-8 py-4 rounded-full shadow-2xl flex items-center gap-3">
                 <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />

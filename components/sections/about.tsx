@@ -10,14 +10,14 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="py-32 px-6 md:px-12 bg-gradient-to-br from-[#FAF9F6] to-white relative overflow-hidden"
+      className="py-32 px-6 md:px-12 bg-gradient-to-br from-brand-sage-subtle to-white relative overflow-hidden"
     >
       <DecorativeLogo variant="big" position="bottom-right" />
       <div className="absolute inset-0 opacity-[0.03]">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'radial-gradient(circle, #C4A574 1px, transparent 1px)',
+            backgroundImage: 'radial-gradient(circle, var(--brand-sage) 1px, transparent 1px)',
             backgroundSize: '30px 30px',
           }}
         />
@@ -38,8 +38,8 @@ export default function AboutSection() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-3 mb-8"
             >
-              <div className="h-px w-8 bg-[#C4A574]" />
-              <span className="text-[#C4A574] text-sm tracking-[0.4em] uppercase">
+              <div className="h-px w-8 bg-brand-sage" />
+              <span className="text-brand-sage text-sm tracking-[0.4em] uppercase">
                 {t('label')}
               </span>
             </motion.div>
@@ -75,7 +75,7 @@ export default function AboutSection() {
                   {t('experience')}
                 </div>
               </div>
-              <div className="h-12 w-px bg-[#C4A574]/30" />
+              <div className="h-12 w-px bg-brand-sage/30" />
               <div className="text-center">
                 <div className="text-4xl mb-2" style={{ fontFamily: 'serif' }}>
                   ∞
@@ -96,7 +96,7 @@ export default function AboutSection() {
               whileHover={{ scale: 1.03, rotate: 2 }}
               className="relative rounded-3xl overflow-hidden shadow-2xl"
             >
-              <div className="aspect-[3/4] bg-gradient-to-br from-[#C4A574]/20 to-[#8B7355]/20" />
+              <div className="aspect-[3/4] bg-brand-sage/20" />
               <motion.div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </motion.div>
 

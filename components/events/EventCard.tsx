@@ -59,7 +59,7 @@ export default function EventCard({ event, onClick, index }: EventCardProps) {
           </motion.div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
           <div className="absolute top-4 left-4">
-            <span className="px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs tracking-widest text-[#C4A574] font-medium">
+            <span className="px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs tracking-widest text-brand-mustard font-medium">
               {typeLabel}
             </span>
           </div>
@@ -76,11 +76,11 @@ export default function EventCard({ event, onClick, index }: EventCardProps) {
           </p>
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-sm text-[#8B8B8B]">
             <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-[#C4A574] flex-shrink-0" />
+              <Calendar className="w-4 h-4 text-brand-mustard flex-shrink-0" />
               <span>{dateDisplay}</span>
             </div>
             <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-[#C4A574] flex-shrink-0" />
+              <MapPin className="w-4 h-4 text-brand-mustard flex-shrink-0" />
               <span>{event.location}</span>
             </div>
           </div>
