@@ -141,22 +141,48 @@ export default function AdminPage() {
 
   useEffect(() => {
     void (async () => {
+      const isNextDev =
+        typeof process !== 'undefined' && process.env.NODE_ENV === 'development';
+      /** Прод-сборка с output: export — на хостинге нет /api; не дергаем status (раньше был «застывший» JSON со сборки). */
+      if (process.env.NEXT_PUBLIC_STATIC_EXPORT === '1') {
+        setStatus({
+          ok: false,
+          secretRequired: false,
+          message:
+            'Сайт собран как статика (output: export): на DigitalOcean раздаётся только папка out, серверных маршрутов /api нет — это нормально. ' +
+            'Редактирование каталога: npm run dev на своём компьютере (или отдельный Node без static export + ENABLE_ADMIN_API). ' +
+            'Публичный каталог на сайте берётся из Spaces по NEXT_PUBLIC_MEDIATHEK_BASE_URL.',
+          catalogStorage: 'filesystem',
+          mediathekConfigured: Boolean(
+            process.env.NEXT_PUBLIC_MEDIATHEK_BASE_URL?.trim()
+          ),
+        });
+        return;
+      }
       try {
         const r = await fetch(withBasePath('/api/admin/status'));
+        if (!r.ok) {
+          setStatus({
+            ok: isNextDev,
+            secretRequired: false,
+            message:
+              `Ответ ${r.status}: маршрута /api/admin/status нет (типично для статики: только папка out). ` +
+              'Редактируйте каталог локально: npm run dev.',
+          });
+          return;
+        }
         const j = (await r.json()) as AdminStatus;
-        const isNextDev =
-          typeof process !== 'undefined' && process.env.NODE_ENV === 'development';
         setStatus({
           ...j,
           ok: j.ok || isNextDev,
         });
       } catch {
-        const isNextDev =
-          typeof process !== 'undefined' && process.env.NODE_ENV === 'development';
         setStatus({
           ok: isNextDev,
           secretRequired: false,
-          message: 'Failed to reach admin API.',
+          message:
+            'Нет связи с /api/admin (на статическом хостинге серверных API нет). ' +
+            'Откройте админку через npm run dev на своём компьютере.',
         });
       }
     })();
@@ -465,9 +491,7 @@ export default function AdminPage() {
             role="alert"
             className="mb-8 rounded-2xl border border-amber-200/80 bg-amber-50/90 px-5 py-4 text-amber-950 text-sm leading-relaxed shadow-sm"
           >
-            {status.message} API недоступен на статическом хостинге — запустите{' '}
-            <code className="text-xs bg-white/60 px-1.5 py-0.5 rounded">npm run dev</code> для
-            правок.
+            {status.message}
           </div>
         ) : null}
 
