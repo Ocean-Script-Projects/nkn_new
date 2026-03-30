@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import type { RequestModalContext } from '@/lib/request-types';
 
+export const dynamic = 'force-static';
+
 export interface RequestPayload {
   name: string;
   contact: string;

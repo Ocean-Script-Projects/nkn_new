@@ -8,6 +8,7 @@ import Footer from '@/components/sections/footer';
 import PageHeader from '@/components/shared/PageHeader';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations } from '@/lib/i18n';
+import { Button } from '@/components/ui/button';
 
 export default function ContactPage() {
   const t = useTranslations('contactPage');
@@ -346,15 +347,15 @@ export default function ContactPage() {
                   </div>
 
                   {/* Submit */}
-                  <motion.button
+                  <Button
                     type="submit"
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full px-5 py-2.5 sm:py-3 bg-brand-mustard text-brand-mustard-foreground hover:bg-brand-mustard-hover rounded-full text-sm sm:text-base tracking-wider shadow-lg hover:shadow-xl transition-colors flex items-center justify-center gap-2 font-medium"
+                    variant="mustard"
+                    size="default"
+                    className="w-full py-2.5 sm:py-3 text-sm sm:text-base"
                   >
                     {t('form.submit')}
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </motion.button>
+                  </Button>
 
                   <p className="text-[11px] sm:text-xs text-[#8B8B8B] text-center italic leading-snug">
                     {t('form.footer')}

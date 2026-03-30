@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 import EventPreviewCard from '@/components/events/EventPreviewCard';
 import EventDetailModal from '@/components/events/EventDetailModal';
 import eventsData from '@/data/events.json';
@@ -90,24 +91,18 @@ export default function FeaturedEventsSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <Link href={eventsHref}>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="relative inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-black text-white rounded-full text-sm sm:text-base tracking-wider overflow-hidden group"
-            >
-              <motion.div
-                className="absolute inset-0 bg-brand-mustard"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: '0%' }}
-                transition={{ duration: 0.4 }}
-              />
-              <span className="relative z-10 group-hover:text-brand-mustard-foreground">{t('viewAll')}</span>
-              <span className="relative z-10 group-hover:translate-x-1 group-hover:text-brand-mustard-foreground transition-transform">
-                →
-              </span>
-            </motion.button>
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-block"
+          >
+            <Button variant="dark" size="lg" asChild>
+              <Link href={eventsHref} className="group">
+                {t('viewAll')}
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </Link>
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -88,18 +88,10 @@ export default function ContactSection() {
             onClick={() => openRequestModal()}
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.98 }}
-            className="group relative px-12 py-6 bg-brand-mustard text-brand-mustard-foreground rounded-full overflow-hidden text-lg tracking-wider"
+            className="group inline-flex items-center gap-3 rounded-full bg-brand-mustard px-12 py-6 text-lg tracking-wider text-brand-mustard-foreground shadow-lg transition-colors duration-300 hover:bg-white hover:text-neutral-950"
           >
-            <motion.div
-              className="absolute inset-0 bg-white"
-              initial={{ x: '-100%' }}
-              whileHover={{ x: '0%' }}
-              transition={{ duration: 0.3 }}
-            />
-            <span className="relative z-10 flex items-center gap-3">
-              {t('startProject')}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-            </span>
+            {t('startProject')}
+            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
           </motion.button>
 
           <div className="flex items-center justify-center gap-6 mt-12">

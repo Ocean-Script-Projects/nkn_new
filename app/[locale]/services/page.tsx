@@ -19,6 +19,8 @@ import Footer from '@/components/sections/footer';
 import PageHeader from '@/components/shared/PageHeader';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations } from '@/lib/i18n';
+import { Button } from '@/components/ui/button';
+
 const SERVICE_IDS = ['01', '02', '03', '04', '05', '06', '07'] as const;
 const ICONS = [Scissors, Sparkles, Heart, Leaf, Palette, Layers, Users];
 /** Solid brand accents only — alternate mustard / sage (no gold↔brown gradients). */
@@ -471,15 +473,15 @@ export default function ServicesPage() {
                 />
               </div>
 
-              <motion.button
+              <Button
                 type="submit"
-                whileHover={{ scale: 1.03, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full sm:w-auto px-12 py-5 bg-brand-mustard text-brand-mustard-foreground rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl hover:bg-brand-mustard-hover transition-colors flex items-center justify-center gap-3 mx-auto"
+                variant="mustard"
+                size="cta"
+                className="mx-auto w-full min-h-[3.25rem] text-base sm:w-auto sm:text-lg"
               >
                 {t('form.submit')}
                 <ArrowRight className="w-5 h-5" />
-              </motion.button>
+              </Button>
             </motion.form>
           </div>
         </section>

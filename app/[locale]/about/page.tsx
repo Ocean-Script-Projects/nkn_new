@@ -8,6 +8,7 @@ import Footer from '@/components/sections/footer';
 import PageHeader from '@/components/shared/PageHeader';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations } from '@/lib/i18n';
+import { Button } from '@/components/ui/button';
 
 export default function AboutPage() {
   const t = useTranslations('aboutPage');
@@ -554,15 +555,15 @@ export default function AboutPage() {
                         />
                       </div>
 
-                      <motion.button
+                      <Button
                         type="submit"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="w-full px-8 py-5 bg-brand-mustard text-brand-mustard-foreground hover:bg-brand-mustard-hover rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-colors flex items-center justify-center gap-3 font-medium"
+                        variant="mustard"
+                        size="cta"
+                        className="w-full min-h-[3.25rem] text-base sm:text-lg"
                       >
                         {t('modal.submit')}
                         <ArrowRight className="w-5 h-5" />
-                      </motion.button>
+                      </Button>
                     </form>
                   </div>
                 </div>

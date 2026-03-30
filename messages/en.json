@@ -168,6 +168,7 @@
     "agb": "Terms & Conditions"
   },
   "pieces": {
+    "loading": "Loading…",
     "label": "Pieces",
     "title": "Author's",
     "titleItalic": "pieces",

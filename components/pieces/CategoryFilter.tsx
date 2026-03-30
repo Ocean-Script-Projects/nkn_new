@@ -2,12 +2,10 @@
 
 import { motion } from 'motion/react';
 
-export type Category = 'all' | 'belts' | 'corsets' | 'scarves' | 'dresses' | 'mini-series' | 'one-of-one';
-
 interface CategoryFilterProps {
-  categories: { id: Category; label: string }[];
-  selectedCategory: Category;
-  onSelect: (category: Category) => void;
+  categories: { id: string; label: string }[];
+  selectedCategory: string;
+  onSelect: (category: string) => void;
 }
 
 export default function CategoryFilter({ categories, selectedCategory, onSelect }: CategoryFilterProps) {

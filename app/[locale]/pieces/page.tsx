@@ -1,61 +1,66 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import PieceCard from '@/components/pieces/PieceCard';
-import CategoryFilter, { Category } from '@/components/pieces/CategoryFilter';
+import CategoryFilter from '@/components/pieces/CategoryFilter';
 import PieceDetailModal from '@/components/pieces/PieceDetailModal';
 import PageHeader from '@/components/shared/PageHeader';
 import CTASection from '@/components/shared/CTASection';
 import Link from 'next/link';
-import piecesData from '@/data/pieces.json';
-
-interface Piece {
-  id: string;
-  name: string;
-  category: Category;
-  type: 'atelier made' | 'one-of-one' | 'limited';
-  image: string;
-  descriptionKey: string;
-}
+import type { CatalogPiece } from '@/lib/catalog-types';
+import { usePiecesList } from '@/lib/use-pieces';
+import { filterTabsForLocale, useCatalogCategories } from '@/lib/use-catalog-categories';
 
 export default function PiecesPage() {
   const t = useTranslations('pieces');
   const locale = useLocale();
-  const [selectedCategory, setSelectedCategory] = useState<Category>('all');
-  const [selectedPieceForDetail, setSelectedPieceForDetail] = useState<Piece | null>(null);
+  const { pieces: piecesRaw, loading: piecesLoading, error: piecesError } = usePiecesList();
+  const { categories: catalogCategories, loading: catLoading } = useCatalogCategories();
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedPieceForDetail, setSelectedPieceForDetail] = useState<CatalogPiece | null>(
+    null
+  );
 
-  const categories: { id: Category; label: string }[] = [
-    { id: 'all', label: String(t('categories.all')) },
-    { id: 'belts', label: String(t('categories.belts')) },
-    { id: 'corsets', label: String(t('categories.corsets')) },
-    { id: 'scarves', label: String(t('categories.scarves')) },
-    { id: 'dresses', label: String(t('categories.dresses')) },
-    { id: 'mini-series', label: String(t('categories.miniSeries')) },
-    { id: 'one-of-one', label: String(t('categories.oneOfOne')) },
-  ];
+  const filterTabs = useMemo(
+    () => filterTabsForLocale(catalogCategories, locale),
+    [catalogCategories, locale]
+  );
 
-  const pieces: Piece[] = useMemo(() => {
-    return piecesData.map(p => ({
+  useEffect(() => {
+    if (!filterTabs.some((c) => c.id === selectedCategory)) {
+      setSelectedCategory('all');
+    }
+  }, [filterTabs, selectedCategory]);
+
+  const pieces = useMemo(() => {
+    return piecesRaw.map((p) => ({
       ...p,
-      category: p.category as Category,
-      type: p.type as Piece['type'],
+      type: p.type as CatalogPiece['type'],
     }));
-  }, []);
+  }, [piecesRaw]);
 
   const filteredPieces = useMemo(() => {
     if (selectedCategory === 'all') return pieces;
-    return pieces.filter(p => p.category === selectedCategory || p.type === selectedCategory);
+    return pieces.filter(
+      (p) => p.category === selectedCategory || p.type === selectedCategory
+    );
   }, [pieces, selectedCategory]);
+
+  const catalogLoading = piecesLoading || catLoading;
 
   return (
     <div className="min-h-screen bg-[#FAF9F6]">
       <Navigation />
-      
+
+      {piecesError ? (
+        <div className="max-w-7xl mx-auto px-4 py-8 text-center text-red-700">{piecesError}</div>
+      ) : null}
+
       <PageHeader
         label={String(t('label'))}
         title={String(t('title'))}
@@ -82,19 +87,23 @@ export default function PiecesPage() {
       </PageHeader>
 
       <CategoryFilter
-        categories={categories}
+        categories={filterTabs}
         selectedCategory={selectedCategory}
         onSelect={setSelectedCategory}
       />
 
       <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
+          {catalogLoading ? (
+            <p className="text-center text-[#8B8B8B] py-16">{String(t('loading'))}</p>
+          ) : null}
           <motion.div
             layout
             className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6"
           >
             <AnimatePresence mode="popLayout">
-              {filteredPieces.map((piece, i) => (
+              {!catalogLoading &&
+                filteredPieces.map((piece, i) => (
                 <PieceCard
                   key={piece.id}
                   piece={piece}
@@ -102,7 +111,7 @@ export default function PiecesPage() {
                   onClick={() => setSelectedPieceForDetail(piece)}
                   index={i}
                 />
-              ))}
+                ))}
             </AnimatePresence>
           </motion.div>
         </div>

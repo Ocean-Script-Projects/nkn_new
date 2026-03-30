@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, X, ChevronDown } from 'lucide-react';
 import { useTranslations } from '@/lib/i18n';
+import { Button } from '@/components/ui/button';
 import type { RequestModalContext } from '@/lib/request-types';
 
 interface ContactRequestModalProps {
@@ -297,16 +298,16 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                         placeholder={String(t('modal.messagePlaceholder'))}
                       />
                     </div>
-                    <motion.button
+                    <Button
                       type="submit"
+                      variant="mustard"
+                      size="cta"
                       disabled={isSubmitting}
-                      whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-                      whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                      className="w-full px-6 py-3.5 sm:py-4 bg-brand-mustard text-brand-mustard-foreground rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl hover:bg-brand-mustard-hover transition-colors flex items-center justify-center gap-2 font-medium disabled:opacity-70 disabled:cursor-not-allowed"
+                      className="w-full min-h-[3.25rem] text-base sm:text-lg disabled:cursor-not-allowed disabled:opacity-60"
                     >
                       {isSubmitting ? '...' : String(t('modal.submit'))}
                       {!isSubmitting && <ArrowRight className="w-5 h-5" />}
-                    </motion.button>
+                    </Button>
                   </form>
                 </div>
               </motion.div>

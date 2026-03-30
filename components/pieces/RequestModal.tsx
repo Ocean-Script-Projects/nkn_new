@@ -4,6 +4,7 @@ import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, X } from 'lucide-react';
 import { useTranslations } from '@/lib/i18n';
+import { Button } from '@/components/ui/button';
 
 interface RequestModalProps {
   piece: {
@@ -148,15 +149,15 @@ export default function RequestModal({ piece, isOpen, onClose, onSubmit }: Reque
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <motion.button
+                  <Button
                     type="submit"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="flex-1 px-8 py-5 bg-brand-mustard text-brand-mustard-foreground rounded-full text-base sm:text-lg tracking-wider shadow-lg hover:shadow-xl hover:bg-brand-mustard-hover transition-colors flex items-center justify-center gap-3"
+                    variant="mustard"
+                    size="cta"
+                    className="flex-1 w-full min-h-[3.25rem] text-base sm:text-lg"
                   >
                     {t('modal.submit')}
                     <ArrowRight className="w-5 h-5" />
-                  </motion.button>
+                  </Button>
 
                   <motion.button
                     type="button"

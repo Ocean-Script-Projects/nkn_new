@@ -8,6 +8,8 @@ import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useRequestModal } from '@/lib/request-modal-context';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 const dropdownItems = [
   { key: 'bespoke', href: '/bespoke' },
@@ -233,18 +235,13 @@ export default function Navigation() {
               ))}
             </div>
             <motion.button
+              type="button"
               onClick={() => openRequestModal()}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="rounded-full bg-black px-5 sm:px-6 py-2.5 text-[12px] sm:text-[13px] font-semibold tracking-widest text-white uppercase overflow-hidden relative group"
+              className={cn(buttonVariants({ variant: 'darkNav' }))}
             >
-              <motion.div
-                className="absolute inset-0 bg-brand-mustard"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: '0%' }}
-                transition={{ duration: 0.35 }}
-              />
-              <span className="relative z-10 group-hover:text-brand-mustard-foreground">{t('request')}</span>
+              {t('request')}
             </motion.button>
             <motion.button
               whileTap={{ scale: 0.95 }}

@@ -8,6 +8,7 @@ import { useTranslations, useLocale } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { formatDate, formatDateRange } from '@/lib/format-date';
+import { Button } from '@/components/ui/button';
 
 interface EventDetailModalProps {
   event: {
@@ -116,7 +117,10 @@ export default function EventDetailModal({ event, isOpen, onClose }: EventDetail
                   </div>
                 </div>
 
-                <motion.button
+                <Button
+                  type="button"
+                  variant="mustard"
+                  size="default"
                   onClick={() => {
                     onClose();
                     openRequestModal({
@@ -125,13 +129,11 @@ export default function EventDetailModal({ event, isOpen, onClose }: EventDetail
                       eventId: event.id,
                     });
                   }}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full sm:w-auto px-8 py-4 bg-brand-mustard text-brand-mustard-foreground rounded-full text-base tracking-wider shadow-lg hover:shadow-xl hover:bg-brand-mustard-hover transition-colors flex items-center justify-center gap-3"
+                  className="w-full sm:w-auto text-base"
                 >
                   {t('cta.button')}
                   <ArrowRight className="w-5 h-5" />
-                </motion.button>
+                </Button>
               </div>
             </motion.div>
           </div>

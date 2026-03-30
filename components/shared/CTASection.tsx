@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { useRequestModal } from '@/lib/request-modal-context';
+import { Button } from '@/components/ui/button';
 
 interface CTASectionProps {
   title: string;
@@ -57,26 +58,29 @@ export default function CTASection({
           </p>
 
           {openModal ? (
-            <motion.button
-              onClick={() => openRequestModal()}
+            <motion.div
               whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.98 }}
-              className="px-10 sm:px-12 py-5 sm:py-6 rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow inline-flex items-center gap-3 bg-brand-mustard text-brand-mustard-foreground hover:bg-brand-mustard-hover"
+              className="inline-block"
             >
-              {buttonText}
-              <ArrowRight className="w-5 h-5" />
-            </motion.button>
-          ) : (
-            <Link href={buttonHref}>
-              <motion.button
-                whileHover={{ scale: 1.05, y: -3 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-10 sm:px-12 py-5 sm:py-6 rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow inline-flex items-center gap-3 bg-brand-mustard text-brand-mustard-foreground hover:bg-brand-mustard-hover"
-              >
+              <Button variant="mustard" size="cta" onClick={() => openRequestModal()}>
                 {buttonText}
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-            </Link>
+                <ArrowRight className="h-5 w-5" />
+              </Button>
+            </motion.div>
+          ) : (
+            <motion.div
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-block"
+            >
+              <Button variant="mustard" size="cta" asChild>
+                <Link href={buttonHref}>
+                  {buttonText}
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              </Button>
+            </motion.div>
           )}
         </motion.div>
       </div>

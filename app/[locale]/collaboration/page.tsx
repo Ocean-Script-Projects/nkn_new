@@ -8,6 +8,7 @@ import PageHeader from '@/components/shared/PageHeader';
 import { useTranslations } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
 import { ImageWithFallback } from '@/components/image-with-fallback';
+import { Button } from '@/components/ui/button';
 
 export default function CollaborationPage() {
   const t = useTranslations('collaborationPage');
@@ -208,16 +209,16 @@ export default function CollaborationPage() {
               transition={{ duration: 0.8, delay: 0.25 }}
               className="text-center"
             >
-              <motion.button
+              <Button
                 type="button"
+                variant="mustard"
+                size="cta"
                 onClick={() => openRequestModal()}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-3 px-10 py-5 bg-brand-mustard text-brand-mustard-foreground rounded-full text-base sm:text-lg tracking-wider shadow-2xl hover:shadow-brand-mustard/25 transition-shadow font-medium hover:bg-brand-mustard-hover"
+                className="inline-flex px-10 py-5 text-base sm:text-lg"
               >
                 {t('b2b.cta')}
                 <ArrowRight className="w-5 h-5" />
-              </motion.button>
+              </Button>
             </motion.div>
           </div>
         </section>

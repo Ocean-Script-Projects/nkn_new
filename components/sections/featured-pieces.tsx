@@ -1,33 +1,55 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import Link from 'next/link';
 import PiecePreviewCard from '@/components/pieces/PiecePreviewCard';
-import DecorativeLogo from '@/components/shared/DecorativeLogo';
 import PieceDetailModal from '@/components/pieces/PieceDetailModal';
-import piecesData from '@/data/pieces.json';
+import { Button } from '@/components/ui/button';
+import { usePiecesList } from '@/lib/use-pieces';
+import type { CatalogPiece } from '@/lib/catalog-types';
 
-const FEATURED_COUNT = 6;
+/** Если ни одно изделие не отмечено «на главной», показываем первые N из каталога. */
+const FEATURED_FALLBACK_COUNT = 6;
+
+type FeaturedPieceCard = Pick<
+  CatalogPiece,
+  | 'id'
+  | 'name'
+  | 'names'
+  | 'type'
+  | 'image'
+  | 'images'
+  | 'descriptionKey'
+  | 'descriptions'
+  | 'priceEUR'
+  | 'featuredOnHome'
+>;
 
 export default function FeaturedPiecesSection() {
   const t = useTranslations('featuredPieces');
+  const tPieces = useTranslations('pieces');
   const locale = useLocale();
-  const [selectedPiece, setSelectedPiece] = useState<{
-    id: string;
-    name: string;
-    type: string;
-    image: string;
-    descriptionKey?: string;
-  } | null>(null);
-  const pieces = piecesData.slice(0, FEATURED_COUNT).map((p) => ({
-    id: p.id,
-    name: p.name,
-    type: p.type,
-    image: p.image,
-    descriptionKey: p.descriptionKey,
-  }));
+  const { pieces: allPieces, loading, error } = usePiecesList();
+  const [selectedPiece, setSelectedPiece] = useState<FeaturedPieceCard | null>(null);
+  const pieces = useMemo(() => {
+    const marked = allPieces.filter((p) => p.featuredOnHome === true);
+    const source =
+      marked.length > 0 ? marked : allPieces.slice(0, FEATURED_FALLBACK_COUNT);
+    return source.map((p) => ({
+      id: p.id,
+      name: p.name,
+      names: p.names,
+      type: p.type,
+      image: p.image,
+      images: p.images,
+      descriptionKey: p.descriptionKey,
+      descriptions: p.descriptions,
+      priceEUR: p.priceEUR,
+      featuredOnHome: p.featuredOnHome,
+    }));
+  }, [allPieces]);
   const piecesHref = `/${locale}/pieces`;
 
   return (
@@ -73,14 +95,22 @@ export default function FeaturedPiecesSection() {
         </motion.div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 mb-12 sm:mb-16">
-          {pieces.map((piece, i) => (
-            <PiecePreviewCard
-              key={piece.id}
-              piece={piece}
-              onClick={() => setSelectedPiece(piece)}
-              index={i}
-            />
-          ))}
+          {error ? (
+            <p className="col-span-full text-center text-red-700">{error}</p>
+          ) : loading ? (
+            <p className="col-span-full text-center text-[#8B8B8B] py-8">
+              {String(tPieces('loading'))}
+            </p>
+          ) : (
+            pieces.map((piece, i) => (
+              <PiecePreviewCard
+                key={piece.id}
+                piece={piece}
+                onClick={() => setSelectedPiece(piece)}
+                index={i}
+              />
+            ))
+          )}
         </div>
 
         <PieceDetailModal
@@ -96,24 +126,18 @@ export default function FeaturedPiecesSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <Link href={piecesHref}>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="relative inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-black text-white rounded-full text-sm sm:text-base tracking-wider overflow-hidden group"
-            >
-              <motion.div
-                className="absolute inset-0 bg-brand-mustard"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: '0%' }}
-                transition={{ duration: 0.4 }}
-              />
-              <span className="relative z-10 group-hover:text-brand-mustard-foreground">{t('viewAll')}</span>
-              <span className="relative z-10 group-hover:translate-x-1 group-hover:text-brand-mustard-foreground transition-transform">
-                →
-              </span>
-            </motion.button>
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-block"
+          >
+            <Button variant="dark" size="lg" asChild>
+              <Link href={piecesHref} className="group">
+                {t('viewAll')}
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </Link>
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
     </section>

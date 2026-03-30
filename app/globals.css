@@ -6,8 +6,9 @@
   --font-size: 16px;
   /* Brand: mustard + sage (reference swatches, no gradient between them in UI) */
   --brand-mustard: #de932a;
-  --brand-mustard-hover: #c97f20;
-  --brand-mustard-foreground: #1a1510;
+  --brand-mustard-hover: #b86a12;
+  /* Текст на сплошной горчице (CTA, кнопки) */
+  --brand-mustard-foreground: #ffffff;
   --brand-sage: #777b56;
   --brand-sage-hover: #5f6345;
   --brand-sage-foreground: #f8f6f1;

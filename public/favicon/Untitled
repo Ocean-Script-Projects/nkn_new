@@ -1,0 +1,16 @@
+  Running TypeScript ...
+Failed to compile.
+
+./app/[locale]/upcycling/page.tsx:135:33
+Type error: Type 'string | string[]' is not assignable to type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+
+  133 |         titleItalic={String(t('titleItalic'))}
+  134 |         titleEnd={String(t('titleEnd'))}
+> 135 |         descriptionParagraphs={[t('description1'), t('description2'), t('description3')]}
+      |                                 ^
+  136 |         labelColor="#059669"
+  137 |         hasBackgroundOrbs
+  138 |       >
+Next.js build worker exited with code: 1 and signal: null
+Error: Process completed with exit code 1.
