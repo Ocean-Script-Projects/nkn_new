@@ -1,13 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { readFile, writeFile } from 'fs/promises';
-import path from 'path';
 import { adminGuard } from '@/lib/admin-guard';
 import type { CatalogCategory } from '@/lib/catalog-types';
 import type { Locale } from '@/lib/i18n-config';
+import { readCategoriesJsonRaw, writeCategoriesJsonRaw } from '@/lib/catalog-persistence';
 
 export const dynamic = 'force-static';
-
-const filePath = path.join(process.cwd(), 'data', 'categories.json');
 
 const locales: Locale[] = ['ru', 'en', 'de'];
 
@@ -41,7 +38,7 @@ export async function GET(request: NextRequest) {
   const denied = adminGuard(request);
   if (denied) return denied;
   try {
-    const raw = await readFile(filePath, 'utf8');
+    const raw = await readCategoriesJsonRaw();
     const data = JSON.parse(raw) as unknown;
     const parsed = parseCategories(data);
     if (!parsed) {
@@ -70,9 +67,20 @@ export async function PUT(request: NextRequest) {
     );
   }
   try {
-    await writeFile(filePath, `${JSON.stringify(parsed, null, 2)}\n`, 'utf8');
-    return NextResponse.json({ ok: true, count: parsed.length });
-  } catch {
-    return NextResponse.json({ error: 'Failed to write categories' }, { status: 500 });
+    const writeResult = await writeCategoriesJsonRaw(
+      `${JSON.stringify(parsed, null, 2)}\n`
+    );
+    return NextResponse.json({
+      ok: true,
+      count: parsed.length,
+      destination: writeResult.destination,
+      ...(writeResult.warning ? { warning: writeResult.warning } : {}),
+    });
+  } catch (e) {
+    console.error('[admin/categories PUT]', e);
+    return NextResponse.json(
+      { error: e instanceof Error ? e.message : 'Failed to write categories' },
+      { status: 500 }
+    );
   }
 }

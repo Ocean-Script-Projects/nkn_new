@@ -35,7 +35,24 @@ type AdminStatus = {
   ok: boolean;
   secretRequired: boolean;
   message: string;
+  catalogStorage?: 'spaces' | 'filesystem';
+  mediathekConfigured?: boolean;
 };
+
+function catalogStorageLabels(storage: AdminStatus['catalogStorage']) {
+  if (storage === 'spaces') {
+    return {
+      pieces: 'catalog/pieces.json (Spaces)',
+      categories: 'catalog/categories.json (Spaces)',
+      uploads: 'uploads/pieces/… (Spaces)',
+    };
+  }
+  return {
+    pieces: 'data/pieces.json',
+    categories: 'data/categories.json',
+    uploads: 'public/uploads/pieces/',
+  };
+}
 
 const fieldClass =
   'w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm text-black/90 focus:border-brand-sage/45 focus:outline-none focus:ring-2 focus:ring-brand-sage/20 transition-shadow';
@@ -202,11 +219,13 @@ export default function AdminPage() {
       const j = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error((j as { error?: string }).error ?? r.statusText);
       const label = deriveLegacyPieceName(p.names, p.name);
-      setSaveMessage(
+      const lab = catalogStorageLabels(status?.catalogStorage);
+      const warn = (j as { warning?: string }).warning;
+      const base =
         (j as { created?: boolean }).created
-          ? `Добавлено в data/pieces.json: ${label || 'без названия'}`
-          : `Сохранено: ${label || 'без названия'}`
-      );
+          ? `Добавлено в ${lab.pieces}: ${label || 'без названия'}`
+          : `Сохранено: ${label || 'без названия'}`;
+      setSaveMessage(warn ? `${base}. ${warn}` : base);
       await loadData();
       setEditingPieceId(null);
     } catch (e) {
@@ -228,7 +247,10 @@ export default function AdminPage() {
       const r = await apiPut('/api/admin/pieces', hdr(), next);
       const body = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error((body as { error?: string }).error ?? r.statusText);
-      setSaveMessage('Порядок в каталоге обновлён');
+      const w = (body as { warning?: string }).warning;
+      setSaveMessage(
+        w ? `Порядок в каталоге обновлён. ${w}` : 'Порядок в каталоге обновлён'
+      );
       await loadData();
     } catch (e) {
       setSaveMessage(e instanceof Error ? e.message : 'Не удалось сохранить порядок');
@@ -251,7 +273,10 @@ export default function AdminPage() {
       const r = await apiPut('/api/admin/categories', hdr(), next);
       const body = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error((body as { error?: string }).error ?? r.statusText);
-      setSaveMessage('Порядок категорий обновлён');
+      const w = (body as { warning?: string }).warning;
+      setSaveMessage(
+        w ? `Порядок категорий обновлён. ${w}` : 'Порядок категорий обновлён'
+      );
       await loadData();
     } catch (e) {
       setSaveMessage(e instanceof Error ? e.message : 'Не удалось сохранить порядок');
@@ -268,7 +293,9 @@ export default function AdminPage() {
       const r = await apiPut('/api/admin/categories', hdr(), categories);
       const j = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error((j as { error?: string }).error ?? r.statusText);
-      setSaveMessage('Категории записаны в data/categories.json');
+      const w = (j as { warning?: string }).warning;
+      const msg = `Категории записаны в ${catalogStorageLabels(status?.catalogStorage).categories}`;
+      setSaveMessage(w ? `${msg}. ${w}` : msg);
       await loadData();
     } catch (e) {
       setSaveMessage(e instanceof Error ? e.message : 'Ошибка сохранения');
@@ -338,7 +365,11 @@ export default function AdminPage() {
           return next;
         })
       );
-      setSaveMessage('Файл в public/uploads — нажмите «Сохранить в каталог» на этой карточке.');
+      setSaveMessage(
+        status?.catalogStorage === 'spaces'
+          ? 'Файл загружен в Spaces — нажмите «Сохранить в каталог» на этой карточке.'
+          : 'Файл в public/uploads — нажмите «Сохранить в каталог» на этой карточке.'
+      );
     } catch (e) {
       setSaveMessage(e instanceof Error ? e.message : 'Upload failed');
     } finally {
@@ -380,6 +411,8 @@ export default function AdminPage() {
     if (editingCategoryId === id) setEditingCategoryId(null);
   };
 
+  const storageLab = catalogStorageLabels(status?.catalogStorage);
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       <div
@@ -400,18 +433,30 @@ export default function AdminPage() {
           <p className="mt-4 text-sm sm:text-base text-[#8B8B8B] leading-relaxed max-w-2xl">
             Редактирование{' '}
             <code className="text-xs bg-black/[0.04] px-2 py-0.5 rounded-md text-black/70">
-              data/pieces.json
+              {storageLab.pieces}
             </code>{' '}
             и{' '}
             <code className="text-xs bg-black/[0.04] px-2 py-0.5 rounded-md text-black/70">
-              data/categories.json
+              {storageLab.categories}
             </code>
             . Загрузка фото — в{' '}
             <code className="text-xs bg-black/[0.04] px-2 py-0.5 rounded-md text-black/70">
-              public/uploads/pieces/
-            </code>{' '}
-            (только <code className="text-xs">npm run dev</code>). Для продакшена — храните файлы в
-            Spaces и вставляйте публичный URL.
+              {storageLab.uploads}
+            </code>
+            {status?.catalogStorage === 'spaces' ? (
+              <>
+                . Публичные URL задаются через{' '}
+                <code className="text-xs">NEXT_PUBLIC_MEDIATHEK_BASE_URL</code>
+                {status.mediathekConfigured ? '' : ' (не задан — загрузка изображений в Spaces не сработает)'}
+                .
+              </>
+            ) : (
+              <>
+                {' '}
+                (только <code className="text-xs">npm run dev</code>). Если заданы переменные Spaces
+                — каталог и фото пишутся в бакет.
+              </>
+            )}
           </p>
         </header>
 
@@ -844,7 +889,7 @@ export default function AdminPage() {
                             </button>
                             <p className="text-[11px] text-[#8B8B8B] max-w-md leading-relaxed">
                               Пишет только эту позицию в{' '}
-                              <code className="text-[10px] bg-black/[0.04] px-1 rounded">data/pieces.json</code>
+                              <code className="text-[10px] bg-black/[0.04] px-1 rounded">{storageLab.pieces}</code>
                               .
                             </p>
                           </div>
@@ -1111,7 +1156,7 @@ export default function AdminPage() {
                             </button>
                             <p className="text-[11px] text-[#8B8B8B] max-w-md leading-relaxed">
                               Записывает весь список в{' '}
-                              <code className="text-[10px] bg-black/[0.04] px-1 rounded">data/categories.json</code>{' '}
+                              <code className="text-[10px] bg-black/[0.04] px-1 rounded">{storageLab.categories}</code>{' '}
                               (изменения из этой и других карточек в памяти).
                             </p>
                           </div>

@@ -2,6 +2,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import { mkdir, writeFile } from 'fs/promises';
 import path from 'path';
 import { adminGuard } from '@/lib/admin-guard';
+import {
+  isSpacesStorageEnabled,
+  publicMediathekUrl,
+  requireMediathekBaseForPublicUrls,
+  spacesPutObject,
+  UPLOADS_PIECES_PREFIX,
+} from '@/lib/spaces-storage';
 
 export const dynamic = 'force-static';
 
@@ -57,6 +64,32 @@ export async function POST(request: NextRequest) {
   const buffer = Buffer.from(await file.arrayBuffer());
   const ext = extFromMime(file.type);
   const filename = `${Date.now()}-${safeFileBase(file.name)}.${ext}`;
+
+  if (isSpacesStorageEnabled()) {
+    try {
+      requireMediathekBaseForPublicUrls();
+    } catch (e) {
+      return NextResponse.json(
+        { error: e instanceof Error ? e.message : 'Missing public URL config' },
+        { status: 400 }
+      );
+    }
+    const key = `${UPLOADS_PIECES_PREFIX}/${filename}`;
+    try {
+      await spacesPutObject(key, buffer, file.type, {
+        cacheControl: 'public, max-age=31536000, immutable',
+      });
+    } catch (e) {
+      console.error('[admin/upload] Spaces put failed:', e);
+      return NextResponse.json(
+        { error: e instanceof Error ? e.message : 'Upload to Spaces failed' },
+        { status: 500 }
+      );
+    }
+    const url = publicMediathekUrl(key);
+    return NextResponse.json({ url });
+  }
+
   const dir = path.join(process.cwd(), 'public', 'uploads', 'pieces');
   await mkdir(dir, { recursive: true });
   const filePath = path.join(dir, filename);

@@ -5,11 +5,9 @@ import type { Locale } from './i18n-config';
 import type { CatalogCategory } from './catalog-types';
 import { labelForLocale } from './catalog-types';
 import staticCategories from '@/data/categories.json';
+import { getRemoteCategoriesJsonUrl } from '@/lib/remote-catalog-urls';
 
-const remoteUrl =
-  typeof process.env.NEXT_PUBLIC_CATEGORIES_URL === 'string'
-    ? process.env.NEXT_PUBLIC_CATEGORIES_URL.trim()
-    : '';
+const remoteUrl = getRemoteCategoriesJsonUrl();
 
 function normalizeCategories(raw: unknown): CatalogCategory[] {
   if (!Array.isArray(raw)) return [];

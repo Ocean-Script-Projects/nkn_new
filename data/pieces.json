@@ -84,5 +84,25 @@
     "type": "one-of-one",
     "image": "https://images.unsplash.com/photo-1759090988109-2ed7abd1eefc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
     "descriptionKey": "pieces.dress3"
+  },
+  {
+    "id": "0cfa6b66-f1a4-41f6-a0db-a303284bb29a",
+    "name": "tete",
+    "category": "belts",
+    "type": "limited",
+    "image": "",
+    "descriptionKey": "pieces.item-0cfa6b66f1a4",
+    "names": {
+      "ru": "tete",
+      "en": "tet",
+      "de": "ettete"
+    },
+    "descriptions": {
+      "ru": "fdsf",
+      "en": "dsfds",
+      "de": "fdsfsd"
+    },
+    "priceEUR": 32,
+    "featuredOnHome": false
   }
 ]

@@ -4,11 +4,9 @@ import { useCallback, useEffect, useState } from 'react';
 import type { CatalogPiece, PieceDescriptions } from './catalog-types';
 import type { Locale } from './i18n-config';
 import staticPieces from '@/data/pieces.json';
+import { getRemotePiecesJsonUrl } from '@/lib/remote-catalog-urls';
 
-const remoteUrl =
-  typeof process.env.NEXT_PUBLIC_PIECES_URL === 'string'
-    ? process.env.NEXT_PUBLIC_PIECES_URL.trim()
-    : '';
+const remoteUrl = getRemotePiecesJsonUrl();
 
 const locales: Locale[] = ['ru', 'en', 'de'];
 

@@ -1,12 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { readFile, writeFile } from 'fs/promises';
-import path from 'path';
 import { adminGuard } from '@/lib/admin-guard';
 import { parsePieceObject, parsePiecesArray } from '@/lib/admin-catalog-piece-parse';
+import { readPiecesJsonRaw, writePiecesJsonRaw } from '@/lib/catalog-persistence';
 
 export const dynamic = 'force-static';
-
-const filePath = path.join(process.cwd(), 'data', 'pieces.json');
 
 /** PUT one piece by body.id (static path for output: export). */
 export async function PUT(request: NextRequest) {
@@ -28,7 +25,7 @@ export async function PUT(request: NextRequest) {
   const targetId = piece.id;
 
   try {
-    const raw = await readFile(filePath, 'utf8');
+    const raw = await readPiecesJsonRaw();
     const list = parsePiecesArray(JSON.parse(raw) as unknown);
     if (!list) {
       return NextResponse.json({ error: 'Corrupt pieces.json' }, { status: 500 });
@@ -37,9 +34,23 @@ export async function PUT(request: NextRequest) {
     const idx = list.findIndex((p) => p.id === targetId);
     const next = idx === -1 ? [...list, piece] : list.map((p, i) => (i === idx ? piece : p));
 
-    await writeFile(filePath, `${JSON.stringify(next, null, 2)}\n`, 'utf8');
-    return NextResponse.json({ ok: true, created: idx === -1 });
-  } catch {
-    return NextResponse.json({ error: 'Failed to save piece' }, { status: 500 });
+    const writeResult = await writePiecesJsonRaw(
+      `${JSON.stringify(next, null, 2)}\n`
+    );
+    return NextResponse.json({
+      ok: true,
+      created: idx === -1,
+      destination: writeResult.destination,
+      ...(writeResult.warning ? { warning: writeResult.warning } : {}),
+    });
+  } catch (e) {
+    console.error('[admin/pieces/single]', e);
+    return NextResponse.json(
+      {
+        error:
+          e instanceof Error ? e.message : 'Failed to save piece',
+      },
+      { status: 500 }
+    );
   }
 }
