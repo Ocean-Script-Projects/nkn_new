@@ -1,9 +1,6 @@
 import { NextResponse } from 'next/server';
 import { isSpacesStorageEnabled } from '@/lib/spaces-storage';
 
-/** С `output: export` обязателен force-static; живой ответ в проде на статике всё равно не выполняется — см. NEXT_PUBLIC_STATIC_EXPORT на /admin. */
-export const dynamic = 'force-static';
-
 export async function GET() {
   const dev = process.env.NODE_ENV === 'development';
   const hasSecret = Boolean(process.env.ADMIN_SECRET?.length);

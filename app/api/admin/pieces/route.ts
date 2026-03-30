@@ -3,9 +3,6 @@ import { adminGuard } from '@/lib/admin-guard';
 import { parsePiecesArray } from '@/lib/admin-catalog-piece-parse';
 import { readPiecesJsonRaw, writePiecesJsonRaw } from '@/lib/catalog-persistence';
 
-/** Required to coexist with `output: 'export'` (handlers are not shipped to static hosts). */
-export const dynamic = 'force-static';
-
 export async function GET(request: NextRequest) {
   const denied = adminGuard(request);
   if (denied) return denied;

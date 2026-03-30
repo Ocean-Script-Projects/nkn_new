@@ -3,9 +3,7 @@ import { adminGuard } from '@/lib/admin-guard';
 import { parsePieceObject, parsePiecesArray } from '@/lib/admin-catalog-piece-parse';
 import { readPiecesJsonRaw, writePiecesJsonRaw } from '@/lib/catalog-persistence';
 
-export const dynamic = 'force-static';
-
-/** PUT one piece by body.id (static path for output: export). */
+/** PUT one piece by body.id */
 export async function PUT(request: NextRequest) {
   const denied = adminGuard(request);
   if (denied) return denied;

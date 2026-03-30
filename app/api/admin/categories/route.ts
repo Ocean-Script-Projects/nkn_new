@@ -4,8 +4,6 @@ import type { CatalogCategory } from '@/lib/catalog-types';
 import type { Locale } from '@/lib/i18n-config';
 import { readCategoriesJsonRaw, writeCategoriesJsonRaw } from '@/lib/catalog-persistence';
 
-export const dynamic = 'force-static';
-
 const locales: Locale[] = ['ru', 'en', 'de'];
 
 function parseCategories(body: unknown): CatalogCategory[] | null {

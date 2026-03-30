@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node scripts/serve-static.mjs",
+    "start": "next start",
+    "start:static": "node scripts/serve-static.mjs",
+    "build:static": "STATIC_EXPORT=true next build",
     "lint": "next lint",
     "postinstall": "echo 'Dependencies installed'"
   },

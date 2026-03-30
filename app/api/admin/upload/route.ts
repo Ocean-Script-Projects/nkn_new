@@ -10,8 +10,6 @@ import {
   UPLOADS_PIECES_PREFIX,
 } from '@/lib/spaces-storage';
 
-export const dynamic = 'force-static';
-
 const MAX_BYTES = 8 * 1024 * 1024;
 const ALLOWED = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/gif']);
 
