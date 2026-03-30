@@ -1,4 +1,16 @@
-# Deployment Guide for GitHub Pages
+# Deployment
+
+## DigitalOcean App Platform (Node, полный backend)
+
+Репозиторий по умолчанию собирает **полный Next.js** (без `output: 'export'`). Запуск: `npm run build` → `npm start` (`next start`, порт из `PORT`).
+
+В **runtime** на сервере задайте: `ENABLE_ADMIN_API=true`, `ADMIN_SECRET`, ключи Spaces, `NEXT_PUBLIC_MEDIATHEK_BASE_URL` и остальное по необходимости. Тип компонента: **Web Service** (Node), не «Static Site».
+
+---
+
+## GitHub Pages (ниже — устаревший сценарий со статикой)
+
+Ранее проект мог собираться в `out/`; сейчас в `next.config.ts` **нет** `output: 'export'` по умолчанию. Для чисто статического деплоя понадобится отдельная ветка/конфиг.
 
 ## Setup Instructions
 

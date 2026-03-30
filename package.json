@@ -2,12 +2,14 @@
   "name": "nkn-atelier",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "NODE_ENV=production next build",
     "start": "next start",
     "start:static": "node scripts/serve-static.mjs",
-    "build:static": "STATIC_EXPORT=true next build",
     "lint": "next lint",
     "postinstall": "echo 'Dependencies installed'"
   },

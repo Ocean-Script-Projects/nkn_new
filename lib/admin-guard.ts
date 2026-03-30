@@ -1,10 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-/** Admin mutations only run in development; optional `ADMIN_SECRET` header `x-admin-secret`. */
+function adminApiAllowed(): boolean {
+  if (process.env.NODE_ENV === 'development') return true;
+  return (
+    process.env.ENABLE_ADMIN_API === 'true' &&
+    Boolean(process.env.ADMIN_SECRET?.length)
+  );
+}
+
+/**
+ * Защита admin API. Dev: опционально без секрета. Production: только при
+ * ENABLE_ADMIN_API=true + ADMIN_SECRET и заголовке x-admin-secret.
+ */
 export function adminGuard(request: NextRequest): NextResponse | null {
-  if (process.env.NODE_ENV !== 'development') {
+  if (!adminApiAllowed()) {
     return NextResponse.json(
-      { error: 'Admin API is only available in development mode.' },
+      {
+        error:
+          'Admin API недоступна. В production задайте ENABLE_ADMIN_API=true и ADMIN_SECRET на сервере.',
+      },
       { status: 403 }
     );
   }

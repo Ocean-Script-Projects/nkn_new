@@ -143,22 +143,6 @@ export default function AdminPage() {
     void (async () => {
       const isNextDev =
         typeof process !== 'undefined' && process.env.NODE_ENV === 'development';
-      /** Прод-сборка с output: export — на хостинге нет /api; не дергаем status (раньше был «застывший» JSON со сборки). */
-      if (process.env.NEXT_PUBLIC_STATIC_EXPORT === '1') {
-        setStatus({
-          ok: false,
-          secretRequired: false,
-          message:
-            'Сайт собран как статика (output: export): на DigitalOcean раздаётся только папка out, серверных маршрутов /api нет — это нормально. ' +
-            'Редактирование каталога: npm run dev на своём компьютере (или отдельный Node без static export + ENABLE_ADMIN_API). ' +
-            'Публичный каталог на сайте берётся из Spaces по NEXT_PUBLIC_MEDIATHEK_BASE_URL.',
-          catalogStorage: 'filesystem',
-          mediathekConfigured: Boolean(
-            process.env.NEXT_PUBLIC_MEDIATHEK_BASE_URL?.trim()
-          ),
-        });
-        return;
-      }
       try {
         const r = await fetch(withBasePath('/api/admin/status'));
         if (!r.ok) {

@@ -20,9 +20,7 @@ export async function GET() {
       : 'Admin API включён (ENABLE_ADMIN_API=true + ADMIN_SECRET).';
   } else {
     message =
-      'Серверная админка в production по умолчанию выключена. ' +
-      'При статической сборке (output: export) на хостинге раздаётся только папка out — маршрутов /api нет, поэтому правки каталога делают локально: npm run dev. ' +
-      'Либо поднимите отдельный Node-сервис без static export и задайте ENABLE_ADMIN_API=true и ADMIN_SECRET.';
+      'В production админ-API выключены, пока не заданы ENABLE_ADMIN_API=true и ADMIN_SECRET в переменных окружения сервера.';
   }
 
   return NextResponse.json({
