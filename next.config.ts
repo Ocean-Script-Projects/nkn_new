@@ -2,7 +2,13 @@ import type { NextConfig } from 'next';
 import path from 'path';
 
 const isProduction = process.env.NODE_ENV === 'production';
-const basePath = isProduction ? '/nkn_new' : '';
+/** GitHub Pages default: `/nkn_new`. For App Platform / custom domain at root, set `NEXT_PUBLIC_BASE_PATH=` at build time. */
+const basePath =
+  typeof process.env.NEXT_PUBLIC_BASE_PATH === 'string'
+    ? process.env.NEXT_PUBLIC_BASE_PATH.replace(/\/$/, '')
+    : isProduction
+      ? '/nkn_new'
+      : '';
 
 // Make basePath available to client-side code
 process.env.NEXT_PUBLIC_BASE_PATH = basePath;
