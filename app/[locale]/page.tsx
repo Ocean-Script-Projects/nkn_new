@@ -1,5 +1,8 @@
+import { createPageMetadataGenerator } from '@/lib/page-seo';
 import Navigation from '@/components/sections/navigation';
 import HeroSection from '@/components/sections/hero';
+
+export const generateMetadata = createPageMetadataGenerator('home');
 import PhilosophySection from '@/components/sections/philosophy';
 import ServicesSection from '@/components/sections/services';
 import FeaturedPiecesSection from '@/components/sections/featured-pieces';

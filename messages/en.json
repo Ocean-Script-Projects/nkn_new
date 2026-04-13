@@ -15,6 +15,12 @@
     "menu": "Menu",
     "language": "Language"
   },
+  "homePage": {
+    "seo": {
+      "title": "NKN Atelier — design atelier Hamburg",
+      "description": "Clothing as a way to express personality. Bespoke tailoring, author's pieces, prints and upcycling in Hamburg."
+    }
+  },
   "hero": {
     "location": "Hamburg · Atelier",
     "title": "I create state",
@@ -175,6 +181,10 @@
     "titleItalic": "pieces",
     "subtitle": "Single copy or limited run",
     "description": "Each piece is made as a one-of-a-kind or in a limited run. Individual adaptation and a bespoke author print for you are available.",
+    "seo": {
+      "title": "Author's pieces & catalog",
+      "description": "One-of-one and limited runs: corsets, dresses, scarves, belts. Individual adaptation and custom prints."
+    },
     "productStatus": {
       "oneOfOne": "Single copy.",
       "limited": "Limited run.",
@@ -253,6 +263,10 @@
     "subtitle1": "Giving existing garments new form,",
     "subtitle2": "function and energy",
     "description": "I work with items that you already have. I recut and rethink them — with new energy, modern aesthetics and deep respect for the history of the piece.",
+    "seo": {
+      "title": "Upcycling & garment transformation",
+      "description": "Reconstruction and recutting from your wardrobe. Sustainable fashion with an artistic approach in Hamburg."
+    },
     "badge": "Eco-conscious",
     "badgeDescription": "Sustainable approach to fashion",
     "philosophy": {
@@ -376,6 +390,10 @@
     "title": "Creative",
     "titleItalic": "Events",
     "description": "Exhibitions, workshops, trunk shows and open studio days. Join us for unique fashion experiences.",
+    "seo": {
+      "title": "Atelier events",
+      "description": "Calendar of exhibitions, workshops, trunk shows and open studio days at NKN Atelier."
+    },
     "sectionLabel": "Upcoming",
     "sectionTitle": "Events Calendar",
     "sectionDescription": "Discover where you can meet the atelier, see the pieces and take part in creative projects.",
@@ -476,6 +494,10 @@
     "cta": {
       "description": "Leave a request — I will hold a free consultation and we will discuss your project.",
       "button": "Book a consultation"
+    },
+    "seo": {
+      "title": "Bespoke tailoring",
+      "description": "Made-to-measure clothing in Hamburg: offline and online, consultation, fittings and full atelier process."
     }
   },
   "servicesPage": {
@@ -564,6 +586,10 @@
       "servicePlaceholder": "Select service",
       "messagePlaceholder": "Tell us about your project...",
       "submit": "Submit request"
+    },
+    "seo": {
+      "title": "Atelier services",
+      "description": "Seven directions: bespoke tailoring, one-of-one, limited series, upcycling, custom prints, full development cycle, brand consulting."
     }
   },
   "aboutPage": {
@@ -658,6 +684,10 @@
     "cta": {
       "title": "Discuss collaboration",
       "description": "Contact me to discuss your project."
+    },
+    "seo": {
+      "title": "Brand collaboration",
+      "description": "Support for designers and brand launch: construction, patterns, size range, sample and production-ready model."
     }
   },
   "printsPage": {
@@ -687,7 +717,11 @@
     "ctaButton": "Discuss project",
     "ctaTitle": "Ready to talk about a print or collection?",
     "ctaDescription": "In a few words, describe what you need — I’ll reply personally with a next step.",
-    "ctaNote": "Reply within 24–48h · Hamburg"
+    "ctaNote": "Reply within 24–48h · Hamburg",
+    "seo": {
+      "title": "Custom prints for garments",
+      "description": "Author's prints developed with the garment construction in mind. Bespoke, ready-made and brand-oriented solutions."
+    }
   },
   "contactPage": {
     "hero": { "label": "Contact", "title": "Start the", "titleItalic": "conversation", "description": "Describe your request — I will respond personally." },
@@ -725,6 +759,10 @@
   "privacyPage": {
     "title": "Privacy Policy",
     "lastUpdated": "Last updated: February 2026",
+    "seo": {
+      "title": "Privacy policy",
+      "description": "How NKN Atelier collects, uses and protects personal data when you contact us through the website."
+    },
     "intro": "NKN Atelier respects your privacy. This policy describes how we collect, use and protect your data.",
     "sections": {
       "data": { "title": "Data collection", "content": "We collect only the information you provide when contacting us: name, contact details and the content of your request. This data is used solely to respond to your inquiries and manage your project." },
@@ -736,6 +774,10 @@
   "termsPage": {
     "title": "Terms of Use",
     "lastUpdated": "Last updated: February 2026",
+    "seo": {
+      "title": "Website terms of use",
+      "description": "Terms of use for the NKN Atelier website: services, content and liability."
+    },
     "intro": "By using the NKN Atelier website, you agree to the following terms.",
     "sections": {
       "services": { "title": "Services", "content": "Information on the site is for informational purposes. Terms of collaboration and service delivery are discussed individually for each project." },
@@ -747,6 +789,10 @@
   "agbPage": {
     "title": "Terms & Conditions",
     "lastUpdated": "Last updated: February 2026",
+    "seo": {
+      "title": "Terms & conditions (AGB)",
+      "description": "General terms for ordering NKN atelier services: tailoring, fittings, timelines, payment and alterations."
+    },
     "intro": "These terms govern the collaboration when ordering NKN atelier services — bespoke tailoring, author's pieces, upcycling and consultations.",
     "sections": {
       "order": { "title": "Order and agreements", "content": "An order is confirmed after discussing details and agreeing on terms. Advance payment or deposit is discussed individually depending on the scope of work." },

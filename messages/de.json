@@ -15,6 +15,12 @@
     "menu": "Menü",
     "language": "Sprache"
   },
+  "homePage": {
+    "seo": {
+      "title": "NKN Atelier — Design-Atelier Hamburg",
+      "description": "Kleidung als Ausdruck der Persönlichkeit. Maßschneiderei, Unikat-Stücke, Drucke und Upcycling in Hamburg."
+    }
+  },
   "hero": {
     "location": "Hamburg · Atelier",
     "title": "Ich schaffe Zustand",
@@ -175,6 +181,10 @@
     "titleItalic": "stücke",
     "subtitle": "In Einzelanfertigung oder limitierter Auflage",
     "description": "Jedes Stück entsteht als Unikat oder in limitierter Auflage. Individuelle Anpassung und Auswahl eines Autorendrucks für Sie sind möglich.",
+    "seo": {
+      "title": "Autorenstücke & Katalog",
+      "description": "Unikate und limitierte Serien: Korsagen, Kleider, Schals, Gürtel. Individuelle Anpassung und Autorendrucke."
+    },
     "productStatus": {
       "oneOfOne": "Einzelstück.",
       "limited": "Limitierte Auflage.",
@@ -253,6 +263,10 @@
     "subtitle1": "Bestehenden Kleidungsstücken neue Form,",
     "subtitle2": "Funktion und Energie geben",
     "description": "Ich arbeite mit Kleidungsstücken, die Sie bereits haben. Ich schneide sie um und denke sie neu — mit neuer Energie, moderner Ästhetik und tiefem Respekt für die Geschichte des Stücks.",
+    "seo": {
+      "title": "Upcycling & Kleidertransformation",
+      "description": "Rekonstruktion und Umnähen aus Ihrer Garderobe. Nachhaltige Mode mit künstlerischem Ansatz in Hamburg."
+    },
     "badge": "Öko-bewusst",
     "badgeDescription": "Nachhaltiger Ansatz zur Mode",
     "philosophy": {
@@ -376,6 +390,10 @@
     "title": "Kreative",
     "titleItalic": "Events",
     "description": "Ausstellungen, Workshops, Trunk Shows und Offene Ateliertage. Erleben Sie einzigartige Mode-Erlebnisse.",
+    "seo": {
+      "title": "Atelier-Events",
+      "description": "Kalender mit Ausstellungen, Workshops, Trunk Shows und offenen Ateliertagen bei NKN Atelier."
+    },
     "sectionLabel": "Kommend",
     "sectionTitle": "Veranstaltungskalender",
     "sectionDescription": "Entdecken Sie, wo Sie das Atelier treffen, die Stücke sehen und an kreativen Projekten teilnehmen können.",
@@ -476,6 +494,10 @@
     "cta": {
       "description": "Hinterlassen Sie eine Anfrage — ich führe eine kostenlose Beratung durch und wir besprechen Ihr Projekt.",
       "button": "Beratung anfragen"
+    },
+    "seo": {
+      "title": "Maßschneiderei auf Bestellung",
+      "description": "Individuelle Anfertigung in Hamburg: offline und online, Beratung, Maßnahme, Anproben und der volle Atelierprozess."
     }
   },
   "servicesPage": {
@@ -564,6 +586,10 @@
       "servicePlaceholder": "Dienstleistung auswählen",
       "messagePlaceholder": "Erzählen Sie von Ihrem Projekt...",
       "submit": "Anfrage senden"
+    },
+    "seo": {
+      "title": "Atelier-Dienstleistungen",
+      "description": "Sieben Richtungen: Maßschneiderei, Unikate, Kleinserien, Upcycling, Autorendrucke, Vollentwicklung, Markenberatung."
     }
   },
   "aboutPage": {
@@ -658,6 +684,10 @@
     "cta": {
       "title": "Zusammenarbeit besprechen",
       "description": "Kontaktieren Sie mich für Ihr Projekt."
+    },
+    "seo": {
+      "title": "Marken-Zusammenarbeit",
+      "description": "Begleitung von Designern und Markenstart: Konstruktion, Schnittmuster, Größentabelle, Muster und serienreifes Modell."
     }
   },
   "printsPage": {
@@ -687,7 +717,11 @@
     "ctaButton": "Projekt besprechen",
     "ctaTitle": "Druck oder Kollektion besprechen?",
     "ctaDescription": "Beschreiben Sie kurz Ihre Aufgabe — ich antworte persönlich mit dem nächsten Schritt.",
-    "ctaNote": "Antwort innerhalb 24–48 Std. · Hamburg"
+    "ctaNote": "Antwort innerhalb 24–48 Std. · Hamburg",
+    "seo": {
+      "title": "Autorendrucke für Kleidung",
+      "description": "Entwicklung von Autorendrucken im Einklang mit der Schnittkonstruktion. Individuell, aus dem Katalog und für Marken."
+    }
   },
   "contactPage": {
     "hero": { "label": "Kontakt", "title": "Beginnen Sie das", "titleItalic": "Gespräch", "description": "Beschreiben Sie Ihre Anfrage — ich antworte persönlich." },
@@ -725,6 +759,10 @@
   "privacyPage": {
     "title": "Datenschutzerklärung",
     "lastUpdated": "Letzte Aktualisierung: Februar 2026",
+    "seo": {
+      "title": "Datenschutz",
+      "description": "Wie NKN Atelier personenbezogene Daten erfasst, nutzt und schützt, wenn Sie uns über die Website kontaktieren."
+    },
     "intro": "NKN Atelier respektiert Ihre Privatsphäre. Diese Richtlinie beschreibt, wie wir Ihre Daten erfassen, verwenden und schützen.",
     "sections": {
       "data": { "title": "Datenerfassung", "content": "Wir erfassen nur die Informationen, die Sie bei der Kontaktaufnahme angeben: Name, Kontaktdaten und Inhalt Ihrer Anfrage. Diese Daten werden ausschließlich zur Beantwortung Ihrer Anfragen und zur Projektdurchführung verwendet." },
@@ -736,6 +774,10 @@
   "termsPage": {
     "title": "Nutzungsbedingungen",
     "lastUpdated": "Letzte Aktualisierung: Februar 2026",
+    "seo": {
+      "title": "Nutzungsbedingungen der Website",
+      "description": "Nutzungsbedingungen für die Website von NKN Atelier: Dienstleistungen, Inhalte und Haftung."
+    },
     "intro": "Durch die Nutzung der NKN Atelier-Website stimmen Sie den folgenden Bedingungen zu.",
     "sections": {
       "services": { "title": "Dienstleistungen", "content": "Die Informationen auf der Website dienen nur zu Informationszwecken. Die Bedingungen für die Zusammenarbeit und Erbringung von Dienstleistungen werden individuell für jedes Projekt besprochen." },
@@ -747,6 +789,10 @@
   "agbPage": {
     "title": "AGB — Allgemeine Geschäftsbedingungen",
     "lastUpdated": "Letzte Aktualisierung: Februar 2026",
+    "seo": {
+      "title": "AGB — Allgemeine Geschäftsbedingungen",
+      "description": "Allgemeine Bedingungen für Bestellungen im NKN Atelier: Anfertigung, Anproben, Fristen, Zahlung und Nacharbeiten."
+    },
     "intro": "Diese Bedingungen regeln die Zusammenarbeit bei der Bestellung von NKN Atelier-Dienstleistungen — Maßschneiderei, Autorenstücke, Upcycling und Beratungen.",
     "sections": {
       "order": { "title": "Bestellung und Vereinbarungen", "content": "Eine Bestellung wird nach Besprechung der Details und Einigung über die Bedingungen bestätigt. Anzahlung oder Anzahlungszahlung wird je nach Arbeitsumfang individuell besprochen." },
