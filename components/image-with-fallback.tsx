@@ -1,22 +1,13 @@
 'use client';
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 
 const ERROR_IMG_SRC =
   'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODgiIGhlaWdodD0iODgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIzLjciPjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU2IiByeD0iNiIvPjxwYXRoIGQ9Im0xNiA1OCAxNi0xOCAzMiAzMiIvPjxjaXJjbGUgY3g9IjUzIiBjeT0iMzUiIHI9IjciLz48L3N2Zz4KCg==';
 
-// Get basePath from Next.js config (matches next.config.ts)
-// For static export, we detect basePath from the current URL pathname
-const getBasePath = (): string => {
-  if (typeof window === 'undefined') return '';
-  
-  // Check if we're on GitHub Pages by looking at the pathname
-  const pathname = window.location.pathname;
-  if (pathname.startsWith('/nkn_new')) {
-    return '/nkn_new';
-  }
-  return '';
-};
+/** Синхронно с `next.config.ts` / `NEXT_PUBLIC_BASE_PATH` (не только по pathname — иначе ломаются `/images/*` при basePath). */
+const getConfiguredBasePath = (): string =>
+  String(process.env.NEXT_PUBLIC_BASE_PATH ?? '').replace(/\/$/, '');
 
 // Helper function to add basePath to absolute paths
 const addBasePath = (src: string | Blob | undefined, basePath: string): string | Blob | undefined => {
@@ -36,15 +27,17 @@ type ImageWithFallbackProps = React.ImgHTMLAttributes<HTMLImageElement> & {
 export function ImageWithFallback(props: ImageWithFallbackProps) {
   const [didError, setDidError] = useState(false);
   const [usingFallback, setUsingFallback] = useState(false);
-  const [basePath, setBasePath] = useState('');
 
-  useEffect(() => {
-    setBasePath(getBasePath());
-  }, []);
+  const configuredBasePath = useMemo(() => getConfiguredBasePath(), []);
 
   const { src, alt, style, className, fallbackSrc, ...rest } = props;
-  const primarySrc = useMemo(() => addBasePath(src, basePath), [src, basePath]);
+  const primarySrc = useMemo(
+    () => addBasePath(src, configuredBasePath),
+    [src, configuredBasePath]
+  );
   const displaySrc = usingFallback && fallbackSrc ? fallbackSrc : primarySrc;
+  const safeSrc =
+    typeof displaySrc === 'string' && displaySrc.trim().length > 0 ? displaySrc.trim() : null;
 
   const handleError = () => {
     if (fallbackSrc && !usingFallback) {
@@ -54,20 +47,38 @@ export function ImageWithFallback(props: ImageWithFallbackProps) {
     setDidError(true);
   };
 
-  return didError ? (
-    <div
-      className={`inline-block bg-gray-100 text-center align-middle ${className ?? ''}`}
-      style={style}
-    >
-      <div className="flex items-center justify-center w-full h-full">
-        <img src={ERROR_IMG_SRC} alt="Error loading image" {...rest} data-original-url={String(primarySrc)} />
+  if (didError) {
+    return (
+      <div
+        className={`inline-block bg-gray-100 text-center align-middle ${className ?? ''}`}
+        style={style}
+      >
+        <div className="flex items-center justify-center w-full h-full">
+          <img src={ERROR_IMG_SRC} alt="Error loading image" {...rest} data-original-url={String(primarySrc)} />
+        </div>
       </div>
-    </div>
-  ) : (
+    );
+  }
+
+  if (!safeSrc) {
+    const label = typeof alt === 'string' && alt.length > 0 ? alt : undefined;
+    return (
+      <div
+        className={`inline-block bg-gray-100 text-center align-middle ${className ?? ''}`}
+        style={style}
+        role={label ? 'img' : undefined}
+        aria-label={label}
+      >
+        <div className="flex min-h-[3rem] w-full items-center justify-center" />
+      </div>
+    );
+  }
+
+  return (
     <img
       key={usingFallback ? 'fb' : 'main'}
-      src={displaySrc as string}
-      alt={alt}
+      src={safeSrc}
+      alt={alt ?? ''}
       className={className}
       style={style}
       {...rest}

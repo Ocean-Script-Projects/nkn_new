@@ -10,8 +10,8 @@ import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import { submitSiteRequest } from '@/lib/submit-site-request';
 
-const CONTACT_HERO_SRC =
-  'https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+/** Та же фотография, что на главной: `public/images/hero.jpg` */
+const CONTACT_HERO_SRC = '/images/hero.jpg';
 
 function ContactHeroImage() {
   return (

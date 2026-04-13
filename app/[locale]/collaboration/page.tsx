@@ -9,8 +9,8 @@ import { useTranslations } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 
-const COLLAB_HERO_SRC =
-  'https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+/** Та же фотография, что на главной: `public/images/hero.jpg` */
+const COLLAB_HERO_SRC = '/images/hero.jpg';
 
 function CollaborationHeroImage() {
   return (
