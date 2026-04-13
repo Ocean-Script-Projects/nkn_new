@@ -1,5 +1,7 @@
 import { GetObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 
+export { publicMediathekUrl } from '@/lib/mediathek-url';
+
 /** Object keys in the bucket (no leading slash). */
 export const CATALOG_PIECES_KEY = 'catalog/pieces.json';
 export const CATALOG_CATEGORIES_KEY = 'catalog/categories.json';
@@ -119,18 +121,6 @@ export async function spacesPutObject(
     }
     throw e;
   }
-}
-
-/** Public URL for browser (CDN / Spaces public endpoint). Requires NEXT_PUBLIC_MEDIATHEK_BASE_URL. */
-export function publicMediathekUrl(objectKey: string): string {
-  const base = (process.env.NEXT_PUBLIC_MEDIATHEK_BASE_URL ?? '')
-    .trim()
-    .replace(/\/+$/, '');
-  const k = objectKey.replace(/^\/+/, '');
-  if (!base) {
-    return `/${k}`;
-  }
-  return `${base}/${k}`;
 }
 
 export function requireMediathekBaseForPublicUrls(): string {
