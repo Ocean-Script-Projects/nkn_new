@@ -12,16 +12,8 @@ import PieceDetailModal from '@/components/pieces/PieceDetailModal';
 import PageHeader from '@/components/shared/PageHeader';
 import CTASection from '@/components/shared/CTASection';
 import Link from 'next/link';
-import piecesData from '@/data/pieces.json';
-
-interface Piece {
-  id: string;
-  name: string;
-  category: Category;
-  type: 'atelier made' | 'one-of-one' | 'limited';
-  image: string;
-  descriptionKey: string;
-}
+import { usePiecesList } from '@/lib/use-pieces';
+import type { CatalogPiece } from '@/lib/catalog-types';
 
 const HERO_IMAGE_SRC =
   'https://images.unsplash.com/photo-1684259499086-93cb3e555803?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
@@ -41,8 +33,10 @@ function PiecesHeroImage() {
 export default function PiecesPage() {
   const t = useTranslations('pieces');
   const locale = useLocale();
+  const { pieces: allPieces, loading, error } = usePiecesList();
   const [selectedCategory, setSelectedCategory] = useState<Category>('all');
-  const [selectedPieceForDetail, setSelectedPieceForDetail] = useState<Piece | null>(null);
+  const [selectedPieceForDetail, setSelectedPieceForDetail] =
+    useState<CatalogPiece | null>(null);
 
   const categories: { id: Category; label: string }[] = [
     { id: 'all', label: String(t('categories.all')) },
@@ -54,18 +48,12 @@ export default function PiecesPage() {
     { id: 'one-of-one', label: String(t('categories.oneOfOne')) },
   ];
 
-  const pieces: Piece[] = useMemo(() => {
-    return piecesData.map(p => ({
-      ...p,
-      category: p.category as Category,
-      type: p.type as Piece['type'],
-    }));
-  }, []);
-
   const filteredPieces = useMemo(() => {
-    if (selectedCategory === 'all') return pieces;
-    return pieces.filter(p => p.category === selectedCategory || p.type === selectedCategory);
-  }, [pieces, selectedCategory]);
+    if (selectedCategory === 'all') return allPieces;
+    return allPieces.filter(
+      (p) => p.category === selectedCategory || p.type === selectedCategory
+    );
+  }, [allPieces, selectedCategory]);
 
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-[#FAF9F6]">
@@ -98,15 +86,23 @@ export default function PiecesPage() {
             className="grid min-w-0 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6"
           >
             <AnimatePresence mode="popLayout">
-              {filteredPieces.map((piece, i) => (
-                <PieceCard
-                  key={piece.id}
-                  piece={piece}
-                  onRequest={() => setSelectedPieceForDetail(piece)}
-                  onClick={() => setSelectedPieceForDetail(piece)}
-                  index={i}
-                />
-              ))}
+              {error ? (
+                <p className="col-span-full text-center text-red-700">{error}</p>
+              ) : loading ? (
+                <p className="col-span-full text-center text-[#8B8B8B] py-8">
+                  {String(t('loading'))}
+                </p>
+              ) : (
+                filteredPieces.map((piece, i) => (
+                  <PieceCard
+                    key={piece.id}
+                    piece={piece}
+                    onRequest={() => setSelectedPieceForDetail(piece)}
+                    onClick={() => setSelectedPieceForDetail(piece)}
+                    index={i}
+                  />
+                ))
+              )}
             </AnimatePresence>
           </motion.div>
         </div>

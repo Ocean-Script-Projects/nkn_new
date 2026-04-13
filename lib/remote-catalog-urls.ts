@@ -22,3 +22,22 @@ export function getRemoteCategoriesJsonUrl(): string {
   );
   return base ? `${base}/catalog/categories.json` : '';
 }
+
+/**
+ * Catalog JSON often stores root-relative paths (`/uploads/...`). Resolve them against
+ * `NEXT_PUBLIC_MEDIATHEK_BASE_URL` so images load from Spaces/CDN, not from the app origin
+ * (which would break under `/[locale]/pieces` and without local `/public/uploads`).
+ */
+export function resolveCatalogAssetUrl(url: string): string {
+  const u = url.trim();
+  if (!u) return u;
+  if (/^https?:\/\//i.test(u)) return u;
+  const base = process.env.NEXT_PUBLIC_MEDIATHEK_BASE_URL?.trim().replace(
+    /\/+$/,
+    ''
+  );
+  if (base && u.startsWith('/')) {
+    return `${base}${u}`;
+  }
+  return u;
+}

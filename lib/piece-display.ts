@@ -1,17 +1,6 @@
 import type { Locale } from './i18n-config';
 import type { CatalogPiece, PieceDescriptions, PieceNames } from './catalog-types';
-import { publicMediathekUrl } from '@/lib/mediathek-url';
-
-/** Catalog may store `/uploads/pieces/…` or `uploads/pieces/…` (Spaces keys); resolve to CDN when `NEXT_PUBLIC_MEDIATHEK_BASE_URL` is set. */
-export function resolveCatalogImageUrl(raw: string): string {
-  const u = raw.trim();
-  if (!u) return u;
-  if (/^https?:\/\//i.test(u) || u.startsWith('data:') || u.startsWith('//')) {
-    return u;
-  }
-  const key = u.replace(/^\/+/, '');
-  return publicMediathekUrl(key);
-}
+import { resolveCatalogAssetUrl } from './remote-catalog-urls';
 
 type TranslatePieces = (key: string) => string | string[];
 
@@ -77,11 +66,12 @@ export function emptyNames(): PieceNames {
 export function pieceImageUrls(
   piece: Pick<CatalogPiece, 'image' | 'images'>
 ): string[] {
-  const extra = piece.images?.map((u) => u.trim()).filter(Boolean) ?? [];
+  const extra =
+    piece.images?.map((u) => resolveCatalogAssetUrl(u)).filter(Boolean) ?? [];
   const uniq = [...new Set(extra)];
-  if (uniq.length) return uniq.map(resolveCatalogImageUrl);
+  if (uniq.length) return uniq;
   const one = piece.image?.trim();
-  return one ? [resolveCatalogImageUrl(one)] : [];
+  return one ? [resolveCatalogAssetUrl(one)] : [];
 }
 
 /** Prefer ru → en → de → previous legacy `name` for JSON `name` field. */
