@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, X, ChevronDown } from 'lucide-react';
 import { useTranslations } from '@/lib/i18n';
+import { Button } from '@/components/ui/button';
 import type { RequestModalContext } from '@/lib/request-types';
 
 interface ContactRequestModalProps {
@@ -140,12 +141,12 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                       {String(t('modal.description'))}
                     </p>
                     {context?.pieceName && (
-                      <p className="text-sm text-[#C4A574] mt-2 font-medium truncate">
+                      <p className="text-sm text-brand-mustard mt-2 font-medium truncate">
                         {context.pieceName}{context.pieceType ? ` — ${context.pieceType}` : ''}
                       </p>
                     )}
                     {context?.eventTitle && !context?.pieceName && (
-                      <p className="text-sm text-[#C4A574] mt-2 font-medium truncate">
+                      <p className="text-sm text-brand-mustard mt-2 font-medium truncate">
                         {context.eventTitle}
                       </p>
                     )}
@@ -158,7 +159,7 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors text-base"
+                        className="w-full px-4 py-3 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-brand-mustard focus:outline-none transition-colors text-base"
                       />
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -167,7 +168,7 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                         <button
                           type="button"
                           onClick={() => setContactMethodOpen(!contactMethodOpen)}
-                          className="w-full px-4 py-3 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors text-left flex items-center justify-between gap-2 text-sm sm:text-base"
+                          className="w-full px-4 py-3 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-brand-mustard focus:outline-none transition-colors text-left flex items-center justify-between gap-2 text-sm sm:text-base"
                         >
                           <span className={formData.contactMethod ? '' : 'text-[#8B8B8B]'}>
                             {formData.contactMethod
@@ -198,7 +199,7 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                                       setContactMethodOpen(false);
                                     }}
                                     className={`w-full px-4 py-3 text-left text-base hover:bg-[#FAF9F6] transition-colors ${
-                                      formData.contactMethod === method ? 'bg-[#FAF9F6] text-[#C4A574]' : ''
+                                      formData.contactMethod === method ? 'bg-[#FAF9F6] text-brand-mustard' : ''
                                     }`}
                                   >
                                     {String(t(`modal.contactOptions.${method}`))}
@@ -216,7 +217,7 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                           required
                           value={formData.contact}
                           onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
-                          className="w-full px-4 py-3 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors text-sm sm:text-base"
+                          className="w-full px-4 py-3 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-brand-mustard focus:outline-none transition-colors text-sm sm:text-base"
                           placeholder={
                             formData.contactMethod === 'email'
                               ? String(t('modal.contactValuePlaceholderEmail'))
@@ -232,7 +233,7 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                       <button
                         type="button"
                         onClick={() => setProjectTypeOpen(!projectTypeOpen)}
-                        className="w-full px-4 py-3 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors text-left flex items-center justify-between gap-2 text-sm sm:text-base"
+                        className="w-full px-4 py-3 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-brand-mustard focus:outline-none transition-colors text-left flex items-center justify-between gap-2 text-sm sm:text-base"
                       >
                         <span className={formData.projectType ? '' : 'text-[#8B8B8B]'}>
                           {formData.projectType
@@ -275,7 +276,7 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                                     setProjectTypeOpen(false);
                                   }}
                                   className={`w-full px-4 py-3 text-left text-base hover:bg-[#FAF9F6] transition-colors ${
-                                    formData.projectType === key ? 'bg-[#FAF9F6] text-[#C4A574]' : ''
+                                    formData.projectType === key ? 'bg-[#FAF9F6] text-brand-mustard' : ''
                                   }`}
                                 >
                                   {String(t(`modal.projectTypes.${key}`))}
@@ -293,20 +294,20 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         rows={3}
-                        className="w-full min-h-[5.5rem] px-4 py-3 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-[#C4A574] focus:outline-none transition-colors resize-none text-base leading-snug"
+                        className="w-full min-h-[5.5rem] px-4 py-3 bg-[#FAF9F6] border border-black/10 rounded-xl focus:border-brand-mustard focus:outline-none transition-colors resize-none text-base leading-snug"
                         placeholder={String(t('modal.messagePlaceholder'))}
                       />
                     </div>
-                    <motion.button
+                    <Button
                       type="submit"
+                      variant="mustard"
+                      size="cta"
                       disabled={isSubmitting}
-                      whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-                      whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                      className="w-full px-6 py-3.5 sm:py-4 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center gap-2 font-medium disabled:opacity-70 disabled:cursor-not-allowed"
+                      className="w-full min-h-[3.25rem] text-base sm:text-lg disabled:cursor-not-allowed disabled:opacity-60"
                     >
                       {isSubmitting ? '...' : String(t('modal.submit'))}
                       {!isSubmitting && <ArrowRight className="w-5 h-5" />}
-                    </motion.button>
+                    </Button>
                   </form>
                 </div>
               </motion.div>
@@ -323,7 +324,7 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
             exit={{ opacity: 0, y: 50 }}
             className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[102]"
           >
-            <div className="bg-[#C4A574] text-white px-8 py-4 rounded-full shadow-2xl flex items-center gap-3">
+            <div className="bg-brand-mustard text-brand-mustard-foreground px-8 py-4 rounded-full shadow-2xl flex items-center gap-3">
               <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />

@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { I18nProvider } from '@/lib/i18n';
 import { locales } from '@/lib/i18n-config';
 import RequestModalProviderWrapper from '@/components/providers/RequestModalProviderWrapper';
-import '../globals.css';
+import LocaleHtmlLang from '@/components/shared/LocaleHtmlLang';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -22,14 +22,11 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body>
-        <I18nProvider locale={locale}>
-          <RequestModalProviderWrapper>
-            {children}
-          </RequestModalProviderWrapper>
-        </I18nProvider>
-      </body>
-    </html>
+    <I18nProvider locale={locale}>
+      <LocaleHtmlLang locale={locale} />
+      <RequestModalProviderWrapper>
+        {children}
+      </RequestModalProviderWrapper>
+    </I18nProvider>
   );
 }

@@ -33,7 +33,7 @@ export default function EventsPage() {
         title={String(t('title'))}
         titleItalic={String(t('titleItalic'))}
         description={String(t('description'))}
-        labelColor="#C4A574"
+        labelColor="var(--brand-mustard)"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -62,11 +62,11 @@ export default function EventsPage() {
             className="text-center mb-12 sm:mb-16"
           >
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="h-px w-8 bg-[#C4A574]" />
-              <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+              <div className="h-px w-8 bg-brand-sage" />
+              <span className="text-brand-sage text-xs sm:text-sm tracking-[0.4em] uppercase">
                 {t('sectionLabel')}
               </span>
-              <div className="h-px w-8 bg-[#C4A574]" />
+              <div className="h-px w-8 bg-brand-sage" />
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 leading-tight" style={{ fontFamily: 'serif' }}>
               {t('sectionTitle')}

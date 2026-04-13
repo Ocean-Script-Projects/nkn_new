@@ -42,11 +42,11 @@ export default function BeforeAfterSlider({
         >
           <div className="text-center space-y-4">
             <div className="flex items-center justify-center gap-3">
-              <div className="h-px w-8 bg-[#C4A574]" />
-              <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+              <div className="h-px w-8 bg-brand-sage" />
+              <span className="text-brand-sage text-xs sm:text-sm tracking-[0.4em] uppercase">
                 Transformation
               </span>
-              <div className="h-px w-8 bg-[#C4A574]" />
+              <div className="h-px w-8 bg-brand-sage" />
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl tracking-tight" style={{ fontFamily: 'serif' }}>
@@ -84,7 +84,7 @@ export default function BeforeAfterSlider({
                 alt="After upcycling"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute top-6 right-6 px-4 py-2 bg-[#059669] backdrop-blur-sm rounded-full">
+              <div className="absolute top-6 right-6 px-4 py-2 bg-brand-sage text-brand-sage-foreground backdrop-blur-sm rounded-full">
                 <span className="text-white text-sm tracking-wider">{afterLabel}</span>
               </div>
             </div>

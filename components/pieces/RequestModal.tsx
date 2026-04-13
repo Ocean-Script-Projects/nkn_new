@@ -4,6 +4,7 @@ import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, X } from 'lucide-react';
 import { useTranslations } from '@/lib/i18n';
+import { Button } from '@/components/ui/button';
 
 interface RequestModalProps {
   piece: {
@@ -73,8 +74,8 @@ export default function RequestModal({ piece, isOpen, onClose, onSubmit }: Reque
 
               <div className="mb-8">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="h-px w-8 bg-[#C4A574]" />
-                  <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">{t('modal.label')}</span>
+                  <div className="h-px w-8 bg-brand-sage" />
+                  <span className="text-brand-sage text-xs sm:text-sm tracking-[0.4em] uppercase">{t('modal.label')}</span>
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl md:text-5xl mb-3 tracking-tight" style={{ fontFamily: 'serif' }}>
@@ -95,9 +96,9 @@ export default function RequestModal({ piece, isOpen, onClose, onSubmit }: Reque
                     required
                     value={formData.interest}
                     onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                    className="w-full px-6 py-4 bg-white border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors appearance-none cursor-pointer"
+                    className="w-full px-6 py-4 bg-white border border-black/10 rounded-2xl focus:border-brand-mustard focus:outline-none transition-colors appearance-none cursor-pointer"
                     style={{
-                      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23C4A574' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")`,
+                      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23DE932A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")`,
                       backgroundRepeat: 'no-repeat',
                       backgroundPosition: 'right 1.5rem center',
                       backgroundSize: '1.25rem'
@@ -117,7 +118,7 @@ export default function RequestModal({ piece, isOpen, onClose, onSubmit }: Reque
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-6 py-4 bg-white border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors"
+                    className="w-full px-6 py-4 bg-white border border-black/10 rounded-2xl focus:border-brand-mustard focus:outline-none transition-colors"
                     placeholder={String(t('modal.namePlaceholder'))}
                   />
                 </div>
@@ -131,7 +132,7 @@ export default function RequestModal({ piece, isOpen, onClose, onSubmit }: Reque
                     required
                     value={formData.contact}
                     onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
-                    className="w-full px-6 py-4 bg-white border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors"
+                    className="w-full px-6 py-4 bg-white border border-black/10 rounded-2xl focus:border-brand-mustard focus:outline-none transition-colors"
                     placeholder={String(t('modal.contactPlaceholder'))}
                   />
                 </div>
@@ -142,21 +143,21 @@ export default function RequestModal({ piece, isOpen, onClose, onSubmit }: Reque
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={4}
-                    className="w-full px-6 py-4 bg-white border border-black/10 rounded-2xl focus:border-[#C4A574] focus:outline-none transition-colors resize-none"
+                    className="w-full px-6 py-4 bg-white border border-black/10 rounded-2xl focus:border-brand-mustard focus:outline-none transition-colors resize-none"
                     placeholder={String(t('modal.messagePlaceholder'))}
                   />
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <motion.button
+                  <Button
                     type="submit"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="flex-1 px-8 py-5 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-base sm:text-lg tracking-wider shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center gap-3"
+                    variant="mustard"
+                    size="cta"
+                    className="flex-1 w-full min-h-[3.25rem] text-base sm:text-lg"
                   >
                     {t('modal.submit')}
                     <ArrowRight className="w-5 h-5" />
-                  </motion.button>
+                  </Button>
 
                   <motion.button
                     type="button"

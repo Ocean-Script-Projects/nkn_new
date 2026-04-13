@@ -1,0 +1,30 @@
+[
+  {
+    "id": "all",
+    "labels": { "ru": "Все", "en": "All", "de": "Alle" }
+  },
+  {
+    "id": "belts",
+    "labels": { "ru": "Пояса", "en": "Belts", "de": "Gürtel" }
+  },
+  {
+    "id": "corsets",
+    "labels": { "ru": "Корсеты", "en": "Corsets", "de": "Korsetts" }
+  },
+  {
+    "id": "scarves",
+    "labels": { "ru": "Шарфы", "en": "Scarves", "de": "Schals" }
+  },
+  {
+    "id": "dresses",
+    "labels": { "ru": "Платья", "en": "Dresses", "de": "Kleider" }
+  },
+  {
+    "id": "mini-series",
+    "labels": { "ru": "Мини-серии", "en": "Mini series", "de": "Mini-Serien" }
+  },
+  {
+    "id": "one-of-one",
+    "labels": { "ru": "One-of-one", "en": "One-of-one", "de": "One-of-one" }
+  }
+]

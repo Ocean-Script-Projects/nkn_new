@@ -29,9 +29,9 @@ export default function FAQAccordion({ faqs, label, title }: FAQAccordionProps) 
           className="text-center mb-12 sm:mb-16"
         >
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-px w-8 bg-[#059669]" />
-            <span className="text-[#059669] text-xs sm:text-sm tracking-[0.4em] uppercase">{label}</span>
-            <div className="h-px w-8 bg-[#059669]" />
+            <div className="h-px w-8 bg-brand-sage" />
+            <span className="text-brand-sage text-xs sm:text-sm tracking-[0.4em] uppercase">{label}</span>
+            <div className="h-px w-8 bg-brand-sage" />
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl tracking-tight" style={{ fontFamily: 'serif' }}>
@@ -60,7 +60,7 @@ export default function FAQAccordion({ faqs, label, title }: FAQAccordionProps) 
                   animate={{ rotate: expandedFaq === i ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <ChevronDown className="w-5 h-5 text-[#059669] flex-shrink-0" />
+                  <ChevronDown className="w-5 h-5 text-brand-sage flex-shrink-0" />
                 </motion.div>
               </button>
 

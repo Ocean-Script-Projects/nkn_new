@@ -37,9 +37,9 @@ export default function ProcessSection() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-3 mb-8"
           >
-            <div className="h-px w-8 bg-[#C4A574]" />
-            <span className="text-[#C4A574] text-sm tracking-[0.4em] uppercase">{t('label')}</span>
-            <div className="h-px w-8 bg-[#C4A574]" />
+            <div className="h-px w-8 bg-brand-sage" />
+            <span className="text-brand-sage text-sm tracking-[0.4em] uppercase">{t('label')}</span>
+            <div className="h-px w-8 bg-brand-sage" />
           </motion.div>
 
           <h2
@@ -65,9 +65,9 @@ export default function ProcessSection() {
                   <div className="relative inline-block mb-6">
                     <motion.div
                       whileHover={{ scale: 1.1 }}
-                      className="relative z-10 w-20 h-20 rounded-full border-2 border-[#C4A574] flex items-center justify-center"
+                      className="relative z-10 w-20 h-20 rounded-full border-2 border-brand-mustard flex items-center justify-center"
                     >
-                      <span className="text-2xl text-[#C4A574] tracking-wider">{step.num}</span>
+                      <span className="text-2xl text-brand-mustard tracking-wider">{step.num}</span>
                     </motion.div>
                     {i < 3 && (
                       <motion.div
@@ -75,7 +75,7 @@ export default function ProcessSection() {
                         whileInView={{ scaleX: 1 }}
                         transition={{ duration: 1, delay: 0.5 + i * 0.2 }}
                         viewport={{ once: true }}
-                        className="absolute top-1/2 left-[calc(100%+12px)] w-full h-px bg-gradient-to-r from-[#C4A574] to-transparent origin-left -translate-y-1/2"
+                        className="absolute top-1/2 left-[calc(100%+12px)] w-full h-px bg-gradient-to-r from-brand-mustard to-transparent origin-left -translate-y-1/2"
                       />
                     )}
                   </div>
@@ -100,7 +100,7 @@ export default function ProcessSection() {
                 viewport={{ once: true }}
                 className="flex gap-4 pb-8 last:pb-0"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-[#C4A574] bg-white text-sm font-medium text-[#C4A574]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-brand-mustard bg-white text-sm font-medium text-brand-mustard">
                   {step.num}
                 </div>
                 <div className="min-w-0 pt-0.5">

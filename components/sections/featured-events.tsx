@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 import EventPreviewCard from '@/components/events/EventPreviewCard';
 import EventDetailModal from '@/components/events/EventDetailModal';
 import eventsData from '@/data/events.json';
@@ -27,7 +28,7 @@ export default function FeaturedEventsSection() {
   return (
     <section
       id="events"
-      className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12 bg-[#FAF9F6]"
+      className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12 bg-brand-sage-subtle bg-fabric-grain"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -44,11 +45,11 @@ export default function FeaturedEventsSection() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-3 mb-6 sm:mb-8"
           >
-            <div className="h-px w-6 sm:w-8 bg-[#C4A574]" />
-            <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.3em] sm:tracking-[0.4em] uppercase">
+            <div className="h-px w-6 sm:w-8 bg-brand-sage" />
+            <span className="text-brand-sage text-xs sm:text-sm tracking-[0.3em] sm:tracking-[0.4em] uppercase">
               {t('label')}
             </span>
-            <div className="h-px w-6 sm:w-8 bg-[#C4A574]" />
+            <div className="h-px w-6 sm:w-8 bg-brand-sage" />
           </motion.div>
 
           <h2 className="text-4xl sm:text-5xl md:text-6xl mb-4 sm:mb-6" style={{ fontFamily: 'serif' }}>
@@ -90,22 +91,18 @@ export default function FeaturedEventsSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <Link href={eventsHref}>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="relative inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-black text-white rounded-full text-sm sm:text-base tracking-wider overflow-hidden group"
-            >
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#C4A574] to-[#8B7355]"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: '0%' }}
-                transition={{ duration: 0.4 }}
-              />
-              <span className="relative z-10">{t('viewAll')}</span>
-              <span className="relative z-10 group-hover:translate-x-1 transition-transform">→</span>
-            </motion.button>
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-block"
+          >
+            <Button variant="dark" size="lg" asChild>
+              <Link href={eventsHref} className="group">
+                {t('viewAll')}
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </Link>
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
     </section>

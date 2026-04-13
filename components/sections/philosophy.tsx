@@ -54,11 +54,11 @@ export default function PhilosophySection() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-3 mb-6 sm:mb-8 lg:mb-4"
           >
-            <div className="h-px w-6 sm:w-8 bg-[#C4A574]" />
-            <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.3em] sm:tracking-[0.4em] uppercase">
+            <div className="h-px w-6 sm:w-8 bg-brand-sage" />
+            <span className="text-brand-sage text-xs sm:text-sm tracking-[0.3em] sm:tracking-[0.4em] uppercase">
               {t('label')}
             </span>
-            <div className="h-px w-6 sm:w-8 bg-[#C4A574]" />
+            <div className="h-px w-6 sm:w-8 bg-brand-sage" />
           </motion.div>
 
           <motion.h2
@@ -103,7 +103,7 @@ export default function PhilosophySection() {
                     className="relative h-[3.75rem] w-[3.75rem] shrink-0 sm:h-24 sm:w-24 lg:h-[4.25rem] lg:w-[4.25rem] xl:h-24 xl:w-24 md:mx-auto md:mb-5 lg:mb-4"
                   >
                     <motion.div
-                      className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#C4A574]/30 to-[#8B7355]/30 blur-xl md:opacity-100"
+                      className="absolute inset-0 rounded-2xl bg-brand-sage/25 blur-xl"
                       animate={{
                         scale: [1, 1.2, 1],
                         opacity: [0.4, 0.7, 0.4],
@@ -111,25 +111,23 @@ export default function PhilosophySection() {
                       transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
                     />
 
-                    <div className="relative flex h-full w-full items-center justify-center rounded-2xl bg-gradient-to-br from-[#C4A574] via-[#8B7355] to-[#C4A574] shadow-lg transition-shadow md:shadow-xl group-hover:shadow-2xl">
-                      <ItemIcon
-                        className="h-9 w-9 text-white sm:h-12 sm:w-12 lg:h-10 lg:w-10 xl:h-12 xl:w-12"
-                        strokeWidth={1.5}
-                      />
-
-                      <motion.div
-                        className="absolute -right-1 -top-1 hidden h-4 w-4 rounded-full border-2 border-white bg-[#DC2626] shadow-lg md:block"
-                        animate={{ scale: [1, 1.2, 1] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
-                      />
+                    <div className="relative flex h-full w-full rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/10 transition-shadow group-hover:shadow-2xl">
+                      <div className="flex-1 bg-brand-mustard" aria-hidden />
+                      <div className="flex-1 bg-brand-sage" aria-hidden />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <ItemIcon
+                          className="w-10 h-10 sm:w-12 sm:h-12 lg:w-10 lg:w-10 xl:w-12 xl:h-12 text-white drop-shadow-[0_1px_2px_rgb(0_0_0_/0.35)]"
+                          strokeWidth={1.5}
+                        />
+                      </div>
                     </div>
                   </motion.div>
 
-                  <div className="min-w-0 flex-1">
-                    <h3 className="mb-2 text-lg font-medium tracking-wide text-neutral-900 sm:mb-3 sm:text-xl md:mb-2 lg:text-lg xl:text-xl 2xl:text-2xl md:text-center group-hover:text-[#C4A574] transition-colors">
+                  <div className="min-w-0 flex-1 md:w-full">
+                    <h3 className="mb-2 text-lg font-medium tracking-wide text-neutral-900 sm:mb-3 sm:text-xl md:mb-2 lg:text-lg xl:text-xl 2xl:text-2xl md:text-center group-hover:text-brand-mustard transition-colors">
                       {t(`values.${item.key}.title`)}
                     </h3>
-                    <p className="text-[0.9375rem] leading-[1.65] text-neutral-600 sm:text-base md:text-sm lg:text-sm xl:text-base 2xl:text-base md:leading-snug">
+                    <p className="text-[0.9375rem] leading-[1.65] text-neutral-600 sm:text-base md:text-sm lg:text-sm xl:text-base 2xl:text-base md:text-center md:leading-snug">
                       {t(`values.${item.key}.text`)}
                     </p>
                   </div>

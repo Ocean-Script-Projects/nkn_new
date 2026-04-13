@@ -8,6 +8,7 @@ import { useTranslations, useLocale } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { formatDate, formatDateRange } from '@/lib/format-date';
+import { Button } from '@/components/ui/button';
 
 interface EventDetailModalProps {
   event: {
@@ -91,7 +92,7 @@ export default function EventDetailModal({ event, isOpen, onClose }: EventDetail
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs tracking-widest text-[#C4A574] font-medium">
+                  <span className="px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs tracking-widest text-brand-mustard font-medium">
                     {typeLabel}
                   </span>
                 </div>
@@ -107,16 +108,19 @@ export default function EventDetailModal({ event, isOpen, onClose }: EventDetail
 
                 <div className="flex flex-col gap-3 mb-8 text-[#8B8B8B]">
                   <div className="flex items-center gap-3">
-                    <Calendar className="w-5 h-5 text-[#C4A574] flex-shrink-0" />
+                    <Calendar className="w-5 h-5 text-brand-mustard flex-shrink-0" />
                     <span>{dateDisplay}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-[#C4A574] flex-shrink-0" />
+                    <MapPin className="w-5 h-5 text-brand-mustard flex-shrink-0" />
                     <span>{event.location}</span>
                   </div>
                 </div>
 
-                <motion.button
+                <Button
+                  type="button"
+                  variant="mustard"
+                  size="default"
                   onClick={() => {
                     onClose();
                     openRequestModal({
@@ -125,13 +129,11 @@ export default function EventDetailModal({ event, isOpen, onClose }: EventDetail
                       eventId: event.id,
                     });
                   }}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-base tracking-wider shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center gap-3"
+                  className="w-full sm:w-auto text-base"
                 >
                   {t('cta.button')}
                   <ArrowRight className="w-5 h-5" />
-                </motion.button>
+                </Button>
               </div>
             </motion.div>
           </div>
