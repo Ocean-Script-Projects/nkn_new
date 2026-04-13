@@ -186,6 +186,19 @@ export default function Navigation() {
                 </button>
               </div>
               <nav className="flex-1 overflow-y-auto px-4 py-5">
+                <button
+                  type="button"
+                  onClick={() => {
+                    openRequestModal();
+                    closeMobile();
+                  }}
+                  className={cn(
+                    buttonVariants({ variant: 'darkNav', size: 'plain' }),
+                    'mb-5 w-full justify-center'
+                  )}
+                >
+                  {t('request')}
+                </button>
                 <div className="border-b border-black/[0.06] pb-2">
                   <button
                     type="button"
@@ -403,7 +416,10 @@ export default function Navigation() {
               onClick={() => openRequestModal()}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className={cn(buttonVariants({ variant: 'darkNav' }))}
+              className={cn(
+                buttonVariants({ variant: 'darkNav', size: 'plain' }),
+                'hidden lg:inline-flex'
+              )}
             >
               {t('request')}
             </motion.button>

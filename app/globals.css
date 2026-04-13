@@ -104,6 +104,15 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  /* Системная синяя обводка фокуса → тёплый акцент; без обводки при клике мышью */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+  :focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--brand-mustard) 65%, var(--brand-sage) 35%);
+    outline-offset: 2px;
+  }
 }
 
 html {

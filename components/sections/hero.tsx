@@ -1,12 +1,13 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
 import DecorativeLogo from '@/components/shared/DecorativeLogo';
+import { ImageWithFallback } from '@/components/image-with-fallback';
 
 const REMOTE =
   'https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?auto=format&fit=crop&w=1000&h=1250&q=85';
@@ -30,12 +31,11 @@ export default function HeroSection() {
     probe.src = local;
   }, []);
 
-  const onImgError = useCallback(() => {
-    setSrc((s) => (s.includes('images/hero.jpg') ? REMOTE : s === REMOTE ? REMOTE_FALLBACK : REMOTE));
-  }, []);
+  const imageSrc = useMemo(() => (src && String(src).trim()) || REMOTE, [src]);
+  const reduceMotion = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden pb-14 pt-24 sm:pb-16 sm:pt-28 md:pt-32 lg:pb-24 lg:pt-32 xl:pb-28 xl:pt-36">
+    <section className="relative max-lg:flex max-lg:min-h-[calc(100svh-4.0625rem)] max-lg:flex-col overflow-hidden pb-6 pt-[calc(4rem+1px)] sm:pt-[calc(4.5rem+1px)] sm:pb-8 md:pt-[calc(5rem+1px)] lg:min-h-0 lg:pb-24 lg:pt-32 xl:pb-28 xl:pt-36">
       <div className="absolute inset-0 bg-brand-sage-subtle bg-fabric-grain" aria-hidden />
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_85%_65%_at_88%_12%,rgb(119_123_86_/0.07),transparent_58%),radial-gradient(ellipse_55%_45%_at_12%_88%,rgb(119_123_86_/0.05),transparent_52%),linear-gradient(180deg,#fbfaf8_0%,#f4f3ec_100%)]"
@@ -68,86 +68,129 @@ export default function HeroSection() {
       />
 
       {/* ——— Mobile / tablet: image-led hero ——— */}
-      <div className="relative z-10 mx-auto w-full max-w-[1360px] px-4 sm:px-6 lg:hidden">
-        <div className="mb-5 flex flex-col gap-2 border-b border-[#C4A574]/20 pb-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-[#7a6238] sm:text-[11px]">
-            {t('location')}
-          </p>
-          <p className="text-[9px] font-medium uppercase tracking-[0.22em] text-neutral-400 sm:max-w-[55%] sm:text-right sm:text-[10px] sm:leading-relaxed">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1360px] min-h-0 flex-1 flex-col px-4 sm:px-6 lg:hidden">
+        {/* На узких телефонах мета у фото (см. оверлей), без отдельной строки сверху — меньше шума */}
+        <p className="mb-6 hidden flex-wrap items-baseline gap-x-2 gap-y-1 text-[10px] font-medium uppercase tracking-[0.22em] text-neutral-500 sm:flex sm:text-[11px]">
+          <span className="font-semibold text-brand-sage-muted">{t('location')}</span>
+          <span className="text-neutral-300" aria-hidden>
+            —
+          </span>
+          <span className="max-w-[min(100%,48ch)] leading-snug text-neutral-400">
             {t('experience')}
-            <span className="mx-1.5 inline-block h-1 w-1 rounded-full bg-[#C4A574]/50 align-middle" />
+            <span className="mx-1 text-neutral-300" aria-hidden>
+              ·
+            </span>
             {t('individual')}
-          </p>
-        </div>
+          </span>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="relative overflow-hidden rounded-2xl bg-[#E8E2D9] shadow-[0_20px_50px_-24px_rgba(0,0,0,0.25)] ring-1 ring-black/[0.06] sm:rounded-3xl"
-        >
-          <div className="relative aspect-[3/4] w-full max-h-[min(52svh,440px)] sm:max-h-[min(50svh,480px)]">
-            <img
-              src={src}
-              alt={String(t('nameFull'))}
-              className="absolute inset-0 h-full w-full object-cover object-top"
-              loading="eager"
-              decoding="async"
-              onError={onImgError}
-            />
-            <div
-              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1a1510]/90 via-[#1a1510]/25 to-transparent"
-              aria-hidden
-            />
-            <div className="absolute inset-x-0 bottom-0 px-4 pb-5 pt-20 sm:px-6 sm:pb-6">
-              <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-white/85 sm:text-[10px]">
-                {t('nameFull')}
-              </p>
-              <p className="mt-1 text-sm font-normal tracking-wide text-white/95 sm:text-base">{t('role')}</p>
-            </div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 space-y-5 sm:mt-8"
-        >
-          <h1
-            className="font-serif text-[1.75rem] font-normal leading-[1.12] tracking-[-0.02em] text-neutral-950 sm:text-[2rem]"
-            style={{ fontFamily: 'serif' }}
+        {/* Одна карточка: фото + лид + CTA; фото flex-1 — заполняет высоту первого экрана */}
+        <div className="relative flex min-h-0 flex-1 flex-col max-sm:-mx-4 max-sm:px-0">
+          <motion.div
+            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={
+              reduceMotion ? { duration: 0 } : { duration: 0.55, ease: [0.22, 1, 0.36, 1] }
+            }
+            className="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-t-none rounded-b-2xl border border-black/[0.07] bg-white/95 shadow-[0_20px_50px_-28px_rgba(0,0,0,0.18)] sm:rounded-3xl"
           >
-            <span className="block">{t('title')}</span>
-            <span className="mt-1.5 block text-neutral-800 italic sm:mt-2">{t('titleItalic')}</span>
-            {String(t('titleEnd')).trim() ? (
-              <span className="mt-2 block text-[0.95em] font-normal tracking-normal text-neutral-700">
-                {t('titleEnd')}
-              </span>
-            ) : null}
-          </h1>
+            <div className="relative min-h-[44svh] w-full flex-1 basis-0 bg-neutral-200/50 sm:min-h-[48svh]">
+              <ImageWithFallback
+                src={imageSrc}
+                fallbackSrc={REMOTE_FALLBACK}
+                alt={String(t('nameFull'))}
+                className="absolute inset-0 h-full w-full object-cover object-top"
+                loading="eager"
+                decoding="async"
+              />
+              <div
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-neutral-950/95 via-45% via-neutral-950/50 to-transparent"
+                aria-hidden
+              />
+              <div
+                className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-neutral-950/50 to-transparent sm:hidden"
+                aria-hidden
+              />
+              <div className="absolute inset-x-0 top-0 z-[1] px-4 pt-4 sm:hidden">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/95 drop-shadow-[0_1px_8px_rgba(0,0,0,0.45)]">
+                  {t('location')}
+                </p>
+              </div>
+              <div className="absolute right-3 top-3 z-[2] max-w-[min(100%,12rem)] rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-[9px] font-medium uppercase leading-tight tracking-[0.18em] text-white/95 shadow-[0_4px_16px_rgba(0,0,0,0.35)] backdrop-blur-sm sm:right-4 sm:top-4 sm:max-w-[14rem] sm:px-3.5 sm:py-2 sm:text-[10px] sm:tracking-[0.2em]">
+                {t('role')}
+              </div>
+              {/* Заголовок внутри кадра + тёмного градиента — иначе соседний pull-up оказывается под motion-слоем и обрезается overflow-hidden */}
+              <div className="absolute inset-x-0 bottom-0 z-[3] px-4 pb-5 pt-[min(28%,9.5rem)] sm:px-5 sm:pb-6 sm:pt-32">
+                <h1
+                  className="text-balance font-serif text-[clamp(1.85rem,6vw,2.35rem)] font-normal leading-[1.08] tracking-[-0.025em] sm:text-[clamp(2rem,5vw,2.5rem)]"
+                  style={{ fontFamily: 'serif' }}
+                >
+                  <motion.span
+                    className="block text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]"
+                    initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={
+                      reduceMotion
+                        ? { duration: 0 }
+                        : { duration: 0.5, delay: 0.06, ease: [0.22, 1, 0.36, 1] }
+                    }
+                  >
+                    {t('title')}
+                  </motion.span>
+                  <motion.span
+                    className="mt-2 block text-[0.96em] font-normal italic leading-[1.12] text-amber-100 [text-shadow:0_1px_3px_rgba(0,0,0,0.85),0_2px_24px_rgba(0,0,0,0.55)] sm:mt-2.5"
+                    initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={
+                      reduceMotion
+                        ? { duration: 0 }
+                        : { duration: 0.5, delay: 0.12, ease: [0.22, 1, 0.36, 1] }
+                    }
+                  >
+                    {t('titleItalic')}
+                  </motion.span>
+                  {String(t('titleEnd')).trim() ? (
+                    <span className="mt-2.5 block text-[0.88em] font-normal tracking-normal text-white/90 [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
+                      {t('titleEnd')}
+                    </span>
+                  ) : null}
+                </h1>
+              </div>
+            </div>
 
-          <p className="text-sm font-light leading-[1.65] tracking-wide text-neutral-600 sm:text-[0.9375rem] sm:leading-[1.7]">
-            {t('description')}
-          </p>
+            <motion.div
+              initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={
+                reduceMotion
+                  ? { duration: 0 }
+                  : { duration: 0.45, delay: 0.1, ease: [0.22, 1, 0.36, 1] }
+              }
+              className="shrink-0 border-t border-black/[0.08] bg-[#faf9f6]/95 px-5 py-5 backdrop-blur-[2px] sm:px-6 sm:py-6"
+            >
+              <p className="max-w-prose text-[0.9375rem] font-light leading-[1.7] tracking-wide text-neutral-600">
+                {t('description')}
+              </p>
 
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-stretch">
-            <button
-              type="button"
-              onClick={() => openRequestModal()}
-              className="group relative inline-flex min-h-[48px] w-full flex-1 items-center justify-center gap-2 overflow-hidden rounded-full bg-neutral-950 px-6 py-3.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white shadow-[0_12px_32px_-8px_rgba(0,0,0,0.3)] ring-1 ring-black/10 transition-all duration-300 active:scale-[0.99] sm:min-h-[44px] sm:flex-initial sm:px-8"
-            >
-              <span className="relative z-10">{t('orderButton')}</span>
-              <ArrowRight className="relative z-10 h-4 w-4 shrink-0" aria-hidden />
-            </button>
-            <Link
-              href={`/${locale}/pieces`}
-              className="inline-flex min-h-[48px] w-full flex-1 items-center justify-center rounded-full border border-neutral-900/15 bg-white/95 px-6 py-3.5 text-[11px] font-medium uppercase tracking-[0.14em] text-neutral-800 shadow-sm backdrop-blur-sm transition-all duration-300 active:scale-[0.99] sm:min-h-[44px] sm:flex-initial sm:px-8"
-            >
-              {t('portfolioButton')}
-            </Link>
-          </div>
-        </motion.div>
+              <div className="mt-5 flex flex-col gap-3 sm:mt-6 sm:flex-row sm:items-center sm:gap-3">
+                <button
+                  type="button"
+                  onClick={() => openRequestModal()}
+                  className="group relative inline-flex min-h-[48px] w-full min-w-0 flex-1 items-center justify-center gap-2 overflow-hidden rounded-full bg-neutral-950 px-6 py-3.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white shadow-[0_12px_28px_-10px_rgba(0,0,0,0.35)] ring-1 ring-black/10 transition-all duration-300 active:scale-[0.99] sm:min-h-[44px] sm:max-w-[min(100%,20rem)]"
+                >
+                  <span className="relative z-10">{t('orderButton')}</span>
+                  <ArrowRight className="relative z-10 h-4 w-4 shrink-0" aria-hidden />
+                </button>
+                <Link
+                  href={`/${locale}/pieces`}
+                  className="inline-flex min-h-[48px] w-full min-w-0 flex-1 items-center justify-center rounded-full border border-black/[0.12] bg-white px-6 py-3.5 text-[11px] font-medium uppercase tracking-[0.12em] text-neutral-700 transition-all duration-300 active:scale-[0.99] sm:min-h-[44px] sm:max-w-[min(100%,20rem)]"
+                >
+                  {t('portfolioButton')}
+                </Link>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
       </div>
 
       {/* ——— Desktop ——— */}
@@ -244,13 +287,13 @@ export default function HeroSection() {
             <div className="group/image relative cursor-default rounded-2xl bg-[#EDEAE2] p-[3px] shadow-[0_24px_56px_-20px_rgba(0,0,0,0.2),0_0_0_1px_rgba(0,0,0,0.04)_inset] ring-1 ring-brand-sage/25 transition-[box-shadow,transform] duration-500 ease-out hover:shadow-[0_32px_64px_-24px_rgba(0,0,0,0.28)] hover:ring-brand-mustard/35 xl:rounded-3xl xl:p-1">
               <div className="overflow-hidden rounded-[1.15rem] ring-1 ring-white/90 xl:rounded-[1.35rem]">
                 <div className="relative aspect-[3/4] w-full max-h-[min(44vh,380px)] bg-neutral-200/80 sm:max-h-[min(46vh,400px)] lg:aspect-auto lg:h-[min(48vh,460px)] lg:max-h-[460px] lg:w-[300px] xl:aspect-[3/4] xl:h-auto xl:max-h-[min(46vh,480px)] xl:min-h-[380px] xl:w-full min-[1536px]:min-h-[420px] min-[1536px]:max-h-[min(52vh,540px)]">
-                  <img
-                    src={src}
+                  <ImageWithFallback
+                    src={imageSrc}
+                    fallbackSrc={REMOTE_FALLBACK}
                     alt={String(t('nameFull'))}
                     className="absolute inset-0 h-full w-full object-cover object-top transition-[transform,filter] duration-700 ease-out group-hover/image:scale-[1.04] group-hover/image:brightness-[1.04]"
                     loading="eager"
                     decoding="async"
-                    onError={onImgError}
                   />
                   <div
                     className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-[#1a1510]/0 via-transparent to-white/[0.03] opacity-0 transition-opacity duration-500 group-hover/image:opacity-100"

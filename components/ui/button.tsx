@@ -18,7 +18,7 @@ export const buttonVariants = cva(
           'rounded-full bg-black text-white shadow-md hover:bg-brand-mustard hover:text-brand-mustard-foreground',
         /** Компактная чёрная кнопка в навигации */
         darkNav:
-          'rounded-full bg-black px-5 py-2.5 text-[12px] font-semibold uppercase tracking-widest text-white shadow-sm sm:px-6 sm:text-[13px] hover:bg-brand-mustard hover:text-brand-mustard-foreground',
+          'rounded-full bg-black px-5 py-2 text-[12px] font-semibold uppercase tracking-[0.2em] text-white shadow-sm sm:px-6 sm:py-2.5 sm:text-[13px] hover:bg-brand-mustard hover:text-brand-mustard-foreground',
         /** Белая кнопка поверх карточки товара */
         cardOverlay:
           'rounded-full bg-white px-6 py-3 text-sm text-black shadow-sm hover:bg-neutral-100 sm:text-base',
