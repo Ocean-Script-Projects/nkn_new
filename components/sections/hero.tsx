@@ -68,9 +68,9 @@ export default function HeroSection() {
       />
 
       {/* ——— Mobile / tablet: image-led hero ——— */}
-      <div className="relative z-10 mx-auto flex w-full max-w-[1360px] min-h-0 flex-1 flex-col px-4 sm:px-6 lg:hidden">
-        {/* На узких телефонах мета у фото (см. оверлей), без отдельной строки сверху — меньше шума */}
-        <p className="mb-6 hidden flex-wrap items-baseline gap-x-2 gap-y-1 text-[10px] font-medium uppercase tracking-[0.22em] text-neutral-500 sm:flex sm:text-[11px]">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1360px] min-h-0 flex-1 flex-col lg:hidden">
+        {/* Мета со своими полями; карточка без px у родителя — фото на всю ширину */}
+        <p className="mb-5 hidden flex-wrap items-baseline gap-x-2 gap-y-1 px-4 text-[10px] font-medium uppercase tracking-[0.22em] text-neutral-500 sm:mb-6 sm:flex sm:px-6 sm:text-[11px]">
           <span className="font-semibold text-brand-sage-muted">{t('location')}</span>
           <span className="text-neutral-300" aria-hidden>
             —
@@ -85,7 +85,7 @@ export default function HeroSection() {
         </p>
 
         {/* Одна карточка: фото + лид + CTA; фото flex-1 — заполняет высоту первого экрана */}
-        <div className="relative flex min-h-0 flex-1 flex-col max-sm:-mx-4 max-sm:px-0">
+        <div className="relative flex min-h-0 flex-1 flex-col">
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -94,7 +94,7 @@ export default function HeroSection() {
             }
             className="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-t-none rounded-b-2xl border border-black/[0.07] bg-white/95 shadow-[0_20px_50px_-28px_rgba(0,0,0,0.18)] sm:rounded-3xl"
           >
-            <div className="relative min-h-[44svh] w-full flex-1 basis-0 bg-neutral-200/50 sm:min-h-[48svh]">
+            <div className="relative min-h-[68svh] w-full flex-1 basis-0 bg-neutral-200/50 sm:min-h-[56svh] md:min-h-[50svh]">
               <ImageWithFallback
                 src={imageSrc}
                 fallbackSrc={REMOTE_FALLBACK}
