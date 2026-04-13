@@ -18,7 +18,8 @@ import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import PageHeader from '@/components/shared/PageHeader';
 import { ImageWithFallback } from '@/components/image-with-fallback';
-import { useTranslations } from '@/lib/i18n';
+import { useTranslations, useLocale } from '@/lib/i18n';
+import { submitSiteRequest } from '@/lib/submit-site-request';
 const SERVICE_IDS = ['01', '02', '03', '04', '05', '06', '07'] as const;
 const ICONS = [Scissors, Sparkles, Heart, Leaf, Palette, Layers, Users];
 const COLORS = [
@@ -68,7 +69,10 @@ function ServicesHeroImage({ badgeTitle, badgeDesc }: { badgeTitle: string; badg
 
 export default function ServicesPage() {
   const t = useTranslations('servicesPage');
+  const locale = useLocale();
   const [selectedService, setSelectedService] = useState<number | null>(null);
+  const [formError, setFormError] = useState<string | null>(null);
+  const [formSubmitting, setFormSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -92,9 +96,33 @@ export default function ServicesPage() {
     };
   }), [t]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setFormError(null);
+    setFormSubmitting(true);
+
+    const contactParts = [formData.email.trim(), formData.phone.trim()].filter(Boolean);
+    const contact = contactParts.join(' · ');
+
+    const result = await submitSiteRequest({
+      name: formData.name.trim(),
+      contact,
+      message: formData.message.trim(),
+      source: 'services',
+      locale,
+      email: formData.email.trim(),
+      phone: formData.phone.trim() || undefined,
+      service: formData.service.trim() || undefined,
+    });
+
+    setFormSubmitting(false);
+
+    if (!result.ok) {
+      setFormError(result.error);
+      return;
+    }
+
+    setFormData({ name: '', email: '', phone: '', service: '', message: '' });
   };
 
   return (
@@ -477,14 +505,21 @@ export default function ServicesPage() {
                 />
               </div>
 
+              {formError ? (
+                <p className="text-sm text-red-200 text-center" role="alert">
+                  {formError}
+                </p>
+              ) : null}
+
               <motion.button
                 type="submit"
+                disabled={formSubmitting}
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full sm:w-auto px-12 py-5 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center gap-3 mx-auto"
+                className="w-full sm:w-auto px-12 py-5 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center gap-3 mx-auto disabled:opacity-60 disabled:pointer-events-none"
               >
-                {t('form.submit')}
-                <ArrowRight className="w-5 h-5" />
+                {formSubmitting ? '…' : t('form.submit')}
+                {!formSubmitting && <ArrowRight className="w-5 h-5" />}
               </motion.button>
             </motion.form>
           </div>

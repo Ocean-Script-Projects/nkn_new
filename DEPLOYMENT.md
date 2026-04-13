@@ -6,6 +6,8 @@
 
 В **runtime** на сервере задайте: `ENABLE_ADMIN_API=true`, `ADMIN_SECRET`, ключи Spaces, `NEXT_PUBLIC_MEDIATHEK_BASE_URL` и остальное по необходимости. Тип компонента: **Web Service** (Node), не «Static Site».
 
+**Заявки с сайта (Telegram):** `TELEGRAM_BOT_TOKEN` (токен бота от [@BotFather](https://t.me/BotFather)), `TELEGRAM_CHAT_ID` (куда слать сообщения: id личного чата или группы; для личного чата напишите боту `/start`, затем получите `chat.id` через `https://api.telegram.org/bot<TOKEN>/getUpdates`). Без этих переменных `POST /api/request` вернёт ошибку конфигурации.
+
 ---
 
 ## GitHub Pages (ниже — устаревший сценарий со статикой)

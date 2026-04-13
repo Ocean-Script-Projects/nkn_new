@@ -1,13 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Scissors, Ruler, Sparkles, X } from 'lucide-react';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import PageHeader from '@/components/shared/PageHeader';
 import { ImageWithFallback } from '@/components/image-with-fallback';
-import { useTranslations } from '@/lib/i18n';
+import { useTranslations, useLocale } from '@/lib/i18n';
+import { submitSiteRequest } from '@/lib/submit-site-request';
 
 const ABOUT_HERO_SRC =
   'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
@@ -31,8 +32,11 @@ function AboutHeroImage() {
 
 export default function AboutPage() {
   const t = useTranslations('aboutPage');
+  const locale = useLocale();
   const [showContactModal, setShowContactModal] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [modalFormError, setModalFormError] = useState<string | null>(null);
+  const [modalSubmitting, setModalSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     contact: '',
@@ -48,9 +52,39 @@ export default function AboutPage() {
 
   const processSteps = ['01', '02', '03', '04', '05'] as const;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    if (showContactModal) setModalFormError(null);
+  }, [showContactModal]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Contact request submitted:', formData);
+    setModalFormError(null);
+    setModalSubmitting(true);
+
+    const projectTypeLabel = formData.projectType
+      ? String(
+          t(
+            `modal.projectTypes.${formData.projectType as 'bespoke' | 'upcycling' | 'prints' | 'collaboration' | 'other'}`
+          )
+        )
+      : undefined;
+
+    const result = await submitSiteRequest({
+      name: formData.name.trim(),
+      contact: formData.contact.trim(),
+      message: formData.message.trim(),
+      source: 'about',
+      locale,
+      projectType: projectTypeLabel,
+    });
+
+    setModalSubmitting(false);
+
+    if (!result.ok) {
+      setModalFormError(result.error);
+      return;
+    }
+
     setShowContactModal(false);
     setShowSuccessMessage(true);
     setFormData({ name: '', contact: '', projectType: '', message: '' });
@@ -719,14 +753,21 @@ export default function AboutPage() {
                         />
                       </div>
 
+                      {modalFormError ? (
+                        <p className="text-sm text-red-600" role="alert">
+                          {modalFormError}
+                        </p>
+                      ) : null}
+
                       <motion.button
                         type="submit"
+                        disabled={modalSubmitting}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="w-full px-8 py-5 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center gap-3 font-medium"
+                        className="w-full px-8 py-5 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center gap-3 font-medium disabled:opacity-60 disabled:pointer-events-none"
                       >
-                        {t('modal.submit')}
-                        <ArrowRight className="w-5 h-5" />
+                        {modalSubmitting ? '…' : t('modal.submit')}
+                        {!modalSubmitting && <ArrowRight className="w-5 h-5" />}
                       </motion.button>
                     </form>
                   </div>

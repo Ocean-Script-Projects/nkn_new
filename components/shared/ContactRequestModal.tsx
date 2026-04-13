@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, X, ChevronDown } from 'lucide-react';
-import { useTranslations } from '@/lib/i18n';
+import { useTranslations, useLocale } from '@/lib/i18n';
+import { submitSiteRequest } from '@/lib/submit-site-request';
 import { Button } from '@/components/ui/button';
 import type { RequestModalContext } from '@/lib/request-types';
 
@@ -15,8 +16,10 @@ interface ContactRequestModalProps {
 
 export default function ContactRequestModal({ isOpen, onClose, context }: ContactRequestModalProps) {
   const t = useTranslations('aboutPage');
+  const locale = useLocale();
   const [showSuccess, setShowSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [projectTypeOpen, setProjectTypeOpen] = useState(false);
   const [contactMethodOpen, setContactMethodOpen] = useState(false);
   const projectTypeRef = useRef<HTMLDivElement>(null);
@@ -33,6 +36,7 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
     if (!isOpen) {
       setProjectTypeOpen(false);
       setContactMethodOpen(false);
+      setSubmitError(null);
     }
   }, [isOpen]);
 
@@ -63,40 +67,43 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError(null);
 
-    try {
-      const res = await fetch('/api/request', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.name,
-          contactMethod: formData.contactMethod,
-          contact: formData.contact,
-          projectType: formData.projectType || undefined,
-          message: formData.message,
-          context: context || undefined,
-        }),
-      });
-
-      if (!res.ok) {
-        throw new Error('Failed to submit');
+    const projectKeys = ['bespoke', 'upcycling', 'prints', 'collaboration', 'other'] as const;
+    let projectTypeLabel: string | undefined;
+    if (formData.projectType) {
+      if ((projectKeys as readonly string[]).includes(formData.projectType)) {
+        projectTypeLabel = String(
+          t(`modal.projectTypes.${formData.projectType as (typeof projectKeys)[number]}`)
+        );
+      } else {
+        projectTypeLabel = formData.projectType;
       }
-
-      setFormData({ name: '', contactMethod: 'telegram', contact: '', projectType: '', message: '' });
-      onClose();
-      setShowSuccess(true);
-      setTimeout(() => setShowSuccess(false), 5000);
-    } catch (err) {
-      console.error('Submit error:', err);
-      setShowSuccess(false);
-      // Still show success for now - in production you'd show error
-      setFormData({ name: '', contactMethod: 'telegram', contact: '', projectType: '', message: '' });
-      onClose();
-      setShowSuccess(true);
-      setTimeout(() => setShowSuccess(false), 5000);
-    } finally {
-      setIsSubmitting(false);
     }
+
+    const result = await submitSiteRequest({
+      name: formData.name.trim(),
+      contact: formData.contact.trim(),
+      message: formData.message.trim(),
+      source: 'modal',
+      locale,
+      contactMethod: String(t(`modal.contactOptions.${formData.contactMethod}`)),
+      projectType: projectTypeLabel,
+      context: context || undefined,
+    });
+
+    if (!result.ok) {
+      console.error('Submit error:', result.error);
+      setSubmitError(result.error);
+      setIsSubmitting(false);
+      return;
+    }
+
+    setFormData({ name: '', contactMethod: 'telegram', contact: '', projectType: '', message: '' });
+    onClose();
+    setShowSuccess(true);
+    setTimeout(() => setShowSuccess(false), 5000);
+    setIsSubmitting(false);
   };
 
   return (
@@ -298,6 +305,11 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                         placeholder={String(t('modal.messagePlaceholder'))}
                       />
                     </div>
+                    {submitError ? (
+                      <p className="text-sm text-red-600" role="alert">
+                        {submitError}
+                      </p>
+                    ) : null}
                     <Button
                       type="submit"
                       variant="mustard"

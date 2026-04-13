@@ -7,7 +7,8 @@ import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import PageHeader from '@/components/shared/PageHeader';
 import { ImageWithFallback } from '@/components/image-with-fallback';
-import { useTranslations } from '@/lib/i18n';
+import { useTranslations, useLocale } from '@/lib/i18n';
+import { submitSiteRequest } from '@/lib/submit-site-request';
 
 const CONTACT_HERO_SRC =
   'https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
@@ -26,9 +27,12 @@ function ContactHeroImage() {
 
 export default function ContactPage() {
   const t = useTranslations('contactPage');
+  const locale = useLocale();
   const [selectedService, setSelectedService] = useState<string[]>([]);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     contactMethod: 'telegram',
@@ -60,12 +64,34 @@ export default function ContactPage() {
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Contact form submitted:', {
-      ...formData,
-      services: selectedService,
+    setFormError(null);
+    setIsSubmitting(true);
+
+    const contactMethodLabel =
+      formData.contactMethod === 'telegram'
+        ? String(t('form.contactTelegram'))
+        : formData.contactMethod === 'email'
+          ? String(t('form.contactEmail'))
+          : String(t('form.contactWhatsapp'));
+
+    const result = await submitSiteRequest({
+      name: formData.name.trim(),
+      contact: formData.contactValue.trim(),
+      message: formData.message.trim(),
+      source: 'contact',
+      locale,
+      contactMethod: contactMethodLabel,
+      selectedServices: selectedService.length ? selectedService : undefined,
     });
+
+    setIsSubmitting(false);
+
+    if (!result.ok) {
+      setFormError(result.error);
+      return;
+    }
 
     setShowSuccessMessage(true);
     setFormData({ name: '', contactMethod: 'telegram', contactValue: '', message: '' });
@@ -348,15 +374,22 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {formError ? (
+                    <p className="text-sm text-red-600 text-center" role="alert">
+                      {formError}
+                    </p>
+                  ) : null}
+
                   {/* Submit */}
                   <motion.button
                     type="submit"
+                    disabled={isSubmitting}
                     whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-5 py-2.5 sm:py-3 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-sm sm:text-base tracking-wider shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center gap-2 font-medium"
+                    className="w-full px-5 py-2.5 sm:py-3 bg-gradient-to-r from-[#C4A574] to-[#8B7355] text-white rounded-full text-sm sm:text-base tracking-wider shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center gap-2 font-medium disabled:opacity-60 disabled:pointer-events-none"
                   >
-                    {t('form.submit')}
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                    {isSubmitting ? '…' : t('form.submit')}
+                    {!isSubmitting && <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />}
                   </motion.button>
 
                   <p className="text-[11px] sm:text-xs text-[#8B8B8B] text-center italic leading-snug">

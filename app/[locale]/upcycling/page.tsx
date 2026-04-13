@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Leaf, Scissors, Eye, Sparkles, ChevronDown, Check } from 'lucide-react';
-import { useTranslations } from '@/lib/i18n';
+import { useTranslations, useLocale } from '@/lib/i18n';
+import { submitSiteRequest } from '@/lib/submit-site-request';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
@@ -40,10 +41,13 @@ function UpcyclingHeroImage({ badge, badgeDescription }: { badge: string; badgeD
 
 export default function UpcyclingPage() {
   const t = useTranslations('upcycling');
+  const locale = useLocale();
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
+  const [formSubmitting, setFormSubmitting] = useState(false);
   const [contactMethodOpen, setContactMethodOpen] = useState(false);
   const contactMethodRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({
@@ -140,9 +144,38 @@ export default function UpcyclingPage() {
     setSliderPosition(Math.min(Math.max(position, 0), 100));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Upcycling request submitted:', formData);
+    setFormError(null);
+    setFormSubmitting(true);
+
+    const garment = formData.garment.trim();
+    const nameLine = garment.split('\n')[0]?.slice(0, 120).trim() || 'Upcycling';
+
+    const contactMethodLabel =
+      formData.contactMethod === 'telegram'
+        ? String(t('form.contactTelegram'))
+        : formData.contactMethod === 'email'
+          ? String(t('form.contactEmail'))
+          : String(t('form.contactWhatsapp'));
+
+    const result = await submitSiteRequest({
+      name: nameLine,
+      contact: formData.contact.trim(),
+      message: formData.message.trim(),
+      source: 'upcycling',
+      locale,
+      contactMethod: contactMethodLabel,
+      garment,
+    });
+
+    setFormSubmitting(false);
+
+    if (!result.ok) {
+      setFormError(result.error);
+      return;
+    }
+
     setShowSuccessMessage(true);
     setFormData({ garment: '', contactMethod: 'telegram', contact: '', message: '' });
     setTimeout(() => {
@@ -665,9 +698,10 @@ export default function UpcyclingPage() {
 
             <div>
               <label className="block text-sm tracking-wider mb-2 text-white/80">
-                {t('form.message')}
+                {t('form.message')} *
               </label>
               <textarea
+                required
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 rows={3}
@@ -676,14 +710,21 @@ export default function UpcyclingPage() {
               />
             </div>
 
+            {formError ? (
+              <p className="text-sm text-red-100 text-center" role="alert">
+                {formError}
+              </p>
+            ) : null}
+
             <motion.button
               type="submit"
+              disabled={formSubmitting}
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-12 py-5 bg-white text-[#8B7355] rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center gap-3 mx-auto font-medium"
+              className="w-full sm:w-auto px-12 py-5 bg-white text-[#8B7355] rounded-full text-base sm:text-lg tracking-wider shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center gap-3 mx-auto font-medium disabled:opacity-60 disabled:pointer-events-none"
             >
-              {t('form.submit')}
-              <ArrowRight className="w-5 h-5" />
+              {formSubmitting ? '…' : t('form.submit')}
+              {!formSubmitting && <ArrowRight className="w-5 h-5" />}
             </motion.button>
 
             <p className="text-sm text-white/70 text-center pt-4">
