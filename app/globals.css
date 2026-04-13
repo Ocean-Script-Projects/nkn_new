@@ -4,6 +4,18 @@
 
 :root {
   --font-size: 16px;
+  /* Brand: mustard + sage (reference swatches, no gradient between them in UI) */
+  --brand-mustard: #de932a;
+  --brand-mustard-hover: #b86a12;
+  /* Текст на сплошной горчице (CTA, кнопки) */
+  --brand-mustard-foreground: #ffffff;
+  --brand-sage: #777b56;
+  --brand-sage-hover: #5f6345;
+  --brand-sage-foreground: #f8f6f1;
+  --brand-sage-subtle: #eef0e8;
+  --brand-sage-muted: #5c5f45;
+  /* Linen-like grain (SVG feTurbulence), ~4% overlay */
+  --fabric-noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
   --background: #ffffff;
   --foreground: oklch(0.145 0 0);
   --card: #ffffff;
@@ -99,6 +111,24 @@ html {
 }
 
 @layer utilities {
+  /* Subtle woven / linen feel: use with any background-color on the same element */
+  .bg-fabric-grain {
+    background-image:
+      radial-gradient(circle at 1px 1px, rgb(0 0 0 / 0.035) 1px, transparent 0),
+      var(--fabric-noise);
+    background-size: 22px 22px, 128px 128px;
+    background-blend-mode: multiply, soft-light;
+  }
+
+  /* Dark sections (e.g. CTA): lighter specks */
+  .bg-fabric-grain-dark {
+    background-image:
+      radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.06) 1px, transparent 0),
+      var(--fabric-noise);
+    background-size: 24px 24px, 128px 128px;
+    background-blend-mode: screen, soft-light;
+  }
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
