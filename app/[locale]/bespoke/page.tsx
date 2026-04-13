@@ -13,6 +13,21 @@ import { useRequestModal } from '@/lib/request-modal-context';
 const offlineIcons = [MessageCircle, Users, Ruler, Package];
 const onlineIcons = [MessageCircle, Video, Ruler, Send, Package];
 
+const BESPOKE_HERO_SRC =
+  'https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+
+function BespokeHeroImage() {
+  return (
+    <div className="relative h-full w-full min-h-full overflow-hidden lg:aspect-[4/5] lg:rounded-3xl lg:shadow-2xl">
+      <ImageWithFallback
+        src={BESPOKE_HERO_SRC}
+        alt="Bespoke tailoring"
+        className="h-full w-full object-cover lg:rounded-3xl"
+      />
+    </div>
+  );
+}
+
 export default function BespokePage() {
   const t = useTranslations('bespokePage');
   const { openRequestModal } = useRequestModal();
@@ -26,31 +41,19 @@ export default function BespokePage() {
       <Navigation />
       <div>
         <PageHeader
+          mobileLayout="editorial"
           label={String(t('hero.label'))}
           title={String(t('hero.title'))}
           titleItalic={String(t('hero.titleItalic'))}
           description={String(t('hero.description'))}
           labelColor="#C4A574"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="relative order-first lg:order-none"
-          >
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-                alt="Bespoke tailoring"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-            </div>
-          </motion.div>
+          <BespokeHeroImage />
+          <BespokeHeroImage />
         </PageHeader>
 
         {/* INTRO */}
-        <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-white">
+        <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-white">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <motion.p
               initial={{ opacity: 0, y: 20 }}

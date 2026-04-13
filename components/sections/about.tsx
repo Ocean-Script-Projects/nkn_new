@@ -10,9 +10,9 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="py-32 px-6 md:px-12 bg-gradient-to-br from-[#FAF9F6] to-white relative overflow-hidden"
+      className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-gradient-to-br from-[#FAF9F6] to-white relative overflow-hidden"
     >
-      <DecorativeLogo variant="big" position="bottom-right" />
+      <DecorativeLogo variant="big" position="bottom-right" className="hidden md:block" />
       <div className="absolute inset-0 opacity-[0.03]">
         <div
           className="absolute inset-0"
@@ -24,7 +24,7 @@ export default function AboutSection() {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -44,12 +44,15 @@ export default function AboutSection() {
               </span>
             </motion.div>
 
-            <h2 className="text-5xl md:text-6xl mb-8 leading-tight" style={{ fontFamily: 'serif' }}>
+            <h2
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 sm:mb-8 leading-tight"
+              style={{ fontFamily: 'serif' }}
+            >
               {t('name')} <br />
               <span className="italic">{t('nameItalic')}</span>
             </h2>
 
-            <div className="space-y-6 text-[#8B8B8B] text-lg leading-relaxed">
+            <div className="space-y-5 sm:space-y-6 text-[#8B8B8B] text-base sm:text-lg leading-relaxed">
               <p>{t('description1')}</p>
               <p>{t('description2')}</p>
               <p>{t('description3')}</p>
@@ -60,7 +63,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="flex items-center gap-6 mt-12"
+              className="flex items-center gap-5 sm:gap-6 mt-10 sm:mt-12"
             >
               <div className="text-center">
                 <div className="text-4xl mb-2" style={{ fontFamily: 'serif' }}>
@@ -101,7 +104,7 @@ export default function AboutSection() {
             </motion.div>
 
             <motion.div
-              className="absolute -bottom-8 -right-8 bg-white rounded-2xl p-8 shadow-xl border border-black/5"
+              className="absolute -bottom-4 -right-2 sm:-bottom-8 sm:-right-8 max-w-[min(100%,280px)] sm:max-w-none bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 shadow-xl border border-black/5"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}

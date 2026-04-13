@@ -11,7 +11,9 @@
     "process": "Process",
     "about": "About",
     "contact": "Contact",
-    "request": "Request"
+    "request": "Request",
+    "menu": "Menu",
+    "language": "Language"
   },
   "hero": {
     "location": "Hamburg · Atelier",
@@ -172,7 +174,7 @@
     "title": "Author's",
     "titleItalic": "pieces",
     "subtitle": "Single copy or limited run",
-    "description": "Author's pieces are models in a single copy or limited quantity. Individual adaptation with selection of an author's print for you is available.",
+    "description": "Each piece is made as a one-of-a-kind or in a limited run. Individual adaptation and a bespoke author print for you are available.",
     "productStatus": {
       "oneOfOne": "Single copy.",
       "limited": "Limited run.",

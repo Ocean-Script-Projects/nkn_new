@@ -5,7 +5,6 @@ import { motion } from 'motion/react';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import Link from 'next/link';
 import PiecePreviewCard from '@/components/pieces/PiecePreviewCard';
-import DecorativeLogo from '@/components/shared/DecorativeLogo';
 import PieceDetailModal from '@/components/pieces/PieceDetailModal';
 import piecesData from '@/data/pieces.json';
 
@@ -33,7 +32,7 @@ export default function FeaturedPiecesSection() {
   return (
     <section
       id="pieces"
-      className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12 bg-white relative overflow-hidden"
+      className="py-14 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-6 md:px-12 bg-white relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -41,7 +40,7 @@ export default function FeaturedPiecesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16 md:mb-20"
+          className="text-center mb-10 sm:mb-14 md:mb-16"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
@@ -57,7 +56,10 @@ export default function FeaturedPiecesSection() {
             <div className="h-px w-6 sm:w-8 bg-[#C4A574]" />
           </motion.div>
 
-          <h2 className="text-4xl sm:text-5xl md:text-6xl mb-4 sm:mb-6" style={{ fontFamily: 'serif' }}>
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 sm:mb-5 md:mb-6"
+            style={{ fontFamily: 'serif' }}
+          >
             {t('title')} <span className="italic">{t('titleItalic')}</span>
           </h2>
 
@@ -66,13 +68,13 @@ export default function FeaturedPiecesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed max-w-2xl mx-auto"
+            className="text-sm sm:text-base md:text-lg text-[#8B8B8B] leading-relaxed max-w-2xl mx-auto px-1"
           >
             {t('description')}
           </motion.p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 mb-12 sm:mb-16">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-5 lg:gap-6 mb-10 sm:mb-14">
           {pieces.map((piece, i) => (
             <PiecePreviewCard
               key={piece.id}

@@ -26,9 +26,9 @@ export default function PhilosophySection() {
   return (
     <section
       id="philosophy"
-      className="py-16 sm:py-24 md:py-32 lg:py-14 xl:py-24 2xl:py-32 px-4 sm:px-6 md:px-12 bg-white relative overflow-hidden"
+      className="py-14 sm:py-20 md:py-24 lg:py-14 xl:py-24 2xl:py-32 px-4 sm:px-6 md:px-12 bg-white relative overflow-hidden"
     >
-      <DecorativeLogo variant="short" position="top-right" />
+      <DecorativeLogo variant="short" position="top-right" className="hidden md:block" />
       <div className="absolute inset-0 opacity-[0.02]">
         <div
           className="absolute inset-0"
@@ -45,7 +45,7 @@ export default function PhilosophySection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16 md:mb-20 lg:mb-10 xl:mb-16 2xl:mb-20"
+          className="text-center mb-10 sm:mb-14 md:mb-16 lg:mb-10 xl:mb-16 2xl:mb-20"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
@@ -66,7 +66,7 @@ export default function PhilosophySection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[clamp(1.85rem,4vw,2.75rem)] xl:text-6xl 2xl:text-7xl mb-8 sm:mb-12 lg:mb-5 xl:mb-10 leading-tight px-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-6 sm:mb-8 md:mb-10 lg:mb-5 xl:mb-10 leading-tight px-2 sm:px-4"
             style={{ fontFamily: 'serif' }}
           >
             {t('title')} <br />
@@ -78,13 +78,13 @@ export default function PhilosophySection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-base sm:text-lg md:text-xl lg:text-base xl:text-lg 2xl:text-xl text-[#8B8B8B] leading-relaxed max-w-3xl mx-auto px-4 lg:leading-snug"
+            className="text-sm sm:text-base md:text-lg lg:text-base xl:text-lg 2xl:text-xl text-[#8B8B8B] leading-relaxed max-w-3xl mx-auto px-1 sm:px-4 lg:leading-snug"
           >
             {t('description')}
           </motion.p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 lg:gap-6 lg:mt-10 xl:gap-10 xl:mt-16 2xl:gap-12 2xl:mt-24">
+        <div className="flex flex-col gap-4 sm:gap-5 md:grid md:grid-cols-3 md:gap-10 lg:gap-6 lg:mt-10 xl:gap-10 xl:mt-16 2xl:gap-12 2xl:mt-24">
           {values.map((item, i) => {
             const ItemIcon = item.icon;
             return (
@@ -95,38 +95,45 @@ export default function PhilosophySection() {
                 transition={{ duration: 0.6, delay: i * 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -8 }}
-                className="text-center group"
+                className="group rounded-2xl border border-black/[0.06] border-l-[3px] border-l-[#C4A574]/55 bg-[#FAF9F6]/90 p-5 text-left shadow-[0_8px_30px_-12px_rgba(0,0,0,0.08)] md:border-0 md:border-l-0 md:bg-transparent md:p-0 md:shadow-none md:text-center"
               >
-                <motion.div
-                  whileHover={{ scale: 1.15, rotate: 5 }}
-                  className="relative w-20 sm:w-24 h-20 sm:h-24 lg:w-[4.25rem] lg:h-[4.25rem] xl:w-24 xl:h-24 mx-auto mb-6 sm:mb-8 lg:mb-4"
-                >
+                <div className="flex flex-row items-center gap-4 md:flex-col md:items-center">
                   <motion.div
-                    className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#C4A574]/30 to-[#8B7355]/30 blur-xl"
-                    animate={{
-                      scale: [1, 1.2, 1],
-                      opacity: [0.4, 0.7, 0.4],
-                    }}
-                    transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
-                  />
-
-                  <div className="relative w-full h-full rounded-2xl bg-gradient-to-br from-[#C4A574] via-[#8B7355] to-[#C4A574] flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-shadow">
-                    <ItemIcon className="w-10 h-10 sm:w-12 sm:h-12 lg:w-10 lg:h-10 xl:w-12 xl:h-12 text-white" strokeWidth={1.5} />
-
+                    whileHover={{ scale: 1.15, rotate: 5 }}
+                    className="relative h-[3.75rem] w-[3.75rem] shrink-0 sm:h-24 sm:w-24 lg:h-[4.25rem] lg:w-[4.25rem] xl:h-24 xl:w-24 md:mx-auto md:mb-5 lg:mb-4"
+                  >
                     <motion.div
-                      className="absolute -top-1 -right-1 w-4 h-4 bg-[#DC2626] rounded-full border-2 border-white shadow-lg"
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
+                      className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#C4A574]/30 to-[#8B7355]/30 blur-xl md:opacity-100"
+                      animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.4, 0.7, 0.4],
+                      }}
+                      transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
                     />
-                  </div>
-                </motion.div>
 
-                <h3 className="text-xl sm:text-2xl lg:text-lg xl:text-xl 2xl:text-2xl mb-3 sm:mb-4 lg:mb-2 tracking-wide group-hover:text-[#C4A574] transition-colors">
-                  {t(`values.${item.key}.title`)}
-                </h3>
-                <p className="text-[#8B8B8B] text-sm sm:text-base lg:text-xs xl:text-sm 2xl:text-base leading-relaxed lg:leading-snug">
-                  {t(`values.${item.key}.text`)}
-                </p>
+                    <div className="relative flex h-full w-full items-center justify-center rounded-2xl bg-gradient-to-br from-[#C4A574] via-[#8B7355] to-[#C4A574] shadow-lg transition-shadow md:shadow-xl group-hover:shadow-2xl">
+                      <ItemIcon
+                        className="h-9 w-9 text-white sm:h-12 sm:w-12 lg:h-10 lg:w-10 xl:h-12 xl:w-12"
+                        strokeWidth={1.5}
+                      />
+
+                      <motion.div
+                        className="absolute -right-1 -top-1 hidden h-4 w-4 rounded-full border-2 border-white bg-[#DC2626] shadow-lg md:block"
+                        animate={{ scale: [1, 1.2, 1] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
+                      />
+                    </div>
+                  </motion.div>
+
+                  <div className="min-w-0 flex-1">
+                    <h3 className="mb-2 text-lg font-medium tracking-wide text-neutral-900 sm:mb-3 sm:text-xl md:mb-2 lg:text-lg xl:text-xl 2xl:text-2xl md:text-center group-hover:text-[#C4A574] transition-colors">
+                      {t(`values.${item.key}.title`)}
+                    </h3>
+                    <p className="text-[0.9375rem] leading-[1.65] text-neutral-600 sm:text-base md:text-sm lg:text-sm xl:text-base 2xl:text-base md:leading-snug">
+                      {t(`values.${item.key}.text`)}
+                    </p>
+                  </div>
+                </div>
               </motion.div>
             );
           })}

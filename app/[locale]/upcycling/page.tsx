@@ -9,6 +9,35 @@ import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import PageHeader from '@/components/shared/PageHeader';
 
+const UPCYCLING_HERO_SRC =
+  'https://images.unsplash.com/photo-1751121543103-f42ef3515e02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+
+function UpcyclingHeroImage({ badge, badgeDescription }: { badge: string; badgeDescription: string }) {
+  return (
+    <div className="relative h-full w-full min-h-full overflow-hidden lg:aspect-[4/5] lg:rounded-3xl lg:shadow-2xl">
+      <ImageWithFallback
+        src={UPCYCLING_HERO_SRC}
+        alt="Upcycling transformation"
+        className="h-full w-full object-cover lg:rounded-3xl"
+      />
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1 }}
+        className="absolute bottom-6 left-6 right-6 hidden lg:block"
+      >
+        <div className="rounded-2xl bg-white/95 p-4 shadow-xl backdrop-blur-sm">
+          <div className="mb-1 flex items-center gap-2 font-medium uppercase tracking-wider text-[#059669]">
+            <Leaf className="h-4 w-4" />
+            <span className="text-xs">{badge}</span>
+          </div>
+          <p className="text-xs text-[#8B8B8B]">{badgeDescription}</p>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
 export default function UpcyclingPage() {
   const t = useTranslations('upcycling');
   const [sliderPosition, setSliderPosition] = useState(50);
@@ -126,6 +155,7 @@ export default function UpcyclingPage() {
       <Navigation />
       
       <PageHeader
+        mobileLayout="editorial"
         label={String(t('label'))}
         title={String(t('title'))}
         titleItalic={String(t('titleItalic'))}
@@ -141,34 +171,12 @@ export default function UpcyclingPage() {
         labelColor="#059669"
         hasBackgroundOrbs
       >
-        <div className="relative">
-          <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1751121543103-f42ef3515e02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-              alt="Upcycling transformation"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="absolute bottom-6 left-6 right-6"
-            >
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl">
-                <div className="flex items-center gap-2 text-[#059669] mb-1">
-                  <Leaf className="w-4 h-4" />
-                  <span className="text-xs tracking-wider uppercase font-medium">{t('badge')}</span>
-                </div>
-                <p className="text-xs text-[#8B8B8B]">{t('badgeDescription')}</p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
+        <UpcyclingHeroImage badge={String(t('badge'))} badgeDescription={String(t('badgeDescription'))} />
+        <UpcyclingHeroImage badge={String(t('badge'))} badgeDescription={String(t('badgeDescription'))} />
       </PageHeader>
 
       {/* PHILOSOPHY BLOCK */}
-      <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-white">
+      <section className="py-12 sm:py-16 md:py-28 px-4 sm:px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
@@ -183,7 +191,7 @@ export default function UpcyclingPage() {
                 <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">{t('philosophy.label')}</span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight" style={{ fontFamily: 'serif' }}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight leading-tight" style={{ fontFamily: 'serif' }}>
                 {t('philosophy.title')} <br />
                 <span className="italic">{t('philosophy.titleItalic')}</span>
               </h2>
@@ -232,7 +240,7 @@ export default function UpcyclingPage() {
       </section>
 
       {/* BEFORE/AFTER SLIDER */}
-      <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12">
+      <section className="py-12 sm:py-16 md:py-28 px-4 sm:px-6 md:px-12">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -250,7 +258,7 @@ export default function UpcyclingPage() {
                 <div className="h-px w-8 bg-[#C4A574]" />
               </div>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl tracking-tight" style={{ fontFamily: 'serif' }}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight" style={{ fontFamily: 'serif' }}>
                 {t('slider.title')}
               </h2>
             </div>
@@ -318,7 +326,7 @@ export default function UpcyclingPage() {
       </section>
 
       {/* PROCESS - 4 STEPS */}
-      <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-gradient-to-b from-white to-[#FAF9F6]">
+      <section className="py-12 sm:py-16 md:py-28 px-4 sm:px-6 md:px-12 bg-gradient-to-b from-white to-[#FAF9F6]">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -333,7 +341,7 @@ export default function UpcyclingPage() {
               <div className="h-px w-8 bg-[#059669]" />
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight" style={{ fontFamily: 'serif' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight" style={{ fontFamily: 'serif' }}>
               {t('process.title')} <span className="italic">{t('process.titleItalic')}</span>
             </h2>
           </motion.div>
@@ -385,10 +393,10 @@ export default function UpcyclingPage() {
       </section>
 
       {/* WHAT CAN BE UPCYCLED - Cards */}
-      <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12">
+      <section className="py-12 sm:py-16 md:py-28 px-4 sm:px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6" style={{ fontFamily: 'serif' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight mb-6" style={{ fontFamily: 'serif' }}>
               {t('categories.title')} <span className="italic">{t('categories.titleItalic')}</span>
             </h2>
           </div>
@@ -439,7 +447,7 @@ export default function UpcyclingPage() {
             transition={{ duration: 1 }}
             className="space-y-8"
           >
-            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight" style={{ fontFamily: 'serif' }}>
+            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight tracking-tight" style={{ fontFamily: 'serif' }}>
               "{t('quote.text1')} <br className="hidden sm:block" />
               {t('quote.text2')}
               <br />
@@ -459,7 +467,7 @@ export default function UpcyclingPage() {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-white">
+      <section className="py-12 sm:py-16 md:py-28 px-4 sm:px-6 md:px-12 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -474,7 +482,7 @@ export default function UpcyclingPage() {
               <div className="h-px w-8 bg-[#059669]" />
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl tracking-tight" style={{ fontFamily: 'serif' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight" style={{ fontFamily: 'serif' }}>
               {t('faq.title')}
             </h2>
           </motion.div>
@@ -528,7 +536,7 @@ export default function UpcyclingPage() {
       </section>
 
       {/* CTA FORM */}
-      <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-gradient-to-br from-[#C4A574] to-[#8B7355] text-white relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-28 px-4 sm:px-6 md:px-12 bg-gradient-to-br from-[#C4A574] to-[#8B7355] text-white relative overflow-hidden">
         <motion.div
           className="absolute inset-0 opacity-10"
           animate={{
@@ -549,7 +557,7 @@ export default function UpcyclingPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight tracking-tight" style={{ fontFamily: 'serif' }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 leading-tight tracking-tight" style={{ fontFamily: 'serif' }}>
               {t('cta.title')} <br className="sm:hidden" />
               <span className="italic">{t('cta.titleItalic')}</span>
             </h2>

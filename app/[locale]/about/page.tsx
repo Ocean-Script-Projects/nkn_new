@@ -9,6 +9,26 @@ import PageHeader from '@/components/shared/PageHeader';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations } from '@/lib/i18n';
 
+const ABOUT_HERO_SRC =
+  'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+
+function AboutHeroImage() {
+  return (
+    <div className="relative h-full w-full min-h-full overflow-hidden lg:aspect-[4/5] lg:rounded-3xl lg:shadow-2xl">
+      <ImageWithFallback
+        src={ABOUT_HERO_SRC}
+        alt="Natalia Khreshkova portrait"
+        className="h-full w-full object-cover lg:rounded-3xl"
+      />
+      <motion.div
+        className="pointer-events-none absolute -bottom-8 -right-8 -z-10 hidden h-64 w-64 rounded-full bg-gradient-to-br from-[#C4A574]/20 to-transparent blur-3xl lg:block"
+        animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
+        transition={{ duration: 5, repeat: Infinity }}
+      />
+    </div>
+  );
+}
+
 export default function AboutPage() {
   const t = useTranslations('aboutPage');
   const [showContactModal, setShowContactModal] = useState(false);
@@ -45,6 +65,7 @@ export default function AboutPage() {
       <Navigation />
       <div>
         <PageHeader
+          mobileLayout="editorial"
           label={String(t('hero.label'))}
           title={String(t('hero.title'))}
           titleItalic={String(t('hero.titleItalic'))}
@@ -52,26 +73,8 @@ export default function AboutPage() {
           badges={[String(t('hero.badge1')), String(t('hero.badge2')), String(t('hero.badge3'))]}
           labelColor="#C4A574"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="relative order-first lg:order-none"
-          >
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-                alt="Natalia Khreshkova portrait"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-            </div>
-            <motion.div
-              className="absolute -z-10 -right-8 -bottom-8 w-64 h-64 bg-gradient-to-br from-[#C4A574]/20 to-transparent rounded-full blur-3xl"
-              animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
-              transition={{ duration: 5, repeat: Infinity }}
-            />
-          </motion.div>
+          <AboutHeroImage />
+          <AboutHeroImage />
         </PageHeader>
 
         {/* PERSONAL STORY */}
@@ -227,7 +230,7 @@ export default function AboutPage() {
               </div>
 
               <h2
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight leading-tight"
                 style={{ fontFamily: 'serif' }}
               >
                 {t('philosophy.title')}
@@ -247,7 +250,7 @@ export default function AboutPage() {
                     transition={{ duration: 0.6, delay: i * 0.15 }}
                     className="relative"
                   >
-                    <div className="bg-white rounded-3xl p-8 sm:p-10 border border-black/5 hover:border-[#C4A574]/30 transition-all duration-500 shadow-lg hover:shadow-2xl h-full">
+                    <div className="bg-white rounded-3xl p-5 sm:p-8 md:p-10 border border-black/5 hover:border-[#C4A574]/30 transition-all duration-500 shadow-lg hover:shadow-2xl h-full">
                       <div className="mb-6">
                         <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#C4A574] to-[#8B7355] flex items-center justify-center">
                           <Icon className="w-7 h-7 text-white" strokeWidth={1.5} />
@@ -289,7 +292,7 @@ export default function AboutPage() {
               className="text-center mb-12 sm:mb-16 md:mb-20"
             >
               <h2
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight mb-6 leading-tight"
                 style={{ fontFamily: 'serif' }}
               >
                 {t('process.title')} <span className="italic">{t('process.titleItalic')}</span>

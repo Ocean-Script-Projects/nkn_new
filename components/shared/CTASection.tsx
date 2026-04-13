@@ -49,7 +49,7 @@ export default function CTASection({
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight tracking-tight" style={{ fontFamily: 'serif' }}>
+          <h2 className="break-words px-1 text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight tracking-tight sm:px-0" style={{ fontFamily: 'serif' }}>
             {title} <br />
             <span className="italic" style={{ color: gradientFrom }}>{titleItalic}</span>
           </h2>

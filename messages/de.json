@@ -11,7 +11,9 @@
     "process": "Prozess",
     "about": "Über mich",
     "contact": "Kontakt",
-    "request": "Anfrage"
+    "request": "Anfrage",
+    "menu": "Menü",
+    "language": "Sprache"
   },
   "hero": {
     "location": "Hamburg · Atelier",
@@ -172,7 +174,7 @@
     "title": "Autoren",
     "titleItalic": "stücke",
     "subtitle": "In Einzelanfertigung oder limitierter Auflage",
-    "description": "Autorenstücke sind Modelle in Einzelanfertigung oder limitierter Stückzahl. Individuelle Anpassung mit Auswahl eines Autorendrucks für Sie ist möglich.",
+    "description": "Jedes Stück entsteht als Unikat oder in limitierter Auflage. Individuelle Anpassung und Auswahl eines Autorendrucks für Sie sind möglich.",
     "productStatus": {
       "oneOfOne": "Einzelstück.",
       "limited": "Limitierte Auflage.",

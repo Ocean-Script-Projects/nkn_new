@@ -52,7 +52,7 @@ export default function EventsPage() {
         </motion.div>
       </PageHeader>
 
-      <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12">
+      <section className="py-12 sm:py-16 md:py-28 px-4 sm:px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -68,10 +68,10 @@ export default function EventsPage() {
               </span>
               <div className="h-px w-8 bg-[#C4A574]" />
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl mb-4" style={{ fontFamily: 'serif' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 leading-tight" style={{ fontFamily: 'serif' }}>
               {t('sectionTitle')}
             </h2>
-            <p className="text-base sm:text-lg text-[#8B8B8B] max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto px-1">
               {t('sectionDescription')}
             </p>
           </motion.div>

@@ -23,6 +23,21 @@ interface Piece {
   descriptionKey: string;
 }
 
+const HERO_IMAGE_SRC =
+  'https://images.unsplash.com/photo-1684259499086-93cb3e555803?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+
+function PiecesHeroImage() {
+  return (
+    <div className="relative h-full w-full min-h-full overflow-hidden lg:aspect-[4/5] lg:rounded-3xl lg:shadow-2xl">
+      <ImageWithFallback
+        src={HERO_IMAGE_SRC}
+        alt="Atelier process"
+        className="h-full w-full object-cover lg:rounded-3xl"
+      />
+    </div>
+  );
+}
+
 export default function PiecesPage() {
   const t = useTranslations('pieces');
   const locale = useLocale();
@@ -53,10 +68,11 @@ export default function PiecesPage() {
   }, [pieces, selectedCategory]);
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6]">
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#FAF9F6]">
       <Navigation />
       
       <PageHeader
+        mobileLayout="editorial"
         label={String(t('label'))}
         title={String(t('title'))}
         titleItalic={String(t('titleItalic'))}
@@ -64,34 +80,22 @@ export default function PiecesPage() {
         description={String(t('description'))}
         labelColor="#C4A574"
       >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="relative"
-        >
-          <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1684259499086-93cb3e555803?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-              alt="Atelier process"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-          </div>
-        </motion.div>
+        <PiecesHeroImage />
+        <PiecesHeroImage />
       </PageHeader>
 
       <CategoryFilter
+        className="mt-2 pt-5 sm:mt-0 sm:pt-10"
         categories={categories}
         selectedCategory={selectedCategory}
         onSelect={setSelectedCategory}
       />
 
       <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
+        <div className="mx-auto max-w-7xl min-w-0">
           <motion.div
             layout
-            className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6"
+            className="grid min-w-0 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6"
           >
             <AnimatePresence mode="popLayout">
               {filteredPieces.map((piece, i) => (
@@ -109,9 +113,9 @@ export default function PiecesPage() {
       </section>
 
       {/* STORYTELLING BLOCK */}
-      <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <section className="overflow-x-clip py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12 bg-white">
+        <div className="mx-auto max-w-6xl min-w-0">
+          <div className="grid min-w-0 grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -120,7 +124,7 @@ export default function PiecesPage() {
               className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl"
             >
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1684259499086-93cb3e555803?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                src={HERO_IMAGE_SRC}
                 alt="Atelier process"
                 className="w-full h-full object-cover"
               />
@@ -138,7 +142,7 @@ export default function PiecesPage() {
                 <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">{t('process.label')}</span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight" style={{ fontFamily: 'serif' }}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight leading-tight" style={{ fontFamily: 'serif' }}>
                 {t('process.title')} <span className="italic">{t('process.titleItalic')}</span>
               </h2>
 
@@ -162,17 +166,17 @@ export default function PiecesPage() {
       </section>
 
       {/* UPCYCLING CROSS-LINK */}
-      <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12">
-        <div className="max-w-6xl mx-auto">
+      <section className="overflow-x-clip py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12">
+        <div className="mx-auto max-w-6xl min-w-0">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="relative bg-gradient-to-br from-[#059669]/5 to-transparent rounded-[3rem] p-8 sm:p-12 md:p-16 overflow-hidden border border-[#059669]/10"
+            className="relative max-w-full overflow-hidden rounded-[2rem] border border-[#059669]/10 bg-gradient-to-br from-[#059669]/5 to-transparent p-6 sm:rounded-[3rem] sm:p-12 md:p-16"
           >
             <motion.div
-              className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#059669]/10 to-transparent rounded-full blur-3xl"
+              className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 bg-gradient-to-bl from-[#059669]/10 to-transparent blur-3xl sm:-right-8 sm:top-0 sm:h-96 sm:w-96"
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.3, 0.5, 0.3],
@@ -187,7 +191,7 @@ export default function PiecesPage() {
                   <span className="text-[#059669] text-xs sm:text-sm tracking-[0.4em] uppercase">{t('upcycling.label')}</span>
                 </div>
 
-                <h2 className="text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight" style={{ fontFamily: 'serif' }}>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight leading-tight" style={{ fontFamily: 'serif' }}>
                   {t('upcycling.title')} <span className="italic">{t('upcycling.titleItalic')}</span>
                 </h2>
 

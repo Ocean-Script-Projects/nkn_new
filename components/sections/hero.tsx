@@ -35,12 +35,8 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-32 md:pt-36 lg:pb-24 lg:pt-32 xl:pb-28 xl:pt-36">
-      {/* Премиальный фон: тёплый градиент + мягкие блики */}
-      <div
-        className="absolute inset-0 bg-[#F7F4EF]"
-        aria-hidden
-      />
+    <section className="relative overflow-hidden pb-14 pt-24 sm:pb-16 sm:pt-28 md:pt-32 lg:pb-24 lg:pt-32 xl:pb-28 xl:pt-36">
+      <div className="absolute inset-0 bg-[#F7F4EF]" aria-hidden />
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_85%_15%,rgba(196,165,116,0.09),transparent_55%),radial-gradient(ellipse_60%_50%_at_10%_90%,rgba(139,115,85,0.06),transparent_50%),linear-gradient(180deg,#FBFAF7_0%,#F5F1EA_45%,#F8F6F1_100%)]"
         aria-hidden
@@ -62,17 +58,100 @@ export default function HeroSection() {
         variant="big"
         position="bottom-left"
         subtle
-        className="!bottom-6 !left-2 rotate-0 md:!bottom-10 md:!left-6 md:scale-110 lg:scale-125"
+        className="hidden md:block !bottom-6 !left-2 rotate-0 md:!bottom-10 md:!left-6 md:scale-110 lg:scale-125"
       />
       <DecorativeLogo
         variant="short"
         position="top-right"
         subtle
-        className="!top-20 !right-0 opacity-[0.03] md:opacity-[0.045] md:!top-24 md:!right-8"
+        className="hidden md:block !top-20 !right-0 opacity-[0.03] md:opacity-[0.045] md:!top-24 md:!right-8"
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1360px] px-5 sm:px-8 lg:px-10 xl:px-14 lg:grid lg:grid-cols-[1fr_minmax(300px,420px)] lg:grid-rows-[auto_auto] lg:items-stretch lg:gap-x-14 lg:gap-y-12 xl:grid-cols-[1fr_minmax(300px,440px)] xl:gap-x-20 xl:gap-y-14">
-        {/* Шапка: редакторская линия */}
+      {/* ——— Mobile / tablet: image-led hero ——— */}
+      <div className="relative z-10 mx-auto w-full max-w-[1360px] px-4 sm:px-6 lg:hidden">
+        <div className="mb-5 flex flex-col gap-2 border-b border-[#C4A574]/20 pb-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-[#7a6238] sm:text-[11px]">
+            {t('location')}
+          </p>
+          <p className="text-[9px] font-medium uppercase tracking-[0.22em] text-neutral-400 sm:max-w-[55%] sm:text-right sm:text-[10px] sm:leading-relaxed">
+            {t('experience')}
+            <span className="mx-1.5 inline-block h-1 w-1 rounded-full bg-[#C4A574]/50 align-middle" />
+            {t('individual')}
+          </p>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="relative overflow-hidden rounded-2xl bg-[#E8E2D9] shadow-[0_20px_50px_-24px_rgba(0,0,0,0.25)] ring-1 ring-black/[0.06] sm:rounded-3xl"
+        >
+          <div className="relative aspect-[3/4] w-full max-h-[min(52svh,440px)] sm:max-h-[min(50svh,480px)]">
+            <img
+              src={src}
+              alt={String(t('nameFull'))}
+              className="absolute inset-0 h-full w-full object-cover object-top"
+              loading="eager"
+              decoding="async"
+              onError={onImgError}
+            />
+            <div
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1a1510]/90 via-[#1a1510]/25 to-transparent"
+              aria-hidden
+            />
+            <div className="absolute inset-x-0 bottom-0 px-4 pb-5 pt-20 sm:px-6 sm:pb-6">
+              <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-white/85 sm:text-[10px]">
+                {t('nameFull')}
+              </p>
+              <p className="mt-1 text-sm font-normal tracking-wide text-white/95 sm:text-base">{t('role')}</p>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-6 space-y-5 sm:mt-8"
+        >
+          <h1
+            className="font-serif text-[1.75rem] font-normal leading-[1.12] tracking-[-0.02em] text-neutral-950 sm:text-[2rem]"
+            style={{ fontFamily: 'serif' }}
+          >
+            <span className="block">{t('title')}</span>
+            <span className="mt-1.5 block text-neutral-800 italic sm:mt-2">{t('titleItalic')}</span>
+            {String(t('titleEnd')).trim() ? (
+              <span className="mt-2 block text-[0.95em] font-normal tracking-normal text-neutral-700">
+                {t('titleEnd')}
+              </span>
+            ) : null}
+          </h1>
+
+          <p className="text-sm font-light leading-[1.65] tracking-wide text-neutral-600 sm:text-[0.9375rem] sm:leading-[1.7]">
+            {t('description')}
+          </p>
+
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-stretch">
+            <button
+              type="button"
+              onClick={() => openRequestModal()}
+              className="group relative inline-flex min-h-[48px] w-full flex-1 items-center justify-center gap-2 overflow-hidden rounded-full bg-neutral-950 px-6 py-3.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white shadow-[0_12px_32px_-8px_rgba(0,0,0,0.3)] ring-1 ring-black/10 transition-all duration-300 active:scale-[0.99] sm:min-h-[44px] sm:flex-initial sm:px-8"
+            >
+              <span className="relative z-10">{t('orderButton')}</span>
+              <ArrowRight className="relative z-10 h-4 w-4 shrink-0" aria-hidden />
+            </button>
+            <Link
+              href={`/${locale}/pieces`}
+              className="inline-flex min-h-[48px] w-full flex-1 items-center justify-center rounded-full border border-neutral-900/15 bg-white/95 px-6 py-3.5 text-[11px] font-medium uppercase tracking-[0.14em] text-neutral-800 shadow-sm backdrop-blur-sm transition-all duration-300 active:scale-[0.99] sm:min-h-[44px] sm:flex-initial sm:px-8"
+            >
+              {t('portfolioButton')}
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* ——— Desktop ——— */}
+      <div className="relative z-10 mx-auto hidden w-full max-w-[1360px] px-5 sm:px-8 lg:grid lg:px-10 xl:px-14 lg:grid-cols-[1fr_minmax(300px,420px)] lg:grid-rows-[auto_auto] lg:items-stretch lg:gap-x-14 lg:gap-y-12 xl:grid-cols-[1fr_minmax(300px,440px)] xl:gap-x-20 xl:gap-y-14">
         <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-b border-[#C4A574]/20 pb-5 lg:col-span-2 lg:row-start-1">
           <div className="flex items-center gap-4">
             <span className="hidden h-px w-10 bg-gradient-to-r from-[#C4A574] to-transparent sm:block" aria-hidden />
@@ -81,12 +160,12 @@ export default function HeroSection() {
             </p>
           </div>
           <p className="text-[9px] font-medium uppercase tracking-[0.28em] text-neutral-400 sm:text-[10px]">
-            {t('experience')} <span className="mx-1.5 inline-block h-1 w-1 rounded-full bg-[#C4A574]/50 align-middle" />{' '}
+            {t('experience')}{' '}
+            <span className="mx-1.5 inline-block h-1 w-1 rounded-full bg-[#C4A574]/50 align-middle" />{' '}
             {t('individual')}
           </p>
         </div>
 
-        {/* Левый блок */}
         <div className="mt-8 flex w-full max-w-lg flex-col gap-10 lg:col-start-1 lg:row-start-2 lg:mt-0 lg:max-w-none lg:justify-center lg:gap-10 lg:pr-4 xl:gap-12 xl:pr-6">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -151,7 +230,6 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Фото: двойная рамка, объём */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

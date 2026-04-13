@@ -28,7 +28,7 @@ export default function PieceCard({ piece, onRequest, onClick, index }: PieceCar
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="group"
+      className="group min-w-0"
     >
       <div
         className="relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
@@ -64,10 +64,10 @@ export default function PieceCard({ piece, onRequest, onClick, index }: PieceCar
           </motion.button>
         </div>
         <div className="p-4 sm:p-5">
-          <h3 className="text-lg sm:text-xl mb-1.5 tracking-tight" style={{ fontFamily: 'serif' }}>
+          <h3 className="break-words text-lg sm:text-xl mb-1.5 tracking-tight" style={{ fontFamily: 'serif' }}>
             {piece.name}
           </h3>
-          <div className="text-xs sm:text-sm text-[#C4A574] tracking-widest">
+          <div className="break-words text-xs sm:text-sm text-[#C4A574] tracking-widest">
             {piece.type}
           </div>
         </div>

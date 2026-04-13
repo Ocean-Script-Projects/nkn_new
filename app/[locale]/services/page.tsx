@@ -32,6 +32,40 @@ const COLORS = [
 ];
 const ACCENT_COLORS = ['#C4A574', '#DC2626', '#8B7355', '#B8985E', '#A8896A', '#C4A574', '#8B7355'];
 
+const SERVICES_HERO_SRC =
+  'https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+
+function ServicesHeroImage({ badgeTitle, badgeDesc }: { badgeTitle: string; badgeDesc: string }) {
+  return (
+    <div className="relative h-full w-full min-h-full overflow-hidden lg:aspect-[4/5] lg:rounded-3xl lg:shadow-2xl">
+      <ImageWithFallback
+        src={SERVICES_HERO_SRC}
+        alt="Atelier workspace"
+        className="h-full w-full object-cover lg:rounded-3xl"
+      />
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1 }}
+        className="absolute bottom-6 left-6 right-6 hidden lg:block"
+      >
+        <div className="rounded-2xl bg-white/95 p-4 shadow-xl backdrop-blur-sm">
+          <div className="mb-1 flex items-center gap-2 font-medium uppercase tracking-wider text-[#C4A574]">
+            <Scissors className="h-4 w-4" />
+            <span className="text-xs">{badgeTitle}</span>
+          </div>
+          <p className="text-xs text-[#8B8B8B]">{badgeDesc}</p>
+        </div>
+      </motion.div>
+      <motion.div
+        className="pointer-events-none absolute -bottom-8 -right-8 -z-10 hidden h-64 w-64 rounded-full bg-gradient-to-br from-[#C4A574]/20 to-transparent blur-3xl lg:block"
+        animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
+        transition={{ duration: 5, repeat: Infinity }}
+      />
+    </div>
+  );
+}
+
 export default function ServicesPage() {
   const t = useTranslations('servicesPage');
   const [selectedService, setSelectedService] = useState<number | null>(null);
@@ -68,6 +102,7 @@ export default function ServicesPage() {
       <Navigation />
       <div>
         <PageHeader
+          mobileLayout="editorial"
           label={String(t('hero.label'))}
           title={String(t('hero.title'))}
           titleItalic={String(t('hero.titleItalic'))}
@@ -76,35 +111,8 @@ export default function ServicesPage() {
           badges={[String(t('hero.badge1')), String(t('hero.badge2')), String(t('hero.badge3'))]}
           labelColor="#C4A574"
         >
-          <div className="relative">
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-                alt="Atelier workspace"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1 }}
-                className="absolute bottom-6 left-6 right-6"
-              >
-                <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl">
-                  <div className="flex items-center gap-2 text-[#C4A574] mb-1">
-                    <Scissors className="w-4 h-4" />
-                    <span className="text-xs tracking-wider uppercase font-medium">{t('hero.badgeTitle')}</span>
-                  </div>
-                  <p className="text-xs text-[#8B8B8B]">{t('hero.badgeDesc')}</p>
-                </div>
-              </motion.div>
-            </div>
-            <motion.div
-              className="absolute -z-10 -right-8 -bottom-8 w-64 h-64 bg-gradient-to-br from-[#C4A574]/20 to-transparent rounded-full blur-3xl"
-              animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
-              transition={{ duration: 5, repeat: Infinity }}
-            />
-          </div>
+          <ServicesHeroImage badgeTitle={String(t('hero.badgeTitle'))} badgeDesc={String(t('hero.badgeDesc'))} />
+          <ServicesHeroImage badgeTitle={String(t('hero.badgeTitle'))} badgeDesc={String(t('hero.badgeDesc'))} />
         </PageHeader>
 
         {/* SERVICES GRID */}
@@ -248,7 +256,7 @@ export default function ServicesPage() {
                                 {service.subtitle}
                               </div>
                               <h2
-                                className="text-3xl sm:text-4xl md:text-5xl tracking-tight"
+                                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight"
                                 style={{ fontFamily: 'serif' }}
                               >
                                 {service.title}
@@ -327,7 +335,7 @@ export default function ServicesPage() {
         {/* REQUEST FORM SECTION */}
         <section
           id="request-form"
-          className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-black text-white relative overflow-hidden"
+          className="py-12 sm:py-16 md:py-28 px-4 sm:px-6 md:px-12 bg-black text-white relative overflow-hidden"
         >
           <motion.div
             className="absolute inset-0 opacity-10"
@@ -373,7 +381,7 @@ export default function ServicesPage() {
               </motion.div>
 
               <h2
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight tracking-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 leading-tight tracking-tight"
                 style={{ fontFamily: 'serif' }}
               >
                 {t('form.title')} <br className="sm:hidden" />

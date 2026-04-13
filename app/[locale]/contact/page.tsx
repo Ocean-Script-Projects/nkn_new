@@ -9,6 +9,21 @@ import PageHeader from '@/components/shared/PageHeader';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations } from '@/lib/i18n';
 
+const CONTACT_HERO_SRC =
+  'https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+
+function ContactHeroImage() {
+  return (
+    <div className="relative h-full w-full min-h-full overflow-hidden lg:aspect-[4/5] lg:rounded-3xl lg:shadow-2xl">
+      <ImageWithFallback
+        src={CONTACT_HERO_SRC}
+        alt="Atelier workspace"
+        className="h-full w-full object-cover lg:rounded-3xl"
+      />
+    </div>
+  );
+}
+
 export default function ContactPage() {
   const t = useTranslations('contactPage');
   const [selectedService, setSelectedService] = useState<string[]>([]);
@@ -66,27 +81,15 @@ export default function ContactPage() {
       <Navigation />
       <div>
         <PageHeader
+          mobileLayout="editorial"
           label={String(t('hero.label'))}
           title={String(t('hero.title'))}
           titleItalic={String(t('hero.titleItalic'))}
           description={String(t('hero.description'))}
           labelColor="#C4A574"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="relative order-first lg:order-none"
-          >
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-                alt="Atelier workspace"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-            </div>
-          </motion.div>
+          <ContactHeroImage />
+          <ContactHeroImage />
         </PageHeader>
 
         {/* CONTACT METHODS */}
@@ -100,7 +103,7 @@ export default function ContactPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 whileHover={{ y: -4 }}
-                className="relative bg-gradient-to-br from-[#C4A574] to-[#8B7355] text-white rounded-3xl p-8 sm:p-10 shadow-xl overflow-hidden"
+                className="relative bg-gradient-to-br from-[#C4A574] to-[#8B7355] text-white rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl overflow-hidden"
               >
                 <div className="absolute inset-0 opacity-10">
                   <div
@@ -118,7 +121,7 @@ export default function ContactPage() {
                   </div>
 
                   <h3
-                    className="text-2xl sm:text-3xl mb-3 tracking-tight"
+                    className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-3 tracking-tight"
                     style={{ fontFamily: 'serif' }}
                   >
                     {t('telegram.title')}
@@ -149,14 +152,14 @@ export default function ContactPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 whileHover={{ y: -4 }}
-                className="bg-[#FAF9F6] border border-black/10 rounded-3xl p-8 sm:p-10 shadow-lg hover:shadow-2xl transition-shadow"
+                className="bg-[#FAF9F6] border border-black/10 rounded-3xl p-5 sm:p-8 md:p-10 shadow-lg hover:shadow-2xl transition-shadow"
               >
                 <div className="w-14 h-14 rounded-2xl bg-[#C4A574]/10 flex items-center justify-center mb-6">
                   <Mail className="w-7 h-7 text-[#C4A574]" />
                 </div>
 
                 <h3
-                  className="text-2xl sm:text-3xl mb-3 tracking-tight"
+                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-3 tracking-tight"
                   style={{ fontFamily: 'serif' }}
                 >
                   {t('email.title')}
@@ -384,7 +387,7 @@ export default function ContactPage() {
               </div>
 
               <h2
-                className="text-3xl sm:text-4xl tracking-tight"
+                className="text-2xl sm:text-3xl md:text-4xl tracking-tight"
                 style={{ fontFamily: 'serif' }}
               >
                 {t('faq.title')}
@@ -456,7 +459,7 @@ export default function ContactPage() {
               </div>
 
               <h2
-                className="text-3xl sm:text-4xl md:text-5xl mb-6 tracking-tight"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight"
                 style={{ fontFamily: 'serif' }}
               >
                 {t('location.title')}
@@ -490,7 +493,7 @@ export default function ContactPage() {
               className="space-y-8"
             >
               <div
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight tracking-tight"
                 style={{ fontFamily: 'serif' }}
               >
                 {t('quote.text')}
@@ -515,7 +518,7 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               className="text-center space-y-4"
             >
-              <h2 className="text-2xl sm:text-3xl tracking-tight" style={{ fontFamily: 'serif' }}>
+              <h2 className="text-xl sm:text-2xl md:text-3xl tracking-tight" style={{ fontFamily: 'serif' }}>
                 {t('seo.title')}
               </h2>
               <p className="text-sm sm:text-base text-[#8B8B8B] leading-relaxed">

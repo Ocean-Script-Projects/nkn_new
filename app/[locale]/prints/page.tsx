@@ -9,6 +9,21 @@ import { useTranslations } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 
+const PRINTS_HERO_SRC =
+  'https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+
+function PrintsHeroImage() {
+  return (
+    <div className="relative h-full w-full min-h-full overflow-hidden lg:aspect-[4/5] lg:rounded-3xl lg:shadow-2xl">
+      <ImageWithFallback
+        src={PRINTS_HERO_SRC}
+        alt="Prints"
+        className="h-full w-full object-cover lg:rounded-3xl"
+      />
+    </div>
+  );
+}
+
 export default function PrintsPage() {
   const t = useTranslations('printsPage');
   const { openRequestModal } = useRequestModal();
@@ -20,27 +35,15 @@ export default function PrintsPage() {
       <Navigation />
       <div>
         <PageHeader
+          mobileLayout="editorial"
           label={String(t('hero.label'))}
           title={String(t('hero.title'))}
           titleItalic={String(t('hero.titleItalic'))}
           subtitle={String(t('hero.subtitle'))}
           labelColor="#C9973C"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="relative order-first lg:order-none"
-          >
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-                alt="Prints"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-            </div>
-          </motion.div>
+          <PrintsHeroImage />
+          <PrintsHeroImage />
         </PageHeader>
 
         <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-white">
@@ -50,7 +53,7 @@ export default function PrintsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed mb-8"
+              className="text-base sm:text-lg text-neutral-600 leading-relaxed mb-6 sm:mb-8"
             >
               {t('intro')}
             </motion.p>
@@ -59,7 +62,7 @@ export default function PrintsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-xl sm:text-2xl text-[#1a1a1a] tracking-tight mb-16"
+              className="text-lg sm:text-xl md:text-2xl text-[#1a1a1a] tracking-tight mb-12 sm:mb-16 leading-snug"
               style={{ fontFamily: 'serif' }}
             >
               {t('subheading')}
@@ -70,7 +73,7 @@ export default function PrintsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-2xl sm:text-3xl md:text-4xl tracking-tight mb-12"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-tight mb-8 sm:mb-12"
               style={{ fontFamily: 'serif' }}
             >
               {t('directionsTitle')}
@@ -86,7 +89,7 @@ export default function PrintsPage() {
                   transition={{ duration: 0.6, delay: i * 0.1 }}
                   className="border-t border-black/10 pt-8 first:border-t-0 first:pt-0"
                 >
-                  <h3 className="text-xl sm:text-2xl mb-4 tracking-tight text-[#1a1a1a]" style={{ fontFamily: 'serif' }}>
+                  <h3 className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 tracking-tight text-[#1a1a1a]" style={{ fontFamily: 'serif' }}>
                     {String(i + 1)}. {t(`directions.${id}.title`)}
                   </h3>
                   <p className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed">

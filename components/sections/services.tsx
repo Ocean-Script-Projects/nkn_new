@@ -22,16 +22,16 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-32 lg:py-16 xl:py-24 2xl:py-32 px-6 md:px-12 bg-[#FAF9F6] relative overflow-hidden"
+      className="py-16 sm:py-20 md:py-24 lg:py-16 xl:py-24 2xl:py-32 px-4 sm:px-6 md:px-12 bg-[#FAF9F6] relative overflow-hidden"
     >
-      <DecorativeLogo variant="big" position="bottom-left" />
+      <DecorativeLogo variant="big" position="bottom-left" className="hidden md:block" />
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20 lg:mb-10 xl:mb-16 2xl:mb-20"
+          className="text-center mb-12 sm:mb-16 lg:mb-10 xl:mb-16 2xl:mb-20"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
@@ -46,15 +46,17 @@ export default function ServicesSection() {
           </motion.div>
 
           <h2
-            className="text-5xl md:text-6xl lg:text-[clamp(1.75rem,3.8vw,2.5rem)] xl:text-5xl 2xl:text-6xl mb-3 lg:mb-1"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-[clamp(1.75rem,3.8vw,2.5rem)] xl:text-5xl 2xl:text-6xl mb-2 sm:mb-3 lg:mb-1"
             style={{ fontFamily: 'serif' }}
           >
             {t('title')} <span className="italic">{t('titleItalic')}</span>
           </h2>
-          <p className="text-lg lg:text-sm xl:text-base 2xl:text-lg text-[#8B8B8B]">{t('titleSub')}</p>
+          <p className="text-sm sm:text-base md:text-lg lg:text-sm xl:text-base 2xl:text-lg text-[#8B8B8B]">
+            {t('titleSub')}
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-4 xl:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-4 xl:gap-6">
           {serviceItems.map(({ num, icon: Icon, href }, i) => (
             <Link key={num} href={`/${locale}${href}`}>
               <motion.div
@@ -68,15 +70,15 @@ export default function ServicesSection() {
               >
                 <motion.div
                   whileHover={{ y: -8, scale: 1.02 }}
-                  className="bg-white rounded-3xl p-8 lg:p-5 xl:p-7 2xl:p-8 h-full border border-black/5 hover:border-[#C4A574]/30 transition-all duration-300 relative overflow-hidden flex flex-col lg:rounded-2xl xl:rounded-3xl"
+                  className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 lg:p-5 xl:p-7 2xl:p-8 h-full border border-black/5 hover:border-[#C4A574]/30 transition-all duration-300 relative overflow-hidden flex flex-col lg:rounded-2xl xl:rounded-3xl"
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-[#C4A574]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   />
 
                   <div className="relative z-10 flex flex-col">
-                    <div className="flex items-start justify-between mb-6 lg:mb-3 xl:mb-6">
-                      <span className="text-4xl lg:text-3xl xl:text-4xl text-[#C4A574]/20 font-light tracking-wider">
+                    <div className="flex items-start justify-between mb-4 sm:mb-6 lg:mb-3 xl:mb-6">
+                      <span className="text-3xl sm:text-4xl lg:text-3xl xl:text-4xl text-[#C4A574]/20 font-light tracking-wider">
                         {num}
                       </span>
                       <motion.div
