@@ -35,7 +35,7 @@ export default function HeroSection() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="relative max-lg:flex max-lg:min-h-[calc(100svh-4.0625rem)] max-lg:flex-col overflow-hidden pb-6 pt-[calc(4rem+1px)] sm:pt-[calc(4.5rem+1px)] sm:pb-8 md:pt-[calc(5rem+1px)] lg:min-h-0 lg:pb-24 lg:pt-32 xl:pb-28 xl:pt-36">
+    <section className="relative max-lg:flex max-lg:min-h-[100svh] max-lg:flex-col overflow-hidden pb-6 pt-0 sm:pb-8 lg:min-h-0 lg:pb-24 lg:pt-32 xl:pb-28 xl:pt-36">
       <div className="absolute inset-0 bg-brand-sage-subtle bg-fabric-grain" aria-hidden />
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_85%_65%_at_88%_12%,rgb(119_123_86_/0.07),transparent_58%),radial-gradient(ellipse_55%_45%_at_12%_88%,rgb(119_123_86_/0.05),transparent_52%),linear-gradient(180deg,#fbfaf8_0%,#f4f3ec_100%)]"
@@ -111,16 +111,11 @@ export default function HeroSection() {
                 className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-neutral-950/50 to-transparent sm:hidden"
                 aria-hidden
               />
-              <div className="absolute inset-x-0 top-0 z-[1] px-4 pt-4 sm:hidden">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/95 drop-shadow-[0_1px_8px_rgba(0,0,0,0.45)]">
-                  {t('location')}
-                </p>
-              </div>
-              <div className="absolute right-3 top-3 z-[2] max-w-[min(100%,12rem)] rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-[9px] font-medium uppercase leading-tight tracking-[0.18em] text-white/95 shadow-[0_4px_16px_rgba(0,0,0,0.35)] backdrop-blur-sm sm:right-4 sm:top-4 sm:max-w-[14rem] sm:px-3.5 sm:py-2 sm:text-[10px] sm:tracking-[0.2em]">
-                {t('role')}
-              </div>
               {/* Заголовок внутри кадра + тёмного градиента — иначе соседний pull-up оказывается под motion-слоем и обрезается overflow-hidden */}
               <div className="absolute inset-x-0 bottom-0 z-[3] px-4 pb-5 pt-[min(28%,9.5rem)] sm:px-5 sm:pb-6 sm:pt-32">
+                <p className="mb-3 max-w-[min(100%,42ch)] text-balance text-[10px] font-medium uppercase leading-snug tracking-[0.22em] text-white/85 [text-shadow:0_1px_14px_rgba(0,0,0,0.55)] sm:mb-3.5 sm:text-[11px] sm:tracking-[0.2em]">
+                  {t('location')} · {t('role')}
+                </p>
                 <h1
                   className="text-balance font-serif text-[clamp(1.85rem,6vw,2.35rem)] font-normal leading-[1.08] tracking-[-0.025em] sm:text-[clamp(2rem,5vw,2.5rem)]"
                   style={{ fontFamily: 'serif' }}
