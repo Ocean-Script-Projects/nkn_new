@@ -47,7 +47,7 @@ export default function PrintsPage() {
           <PrintsHeroImage />
         </PageHeader>
 
-        <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-white">
+        <section className="bg-white px-4 pb-14 pt-8 sm:px-6 sm:pb-16 sm:pt-10 md:px-12 md:pb-20 md:pt-12">
           <div className="max-w-4xl mx-auto">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -63,7 +63,7 @@ export default function PrintsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-lg sm:text-xl md:text-2xl text-[#1a1a1a] tracking-tight mb-12 sm:mb-16 leading-snug"
+              className="mb-10 text-lg leading-snug tracking-tight text-[#1a1a1a] sm:mb-12 sm:text-xl md:mb-14 md:text-2xl"
               style={{ fontFamily: 'serif' }}
             >
               {t('subheading')}
@@ -80,7 +80,7 @@ export default function PrintsPage() {
               {t('directionsTitle')}
             </motion.h2>
 
-            <div className="space-y-12 md:space-y-16">
+            <div className="grid gap-4 sm:gap-5 md:gap-6">
               {directionIds.map((id, i) => (
                 <motion.div
                   key={id}
@@ -88,14 +88,24 @@ export default function PrintsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-50px' }}
                   transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className="border-t border-black/10 pt-8 first:border-t-0 first:pt-0"
+                  className="relative overflow-hidden rounded-2xl border border-black/[0.08] bg-[#FAF9F6] p-5 shadow-[0_8px_28px_-18px_rgba(0,0,0,0.2)] sm:p-6 md:p-7"
                 >
-                  <h3 className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 tracking-tight text-[#1a1a1a]" style={{ fontFamily: 'serif' }}>
-                    {String(i + 1)}. {t(`directions.${id}.title`)}
-                  </h3>
-                  <p className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed">
+                  <div
+                    className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full opacity-[0.08]"
+                    style={{ background: 'radial-gradient(circle, #C9973C 0%, transparent 72%)' }}
+                    aria-hidden
+                  />
+                  <div className="relative z-10">
+                    <div className="absolute -right-2 -top-2 inline-flex h-8 min-w-8 items-center justify-center rounded-full border border-[#C9973C]/30 bg-[#FAF9F6] px-3 text-[11px] font-semibold tracking-[0.18em] text-[#8B6A2A] shadow-[0_4px_14px_rgba(0,0,0,0.12)]">
+                      {String(i + 1).padStart(2, '0')}
+                    </div>
+                    <h3 className="mb-2 pr-14 text-xl tracking-tight text-[#1a1a1a] sm:text-2xl" style={{ fontFamily: 'serif' }}>
+                      {t(`directions.${id}.title`)}
+                    </h3>
+                    <p className="text-[15px] leading-relaxed text-[#7a7a7a] sm:text-base">
                     {t(`directions.${id}.description`)}
-                  </p>
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </div>

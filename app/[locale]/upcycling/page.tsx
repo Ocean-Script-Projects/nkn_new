@@ -308,12 +308,12 @@ export default function UpcyclingPage() {
             >
               <div className="absolute inset-0">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1760533091973-1262bf57d244?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
-                  alt="Before upcycling"
+                  src="https://images.unsplash.com/photo-1759229874810-26aa9a3dda92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
+                  alt="After upcycling"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-6 left-6 px-4 py-2 bg-black/70 backdrop-blur-sm rounded-full">
-                  <span className="text-white text-sm tracking-wider">{t('slider.before')}</span>
+                <div className="absolute right-6 top-6 rounded-full bg-black/70 px-4 py-2 backdrop-blur-sm">
+                  <span className="text-white text-sm tracking-wider">{t('slider.after')}</span>
                 </div>
               </div>
 
@@ -322,12 +322,12 @@ export default function UpcyclingPage() {
                 style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
               >
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1759229874810-26aa9a3dda92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
-                  alt="After upcycling"
+                  src="https://images.unsplash.com/photo-1760533091973-1262bf57d244?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
+                  alt="Before upcycling"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-6 right-6 px-4 py-2 bg-[#059669] backdrop-blur-sm rounded-full">
-                  <span className="text-white text-sm tracking-wider">{t('slider.after')}</span>
+                <div className="absolute left-6 top-6 rounded-full bg-[#059669] px-4 py-2 backdrop-blur-sm">
+                  <span className="text-white text-sm tracking-wider">{t('slider.before')}</span>
                 </div>
               </div>
 

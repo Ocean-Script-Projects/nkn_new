@@ -70,7 +70,7 @@ export default function BeforeAfterSlider({
                 alt="Before upcycling"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute top-6 left-6 px-4 py-2 bg-black/70 backdrop-blur-sm rounded-full">
+              <div className="absolute left-6 top-6 rounded-bl-md rounded-br-2xl rounded-tl-md rounded-tr-2xl border border-white/20 bg-black/70 px-4 py-2 backdrop-blur-sm">
                 <span className="text-white text-sm tracking-wider">{beforeLabel}</span>
               </div>
             </div>
@@ -84,7 +84,7 @@ export default function BeforeAfterSlider({
                 alt="After upcycling"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute top-6 right-6 px-4 py-2 bg-brand-sage text-brand-sage-foreground backdrop-blur-sm rounded-full">
+              <div className="absolute right-6 top-6 rounded-bl-2xl rounded-br-md rounded-tl-2xl rounded-tr-md border border-white/20 bg-brand-sage px-4 py-2 text-brand-sage-foreground backdrop-blur-sm">
                 <span className="text-white text-sm tracking-wider">{afterLabel}</span>
               </div>
             </div>

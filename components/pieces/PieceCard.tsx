@@ -50,13 +50,13 @@ export default function PieceCard({ piece, onRequest, onClick, index }: PieceCar
       className="group h-full min-w-0"
     >
       <div
-        className="relative flex h-full flex-col bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+        className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-500 hover:shadow-2xl sm:rounded-3xl sm:shadow-lg cursor-pointer"
         onClick={onClick}
         role={onClick ? 'button' : undefined}
         tabIndex={onClick ? 0 : undefined}
         onKeyDown={onClick ? (e) => e.key === 'Enter' && onClick() : undefined}
       >
-        <div className="relative aspect-[5/6] shrink-0 overflow-hidden">
+        <div className="relative aspect-[4/5] shrink-0 overflow-hidden sm:aspect-[5/6]">
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.6 }}
@@ -79,33 +79,33 @@ export default function PieceCard({ piece, onRequest, onClick, index }: PieceCar
             whileHover={{ scale: 1.05 }}
             className={cn(
               buttonVariants({ variant: 'cardOverlay', size: 'plain' }),
-              'absolute inset-x-6 bottom-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100'
+              'absolute inset-x-4 bottom-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:inset-x-6 sm:bottom-6'
             )}
           >
             {t('request')}
             <ArrowRight className="h-4 w-4" />
           </motion.button>
         </div>
-        <div className="flex flex-1 flex-col p-4 sm:p-5 min-h-0">
+        <div className="flex min-h-0 flex-1 flex-col p-3.5 sm:p-5">
           <div className="flex items-start justify-between gap-3">
             <h3
-              className="text-lg sm:text-xl tracking-tight line-clamp-2 min-w-0 flex-1"
+              className="min-w-0 flex-1 line-clamp-2 text-[1.05rem] tracking-tight sm:text-xl"
               style={{ fontFamily: 'serif' }}
             >
               {title}
             </h3>
             {priceLabel ? (
-              <span className="shrink-0 text-sm font-medium tabular-nums text-black/80 pt-0.5 text-right max-w-[40%]">
+              <span className="max-w-[40%] shrink-0 pt-0.5 text-right text-xs font-medium tabular-nums text-black/80 sm:text-sm">
                 {priceLabel}
               </span>
             ) : null}
           </div>
-          <div className="mt-1.5 text-xs sm:text-sm text-brand-mustard tracking-widest truncate">
+          <div className="mt-1 text-[11px] tracking-[0.14em] text-brand-mustard truncate sm:mt-1.5 sm:text-sm sm:tracking-widest">
             {piece.type}
           </div>
-          <div className="mt-2 min-h-[4.125rem] sm:min-h-[4.5rem] flex-1">
+          <div className="mt-1.5 min-h-[3.5rem] flex-1 sm:mt-2 sm:min-h-[4.5rem]">
             {description ? (
-              <p className="text-xs sm:text-sm text-[#8B8B8B] leading-relaxed line-clamp-3 [overflow-wrap:anywhere]">
+              <p className="line-clamp-3 text-[12px] leading-relaxed text-[#8B8B8B] [overflow-wrap:anywhere] sm:text-sm">
                 {description}
               </p>
             ) : null}
