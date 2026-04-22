@@ -345,7 +345,7 @@ export default function AboutPage() {
                 className="hidden md:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C4A574] to-transparent origin-left"
               />
 
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-6">
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-5 md:gap-6">
                 {processSteps.map((id, i) => (
                   <motion.div
                     key={i}
@@ -353,18 +353,22 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-50px' }}
                     transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className="relative text-center"
+                    className="relative pl-16 pr-1 py-2 text-left md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-center md:shadow-none"
                   >
-                    <div className="relative inline-block mb-6">
+                    {i < processSteps.length - 1 && (
+                      <div className="pointer-events-none absolute bottom-[-12px] left-7 top-[52px] w-px bg-gradient-to-b from-[#C4A574]/45 to-[#C4A574]/10 md:hidden" />
+                    )}
+
+                    <div className="absolute left-0 top-1.5 md:relative md:mb-6 md:inline-block">
                       <motion.div
                         initial={{ scale: 0 }}
                         whileInView={{ scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: i * 0.1 + 0.3 }}
-                        className="w-24 h-24 rounded-full bg-gradient-to-br from-[#C4A574] to-[#8B7355] flex items-center justify-center shadow-xl relative z-10"
+                        className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#C4A574] to-[#8B7355] shadow-md md:h-24 md:w-24 md:shadow-xl"
                       >
                         <span
-                          className="text-white text-xl tracking-wider"
+                          className="text-[13px] tracking-wider text-white md:text-xl"
                           style={{ fontFamily: 'serif' }}
                         >
                           {String(i + 1).padStart(2, '0')}
@@ -382,14 +386,11 @@ export default function AboutPage() {
                       />
                     </div>
 
-                    <h3
-                      className="text-xl sm:text-2xl mb-2 tracking-tight"
-                      style={{ fontFamily: 'serif' }}
-                    >
+                    <h3 className="mb-0.5 text-[1.35rem] leading-tight tracking-tight sm:text-2xl" style={{ fontFamily: 'serif' }}>
                       {t(`process.steps.${id}.step`)}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-[#8B8B8B] leading-relaxed">
+                    <p className="text-[13px] leading-relaxed text-[#8B8B8B] md:text-xs md:leading-relaxed lg:text-sm">
                       {t(`process.steps.${id}.detail`)}
                     </p>
                   </motion.div>
@@ -471,89 +472,6 @@ export default function AboutPage() {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* B2B BLOCK */}
-        <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-gradient-to-br from-[#2a2a2a] via-[#1a1a1a] to-[#2a2a2a] text-[#FAF9F6] relative overflow-hidden">
-          <motion.div
-            className="absolute inset-0 opacity-5"
-            animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
-            transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }}
-            style={{
-              backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-              backgroundSize: '50px 50px',
-            }}
-          />
-
-          <div className="max-w-5xl mx-auto relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-12 sm:mb-16"
-            >
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="h-px w-8 bg-[#C4A574]" />
-                <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
-                  {t('b2b.label')}
-                </span>
-                <div className="h-px w-8 bg-[#C4A574]" />
-              </div>
-
-              <h2
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight"
-                style={{ fontFamily: 'serif' }}
-              >
-                {t('b2b.title')} <br className="sm:hidden" />
-                <span className="italic">{t('b2b.titleItalic')}</span>
-              </h2>
-
-              <p className="text-base sm:text-lg md:text-xl text-[#FAF9F6]/80 max-w-2xl mx-auto leading-relaxed">
-                {t('b2b.description')}
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-6 mb-12"
-            >
-              {[0, 1, 2, 3, 4].map((i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className="flex items-start gap-4 border-l-2 border-[#C4A574] pl-6"
-                >
-                  <div className="w-2 h-2 rounded-full bg-[#C4A574] mt-2 flex-shrink-0" />
-                  <p className="text-base sm:text-lg text-[#FAF9F6]/90 leading-relaxed">{t(`b2b.items.${i}`)}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-center"
-            >
-              <motion.button
-                onClick={() => setShowContactModal(true)}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-3 px-10 py-5 bg-[#C4A574] text-white rounded-full text-base sm:text-lg tracking-wider shadow-2xl hover:shadow-[#C4A574]/30 transition-shadow font-medium"
-              >
-                {t('b2b.cta')}
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-            </motion.div>
           </div>
         </section>
 

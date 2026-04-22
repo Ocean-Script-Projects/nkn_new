@@ -160,8 +160,8 @@ export default function PageHeader({
     <section
       className={
         isEditorial
-          ? 'relative overflow-x-clip overflow-y-visible px-4 pb-2 pt-24 sm:px-6 sm:pb-3 md:px-12 md:pb-4 md:pt-28 lg:overflow-hidden lg:pb-24'
-          : 'relative overflow-hidden px-4 pb-10 pt-24 sm:px-6 sm:pb-16 md:px-12 md:pb-24 md:pt-28'
+          ? 'relative overflow-x-clip overflow-y-visible px-4 pb-2 pt-0 sm:px-6 sm:pb-3 sm:pt-0 md:px-12 md:pb-4 md:pt-0 lg:overflow-hidden lg:pb-24 lg:pt-28'
+          : 'relative overflow-hidden px-4 pb-10 pt-16 sm:px-6 sm:pb-16 sm:pt-20 md:px-12 md:pb-24 md:pt-28'
       }
     >
       <DecorativeLogo
@@ -178,7 +178,7 @@ export default function PageHeader({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="relative min-h-[min(52svh,520px)] w-full overflow-hidden rounded-b-none sm:min-h-[min(56svh,560px)]"
+              className="relative min-h-[min(60svh,620px)] w-full overflow-hidden rounded-b-none sm:min-h-[min(64svh,680px)]"
             >
               <div className="absolute inset-0">{mobileImageSlot}</div>
               <div

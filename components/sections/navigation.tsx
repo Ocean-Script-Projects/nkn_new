@@ -44,13 +44,9 @@ export default function Navigation() {
   const lastScrollY = useRef(0);
   const reduceMotion = useReducedMotion();
 
-  const isHome =
-    pathname === `/${locale}` || pathname === `/${locale}/`;
-
-  /** На главной над hero — прозрачный бар; ниже порога или на внутренних страницах — «обычная» шапка. */
-  const solidNav = !isHome || scrolled;
-  /** «Плавающий» хедер поверх фото — только главная, ещё не прошли порог скролла */
-  const ghostHero = isHome && !scrolled;
+  /** Hero-режим доступен на всех страницах: сверху прозрачный, после порога — solid. */
+  const solidNav = scrolled;
+  const ghostHero = !scrolled;
 
   const isActive = (href: string) => {
     if (href === '/') {
@@ -61,14 +57,14 @@ export default function Navigation() {
 
   const isDropdownActive = servicesDropdownItems.some((item) => isActive(item.href));
 
-  // Синхронизация до отрисовки: на внутренних страницах сразу «solid», на главной — по scrollY.
+  // Синхронизация до отрисовки: режим шапки определяется только по scrollY на любой странице.
   useLayoutEffect(() => {
     if (typeof window === 'undefined') return;
     const y = window.scrollY ?? document.documentElement.scrollTop;
     lastScrollY.current = y;
-    setScrolled(!isHome || y > HOME_SCROLL_SOLID);
+    setScrolled(y > HOME_SCROLL_SOLID);
     setNavVisible(true);
-  }, [isHome, pathname]);
+  }, [pathname]);
 
   /** Скролл: solid hero + скрытие шапки вниз / показ вверх */
   useEffect(() => {
@@ -76,7 +72,7 @@ export default function Navigation() {
     const readY = () => window.scrollY ?? document.documentElement.scrollTop ?? 0;
     const onScroll = () => {
       const y = readY();
-      setScrolled(!isHome || y > HOME_SCROLL_SOLID);
+      setScrolled(y > HOME_SCROLL_SOLID);
 
       const last = lastScrollY.current;
       const delta = y - last;
@@ -98,7 +94,7 @@ export default function Navigation() {
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, [isHome]);
+  }, []);
 
   useEffect(() => {
     if (!navVisible) setDropdownOpen(false);
@@ -183,11 +179,7 @@ export default function Navigation() {
           <div className="flex min-w-0 justify-center">
             <Link
               href={`/${locale}`}
-              className={cn(
-                'relative z-10 shrink-0 focus-visible:outline-none',
-                /* На главной форма «бровки» сохраняется при скролле; белая капсула только в самом верху */
-                isHome && 'rounded-t-none rounded-b-[1.25rem] sm:rounded-b-[1.35rem]'
-              )}
+              className="relative z-10 shrink-0 focus-visible:outline-none"
               onClick={() => setMobileOpen(false)}
             >
               <motion.div
@@ -195,9 +187,7 @@ export default function Navigation() {
                   'flex items-center justify-center transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-brand-mustard/40 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent',
                   ghostHero
                     ? 'rounded-t-none rounded-b-[1.25rem] border border-neutral-200/90 bg-white px-2.5 py-1.5 shadow-[0_6px_24px_rgba(0,0,0,0.08),0_0_0_1px_rgba(0,0,0,0.06)] sm:rounded-b-[1.35rem]'
-                    : isHome
-                      ? 'rounded-t-none rounded-b-[1.25rem] px-2 py-1.5 sm:rounded-b-[1.35rem] sm:px-3 sm:py-2'
-                      : 'rounded-none px-2 py-1.5 sm:px-3 sm:py-2'
+                    : 'rounded-t-none rounded-b-[1.25rem] px-2 py-1.5 sm:rounded-b-[1.35rem] sm:px-3 sm:py-2'
                 )}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
