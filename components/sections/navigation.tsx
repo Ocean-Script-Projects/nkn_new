@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useState, useRef, useEffect, useLayoutEffect } from 'react';
+import { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { ChevronDown, Menu, X } from 'lucide-react';
@@ -12,16 +12,16 @@ import { useRequestModal } from '@/lib/request-modal-context';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-const dropdownItems = [
+const servicesDropdownItems = [
   { key: 'bespoke', href: '/bespoke' },
-  { key: 'pieces', href: '/pieces' },
   { key: 'prints', href: '/prints' },
   { key: 'upcycling', href: '/upcycling' },
-  { key: 'collaboration', href: '/collaboration' },
 ];
 
 const mainMenuItems = [
+  { key: 'pieces', href: '/pieces' },
   { key: 'about', href: '/about' },
+  { key: 'collaboration', href: '/collaboration' },
   { key: 'contact', href: '/contact' },
 ];
 
@@ -59,7 +59,7 @@ export default function Navigation() {
     return pathname.includes(href);
   };
 
-  const isDropdownActive = dropdownItems.some((item) => isActive(item.href));
+  const isDropdownActive = servicesDropdownItems.some((item) => isActive(item.href));
 
   // Синхронизация до отрисовки: на внутренних страницах сразу «solid», на главной — по scrollY.
   useLayoutEffect(() => {
@@ -229,7 +229,7 @@ export default function Navigation() {
                   : 'border border-black/[0.08] bg-black/[0.05] text-black'
               )}
               aria-expanded={mobileOpen}
-              aria-label={t('menu')}
+              aria-label={String(t('menu'))}
             >
               <Menu className="h-5 w-5" />
             </motion.button>
@@ -241,13 +241,10 @@ export default function Navigation() {
           {/* Logo */}
           <Link
             href={`/${locale}`}
-            className="relative z-10 flex-shrink-0 rounded-lg text-current focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-mustard/40 focus-visible:ring-offset-2"
+            className="relative z-10 flex-shrink-0"
           >
             <motion.div
-              className={cn(
-                'flex items-center gap-2',
-                !ghostHero && 'rounded-lg px-1.5 py-1 sm:px-2 sm:py-1.5'
-              )}
+              className="flex items-center gap-2"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: 'spring', stiffness: 400 }}
@@ -255,13 +252,8 @@ export default function Navigation() {
               <ImageWithFallback
                 src="/images/big_logo.png"
                 alt="NKN"
-                style={{ width: 'auto' }}
-                className={cn(
-                  'object-contain transition-[filter] duration-300 ease-out',
-                  ghostHero
-                    ? 'h-[3.25rem] sm:h-[3.75rem] md:h-[4rem] [filter:drop-shadow(0_1px_3px_rgba(0,0,0,0.28))]'
-                    : 'h-[3.55rem] sm:h-[3.85rem] md:h-[4.25rem]'
-                )}
+                style={{ height: '3.25rem', width: 'auto' }}
+                className="object-contain sm:h-[3.75rem] md:h-[4rem]"
               />
             </motion.div>
           </Link>
@@ -269,12 +261,7 @@ export default function Navigation() {
           {/* Center nav — desktop */}
           <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center">
             <div
-              className={cn(
-                'relative flex items-center gap-1 rounded-2xl px-2 py-1.5 border transition-colors duration-300',
-                ghostHero
-                  ? 'border-black/[0.08] bg-[rgba(250,249,246,0.94)] shadow-[0_6px_28px_rgba(0,0,0,0.12)] backdrop-blur-md ring-1 ring-black/[0.05]'
-                  : 'border-black/[0.06] bg-black/[0.03]'
-              )}
+              className="relative flex items-center gap-1 rounded-2xl bg-black/[0.03] px-2 py-1.5 border border-black/[0.06]"
               ref={dropdownRef}
             >
               <button
@@ -305,7 +292,7 @@ export default function Navigation() {
                     transition={{ duration: 0.2 }}
                     className="absolute left-2 top-full mt-1.5 py-2 min-w-[220px] rounded-2xl bg-[#FAF9F6] border border-black/8 shadow-2xl shadow-black/10"
                   >
-                    {dropdownItems.map((item) => {
+                    {servicesDropdownItems.map((item) => {
                       const active = isActive(item.href);
                       return (
                         <Link
@@ -345,15 +332,8 @@ export default function Navigation() {
           </div>
 
           {/* Right: lang + CTA — только desktop */}
-          <div className="flex items-center gap-4 md:gap-5">
-            <div
-              className={cn(
-                'flex items-center gap-0.5 rounded-full border border-transparent px-1.5 py-1 text-[12px] font-medium tracking-widest transition-colors duration-300',
-                ghostHero
-                  ? 'border-black/[0.08] bg-[rgba(250,249,246,0.94)] text-[#1a1a1a] shadow-[0_4px_20px_rgba(0,0,0,0.1)] backdrop-blur-md ring-1 ring-black/[0.05]'
-                  : 'text-[#1a1a1a]/70'
-              )}
-            >
+          <div className="flex items-center gap-4 sm:gap-5">
+            <div className="hidden md:flex items-center gap-0.5 text-[12px] font-medium tracking-widest text-[#1a1a1a]/70">
               {locales.map((loc, i) => (
                 <span key={loc} className="flex items-center gap-0.5">
                   {i > 0 && <span className="text-black/20">·</span>}
@@ -374,7 +354,10 @@ export default function Navigation() {
               onClick={() => openRequestModal()}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className={buttonVariants({ variant: 'darkNav' })}
+              className={cn(
+                buttonVariants({ variant: 'darkNav', size: 'plain' }),
+                'hidden lg:inline-flex'
+              )}
             >
               {t('request')}
             </motion.button>
@@ -403,7 +386,7 @@ export default function Navigation() {
                 <motion.div
                   role="dialog"
                   aria-modal="true"
-                  aria-label={t('menu')}
+                  aria-label={String(t('menu'))}
                   initial={{ x: '100%' }}
                   animate={{ x: 0 }}
                   exit={{ x: '100%' }}
@@ -428,10 +411,24 @@ export default function Navigation() {
                   </div>
                   <div className="flex min-h-0 flex-1 flex-col gap-6 overflow-y-auto overscroll-contain px-4 py-5">
                     <nav className="flex flex-col gap-0.5">
+                      <motion.button
+                        type="button"
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => {
+                          openRequestModal();
+                          setMobileOpen(false);
+                        }}
+                        className={cn(
+                          buttonVariants({ variant: 'darkNav', size: 'plain' }),
+                          'mb-4 w-full justify-center'
+                        )}
+                      >
+                        {t('request')}
+                      </motion.button>
                       <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-neutral-400">
                         {t('services')}
                       </p>
-                      {dropdownItems.map((item) => {
+                      {servicesDropdownItems.map((item) => {
                         const active = isActive(item.href);
                         return (
                           <Link
@@ -450,34 +447,17 @@ export default function Navigation() {
                       {mainMenuItems.map((item) => {
                         const active = isActive(item.href);
                         return (
-                          <Fragment key={item.key}>
-                            <Link
-                              href={`/${locale}${item.href}`}
-                              onClick={() => setMobileOpen(false)}
-                              className={cn(
-                                'rounded-xl px-3 py-3 text-[14px] font-medium tracking-wide transition-colors',
-                                active ? 'bg-black text-white' : 'text-[#1a1a1a]/85 hover:bg-black/[0.04]'
-                              )}
-                            >
-                              {t(item.key)}
-                            </Link>
-                            {item.key === 'contact' ? (
-                              <motion.button
-                                type="button"
-                                whileTap={{ scale: 0.98 }}
-                                onClick={() => {
-                                  openRequestModal();
-                                  setMobileOpen(false);
-                                }}
-                                className={cn(
-                                  buttonVariants({ variant: 'darkNav' }),
-                                  'mt-2 w-full justify-center py-3 text-[11px]'
-                                )}
-                              >
-                                {t('request')}
-                              </motion.button>
-                            ) : null}
-                          </Fragment>
+                          <Link
+                            key={item.key}
+                            href={`/${locale}${item.href}`}
+                            onClick={() => setMobileOpen(false)}
+                            className={cn(
+                              'rounded-xl px-3 py-3 text-[14px] font-medium tracking-wide transition-colors',
+                              active ? 'bg-black text-white' : 'text-[#1a1a1a]/85 hover:bg-black/[0.04]'
+                            )}
+                          >
+                            {t(item.key)}
+                          </Link>
                         );
                       })}
                     </nav>
