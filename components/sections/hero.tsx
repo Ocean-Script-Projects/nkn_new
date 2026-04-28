@@ -23,8 +23,8 @@ export default function HeroSection() {
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const local = window.location.pathname.startsWith('/nkn_new')
-      ? '/nkn_new/images/hero.jpg'
-      : '/images/hero.jpg';
+      ? '/nkn_new/images/natalia_img.JPG'
+      : '/images/natalia_img.JPG';
     const probe = new Image();
     probe.onload = () => setSrc(local);
     probe.onerror = () => {};
@@ -99,7 +99,7 @@ export default function HeroSection() {
                 src={imageSrc}
                 fallbackSrc={REMOTE_FALLBACK}
                 alt={String(t('nameFull'))}
-                className="absolute inset-0 h-full w-full object-cover object-top"
+                className="absolute inset-0 h-full w-full object-cover object-[50%_22%] sm:object-[50%_20%] md:object-[50%_18%]"
                 loading="eager"
                 decoding="async"
               />
@@ -274,19 +274,19 @@ export default function HeroSection() {
           transition={{ duration: 0.75, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
           className="mt-12 w-full lg:col-start-2 lg:row-start-2 lg:mt-0 lg:self-center"
         >
-          <div className="relative mx-auto max-w-[340px] lg:mx-0 lg:max-w-[320px] xl:max-w-[420px] min-[1536px]:max-w-none">
+          <div className="relative mx-auto max-w-[340px] lg:mx-0 lg:max-w-[300px] xl:max-w-[360px] min-[1536px]:max-w-none">
             <div
               className="absolute -inset-3 rounded-[1.35rem] bg-brand-sage/15 opacity-80 blur-xl sm:-inset-4 sm:rounded-[1.5rem]"
               aria-hidden
             />
             <div className="group/image relative cursor-default rounded-2xl bg-[#EDEAE2] p-[3px] shadow-[0_24px_56px_-20px_rgba(0,0,0,0.2),0_0_0_1px_rgba(0,0,0,0.04)_inset] ring-1 ring-brand-sage/25 transition-[box-shadow,transform] duration-500 ease-out hover:shadow-[0_32px_64px_-24px_rgba(0,0,0,0.28)] hover:ring-brand-mustard/35 xl:rounded-3xl xl:p-1">
               <div className="overflow-hidden rounded-[1.15rem] ring-1 ring-white/90 xl:rounded-[1.35rem]">
-                <div className="relative aspect-[3/4] w-full max-h-[min(44vh,380px)] bg-neutral-200/80 sm:max-h-[min(46vh,400px)] lg:aspect-auto lg:h-[min(48vh,460px)] lg:max-h-[460px] lg:w-[300px] xl:aspect-[3/4] xl:h-auto xl:max-h-[min(46vh,480px)] xl:min-h-[380px] xl:w-full min-[1536px]:min-h-[420px] min-[1536px]:max-h-[min(52vh,540px)]">
+                <div className="relative aspect-[3/4] w-full max-h-[min(44vh,380px)] bg-neutral-200/80 sm:max-h-[min(46vh,400px)] lg:max-h-[min(48vh,440px)] xl:max-h-[min(46vh,480px)] xl:min-h-[360px] min-[1536px]:min-h-[400px] min-[1536px]:max-h-[min(52vh,520px)]">
                   <ImageWithFallback
                     src={imageSrc}
                     fallbackSrc={REMOTE_FALLBACK}
                     alt={String(t('nameFull'))}
-                    className="absolute inset-0 h-full w-full object-cover object-top transition-[transform,filter] duration-700 ease-out group-hover/image:scale-[1.04] group-hover/image:brightness-[1.04]"
+                    className="absolute inset-0 h-full w-full object-cover object-[50%_18%] sm:object-[50%_16%] transition-[transform,filter] duration-700 ease-out group-hover/image:scale-[1.04] group-hover/image:brightness-[1.04]"
                     loading="eager"
                     decoding="async"
                   />

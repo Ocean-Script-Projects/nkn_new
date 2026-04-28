@@ -15,9 +15,9 @@ export default function ProcessSection() {
   ];
 
   const galleryImages = [
-    'https://images.unsplash.com/photo-1769007068290-a0393df01afa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwZmFicmljJTIwdGV4dHVyZSUyMGNsb3NlJTIwdXB8ZW58MXx8fHwxNzcwMjA0MzQwfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    'https://images.unsplash.com/photo-1645055752527-873bf0d6c593?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwZGVzaWduZXIlMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzcwMTk2MTg5fDA&ixlib=rb-4.1.0&q=80&w=1080',
-    'https://images.unsplash.com/photo-1769935254385-e1381671a609?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YWlsb3JpbmclMjBiZXNwb2tlJTIwc3VpdHxlbnwxfHx8fDE3NzAyMDQzNDF8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    '/images/models/model1.png',
+    '/images/models/model2.png',
+    '/images/models/model3.png',
   ];
 
   return (

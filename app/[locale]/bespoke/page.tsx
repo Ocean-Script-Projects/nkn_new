@@ -13,9 +13,7 @@ import { useRequestModal } from '@/lib/request-modal-context';
 const offlineIcons = [MessageCircle, Users, Ruler, Package];
 const onlineIcons = [MessageCircle, Video, Ruler, Send, Package];
 
-/** Временно та же фотография, что и в hero upcycling */
-const BESPOKE_HERO_SRC =
-  'https://images.unsplash.com/photo-1751121543103-f42ef3515e02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+const BESPOKE_HERO_SRC = '/images/models/model4.png';
 
 function BespokeHeroImage() {
   return (

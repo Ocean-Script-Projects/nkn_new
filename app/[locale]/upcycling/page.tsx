@@ -67,6 +67,15 @@ export default function UpcyclingPage() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const heroDescription = String(t('description'));
+  const heroDescriptionShort = heroDescription
+    .split('.')
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .slice(0, 2)
+    .join('. ')
+    .trim();
+
   const process = [
     {
       number: '01',
@@ -193,43 +202,41 @@ export default function UpcyclingPage() {
         title={String(t('title'))}
         titleItalic={String(t('titleItalic'))}
         titleEnd={String(t('titleEnd'))}
-        subtitle={
-          <>
-            {t('subtitle1')}
-            <br />
-            {t('subtitle2')}
-          </>
-        }
-        description={String(t('description'))}
+        subtitle={String(t('subtitle1'))}
+        description={heroDescriptionShort ? `${heroDescriptionShort}.` : undefined}
         labelColor="#059669"
         hasBackgroundOrbs
       >
         <UpcyclingHeroImage badge={String(t('badge'))} badgeDescription={String(t('badgeDescription'))} />
-        <UpcyclingHeroImage badge={String(t('badge'))} badgeDescription={String(t('badgeDescription'))} />
       </PageHeader>
 
       {/* PHILOSOPHY BLOCK */}
-      <section className="py-12 sm:py-16 md:py-28 px-4 sm:px-6 md:px-12 bg-white">
+      <section className="bg-white px-4 py-12 sm:px-6 sm:py-14 md:px-12 md:py-16">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
+              className="space-y-6"
             >
               <div className="flex items-center gap-3">
-                <div className="h-px w-8 bg-[#C4A574]" />
-                <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">{t('philosophy.label')}</span>
+                <div className="h-px w-8 bg-[#059669]" />
+                <span className="text-[#059669] text-[10px] font-semibold tracking-[0.32em] uppercase sm:text-[11px]">
+                  {t('philosophy.label')}
+                </span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight leading-tight" style={{ fontFamily: 'serif' }}>
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl tracking-tight leading-tight"
+                style={{ fontFamily: 'serif' }}
+              >
                 {t('philosophy.title')} <br />
                 <span className="italic">{t('philosophy.titleItalic')}</span>
               </h2>
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {(t('philosophy.values') as string[]).map((item: string, i: number) => (
                   <motion.div
                     key={i}
@@ -239,14 +246,11 @@ export default function UpcyclingPage() {
                     transition={{ duration: 0.6, delay: i * 0.1 }}
                   >
                     <div className="flex items-start gap-4">
-                      <div className="w-2 h-2 rounded-full bg-[#059669] mt-2 flex-shrink-0" />
-                      <p className="text-base sm:text-lg text-[#8B8B8B] leading-relaxed">
+                      <div className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#059669]" />
+                      <p className="text-[15px] leading-[1.75] text-neutral-600 sm:text-base">
                         {item}
                       </p>
                     </div>
-                    {i < 3 && (
-                      <div className="h-px bg-gradient-to-r from-[#059669]/20 to-transparent mt-6" />
-                    )}
                   </motion.div>
                 ))}
               </div>
@@ -259,13 +263,13 @@ export default function UpcyclingPage() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative aspect-square overflow-hidden rounded-3xl shadow-[0_18px_50px_-30px_rgba(0,0,0,0.35)] ring-1 ring-black/5">
                 <ImageWithFallback
                   src="https://images.unsplash.com/photo-1753162660069-d4145d9a95f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
                   alt="Hands working with fabric"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#059669]/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
               </div>
             </motion.div>
           </div>

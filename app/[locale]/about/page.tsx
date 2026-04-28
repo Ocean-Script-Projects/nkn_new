@@ -10,8 +10,7 @@ import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import { submitSiteRequest } from '@/lib/submit-site-request';
 
-const ABOUT_HERO_SRC =
-  'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+const ABOUT_HERO_SRC = '/images/natalia_img3.png';
 
 function AboutHeroImage() {
   return (
@@ -191,9 +190,9 @@ export default function AboutPage() {
               >
                 <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1558769132-cb1aea35ae3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-                    alt="Designer at work"
-                    className="w-full h-full object-cover"
+                    src="/images/natalia_img4.png"
+                    alt="Natalia Khreshkova"
+                    className="w-full h-full object-cover object-[50%_20%]"
                   />
                 </div>
               </motion.div>

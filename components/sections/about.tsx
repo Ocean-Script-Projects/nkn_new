@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import { useTranslations } from '@/lib/i18n';
 import DecorativeLogo from '@/components/shared/DecorativeLogo';
+import { ImageWithFallback } from '@/components/image-with-fallback';
 
 export default function AboutSection() {
   const t = useTranslations('about');
@@ -96,10 +97,19 @@ export default function AboutSection() {
             className="relative"
           >
             <motion.div
-              whileHover={{ scale: 1.03, rotate: 2 }}
-              className="relative rounded-3xl overflow-hidden shadow-2xl"
+              whileHover={{ scale: 1.02, y: -6 }}
+              transition={{ type: 'spring', stiffness: 220, damping: 22 }}
+              className="relative rounded-3xl overflow-hidden shadow-2xl will-change-transform"
             >
-              <div className="aspect-[3/4] bg-brand-sage/20" />
+              <div className="relative aspect-[3/4] bg-brand-sage/20">
+                <ImageWithFallback
+                  src="/images/natalia_img2.png"
+                  alt={String(t('name'))}
+                  className="absolute inset-0 h-full w-full object-cover object-[50%_20%]"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
               <motion.div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </motion.div>
 
