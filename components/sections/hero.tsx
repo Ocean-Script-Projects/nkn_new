@@ -9,29 +9,30 @@ import { useRequestModal } from '@/lib/request-modal-context';
 import DecorativeLogo from '@/components/shared/DecorativeLogo';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 
-const REMOTE =
-  'https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?auto=format&fit=crop&w=1000&h=1250&q=85';
-const REMOTE_FALLBACK =
-  'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&h=1250&q=85';
+const LOCAL_HERO = '/images/natalia_img.JPG';
+const LOCAL_HERO_FALLBACK = '/images/hero.jpg';
 
 export default function HeroSection() {
   const t = useTranslations('hero');
   const locale = useLocale();
   const { openRequestModal } = useRequestModal();
-  const [src, setSrc] = useState(REMOTE);
+  const [src, setSrc] = useState(LOCAL_HERO);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const local = window.location.pathname.startsWith('/nkn_new')
-      ? '/nkn_new/images/natalia_img.JPG'
-      : '/images/natalia_img.JPG';
+      ? '/nkn_new' + LOCAL_HERO
+      : LOCAL_HERO;
+    const localFallback = window.location.pathname.startsWith('/nkn_new')
+      ? '/nkn_new' + LOCAL_HERO_FALLBACK
+      : LOCAL_HERO_FALLBACK;
     const probe = new Image();
     probe.onload = () => setSrc(local);
-    probe.onerror = () => {};
+    probe.onerror = () => setSrc(localFallback);
     probe.src = local;
   }, []);
 
-  const imageSrc = useMemo(() => (src && String(src).trim()) || REMOTE, [src]);
+  const imageSrc = useMemo(() => (src && String(src).trim()) || LOCAL_HERO, [src]);
   const reduceMotion = useReducedMotion();
 
   return (
@@ -97,7 +98,7 @@ export default function HeroSection() {
             <div className="relative min-h-[68svh] w-full flex-1 basis-0 bg-neutral-200/50 sm:min-h-[56svh] md:min-h-[50svh]">
               <ImageWithFallback
                 src={imageSrc}
-                fallbackSrc={REMOTE_FALLBACK}
+                fallbackSrc={LOCAL_HERO_FALLBACK}
                 alt={String(t('nameFull'))}
                 className="absolute inset-0 h-full w-full object-cover object-[50%_22%] sm:object-[50%_20%] md:object-[50%_18%]"
                 loading="eager"
@@ -284,7 +285,7 @@ export default function HeroSection() {
                 <div className="relative aspect-[3/4] w-full max-h-[min(44vh,380px)] bg-neutral-200/80 sm:max-h-[min(46vh,400px)] lg:max-h-[min(48vh,440px)] xl:max-h-[min(46vh,480px)] xl:min-h-[360px] min-[1536px]:min-h-[400px] min-[1536px]:max-h-[min(52vh,520px)]">
                   <ImageWithFallback
                     src={imageSrc}
-                    fallbackSrc={REMOTE_FALLBACK}
+                    fallbackSrc={LOCAL_HERO_FALLBACK}
                     alt={String(t('nameFull'))}
                     className="absolute inset-0 h-full w-full object-cover object-[50%_18%] sm:object-[50%_16%] transition-[transform,filter] duration-700 ease-out group-hover/image:scale-[1.04] group-hover/image:brightness-[1.04]"
                     loading="eager"

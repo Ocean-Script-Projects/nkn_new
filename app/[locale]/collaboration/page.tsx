@@ -9,8 +9,7 @@ import { useTranslations } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 
-/** Та же фотография, что на главной: `public/images/hero.jpg` */
-const COLLAB_HERO_SRC = '/images/hero.jpg';
+const COLLAB_HERO_SRC = '/images/models/material2.webp';
 
 function CollaborationHeroImage() {
   return (
@@ -57,21 +56,6 @@ export default function CollaborationPage() {
             >
               {t('hero.tagline')}
             </motion.p>
-          </div>
-        </section>
-
-        <section className="py-12 sm:py-16 md:py-28 px-4 sm:px-6 md:px-12 bg-[#FAF9F6]">
-          <div className="max-w-2xl mx-auto text-center">
-            <p className="text-base sm:text-lg text-[#8B8B8B] mb-10">{t('cta.description')}</p>
-            <motion.button
-              onClick={() => openRequestModal()}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-3 px-10 py-5 bg-transparent border-2 border-black text-black rounded-full text-base sm:text-lg tracking-wider font-medium hover:bg-black hover:text-white transition-colors"
-            >
-              {t('cta.title')}
-              <ArrowRight className="w-5 h-5" />
-            </motion.button>
           </div>
         </section>
 

@@ -13,7 +13,7 @@ import { useRequestModal } from '@/lib/request-modal-context';
 const offlineIcons = [MessageCircle, Users, Ruler, Package];
 const onlineIcons = [MessageCircle, Video, Ruler, Send, Package];
 
-const BESPOKE_HERO_SRC = '/images/models/model4.png';
+const BESPOKE_HERO_SRC = '/images/models/model4.webp';
 
 function BespokeHeroImage() {
   return (

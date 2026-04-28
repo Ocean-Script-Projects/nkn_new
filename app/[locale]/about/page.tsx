@@ -10,7 +10,7 @@ import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import { submitSiteRequest } from '@/lib/submit-site-request';
 
-const ABOUT_HERO_SRC = '/images/natalia_img3.png';
+const ABOUT_HERO_SRC = '/images/models/natalia_img3.webp';
 
 function AboutHeroImage() {
   return (
@@ -190,7 +190,7 @@ export default function AboutPage() {
               >
                 <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
                   <ImageWithFallback
-                    src="/images/natalia_img4.png"
+                    src="/images/models/natalia_img4.webp"
                     alt="Natalia Khreshkova"
                     className="w-full h-full object-cover object-[50%_20%]"
                   />
@@ -429,27 +429,27 @@ export default function AboutPage() {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
               {[
                 {
-                  src: 'https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
+                  src: '/images/models/material.webp',
                   alt: 'Fabric selection',
                 },
                 {
-                  src: 'https://images.unsplash.com/photo-1562619227-85ff6b0b8c0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
+                  src: '/images/models/material2.webp',
                   alt: 'Sewing details',
                 },
                 {
-                  src: 'https://images.unsplash.com/photo-1519669556878-63bdad8a1a49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
+                  src: '/images/models/model6.webp',
                   alt: 'Pattern making',
                 },
                 {
-                  src: 'https://images.unsplash.com/photo-1601924375624-2322555e6688?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
+                  src: '/images/models/model7.webp',
                   alt: 'Mannequin',
                 },
                 {
-                  src: 'https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
+                  src: '/images/models/natalia_img4.webp',
                   alt: 'Workspace',
                 },
                 {
-                  src: 'https://images.unsplash.com/photo-1610017309476-27ebe48baf67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
+                  src: '/images/models/natalia_img2.webp',
                   alt: 'Hand details',
                 },
               ].map((img, i) => (

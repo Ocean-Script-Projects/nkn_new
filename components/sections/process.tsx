@@ -15,9 +15,9 @@ export default function ProcessSection() {
   ];
 
   const galleryImages = [
-    '/images/models/model1.png',
-    '/images/models/model2.png',
-    '/images/models/model3.png',
+    '/images/models/model1.webp',
+    '/images/models/model2.webp',
+    '/images/models/model3.webp',
   ];
 
   return (

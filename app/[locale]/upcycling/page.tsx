@@ -10,8 +10,7 @@ import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import PageHeader from '@/components/shared/PageHeader';
 
-const UPCYCLING_HERO_SRC =
-  'https://images.unsplash.com/photo-1751121543103-f42ef3515e02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+const UPCYCLING_HERO_SRC = '/images/models/model7.webp';
 
 function UpcyclingHeroImage({ badge, badgeDescription }: { badge: string; badgeDescription: string }) {
   return (
@@ -265,9 +264,9 @@ export default function UpcyclingPage() {
             >
               <div className="relative aspect-square overflow-hidden rounded-3xl shadow-[0_18px_50px_-30px_rgba(0,0,0,0.35)] ring-1 ring-black/5">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1753162660069-d4145d9a95f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-                  alt="Hands working with fabric"
-                  className="w-full h-full object-cover"
+                  src="/images/models/material.webp"
+                  alt="Atelier details"
+                  className="w-full h-full object-cover object-[50%_35%]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
               </div>
@@ -312,8 +311,8 @@ export default function UpcyclingPage() {
             >
               <div className="absolute inset-0">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1759229874810-26aa9a3dda92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
-                  alt="After upcycling"
+                  src="/images/models/model6.webp"
+                  alt="After"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute right-6 top-6 rounded-full bg-black/70 px-4 py-2 backdrop-blur-sm">
@@ -326,8 +325,8 @@ export default function UpcyclingPage() {
                 style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
               >
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1760533091973-1262bf57d244?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
-                  alt="Before upcycling"
+                  src="/images/models/model5.webp"
+                  alt="Before"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute left-6 top-6 rounded-full bg-[#059669] px-4 py-2 backdrop-blur-sm">

@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import Link from 'next/link';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations, useLocale } from '@/lib/i18n';
+import { Instagram, Send } from 'lucide-react';
 
 const footerNavItems = [
   { key: 'bespoke', href: '/bespoke' },
@@ -14,6 +15,9 @@ const footerNavItems = [
   { key: 'about', href: '/about' },
   { key: 'contact', href: '/contact' },
 ];
+
+const TELEGRAM_URL = 'https://t.me/NataliiaKhreshkova';
+const INSTAGRAM_URL = 'https://instagram.com/';
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -63,6 +67,29 @@ export default function Footer() {
               <Link href={`/${locale}/agb`} className="hover:text-white transition-colors">
                 {t('agb')}
               </Link>
+              <span className="hidden sm:inline text-white/15" aria-hidden>
+                |
+              </span>
+              <div className="flex items-center gap-3">
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/55 transition-colors hover:border-white/30 hover:text-white"
+                >
+                  <Instagram className="h-4.5 w-4.5" />
+                </a>
+                <a
+                  href={TELEGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Telegram"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/55 transition-colors hover:border-white/30 hover:text-white"
+                >
+                  <Send className="h-4.5 w-4.5" />
+                </a>
+              </div>
             </div>
           </div>
 

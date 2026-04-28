@@ -103,7 +103,7 @@ export default function AboutSection() {
             >
               <div className="relative aspect-[3/4] bg-brand-sage/20">
                 <ImageWithFallback
-                  src="/images/natalia_img2.png"
+                  src="/images/models/natalia_img2.webp"
                   alt={String(t('name'))}
                   className="absolute inset-0 h-full w-full object-cover object-[50%_20%]"
                   loading="lazy"

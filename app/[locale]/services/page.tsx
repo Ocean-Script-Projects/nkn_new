@@ -33,8 +33,7 @@ const COLORS = [
 ];
 const ACCENT_COLORS = ['#C4A574', '#DC2626', '#8B7355', '#B8985E', '#A8896A', '#C4A574', '#8B7355'];
 
-const SERVICES_HERO_SRC =
-  'https://images.unsplash.com/photo-1558769138-e5ac0c5c0de2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+const SERVICES_HERO_SRC = '/images/models/material2.webp';
 
 function ServicesHeroImage({ badgeTitle, badgeDesc }: { badgeTitle: string; badgeDesc: string }) {
   return (

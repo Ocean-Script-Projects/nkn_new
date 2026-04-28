@@ -15,8 +15,7 @@ import Link from 'next/link';
 import { usePiecesList } from '@/lib/use-pieces';
 import type { CatalogPiece } from '@/lib/catalog-types';
 
-const HERO_IMAGE_SRC =
-  'https://images.unsplash.com/photo-1684259499086-93cb3e555803?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+const HERO_IMAGE_SRC = '/images/models/model6.webp';
 
 function PiecesHeroImage() {
   return (
@@ -120,8 +119,8 @@ export default function PiecesPage() {
               className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl"
             >
               <ImageWithFallback
-                src={HERO_IMAGE_SRC}
-                alt="Atelier process"
+                src="/images/models/material.webp"
+                alt="Material and texture"
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -214,9 +213,9 @@ export default function PiecesPage() {
 
               <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1622907782973-d29eaa246931?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800"
-                  alt="Upcycling transformation"
-                  className="w-full h-full object-cover"
+                  src="/images/models/model7.webp"
+                  alt="Upcycling"
+                  className="w-full h-full object-cover object-[50%_20%]"
                 />
               </div>
             </div>

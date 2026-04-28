@@ -10,7 +10,7 @@ import { useRequestModal } from '@/lib/request-modal-context';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 
 /** Временно та же фотография, что и в hero upcycling */
-const PRINTS_HERO_SRC = '/images/models/model5.png';
+const PRINTS_HERO_SRC = '/images/models/model5.webp';
 
 function PrintsHeroImage() {
   return (

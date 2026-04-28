@@ -11,7 +11,7 @@ import { useTranslations, useLocale } from '@/lib/i18n';
 import { submitSiteRequest } from '@/lib/submit-site-request';
 
 /** Та же фотография, что на главной: `public/images/hero.jpg` */
-const CONTACT_HERO_SRC = '/images/hero.jpg';
+const CONTACT_HERO_SRC = '/images/models/natalia_img5.webp';
 
 function ContactHeroImage() {
   return (
@@ -158,7 +158,7 @@ export default function ContactPage() {
                   </p>
 
                   <motion.a
-                    href="https://t.me/nkn_atelier"
+                    href="https://t.me/NataliiaKhreshkova"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
@@ -538,26 +538,6 @@ export default function ContactPage() {
                 <div className="h-px w-12 bg-[#C4A574]" />
               </div>
             </motion.blockquote>
-          </div>
-        </section>
-
-        {/* SEO BLOCK */}
-        <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-12 bg-[#FAF9F6]">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center space-y-4"
-            >
-              <h2 className="text-xl sm:text-2xl md:text-3xl tracking-tight" style={{ fontFamily: 'serif' }}>
-                {t('seo.title')}
-              </h2>
-              <p className="text-sm sm:text-base text-[#8B8B8B] leading-relaxed">
-                {t('seo.description')}
-              </p>
-            </motion.div>
           </div>
         </section>
 
