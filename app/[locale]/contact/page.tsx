@@ -196,7 +196,7 @@ export default function ContactPage() {
                 </p>
 
                 <motion.a
-                  href="mailto:info@nkn-atelier.de"
+                  href="mailto:hreshkovanat@gmail.com"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-black/10 rounded-full text-sm sm:text-base tracking-wider shadow hover:shadow-lg transition-shadow font-medium"

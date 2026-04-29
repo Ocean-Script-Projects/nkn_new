@@ -157,11 +157,11 @@
     "description": "Kontaktieren Sie mich für eine Beratung und Besprechung Ihres Projekts",
     "email": {
       "title": "E-Mail",
-      "value": "info@nkn-atelier.de"
+      "value": "hreshkovanat@gmail.com"
     },
     "phone": {
       "title": "Telefon",
-      "value": "+49 (0) 123 456 789"
+      "value": "+491774019818"
     },
     "address": {
       "title": "Adresse",
@@ -769,7 +769,7 @@
       "data": { "title": "Datenerfassung", "content": "Wir erfassen nur die Informationen, die Sie bei der Kontaktaufnahme angeben: Name, Kontaktdaten und Inhalt Ihrer Anfrage. Diese Daten werden ausschließlich zur Beantwortung Ihrer Anfragen und zur Projektdurchführung verwendet." },
       "storage": { "title": "Speicherung und Sicherheit", "content": "Ihre Daten werden sicher gespeichert und ohne Ihre Zustimmung nicht an Dritte weitergegeben. Wir ergreifen Maßnahmen zum Schutz personenbezogener Daten." },
       "rights": { "title": "Ihre Rechte", "content": "Sie haben das Recht, Zugang zu Ihren Daten, deren Berichtigung oder Löschung zu verlangen. Kontaktieren Sie uns, um diese Rechte auszuüben." },
-      "contact": { "title": "Kontakt", "content": "Bei Datenschutzfragen: info@nkn-atelier.de" }
+      "contact": { "title": "Kontakt", "content": "Bei Datenschutzfragen: hreshkovanat@gmail.com" }
     }
   },
   "termsPage": {
