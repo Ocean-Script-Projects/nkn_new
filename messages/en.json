@@ -17,8 +17,8 @@
   },
   "homePage": {
     "seo": {
-      "title": "NKN Atelier — design atelier Hamburg",
-      "description": "Clothing as a way to express personality. Bespoke tailoring, author's pieces, prints and upcycling in Hamburg."
+      "title": "NKN Atelier - Natalia Khreshkova, design atelier in Hamburg",
+      "description": "Bespoke tailoring, one-of-one pieces, author prints and upcycling in Hamburg. Personal service - online and offline."
     }
   },
   "hero": {
@@ -40,11 +40,11 @@
     "title": "Clothing as",
     "titleItalic": "extension",
     "titleEnd": "of personality",
-    "description": "For me, costume, silhouette, fabric — this is a way to support a person, their inner world, character and energy. Form, color, print and proportions come together so that the image harmoniously merges with the personality and enhances it.",
+    "description": "For me, costume, silhouette, fabric - this is a way to support a person, their inner world, character and energy. Form, color, print and proportions come together so that the image harmoniously merges with the personality and enhances it.",
     "values": {
       "depth": {
         "title": "Depth",
-        "text": "Each piece is created with an understanding of the person — their figure, inner state and character."
+        "text": "Each piece is created with an understanding of the person - their figure, inner state and character."
       },
       "meaning": {
         "title": "Meaning",
@@ -183,8 +183,8 @@
     "loading": "Loading catalog…",
     "description": "Each piece is made as a one-of-a-kind or in a limited run. Individual adaptation and a bespoke author print for you are available.",
     "seo": {
-      "title": "Author's pieces & catalog",
-      "description": "One-of-one and limited runs: corsets, dresses, scarves, belts. Individual adaptation and custom prints."
+      "title": "One-of-one pieces - NKN Atelier by Natalia Khreshkova | Hamburg",
+      "description": "A curated catalog of author pieces: corsets, dresses, scarves and belts. Single copies or limited runs with individual adaptation and custom print selection."
     },
     "productStatus": {
       "oneOfOne": "Single copy.",
@@ -234,7 +234,7 @@
     "cta": {
       "title": "Looking for a",
       "titleItalic": "custom piece?",
-      "description": "Describe your idea — I will suggest a solution",
+      "description": "Describe your idea - I will suggest a solution",
       "button": "Request a piece"
     },
     "modal": {
@@ -258,15 +258,15 @@
   },
   "upcycling": {
     "label": "Sustainable",
-    "title": "Upcycling —",
+    "title": "Upcycling -",
     "titleItalic": "conscious",
     "titleEnd": "transformation",
     "subtitle1": "Giving existing garments new form,",
     "subtitle2": "function and energy",
-    "description": "I work with items that you already have. I recut and rethink them — with new energy, modern aesthetics and deep respect for the history of the piece.",
+    "description": "I work with items that you already have. I recut and rethink them - with new energy, modern aesthetics and deep respect for the history of the piece.",
     "seo": {
-      "title": "Upcycling & garment transformation",
-      "description": "Reconstruction and recutting from your wardrobe. Sustainable fashion with an artistic approach in Hamburg."
+      "title": "Upcycling & transformation - NKN Atelier by Natalia Khreshkova | Hamburg",
+      "description": "Reconstruction of garments from your wardrobe: recutting, new silhouette and modern aesthetic. Sustainable fashion with an artistic approach."
     },
     "badge": "Eco-conscious",
     "badgeDescription": "Sustainable approach to fashion",
@@ -366,7 +366,7 @@
     "cta": {
       "title": "Start the",
       "titleItalic": "transformation",
-      "description": "Describe the garment and your idea — I will suggest a solution"
+      "description": "Describe the garment and your idea - I will suggest a solution"
     },
     "form": {
       "garment": "What do you want to transform?",
@@ -392,8 +392,8 @@
     "titleItalic": "Events",
     "description": "Exhibitions, workshops, trunk shows and open studio days. Join us for unique fashion experiences.",
     "seo": {
-      "title": "Atelier events",
-      "description": "Calendar of exhibitions, workshops, trunk shows and open studio days at NKN Atelier."
+      "title": "Atelier events - NKN Atelier by Natalia Khreshkova | Hamburg",
+      "description": "Calendar of exhibitions, workshops, trunk shows and open studio days. Join creative moments at NKN Atelier in Hamburg."
     },
     "sectionLabel": "Upcoming",
     "sectionTitle": "Events Calendar",
@@ -476,7 +476,7 @@
         },
         "02": {
           "title": "First meeting",
-          "description": "We set date and time — online. We define the model, purpose of the piece, fabric and all details. If needed we agree on the print."
+          "description": "We set date and time - online. We define the model, purpose of the piece, fabric and all details. If needed we agree on the print."
         },
         "03": {
           "title": "Taking measurements",
@@ -493,12 +493,12 @@
       }
     },
     "cta": {
-      "description": "Leave a request — I will hold a free consultation and we will discuss your project.",
+      "description": "Leave a request - I will hold a free consultation and we will discuss your project.",
       "button": "Book a consultation"
     },
     "seo": {
-      "title": "Bespoke tailoring",
-      "description": "Made-to-measure clothing in Hamburg: offline and online, consultation, fittings and full atelier process."
+      "title": "Made-to-measure tailoring - NKN Atelier by Natalia Khreshkova | Hamburg",
+      "description": "Clothing built on individual construction: consultation, measurements, fittings and full atelier process. Offline and online in Hamburg."
     }
   },
   "servicesPage": {
@@ -519,20 +519,20 @@
         "title": "Custom tailoring",
         "subtitle": "Custom Tailoring",
         "shortDesc": "I create clothing to individual measurements, considering figure, lifestyle and inner state.",
-        "fullDesc": "I work with form, proportions, fit and comfort. Each piece is created with deep understanding of the person — their figure, character, lifestyle. I conduct several fittings for perfect fit. I select fabrics and hardware, considering both aesthetics and practicality.",
+        "fullDesc": "I work with form, proportions, fit and comfort. Each piece is created with deep understanding of the person - their figure, character, lifestyle. I conduct several fittings for perfect fit. I select fabrics and hardware, considering both aesthetics and practicality.",
         "features": ["Individual measurements", "Sketch development", "2-3 fittings", "Perfect fit", "Fabric and hardware selection", "Professional finishing"]
       },
       "02": {
         "title": "Author's pieces One-of-One",
         "subtitle": "Unique Pieces",
-        "shortDesc": "I develop and sew unique pieces in a single copy — from idea to final stitch.",
+        "shortDesc": "I develop and sew unique pieces in a single copy - from idea to final stitch.",
         "fullDesc": "Each One-of-One piece is an artistic statement. I create the concept, think through form, construction and decorative elements. I work with unusual fabrics, combine textures, apply author's techniques.",
         "features": ["Unique concept", "Author's development", "Exclusive materials", "Complex techniques", "Single copy", "Artistic value"]
       },
       "03": {
         "title": "Limited series",
         "subtitle": "Limited Series",
-        "shortDesc": "I create limited series of pieces — each model is thoughtfully designed constructively and aesthetically.",
+        "shortDesc": "I create limited series of pieces - each model is thoughtfully designed constructively and aesthetically.",
         "fullDesc": "I develop capsule collections of 3 to 15 pieces. Each model goes through full development cycle: from sketch to pattern making.",
         "features": ["3-15 pieces per series", "Professional patterns", "High quality execution", "Exclusivity", "Full development cycle", "Concept testing"]
       },
@@ -546,7 +546,7 @@
       "05": {
         "title": "Author's prints",
         "subtitle": "Custom Prints",
-        "shortDesc": "I create prints considering the construction — the print is placed exactly where intended.",
+        "shortDesc": "I create prints considering the construction - the print is placed exactly where intended.",
         "fullDesc": "I design the print as part of the overall composition. I work with digital print, screen printing, hand painting.",
         "features": ["Print concept development", "Integration with construction", "Various print techniques", "Color development", "Precise placement", "Author's approach"]
       },
@@ -589,8 +589,8 @@
       "submit": "Submit request"
     },
     "seo": {
-      "title": "Atelier services",
-      "description": "Seven directions: bespoke tailoring, one-of-one, limited series, upcycling, custom prints, full development cycle, brand consulting."
+      "title": "Atelier services - NKN Atelier by Natalia Khreshkova | Hamburg",
+      "description": "Seven directions: bespoke tailoring, one-of-one pieces, limited series, upcycling, custom prints, full development cycle, brand consulting."
     }
   },
   "aboutPage": {
@@ -606,7 +606,7 @@
     "story": {
       "p1": "I am Natalia NKN Khreshkova, founder and director of a design atelier in the style of a «fashion house» (Ukraine).",
       "p2": "Pattern maker for women's and men's clothing of any complexity. 37 years of professional practice. Designer of author's prints on fabric and author of her own online tailoring system.",
-      "p3": "I create not just clothing — I create state through form that strengthens and reveals personality. I work with clients worldwide. Today I am developing an author's studio in Germany.",
+      "p3": "I create not just clothing - I create state through form that strengthens and reveals personality. I work with clients worldwide. Today I am developing an author's studio in Germany.",
       "p4": "",
       "footer": "37+ years in tailoring and atelier practice"
     },
@@ -619,7 +619,7 @@
     "professional": {
       "label": "Professional basis",
       "title": "Every order begins with dialogue",
-      "text1": "It is important for me to hear the person — to understand their character, lifestyle and inner rhythm. Even if you find it hard to say exactly what piece you want, I can hear and understand your request.",
+      "text1": "It is important for me to hear the person - to understand their character, lifestyle and inner rhythm. Even if you find it hard to say exactly what piece you want, I can hear and understand your request.",
       "text2": "In the process of working together we find the piece that becomes ideal for you. The work is deep and systematic, in a warm and respectful atmosphere. Every detail in the piece reflects personality and strengthens its expression. My motto: aesthetics, comfort and functionality."
     },
     "philosophy": { "label": "Philosophy", "title": "My approach" },
@@ -631,7 +631,7 @@
     "process": {
       "title": "Full cycle",
       "titleItalic": "atelier practice",
-      "subtitle": "From the first conversation to the final fitting — every step is personal and precise",
+      "subtitle": "From the first conversation to the final fitting - every step is personal and precise",
       "steps": {
         "01": { "step": "Idea", "detail": "Understanding vision and needs" },
         "02": { "step": "Sketch", "detail": "Translating concept into form" },
@@ -651,8 +651,8 @@
       "cta": "Discuss collaboration"
     },
     "quote": { "text": "Clothing is not decoration. It is structure, meaning and personality.", "author": "NATALIA KHRESHKOVA" },
-    "cta": { "title": "Work", "titleItalic": "with me", "description": "If you are looking for a personal approach and thoughtful work with form — leave a request", "button": "Leave a request" },
-    "seo": { "title": "Atelier designer Hamburg", "description": "Professional atelier practice with over 37 years of experience. Bespoke tailoring, pattern making and garment construction." },
+    "cta": { "title": "Work", "titleItalic": "with me", "description": "If you are looking for a personal approach and thoughtful work with form - leave a request", "button": "Leave a request" },
+    "seo": { "title": "Designer atelier Hamburg - Natalia Khreshkova | NKN Atelier", "description": "37+ years of practice in pattern making and garment construction. Handcraft, author approach and an online tailoring system for clients worldwide." },
     "modal": {
       "title": "Let's",
       "titleItalic": "talk",
@@ -687,8 +687,8 @@
       "description": "Contact me to discuss your project."
     },
     "seo": {
-      "title": "Brand collaboration",
-      "description": "Support for designers and brand launch: construction, patterns, size range, sample and production-ready model."
+      "title": "Brand collaboration - NKN Atelier by Natalia Khreshkova | Hamburg",
+      "description": "Support for designers and brand launch: construction, pattern making, size range, sample and production-ready preparation."
     }
   },
   "printsPage": {
@@ -704,7 +704,7 @@
     "directions": {
       "01": {
         "title": "Individual print for you",
-        "description": "Development of your own print is possible — in any theme, considering your wishes and the piece's purpose. The print is created as part of the overall concept. Theme, placement and size are worked out in detail. From such a print a unique piece is born that reflects you."
+        "description": "Development of your own print is possible - in any theme, considering your wishes and the piece's purpose. The print is created as part of the overall concept. Theme, placement and size are worked out in detail. From such a print a unique piece is born that reflects you."
       },
       "02": {
         "title": "Ready designer prints",
@@ -717,15 +717,15 @@
     },
     "ctaButton": "Discuss project",
     "ctaTitle": "Ready to talk about a print or collection?",
-    "ctaDescription": "In a few words, describe what you need — I’ll reply personally with a next step.",
+    "ctaDescription": "In a few words, describe what you need - I’ll reply personally with a next step.",
     "ctaNote": "Reply within 24–48h · Hamburg",
     "seo": {
-      "title": "Custom prints for garments",
-      "description": "Author's prints developed with the garment construction in mind. Bespoke, ready-made and brand-oriented solutions."
+      "title": "Author prints for garments - NKN Atelier by Natalia Khreshkova",
+      "description": "Print development aligned with garment construction. Bespoke, ready-made and brand-oriented solutions."
     }
   },
   "contactPage": {
-    "hero": { "label": "Contact", "title": "Start the", "titleItalic": "conversation", "description": "Describe your request — I will respond personally." },
+    "hero": { "label": "Contact", "title": "Start the", "titleItalic": "conversation", "description": "Describe your request - I will respond personally." },
     "telegram": { "title": "Telegram", "description": "Fastest way to reach me. I respond within 24 hours.", "button": "Write on Telegram" },
     "email": { "title": "Email", "description": "For detailed requests and collaborations.", "button": "Send email" },
     "form": {
@@ -754,14 +754,14 @@
     },
     "location": { "label": "Atelier", "title": "Hamburg, Deutschland", "description": "Visits are arranged individually. Please contact me to schedule a consultation." },
     "quote": { "text": "Every garment begins with a conversation." },
-    "seo": { "title": "Contact atelier Hamburg", "description": "Contact NKN atelier for bespoke tailoring, custom garment design and personal consultations. Hamburg, Germany." },
+    "seo": { "title": "Contact - NKN Atelier by Natalia Khreshkova | Hamburg", "description": "Reach out for personal consultations on bespoke tailoring, prints and upcycling. Hamburg - online and offline." },
     "success": "Thank you! I will get back to you personally."
   },
   "privacyPage": {
     "title": "Privacy Policy",
     "lastUpdated": "Last updated: February 2026",
     "seo": {
-      "title": "Privacy policy",
+      "title": "Privacy Policy - NKN Atelier by Natalia Khreshkova",
       "description": "How NKN Atelier collects, uses and protects personal data when you contact us through the website."
     },
     "intro": "NKN Atelier respects your privacy. This policy describes how we collect, use and protect your data.",
@@ -776,13 +776,13 @@
     "title": "Terms of Use",
     "lastUpdated": "Last updated: February 2026",
     "seo": {
-      "title": "Website terms of use",
+      "title": "Website Terms - NKN Atelier by Natalia Khreshkova",
       "description": "Terms of use for the NKN Atelier website: services, content and liability."
     },
     "intro": "By using the NKN Atelier website, you agree to the following terms.",
     "sections": {
       "services": { "title": "Services", "content": "Information on the site is for informational purposes. Terms of collaboration and service delivery are discussed individually for each project." },
-      "content": { "title": "Content", "content": "All site materials — photos, texts, design — are the intellectual property of NKN Atelier and are protected by copyright." },
+      "content": { "title": "Content", "content": "All site materials - photos, texts, design - are the intellectual property of NKN Atelier and are protected by copyright." },
       "links": { "title": "Links", "content": "The site may contain links to external resources. We are not responsible for the content and privacy policy of third-party sites." },
       "changes": { "title": "Changes", "content": "We reserve the right to modify the terms of use. The current version is always available on this page." }
     }
@@ -791,15 +791,15 @@
     "title": "Terms & Conditions",
     "lastUpdated": "Last updated: February 2026",
     "seo": {
-      "title": "Terms & conditions (AGB)",
-      "description": "General terms for ordering NKN atelier services: tailoring, fittings, timelines, payment and alterations."
+      "title": "AGB - General Terms for Atelier Services NKN Atelier by Natalia Khreshkova",
+      "description": "General terms for ordering atelier services: tailoring, fittings, timelines, payment and alterations."
     },
-    "intro": "These terms govern the collaboration when ordering NKN atelier services — bespoke tailoring, author's pieces, upcycling and consultations.",
+    "intro": "These terms govern the collaboration when ordering NKN atelier services - bespoke tailoring, author's pieces, upcycling and consultations.",
     "sections": {
       "order": { "title": "Order and agreements", "content": "An order is confirmed after discussing details and agreeing on terms. Advance payment or deposit is discussed individually depending on the scope of work." },
       "fittings": { "title": "Fittings", "content": "For bespoke tailoring, 2–3 fittings are held. Dates are agreed in advance. The client is obliged to attend fittings at the agreed times." },
       "delivery": { "title": "Timelines and delivery", "content": "Completion times are indicative and may depend on project complexity and atelier workload. The finished work is handed over after full payment." },
-      "payment": { "title": "Payment", "content": "Payment is made as agreed — in stages or in full. Bank transfer and other methods are accepted by agreement." },
+      "payment": { "title": "Payment", "content": "Payment is made as agreed - in stages or in full. Bank transfer and other methods are accepted by agreement." },
       "returns": { "title": "Returns and alterations", "content": "Individually made garments cannot be returned. Corrections and adjustments within the agreed scope are carried out by mutual consent." }
     }
   }

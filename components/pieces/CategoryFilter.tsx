@@ -16,7 +16,7 @@ export default function CategoryFilter({ categories, selectedCategory, onSelect,
   return (
     <section
       className={cn(
-        'border-y border-black/5 py-6 sm:py-12 px-4 sm:px-6 md:px-12',
+        'border-y border-black/5 py-4 sm:py-10 px-4 sm:px-6 md:px-12',
         className
       )}
     >
@@ -28,7 +28,7 @@ export default function CategoryFilter({ categories, selectedCategory, onSelect,
           transition={{ duration: 0.6 }}
           className={cn(
             'flex min-w-0 max-w-full items-stretch',
-            'flex-nowrap gap-x-7 overflow-x-auto scrollbar-hide pb-1 [-webkit-overflow-scrolling:touch]',
+            'flex-nowrap gap-x-4 overflow-x-auto scrollbar-hide pb-1 [-webkit-overflow-scrolling:touch]',
             'snap-x snap-mandatory',
             'lg:flex-wrap lg:justify-center lg:gap-x-8 lg:gap-y-2 lg:overflow-visible lg:pb-0 lg:snap-none'
           )}
@@ -43,9 +43,9 @@ export default function CategoryFilter({ categories, selectedCategory, onSelect,
               onClick={() => onSelect(cat.id)}
               type="button"
               className={cn(
-                'relative inline-flex shrink-0 snap-start items-center justify-center break-words text-center text-sm tracking-wider transition-colors',
-                'min-h-[44px] px-3 py-2.5',
-                'lg:min-h-0 lg:px-6 lg:py-3 lg:text-base',
+                'relative inline-flex shrink-0 snap-start items-center justify-center whitespace-nowrap text-center text-xs tracking-widest transition-colors',
+                'min-h-[40px] px-3 py-2',
+                'lg:min-h-0 lg:px-6 lg:py-3 lg:text-sm',
                 selectedCategory === cat.id ? 'text-[#C4A574]' : 'text-[#8B8B8B] hover:text-black'
               )}
             >
