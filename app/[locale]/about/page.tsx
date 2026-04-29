@@ -441,15 +441,15 @@ export default function AboutPage() {
                   alt: 'Pattern making',
                 },
                 {
-                  src: '/images/models/model7.webp',
+                  src: '/images/models/material3.webp',
                   alt: 'Mannequin',
                 },
                 {
-                  src: '/images/models/natalia_img4.webp',
+                  src: '/images/models/model8.webp',
                   alt: 'Workspace',
                 },
                 {
-                  src: '/images/models/natalia_img2.webp',
+                  src: '/images/models/material4.webp',
                   alt: 'Hand details',
                 },
               ].map((img, i) => (

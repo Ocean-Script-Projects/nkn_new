@@ -178,7 +178,7 @@ export default function PageHeader({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="relative min-h-[min(60svh,620px)] w-full overflow-hidden rounded-b-none sm:min-h-[min(64svh,680px)]"
+              className="relative min-h-[min(72svh,740px)] w-full overflow-hidden rounded-b-none sm:min-h-[min(78svh,820px)]"
             >
               <div className="absolute inset-0">{mobileImageSlot}</div>
               <div
