@@ -9,7 +9,7 @@ import { useRequestModal } from '@/lib/request-modal-context';
 import DecorativeLogo from '@/components/shared/DecorativeLogo';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 
-const LOCAL_HERO = '/images/natalia_img.JPG';
+const LOCAL_HERO = '/images/natalia_img.webp';
 const LOCAL_HERO_FALLBACK = '/images/hero.jpg';
 
 export default function HeroSection() {
