@@ -6,9 +6,41 @@ import { useTranslations } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
 import DecorativeLogo from '@/components/shared/DecorativeLogo';
 
+function normalizeTel(value: string): string {
+  return value.trim().replace(/(?!^\+)[^\d]/g, '');
+}
+
+function formatPhoneDisplay(value: string): string {
+  const v = normalizeTel(value);
+
+  // Prefer a nice, familiar German mobile formatting when possible.
+  if (v.startsWith('+49')) {
+    const rest = v.slice(3);
+    if (/^\d+$/.test(rest) && rest.length >= 10) {
+      const a = rest.slice(0, 3);
+      const b = rest.slice(3, 6);
+      const c = rest.slice(6, 8);
+      const d = rest.slice(8, 10);
+      const tail = rest.slice(10);
+      return ['+49', a, b, c, d, tail].filter(Boolean).join(' ');
+    }
+  }
+
+  // Fallback: group digits into readable chunks.
+  const m = v.match(/^(\+\d{1,3})(\d+)$/);
+  if (!m) return value;
+  const [, cc, digits] = m;
+  const chunks = digits.match(/.{1,3}/g) ?? [];
+  return [cc, ...chunks].join(' ');
+}
+
 export default function ContactSection() {
   const t = useTranslations('contact');
   const { openRequestModal } = useRequestModal();
+
+  const phoneRaw = String(t('phone.value'));
+  const phoneTel = normalizeTel(phoneRaw);
+  const phoneDisplay = formatPhoneDisplay(phoneRaw);
 
   const contacts = [
     {
@@ -20,8 +52,8 @@ export default function ContactSection() {
     {
       icon: Phone,
       title: t('phone.title'),
-      value: t('phone.value'),
-      link: `tel:${String(t('phone.value')).replace(/\s/g, '')}`,
+      value: phoneDisplay,
+      link: `tel:${phoneTel}`,
     },
     {
       icon: MapPin,
