@@ -17,7 +17,7 @@ function AboutHeroImage() {
     <div className="relative h-full w-full min-h-full overflow-hidden lg:aspect-[4/5] lg:rounded-3xl lg:shadow-2xl">
       <ImageWithFallback
         src={ABOUT_HERO_SRC}
-        alt="Natalia Khreshkova portrait"
+        alt="Nataliia Khreshkova portrait"
         className="h-full w-full object-cover lg:rounded-3xl"
       />
       <motion.div
@@ -191,7 +191,7 @@ export default function AboutPage() {
                 <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
                   <ImageWithFallback
                     src="/images/models/natalia_img4.webp"
-                    alt="Natalia Khreshkova"
+                    alt="Nataliia Khreshkova"
                     className="w-full h-full object-cover object-[50%_20%]"
                   />
                 </div>
