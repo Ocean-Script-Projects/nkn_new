@@ -5,7 +5,15 @@ import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import { useTranslations } from '@/lib/i18n';
 
-const SECTION_KEYS = ['data', 'storage', 'rights', 'contact'] as const;
+const SECTION_KEYS = [
+  'general',
+  'controller',
+  'dataProcessing',
+  'whatsapp',
+  'telegram',
+  'disclosure',
+  'retention',
+] as const;
 
 export default function PrivacyPage() {
   const t = useTranslations('privacyPage');
@@ -50,9 +58,9 @@ export default function PrivacyPage() {
                     <h2 className="text-xl sm:text-2xl font-medium text-[#1a1a1a] mb-4 tracking-tight">
                       {t(`sections.${key}.title`)}
                     </h2>
-                    <p className="text-base text-[#8B8B8B] leading-relaxed">
+                    <div className="text-base text-[#8B8B8B] leading-relaxed whitespace-pre-line">
                       {t(`sections.${key}.content`)}
-                    </p>
+                    </div>
                   </motion.div>
                 ))}
               </div>

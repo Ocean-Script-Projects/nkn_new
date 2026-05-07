@@ -174,7 +174,8 @@
     "copyright": "© 2026 Natalia Chreschkowa. Alle Rechte vorbehalten.",
     "privacy": "Datenschutz",
     "terms": "Nutzungsbedingungen",
-    "agb": "AGB"
+    "agb": "AGB",
+    "impressum": "Impressum"
   },
   "pieces": {
     "label": "Stücke",
@@ -767,19 +768,43 @@
     "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden."
   },
   "privacyPage": {
-    "title": "Datenschutzerklärung",
-    "lastUpdated": "Letzte Aktualisierung: Februar 2026",
+    "title": "Datenschutz",
+    "lastUpdated": "Stand: Mai 2026",
     "seo": {
       "title": "Datenschutz - NKN Atelier + Natalia Chreschkowa",
       "description": "Wie NKN Atelier personenbezogene Daten erfasst, nutzt und schützt, wenn Sie uns über die Website kontaktieren."
     },
-    "seoText": "Diese Seite erklärt, welche Daten NKN Atelier bei einer Anfrage über die Website erhalten kann und wie sie verwendet werden — ausschließlich zur Beantwortung Ihrer Anfrage und zur Projektabwicklung. Wir verkaufen keine personenbezogenen Daten und geben sie nicht ohne rechtliche Grundlage an Dritte weiter. Bei Fragen zum Datenschutz kontaktieren Sie mich bitte.",
-    "intro": "NKN Atelier respektiert Ihre Privatsphäre. Diese Richtlinie beschreibt, wie wir Ihre Daten erfassen, verwenden und schützen.",
+    "seoText": "Auf dieser Seite finden Sie Hinweise zum Datenschutz gemäß DSGVO für die Kontaktaufnahme, Beratung und Maßanfertigung bei Nataliia Khreshkova (NKN).",
+    "intro": "Der Schutz Ihrer personenbezogenen Daten ist mir sehr wichtig. Ich verarbeite Ihre Daten vertraulich und entsprechend der DSGVO sowie dieser Datenschutzerklärung.",
     "sections": {
-      "data": { "title": "Datenerfassung", "content": "Wir erfassen nur die Informationen, die Sie bei der Kontaktaufnahme angeben: Name, Kontaktdaten und Inhalt Ihrer Anfrage. Diese Daten werden ausschließlich zur Beantwortung Ihrer Anfragen und zur Projektdurchführung verwendet." },
-      "storage": { "title": "Speicherung und Sicherheit", "content": "Ihre Daten werden sicher gespeichert und ohne Ihre Zustimmung nicht an Dritte weitergegeben. Wir ergreifen Maßnahmen zum Schutz personenbezogener Daten." },
-      "rights": { "title": "Ihre Rechte", "content": "Sie haben das Recht, Zugang zu Ihren Daten, deren Berichtigung oder Löschung zu verlangen. Kontaktieren Sie uns, um diese Rechte auszuüben." },
-      "contact": { "title": "Kontakt", "content": "Bei Datenschutzfragen: hreshkovanat@gmail.com" }
+      "general": {
+        "title": "1. Allgemeine Hinweise",
+        "content": "Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierbare Person beziehen (z. B. Name, Telefonnummer, Fotos, Körpermaße, Nachrichteninhalte).\n\nDiese Erklärung erläutert, welche Daten ich beim Erstkontakt, bei Stilberatungen, beim Besuch vor Ort oder bei Maßanfertigungen verarbeite."
+      },
+      "controller": {
+        "title": "2. Verantwortliche Stelle",
+        "content": "Nataliia NKN Khreshkova\nEinzelunternehmerin – Modedesign, Stilberatung & Maßanfertigung\nAdresse:\nFlottmoorring 3\n24568 Kaltenkirchen\nDeutschland\nTelefon: +49 177 4019818\nE-Mail: khreshkovanataliia@gmail.com"
+      },
+      "dataProcessing": {
+        "title": "3. Art der verarbeiteten Daten und Zwecke",
+        "content": "Ich verarbeite personenbezogene Daten ausschließlich im Rahmen meiner beruflichen Tätigkeit als Modedesignerin, Stilberaterin und Anbieterin von Maßanfertigungen.\n\na) Kontaktaufnahme und Organisation\nErhebung bei Kontakt über Instagram, WhatsApp, Facebook, TikTok, Telegram oder per E-Mail.\nVerarbeitete Daten:\n• Name oder Nutzername\n• Telefonnummer\n• E-Mail-Adresse\n• Inhalte der Nachrichten\n• Terminabsprachen (Ort, Zeit)\n• Angaben zu Wünschen, Stilfragen, körperlichen Besonderheiten\nRechtsgrundlage:\nArt. 6 Abs. 1 lit. b DSGVO (vorvertragliche Beratung, Vertragserfüllung)\nArt. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an effizienter Kommunikation)\n\nb) Persönliche Beratung 1:1 – vor Ort oder bei mir\nVerarbeitete Daten:\n• Körpermaße (z. B. Brust-, Taille-, Hüftumfang, Armlänge, Rückenlänge)\n• notwendige Passformmessungen mittels Maßband\n• Fotos der Kleidung und der Silhouette (falls vom Kunden freiwillig übermittelt)\n• Stilpräferenzen, Materialien, Farben, Wünsche\n• Besonderheiten der Figur (z. B. Haltung, Proportionen, individuelle Passformanforderungen)\nHinweis:\nDer körperliche Kontakt im Rahmen der Vermessung (Anlegen des Maßbandes) dient ausschließlich technischen Zwecken und stellt keine Datenverarbeitung selbst dar. Verarbeitet werden nur die Messergebnisse, nicht der physische Vorgang.\nRechtsgrundlage:\nArt. 6 Abs. 1 lit. b DSGVO – Durchführung der Dienstleistung\n\nc) Maßanfertigung und Gestaltung von Kleidung\nVerarbeitete Daten:\n• Maße und Passformdaten\n• technische Skizzen\n• Stoff- und Designauswahl\n• Fotos zur Passformanalyse (wenn freiwillig übermittelt)\nRechtsgrundlage:\nArt. 6 Abs. 1 lit. b DSGVO – Vertragserfüllung\n\nd) Zahlungsabwicklung\nVerarbeitete Daten (je nach Zahlungsart):\n• Name\n• Bankverbindung (IBAN)\n• PayPal-Name/E-Mail\nRechtsgrundlage:\nArt. 6 Abs. 1 lit. b DSGVO – Ausführung des Vertrags\nArt. 6 Abs. 1 lit. c DSGVO – steuerrechtliche Aufbewahrungspflichten"
+      },
+      "whatsapp": {
+        "title": "4. Kommunikation über WhatsApp Business",
+        "content": "Ich nutze WhatsApp Business.\nNachrichteninhalte sind Ende-zu-Ende verschlüsselt.\nWhatsApp verarbeitet jedoch Metadaten (Zeitpunkt, Absender, Empfänger, Gerätetyp).\nDatenschutzerklärung WhatsApp:\nhttps://www.whatsapp.com/legal/#privacy-policy\nRechtsgrundlagen:\nArt. 6 Abs. 1 lit. f DSGVO\nArt. 6 Abs. 1 lit. b DSGVO (bei Kundenanfragen)"
+      },
+      "telegram": {
+        "title": "5. Kommunikation über Telegram",
+        "content": "Telegram verwendet serverseitige Verschlüsselung.\nGeheime Chats sind Ende-zu-Ende verschlüsselt.\nVerarbeitete Daten:\n• Nutzername\n• Metadaten\n• Nachrichteninhalte\nDatenschutzerklärung Telegram:\nhttps://telegram.org/privacy/de\nRechtsgrundlage:\nArt. 6 Abs. 1 lit. f DSGVO"
+      },
+      "disclosure": {
+        "title": "6. Weitergabe personenbezogener Daten",
+        "content": "Ich gebe personenbezogene Daten nicht an Dritte weiter, außer:\n• wenn dies zur Vertragserfüllung notwendig ist (z. B. Steuerberater)\n• wenn eine gesetzliche Pflicht besteht (z. B. Finanzamt)\n\nKeine Weitergabe an:\n• Werbefirmen\n• Social-Media-Plattformen\n• Trackingdienste\n• Analyseunternehmen"
+      },
+      "retention": {
+        "title": "7. Speicherdauer",
+        "content": "Ich speichere personenbezogene Daten:\n• solange sie für die Beratung oder Maßanfertigung erforderlich sind\n• und gemäß gesetzlicher Aufbewahrungsfristen (6–10 Jahre)"
+      }
     }
   },
   "termsPage": {
@@ -814,5 +839,44 @@
       "payment": { "title": "Zahlung", "content": "Die Zahlung erfolgt wie vereinbart - in Raten oder vollständig. Überweisung und andere Zahlungsmethoden werden nach Vereinbarung akzeptiert." },
       "returns": { "title": "Rückgabe und Änderungen", "content": "Individuell angefertigte Kleidungsstücke können nicht zurückgegeben werden. Korrekturen und Anpassungen im vereinbarten Rahmen erfolgen im gegenseitigen Einvernehmen." }
     }
+  },
+  "impressumPage": {
+    "title": "Impressum",
+    "subtitle": "gemäß § 5 TMG und § 18 Abs. 2 MStV",
+    "sections": {
+      "company": {
+        "title": "Unternehmensbezeichnung",
+        "content": "NKN Nataliia Khreshkova, NaKNem\nInhaberin: Nataliia Khreshkova\nAnschrift:\nFlottmoorring 3\n24568 Kaltenkirchen\nDeutschland"
+      },
+      "contact": {
+        "title": "Kontakt",
+        "content": "Telefon: +49 177 4019818\nE-Mail: khreshkovanataliia@gmail.com\nTelegram: @NataliiaKhreshkova\nWhatsApp: +38 093 0385434"
+      },
+      "activity": {
+        "title": "Tätigkeitsbereiche",
+        "content": "Modedesign, individuelle Maßanfertigung, Verkauf von Designbekleidung, Stoffdesign, Stil- und Imageberatung, Erstellung von Capsule Wardrobes sowie Workshops und Coaching."
+      },
+      "responsible": {
+        "title": "Inhaltlich Verantwortliche gemäß § 18 Abs. 2 MStV",
+        "content": "Nataliia Khreshkova\nFlottmoorring 3\n24568 Kaltenkirchen"
+      },
+      "odr": {
+        "title": "Online-Streitbeilegung gemäß Art. 14 Abs. 1 ODR-VO",
+        "content": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit:\nhttps://ec.europa.eu/consumers/odr/\n\nWir sind nicht verpflichtet und nicht bereit, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+      },
+      "copyright": {
+        "title": "Urheberrecht",
+        "content": "Alle Designs, Stoffdrucke, Modelle, Texte, Bilder, Grafiken und digitalen Inhalte sind urheberrechtlich geschützt.\nEine Nutzung ohne schriftliche Genehmigung von NKN Nataliia Khreshkova, NaKNem ist nicht gestattet."
+      },
+      "scope": {
+        "title": "Geltungsbereich dieses Impressums",
+        "content": "Dieses Impressum gilt für folgende Onlinepräsenzen:\n– Instagram: https://www.instagram.com/nataliiakhreshkovanatalina/\n– Facebook: https://www.facebook.com/share/1V1AQqDcp5/?mibextid=wwXIfr\n– TikTok: https://www.tiktok.com/@nataliia.khreshkov?r=1&t=ZM-92318YqysVH"
+      }
+    },
+    "seo": {
+      "title": "Impressum - NKN Atelier | Nataliia Khreshkova",
+      "description": "Impressum gemäß § 5 TMG und § 18 Abs. 2 MStV: Unternehmensangaben, Kontakt, Verantwortliche und rechtliche Hinweise."
+    },
+    "seoText": "Diese Seite enthält das Impressum von NKN Nataliia Khreshkova, NaKNem gemäß § 5 TMG und § 18 Abs. 2 MStV. Hier finden Sie Unternehmensangaben, Kontaktmöglichkeiten sowie rechtliche Informationen."
   }
 }

@@ -4,11 +4,20 @@ import { motion } from 'motion/react';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import { useTranslations } from '@/lib/i18n';
+import SeoIntro from '@/components/seo/SeoIntro';
 
-const SECTION_KEYS = ['order', 'fittings', 'delivery', 'payment', 'returns'] as const;
+const SECTION_KEYS = [
+  'company',
+  'contact',
+  'activity',
+  'responsible',
+  'odr',
+  'copyright',
+  'scope',
+] as const;
 
-export default function AGBPage() {
-  const t = useTranslations('agbPage');
+export default function ImpressumPage() {
+  const t = useTranslations('impressumPage');
 
   return (
     <div className="min-h-screen bg-[#FAF9F6] overflow-x-hidden">
@@ -34,9 +43,9 @@ export default function AGBPage() {
               >
                 {t('title')}
               </h1>
-              <p className="text-sm text-[#8B8B8B] tracking-wider mb-12">{t('lastUpdated')}</p>
-              <p className="text-base sm:text-lg text-[#4A4A4A] leading-relaxed mb-16">
-                {t('intro')}
+
+              <p className="text-sm text-[#8B8B8B] tracking-wider mb-12">
+                {t('subtitle')}
               </p>
 
               <div className="space-y-12">
@@ -45,17 +54,19 @@ export default function AGBPage() {
                     key={key}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    transition={{ duration: 0.5, delay: i * 0.06 }}
                   >
                     <h2 className="text-xl sm:text-2xl font-medium text-[#1a1a1a] mb-4 tracking-tight">
                       {t(`sections.${key}.title`)}
                     </h2>
-                    <p className="text-base text-[#8B8B8B] leading-relaxed">
+                    <div className="text-base text-[#4A4A4A] leading-relaxed whitespace-pre-line">
                       {t(`sections.${key}.content`)}
-                    </p>
+                    </div>
                   </motion.div>
                 ))}
               </div>
+
+              <SeoIntro text={String(t('seoText'))} />
             </motion.div>
           </div>
         </section>
@@ -64,3 +75,4 @@ export default function AGBPage() {
     </div>
   );
 }
+

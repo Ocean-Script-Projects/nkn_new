@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import Link from 'next/link';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations, useLocale } from '@/lib/i18n';
-import { Instagram, Send } from 'lucide-react';
+import { Instagram, Send, Facebook, Music2 } from 'lucide-react';
 
 const footerNavItems = [
   { key: 'bespoke', href: '/bespoke' },
@@ -18,6 +18,8 @@ const footerNavItems = [
 
 const TELEGRAM_URL = 'https://t.me/NataliiaKhreshkova';
 const INSTAGRAM_URL = 'https://www.instagram.com/nataliia_khreshkova_natalina?igsh=MThudWNpOXEwMnR0Mg==';
+const FACEBOOK_URL = 'https://www.facebook.com/share/1V1AQqDcp5/?mibextid=wwXIfr';
+const TIKTOK_URL = 'https://www.tiktok.com/@nataliia.khreshkov?r=1&t=ZM-92318YqysVH';
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -87,6 +89,24 @@ export default function Footer() {
                 <Instagram className="h-4.5 w-4.5" />
               </a>
               <a
+                href={FACEBOOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white/60 transition-all hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/[0.06] hover:text-white"
+              >
+                <Facebook className="h-4.5 w-4.5" />
+              </a>
+              <a
+                href={TIKTOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white/60 transition-all hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/[0.06] hover:text-white"
+              >
+                <Music2 className="h-4.5 w-4.5" />
+              </a>
+              <a
                 href={TELEGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -109,11 +129,8 @@ export default function Footer() {
               <Link href={`/${locale}/privacy`} className="transition-colors hover:text-white">
                 {t('privacy')}
               </Link>
-              <Link href={`/${locale}/terms`} className="transition-colors hover:text-white">
-                {t('terms')}
-              </Link>
-              <Link href={`/${locale}/agb`} className="transition-colors hover:text-white">
-                {t('agb')}
+              <Link href={`/${locale}/impressum`} className="transition-colors hover:text-white">
+                {t('impressum')}
               </Link>
             </div>
 

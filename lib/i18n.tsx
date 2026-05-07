@@ -7,12 +7,12 @@ import enMessages from '@/messages/en.json';
 import deMessages from '@/messages/de.json';
 import type { Locale } from './i18n-config';
 
-type Messages = typeof ruMessages;
+type Messages = Record<string, unknown>;
 
 const messagesMap: Record<Locale, Messages> = {
-  ru: ruMessages,
-  en: enMessages,
-  de: deMessages,
+  ru: ruMessages as unknown as Messages,
+  en: enMessages as unknown as Messages,
+  de: deMessages as unknown as Messages,
 };
 
 interface I18nContextType {
@@ -47,13 +47,15 @@ export function useLocale(): Locale {
   return context.locale;
 }
 
-export function useTranslations(namespace: keyof Messages) {
+export function useTranslations(namespace: string) {
   const context = useContext(I18nContext);
   if (!context) {
     throw new Error('useTranslations must be used within I18nProvider');
   }
 
-  const section = context.messages[namespace] as Record<string, unknown>;
+  const section = (context.messages as Record<string, unknown>)[namespace] as
+    | Record<string, unknown>
+    | undefined;
 
   return function t(key: string): string | string[] {
     const keys = key.split('.');

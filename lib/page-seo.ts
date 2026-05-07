@@ -14,8 +14,7 @@ export type PageSeoId =
   | 'collaboration'
   | 'prints'
   | 'privacy'
-  | 'terms'
-  | 'agb';
+  | 'impressum';
 
 const SEO_PATHS: Record<PageSeoId, string[]> = {
   home: ['homePage', 'seo'],
@@ -29,8 +28,7 @@ const SEO_PATHS: Record<PageSeoId, string[]> = {
   collaboration: ['collaborationPage', 'seo'],
   prints: ['printsPage', 'seo'],
   privacy: ['privacyPage', 'seo'],
-  terms: ['termsPage', 'seo'],
-  agb: ['agbPage', 'seo'],
+  impressum: ['impressumPage', 'seo'],
 };
 
 const PAGE_SEGMENTS: Record<PageSeoId, string | null> = {
@@ -45,8 +43,7 @@ const PAGE_SEGMENTS: Record<PageSeoId, string | null> = {
   collaboration: 'collaboration',
   prints: 'prints',
   privacy: 'privacy',
-  terms: 'terms',
-  agb: 'agb',
+  impressum: 'impressum',
 };
 
 function getNested(obj: unknown, path: string[]): unknown {

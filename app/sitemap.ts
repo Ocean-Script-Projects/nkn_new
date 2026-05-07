@@ -13,8 +13,7 @@ const SEGMENTS = [
   'services',
   'upcycling',
   'privacy',
-  'terms',
-  'agb',
+  'impressum',
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

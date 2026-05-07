@@ -174,7 +174,8 @@
     "copyright": "© 2026 Natalia Khreshkova. All rights reserved.",
     "privacy": "Privacy",
     "terms": "Terms",
-    "agb": "Terms & Conditions"
+    "agb": "Terms & Conditions",
+    "impressum": "Impressum"
   },
   "pieces": {
     "label": "Pieces",
@@ -767,19 +768,43 @@
     "success": "Thank you! I will get back to you personally."
   },
   "privacyPage": {
-    "title": "Privacy Policy",
-    "lastUpdated": "Last updated: February 2026",
+    "title": "Privacy",
+    "lastUpdated": "Updated: May 2026",
     "seo": {
       "title": "Privacy Policy - NKN Atelier by Natalia Khreshkova",
       "description": "How NKN Atelier collects, uses and protects personal data when you contact us through the website."
     },
-    "seoText": "This page explains what data NKN Atelier may receive when you contact us through the website and how it is used — only to respond to your request and manage your project. We do not sell personal data or share it with third parties without legal grounds. If you have questions about data handling, please contact me.",
-    "intro": "NKN Atelier respects your privacy. This policy describes how we collect, use and protect your data.",
+    "seoText": "This page provides GDPR-based privacy information for contacting, consulting and bespoke tailoring services by Nataliia Khreshkova (NKN).",
+    "intro": "Protecting your personal data is very important to me. I process your data confidentially and in accordance with the GDPR and this privacy notice.",
     "sections": {
-      "data": { "title": "Data collection", "content": "We collect only the information you provide when contacting us: name, contact details and the content of your request. This data is used solely to respond to your inquiries and manage your project." },
-      "storage": { "title": "Storage and security", "content": "Your data is stored securely and not shared with third parties without your consent. We take measures to protect personal information." },
-      "rights": { "title": "Your rights", "content": "You have the right to request access to your data, its correction or deletion. Contact us to exercise these rights." },
-      "contact": { "title": "Contact", "content": "For privacy questions: hreshkovanat@gmail.com" }
+      "general": {
+        "title": "1. General information",
+        "content": "Personal data is any information relating to an identified or identifiable person (e.g., name, phone number, photos, body measurements, message contents).\n\nThis notice explains which data I process when you first contact me, during 1:1 style consultations, in-person visits, or bespoke tailoring."
+      },
+      "controller": {
+        "title": "2. Controller",
+        "content": "Nataliia NKN Khreshkova\nSole proprietor – fashion design, style consulting & bespoke tailoring\nAddress:\nFlottmoorring 3\n24568 Kaltenkirchen\nGermany\nPhone: +49 177 4019818\nEmail: khreshkovanataliia@gmail.com"
+      },
+      "dataProcessing": {
+        "title": "3. Data processed and purposes",
+        "content": "I process personal data solely within my professional activity as a fashion designer, style consultant and provider of bespoke tailoring.\n\na) Contact and scheduling\nCollected when you contact me via Instagram, WhatsApp, Facebook, TikTok, Telegram or email.\nProcessed data:\n• Name or username\n• Phone number\n• Email address\n• Message contents\n• Appointment details (place, time)\n• Information about wishes, style questions, physical specifics\nLegal basis:\nArt. 6(1)(b) GDPR (pre-contractual steps, contract performance)\nArt. 6(1)(f) GDPR (legitimate interest in efficient communication)\n\nb) Personal 1:1 consultation – on-site or with me\nProcessed data:\n• Body measurements (e.g., bust, waist, hips, arm length, back length)\n• Necessary fit measurements using a tape measure\n• Photos of clothing and silhouette (if voluntarily provided)\n• Style preferences, materials, colors, wishes\n• Figure specifics (e.g., posture, proportions, individual fit requirements)\nNote:\nPhysical contact during measuring (placing a tape measure) serves purely technical purposes and is not data processing itself. Only the measurement results are processed.\nLegal basis:\nArt. 6(1)(b) GDPR\n\nc) Bespoke tailoring and garment design\nProcessed data:\n• Measurements and fit data\n• Technical sketches\n• Fabric and design selection\n• Photos for fit analysis (if voluntarily provided)\nLegal basis:\nArt. 6(1)(b) GDPR\n\nd) Payments\nProcessed data (depending on payment method):\n• Name\n• Bank details (IBAN)\n• PayPal name/email\nLegal basis:\nArt. 6(1)(b) GDPR\nArt. 6(1)(c) GDPR (tax retention obligations)"
+      },
+      "whatsapp": {
+        "title": "4. WhatsApp Business communication",
+        "content": "I use WhatsApp Business.\nMessage contents are end-to-end encrypted.\nHowever, WhatsApp may process metadata (time, sender, recipient, device type).\nWhatsApp privacy policy:\nhttps://www.whatsapp.com/legal/#privacy-policy\nLegal bases:\nArt. 6(1)(f) GDPR\nArt. 6(1)(b) GDPR (customer inquiries)"
+      },
+      "telegram": {
+        "title": "5. Telegram communication",
+        "content": "Telegram uses server-side encryption.\nSecret chats are end-to-end encrypted.\nProcessed data:\n• Username\n• Metadata\n• Message contents\nTelegram privacy policy:\nhttps://telegram.org/privacy\nLegal basis:\nArt. 6(1)(f) GDPR"
+      },
+      "disclosure": {
+        "title": "6. Disclosure to third parties",
+        "content": "I do not share personal data with third parties, except:\n• when necessary for contract performance (e.g., tax advisor)\n• when required by law (e.g., tax authorities)\n\nNo sharing with:\n• advertising companies\n• social media platforms\n• tracking services\n• analytics companies"
+      },
+      "retention": {
+        "title": "7. Retention period",
+        "content": "I store personal data:\n• as long as necessary for consultation or bespoke tailoring\n• and according to legal retention periods (6–10 years)"
+      }
     }
   },
   "termsPage": {
@@ -814,5 +839,44 @@
       "payment": { "title": "Payment", "content": "Payment is made as agreed - in stages or in full. Bank transfer and other methods are accepted by agreement." },
       "returns": { "title": "Returns and alterations", "content": "Individually made garments cannot be returned. Corrections and adjustments within the agreed scope are carried out by mutual consent." }
     }
+  },
+  "impressumPage": {
+    "title": "Impressum",
+    "subtitle": "According to § 5 TMG and § 18 para. 2 MStV",
+    "sections": {
+      "company": {
+        "title": "Company details",
+        "content": "NKN Nataliia Khreshkova, NaKNem\nOwner: Nataliia Khreshkova\nAddress:\nFlottmoorring 3\n24568 Kaltenkirchen\nGermany"
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "Phone: +49 177 4019818\nEmail: khreshkovanataliia@gmail.com\nTelegram: @NataliiaKhreshkova\nWhatsApp: +38 093 0385434"
+      },
+      "activity": {
+        "title": "Areas of activity",
+        "content": "Fashion design, bespoke tailoring, sale of designer clothing, textile design, style & image consulting, capsule wardrobes, workshops, coaching."
+      },
+      "responsible": {
+        "title": "Responsible for content (§ 18 para. 2 MStV)",
+        "content": "Nataliia Khreshkova\nFlottmoorring 3\n24568 Kaltenkirchen"
+      },
+      "odr": {
+        "title": "Online dispute resolution (ODR)",
+        "content": "The European Commission provides a platform for online dispute resolution:\nhttps://ec.europa.eu/consumers/odr/\n\nWe are not obliged and not willing to participate in dispute resolution proceedings before a consumer arbitration board."
+      },
+      "copyright": {
+        "title": "Copyright",
+        "content": "All designs, textile prints, models, texts, images, graphics and digital content are protected by copyright.\nUse without written permission from NKN Nataliia Khreshkova, NaKNem is not permitted."
+      },
+      "scope": {
+        "title": "Scope",
+        "content": "This impressum applies to the following online presences:\n– Instagram: https://www.instagram.com/nataliiakhreshkovanatalina/\n– Facebook: https://www.facebook.com/share/1V1AQqDcp5/?mibextid=wwXIfr\n– TikTok: https://www.tiktok.com/@nataliia.khreshkov?r=1&t=ZM-92318YqysVH"
+      }
+    },
+    "seo": {
+      "title": "Impressum - NKN Atelier | Nataliia Khreshkova",
+      "description": "Impressum according to § 5 TMG and § 18 para. 2 MStV: company information, contact, responsible person and legal notices."
+    },
+    "seoText": "This page contains the legal notice (Impressum) for NKN Nataliia Khreshkova, NaKNem. Here you can find company information, contact details and legal notices."
   }
 }
