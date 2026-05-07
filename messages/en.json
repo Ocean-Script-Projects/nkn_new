@@ -19,7 +19,8 @@
     "seo": {
       "title": "NKN Atelier - Natalia Khreshkova, design atelier in Hamburg",
       "description": "Bespoke tailoring, one-of-one pieces, author prints and upcycling in Hamburg. Personal service - online and offline."
-    }
+    },
+    "seoText": "NKN Atelier is a design atelier in Hamburg where bespoke tailoring is built around your personality, precise fit and thoughtful construction. Here you can order custom garments, discover one-of-one pieces, explore author prints and commission upcycling projects. We work in Hamburg in person and also online: consultation, materials selection, measurements and fittings (or remote guidance) — a full cycle from idea to finished piece."
   },
   "hero": {
     "location": "Hamburg · Atelier",
@@ -186,6 +187,7 @@
       "title": "One-of-one pieces - NKN Atelier by Natalia Khreshkova | Hamburg",
       "description": "A curated catalog of author pieces: corsets, dresses, scarves and belts. Single copies or limited runs with individual adaptation and custom print selection."
     },
+    "seoText": "NKN Atelier pieces are one-of-one garments and small runs made in Hamburg with attention to construction, proportions and finishing. Browse corsets, belts, dresses, scarves and more — many designs can be adapted to your body and purpose, and paired with an author print. If you are looking for a truly unique piece with a precise fit, start with a consultation.",
     "productStatus": {
       "oneOfOne": "Single copy.",
       "limited": "Limited run.",
@@ -268,6 +270,7 @@
       "title": "Upcycling & transformation - NKN Atelier by Natalia Khreshkova | Hamburg",
       "description": "Reconstruction of garments from your wardrobe: recutting, new silhouette and modern aesthetic. Sustainable fashion with an artistic approach."
     },
+    "seoText": "Upcycling at NKN Atelier (Hamburg) is not “repair” — it is an artistic transformation of garments from your wardrobe. We analyse fabric and construction, propose a new silhouette and function, and preserve what is valuable in the original piece. The result is a contemporary garment with a new story, made with professional finishing. Suitable for coats, blazers, dresses, shirts and more.",
     "badge": "Eco-conscious",
     "badgeDescription": "Sustainable approach to fashion",
     "philosophy": {
@@ -499,7 +502,8 @@
     "seo": {
       "title": "Made-to-measure tailoring - NKN Atelier by Natalia Khreshkova | Hamburg",
       "description": "Clothing built on individual construction: consultation, measurements, fittings and full atelier process. Offline and online in Hamburg."
-    }
+    },
+    "seoText": "Bespoke tailoring at NKN Atelier (Hamburg) starts with understanding your figure, lifestyle and the feeling you want to embody. We begin with a consultation, then select materials and details, take measurements and go through fittings until the result is precise and comfortable. Work is possible in Hamburg in person and also online with guided measurements. If you value construction, quality and uniqueness, this is the right process."
   },
   "servicesPage": {
     "hero": {
@@ -591,7 +595,8 @@
     "seo": {
       "title": "Atelier services - NKN Atelier by Natalia Khreshkova | Hamburg",
       "description": "Seven directions: bespoke tailoring, one-of-one pieces, limited series, upcycling, custom prints, full development cycle, brand consulting."
-    }
+    },
+    "seoText": "NKN Atelier services in Hamburg cover the full cycle of working with clothing: from bespoke tailoring and one-of-one pieces to upcycling, author prints and brand consulting. The focus is always on construction, fit, fabric and details — everything is adapted to the person and the purpose. If you are looking for a professional atelier in Hamburg, leave a request and we will start with a consultation."
   },
   "aboutPage": {
     "hero": {
@@ -653,6 +658,7 @@
     "quote": { "text": "Clothing is not decoration. It is structure, meaning and personality.", "author": "NATALIA KHRESHKOVA" },
     "cta": { "title": "Work", "titleItalic": "with me", "description": "If you are looking for a personal approach and thoughtful work with form - leave a request", "button": "Leave a request" },
     "seo": { "title": "Designer atelier Hamburg - Natalia Khreshkova | NKN Atelier", "description": "37+ years of practice in pattern making and garment construction. Handcraft, author approach and an online tailoring system for clients worldwide." },
+    "seoText": "I’m Natalia Khreshkova — designer and pattern maker, founder of NKN Atelier. My work is about precise construction, professional patterns, careful fit and hand-finished quality. Today I develop the studio in Germany and work with private clients and brands: bespoke pieces, upcycling, author prints and model development. If you are looking for a designer atelier in Hamburg, tell me about your project and we’ll define the best format.",
     "modal": {
       "title": "Let's",
       "titleItalic": "talk",
@@ -689,7 +695,8 @@
     "seo": {
       "title": "Brand collaboration - NKN Atelier by Natalia Khreshkova | Hamburg",
       "description": "Support for designers and brand launch: construction, pattern making, size range, sample and production-ready preparation."
-    }
+    },
+    "seoText": "Collaboration with NKN Atelier means professional support for designers and brands who care about fit, construction and production-ready patterns. I develop patterns, refine silhouettes, build a size range, sew the first sample and prepare the model for launch. If you are working on a collection and need an experienced pattern maker in Hamburg (or remotely), tell me about your project and deadlines."
   },
   "printsPage": {
     "hero": {
@@ -722,7 +729,8 @@
     "seo": {
       "title": "Author prints for garments - NKN Atelier by Natalia Khreshkova",
       "description": "Print development aligned with garment construction. Bespoke, ready-made and brand-oriented solutions."
-    }
+    },
+    "seoText": "NKN Atelier author prints are designed to work with the silhouette and the pattern pieces — not just as decoration. I create bespoke prints for your idea, offer ready-made designs, and develop prints for designers and brands. Composition, scale and precise placement matter so the print enhances the character of the garment. Work is available in Hamburg and remotely, from concept to final artwork."
   },
   "contactPage": {
     "hero": { "label": "Contact", "title": "Start the", "titleItalic": "conversation", "description": "Describe your request - I will respond personally." },
@@ -755,6 +763,7 @@
     "location": { "label": "Atelier", "title": "Hamburg, Deutschland", "description": "Visits are arranged individually. Please contact me to schedule a consultation." },
     "quote": { "text": "Every garment begins with a conversation." },
     "seo": { "title": "Contact - NKN Atelier by Natalia Khreshkova | Hamburg", "description": "Reach out for personal consultations on bespoke tailoring, prints and upcycling. Hamburg - online and offline." },
+    "seoText": "Want to discuss bespoke tailoring, upcycling, an author print, or brand collaboration? Message me on Telegram, email, or leave a request — I reply personally with a next step. The atelier is in Hamburg, and consultations are also possible online. The more details you share about your goal and timing, the faster we can define the best process.",
     "success": "Thank you! I will get back to you personally."
   },
   "privacyPage": {
@@ -764,6 +773,7 @@
       "title": "Privacy Policy - NKN Atelier by Natalia Khreshkova",
       "description": "How NKN Atelier collects, uses and protects personal data when you contact us through the website."
     },
+    "seoText": "This page explains what data NKN Atelier may receive when you contact us through the website and how it is used — only to respond to your request and manage your project. We do not sell personal data or share it with third parties without legal grounds. If you have questions about data handling, please contact me.",
     "intro": "NKN Atelier respects your privacy. This policy describes how we collect, use and protect your data.",
     "sections": {
       "data": { "title": "Data collection", "content": "We collect only the information you provide when contacting us: name, contact details and the content of your request. This data is used solely to respond to your inquiries and manage your project." },
@@ -779,6 +789,7 @@
       "title": "Website Terms - NKN Atelier by Natalia Khreshkova",
       "description": "Terms of use for the NKN Atelier website: services, content and liability."
     },
+    "seoText": "These terms of use clarify how the NKN Atelier website content may be used and outline basic responsibilities. If you plan to order atelier services or collaborate as a brand, the final project terms are always agreed individually in writing before work starts.",
     "intro": "By using the NKN Atelier website, you agree to the following terms.",
     "sections": {
       "services": { "title": "Services", "content": "Information on the site is for informational purposes. Terms of collaboration and service delivery are discussed individually for each project." },
@@ -794,6 +805,7 @@
       "title": "AGB - General Terms for Atelier Services NKN Atelier by Natalia Khreshkova",
       "description": "General terms for ordering atelier services: tailoring, fittings, timelines, payment and alterations."
     },
+    "seoText": "These Terms & Conditions (AGB) describe the general rules for working with NKN Atelier: how orders and timelines are agreed, how fittings are handled, what payment formats are possible and how adjustments are managed. For bespoke pieces, details are always tailored to the specific project — this section helps set expectations in advance.",
     "intro": "These terms govern the collaboration when ordering NKN atelier services - bespoke tailoring, author's pieces, upcycling and consultations.",
     "sections": {
       "order": { "title": "Order and agreements", "content": "An order is confirmed after discussing details and agreeing on terms. Advance payment or deposit is discussed individually depending on the scope of work." },

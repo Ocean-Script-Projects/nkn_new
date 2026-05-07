@@ -9,6 +9,7 @@ import { ImageWithFallback } from '@/components/image-with-fallback';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import PageHeader from '@/components/shared/PageHeader';
+import SeoIntro from '@/components/seo/SeoIntro';
 
 const UPCYCLING_HERO_SRC = '/images/models/model7.webp';
 
@@ -570,6 +571,7 @@ export default function UpcyclingPage() {
           </div>
         </div>
       </section>
+      <SeoIntro text={String(t('seoText'))} />
 
       {/* CTA FORM */}
       <section className="py-12 sm:py-16 md:py-28 px-4 sm:px-6 md:px-12 bg-gradient-to-br from-[#C4A574] to-[#8B7355] text-white relative overflow-hidden">

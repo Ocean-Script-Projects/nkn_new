@@ -20,6 +20,10 @@ import PageHeader from '@/components/shared/PageHeader';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import { submitSiteRequest } from '@/lib/submit-site-request';
+import Breadcrumbs from '@/components/shared/Breadcrumbs';
+import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
+import { absolutePublicUrl } from '@/lib/site-url';
+import SeoIntro from '@/components/seo/SeoIntro';
 const SERVICE_IDS = ['01', '02', '03', '04', '05', '06', '07'] as const;
 const ICONS = [Scissors, Sparkles, Heart, Leaf, Palette, Layers, Users];
 const COLORS = [
@@ -69,6 +73,8 @@ function ServicesHeroImage({ badgeTitle, badgeDesc }: { badgeTitle: string; badg
 export default function ServicesPage() {
   const t = useTranslations('servicesPage');
   const locale = useLocale();
+  const navT = useTranslations('nav');
+  const homeLabel = locale === 'de' ? 'Startseite' : locale === 'en' ? 'Home' : 'Главная';
   const [selectedService, setSelectedService] = useState<number | null>(null);
   const [formError, setFormError] = useState<string | null>(null);
   const [formSubmitting, setFormSubmitting] = useState(false);
@@ -126,7 +132,19 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-[#FAF9F6] overflow-x-hidden">
+      <BreadcrumbJsonLd
+        items={[
+          { name: homeLabel, item: absolutePublicUrl(`/${locale}/`) },
+          { name: String(navT('services')), item: absolutePublicUrl(`/${locale}/services/`) },
+        ]}
+      />
       <Navigation />
+      <Breadcrumbs
+        items={[
+          { href: `/${locale}/`, label: homeLabel },
+          { href: `/${locale}/services/`, label: String(navT('services')) },
+        ]}
+      />
       <div>
         <PageHeader
           mobileLayout="editorial"
@@ -524,6 +542,7 @@ export default function ServicesPage() {
           </div>
         </section>
       </div>
+      <SeoIntro text={String(t('seoText'))} />
       <Footer />
     </div>
   );

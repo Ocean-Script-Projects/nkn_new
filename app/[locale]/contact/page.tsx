@@ -9,6 +9,7 @@ import PageHeader from '@/components/shared/PageHeader';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import { submitSiteRequest } from '@/lib/submit-site-request';
+import SeoIntro from '@/components/seo/SeoIntro';
 
 /** Та же фотография, что на главной: `public/images/hero.jpg` */
 const CONTACT_HERO_SRC = '/images/models/natalia_img5.webp';
@@ -504,6 +505,7 @@ export default function ContactPage() {
             </motion.div>
           </div>
         </section>
+        <SeoIntro text={String(t('seoText'))} />
 
         {/* EMOTIONAL FOOTER QUOTE */}
         <section className="py-20 sm:py-28 md:py-40 px-4 sm:px-6 md:px-12 bg-gradient-to-br from-[#2a2a2a] via-[#1a1a1a] to-[#2a2a2a] text-[#FAF9F6] relative overflow-hidden">

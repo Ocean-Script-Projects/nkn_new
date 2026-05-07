@@ -1,6 +1,7 @@
 import { createPageMetadataGenerator } from '@/lib/page-seo';
 import Navigation from '@/components/sections/navigation';
 import HeroSection from '@/components/sections/hero';
+import HomeSeoIntro from '@/components/seo/HomeSeoIntro';
 
 export const generateMetadata = createPageMetadataGenerator('home');
 import PhilosophySection from '@/components/sections/philosophy';
@@ -21,6 +22,7 @@ export default function HomePage() {
       <FeaturedPiecesSection />
       <ProcessSection />
       <AboutSection />
+      <HomeSeoIntro />
       <ContactSection />
       <Footer />
     </div>

@@ -14,6 +14,7 @@ import CTASection from '@/components/shared/CTASection';
 import Link from 'next/link';
 import { usePiecesList } from '@/lib/use-pieces';
 import type { CatalogPiece } from '@/lib/catalog-types';
+import SeoIntro from '@/components/seo/SeoIntro';
 
 const HERO_IMAGE_SRC = '/images/models/model6.webp';
 
@@ -222,6 +223,7 @@ export default function PiecesPage() {
           </motion.div>
         </div>
       </section>
+      <SeoIntro text={String(t('seoText'))} />
 
       <CTASection
         title={String(t('cta.title'))}
@@ -237,6 +239,7 @@ export default function PiecesPage() {
         isOpen={!!selectedPieceForDetail}
         onClose={() => setSelectedPieceForDetail(null)}
       />
+
 
       <Footer />
     </div>

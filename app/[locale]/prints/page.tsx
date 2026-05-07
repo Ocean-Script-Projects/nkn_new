@@ -8,6 +8,7 @@ import PageHeader from '@/components/shared/PageHeader';
 import { useTranslations } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
 import { ImageWithFallback } from '@/components/image-with-fallback';
+import SeoIntro from '@/components/seo/SeoIntro';
 
 /** Временно та же фотография, что и в hero upcycling */
 const PRINTS_HERO_SRC = '/images/models/model5.webp';
@@ -110,6 +111,7 @@ export default function PrintsPage() {
             </div>
           </div>
         </section>
+        <SeoIntro text={String(t('seoText'))} />
 
         <section className="border-t border-black/[0.06] bg-[#F5F2EC] px-4 py-12 sm:px-6 sm:py-14 md:px-12 md:py-16">
           <div className="mx-auto max-w-2xl">

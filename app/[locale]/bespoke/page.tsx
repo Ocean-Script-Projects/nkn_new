@@ -9,6 +9,7 @@ import PageHeader from '@/components/shared/PageHeader';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
+import SeoIntro from '@/components/seo/SeoIntro';
 
 const offlineIcons = [MessageCircle, Users, Ruler, Package];
 const onlineIcons = [MessageCircle, Video, Ruler, Send, Package];
@@ -220,6 +221,7 @@ export default function BespokePage() {
             </AnimatePresence>
           </div>
         </section>
+        <SeoIntro text={String(t('seoText'))} />
 
         {/* CTA */}
         <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-[#FAF9F6]">
