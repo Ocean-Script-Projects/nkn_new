@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   ArrowLeft,
   ChevronDown,
@@ -114,6 +115,8 @@ function uniqueCategoryId(
 }
 
 export default function AdminPage() {
+  const router = useRouter();
+  const [authChecked, setAuthChecked] = useState(false);
   const [status, setStatus] = useState<AdminStatus | null>(null);
   const [secret, setSecret] = useState('');
   const [tab, setTab] = useState<'pieces' | 'categories'>('pieces');
@@ -136,10 +139,16 @@ export default function AdminPage() {
 
   useEffect(() => {
     const saved = sessionStorage.getItem(SECRET_STORAGE);
-    if (saved) setSecret(saved);
-  }, []);
+    if (!saved) {
+      router.replace('/admin/login');
+      return;
+    }
+    setSecret(saved);
+    setAuthChecked(true);
+  }, [router]);
 
   useEffect(() => {
+    if (!authChecked) return;
     void (async () => {
       const isNextDev =
         typeof process !== 'undefined' && process.env.NODE_ENV === 'development';
@@ -170,7 +179,12 @@ export default function AdminPage() {
         });
       }
     })();
-  }, []);
+  }, [authChecked]);
+
+  const redirectToLogin = useCallback(() => {
+    sessionStorage.removeItem(SECRET_STORAGE);
+    router.replace('/admin/login');
+  }, [router]);
 
   const loadData = useCallback(async () => {
     setLoadError(null);
@@ -180,6 +194,10 @@ export default function AdminPage() {
         apiGet('/api/admin/pieces', hdrSecret),
         apiGet('/api/admin/categories', hdrSecret),
       ]);
+      if (pr.status === 401 || cr.status === 401) {
+        redirectToLogin();
+        return;
+      }
       if (!pr.ok) {
         const t = await pr.text();
         throw new Error(`Pieces: ${pr.status} ${t}`);
@@ -193,11 +211,16 @@ export default function AdminPage() {
     } catch (e) {
       setLoadError(e instanceof Error ? e.message : 'Load failed');
     }
-  }, [secret]);
+  }, [secret, redirectToLogin]);
 
   useEffect(() => {
-    if (status?.ok) void loadData();
-  }, [status?.ok, loadData]);
+    if (status === null) return;
+    if (!sessionStorage.getItem(SECRET_STORAGE)) {
+      redirectToLogin();
+      return;
+    }
+    if (status.ok) void loadData();
+  }, [status, loadData, redirectToLogin]);
 
   useEffect(() => {
     if (editingPieceId && !pieces.some((p) => p.id === editingPieceId)) {
@@ -210,11 +233,6 @@ export default function AdminPage() {
       setEditingCategoryId(null);
     }
   }, [categories, editingCategoryId]);
-
-  const persistSecret = () => {
-    sessionStorage.setItem(SECRET_STORAGE, secret);
-    void loadData();
-  };
 
   const hdr = () => sessionStorage.getItem(SECRET_STORAGE) ?? secret;
 
@@ -435,6 +453,14 @@ export default function AdminPage() {
 
   const storageLab = catalogStorageLabels(status?.catalogStorage);
 
+  if (!authChecked) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="w-5 h-5 rounded-full border-2 border-black/20 border-t-black/70 animate-spin" />
+      </div>
+    );
+  }
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       <div
@@ -491,32 +517,6 @@ export default function AdminPage() {
           </div>
         ) : null}
 
-        {status?.ok && status.secretRequired ? (
-          <div className="mb-8 rounded-2xl border border-black/8 bg-white p-5 shadow-[0_4px_24px_rgba(0,0,0,0.06)]">
-            <label className="flex flex-col sm:flex-row sm:items-end gap-4">
-              <div className="flex-1 flex flex-col gap-2">
-                <span className="text-xs font-medium uppercase tracking-wider text-[#8B8B8B]">
-                  Admin secret
-                </span>
-                <input
-                  type="password"
-                  value={secret}
-                  onChange={(e) => setSecret(e.target.value)}
-                  className={fieldClass}
-                  autoComplete="off"
-                  placeholder="Совпадает с ADMIN_SECRET в .env.local"
-                />
-              </div>
-              <button
-                type="button"
-                onClick={persistSecret}
-                className="shrink-0 rounded-full bg-black text-white px-6 py-2.5 text-sm font-medium tracking-wide shadow-md hover:bg-black/90 transition-colors"
-              >
-                Сохранить в сессии
-              </button>
-            </label>
-          </div>
-        ) : null}
 
         {loadError ? (
           <div
