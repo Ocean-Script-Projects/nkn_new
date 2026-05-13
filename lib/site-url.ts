@@ -1,6 +1,6 @@
-/** Public origin only, no path (e.g. https://nkn-atelier.de). */
+/** Public origin only, no path (e.g. https://www.nknbrand.com). */
 export function getPublicOrigin(): string {
-  return (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nkn-atelier.de').replace(
+  return (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.nknbrand.com').replace(
     /\/$/,
     '',
   );

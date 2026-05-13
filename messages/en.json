@@ -438,15 +438,47 @@
   },
   "bespokePage": {
     "hero": {
-      "label": "Bespoke tailoring",
-      "title": "Bespoke",
-      "titleItalic": "tailoring",
-      "description": "Individually made clothing reflects personality, character and inner depth."
+      "label": "Bespoke tailoring in Hamburg, Germany",
+      "title": "Bespoke tailoring",
+      "titleItalic": "made to measure",
+      "description": "Made-to-measure clothing in Hamburg (Germany): precise fit, authored construction and care for every detail."
     },
     "intro": {
-      "p1": "Bespoke tailoring is always about status and self-respect.",
-      "p2": "It is the choice of those for whom the match between outer appearance and inner state matters. Individually made clothing reflects personality, character and inner depth. It highlights uniqueness and makes it visible. The piece is made exclusively for you.",
-      "p3": "The creative process begins with dialogue."
+      "p1": "Bespoke tailoring is always about status, a perfect fit and self-respect.",
+      "p2": "At NKN Atelier in Hamburg (Germany) every piece is built around your figure, lifestyle and character. The result is a considered construction, the right fabric, careful measurements and several fittings. Suitable for everyday business life, special occasions and a capsule wardrobe.",
+      "p3": "The creative process starts with a dialogue — at the atelier in Hamburg or online from anywhere in Germany and beyond."
+    },
+    "specialties": {
+      "label": "What I make",
+      "title": "Custom clothing —",
+      "titleItalic": "directions",
+      "description": "I work with women's and men's clothing of any complexity — from everyday silhouettes to advanced structured construction.",
+      "items": {
+        "01": {
+          "title": "Dresses, suits and men's looks",
+          "description": "Everyday, office and special-occasion dresses. Women's and men's suits, trousers, waistcoats and shirts with individual construction."
+        },
+        "02": {
+          "title": "Jackets, coats, outerwear",
+          "description": "Jackets with authored fit, coats and trenches. Fabrics chosen to fit Hamburg's climate and the season."
+        },
+        "03": {
+          "title": "Bridal and evening looks",
+          "description": "Wedding dresses, looks for brides and guests, evening and cocktail dresses — with fittings and precise adjustment."
+        },
+        "04": {
+          "title": "Corsets and structured pieces",
+          "description": "Corset belts, bodices, boned pieces — where precise architecture and support matter."
+        },
+        "05": {
+          "title": "Capsule wardrobe",
+          "description": "A few pieces that work together and cover different scenarios of your day — from work to going out."
+        },
+        "06": {
+          "title": "Alterations and reconstruction",
+          "description": "Alterations of ready-made clothing to your figure, upcycling and artistic transformation of pieces from your wardrobe."
+        }
+      }
     },
     "offline": {
       "title": "Offline tailoring",
@@ -496,15 +528,46 @@
         }
       }
     },
+    "faq": {
+      "label": "Frequently asked",
+      "title": "Bespoke tailoring in Hamburg —",
+      "titleItalic": "answers",
+      "items": {
+        "01": {
+          "question": "Where is the atelier located?",
+          "answer": "The atelier is based in Hamburg (Germany). I take bespoke clients in person at the Hamburg studio and also work online with clients from other German cities and other countries."
+        },
+        "02": {
+          "question": "How long does made-to-measure tailoring take?",
+          "answer": "It depends on the model and complexity — typically 2 to 8 weeks from the moment the sketch is agreed. Tight deadlines (a wedding or a shoot) we discuss on the consultation."
+        },
+        "03": {
+          "question": "What kind of clothing do you make?",
+          "answer": "Dresses, women's and men's suits, jackets, coats, trousers, waistcoats, shirts, corsets, bridal and evening looks, capsule collections."
+        },
+        "04": {
+          "question": "Is online tailoring possible without visiting Hamburg?",
+          "answer": "Yes. There is a full online format: video consultation, detailed instructions for taking measurements, remote approval of construction and fabrics. The finished piece is shipped within Germany and worldwide."
+        },
+        "05": {
+          "question": "How much does bespoke tailoring cost?",
+          "answer": "Price depends on the model, construction, fabric and the number of fittings. On a free 30-minute consultation we discuss the project and agree the quote before the work starts."
+        },
+        "06": {
+          "question": "Do you speak Russian and German?",
+          "answer": "Yes, consultations and work are possible in Russian, German or English — whichever feels easier for you."
+        }
+      }
+    },
     "cta": {
       "description": "Leave a request - I will hold a free consultation and we will discuss your project.",
       "button": "Book a consultation"
     },
     "seo": {
-      "title": "Made-to-measure tailoring - NKN Atelier by Nataliia Khreshkova | Hamburg",
-      "description": "Clothing built on individual construction: consultation, measurements, fittings and full atelier process. Offline and online in Hamburg."
+      "title": "Bespoke tailoring in Hamburg, Germany — NKN Atelier · Nataliia Khreshkova",
+      "description": "Made-to-measure tailoring in Hamburg (Germany): consultation, measurements, fittings and the full atelier process. In person in Hamburg and online across Germany."
     },
-    "seoText": "Bespoke tailoring at NKN Atelier (Hamburg) starts with understanding your figure, lifestyle and the feeling you want to embody. We begin with a consultation, then select materials and details, take measurements and go through fittings until the result is precise and comfortable. Work is possible in Hamburg in person and also online with guided measurements. If you value construction, quality and uniqueness, this is the right process."
+    "seoText": "NKN Atelier — bespoke tailoring in Hamburg (Germany). I work with your figure, lifestyle and character so that the fit and the look match how you feel inside. We start with a free consultation, then choose fabric and details, take measurements and go through fittings until the result is precise. Made-to-measure work is available in person in Hamburg and online across Germany and beyond. If you care about construction, quality and uniqueness — this is the right format."
   },
   "servicesPage": {
     "hero": {
@@ -761,7 +824,7 @@
       "02": { "question": "How long does tailoring take?", "answer": "It depends on the project. A simple alteration may take 1-2 weeks, while a fully bespoke garment requires 4-8 weeks." },
       "03": { "question": "Do you work with men's garments?", "answer": "Yes. I work with all types of garments regardless of gender categorization." }
     },
-    "location": { "label": "Atelier", "title": "Hamburg, Deutschland", "description": "Visits are arranged individually. Please contact me to schedule a consultation." },
+    "location": { "label": "Atelier", "title": "Hamburg, Germany", "description": "Visits are arranged individually. Please contact me to schedule a consultation." },
     "quote": { "text": "Every garment begins with a conversation." },
     "seo": { "title": "Contact - NKN Atelier by Nataliia Khreshkova | Hamburg", "description": "Reach out for personal consultations on bespoke tailoring, prints and upcycling. Hamburg - online and offline." },
     "seoText": "Want to discuss bespoke tailoring, upcycling, an author print, or brand collaboration? Message me on Telegram, email, or leave a request — I reply personally with a next step. The atelier is in Hamburg, and consultations are also possible online. The more details you share about your goal and timing, the faster we can define the best process.",

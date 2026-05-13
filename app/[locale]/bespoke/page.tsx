@@ -2,14 +2,15 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, Store, Monitor, MessageCircle, Users, Ruler, Package, Video, Send } from 'lucide-react';
+import { ArrowRight, ChevronDown, Store, Monitor, MessageCircle, Users, Ruler, Package, Video, Send } from 'lucide-react';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import PageHeader from '@/components/shared/PageHeader';
 import { ImageWithFallback } from '@/components/image-with-fallback';
-import { useTranslations } from '@/lib/i18n';
+import { useTranslations, useLocale } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
 import SeoIntro from '@/components/seo/SeoIntro';
+import { getPublicOrigin } from '@/lib/site-url';
 
 const offlineIcons = [MessageCircle, Users, Ruler, Package];
 const onlineIcons = [MessageCircle, Video, Ruler, Send, Package];
@@ -28,16 +29,78 @@ function BespokeHeroImage() {
   );
 }
 
+const SPECIALTY_IDS = ['01', '02', '03', '04', '05', '06'] as const;
+const FAQ_IDS = ['01', '02', '03', '04', '05', '06'] as const;
+
 export default function BespokePage() {
   const t = useTranslations('bespokePage');
+  const locale = useLocale();
   const { openRequestModal } = useRequestModal();
   const [activeMode, setActiveMode] = useState<'offline' | 'online'>('offline');
+  const [expandedFaq, setExpandedFaq] = useState<string | null>(null);
 
   const offlineSteps = ['01', '02', '03', '04'] as const;
   const onlineSteps = ['01', '02', '03', '04', '05'] as const;
 
+  const siteUrl = getPublicOrigin();
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'ProfessionalService',
+        '@id': `${siteUrl}/#atelier`,
+        name: 'NKN Atelier — Nataliia Khreshkova',
+        alternateName: 'NKN Atelier',
+        description: String(t('seo.description')),
+        url: `${siteUrl}/${locale}/bespoke/`,
+        image: `${siteUrl}/images/big_logo.png`,
+        logo: `${siteUrl}/images/big_logo.png`,
+        telephone: '+491774019818',
+        email: 'hreshkovanat@gmail.com',
+        founder: {
+          '@type': 'Person',
+          name: 'Nataliia Khreshkova',
+        },
+        areaServed: [
+          { '@type': 'City', name: 'Hamburg' },
+          { '@type': 'Country', name: 'Germany' },
+        ],
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Hamburg',
+          addressCountry: 'DE',
+        },
+        priceRange: '€€€',
+        knowsLanguage: ['ru', 'de', 'en'],
+        serviceType:
+          'Bespoke tailoring / Maßschneiderei / Индивидуальный пошив одежды',
+        sameAs: [
+          'https://www.instagram.com/nataliia_khreshkova_natalina',
+          'https://www.facebook.com/share/1V1AQqDcp5/',
+          'https://www.tiktok.com/@nataliia.khreshkov',
+          'https://t.me/NataliiaKhreshkova',
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: FAQ_IDS.map((id) => ({
+          '@type': 'Question',
+          name: String(t(`faq.items.${id}.question`)),
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: String(t(`faq.items.${id}.answer`)),
+          },
+        })),
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-[#FAF9F6] overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navigation />
       <div>
         <PageHeader
@@ -221,6 +284,135 @@ export default function BespokePage() {
             </AnimatePresence>
           </div>
         </section>
+        {/* WHAT I MAKE */}
+        <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12 sm:mb-16"
+            >
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <div className="h-px w-8 bg-[#C4A574]" />
+                <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+                  {t('specialties.label')}
+                </span>
+                <div className="h-px w-8 bg-[#C4A574]" />
+              </div>
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight leading-tight mb-4"
+                style={{ fontFamily: 'serif' }}
+              >
+                {t('specialties.title')} <span className="italic">{t('specialties.titleItalic')}</span>
+              </h2>
+              <p className="text-base sm:text-lg text-[#8B8B8B] max-w-2xl mx-auto leading-relaxed">
+                {t('specialties.description')}
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              {SPECIALTY_IDS.map((id, i) => (
+                <motion.article
+                  key={id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.6, delay: i * 0.08 }}
+                  className="rounded-3xl border border-black/[0.07] bg-[#FAF9F6] p-6 sm:p-7 hover:border-[#C4A574]/30 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="mb-4 h-10 w-10 rounded-2xl bg-gradient-to-br from-[#C4A574] to-[#8B7355] text-white flex items-center justify-center text-sm font-medium tracking-wider">
+                    {id}
+                  </div>
+                  <h3
+                    className="text-xl sm:text-2xl tracking-tight mb-3"
+                    style={{ fontFamily: 'serif' }}
+                  >
+                    {t(`specialties.items.${id}.title`)}
+                  </h3>
+                  <p className="text-sm sm:text-base text-[#8B8B8B] leading-relaxed">
+                    {t(`specialties.items.${id}.description`)}
+                  </p>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-12 bg-[#FAF9F6]">
+          <div className="max-w-3xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-10 sm:mb-14"
+            >
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <div className="h-px w-8 bg-[#C4A574]" />
+                <span className="text-[#C4A574] text-xs sm:text-sm tracking-[0.4em] uppercase">
+                  {t('faq.label')}
+                </span>
+                <div className="h-px w-8 bg-[#C4A574]" />
+              </div>
+              <h2
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight leading-tight"
+                style={{ fontFamily: 'serif' }}
+              >
+                {t('faq.title')} <span className="italic">{t('faq.titleItalic')}</span>
+              </h2>
+            </motion.div>
+
+            <div className="space-y-3">
+              {FAQ_IDS.map((id, i) => {
+                const isOpen = expandedFaq === id;
+                return (
+                  <motion.div
+                    key={id}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-50px' }}
+                    transition={{ duration: 0.5, delay: i * 0.05 }}
+                    className="rounded-2xl border border-black/[0.07] bg-white overflow-hidden"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setExpandedFaq(isOpen ? null : id)}
+                      aria-expanded={isOpen}
+                      className="w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left hover:bg-black/[0.02] transition-colors"
+                    >
+                      <span className="text-base sm:text-lg font-medium tracking-tight text-black/90">
+                        {t(`faq.items.${id}.question`)}
+                      </span>
+                      <ChevronDown
+                        className={`w-5 h-5 text-[#8B8B8B] flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                        aria-hidden
+                      />
+                    </button>
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="overflow-hidden"
+                        >
+                          <p className="px-5 sm:px-6 pb-5 sm:pb-6 text-sm sm:text-base text-[#5a5a5a] leading-relaxed">
+                            {t(`faq.items.${id}.answer`)}
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         <SeoIntro text={String(t('seoText'))} />
 
         {/* CTA */}

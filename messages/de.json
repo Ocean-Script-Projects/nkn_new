@@ -438,15 +438,47 @@
   },
   "bespokePage": {
     "hero": {
-      "label": "Maßschneiderei",
-      "title": "Individuelle",
-      "titleItalic": "Anfertigung",
-      "description": "Individuell gefertigte Kleidung spiegelt Persönlichkeit, Charakter und innere Tiefe wider."
+      "label": "Maßschneiderei in Hamburg, Deutschland",
+      "title": "Maßgeschneiderte",
+      "titleItalic": "Kleidung",
+      "description": "Maßschneiderei in Hamburg (Deutschland): präziser Sitz, eigene Konstruktion und Sorgfalt bis ins Detail."
     },
     "intro": {
-      "p1": "Maßschneiderei steht immer für Status und Selbstachtung.",
-      "p2": "Es ist die Wahl derer, denen die Übereinstimmung von äußerem Erscheinungsbild und innerem Zustand wichtig ist. Individuell gefertigte Kleidung spiegelt Persönlichkeit, Charakter und innere Tiefe wider. Sie unterstreicht die Einzigartigkeit und macht sie sichtbar. Das Stück wird ausschließlich für Sie gefertigt.",
-      "p3": "Der kreative Prozess beginnt mit dem Dialog."
+      "p1": "Maßschneiderei steht immer für Status, perfekten Sitz und Selbstachtung.",
+      "p2": "Im NKN Atelier in Hamburg (Deutschland) entsteht jedes Stück passend zu Ihrer Figur, Ihrem Lebensstil und Ihrem Charakter. Das Ergebnis ist eine durchdachte Konstruktion, der richtige Stoff, sorgfältige Maße und mehrere Anproben. Geeignet für den Berufsalltag, besondere Anlässe und eine Capsule Wardrobe.",
+      "p3": "Der kreative Prozess beginnt mit dem Dialog — im Atelier in Hamburg oder online aus ganz Deutschland."
+    },
+    "specialties": {
+      "label": "Was ich fertige",
+      "title": "Maßgeschneiderte Kleidung —",
+      "titleItalic": "Richtungen",
+      "description": "Ich arbeite mit Damen- und Herrenbekleidung jeder Komplexität — von Alltagssilhouetten bis zu komplexer strukturierter Konstruktion.",
+      "items": {
+        "01": {
+          "title": "Kleider, Anzüge und Herrenlooks",
+          "description": "Kleider für Alltag, Büro und besondere Anlässe. Damen- und Herrenanzüge, Hosen, Westen und Hemden in individueller Konstruktion."
+        },
+        "02": {
+          "title": "Jacken, Mäntel, Oberbekleidung",
+          "description": "Jacken mit eigener Passform, Mäntel und Trenchcoats. Stoffwahl passend zum Hamburger Klima und zur Saison."
+        },
+        "03": {
+          "title": "Braut- und Abendlooks",
+          "description": "Brautkleider, Looks für Bräute und Gäste, Abend- und Cocktailkleider — mit Anproben und präziser Anpassung."
+        },
+        "04": {
+          "title": "Korsetts und strukturierte Stücke",
+          "description": "Korsettgürtel, Mieder, Stücke mit Stäbchen — dort, wo präzise Architektur und Halt wichtig sind."
+        },
+        "05": {
+          "title": "Capsule Wardrobe",
+          "description": "Einige Teile, die miteinander kombinierbar sind und unterschiedliche Szenarien Ihres Tages abdecken — von der Arbeit bis zum Ausgehen."
+        },
+        "06": {
+          "title": "Änderungen und Umarbeitung",
+          "description": "Änderungen von Konfektionsware nach Ihrer Figur, Upcycling und künstlerische Umgestaltung von Stücken aus Ihrem Kleiderschrank."
+        }
+      }
     },
     "offline": {
       "title": "Offline-Anfertigung",
@@ -496,15 +528,46 @@
         }
       }
     },
+    "faq": {
+      "label": "Häufige Fragen",
+      "title": "Maßschneiderei in Hamburg —",
+      "titleItalic": "Antworten",
+      "items": {
+        "01": {
+          "question": "Wo befindet sich das Atelier?",
+          "answer": "Das Atelier befindet sich in Hamburg (Deutschland). Maßanfertigungen sind vor Ort im Studio in Hamburg sowie online mit Kundinnen aus anderen deutschen Städten und Ländern möglich."
+        },
+        "02": {
+          "question": "Wie lange dauert die Maßanfertigung?",
+          "answer": "Je nach Modell und Konstruktionsaufwand — in der Regel 2 bis 8 Wochen ab Freigabe des Entwurfs. Enge Termine (Hochzeit, Shoot) besprechen wir bei der Beratung."
+        },
+        "03": {
+          "question": "Welche Kleidung fertigen Sie an?",
+          "answer": "Kleider, Damen- und Herrenanzüge, Jacken, Mäntel, Hosen, Westen, Hemden, Korsetts, Braut- und Abendlooks, Capsule-Kollektionen."
+        },
+        "04": {
+          "question": "Ist die Anfertigung online ohne Besuch in Hamburg möglich?",
+          "answer": "Ja. Es gibt ein vollständiges Online-Format: Videoberatung, ausführliche Maßanleitung, Freigabe von Konstruktion und Stoffen aus der Ferne. Das fertige Stück wird in Deutschland und weltweit versendet."
+        },
+        "05": {
+          "question": "Wie viel kostet eine Maßanfertigung?",
+          "answer": "Der Preis hängt vom Modell, der Konstruktion, dem Stoff und der Anzahl der Anproben ab. In einer kostenlosen 30-minütigen Beratung besprechen wir das Projekt und stimmen das Angebot vor Beginn der Arbeit ab."
+        },
+        "06": {
+          "question": "Sprechen Sie Deutsch und Russisch?",
+          "answer": "Ja, Beratung und Arbeit sind auf Deutsch, Russisch oder Englisch möglich — so wie es für Sie am angenehmsten ist."
+        }
+      }
+    },
     "cta": {
       "description": "Hinterlassen Sie eine Anfrage - ich führe eine kostenlose Beratung durch und wir besprechen Ihr Projekt.",
       "button": "Beratung anfragen"
     },
     "seo": {
-      "title": "Maßschneiderei auf Bestellung - NKN Atelier + Nataliia Khreshkova | Hamburg",
-      "description": "Kleidung auf Basis individueller Konstruktion: Beratung, Maße, Anproben und kompletter Atelierprozess. Vor Ort und online in Hamburg."
+      "title": "Maßschneiderei in Hamburg, Deutschland — NKN Atelier · Nataliia Khreshkova",
+      "description": "Maßgeschneiderte Kleidung in Hamburg (Deutschland): Beratung, Maße, Anproben und kompletter Atelierprozess. Vor Ort in Hamburg und online in ganz Deutschland."
     },
-    "seoText": "Maßschneiderei bei NKN Atelier (Hamburg) beginnt mit dem Verständnis für Figur, Lebensstil und das Gefühl, das Sie ausdrücken möchten. Wir starten mit einer Beratung, wählen Materialien und Details, nehmen Maße und arbeiten über Anproben, bis Passform und Komfort präzise sind. Möglich ist die Zusammenarbeit vor Ort in Hamburg sowie online mit klarer Anleitung. Wenn Ihnen Konstruktion, Qualität und Einzigartigkeit wichtig sind, ist das der richtige Prozess."
+    "seoText": "NKN Atelier — Maßschneiderei in Hamburg (Deutschland). Ich arbeite mit Ihrer Figur, Ihrem Lebensstil und Charakter, damit Passform und Look mit Ihrem inneren Zustand übereinstimmen. Wir beginnen mit einer kostenlosen Beratung, wählen Stoff und Details, nehmen Maße und arbeiten über Anproben bis zum präzisen Ergebnis. Die Maßanfertigung ist vor Ort in Hamburg sowie online in ganz Deutschland und darüber hinaus möglich. Wenn Ihnen Konstruktion, Qualität und Einzigartigkeit wichtig sind — ist das das richtige Format."
   },
   "servicesPage": {
     "hero": {
