@@ -145,7 +145,9 @@ export default function UpcyclingPage() {
     }
   ];
 
-  const handleSliderMove = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
+  const handleSliderMove = (
+    e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>
+  ) => {
     if (!isDragging) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const x = 'touches' in e ? e.touches[0].clientX : e.clientX;
@@ -301,7 +303,7 @@ export default function UpcyclingPage() {
             </div>
 
             <div
-              className="relative aspect-[16/10] sm:aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl select-none cursor-ew-resize"
+              className="relative aspect-[5/4] sm:aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl select-none cursor-ew-resize bg-[#0a0a0a]"
               onMouseMove={handleSliderMove}
               onTouchMove={handleSliderMove}
               onMouseDown={() => setIsDragging(true)}
@@ -310,10 +312,15 @@ export default function UpcyclingPage() {
               onTouchStart={() => setIsDragging(true)}
               onTouchEnd={() => setIsDragging(false)}
             >
-              <div className="absolute inset-0">
+              <div className="absolute inset-0 grid grid-cols-2">
                 <ImageWithFallback
-                  src="/images/models/model6.webp"
-                  alt="After"
+                  src="/images/upcycling/after1.JPG"
+                  alt="After 1"
+                  className="w-full h-full object-cover"
+                />
+                <ImageWithFallback
+                  src="/images/upcycling/after2.JPG"
+                  alt="After 2"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute right-6 top-6 rounded-full bg-black/70 px-4 py-2 backdrop-blur-sm">
@@ -325,11 +332,18 @@ export default function UpcyclingPage() {
                 className="absolute inset-0 overflow-hidden"
                 style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
               >
-                <ImageWithFallback
-                  src="/images/models/model5.webp"
-                  alt="Before"
-                  className="w-full h-full object-cover"
-                />
+                <div className="absolute inset-0 grid grid-cols-2">
+                  <ImageWithFallback
+                    src="/images/upcycling/before1.jpg"
+                    alt="Before 1"
+                    className="w-full h-full object-cover"
+                  />
+                  <ImageWithFallback
+                    src="/images/upcycling/before2.jpg"
+                    alt="Before 2"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <div className="absolute left-6 top-6 rounded-full bg-[#059669] px-4 py-2 backdrop-blur-sm">
                   <span className="text-white text-sm tracking-wider">{t('slider.before')}</span>
                 </div>

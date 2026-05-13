@@ -429,30 +429,36 @@ export default function AboutPage() {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
               {[
                 {
-                  src: '/images/models/material.webp',
-                  alt: 'Fabric selection',
+                  type: 'image' as const,
+                  src: '/images/atelie_details/atelier-photo-1.jpg',
+                  alt: 'Atelier detail 1',
                 },
                 {
-                  src: '/images/models/material2.webp',
-                  alt: 'Sewing details',
+                  type: 'image' as const,
+                  src: '/images/atelie_details/atelier-photo-2.jpg',
+                  alt: 'Atelier detail 2',
                 },
                 {
-                  src: '/images/models/model6.webp',
-                  alt: 'Pattern making',
+                  type: 'video' as const,
+                  src: '/images/atelie_details/atelier-video-1.mp4',
+                  alt: 'Atelier process 1',
                 },
                 {
-                  src: '/images/models/material3.webp',
-                  alt: 'Mannequin',
+                  type: 'image' as const,
+                  src: '/images/atelie_details/atelier-photo-3.jpg',
+                  alt: 'Atelier detail 3',
                 },
                 {
-                  src: '/images/models/model8.webp',
-                  alt: 'Workspace',
+                  type: 'video' as const,
+                  src: '/images/atelie_details/atelier-video-2.mp4',
+                  alt: 'Atelier process 2',
                 },
                 {
-                  src: '/images/models/material4.webp',
-                  alt: 'Hand details',
+                  type: 'image' as const,
+                  src: '/images/atelie_details/atelier-photo-4.jpg',
+                  alt: 'Atelier detail 4',
                 },
-              ].map((img, i) => (
+              ].map((media, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -462,11 +468,24 @@ export default function AboutPage() {
                   whileHover={{ scale: 1.03 }}
                   className="relative aspect-square rounded-2xl overflow-hidden shadow-lg"
                 >
-                  <ImageWithFallback
-                    src={img.src}
-                    alt={img.alt}
-                    className="w-full h-full object-cover"
-                  />
+                  {media.type === 'video' ? (
+                    <video
+                      src={media.src}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      aria-label={media.alt}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <ImageWithFallback
+                      src={media.src}
+                      alt={media.alt}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 </motion.div>
               ))}
