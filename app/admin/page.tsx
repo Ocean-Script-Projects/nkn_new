@@ -334,9 +334,21 @@ export default function AdminPage() {
     setEditingPieceId(id);
   };
 
-  const removePiece = (id: string) => {
-    setPieces((prev) => prev.filter((p) => p.id !== id));
+  const removePiece = async (id: string) => {
+    if (!window.confirm('Удалить этот товар? Это действие нельзя отменить.')) return;
+    const next = pieces.filter((p) => p.id !== id);
+    setPieces(next);
     if (editingPieceId === id) setEditingPieceId(null);
+    try {
+      const r = await apiPut('/api/admin/pieces', hdr(), next);
+      if (!r.ok) {
+        const body = await r.json().catch(() => ({}));
+        throw new Error((body as { error?: string }).error ?? r.statusText);
+      }
+    } catch (e) {
+      setSaveMessage(`Ошибка удаления: ${e instanceof Error ? e.message : String(e)}`);
+      await loadData();
+    }
   };
 
   const updatePiece = (id: string, patch: Partial<CatalogPiece>) => {
