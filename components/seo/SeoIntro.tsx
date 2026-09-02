@@ -28,7 +28,7 @@ export default function SeoIntro({ text }: { text: string }) {
 
   return (
     <section className="px-4 pb-16 pt-12 sm:px-6 sm:pb-20 md:px-12 md:pt-16">
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto w-full max-w-3xl">
         <div className="mb-8 h-px w-full bg-black/10" />
 
         <div className="mb-5 flex items-center gap-3">
@@ -49,7 +49,7 @@ export default function SeoIntro({ text }: { text: string }) {
           {paragraphs.map((paragraph, i) => (
             <p
               key={i}
-              className="text-[0.9375rem] leading-[1.75] text-neutral-600 sm:text-base"
+              className="max-w-full text-[0.9375rem] leading-[1.75] text-neutral-600 [overflow-wrap:anywhere] sm:text-base"
             >
               {paragraph}
             </p>

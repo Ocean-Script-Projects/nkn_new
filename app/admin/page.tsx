@@ -445,10 +445,31 @@ export default function AdminPage() {
     );
   };
 
-  const removeCategory = (id: string) => {
+  const removeCategory = async (id: string) => {
     if (id === 'all') return;
-    setCategories((prev) => prev.filter((c) => c.id !== id));
+    if (savingCategoryOrder || persistingCategories) return;
+
+    const next = categories.filter((c) => c.id !== id);
+    setSavingCategoryOrder(true);
+    setSaveMessage(null);
+    setCategories(next);
     if (editingCategoryId === id) setEditingCategoryId(null);
+
+    // Persist right away — mirrors moveCategory. Without this the row only
+    // disappears from local state and reappears on reload.
+    try {
+      const r = await apiPut('/api/admin/categories', hdr(), next);
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error((body as { error?: string }).error ?? r.statusText);
+      const w = (body as { warning?: string }).warning;
+      setSaveMessage(w ? `Категория удалена. ${w}` : 'Категория удалена');
+      await loadData();
+    } catch (e) {
+      setSaveMessage(e instanceof Error ? e.message : 'Не удалось удалить категорию');
+      await loadData();
+    } finally {
+      setSavingCategoryOrder(false);
+    }
   };
 
   const storageLab = catalogStorageLabels(status?.catalogStorage);
@@ -1077,7 +1098,7 @@ export default function AdminPage() {
                           {c.id !== 'all' ? (
                             <button
                               type="button"
-                              onClick={() => removeCategory(c.id)}
+                              onClick={() => void removeCategory(c.id)}
                               className="inline-flex items-center justify-center rounded-xl border border-red-200/80 bg-red-50/60 p-2 text-red-700"
                             >
                               <Trash2 className="w-3.5 h-3.5" aria-hidden />
@@ -1120,7 +1141,7 @@ export default function AdminPage() {
                             {c.id !== 'all' ? (
                               <button
                                 type="button"
-                                onClick={() => removeCategory(c.id)}
+                                onClick={() => void removeCategory(c.id)}
                                 className="shrink-0 inline-flex items-center justify-center rounded-xl border border-red-200/80 bg-red-50/80 p-2 text-red-700"
                               >
                                 <Trash2 className="w-4 h-4" aria-hidden />
