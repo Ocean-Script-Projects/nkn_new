@@ -9,15 +9,17 @@ import PageHeader from '@/components/shared/PageHeader';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import { submitSiteRequest } from '@/lib/submit-site-request';
+import PageBreadcrumbs from '@/components/seo/PageBreadcrumbs';
 
 const ABOUT_HERO_SRC = '/images/models/natalia_img3.webp';
 
 function AboutHeroImage() {
+  const t = useTranslations('aboutPage');
   return (
     <div className="relative h-full w-full min-h-full overflow-hidden lg:aspect-[4/5] lg:rounded-3xl lg:shadow-2xl">
       <ImageWithFallback
         src={ABOUT_HERO_SRC}
-        alt="Nataliia Khreshkova portrait"
+        alt={String(t('imageAlt'))}
         className="h-full w-full object-cover lg:rounded-3xl"
       />
       <motion.div
@@ -96,6 +98,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#FAF9F6] overflow-x-hidden">
       <Navigation />
+      <PageBreadcrumbs segment="about" navKey="about" />
       <div>
         <PageHeader
           mobileLayout="editorial"
@@ -191,7 +194,7 @@ export default function AboutPage() {
                 <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
                   <ImageWithFallback
                     src="/images/models/natalia_img4.webp"
-                    alt="Nataliia Khreshkova"
+                    alt={String(t('imageAlt'))}
                     className="w-full h-full object-cover object-[50%_20%]"
                   />
                 </div>

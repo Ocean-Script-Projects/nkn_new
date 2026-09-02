@@ -1,5 +1,6 @@
 {
   "nav": {
+    "home": "Startseite",
     "philosophy": "Philosophie",
     "services": "Dienstleistungen",
     "bespoke": "Maßschneiderei",
@@ -17,10 +18,10 @@
   },
   "homePage": {
     "seo": {
-      "title": "NKN Atelier - Nataliia Khreshkova, Design-Atelier in Hamburg",
-      "description": "Maßschneiderei, Unikate, Autorendrucke und Upcycling in Hamburg. Persönliche Betreuung - online und vor Ort."
+      "title": "Maßschneiderei Hamburg — NKN Atelier",
+      "description": "Maßgeschneiderte Kleidung aus dem Atelier von Nataliia Khreshkova für Hamburg und Umgebung: Unikate, Autorendrucke, Upcycling. Beratung vor Ort und online."
     },
-    "seoText": "NKN Atelier ist ein Design-Atelier in Hamburg, in dem Maßschneiderei auf Persönlichkeit, präzise Passform und durchdachte Konstruktion trifft. Hier entstehen Anfertigungen nach Maß, one-of-one Unikate, Autorendrucke sowie Upcycling-Projekte. Die Zusammenarbeit ist vor Ort in Hamburg und auch online möglich: Beratung, Materialauswahl, Maßnehmen und Anproben (oder Remote-Begleitung) — vom Konzept bis zum fertigen Stück."
+    "seoText": "NKN Atelier ist das Design-Atelier von Nataliia Khreshkova für Hamburg und den Norden. Hier entsteht Maßschneiderei, bei der die Passform an erster Stelle steht: individuelle Maßanfertigung, one-of-one Unikate, Kleinserien, eigene Stoffdrucke und Upcycling bestehender Kleidungsstücke. Jedes Stück wird konstruiert, nicht bloß genäht — auf Grundlage von 37 Jahren Erfahrung in Schnittkonstruktion und Handarbeit.\n\nDer Weg zum fertigen Kleidungsstück ist immer derselbe: ein Gespräch über Anlass, Material und Silhouette, dann Maßnehmen, Schnittkonstruktion, Zwischenanproben und die finale Fertigung. Wer nicht vor Ort sein kann, wird online begleitet — mit Anleitung zum Maßnehmen per Video, Materialauswahl aus der Ferne und Versand innerhalb Deutschlands und darüber hinaus.\n\nDas Atelier liegt in Kaltenkirchen, rund 35 Minuten von Hamburg entfernt, und arbeitet für Kundinnen und Kunden in Hamburg, Norderstedt, Quickborn, Elmshorn, Bad Segeberg, Neumünster und ganz Schleswig-Holstein. Neben Maßanfertigung gehören Stil- und Imageberatung, der Aufbau einer Capsule Wardrobe sowie Schnittmuster und Musterteile für junge Modemarken zum Angebot. Beratung auf Deutsch, Englisch und Russisch."
   },
   "hero": {
     "location": "Hamburg · Atelier",
@@ -34,7 +35,9 @@
     "individual": "Individueller Ansatz",
     "scroll": "BLÄTTERN",
     "nameFull": "NATALIIA KHRESHKOVA",
-    "role": "Designerin · Schnittmacherin"
+    "role": "Designerin · Schnittmacherin",
+    "brandLine": "NKN Atelier · Maßschneiderei in Hamburg",
+    "imageAlt": "Nataliia Khreshkova, Designerin und Schnittmacherin im NKN Atelier bei Hamburg"
   },
   "philosophy": {
     "label": "Philosophie",
@@ -185,8 +188,8 @@
     "loading": "Katalog wird geladen …",
     "description": "Jedes Stück entsteht als Unikat oder in limitierter Auflage. Individuelle Anpassung und Auswahl eines Autorendrucks für Sie sind möglich.",
     "seo": {
-      "title": "One-of-one Stücke - NKN Atelier + Nataliia Khreshkova | Hamburg",
-      "description": "Kuratierte Autorstücke: Korsagen, Kleider, Schals und Gürtel. Einzelstücke oder limitierte Serien mit individueller Anpassung und passendem Autorendruck."
+      "title": "Unikate & Designerkleidung aus Hamburg",
+      "description": "Korsagen, Kleider, Schals und Gürtel als Einzelstücke oder limitierte Serie. Jedes Stück wird auf Ihre Maße angepasst und mit passendem Autorendruck kombiniert."
     },
     "seoText": "Die Stücke von NKN Atelier sind Unikate und kleine Serien aus Hamburg — mit Fokus auf Konstruktion, Proportionen und hochwertige Verarbeitung. Entdecken Sie Korsagen, Gürtel, Kleider, Schals und mehr. Viele Designs lassen sich an Ihre Figur und Ihren Anlass anpassen und mit einem Autorendruck kombinieren. Wenn Sie ein wirklich einzigartiges Stück mit präziser Passform suchen, starten wir mit einer Beratung.",
     "productStatus": {
@@ -257,7 +260,10 @@
       "submit": "Anfrage senden",
       "cancel": "Abbrechen",
       "footer": "Ich werde mich persönlich bei Ihnen melden"
-    }
+    },
+    "imageAlt": "One-of-one Kleidungsstück von Nataliia Khreshkova, NKN Atelier Hamburg",
+    "imageAltMaterial": "Stoff und Textur für ein Unikat aus dem NKN Atelier",
+    "imageAltUpcycling": "Upcycling-Projekt: umgestaltetes Kleidungsstück aus dem NKN Atelier"
   },
   "upcycling": {
     "label": "Nachhaltig",
@@ -268,8 +274,8 @@
     "subtitle2": "Funktion und Energie geben",
     "description": "Ich arbeite mit Kleidungsstücken, die Sie bereits haben. Ich schneide sie um und denke sie neu - mit neuer Energie, moderner Ästhetik und tiefem Respekt für die Geschichte des Stücks.",
     "seo": {
-      "title": "Upcycling & Transformation - NKN Atelier + Nataliia Khreshkova | Hamburg",
-      "description": "Rekonstruktion von Kleidungsstücken aus Ihrem Kleiderschrank: Umnähen, neue Silhouette und moderne Ästhetik. Nachhaltige Mode mit künstlerischem Ansatz."
+      "title": "Upcycling Kleidung Hamburg — Umgestaltung",
+      "description": "Aus alt wird Lieblingsstück: Umnähen, neue Silhouette und Reparatur im Atelier Hamburg. Nachhaltige Mode mit künstlerischem Anspruch. Kostenlose Erstberatung."
     },
     "seoText": "Upcycling bei NKN Atelier (Hamburg) ist keine Reparatur, sondern eine künstlerische Transformation von Kleidung aus Ihrem Kleiderschrank. Wir analysieren Stoff und Konstruktion, entwickeln eine neue Silhouette und Funktion und bewahren, was am Original wertvoll ist. Das Ergebnis ist ein zeitgemäßes Kleidungsstück mit neuer Geschichte und professioneller Verarbeitung. Geeignet für Mäntel, Blazer, Kleider, Hemden und mehr.",
     "badge": "Öko-bewusst",
@@ -388,7 +394,11 @@
       "submit": "Anfrage senden",
       "footer": "Ich werde mich persönlich innerhalb von 24 Stunden bei Ihnen melden"
     },
-    "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden."
+    "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden.",
+    "imageAlt": "Upcycling im NKN Atelier: Kleidungsstück vor und nach der Umgestaltung",
+    "imageAltDetails": "Detailaufnahme der Handarbeit im NKN Atelier bei Hamburg",
+    "imageAltBefore": "Kleidungsstück vor dem Upcycling im NKN Atelier",
+    "imageAltAfter": "Kleidungsstück nach dem Upcycling im NKN Atelier"
   },
   "events": {
     "label": "Veranstaltungen",
@@ -564,10 +574,11 @@
       "button": "Beratung anfragen"
     },
     "seo": {
-      "title": "Maßschneiderei in Hamburg, Deutschland — NKN Atelier · Nataliia Khreshkova",
-      "description": "Maßgeschneiderte Kleidung in Hamburg (Deutschland): Beratung, Maße, Anproben und kompletter Atelierprozess. Vor Ort in Hamburg und online in ganz Deutschland."
+      "title": "Maßanfertigung & Maßschneiderei in Hamburg",
+      "description": "Kleidung nach Maß in Hamburg: Beratung, Maßnehmen, Schnittkonstruktion und Anproben im Atelier. Persönlich vor Ort oder online in ganz Deutschland. Jetzt anfragen."
     },
-    "seoText": "NKN Atelier — Maßschneiderei in Hamburg (Deutschland). Ich arbeite mit Ihrer Figur, Ihrem Lebensstil und Charakter, damit Passform und Look mit Ihrem inneren Zustand übereinstimmen. Wir beginnen mit einer kostenlosen Beratung, wählen Stoff und Details, nehmen Maße und arbeiten über Anproben bis zum präzisen Ergebnis. Die Maßanfertigung ist vor Ort in Hamburg sowie online in ganz Deutschland und darüber hinaus möglich. Wenn Ihnen Konstruktion, Qualität und Einzigartigkeit wichtig sind — ist das das richtige Format."
+    "seoText": "NKN Atelier — Maßschneiderei in Hamburg (Deutschland). Ich arbeite mit Ihrer Figur, Ihrem Lebensstil und Charakter, damit Passform und Look mit Ihrem inneren Zustand übereinstimmen. Wir beginnen mit einer kostenlosen Beratung, wählen Stoff und Details, nehmen Maße und arbeiten über Anproben bis zum präzisen Ergebnis. Die Maßanfertigung ist vor Ort in Hamburg sowie online in ganz Deutschland und darüber hinaus möglich. Wenn Ihnen Konstruktion, Qualität und Einzigartigkeit wichtig sind — ist das das richtige Format.",
+    "imageAlt": "Maßgeschneidertes Kleidungsstück aus dem NKN Atelier bei Hamburg"
   },
   "servicesPage": {
     "hero": {
@@ -588,49 +599,98 @@
         "subtitle": "Custom Tailoring",
         "shortDesc": "Ich erstelle Kleidung nach individuellen Maßen unter Berücksichtigung von Figur, Lebensstil und innerem Zustand.",
         "fullDesc": "Ich arbeite mit Form, Proportionen, Passform und Komfort. Jedes Stück wird mit tiefem Verständnis für den Menschen geschaffen - seine Figur, seinen Charakter, seinen Lebensstil.",
-        "features": ["Individuelle Maßnahme", "Skizzenentwicklung", "2-3 Anproben", "Perfekte Passform", "Stoff- und Futterauswahl", "Professionelle Verarbeitung"]
+        "features": [
+          "Individuelle Maßnahme",
+          "Skizzenentwicklung",
+          "2-3 Anproben",
+          "Perfekte Passform",
+          "Stoff- und Futterauswahl",
+          "Professionelle Verarbeitung"
+        ]
       },
       "02": {
         "title": "Autorenstücke One-of-One",
         "subtitle": "Unique Pieces",
         "shortDesc": "Ich entwickle und nähe einzigartige Stücke in einer einzigen Kopie - von der Idee bis zum letzten Stich.",
         "fullDesc": "Jedes One-of-One-Stück ist ein künstlerisches Statement. Ich erstelle das Konzept, denke Form, Konstruktion und dekorative Elemente durch.",
-        "features": ["Einzigartiges Konzept", "Autorentwicklung", "Exklusive Materialien", "Komplexe Techniken", "Einzelstück", "Künstlerischer Wert"]
+        "features": [
+          "Einzigartiges Konzept",
+          "Autorentwicklung",
+          "Exklusive Materialien",
+          "Komplexe Techniken",
+          "Einzelstück",
+          "Künstlerischer Wert"
+        ]
       },
       "03": {
         "title": "Limitierte Serien",
         "subtitle": "Limited Series",
         "shortDesc": "Ich erstelle limitierte Serien von Stücken - jedes Modell ist konstruktiv und ästhetisch durchdacht.",
         "fullDesc": "Ich entwickle Kapselkollektionen von 3 bis 15 Stücken. Jedes Modell durchläuft den vollen Entwicklungszyklus.",
-        "features": ["3-15 Stücke pro Serie", "Professionelle Schnittmuster", "Hohe Ausführungsqualität", "Exklusivität", "Voller Entwicklungszyklus", "Konzept-Test"]
+        "features": [
+          "3-15 Stücke pro Serie",
+          "Professionelle Schnittmuster",
+          "Hohe Ausführungsqualität",
+          "Exklusivität",
+          "Voller Entwicklungszyklus",
+          "Konzept-Test"
+        ]
       },
       "04": {
         "title": "Upcycling",
         "subtitle": "Sustainable Fashion",
         "shortDesc": "Ich arbeite mit Kleidungsstücken, die Sie bereits haben. Ich schneide sie um und denke sie mit neuer Energie neu.",
         "fullDesc": "Ich gebe Kleidungsstücken ein zweites Leben durch Neubewertung von Form und Funktion. Ich analysiere das Stück: Stoffzustand, Konstruktion, Potenzial.",
-        "features": ["Analyse des Originals", "Neues Designkonzept", "Bewahrung wertvoller Elemente", "Moderne Ästhetik", "Nachhaltigkeit", "Einzigartige Geschichte"]
+        "features": [
+          "Analyse des Originals",
+          "Neues Designkonzept",
+          "Bewahrung wertvoller Elemente",
+          "Moderne Ästhetik",
+          "Nachhaltigkeit",
+          "Einzigartige Geschichte"
+        ]
       },
       "05": {
         "title": "Autorendrucke",
         "subtitle": "Custom Prints",
         "shortDesc": "Ich erstelle Drucke unter Berücksichtigung der Konstruktion - der Druck wird genau dort platziert, wo vorgesehen.",
         "fullDesc": "Ich entwerfe den Druck als Teil der Gesamtkomposition. Ich arbeite mit Digitaldruck, Siebdruck, Handmalerei.",
-        "features": ["Druckkonzeptentwicklung", "Integration in Konstruktion", "Verschiedene Drucktechniken", "Farbentwicklung", "Präzise Platzierung", "Autorenansatz"]
+        "features": [
+          "Druckkonzeptentwicklung",
+          "Integration in Konstruktion",
+          "Verschiedene Drucktechniken",
+          "Farbentwicklung",
+          "Präzise Platzierung",
+          "Autorenansatz"
+        ]
       },
       "06": {
         "title": "Vollständige Zyklusentwicklung",
         "subtitle": "Full Cycle Development",
         "shortDesc": "Ich begleite das Stück von der Idee bis zum fertigen Ergebnis und verbinde künstlerische Vision und Technologie.",
         "fullDesc": "Ich führe das Projekt in allen Phasen: Konzept, Skizze, Materialauswahl, Schnittmuster, Zuschnitt, Nähen, Anproben, Endverarbeitung.",
-        "features": ["Konzept und Skizzierung", "Schnittmustererstellung", "Materialauswahl", "Nähen und Anproben", "Technische Dokumentation", "Endverarbeitung"]
+        "features": [
+          "Konzept und Skizzierung",
+          "Schnittmustererstellung",
+          "Materialauswahl",
+          "Nähen und Anproben",
+          "Technische Dokumentation",
+          "Endverarbeitung"
+        ]
       },
       "07": {
         "title": "Markenberatung",
         "subtitle": "Brand Consulting",
         "shortDesc": "Ich helfe Designern, Modelle zu entwickeln, arbeite an Silhouetten, Konstruktion und professionellen Schnittmustern.",
         "fullDesc": "Ich berate junge Marken und Designer in der Kollektionsentwicklung. Ich entwickle Schnittmuster, korrigiere die Passform, schlage technische Lösungen vor.",
-        "features": ["Entwicklungsberatung", "Silhouettenverfeinerung", "Schnittmustererstellung", "Technische Lösungen", "Wissensweitergabe", "Unterstützung in allen Phasen"]
+        "features": [
+          "Entwicklungsberatung",
+          "Silhouettenverfeinerung",
+          "Schnittmustererstellung",
+          "Technische Lösungen",
+          "Wissensweitergabe",
+          "Unterstützung in allen Phasen"
+        ]
       }
     },
     "moreButton": "Mehr erfahren",
@@ -657,10 +717,11 @@
       "submit": "Anfrage senden"
     },
     "seo": {
-      "title": "Atelier-Dienstleistungen - NKN Atelier + Nataliia Khreshkova | Hamburg",
-      "description": "Sieben Richtungen: Maßschneiderei, One-of-one Stücke, Kleinserien, Upcycling, Autorendrucke, kompletter Entwicklungszyklus und Markenberatung."
+      "title": "Schneiderei & Atelier-Leistungen in Hamburg",
+      "description": "Sieben Leistungen im Atelier: Maßschneiderei, Unikate, Kleinserien, Upcycling, Autorendrucke, Entwicklungszyklus und Markenberatung. Preise auf Anfrage."
     },
-    "seoText": "Die Dienstleistungen von NKN Atelier in Hamburg decken den gesamten Prozess rund um Kleidung ab: von Maßschneiderei und Unikaten bis zu Upcycling, Autorendrucken und Markenberatung. Im Mittelpunkt stehen Konstruktion, Passform, Stoff und Details — alles wird auf Person und Zweck abgestimmt. Wenn Sie ein professionelles Atelier in Hamburg suchen, senden Sie eine Anfrage und wir beginnen mit einer Beratung."
+    "seoText": "Die Dienstleistungen von NKN Atelier in Hamburg decken den gesamten Prozess rund um Kleidung ab: von Maßschneiderei und Unikaten bis zu Upcycling, Autorendrucken und Markenberatung. Im Mittelpunkt stehen Konstruktion, Passform, Stoff und Details — alles wird auf Person und Zweck abgestimmt. Wenn Sie ein professionelles Atelier in Hamburg suchen, senden Sie eine Anfrage und wir beginnen mit einer Beratung.",
+    "imageAlt": "Arbeitsplatz im NKN Atelier: Schnittmuster, Stoffe und Nähmaschine"
   },
   "aboutPage": {
     "hero": {
@@ -691,37 +752,86 @@
       "text1": "Es ist mir wichtig, den Menschen zu hören - seinen Charakter, Lebensstil und inneren Rhythmus zu verstehen. Auch wenn es Ihnen schwerfällt genau zu formulieren, welches Stück Sie wollen, kann ich Ihre Anfrage hören und verstehen.",
       "text2": "In der gemeinsamen Arbeit finden wir das Stück, das für Sie ideal wird. Die Arbeit ist tief und systematisch, in warmer und respektvoller Atmosphäre. Jedes Detail im Stück spiegelt die Persönlichkeit wider und verstärkt ihre Wirkung. Mein Motto: Ästhetik, Komfort und Funktionalität."
     },
-    "philosophy": { "label": "Philosophie", "title": "Mein Ansatz" },
+    "philosophy": {
+      "label": "Philosophie",
+      "title": "Mein Ansatz"
+    },
     "principles": {
-      "01": { "title": "Form & Passform", "description": "Proportionen, Balance und Komfort", "detail": "Jedes Kleidungsstück wird um den Körper herum gebaut, nicht um Trends" },
-      "02": { "title": "Material & Bedeutung", "description": "Stoff, Textur und Zweck", "detail": "Das richtige Material erweckt die Idee zum Leben" },
-      "03": { "title": "Struktur & Handwerk", "description": "Konstruktion, Präzision und Handarbeit", "detail": "Qualität steckt in den Details, die das Auge nicht sieht" }
+      "01": {
+        "title": "Form & Passform",
+        "description": "Proportionen, Balance und Komfort",
+        "detail": "Jedes Kleidungsstück wird um den Körper herum gebaut, nicht um Trends"
+      },
+      "02": {
+        "title": "Material & Bedeutung",
+        "description": "Stoff, Textur und Zweck",
+        "detail": "Das richtige Material erweckt die Idee zum Leben"
+      },
+      "03": {
+        "title": "Struktur & Handwerk",
+        "description": "Konstruktion, Präzision und Handarbeit",
+        "detail": "Qualität steckt in den Details, die das Auge nicht sieht"
+      }
     },
     "process": {
       "title": "Vollzyklus",
       "titleItalic": "Atelier-Praxis",
       "subtitle": "Vom ersten Gespräch bis zur Endanprobe - jeder Schritt ist persönlich und präzise",
       "steps": {
-        "01": { "step": "Idee", "detail": "Verständnis von Vision und Bedürfnissen" },
-        "02": { "step": "Skizze", "detail": "Übersetzung des Konzepts in Form" },
-        "03": { "step": "Schnittmuster", "detail": "Erstellung präziser Konstruktion" },
-        "04": { "step": "Nähen", "detail": "Kleidungsstück zum Leben erwecken" },
-        "05": { "step": "Endanprobe", "detail": "Perfektionierung jedes Details" }
+        "01": {
+          "step": "Idee",
+          "detail": "Verständnis von Vision und Bedürfnissen"
+        },
+        "02": {
+          "step": "Skizze",
+          "detail": "Übersetzung des Konzepts in Form"
+        },
+        "03": {
+          "step": "Schnittmuster",
+          "detail": "Erstellung präziser Konstruktion"
+        },
+        "04": {
+          "step": "Nähen",
+          "detail": "Kleidungsstück zum Leben erwecken"
+        },
+        "05": {
+          "step": "Endanprobe",
+          "detail": "Perfektionierung jedes Details"
+        }
       },
       "footer": "Jedes Kleidungsstück geht in jeder Phase durch meine Hände"
     },
-    "atelierDetails": { "label": "Atelier-Details" },
+    "atelierDetails": {
+      "label": "Atelier-Details"
+    },
     "b2b": {
       "label": "B2B",
       "title": "Für Designer",
       "titleItalic": "& Marken",
       "description": "Ich arbeite mit Designern und Marken, die Handwerk, Präzision und durchdachte Konstruktion schätzen",
-      "items": ["Modellentwicklung und Silhouettenverfeinerung", "Professionelles Schnittmuster und Gradierung", "Erstmuster und Anprobe", "Konstruktionsberatung für die Produktion", "Technische Spezifikation und Dokumentation"],
+      "items": [
+        "Modellentwicklung und Silhouettenverfeinerung",
+        "Professionelles Schnittmuster und Gradierung",
+        "Erstmuster und Anprobe",
+        "Konstruktionsberatung für die Produktion",
+        "Technische Spezifikation und Dokumentation"
+      ],
       "cta": "Zusammenarbeit besprechen"
     },
-    "quote": { "text": "Kleidung ist keine Dekoration. Es ist Struktur, Bedeutung und Persönlichkeit.", "author": "NATALIIA KHRESHKOVA" },
-    "cta": { "title": "Arbeiten Sie", "titleItalic": "mit mir", "description": "Wenn Sie einen persönlichen Ansatz und durchdachte Arbeit mit Form suchen - hinterlassen Sie eine Anfrage", "button": "Anfrage hinterlassen" },
-    "seo": { "title": "Designer-Atelier Hamburg - Nataliia Khreshkova | NKN Atelier", "description": "37+ Jahre Erfahrung in Schnittmusterbau und Bekleidungskonstruktion. Handwerk, ein autorischer Ansatz und ein Online-Schneidersystem für Kundinnen und Kunden weltweit." },
+    "quote": {
+      "text": "Kleidung ist keine Dekoration. Es ist Struktur, Bedeutung und Persönlichkeit.",
+      "author": "NATALIIA KHRESHKOVA"
+    },
+    "cta": {
+      "title": "Arbeiten Sie",
+      "titleItalic": "mit mir",
+      "description": "Wenn Sie einen persönlichen Ansatz und durchdachte Arbeit mit Form suchen - hinterlassen Sie eine Anfrage",
+      "button": "Anfrage hinterlassen"
+    },
+    "seo": {
+      "title": "Nataliia Khreshkova — Designerin & Schnittmacherin",
+      "description": "37+ Jahre Erfahrung in Schnittkonstruktion und Handwerk. Wie im NKN Atelier gearbeitet wird und warum Passform vor Trend kommt. Über die Gründerin."
+    },
     "seoText": "Ich bin Nataliia Khreshkova — Designerin und Schnittmacherin, Gründerin von NKN Atelier. Meine Arbeit ist präzise Konstruktion, professionelle Schnittmuster, sorgfältige Passform und handwerkliche Qualität. Heute entwickle ich das Studio in Deutschland und arbeite mit privaten Kundinnen und Kunden sowie Marken: Maßanfertigungen, Upcycling, Autorendrucke und Modellentwicklung. Wenn Sie ein Designer-Atelier in Hamburg suchen, erzählen Sie mir von Ihrem Projekt — wir finden den passenden Ablauf.",
     "modal": {
       "title": "Lassen Sie uns",
@@ -730,19 +840,30 @@
       "name": "Ihr Name",
       "contact": "Bevorzugter Kontakt",
       "contactPlaceholder": "Methode wählen",
-      "contactOptions": { "telegram": "Telegram", "whatsapp": "WhatsApp", "email": "E-Mail" },
+      "contactOptions": {
+        "telegram": "Telegram",
+        "whatsapp": "WhatsApp",
+        "email": "E-Mail"
+      },
       "contactValue": "Kontakt (Nickname / Nummer / E-Mail)",
       "contactValuePlaceholderTelegram": "@username",
       "contactValuePlaceholderWhatsapp": "+49...",
       "contactValuePlaceholderEmail": "your@email.com",
       "projectType": "Projekttyp",
       "projectTypePlaceholder": "Typ auswählen",
-      "projectTypes": { "bespoke": "Maßgefertigtes Kleidungsstück", "upcycling": "Upcycling", "prints": "Druckdesign", "collaboration": "Markenkooperation", "other": "Sonstiges" },
+      "projectTypes": {
+        "bespoke": "Maßgefertigtes Kleidungsstück",
+        "upcycling": "Upcycling",
+        "prints": "Druckdesign",
+        "collaboration": "Markenkooperation",
+        "other": "Sonstiges"
+      },
       "message": "Erzählen Sie von Ihrem Projekt",
       "messagePlaceholder": "Beschreiben Sie Ihre Idee oder Ihr Projekt...",
       "submit": "Anfrage senden"
     },
-    "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden."
+    "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden.",
+    "imageAlt": "Nataliia Khreshkova, Gründerin des NKN Atelier, bei der Arbeit"
   },
   "collaborationPage": {
     "hero": {
@@ -757,10 +878,11 @@
       "description": "Kontaktieren Sie mich für Ihr Projekt."
     },
     "seo": {
-      "title": "Markenkooperation - NKN Atelier + Nataliia Khreshkova | Hamburg",
-      "description": "Professionelle Unterstützung für Designerinnen und Marken: Konstruktion, Schnittmuster, Größenraster, Muster und Vorbereitung zur Serienproduktion."
+      "title": "Schnittmuster & Produktion für Modemarken",
+      "description": "Unterstützung für Designerinnen und junge Labels: Konstruktion, Schnittmuster, Größenraster, Musterteil und Vorbereitung zur Serienproduktion in Hamburg."
     },
-    "seoText": "Eine Zusammenarbeit mit NKN Atelier bedeutet professionelle Unterstützung für Designerinnen, Designer und Marken, denen Passform, Konstruktion und produktionstaugliche Schnittmuster wichtig sind. Ich entwickle Schnittmuster, verfeinere Silhouetten, baue ein Größenraster auf, nähe das erste Muster und bereite das Modell für den Launch vor. Wenn Sie an einer Kollektion arbeiten und eine erfahrene Schnittmacherin in Hamburg (oder remote) suchen, schreiben Sie mir."
+    "seoText": "Eine Zusammenarbeit mit NKN Atelier bedeutet professionelle Unterstützung für Designerinnen, Designer und Marken, denen Passform, Konstruktion und produktionstaugliche Schnittmuster wichtig sind. Ich entwickle Schnittmuster, verfeinere Silhouetten, baue ein Größenraster auf, nähe das erste Muster und bereite das Modell für den Launch vor. Wenn Sie an einer Kollektion arbeiten und eine erfahrene Schnittmacherin in Hamburg (oder remote) suchen, schreiben Sie mir.",
+    "imageAlt": "Zusammenarbeit mit Modemarken: Schnittmuster und Musterteile im NKN Atelier"
   },
   "printsPage": {
     "hero": {
@@ -791,22 +913,42 @@
     "ctaDescription": "Beschreiben Sie kurz Ihre Aufgabe - ich antworte persönlich mit dem nächsten Schritt.",
     "ctaNote": "Antwort innerhalb 24–48 Std. · Hamburg",
     "seo": {
-      "title": "Autorendrucke für Kleidung - NKN Atelier + Nataliia Khreshkova",
-      "description": "Entwicklung von Drucken in Abstimmung mit der Kleidungs-Konstruktion. Maßgefertigt, aus dem Katalog und markenorientiert."
+      "title": "Autorendrucke & eigenes Stoffdesign",
+      "description": "Exklusive Stoffdrucke, entwickelt passend zur Konstruktion Ihres Kleidungsstücks. Individuell, aus dem Katalog oder als Kollektion für Ihre Marke."
     },
-    "seoText": "Autorendrucke von NKN Atelier werden so entwickelt, dass sie mit Silhouette und Schnittteilen zusammenarbeiten — nicht nur als Dekor. Ich gestalte individuelle Drucke für Ihre Idee, biete fertige Designs und entwickle Drucke für Designerinnen, Designer und Marken. Wichtig sind Komposition, Maßstab und exakte Platzierung, damit der Druck den Charakter des Kleidungsstücks verstärkt. Arbeit in Hamburg und remote möglich."
+    "seoText": "Autorendrucke von NKN Atelier werden so entwickelt, dass sie mit Silhouette und Schnittteilen zusammenarbeiten — nicht nur als Dekor. Ich gestalte individuelle Drucke für Ihre Idee, biete fertige Designs und entwickle Drucke für Designerinnen, Designer und Marken. Wichtig sind Komposition, Maßstab und exakte Platzierung, damit der Druck den Charakter des Kleidungsstücks verstärkt. Arbeit in Hamburg und remote möglich.",
+    "imageAlt": "Autorendruck auf Stoff, entworfen im NKN Atelier"
   },
   "contactPage": {
-    "hero": { "label": "Kontakt", "title": "Beginnen Sie das", "titleItalic": "Gespräch", "description": "Beschreiben Sie Ihre Anfrage - ich antworte persönlich." },
-    "telegram": { "title": "Telegram", "description": "Schnellster Weg, mich zu erreichen. Ich antworte innerhalb von 24 Stunden.", "button": "Bei Telegram schreiben" },
-    "email": { "title": "E-Mail", "description": "Für detaillierte Anfragen und Kooperationen.", "button": "E-Mail senden" },
+    "hero": {
+      "label": "Kontakt",
+      "title": "Beginnen Sie das",
+      "titleItalic": "Gespräch",
+      "description": "Beschreiben Sie Ihre Anfrage - ich antworte persönlich."
+    },
+    "telegram": {
+      "title": "Telegram",
+      "description": "Schnellster Weg, mich zu erreichen. Ich antworte innerhalb von 24 Stunden.",
+      "button": "Bei Telegram schreiben"
+    },
+    "email": {
+      "title": "E-Mail",
+      "description": "Für detaillierte Anfragen und Kooperationen.",
+      "button": "E-Mail senden"
+    },
     "form": {
       "label": "Anfrage",
       "title": "Atelier",
       "titleItalic": "Anfrage",
       "description": "Erzählen Sie von Ihrem Projekt - ich antworte persönlich",
       "servicesLabel": "Wofür interessieren Sie sich?",
-      "services": ["Maßschneiderei", "Upcycling", "Autorendrucke", "Stück aus dem Katalog", "Kooperation"],
+      "services": [
+        "Maßschneiderei",
+        "Upcycling",
+        "Autorendrucke",
+        "Stück aus dem Katalog",
+        "Kooperation"
+      ],
       "name": "Ihr Name",
       "contact": "Bevorzugter Kontakt",
       "contactTelegram": "Telegram",
@@ -820,22 +962,41 @@
     "faq": {
       "label": "FAQ",
       "title": "Häufige Fragen",
-      "01": { "question": "Wie beginnt der Prozess?", "answer": "Mit einer persönlichen Anfrage. Sie beschreiben Ihre Idee oder Ihr Anliegen, ich antworte mit Vorschlägen für unsere Zusammenarbeit." },
-      "02": { "question": "Wie lange dauert die Schneiderei?", "answer": "Das hängt vom Projekt ab. Eine einfache Änderung dauert 1–2 Wochen, ein vollständig maßgefertigtes Kleidungsstück 4–8 Wochen." },
-      "03": { "question": "Arbeiten Sie mit Herrenkleidung?", "answer": "Ja. Ich arbeite mit allen Arten von Kleidung unabhängig von der Geschlechterkategorisierung." }
+      "01": {
+        "question": "Wie beginnt der Prozess?",
+        "answer": "Mit einer persönlichen Anfrage. Sie beschreiben Ihre Idee oder Ihr Anliegen, ich antworte mit Vorschlägen für unsere Zusammenarbeit."
+      },
+      "02": {
+        "question": "Wie lange dauert die Schneiderei?",
+        "answer": "Das hängt vom Projekt ab. Eine einfache Änderung dauert 1–2 Wochen, ein vollständig maßgefertigtes Kleidungsstück 4–8 Wochen."
+      },
+      "03": {
+        "question": "Arbeiten Sie mit Herrenkleidung?",
+        "answer": "Ja. Ich arbeite mit allen Arten von Kleidung unabhängig von der Geschlechterkategorisierung."
+      }
     },
-    "location": { "label": "Atelier", "title": "Hamburg, Deutschland", "description": "Besuche werden individuell vereinbart. Bitte kontaktieren Sie mich für eine Beratung." },
-    "quote": { "text": "Jedes Kleidungsstück beginnt mit einem Gespräch." },
-    "seo": { "title": "Kontakt - NKN Atelier + Nataliia Khreshkova | Hamburg", "description": "Nehmen Sie Kontakt auf für persönliche Beratungen zu Maßschneiderei, Drucken und Upcycling. Hamburg - online und vor Ort." },
+    "location": {
+      "label": "Atelier",
+      "title": "Hamburg, Deutschland",
+      "description": "Besuche werden individuell vereinbart. Bitte kontaktieren Sie mich für eine Beratung."
+    },
+    "quote": {
+      "text": "Jedes Kleidungsstück beginnt mit einem Gespräch."
+    },
+    "seo": {
+      "title": "Kontakt & Termin — NKN Atelier Hamburg",
+      "description": "Termin im Atelier vereinbaren oder online anfragen: Telefon, E-Mail, Telegram und WhatsApp. Antwort persönlich innerhalb von 24–48 Stunden."
+    },
     "seoText": "Möchten Sie Maßschneiderei, Upcycling, einen Autorendruck oder eine Markenkooperation besprechen? Schreiben Sie mir auf Telegram, per E-Mail oder senden Sie eine Anfrage — ich antworte persönlich mit dem nächsten Schritt. Das Atelier ist in Hamburg, Beratungen sind auch online möglich. Je genauer Sie Ziel und Zeitrahmen beschreiben, desto schneller finden wir den passenden Ablauf.",
-    "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden."
+    "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden.",
+    "imageAlt": "NKN Atelier bei Hamburg — Beratung und Terminvereinbarung"
   },
   "privacyPage": {
     "title": "Datenschutz",
     "lastUpdated": "Stand: Mai 2026",
     "seo": {
-      "title": "Datenschutz - NKN Atelier + Nataliia Khreshkova",
-      "description": "Wie NKN Atelier personenbezogene Daten erfasst, nutzt und schützt, wenn Sie uns über die Website kontaktieren."
+      "title": "Datenschutzerklärung",
+      "description": "Wie NKN Atelier personenbezogene Daten erfasst, nutzt und schützt, wenn Sie uns über die Website kontaktieren. Ihre Rechte nach DSGVO."
     },
     "seoText": "Auf dieser Seite finden Sie Hinweise zum Datenschutz gemäß DSGVO für die Kontaktaufnahme, Beratung und Maßanfertigung bei Nataliia Khreshkova (NKN).",
     "intro": "Der Schutz Ihrer personenbezogenen Daten ist mir sehr wichtig. Ich verarbeite Ihre Daten vertraulich und entsprechend der DSGVO sowie dieser Datenschutzerklärung.",
@@ -880,10 +1041,22 @@
     "seoText": "Diese Nutzungsbedingungen erläutern, wie Inhalte der Website von NKN Atelier verwendet werden dürfen, und beschreiben grundlegende Verantwortlichkeiten. Wenn Sie Atelier-Services bestellen oder als Marke kooperieren möchten, werden die finalen Projektbedingungen immer individuell schriftlich vereinbart, bevor die Arbeit beginnt.",
     "intro": "Durch die Nutzung der NKN Atelier-Website stimmen Sie den folgenden Bedingungen zu.",
     "sections": {
-      "services": { "title": "Dienstleistungen", "content": "Die Informationen auf der Website dienen nur zu Informationszwecken. Die Bedingungen für die Zusammenarbeit und Erbringung von Dienstleistungen werden individuell für jedes Projekt besprochen." },
-      "content": { "title": "Inhalte", "content": "Alle Materialien der Website - Fotos, Texte, Design - sind geistiges Eigentum von NKN Atelier und urheberrechtlich geschützt." },
-      "links": { "title": "Links", "content": "Die Website kann Links zu externen Ressourcen enthalten. Wir sind nicht verantwortlich für den Inhalt und die Datenschutzrichtlinie von Drittanbieter-Websites." },
-      "changes": { "title": "Änderungen", "content": "Wir behalten uns das Recht vor, die Nutzungsbedingungen zu ändern. Die aktuelle Version ist immer auf dieser Seite verfügbar." }
+      "services": {
+        "title": "Dienstleistungen",
+        "content": "Die Informationen auf der Website dienen nur zu Informationszwecken. Die Bedingungen für die Zusammenarbeit und Erbringung von Dienstleistungen werden individuell für jedes Projekt besprochen."
+      },
+      "content": {
+        "title": "Inhalte",
+        "content": "Alle Materialien der Website - Fotos, Texte, Design - sind geistiges Eigentum von NKN Atelier und urheberrechtlich geschützt."
+      },
+      "links": {
+        "title": "Links",
+        "content": "Die Website kann Links zu externen Ressourcen enthalten. Wir sind nicht verantwortlich für den Inhalt und die Datenschutzrichtlinie von Drittanbieter-Websites."
+      },
+      "changes": {
+        "title": "Änderungen",
+        "content": "Wir behalten uns das Recht vor, die Nutzungsbedingungen zu ändern. Die aktuelle Version ist immer auf dieser Seite verfügbar."
+      }
     }
   },
   "agbPage": {
@@ -896,11 +1069,26 @@
     "seoText": "Diese AGB beschreiben die allgemeinen Regeln für die Zusammenarbeit mit NKN Atelier: wie Aufträge und Zeitrahmen abgestimmt werden, wie Anproben organisiert sind, welche Zahlungsformen möglich sind und wie Anpassungen erfolgen. Bei Maßanfertigungen werden Details immer auf das konkrete Projekt zugeschnitten — dieser Abschnitt schafft vorab Klarheit.",
     "intro": "Diese Bedingungen regeln die Zusammenarbeit bei der Bestellung von NKN Atelier-Dienstleistungen - Maßschneiderei, Autorenstücke, Upcycling und Beratungen.",
     "sections": {
-      "order": { "title": "Bestellung und Vereinbarungen", "content": "Eine Bestellung wird nach Besprechung der Details und Einigung über die Bedingungen bestätigt. Anzahlung oder Anzahlungszahlung wird je nach Arbeitsumfang individuell besprochen." },
-      "fittings": { "title": "Anproben", "content": "Bei Maßschneiderei werden 2–3 Anproben durchgeführt. Termine werden rechtzeitig vereinbart. Der Kunde verpflichtet sich, zu den vereinbarten Zeiten zu den Anproben zu erscheinen." },
-      "delivery": { "title": "Zeitrahmen und Übergabe", "content": "Fertigstellungszeiten sind Richtwerte und können von der Projekkomplexität und der Atelierauslastung abhängen. Die fertige Arbeit wird nach vollständiger Zahlung übergeben." },
-      "payment": { "title": "Zahlung", "content": "Die Zahlung erfolgt wie vereinbart - in Raten oder vollständig. Überweisung und andere Zahlungsmethoden werden nach Vereinbarung akzeptiert." },
-      "returns": { "title": "Rückgabe und Änderungen", "content": "Individuell angefertigte Kleidungsstücke können nicht zurückgegeben werden. Korrekturen und Anpassungen im vereinbarten Rahmen erfolgen im gegenseitigen Einvernehmen." }
+      "order": {
+        "title": "Bestellung und Vereinbarungen",
+        "content": "Eine Bestellung wird nach Besprechung der Details und Einigung über die Bedingungen bestätigt. Anzahlung oder Anzahlungszahlung wird je nach Arbeitsumfang individuell besprochen."
+      },
+      "fittings": {
+        "title": "Anproben",
+        "content": "Bei Maßschneiderei werden 2–3 Anproben durchgeführt. Termine werden rechtzeitig vereinbart. Der Kunde verpflichtet sich, zu den vereinbarten Zeiten zu den Anproben zu erscheinen."
+      },
+      "delivery": {
+        "title": "Zeitrahmen und Übergabe",
+        "content": "Fertigstellungszeiten sind Richtwerte und können von der Projekkomplexität und der Atelierauslastung abhängen. Die fertige Arbeit wird nach vollständiger Zahlung übergeben."
+      },
+      "payment": {
+        "title": "Zahlung",
+        "content": "Die Zahlung erfolgt wie vereinbart - in Raten oder vollständig. Überweisung und andere Zahlungsmethoden werden nach Vereinbarung akzeptiert."
+      },
+      "returns": {
+        "title": "Rückgabe und Änderungen",
+        "content": "Individuell angefertigte Kleidungsstücke können nicht zurückgegeben werden. Korrekturen und Anpassungen im vereinbarten Rahmen erfolgen im gegenseitigen Einvernehmen."
+      }
     }
   },
   "impressumPage": {
@@ -937,9 +1125,13 @@
       }
     },
     "seo": {
-      "title": "Impressum - NKN Atelier | Nataliia Khreshkova",
-      "description": "Impressum gemäß § 5 TMG und § 18 Abs. 2 MStV: Unternehmensangaben, Kontakt, Verantwortliche und rechtliche Hinweise."
+      "title": "Impressum — NKN Nataliia Khreshkova",
+      "description": "Impressum gemäß § 5 TMG und § 18 Abs. 2 MStV: Unternehmensangaben, Anschrift in Kaltenkirchen, Kontakt, Verantwortliche und rechtliche Hinweise."
     },
     "seoText": "Diese Seite enthält das Impressum von NKN Nataliia Khreshkova, NaKNem gemäß § 5 TMG und § 18 Abs. 2 MStV. Hier finden Sie Unternehmensangaben, Kontaktmöglichkeiten sowie rechtliche Informationen."
+  },
+  "alt": {
+    "process": "Arbeitsschritt im NKN Atelier",
+    "logo": "NKN Atelier Logo"
   }
 }

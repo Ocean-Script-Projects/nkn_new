@@ -10,7 +10,10 @@ import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
 import SeoIntro from '@/components/seo/SeoIntro';
-import { getPublicOrigin } from '@/lib/site-url';
+import ServiceJsonLd from '@/components/seo/ServiceJsonLd';
+import FaqJsonLd from '@/components/seo/FaqJsonLd';
+import { absolutePublicUrl } from '@/lib/site-url';
+import PageBreadcrumbs from '@/components/seo/PageBreadcrumbs';
 
 const offlineIcons = [MessageCircle, Users, Ruler, Package];
 const onlineIcons = [MessageCircle, Video, Ruler, Send, Package];
@@ -18,11 +21,12 @@ const onlineIcons = [MessageCircle, Video, Ruler, Send, Package];
 const BESPOKE_HERO_SRC = '/images/models/model4.webp';
 
 function BespokeHeroImage() {
+  const t = useTranslations('bespokePage');
   return (
     <div className="relative h-full w-full min-h-full overflow-hidden lg:aspect-[4/5] lg:rounded-3xl lg:shadow-2xl">
       <ImageWithFallback
         src={BESPOKE_HERO_SRC}
-        alt="Bespoke tailoring"
+        alt={String(t('imageAlt'))}
         className="h-full w-full object-cover lg:rounded-3xl"
       />
     </div>
@@ -42,66 +46,22 @@ export default function BespokePage() {
   const offlineSteps = ['01', '02', '03', '04'] as const;
   const onlineSteps = ['01', '02', '03', '04', '05'] as const;
 
-  const siteUrl = getPublicOrigin();
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'ProfessionalService',
-        '@id': `${siteUrl}/#atelier`,
-        name: 'NKN Atelier — Nataliia Khreshkova',
-        alternateName: 'NKN Atelier',
-        description: String(t('seo.description')),
-        url: `${siteUrl}/${locale}/bespoke/`,
-        image: `${siteUrl}/images/big_logo.png`,
-        logo: `${siteUrl}/images/big_logo.png`,
-        telephone: '+491774019818',
-        email: 'hreshkovanat@gmail.com',
-        founder: {
-          '@type': 'Person',
-          name: 'Nataliia Khreshkova',
-        },
-        areaServed: [
-          { '@type': 'City', name: 'Hamburg' },
-          { '@type': 'Country', name: 'Germany' },
-        ],
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Hamburg',
-          addressCountry: 'DE',
-        },
-        priceRange: '€€€',
-        knowsLanguage: ['ru', 'de', 'en'],
-        serviceType:
-          'Bespoke tailoring / Maßschneiderei / Индивидуальный пошив одежды',
-        sameAs: [
-          'https://www.instagram.com/nataliia_khreshkova_natalina',
-          'https://www.facebook.com/share/1V1AQqDcp5/',
-          'https://www.tiktok.com/@nataliia.khreshkov',
-          'https://t.me/NataliiaKhreshkova',
-        ],
-      },
-      {
-        '@type': 'FAQPage',
-        mainEntity: FAQ_IDS.map((id) => ({
-          '@type': 'Question',
-          name: String(t(`faq.items.${id}.question`)),
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: String(t(`faq.items.${id}.answer`)),
-          },
-        })),
-      },
-    ],
-  };
-
   return (
     <div className="min-h-screen bg-[#FAF9F6] overflow-x-hidden">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      <ServiceJsonLd
+        name={String(t('seo.title'))}
+        description={String(t('seo.description'))}
+        url={absolutePublicUrl(`/${locale}/bespoke/`)}
+        serviceType="Bespoke tailoring / Maßschneiderei / Индивидуальный пошив одежды"
+      />
+      <FaqJsonLd
+        items={FAQ_IDS.map((id) => ({
+          question: String(t(`faq.items.${id}.question`)),
+          answer: String(t(`faq.items.${id}.answer`)),
+        }))}
       />
       <Navigation />
+      <PageBreadcrumbs segment="bespoke" navKey="bespoke" />
       <div>
         <PageHeader
           mobileLayout="editorial"

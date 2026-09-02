@@ -5,6 +5,9 @@ import { motion } from 'motion/react';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 
 interface BeforeAfterSliderProps {
+  /** Localized alt text — the parent page owns the translations. */
+  beforeAlt?: string;
+  afterAlt?: string;
   beforeImage: string;
   afterImage: string;
   beforeLabel: string;
@@ -13,6 +16,8 @@ interface BeforeAfterSliderProps {
 }
 
 export default function BeforeAfterSlider({
+  beforeAlt = '',
+  afterAlt = '',
   beforeImage,
   afterImage,
   beforeLabel,
@@ -67,7 +72,7 @@ export default function BeforeAfterSlider({
             <div className="absolute inset-0">
               <ImageWithFallback
                 src={beforeImage}
-                alt="Before upcycling"
+                alt={beforeAlt}
                 className="w-full h-full object-cover"
               />
               <div className="absolute left-6 top-6 rounded-bl-md rounded-br-2xl rounded-tl-md rounded-tr-2xl border border-white/20 bg-black/70 px-4 py-2 backdrop-blur-sm">
@@ -81,7 +86,7 @@ export default function BeforeAfterSlider({
             >
               <ImageWithFallback
                 src={afterImage}
-                alt="After upcycling"
+                alt={afterAlt}
                 className="w-full h-full object-cover"
               />
               <div className="absolute right-6 top-6 rounded-bl-2xl rounded-br-md rounded-tl-2xl rounded-tr-md border border-white/20 bg-brand-sage px-4 py-2 text-brand-sage-foreground backdrop-blur-sm">

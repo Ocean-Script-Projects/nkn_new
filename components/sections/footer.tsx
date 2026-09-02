@@ -8,6 +8,7 @@ import { Instagram, Send, Facebook, Music2 } from 'lucide-react';
 
 const footerNavItems = [
   { key: 'bespoke', href: '/bespoke' },
+  { key: 'services', href: '/services' },
   { key: 'pieces', href: '/pieces' },
   { key: 'prints', href: '/prints' },
   { key: 'upcycling', href: '/upcycling' },
@@ -22,6 +23,7 @@ const FACEBOOK_URL = 'https://www.facebook.com/share/1V1AQqDcp5/?mibextid=wwXIfr
 const TIKTOK_URL = 'https://www.tiktok.com/@nataliia.khreshkov?r=1&t=ZM-92318YqysVH';
 
 export default function Footer() {
+  const altT = useTranslations('alt');
   const t = useTranslations('footer');
   const tNav = useTranslations('nav');
   const locale = useLocale();
@@ -45,12 +47,12 @@ export default function Footer() {
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex flex-col items-center gap-3 text-center lg:flex-row lg:text-left">
               <Link
-                href={`/${locale}`}
+                href={`/${locale}/`}
                 className="group inline-flex items-center gap-3"
               >
                 <ImageWithFallback
                   src="/images/short_logo.png"
-                  alt="NKN"
+                  alt={String(altT('logo'))}
                   style={{ height: '1.6rem', width: 'auto' }}
                   className="object-contain opacity-95 transition-opacity group-hover:opacity-100"
                 />
@@ -70,7 +72,7 @@ export default function Footer() {
               {footerNavItems.map((item) => (
                 <Link
                   key={item.key}
-                  href={`/${locale}${item.href}`}
+                  href={`/${locale}${item.href}/`}
                   className="transition-colors hover:text-white"
                 >
                   {tNav(item.key)}
@@ -126,10 +128,10 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[10px] uppercase tracking-[0.16em] text-white/45">
-              <Link href={`/${locale}/privacy`} className="transition-colors hover:text-white">
+              <Link href={`/${locale}/privacy/`} className="transition-colors hover:text-white">
                 {t('privacy')}
               </Link>
-              <Link href={`/${locale}/impressum`} className="transition-colors hover:text-white">
+              <Link href={`/${locale}/impressum/`} className="transition-colors hover:text-white">
                 {t('impressum')}
               </Link>
             </div>

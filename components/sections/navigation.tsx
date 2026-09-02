@@ -30,6 +30,7 @@ const NAV_SHOW_TOP = 56;
 const SCROLL_DIR_EPS = 5;
 
 export default function Navigation() {
+  const altT = useTranslations('alt');
   const t = useTranslations('nav');
   const locale = useLocale();
   const pathname = usePathname();
@@ -178,7 +179,7 @@ export default function Navigation() {
           <div className="min-w-[2.75rem]" aria-hidden />
           <div className="flex min-w-0 justify-center">
             <Link
-              href={`/${locale}`}
+              href={`/${locale}/`}
               className="relative z-10 shrink-0 focus-visible:outline-none"
               onClick={() => setMobileOpen(false)}
             >
@@ -195,7 +196,7 @@ export default function Navigation() {
               >
                 <ImageWithFallback
                   src="/images/big_logo.png"
-                  alt="NKN"
+                  alt={String(altT('logo'))}
                   style={{ width: 'auto' }}
                   className={cn(
                     'object-contain',
@@ -230,7 +231,7 @@ export default function Navigation() {
         <div className="relative hidden h-16 items-center justify-between sm:h-18 md:h-20 lg:flex">
           {/* Logo */}
           <Link
-            href={`/${locale}`}
+            href={`/${locale}/`}
             className="relative z-10 flex-shrink-0"
           >
             <motion.div
@@ -241,7 +242,7 @@ export default function Navigation() {
             >
               <ImageWithFallback
                 src="/images/big_logo.png"
-                alt="NKN"
+                alt={String(altT('logo'))}
                 style={{ height: '3.25rem', width: 'auto' }}
                 className="object-contain sm:h-[3.75rem] md:h-[4rem]"
               />
@@ -287,7 +288,7 @@ export default function Navigation() {
                       return (
                         <Link
                           key={item.key}
-                          href={`/${locale}${item.href}`}
+                          href={`/${locale}${item.href}/`}
                           onClick={() => setDropdownOpen(false)}
                           className={`flex items-center px-4 py-3 text-[13px] font-medium tracking-wide transition-colors border-l-2 border-transparent ${
                             active
@@ -305,7 +306,7 @@ export default function Navigation() {
               {mainMenuItems.map((item) => {
                 const active = isActive(item.href);
                 return (
-                  <Link key={item.key} href={`/${locale}${item.href}`}>
+                  <Link key={item.key} href={`/${locale}${item.href}/`}>
                     <span
                       className={`block rounded-xl px-4 py-2.5 text-[13px] font-medium tracking-wide transition-all duration-200 ${
                         active
@@ -423,7 +424,7 @@ export default function Navigation() {
                         return (
                           <Link
                             key={item.key}
-                            href={`/${locale}${item.href}`}
+                            href={`/${locale}${item.href}/`}
                             onClick={() => setMobileOpen(false)}
                             className={cn(
                               'rounded-xl px-3 py-3 text-[14px] font-medium tracking-wide transition-colors',
@@ -439,7 +440,7 @@ export default function Navigation() {
                         return (
                           <Link
                             key={item.key}
-                            href={`/${locale}${item.href}`}
+                            href={`/${locale}${item.href}/`}
                             onClick={() => setMobileOpen(false)}
                             className={cn(
                               'rounded-xl px-3 py-3 text-[14px] font-medium tracking-wide transition-colors',

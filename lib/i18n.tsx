@@ -5,7 +5,7 @@ import { createContext, useContext, ReactNode } from 'react';
 import ruMessages from '@/messages/ru.json';
 import enMessages from '@/messages/en.json';
 import deMessages from '@/messages/de.json';
-import type { Locale } from './i18n-config';
+import { defaultLocale, type Locale } from './i18n-config';
 
 type Messages = Record<string, unknown>;
 
@@ -29,7 +29,7 @@ export function I18nProvider({
   children: ReactNode;
   locale: string;
 }) {
-  const validLocale = (locale in messagesMap ? locale : 'ru') as Locale;
+  const validLocale = (locale in messagesMap ? locale : defaultLocale) as Locale;
   const messages = messagesMap[validLocale];
 
   return (

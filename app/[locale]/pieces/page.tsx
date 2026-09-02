@@ -15,15 +15,19 @@ import Link from 'next/link';
 import { usePiecesList } from '@/lib/use-pieces';
 import type { CatalogPiece } from '@/lib/catalog-types';
 import SeoIntro from '@/components/seo/SeoIntro';
+import PageBreadcrumbs from '@/components/seo/PageBreadcrumbs';
+import ServiceJsonLd from '@/components/seo/ServiceJsonLd';
+import { absolutePublicUrl } from '@/lib/site-url';
 
 const HERO_IMAGE_SRC = '/images/models/model6.webp';
 
 function PiecesHeroImage() {
+  const t = useTranslations('pieces');
   return (
     <div className="relative h-full w-full min-h-full overflow-hidden lg:aspect-[4/5] lg:rounded-3xl lg:shadow-2xl">
       <ImageWithFallback
         src={HERO_IMAGE_SRC}
-        alt="Atelier process"
+        alt={String(t('imageAlt'))}
         className="h-full w-full object-cover lg:rounded-3xl"
       />
     </div>
@@ -58,6 +62,13 @@ export default function PiecesPage() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-[#FAF9F6]">
       <Navigation />
+      <PageBreadcrumbs segment="pieces" navKey="pieces" />
+      <ServiceJsonLd
+        name={String(t('seo.title'))}
+        description={String(t('seo.description'))}
+        url={absolutePublicUrl(`/${locale}/pieces/`)}
+        serviceType="One-of-one clothing / Unikate / Дизайнерская одежда"
+      />
       
       <PageHeader
         mobileLayout="editorial"
@@ -121,7 +132,7 @@ export default function PiecesPage() {
             >
               <ImageWithFallback
                 src="/images/models/material.webp"
-                alt="Material and texture"
+                alt={String(t('imageAltMaterial'))}
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -195,7 +206,7 @@ export default function PiecesPage() {
                   {t('upcycling.description')}
                 </p>
 
-                <Link href={`/${locale}/upcycling`} className="inline-block mt-6 sm:mt-8">
+                <Link href={`/${locale}/upcycling/`} className="inline-block mt-6 sm:mt-8">
                   <motion.button
                     whileHover={{ scale: 1.05, x: 5 }}
                     whileTap={{ scale: 0.98 }}
@@ -215,7 +226,7 @@ export default function PiecesPage() {
               <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl">
                 <ImageWithFallback
                   src="/images/models/model7.webp"
-                  alt="Upcycling"
+                  alt={String(t('imageAltUpcycling'))}
                   className="w-full h-full object-cover object-[50%_20%]"
                 />
               </div>

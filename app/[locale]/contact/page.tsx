@@ -10,16 +10,19 @@ import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import { submitSiteRequest } from '@/lib/submit-site-request';
 import SeoIntro from '@/components/seo/SeoIntro';
+import PageBreadcrumbs from '@/components/seo/PageBreadcrumbs';
+import FaqJsonLd from '@/components/seo/FaqJsonLd';
 
 /** Та же фотография, что на главной: `public/images/hero.jpg` */
 const CONTACT_HERO_SRC = '/images/models/natalia_img5.webp';
 
 function ContactHeroImage() {
+  const t = useTranslations('contactPage');
   return (
     <div className="relative h-full w-full min-h-full overflow-hidden lg:aspect-[4/5] lg:rounded-3xl lg:shadow-2xl">
       <ImageWithFallback
         src={CONTACT_HERO_SRC}
-        alt="Atelier workspace"
+        alt={String(t('imageAlt'))}
         className="h-full w-full object-cover lg:rounded-3xl"
       />
     </div>
@@ -106,6 +109,13 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[#FAF9F6] overflow-x-hidden">
       <Navigation />
+      <PageBreadcrumbs segment="contact" navKey="contact" />
+      <FaqJsonLd
+        items={faqIds.map((id) => ({
+          question: String(t(`faq.${id}.question`)),
+          answer: String(t(`faq.${id}.answer`)),
+        }))}
+      />
       <div>
         <PageHeader
           mobileLayout="editorial"

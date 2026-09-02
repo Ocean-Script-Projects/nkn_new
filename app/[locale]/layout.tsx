@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { I18nProvider } from '@/lib/i18n';
-import { locales } from '@/lib/i18n-config';
+import { locales, type Locale } from '@/lib/i18n-config';
 import RequestModalProviderWrapper from '@/components/providers/RequestModalProviderWrapper';
 import LocaleHtmlLang from '@/components/shared/LocaleHtmlLang';
+import SiteJsonLd from '@/components/seo/SiteJsonLd';
 import { getPublicSiteRoot } from '@/lib/site-url';
+import { BRAND } from '@/lib/site-config';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -16,8 +18,8 @@ export async function generateMetadata(_props: {
   return {
     metadataBase: new URL(`${getPublicSiteRoot()}/`),
     title: {
-      default: 'NKN Atelier',
-      template: '%s · NKN Atelier',
+      default: BRAND.name,
+      template: `%s · ${BRAND.name}`,
     },
   };
 }
@@ -37,6 +39,7 @@ export default async function LocaleLayout({
 
   return (
     <I18nProvider locale={locale}>
+      <SiteJsonLd locale={locale as Locale} />
       <LocaleHtmlLang locale={locale} />
       <RequestModalProviderWrapper>
         {children}

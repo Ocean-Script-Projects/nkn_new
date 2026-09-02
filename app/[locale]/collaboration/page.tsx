@@ -5,18 +5,22 @@ import { ArrowRight } from 'lucide-react';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import PageHeader from '@/components/shared/PageHeader';
-import { useTranslations } from '@/lib/i18n';
+import { useTranslations, useLocale } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
 import { ImageWithFallback } from '@/components/image-with-fallback';
+import PageBreadcrumbs from '@/components/seo/PageBreadcrumbs';
+import ServiceJsonLd from '@/components/seo/ServiceJsonLd';
+import { absolutePublicUrl } from '@/lib/site-url';
 
 const COLLAB_HERO_SRC = '/images/models/material2.webp';
 
 function CollaborationHeroImage() {
+  const t = useTranslations('collaborationPage');
   return (
     <div className="relative h-full w-full min-h-full overflow-hidden lg:aspect-[4/5] lg:rounded-3xl lg:shadow-2xl">
       <ImageWithFallback
         src={COLLAB_HERO_SRC}
-        alt="Collaboration"
+        alt={String(t('imageAlt'))}
         className="h-full w-full object-cover lg:rounded-3xl"
       />
     </div>
@@ -25,12 +29,20 @@ function CollaborationHeroImage() {
 
 export default function CollaborationPage() {
   const t = useTranslations('collaborationPage');
+  const locale = useLocale();
   const tAbout = useTranslations('aboutPage');
   const { openRequestModal } = useRequestModal();
 
   return (
     <div className="min-h-screen bg-[#FAF9F6] overflow-x-hidden">
       <Navigation />
+      <PageBreadcrumbs segment="collaboration" navKey="collaboration" />
+      <ServiceJsonLd
+        name={String(t('seo.title'))}
+        description={String(t('seo.description'))}
+        url={absolutePublicUrl(`/${locale}/collaboration/`)}
+        serviceType="Pattern making for brands / Schnittmusterbau / Лекала для брендов"
+      />
       <div>
         <PageHeader
           mobileLayout="editorial"

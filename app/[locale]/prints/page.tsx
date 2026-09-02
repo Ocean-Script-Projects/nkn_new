@@ -5,20 +5,24 @@ import { ArrowRight } from 'lucide-react';
 import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import PageHeader from '@/components/shared/PageHeader';
-import { useTranslations } from '@/lib/i18n';
+import { useTranslations, useLocale } from '@/lib/i18n';
 import { useRequestModal } from '@/lib/request-modal-context';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import SeoIntro from '@/components/seo/SeoIntro';
+import PageBreadcrumbs from '@/components/seo/PageBreadcrumbs';
+import ServiceJsonLd from '@/components/seo/ServiceJsonLd';
+import { absolutePublicUrl } from '@/lib/site-url';
 
 /** Временно та же фотография, что и в hero upcycling */
 const PRINTS_HERO_SRC = '/images/models/model5.webp';
 
 function PrintsHeroImage() {
+  const t = useTranslations('printsPage');
   return (
     <div className="relative h-full w-full min-h-full overflow-hidden lg:aspect-[4/5] lg:rounded-3xl lg:shadow-2xl">
       <ImageWithFallback
         src={PRINTS_HERO_SRC}
-        alt="Prints"
+        alt={String(t('imageAlt'))}
         className="h-full w-full object-cover lg:rounded-3xl"
       />
     </div>
@@ -27,6 +31,7 @@ function PrintsHeroImage() {
 
 export default function PrintsPage() {
   const t = useTranslations('printsPage');
+  const locale = useLocale();
   const { openRequestModal } = useRequestModal();
 
   const directionIds = ['01', '02', '03'] as const;
@@ -34,6 +39,13 @@ export default function PrintsPage() {
   return (
     <div className="min-h-screen bg-[#FAF9F6] overflow-x-hidden">
       <Navigation />
+      <PageBreadcrumbs segment="prints" navKey="prints" />
+      <ServiceJsonLd
+        name={String(t('seo.title'))}
+        description={String(t('seo.description'))}
+        url={absolutePublicUrl(`/${locale}/prints/`)}
+        serviceType="Textile print design / Autorendrucke / Авторские принты"
+      />
       <div>
         <PageHeader
           mobileLayout="editorial"

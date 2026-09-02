@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState, useMemo } from 'react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'motion/react';
@@ -16,23 +15,9 @@ export default function HeroSection() {
   const t = useTranslations('hero');
   const locale = useLocale();
   const { openRequestModal } = useRequestModal();
-  const [src, setSrc] = useState(LOCAL_HERO);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const local = window.location.pathname.startsWith('/nkn_new')
-      ? '/nkn_new' + LOCAL_HERO
-      : LOCAL_HERO;
-    const localFallback = window.location.pathname.startsWith('/nkn_new')
-      ? '/nkn_new' + LOCAL_HERO_FALLBACK
-      : LOCAL_HERO_FALLBACK;
-    const probe = new Image();
-    probe.onload = () => setSrc(local);
-    probe.onerror = () => setSrc(localFallback);
-    probe.src = local;
-  }, []);
-
-  const imageSrc = useMemo(() => (src && String(src).trim()) || LOCAL_HERO, [src]);
+  // ImageWithFallback already swaps to `fallbackSrc` on error and applies basePath,
+  // so probing the URL from JS only cost an extra request before the LCP image appeared.
+  const imageSrc = LOCAL_HERO;
   const reduceMotion = useReducedMotion();
 
   return (
@@ -99,9 +84,10 @@ export default function HeroSection() {
               <ImageWithFallback
                 src={imageSrc}
                 fallbackSrc={LOCAL_HERO_FALLBACK}
-                alt={String(t('nameFull'))}
+                alt={String(t('imageAlt'))}
                 className="absolute inset-0 h-full w-full object-cover object-[50%_22%] sm:object-[50%_20%] md:object-[50%_18%]"
                 loading="eager"
+                fetchPriority="high"
                 decoding="async"
               />
               <div
@@ -114,13 +100,14 @@ export default function HeroSection() {
               />
               {/* Заголовок внутри кадра + тёмного градиента — иначе соседний pull-up оказывается под motion-слоем и обрезается overflow-hidden */}
               <div className="absolute inset-x-0 bottom-0 z-[3] px-4 pb-5 pt-[min(28%,9.5rem)] sm:px-5 sm:pb-6 sm:pt-32">
-                <p className="mb-3 max-w-[min(100%,42ch)] text-balance text-[10px] font-medium uppercase leading-snug tracking-[0.22em] text-white/85 [text-shadow:0_1px_14px_rgba(0,0,0,0.55)] sm:mb-3.5 sm:text-[11px] sm:tracking-[0.2em]">
-                  {t('location')} · {t('role')}
-                </p>
                 <h1
                   className="text-balance font-serif text-[clamp(1.85rem,6vw,2.35rem)] font-normal leading-[1.08] tracking-[-0.025em] sm:text-[clamp(2rem,5vw,2.5rem)]"
                   style={{ fontFamily: 'serif' }}
                 >
+                  {/* Brand + primary service + city belong inside the h1, not beside it. */}
+                  <span className="mb-3 block max-w-[min(100%,42ch)] text-balance font-sans text-[10px] font-medium uppercase leading-snug tracking-[0.22em] text-white/85 [text-shadow:0_1px_14px_rgba(0,0,0,0.55)] sm:mb-3.5 sm:text-[11px] sm:tracking-[0.2em]">
+                    {t('brandLine')}
+                  </span>
                   <motion.span
                     className="block text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]"
                     initial={reduceMotion ? false : { opacity: 0, y: 10 }}
@@ -178,7 +165,7 @@ export default function HeroSection() {
                   <ArrowRight className="relative z-10 h-4 w-4 shrink-0" aria-hidden />
                 </button>
                 <Link
-                  href={`/${locale}/pieces`}
+                  href={`/${locale}/pieces/`}
                   className="inline-flex min-h-[48px] w-full min-w-0 flex-1 items-center justify-center rounded-full border border-black/[0.12] bg-white px-6 py-3.5 text-[11px] font-medium uppercase tracking-[0.12em] text-neutral-700 transition-all duration-300 active:scale-[0.99] sm:min-h-[44px] sm:max-w-[min(100%,20rem)]"
                 >
                   {t('portfolioButton')}
@@ -220,6 +207,10 @@ export default function HeroSection() {
               className="max-w-[22ch] font-serif text-[clamp(2.15rem,6.2vw,4.35rem)] font-normal leading-[1.05] tracking-[-0.025em] text-neutral-950 sm:max-w-[24ch] lg:max-w-[26ch] lg:text-[clamp(2.35rem,5.4vw,4.15rem)] xl:max-w-[28ch] xl:text-[clamp(2.6rem,4.8vw,4.85rem)] 2xl:text-[clamp(2.75rem,4.2vw,5.25rem)]"
               style={{ fontFamily: 'serif' }}
             >
+              {/* Brand + primary service + city belong inside the h1, not beside it. */}
+              <span className="mb-4 block font-sans text-[11px] font-medium uppercase tracking-[0.24em] text-brand-sage-muted xl:text-xs">
+                {t('brandLine')}
+              </span>
               <span className="block">{t('title')}</span>
               <span className="mt-2 block text-neutral-800 italic xl:mt-3">{t('titleItalic')}</span>
               {String(t('titleEnd')).trim() ? (
@@ -260,7 +251,7 @@ export default function HeroSection() {
                 />
               </button>
               <Link
-                href={`/${locale}/pieces`}
+                href={`/${locale}/pieces/`}
                 className="inline-flex items-center rounded-full border border-neutral-900/15 bg-white/90 px-7 py-3.5 text-[11px] font-medium uppercase tracking-[0.14em] text-neutral-800 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-mustard/45 hover:bg-white hover:shadow-md hover:shadow-brand-mustard/10 sm:px-8 sm:py-4 sm:text-xs"
               >
                 {t('portfolioButton')}
@@ -286,9 +277,10 @@ export default function HeroSection() {
                   <ImageWithFallback
                     src={imageSrc}
                     fallbackSrc={LOCAL_HERO_FALLBACK}
-                    alt={String(t('nameFull'))}
+                    alt={String(t('imageAlt'))}
                     className="absolute inset-0 h-full w-full object-cover object-[50%_18%] sm:object-[50%_16%] transition-[transform,filter] duration-700 ease-out group-hover/image:scale-[1.04] group-hover/image:brightness-[1.04]"
                     loading="eager"
+                    fetchPriority="high"
                     decoding="async"
                   />
                   <div

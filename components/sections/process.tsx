@@ -5,6 +5,7 @@ import { useTranslations } from '@/lib/i18n';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 
 export default function ProcessSection() {
+  const altT = useTranslations('alt');
   const t = useTranslations('process');
 
   const steps = [
@@ -130,7 +131,7 @@ export default function ProcessSection() {
               <div className="relative rounded-3xl overflow-hidden aspect-[3/4] bg-gray-100">
                 <ImageWithFallback
                   src={img}
-                  alt={`Gallery ${i + 1}`}
+                  alt={`${String(altT('process'))} ${i + 1}`}
                   className="w-full h-full object-cover"
                 />
                 <motion.div

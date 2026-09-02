@@ -10,15 +10,20 @@ import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import PageHeader from '@/components/shared/PageHeader';
 import SeoIntro from '@/components/seo/SeoIntro';
+import PageBreadcrumbs from '@/components/seo/PageBreadcrumbs';
+import FaqJsonLd from '@/components/seo/FaqJsonLd';
+import ServiceJsonLd from '@/components/seo/ServiceJsonLd';
+import { absolutePublicUrl } from '@/lib/site-url';
 
 const UPCYCLING_HERO_SRC = '/images/models/model7.webp';
 
 function UpcyclingHeroImage({ badge, badgeDescription }: { badge: string; badgeDescription: string }) {
+  const t = useTranslations('upcycling');
   return (
     <div className="relative h-full w-full min-h-full overflow-hidden lg:aspect-[4/5] lg:rounded-3xl lg:shadow-2xl">
       <ImageWithFallback
         src={UPCYCLING_HERO_SRC}
-        alt="Upcycling transformation"
+        alt={String(t('imageAlt'))}
         className="h-full w-full object-cover lg:rounded-3xl"
       />
       <motion.div
@@ -197,6 +202,16 @@ export default function UpcyclingPage() {
   return (
     <div className="min-h-screen bg-[#FAF9F6]">
       <Navigation />
+      <PageBreadcrumbs segment="upcycling" navKey="upcycling" />
+      <ServiceJsonLd
+        name={String(t('seo.title'))}
+        description={String(t('seo.description'))}
+        url={absolutePublicUrl(`/${locale}/upcycling/`)}
+        serviceType="Upcycling / Umgestaltung von Kleidung / Апсайклинг одежды"
+      />
+      <FaqJsonLd
+        items={faqs.map((f) => ({ question: String(f.question), answer: String(f.answer) }))}
+      />
       
       <PageHeader
         mobileLayout="editorial"
@@ -268,7 +283,7 @@ export default function UpcyclingPage() {
               <div className="relative aspect-square overflow-hidden rounded-3xl shadow-[0_18px_50px_-30px_rgba(0,0,0,0.35)] ring-1 ring-black/5">
                 <ImageWithFallback
                   src="/images/models/material.webp"
-                  alt="Atelier details"
+                  alt={String(t('imageAltDetails'))}
                   className="w-full h-full object-cover object-[50%_35%]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
@@ -315,12 +330,12 @@ export default function UpcyclingPage() {
               <div className="absolute inset-0 grid grid-cols-2">
                 <ImageWithFallback
                   src="/images/upcycling/after1.JPG"
-                  alt="After 1"
+                  alt={String(t('imageAltAfter'))}
                   className="w-full h-full object-cover"
                 />
                 <ImageWithFallback
                   src="/images/upcycling/after2.JPG"
-                  alt="After 2"
+                  alt={String(t('imageAltAfter'))}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute right-6 top-6 rounded-full bg-black/70 px-4 py-2 backdrop-blur-sm">
@@ -335,12 +350,12 @@ export default function UpcyclingPage() {
                 <div className="absolute inset-0 grid grid-cols-2">
                   <ImageWithFallback
                     src="/images/upcycling/before1.jpg"
-                    alt="Before 1"
+                    alt={String(t('imageAltBefore'))}
                     className="w-full h-full object-cover"
                   />
                   <ImageWithFallback
                     src="/images/upcycling/before2.jpg"
-                    alt="Before 2"
+                    alt={String(t('imageAltBefore'))}
                     className="w-full h-full object-cover"
                   />
                 </div>

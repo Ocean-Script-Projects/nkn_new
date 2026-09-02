@@ -1,14 +1,12 @@
 import type { NextConfig } from 'next';
 import path from 'path';
 
-const isProduction = process.env.NODE_ENV === 'production';
-/** GitHub Pages default: `/nkn_new`. For App Platform / custom domain at root, set `NEXT_PUBLIC_BASE_PATH=` at build time. */
-const basePath =
-  typeof process.env.NEXT_PUBLIC_BASE_PATH === 'string'
-    ? process.env.NEXT_PUBLIC_BASE_PATH.replace(/\/$/, '')
-    : isProduction
-      ? '/nkn_new'
-      : '';
+/**
+ * Serve from the domain root by default — that is what the custom domain and every
+ * canonical URL assume. Sub-path hosting (GitHub Pages) must opt in explicitly by
+ * setting `NEXT_PUBLIC_BASE_PATH=/nkn_new` at build time.
+ */
+const basePath = (process.env.NEXT_PUBLIC_BASE_PATH ?? '').replace(/\/$/, '');
 
 // Make basePath available to client-side code
 process.env.NEXT_PUBLIC_BASE_PATH = basePath;

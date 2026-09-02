@@ -20,10 +20,10 @@ import PageHeader from '@/components/shared/PageHeader';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import { submitSiteRequest } from '@/lib/submit-site-request';
-import Breadcrumbs from '@/components/shared/Breadcrumbs';
-import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
-import { absolutePublicUrl } from '@/lib/site-url';
+import PageBreadcrumbs from '@/components/seo/PageBreadcrumbs';
 import SeoIntro from '@/components/seo/SeoIntro';
+import ServiceJsonLd from '@/components/seo/ServiceJsonLd';
+import { absolutePublicUrl } from '@/lib/site-url';
 const SERVICE_IDS = ['01', '02', '03', '04', '05', '06', '07'] as const;
 const ICONS = [Scissors, Sparkles, Heart, Leaf, Palette, Layers, Users];
 const COLORS = [
@@ -40,11 +40,12 @@ const ACCENT_COLORS = ['#C4A574', '#DC2626', '#8B7355', '#B8985E', '#A8896A', '#
 const SERVICES_HERO_SRC = '/images/models/material2.webp';
 
 function ServicesHeroImage({ badgeTitle, badgeDesc }: { badgeTitle: string; badgeDesc: string }) {
+  const t = useTranslations('servicesPage');
   return (
     <div className="relative h-full w-full min-h-full overflow-hidden lg:aspect-[4/5] lg:rounded-3xl lg:shadow-2xl">
       <ImageWithFallback
         src={SERVICES_HERO_SRC}
-        alt="Atelier workspace"
+        alt={String(t('imageAlt'))}
         className="h-full w-full object-cover lg:rounded-3xl"
       />
       <motion.div
@@ -73,8 +74,6 @@ function ServicesHeroImage({ badgeTitle, badgeDesc }: { badgeTitle: string; badg
 export default function ServicesPage() {
   const t = useTranslations('servicesPage');
   const locale = useLocale();
-  const navT = useTranslations('nav');
-  const homeLabel = locale === 'de' ? 'Startseite' : locale === 'en' ? 'Home' : 'Главная';
   const [selectedService, setSelectedService] = useState<number | null>(null);
   const [formError, setFormError] = useState<string | null>(null);
   const [formSubmitting, setFormSubmitting] = useState(false);
@@ -132,18 +131,13 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-[#FAF9F6] overflow-x-hidden">
-      <BreadcrumbJsonLd
-        items={[
-          { name: homeLabel, item: absolutePublicUrl(`/${locale}/`) },
-          { name: String(navT('services')), item: absolutePublicUrl(`/${locale}/services/`) },
-        ]}
-      />
       <Navigation />
-      <Breadcrumbs
-        items={[
-          { href: `/${locale}/`, label: homeLabel },
-          { href: `/${locale}/services/`, label: String(navT('services')) },
-        ]}
+      <PageBreadcrumbs segment="services" navKey="services" />
+      <ServiceJsonLd
+        name={String(t('seo.title'))}
+        description={String(t('seo.description'))}
+        url={absolutePublicUrl(`/${locale}/services/`)}
+        serviceType="Atelier services / Atelier-Dienstleistungen / Услуги ателье"
       />
       <div>
         <PageHeader

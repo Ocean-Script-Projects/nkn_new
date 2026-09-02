@@ -2,65 +2,60 @@
 
 import { useLocale } from '@/lib/i18n';
 
-export default function SeoIntro({ text }: { text: string }) {
-  if (!text) return null;
+const HEADINGS = {
+  de: { eyebrow: 'Atelier', title: 'Über das NKN Atelier' },
+  en: { eyebrow: 'Atelier', title: 'About the NKN Atelier' },
+  ru: { eyebrow: 'Ателье', title: 'Об ателье NKN' },
+} as const;
 
+/**
+ * Closing editorial block.
+ *
+ * This is the only long-form prose on most pages, so it stays visible: text
+ * collapsed inside a <details> is indexed, but Google weights hidden content
+ * lower and users never read it.
+ */
+export default function SeoIntro({ text }: { text: string }) {
   const locale = useLocale();
-  const ui =
-    locale === 'de'
-      ? {
-          eyebrow: 'Details',
-          title: 'Über diese Seite',
-          show: 'Anzeigen',
-          hide: 'Ausblenden',
-        }
-      : locale === 'en'
-        ? {
-            eyebrow: 'Details',
-            title: 'About this page',
-            show: 'Show',
-            hide: 'Hide',
-          }
-        : {
-            eyebrow: 'Детали',
-            title: 'О странице',
-            show: 'Показать',
-            hide: 'Скрыть',
-          };
+
+  if (!text?.trim()) return null;
+
+  const ui = HEADINGS[locale] ?? HEADINGS.de;
+  const paragraphs = text
+    .split(/\n{2,}/)
+    .map((p) => p.trim())
+    .filter(Boolean);
 
   return (
-    <section className="px-4 sm:px-6 md:px-12 pt-10 pb-10">
-      <div className="max-w-5xl mx-auto">
-        <div className="h-px w-full bg-black/10 mb-8" />
+    <section className="px-4 pb-16 pt-12 sm:px-6 sm:pb-20 md:px-12 md:pt-16">
+      <div className="mx-auto max-w-3xl">
+        <div className="mb-8 h-px w-full bg-black/10" />
 
-        <details className="group rounded-3xl border border-black/10 bg-white/60 backdrop-blur-sm px-6 py-5 sm:px-8 sm:py-6">
-          <summary className="cursor-pointer list-none select-none">
-            <div className="flex items-center justify-between gap-6">
-              <div>
-                <div className="text-[11px] tracking-[0.28em] uppercase text-black/45">
-                  {ui.eyebrow}
-                </div>
-                <div
-                  className="mt-1 text-base sm:text-lg tracking-tight text-black/85"
-                  style={{ fontFamily: 'serif' }}
-                >
-                  {ui.title}
-                </div>
-              </div>
+        <div className="mb-5 flex items-center gap-3">
+          <div className="h-px w-8 bg-gradient-to-r from-brand-mustard to-transparent sm:w-12" />
+          <span className="text-[10px] uppercase tracking-[0.28em] text-brand-sage sm:text-[11px]">
+            {ui.eyebrow}
+          </span>
+        </div>
 
-              <div className="shrink-0 rounded-full border border-black/10 bg-white/70 px-4 py-2 text-xs tracking-wider text-black/60 transition-colors group-hover:bg-white">
-                <span className="group-open:hidden">{ui.show}</span>
-                <span className="hidden group-open:inline">{ui.hide}</span>
-              </div>
-            </div>
-          </summary>
+        <h2
+          className="mb-5 text-2xl tracking-tight text-neutral-900 sm:text-3xl"
+          style={{ fontFamily: 'serif' }}
+        >
+          {ui.title}
+        </h2>
 
-          <div className="mt-4 text-sm sm:text-base leading-relaxed text-black/65">
-            {text}
-          </div>
-        </details>
+        <div className="space-y-4">
+          {paragraphs.map((paragraph, i) => (
+            <p
+              key={i}
+              className="text-[0.9375rem] leading-[1.75] text-neutral-600 sm:text-base"
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
-

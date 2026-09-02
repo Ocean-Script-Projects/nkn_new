@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { absolutePublicUrl } from '@/lib/site-url';
 import { locales, defaultLocale, type Locale } from '@/lib/i18n-config';
+import { BRAND, OG_IMAGE } from '@/lib/site-config';
 
 export type PageSeoId =
   | 'home'
@@ -62,10 +63,10 @@ async function loadMessages(locale: string) {
   switch (locale) {
     case 'en':
       return (await import('@/messages/en.json')).default;
-    case 'de':
-      return (await import('@/messages/de.json')).default;
-    default:
+    case 'ru':
       return (await import('@/messages/ru.json')).default;
+    default:
+      return (await import('@/messages/de.json')).default;
   }
 }
 
@@ -100,51 +101,55 @@ export async function buildPageMetadata(
     | { title?: string; description?: string }
     | undefined;
 
-  const title = seo?.title ?? 'NKN Atelier';
+  const title = seo?.title ?? BRAND.name;
   const description = seo?.description;
 
   const pathname = buildLocalizedPath(normalizedLocale, page);
   const canonical = absolutePublicUrl(pathname);
+
   const alternates: Metadata['alternates'] = {
     canonical,
-    languages: Object.fromEntries(
-      locales.map((l) => [l, absolutePublicUrl(buildLocalizedPath(l, page))]),
-    ),
+    languages: {
+      ...Object.fromEntries(
+        locales.map((l) => [l, absolutePublicUrl(buildLocalizedPath(l, page))]),
+      ),
+      // Fallback for visitors whose language matches none of the three.
+      'x-default': absolutePublicUrl(buildLocalizedPath(defaultLocale, page)),
+    },
+  };
+
+  const ogImage = {
+    url: OG_IMAGE.path,
+    width: OG_IMAGE.width,
+    height: OG_IMAGE.height,
+    alt: title,
   };
 
   const openGraph: Metadata['openGraph'] = {
+    type: 'website',
     title,
     description,
-    siteName: 'NKN Atelier',
+    siteName: BRAND.name,
     url: canonical,
     locale: mapOgLocale(normalizedLocale),
+    alternateLocale: locales
+      .filter((l) => l !== normalizedLocale)
+      .map((l) => mapOgLocale(l)),
+    images: [ogImage],
   };
 
   const twitter: Metadata['twitter'] = {
     card: 'summary_large_image',
     title,
     description,
+    images: [OG_IMAGE.path],
   };
 
-  if (page === 'home') {
-    return {
-      title: { absolute: title },
-      description,
-      other: {
-        'content-language': normalizedLocale,
-      },
-      alternates,
-      openGraph,
-      twitter,
-    };
-  }
-
+  // Titles are authored per page and already carry the brand where it helps.
+  // Using `absolute` prevents the layout template appending "· NKN Atelier" a second time.
   return {
-    title,
+    title: { absolute: title },
     description,
-    other: {
-      'content-language': normalizedLocale,
-    },
     alternates,
     openGraph,
     twitter,
