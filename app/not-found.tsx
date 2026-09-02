@@ -4,10 +4,17 @@ import Link from 'next/link';
 import { defaultLocale } from '@/lib/i18n-config';
 import { BRAND } from '@/lib/site-config';
 
-// A 404 must never be indexed, and it is reached with an unknown locale, so the
-// I18nProvider is not mounted here — the copy is inlined rather than translated.
+/**
+ * Root 404. This is the boundary that actually runs: an unmatched URL never
+ * enters a segment, and `notFound()` thrown from the `[locale]` layout escapes
+ * that segment's own not-found.tsx too. Both end up here.
+ *
+ * It renders without the I18nProvider (no locale is known), so the copy is
+ * inlined and leads with German — the default locale — plus a line in the two
+ * other languages.
+ */
 export const metadata: Metadata = {
-  title: `404 — ${BRAND.name}`,
+  title: { absolute: `404 — ${BRAND.name}` },
   robots: { index: false, follow: true },
 };
 
@@ -16,6 +23,12 @@ const LINKS = [
   { href: `/${defaultLocale}/bespoke/`, label: 'Maßschneiderei' },
   { href: `/${defaultLocale}/pieces/`, label: 'Unikate' },
   { href: `/${defaultLocale}/contact/`, label: 'Kontakt' },
+];
+
+const LANGUAGES = [
+  { href: '/de/', label: 'DE' },
+  { href: '/en/', label: 'EN' },
+  { href: '/ru/', label: 'RU' },
 ];
 
 export default function NotFound() {
@@ -49,6 +62,14 @@ export default function NotFound() {
             </Link>
           ))}
         </nav>
+
+        <div className="mt-8 flex justify-center gap-4 text-[11px] uppercase tracking-[0.24em] text-neutral-400">
+          {LANGUAGES.map((l) => (
+            <Link key={l.href} href={l.href} className="transition-colors hover:text-neutral-800">
+              {l.label}
+            </Link>
+          ))}
+        </div>
       </div>
     </main>
   );
