@@ -7,7 +7,6 @@ export type PageSeoId =
   | 'home'
   | 'pieces'
   | 'upcycling'
-  | 'events'
   | 'bespoke'
   | 'services'
   | 'about'
@@ -21,7 +20,6 @@ const SEO_PATHS: Record<PageSeoId, string[]> = {
   home: ['homePage', 'seo'],
   pieces: ['pieces', 'seo'],
   upcycling: ['upcycling', 'seo'],
-  events: ['events', 'seo'],
   bespoke: ['bespokePage', 'seo'],
   services: ['servicesPage', 'seo'],
   about: ['aboutPage', 'seo'],
@@ -36,7 +34,6 @@ const PAGE_SEGMENTS: Record<PageSeoId, string | null> = {
   home: null,
   pieces: 'pieces',
   upcycling: 'upcycling',
-  events: 'events',
   bespoke: 'bespoke',
   services: 'services',
   about: 'about',

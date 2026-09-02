@@ -25,6 +25,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+# `.env` itself must be listed: `.env*.local` does not match it, and this file
+# holds live Spaces credentials.
+.env
 .env*.local
 
 # vercel

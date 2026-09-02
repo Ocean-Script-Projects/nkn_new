@@ -7,7 +7,12 @@ type Crumb = {
 
 export default function Breadcrumbs({ items }: { items: Crumb[] }) {
   return (
-    <nav aria-label="Breadcrumb" className="px-4 sm:px-6 md:px-12 pt-6">
+    // The navigation is `fixed`, so it takes no space in the flow: this strip is
+    // the first element on the page and has to clear the bar itself.
+    <nav
+      aria-label="Breadcrumb"
+      className="px-4 pb-1 pt-20 sm:px-6 sm:pt-24 md:px-12 lg:pt-28"
+    >
       <ol className="max-w-7xl mx-auto flex flex-wrap items-center gap-2 text-sm text-black/60">
         {items.map((item, idx) => {
           const isLast = idx === items.length - 1;

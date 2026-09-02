@@ -159,9 +159,11 @@ export default function PageHeader({
   return (
     <section
       className={
+        // Top padding used to clear the fixed navigation; the breadcrumb strip
+        // above now does that, so only the gap after it remains.
         isEditorial
-          ? 'relative overflow-x-clip overflow-y-visible px-4 pb-2 pt-0 sm:px-6 sm:pb-3 sm:pt-0 md:px-12 md:pb-4 md:pt-0 lg:overflow-hidden lg:pb-24 lg:pt-28'
-          : 'relative overflow-hidden px-4 pb-10 pt-16 sm:px-6 sm:pb-16 sm:pt-20 md:px-12 md:pb-24 md:pt-28'
+          ? 'relative overflow-x-clip overflow-y-visible px-4 pb-2 pt-0 sm:px-6 sm:pb-3 sm:pt-0 md:px-12 md:pb-4 md:pt-0 lg:overflow-hidden lg:pb-24 lg:pt-8'
+          : 'relative overflow-hidden px-4 pb-10 pt-4 sm:px-6 sm:pb-16 sm:pt-6 md:px-12 md:pb-24 md:pt-10'
       }
     >
       <DecorativeLogo

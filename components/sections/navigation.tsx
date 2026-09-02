@@ -13,6 +13,9 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const servicesDropdownItems = [
+  // The dropdown trigger is only a label, so /services needs its own entry —
+  // otherwise the page is reachable from the footer alone.
+  { key: 'allServices', href: '/services' },
   { key: 'bespoke', href: '/bespoke' },
   { key: 'prints', href: '/prints' },
   { key: 'upcycling', href: '/upcycling' },
