@@ -4,8 +4,8 @@
     "philosophy": "Philosophie",
     "services": "Dienstleistungen",
     "bespoke": "Maßschneiderei",
-    "pieces": "Stücke",
-    "prints": "Drucke",
+    "pieces": "Unikate",
+    "prints": "Stoffdrucke",
     "upcycling": "Upcycling",
     "collaboration": "Zusammenarbeit",
     "events": "Veranstaltungen",
@@ -19,7 +19,7 @@
   "homePage": {
     "seo": {
       "title": "Maßschneiderei Hamburg — NKN Atelier",
-      "description": "Maßgeschneiderte Kleidung aus dem Atelier von Nataliia Khreshkova für Hamburg und Umgebung: Unikate, Autorendrucke, Upcycling. Beratung vor Ort und online."
+      "description": "Maßgeschneiderte Kleidung aus dem Atelier von Nataliia Khreshkova für Hamburg und Umgebung: Unikate, exklusive Stoffdrucke, Upcycling. Beratung vor Ort und online."
     },
     "seoText": "NKN Atelier ist das Design-Atelier von Nataliia Khreshkova für Hamburg und den Norden. Hier entsteht Maßschneiderei, bei der die Passform an erster Stelle steht: individuelle Maßanfertigung, one-of-one Unikate, Kleinserien, eigene Stoffdrucke und Upcycling bestehender Kleidungsstücke. Jedes Stück wird konstruiert, nicht bloß genäht — auf Grundlage von 37 Jahren Erfahrung in Schnittkonstruktion und Handarbeit.\n\nDer Weg zum fertigen Kleidungsstück ist immer derselbe: ein Gespräch über Anlass, Material und Silhouette, dann Maßnehmen, Schnittkonstruktion, Zwischenanproben und die finale Fertigung. Wer nicht vor Ort sein kann, wird online begleitet — mit Anleitung zum Maßnehmen per Video, Materialauswahl aus der Ferne und Versand innerhalb Deutschlands und darüber hinaus.\n\nDas Atelier liegt in Kaltenkirchen, rund 35 Minuten von Hamburg entfernt, und arbeitet für Kundinnen und Kunden in Hamburg, Norderstedt, Quickborn, Elmshorn, Bad Segeberg, Neumünster und ganz Schleswig-Holstein. Neben Maßanfertigung gehören Stil- und Imageberatung, der Aufbau einer Capsule Wardrobe sowie Schnittmuster und Musterteile für junge Modemarken zum Angebot. Beratung auf Deutsch, Englisch und Russisch."
   },
@@ -68,11 +68,11 @@
     "viewAll": "Alle Veranstaltungen anzeigen"
   },
   "featuredPieces": {
-    "label": "Stücke",
-    "title": "Signaturen",
-    "titleItalic": "Stücke",
+    "label": "Unikate",
+    "title": "Ausgewählte",
+    "titleItalic": "Unikate",
     "description": "Jedes Stück wird von Hand in einer einzigen Kopie oder limitierten Serie gefertigt. Entdecken Sie die Kollektion.",
-    "viewAll": "Alle Stücke anzeigen",
+    "viewAll": "Alle Unikate anzeigen",
     "viewItem": "Ansehen"
   },
   "services": {
@@ -86,20 +86,20 @@
         "description": "Individuelle Konstruktion unter Berücksichtigung von Figur, Charakter und Lebensstil. Die äußere Form spiegelt die innere Tiefe wider."
       },
       "02": {
-        "title": "Autorenstücke",
-        "description": "Stücke in Einzelanfertigung oder limitierter Auflage."
+        "title": "Unikate",
+        "description": "Einzelstücke in Handarbeit oder limitierter Auflage."
       },
       "03": {
         "title": "Upcycling",
         "description": "Neugestaltung von Kleidung aus Ihrem Kleiderschrank. Moderne Form und neuer Ausdruck."
       },
       "04": {
-        "title": "Autorendrucke",
+        "title": "Exklusive Stoffdrucke",
         "description": "Der Druck ist Teil der Konstruktion. Wird unter Berücksichtigung von Form und Proportionen entwickelt. Unterstreicht Individualität und Charakter."
       },
       "05": {
-        "title": "Autorendrucke",
-        "description": "Ich erstelle Drucke unter Berücksichtigung der Konstruktion des Stücks. Der Druck wird entworfen und streng in den Zonen platziert, wo er vom Designer oder Kunden konzipiert wurde."
+        "title": "Exklusive Stoffdrucke",
+        "description": "Ich erstelle Drucke unter Berücksichtigung der Konstruktion des Kleidungsstücks. Der Druck wird entworfen und streng in den Zonen platziert, wo er vom Designer oder Kunden konzipiert wurde."
       },
       "06": {
         "title": "Vollständiger Zyklus",
@@ -135,7 +135,7 @@
     },
     "gallery": {
       "project": "Projekt",
-      "item": "Autorenstück"
+      "item": "Unikat"
     }
   },
   "about": {
@@ -181,21 +181,21 @@
     "impressum": "Impressum"
   },
   "pieces": {
-    "label": "Stücke",
-    "title": "Autoren",
-    "titleItalic": "stücke",
+    "label": "Unikate",
+    "title": "Handgefertigte",
+    "titleItalic": "Unikate",
     "subtitle": "In Einzelanfertigung oder limitierter Auflage",
     "loading": "Katalog wird geladen …",
-    "description": "Jedes Stück entsteht als Unikat oder in limitierter Auflage. Individuelle Anpassung und Auswahl eines Autorendrucks für Sie sind möglich.",
+    "description": "Jedes Stück entsteht als Unikat oder in limitierter Auflage. Individuelle Anpassung und Auswahl eines exklusiven Stoffdrucks für Sie sind möglich.",
     "seo": {
       "title": "Unikate & Designerkleidung aus Hamburg",
-      "description": "Korsagen, Kleider, Schals und Gürtel als Einzelstücke oder limitierte Serie. Jedes Stück wird auf Ihre Maße angepasst und mit passendem Autorendruck kombiniert."
+      "description": "Korsagen, Kleider, Schals und Gürtel als Einzelstücke oder limitierte Serie. Jedes Stück wird auf Ihre Maße angepasst und mit einem passenden Stoffdruck kombiniert."
     },
-    "seoText": "Die Stücke von NKN Atelier sind Unikate und kleine Serien aus Hamburg — mit Fokus auf Konstruktion, Proportionen und hochwertige Verarbeitung. Entdecken Sie Korsagen, Gürtel, Kleider, Schals und mehr. Viele Designs lassen sich an Ihre Figur und Ihren Anlass anpassen und mit einem Autorendruck kombinieren. Wenn Sie ein wirklich einzigartiges Stück mit präziser Passform suchen, starten wir mit einer Beratung.",
+    "seoText": "Die Unikate von NKN Atelier sind Einzelstücke und kleine Serien aus Hamburg — mit Fokus auf Konstruktion, Proportionen und hochwertige Verarbeitung. Entdecken Sie Korsagen, Gürtel, Kleider, Schals und mehr. Viele Designs lassen sich an Ihre Figur und Ihren Anlass anpassen und mit einem exklusiven Stoffdruck kombinieren. Wenn Sie ein wirklich einzigartiges Stück mit präziser Passform suchen, starten wir mit einer Beratung.",
     "productStatus": {
       "oneOfOne": "Einzelstück.",
       "limited": "Limitierte Auflage.",
-      "custom": "Individuelle Anpassung für Sie. Wahl eines Autorendrucks oder Erstellung eines Drucks nach Ihren Wünschen möglich."
+      "custom": "Individuelle Anpassung für Sie. Wahl eines exklusiven Stoffdrucks oder Entwicklung eines Drucks nach Ihren Wünschen möglich."
     },
     "productButton": {
       "book": "Reservieren",
@@ -609,13 +609,13 @@
         ]
       },
       "02": {
-        "title": "Autorenstücke One-of-One",
+        "title": "Unikate One-of-One",
         "subtitle": "Unique Pieces",
         "shortDesc": "Ich entwickle und nähe einzigartige Stücke in einer einzigen Kopie - von der Idee bis zum letzten Stich.",
         "fullDesc": "Jedes One-of-One-Stück ist ein künstlerisches Statement. Ich erstelle das Konzept, denke Form, Konstruktion und dekorative Elemente durch.",
         "features": [
           "Einzigartiges Konzept",
-          "Autorentwicklung",
+          "Eigenentwicklung",
           "Exklusive Materialien",
           "Komplexe Techniken",
           "Einzelstück",
@@ -651,7 +651,7 @@
         ]
       },
       "05": {
-        "title": "Autorendrucke",
+        "title": "Exklusive Stoffdrucke",
         "subtitle": "Custom Prints",
         "shortDesc": "Ich erstelle Drucke unter Berücksichtigung der Konstruktion - der Druck wird genau dort platziert, wo vorgesehen.",
         "fullDesc": "Ich entwerfe den Druck als Teil der Gesamtkomposition. Ich arbeite mit Digitaldruck, Siebdruck, Handmalerei.",
@@ -661,7 +661,7 @@
           "Verschiedene Drucktechniken",
           "Farbentwicklung",
           "Präzise Platzierung",
-          "Autorenansatz"
+          "Eigene Handschrift"
         ]
       },
       "06": {
@@ -718,9 +718,9 @@
     },
     "seo": {
       "title": "Schneiderei & Atelier-Leistungen in Hamburg",
-      "description": "Sieben Leistungen im Atelier: Maßschneiderei, Unikate, Kleinserien, Upcycling, Autorendrucke, Entwicklungszyklus und Markenberatung. Preise auf Anfrage."
+      "description": "Sieben Leistungen im Atelier: Maßschneiderei, Unikate, Kleinserien, Upcycling, Stoffdrucke, Entwicklungszyklus und Markenberatung. Preise auf Anfrage."
     },
-    "seoText": "Die Dienstleistungen von NKN Atelier in Hamburg decken den gesamten Prozess rund um Kleidung ab: von Maßschneiderei und Unikaten bis zu Upcycling, Autorendrucken und Markenberatung. Im Mittelpunkt stehen Konstruktion, Passform, Stoff und Details — alles wird auf Person und Zweck abgestimmt. Wenn Sie ein professionelles Atelier in Hamburg suchen, senden Sie eine Anfrage und wir beginnen mit einer Beratung.",
+    "seoText": "Die Dienstleistungen von NKN Atelier in Hamburg decken den gesamten Prozess rund um Kleidung ab: von Maßschneiderei und Unikaten bis zu Upcycling, exklusiven Stoffdrucken und Markenberatung. Im Mittelpunkt stehen Konstruktion, Passform, Stoff und Details — alles wird auf Person und Zweck abgestimmt. Wenn Sie ein professionelles Atelier in Hamburg suchen, senden Sie eine Anfrage und wir beginnen mit einer Beratung.",
     "imageAlt": "Arbeitsplatz im NKN Atelier: Schnittmuster, Stoffe und Nähmaschine"
   },
   "aboutPage": {
@@ -735,8 +735,8 @@
     },
     "story": {
       "p1": "Ich bin Nataliia NKN Khreshkova, Gründerin und Leiterin eines Design-Ateliers nach Art eines „Modehauses“ (Ukraine).",
-      "p2": "Schnittmacherin für Damen- und Herrenbekleidung jeder Komplexität. 37 Jahre Berufspraxis. Designerin von Autorendrucken auf Stoff und Autorin eines eigenen Online-Schneidersystems.",
-      "p3": "Ich schaffe nicht nur Kleidung - ich schaffe Zustand durch Form, die die Persönlichkeit verstärkt und offenbart. Ich arbeite mit Kunden weltweit. Heute entwickle ich ein Autorenstudio in Deutschland.",
+      "p2": "Schnittmacherin für Damen- und Herrenbekleidung jeder Komplexität. 37 Jahre Berufspraxis. Designerin exklusiver Stoffdrucke und Autorin eines eigenen Online-Schneidersystems.",
+      "p3": "Ich schaffe nicht nur Kleidung - ich schaffe Zustand durch Form, die die Persönlichkeit verstärkt und offenbart. Ich arbeite mit Kunden weltweit. Heute entwickle ich mein eigenes Atelier in Deutschland.",
       "p4": "",
       "footer": "37+ Jahre im Schneiderhandwerk und in der Atelier-Praxis"
     },
@@ -832,7 +832,7 @@
       "title": "Nataliia Khreshkova — Designerin & Schnittmacherin",
       "description": "37+ Jahre Erfahrung in Schnittkonstruktion und Handwerk. Wie im NKN Atelier gearbeitet wird und warum Passform vor Trend kommt. Über die Gründerin."
     },
-    "seoText": "Ich bin Nataliia Khreshkova — Designerin und Schnittmacherin, Gründerin von NKN Atelier. Meine Arbeit ist präzise Konstruktion, professionelle Schnittmuster, sorgfältige Passform und handwerkliche Qualität. Heute entwickle ich das Studio in Deutschland und arbeite mit privaten Kundinnen und Kunden sowie Marken: Maßanfertigungen, Upcycling, Autorendrucke und Modellentwicklung. Wenn Sie ein Designer-Atelier in Hamburg suchen, erzählen Sie mir von Ihrem Projekt — wir finden den passenden Ablauf.",
+    "seoText": "Ich bin Nataliia Khreshkova — Designerin und Schnittmacherin, Gründerin von NKN Atelier. Meine Arbeit ist präzise Konstruktion, professionelle Schnittmuster, sorgfältige Passform und handwerkliche Qualität. Heute entwickle ich das Studio in Deutschland und arbeite mit privaten Kundinnen und Kunden sowie Marken: Maßanfertigungen, Upcycling, exklusive Stoffdrucke und Modellentwicklung. Wenn Sie ein Designer-Atelier in Hamburg suchen, erzählen Sie mir von Ihrem Projekt — wir finden den passenden Ablauf.",
     "modal": {
       "title": "Lassen Sie uns",
       "titleItalic": "reden",
@@ -886,12 +886,12 @@
   },
   "printsPage": {
     "hero": {
-      "label": "Drucke",
-      "title": "Autoren",
-      "titleItalic": "drucke",
+      "label": "Stoffdrucke",
+      "title": "Exklusive",
+      "titleItalic": "Stoffdrucke",
       "subtitle": "Druck als Teil der Konstruktion und des Charakters des Stücks."
     },
-    "intro": "Ich erstelle Autorendrucke und entwickle sie unter Berücksichtigung von Form und Silhouette. Jeder Druck arbeitet mit der Konstruktion, unterstreicht die Individualität, verstärkt das Bild und schafft Ganzheit.",
+    "intro": "Ich erstelle exklusive Stoffdrucke und entwickle sie unter Berücksichtigung von Form und Silhouette. Jeder Druck arbeitet mit der Konstruktion, unterstreicht die Individualität, verstärkt das Bild und schafft Ganzheit.",
     "subheading": "Druck als Ausdrucksmittel.",
     "directionsTitle": "Arbeitsrichtungen mit Drucken",
     "directions": {
@@ -901,7 +901,7 @@
       },
       "02": {
         "title": "Fertige Designer-Drucke",
-        "description": "Meine Autorendrucke für verschiedene Stücke und Kollektionen sind verfügbar. Sie können einen bestehenden Druck wählen und ein Stück darauf basierend anfertigen lassen."
+        "description": "Meine exklusiven Stoffdrucke für verschiedene Modelle und Kollektionen sind verfügbar. Sie können einen bestehenden Druck wählen und ein Kleidungsstück darauf basierend anfertigen lassen."
       },
       "03": {
         "title": "Drucke für Designer und Marken",
@@ -913,11 +913,11 @@
     "ctaDescription": "Beschreiben Sie kurz Ihre Aufgabe - ich antworte persönlich mit dem nächsten Schritt.",
     "ctaNote": "Antwort innerhalb 24–48 Std. · Hamburg",
     "seo": {
-      "title": "Autorendrucke & eigenes Stoffdesign",
+      "title": "Exklusive Stoffdrucke & eigenes Stoffdesign",
       "description": "Exklusive Stoffdrucke, entwickelt passend zur Konstruktion Ihres Kleidungsstücks. Individuell, aus dem Katalog oder als Kollektion für Ihre Marke."
     },
-    "seoText": "Autorendrucke von NKN Atelier werden so entwickelt, dass sie mit Silhouette und Schnittteilen zusammenarbeiten — nicht nur als Dekor. Ich gestalte individuelle Drucke für Ihre Idee, biete fertige Designs und entwickle Drucke für Designerinnen, Designer und Marken. Wichtig sind Komposition, Maßstab und exakte Platzierung, damit der Druck den Charakter des Kleidungsstücks verstärkt. Arbeit in Hamburg und remote möglich.",
-    "imageAlt": "Autorendruck auf Stoff, entworfen im NKN Atelier"
+    "seoText": "Exklusive Stoffdrucke von NKN Atelier werden so entwickelt, dass sie mit Silhouette und Schnittteilen zusammenarbeiten — nicht nur als Dekor. Ich gestalte individuelle Drucke für Ihre Idee, biete fertige Designs und entwickle Drucke für Designerinnen, Designer und Marken. Wichtig sind Komposition, Maßstab und exakte Platzierung, damit der Druck den Charakter des Kleidungsstücks verstärkt. Arbeit in Hamburg und remote möglich.",
+    "imageAlt": "Exklusiver Stoffdruck, entworfen im NKN Atelier"
   },
   "contactPage": {
     "hero": {
@@ -945,7 +945,7 @@
       "services": [
         "Maßschneiderei",
         "Upcycling",
-        "Autorendrucke",
+        "Exklusive Stoffdrucke",
         "Stück aus dem Katalog",
         "Kooperation"
       ],
@@ -987,7 +987,7 @@
       "title": "Kontakt & Termin — NKN Atelier Hamburg",
       "description": "Termin im Atelier vereinbaren oder online anfragen: Telefon, E-Mail, Telegram und WhatsApp. Antwort persönlich innerhalb von 24–48 Stunden."
     },
-    "seoText": "Möchten Sie Maßschneiderei, Upcycling, einen Autorendruck oder eine Markenkooperation besprechen? Schreiben Sie mir auf Telegram, per E-Mail oder senden Sie eine Anfrage — ich antworte persönlich mit dem nächsten Schritt. Das Atelier ist in Hamburg, Beratungen sind auch online möglich. Je genauer Sie Ziel und Zeitrahmen beschreiben, desto schneller finden wir den passenden Ablauf.",
+    "seoText": "Möchten Sie Maßschneiderei, Upcycling, einen exklusiven Stoffdruck oder eine Markenkooperation besprechen? Schreiben Sie mir auf Telegram, per E-Mail oder senden Sie eine Anfrage — ich antworte persönlich mit dem nächsten Schritt. Das Atelier ist in Hamburg, Beratungen sind auch online möglich. Je genauer Sie Ziel und Zeitrahmen beschreiben, desto schneller finden wir den passenden Ablauf.",
     "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden.",
     "imageAlt": "NKN Atelier bei Hamburg — Beratung und Terminvereinbarung"
   },
@@ -1067,7 +1067,7 @@
       "description": "Allgemeine Bedingungen für die Bestellung von Atelier-Services: Anfertigung, Anproben, Zeitrahmen, Zahlung und Änderungen."
     },
     "seoText": "Diese AGB beschreiben die allgemeinen Regeln für die Zusammenarbeit mit NKN Atelier: wie Aufträge und Zeitrahmen abgestimmt werden, wie Anproben organisiert sind, welche Zahlungsformen möglich sind und wie Anpassungen erfolgen. Bei Maßanfertigungen werden Details immer auf das konkrete Projekt zugeschnitten — dieser Abschnitt schafft vorab Klarheit.",
-    "intro": "Diese Bedingungen regeln die Zusammenarbeit bei der Bestellung von NKN Atelier-Dienstleistungen - Maßschneiderei, Autorenstücke, Upcycling und Beratungen.",
+    "intro": "Diese Bedingungen regeln die Zusammenarbeit bei der Bestellung von NKN Atelier-Dienstleistungen - Maßschneiderei, Unikate, Upcycling und Beratungen.",
     "sections": {
       "order": {
         "title": "Bestellung und Vereinbarungen",

@@ -44,7 +44,7 @@ export default function PrintsPage() {
         name={String(t('seo.title'))}
         description={String(t('seo.description'))}
         url={absolutePublicUrl(`/${locale}/prints/`)}
-        serviceType="Textile print design / Autorendrucke / Авторские принты"
+        serviceType="Textile print design / Exklusive Stoffdrucke / Авторские принты"
       />
       <div>
         <PageHeader

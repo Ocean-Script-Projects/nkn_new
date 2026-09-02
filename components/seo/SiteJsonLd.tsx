@@ -21,7 +21,7 @@ import { locales, type Locale } from '@/lib/i18n-config';
  */
 
 const BUSINESS_DESCRIPTION: Record<Locale, string> = {
-  de: 'NKN Atelier — Maßschneiderei und Design-Atelier von Nataliia Khreshkova für Hamburg und Umgebung: Maßanfertigung, Unikate, Autorendrucke und Upcycling.',
+  de: 'NKN Atelier — Maßschneiderei und Design-Atelier von Nataliia Khreshkova für Hamburg und Umgebung: Maßanfertigung, Unikate, exklusive Stoffdrucke und Upcycling.',
   en: 'NKN Atelier — bespoke tailoring and design studio by Nataliia Khreshkova serving Hamburg and the surrounding region: made-to-measure garments, one-of-one pieces, author prints and upcycling.',
   ru: 'NKN Atelier — ателье индивидуального пошива Натальи Хрешковой для Гамбурга и окрестностей: пошив на заказ, изделия one-of-one, авторские принты и апсайклинг.',
 };
@@ -47,7 +47,7 @@ const SERVICE_CATALOG: Record<Locale, { name: string; description: string; url: 
       url: '/upcycling/',
     },
     {
-      name: 'Autorendrucke für Stoffe',
+      name: 'Exklusive Stoffdrucke und Stoffdesign',
       description:
         'Entwicklung exklusiver Stoffdrucke, abgestimmt auf die Konstruktion des Kleidungsstücks.',
       url: '/prints/',
