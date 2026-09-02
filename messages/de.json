@@ -45,11 +45,11 @@
     "title": "Kleidung als",
     "titleItalic": "Verlängerung",
     "titleEnd": "der Persönlichkeit",
-    "description": "Für mich sind Kostüm, Silhouette, Stoff - eine Möglichkeit, den Menschen zu unterstützen, seine innere Welt, seinen Charakter und seine Energie. Form, Farbe, Druck und Proportionen verbinden sich so, dass das Bild harmonisch mit der Persönlichkeit verschmilzt und sie verstärkt.",
+    "description": "Für mich sind Kleidung, Silhouette und Stoff ein Mittel, den Menschen zu stärken — seine innere Welt, seinen Charakter und seine Energie. Form, Farbe, Druck und Proportionen greifen so ineinander, dass das Erscheinungsbild mit der Persönlichkeit verschmilzt und sie verstärkt.",
     "values": {
       "depth": {
         "title": "Tiefe",
-        "text": "Jedes Stück wird mit dem Verständnis für den Menschen geschaffen - seine Figur, seinen inneren Zustand und seinen Charakter."
+        "text": "Jedes Stück entsteht aus dem Verständnis für den Menschen — für seine Figur, seine innere Haltung und seinen Charakter."
       },
       "meaning": {
         "title": "Bedeutung",
@@ -65,7 +65,7 @@
     "label": "Veranstaltungen",
     "title": "Kommende",
     "titleItalic": "Events",
-    "description": "Ausstellungen, Workshops, Trunk Shows. Erleben Sie einzigartige Mode-Erlebnisse.",
+    "description": "Ausstellungen, Workshops, Trunk Shows. Begegnungen rund um Mode und Handwerk.",
     "viewAll": "Alle Veranstaltungen anzeigen"
   },
   "featuredPieces": {
@@ -100,7 +100,7 @@
       },
       "05": {
         "title": "Exklusive Stoffdrucke",
-        "description": "Ich erstelle Drucke unter Berücksichtigung der Konstruktion des Kleidungsstücks. Der Druck wird entworfen und streng in den Zonen platziert, wo er vom Designer oder Kunden konzipiert wurde."
+        "description": "Ich entwickle Drucke passend zur Konstruktion des Kleidungsstücks. Der Druck wird so entworfen und genau dort platziert, wie es mit Ihnen abgestimmt wurde."
       },
       "06": {
         "title": "Vollständiger Zyklus",
@@ -143,9 +143,9 @@
     "label": "Über mich",
     "name": "Nataliia",
     "nameItalic": "Khreshkova",
-    "description1": "Gründerin und Leiterin des Design-Ateliers «Nataliia», das nach dem Prinzip eines europäischen Modehauses arbeitet.",
+    "description1": "Gründerin und Leiterin des Design-Ateliers „Nataliia“, das nach dem Prinzip eines europäischen Modehauses arbeitet.",
     "description2": "Die Grundlage meiner Arbeit ist die Fähigkeit, einen Menschen zu fühlen: seine Figur, seinen inneren Zustand, seinen Charakter und wie er sich im geschaffenen Bild fühlen möchte.",
-    "description3": "Jedes Projekt wird als individueller Prozess aufgebaut, bei dem nicht nur Form und Konstruktion wichtig sind, sondern auch die innere Anfrage des Kunden.",
+    "description3": "Jedes Projekt ist ein individueller Prozess, in dem nicht nur Form und Konstruktion zählen, sondern auch das, was der Kunde eigentlich sucht.",
     "experience": "Jahre Erfahrung",
     "unique": "einzigartige Stücke",
     "certification": "Zertifizierung",
@@ -162,7 +162,7 @@
     "description": "Kontaktieren Sie mich für eine Beratung und Besprechung Ihres Projekts",
     "email": {
       "title": "E-Mail",
-      "value": "hreshkovanat@gmail.com"
+      "value": "khreshkovanataliia@gmail.com"
     },
     "phone": {
       "title": "Telefon",
@@ -228,7 +228,7 @@
       "label": "Prozess",
       "title": "Made in",
       "titleItalic": "atelier",
-      "description": "Jedes Stück wird persönlich erstellt, von der Idee bis zum letzten Stich. Handgeschnittene Schnittmuster, mehrere Anproben, Aufmerksamkeit für jedes Detail.",
+      "description": "Jedes Stück entsteht persönlich, von der Idee bis zum letzten Stich. Von Hand konstruierte Schnittmuster, mehrere Anproben, Sorgfalt in jedem Detail.",
       "experience": "37+ Jahre Handwerkskunst"
     },
     "upcycling": {
@@ -241,7 +241,7 @@
     "cta": {
       "title": "Auf der Suche nach einem",
       "titleItalic": "maßgeschneiderten Stück?",
-      "description": "Beschreiben Sie Ihre Idee - ich werde eine Lösung vorschlagen",
+      "description": "Beschreiben Sie Ihre Idee — ich schlage Ihnen eine Lösung vor",
       "button": "Stück anfragen"
     },
     "modal": {
@@ -260,7 +260,7 @@
       "messagePlaceholder": "Erzählen Sie mir mehr über das, wonach Sie suchen...",
       "submit": "Anfrage senden",
       "cancel": "Abbrechen",
-      "footer": "Ich werde mich persönlich bei Ihnen melden"
+      "footer": "Ich melde mich persönlich bei Ihnen"
     },
     "imageAlt": "One-of-one Kleidungsstück von Nataliia Khreshkova, NKN Atelier Hamburg",
     "imageAltMaterial": "Stoff und Textur für ein Unikat aus dem NKN Atelier",
@@ -273,7 +273,7 @@
     "titleEnd": "Transformation",
     "subtitle1": "Bestehenden Kleidungsstücken neue Form,",
     "subtitle2": "Funktion und Energie geben",
-    "description": "Ich arbeite mit Kleidungsstücken, die Sie bereits haben. Ich schneide sie um und denke sie neu - mit neuer Energie, moderner Ästhetik und tiefem Respekt für die Geschichte des Stücks.",
+    "description": "Ich arbeite mit Kleidungsstücken, die Sie bereits haben. Ich schneide sie um und denke sie neu — mit neuer Energie, moderner Ästhetik und tiefem Respekt für die Geschichte des Stücks.",
     "seo": {
       "title": "Upcycling Kleidung Hamburg — Umgestaltung",
       "description": "Aus alt wird Lieblingsstück: Umnähen, neue Silhouette und Reparatur im Atelier Hamburg. Nachhaltige Mode mit künstlerischem Anspruch. Kostenlose Erstberatung."
@@ -367,17 +367,17 @@
       },
       "04": {
         "question": "Arbeiten Sie mit sowohl Damen- als auch Herrenkleidung?",
-        "answer": "Ja, ich arbeite mit allen Arten von Kleidungsstücken unabhängig von der ursprünglichen Geschlechterkategorisierung. Was zählt, ist die Qualität des Stoffes, das Konstruktionspotenzial und Ihre Vision für die Transformation."
+        "answer": "Ja, ich arbeite mit allen Arten von Kleidungsstücken, unabhängig davon, ob sie ursprünglich als Damen- oder Herrenmode geschnitten wurden. Entscheidend sind die Qualität des Stoffes, das konstruktive Potenzial und Ihre Vorstellung von der Umgestaltung."
       },
       "05": {
         "question": "Was ist, wenn der Stoff beschädigt ist?",
-        "answer": "Beschädigte Bereiche können oft in das neue Design integriert oder während der Rekonstruktion entfernt werden. Manchmal werden Unvollkommenheiten Teil der Geschichte. Ich werde den Zustand während der Beratung beurteilen und den besten Ansatz vorschlagen."
+        "answer": "Beschädigte Stellen lassen sich oft in das neue Design einbinden oder bei der Rekonstruktion entfernen. Manchmal wird gerade die Gebrauchsspur Teil der Geschichte. Bei der Beratung beurteile ich den Zustand und schlage den besten Weg vor."
       }
     },
     "cta": {
       "title": "Beginnen Sie die",
       "titleItalic": "Transformation",
-      "description": "Beschreiben Sie das Kleidungsstück und Ihre Idee - ich werde eine Lösung vorschlagen"
+      "description": "Beschreiben Sie das Kleidungsstück und Ihre Idee — ich schlage Ihnen eine Lösung vor"
     },
     "form": {
       "garment": "Was möchten Sie transformieren?",
@@ -393,9 +393,9 @@
       "message": "Zusätzliche Nachricht",
       "messagePlaceholder": "Weitere Details oder Fragen...",
       "submit": "Anfrage senden",
-      "footer": "Ich werde mich persönlich innerhalb von 24 Stunden bei Ihnen melden"
+      "footer": "Ich melde mich persönlich innerhalb von 24 Stunden bei Ihnen"
     },
-    "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden.",
+    "success": "Vielen Dank! Ich melde mich persönlich bei Ihnen.",
     "imageAlt": "Upcycling im NKN Atelier: Kleidungsstück vor und nach der Umgestaltung",
     "imageAltDetails": "Detailaufnahme der Handarbeit im NKN Atelier bei Hamburg",
     "imageAltBefore": "Kleidungsstück vor dem Upcycling im NKN Atelier",
@@ -405,9 +405,9 @@
     "label": "Veranstaltungen",
     "title": "Kreative",
     "titleItalic": "Events",
-    "description": "Ausstellungen, Workshops, Trunk Shows und Offene Ateliertage. Erleben Sie einzigartige Mode-Erlebnisse.",
+    "description": "Ausstellungen, Workshops, Trunk Shows und offene Ateliertage. Begegnungen rund um Mode und Handwerk.",
     "seo": {
-      "title": "Atelier-Events - NKN Atelier + Nataliia Khreshkova | Hamburg",
+      "title": "Atelier-Events — NKN Atelier + Nataliia Khreshkova | Hamburg",
       "description": "Kalender mit Ausstellungen, Workshops, Trunk Shows und offenen Ateliertagen. Erleben Sie kreative Momente im NKN Atelier in Hamburg."
     },
     "sectionLabel": "Kommend",
@@ -422,7 +422,7 @@
     "items": {
       "01": {
         "title": "Frühjahrskollektion Vorschau",
-        "description": "Präsentation neuer Einzelstücke und limitierter Serien. Treffen Sie die Designerin, probieren Sie die Stücke und besprechen Sie individuelle Aufträge."
+        "description": "Präsentation neuer Einzelstücke und limitierter Serien. Lernen Sie die Designerin kennen, probieren Sie die Stücke an und besprechen Sie individuelle Aufträge."
       },
       "02": {
         "title": "Workshop Korsettbau",
@@ -523,15 +523,15 @@
         },
         "02": {
           "title": "Erstes Treffen",
-          "description": "Wir vereinbaren Datum und Uhrzeit - online. Wir legen Modell, Verwendungszweck, Stoff und alle Details fest. Bei Bedarf stimmen wir den Druck ab."
+          "description": "Wir vereinbaren Datum und Uhrzeit — online. Wir legen Modell, Verwendungszweck, Stoff und alle Details fest. Bei Bedarf stimmen wir den Druck ab."
         },
         "03": {
           "title": "Maßnahme",
-          "description": "Sie erhalten eine detaillierte Anleitung zur Maßnahme. Bei Bedarf erfolgt der Prozess per Video."
+          "description": "Sie erhalten eine ausführliche Anleitung zum Maßnehmen. Auf Wunsch begleite ich Sie dabei per Videocall."
         },
         "04": {
           "title": "Konstruktion und Fernanprobe",
-          "description": "Das Stück wird nach individueller Konstruktion entwickelt. Die Arbeit wird von regelmäßiger Kommunikation begleitet. Die Anzahl der Abstimmungsschritte hängt von der Modellkomplexität ab."
+          "description": "Das Stück wird nach einer individuellen Konstruktion gefertigt, begleitet von regelmäßiger Abstimmung. Wie viele Abstimmungsschritte nötig sind, hängt von der Komplexität des Modells ab."
         },
         "05": {
           "title": "Fertiges Stück",
@@ -546,7 +546,7 @@
       "items": {
         "01": {
           "question": "Wo befindet sich das Atelier?",
-          "answer": "Das Atelier befindet sich in Hamburg (Deutschland). Maßanfertigungen sind vor Ort im Studio in Hamburg sowie online mit Kundinnen aus anderen deutschen Städten und Ländern möglich."
+          "answer": "Das Atelier befindet sich in Hamburg (Deutschland). Maßanfertigungen sind vor Ort im Atelier sowie online mit Kundinnen und Kunden aus anderen deutschen Städten und aus dem Ausland möglich."
         },
         "02": {
           "question": "Wie lange dauert die Maßanfertigung?",
@@ -571,7 +571,7 @@
       }
     },
     "cta": {
-      "description": "Hinterlassen Sie eine Anfrage - ich führe eine kostenlose Beratung durch und wir besprechen Ihr Projekt.",
+      "description": "Hinterlassen Sie eine Anfrage — ich melde mich für eine kostenlose Beratung und wir besprechen Ihr Projekt.",
       "button": "Beratung anfragen"
     },
     "seo": {
@@ -587,7 +587,7 @@
       "title": "Sieben",
       "titleItalic": "Richtungen",
       "subtitle": "Von Maßschneiderei bis Markenberatung",
-      "description": "Jede Richtung ist tiefgehende Arbeit mit Form, Konstruktion und Bedeutung. Von Maßschneiderei bis Markenbetreuung.",
+      "description": "Jeder Bereich bedeutet gründliche Arbeit an Form, Konstruktion und Aussage. Von der Maßschneiderei bis zur Markenbetreuung.",
       "badge1": "Vollzyklus",
       "badge2": "37+ Jahre",
       "badge3": "Atelier-Praxis",
@@ -599,7 +599,7 @@
         "title": "Maßgeschneiderte Anfertigung",
         "subtitle": "Custom Tailoring",
         "shortDesc": "Ich erstelle Kleidung nach individuellen Maßen unter Berücksichtigung von Figur, Lebensstil und innerem Zustand.",
-        "fullDesc": "Ich arbeite mit Form, Proportionen, Passform und Komfort. Jedes Stück wird mit tiefem Verständnis für den Menschen geschaffen - seine Figur, seinen Charakter, seinen Lebensstil.",
+        "fullDesc": "Ich arbeite mit Form, Proportionen, Passform und Komfort. Jedes Stück wird mit tiefem Verständnis für den Menschen geschaffen — seine Figur, seinen Charakter, seinen Lebensstil.",
         "features": [
           "Individuelle Maßnahme",
           "Skizzenentwicklung",
@@ -612,7 +612,7 @@
       "02": {
         "title": "Unikate One-of-One",
         "subtitle": "Unique Pieces",
-        "shortDesc": "Ich entwickle und nähe einzigartige Stücke in einer einzigen Kopie - von der Idee bis zum letzten Stich.",
+        "shortDesc": "Ich entwickle und nähe einzigartige Stücke in einer einzigen Kopie — von der Idee bis zum letzten Stich.",
         "fullDesc": "Jedes One-of-One-Stück ist ein künstlerisches Statement. Ich erstelle das Konzept, denke Form, Konstruktion und dekorative Elemente durch.",
         "features": [
           "Einzigartiges Konzept",
@@ -626,8 +626,8 @@
       "03": {
         "title": "Limitierte Serien",
         "subtitle": "Limited Series",
-        "shortDesc": "Ich erstelle limitierte Serien von Stücken - jedes Modell ist konstruktiv und ästhetisch durchdacht.",
-        "fullDesc": "Ich entwickle Kapselkollektionen von 3 bis 15 Stücken. Jedes Modell durchläuft den vollen Entwicklungszyklus.",
+        "shortDesc": "Ich erstelle limitierte Serien von Stücken — jedes Modell ist konstruktiv und ästhetisch durchdacht.",
+        "fullDesc": "Ich entwickle Capsule-Kollektionen von 3 bis 15 Teilen. Jedes Modell durchläuft den vollständigen Entwicklungszyklus.",
         "features": [
           "3-15 Stücke pro Serie",
           "Professionelle Schnittmuster",
@@ -654,8 +654,8 @@
       "05": {
         "title": "Exklusive Stoffdrucke",
         "subtitle": "Custom Prints",
-        "shortDesc": "Ich erstelle Drucke unter Berücksichtigung der Konstruktion - der Druck wird genau dort platziert, wo vorgesehen.",
-        "fullDesc": "Ich entwerfe den Druck als Teil der Gesamtkomposition. Ich arbeite mit Digitaldruck, Siebdruck, Handmalerei.",
+        "shortDesc": "Ich erstelle Drucke unter Berücksichtigung der Konstruktion — der Druck wird genau dort platziert, wo vorgesehen.",
+        "fullDesc": "Ich entwerfe den Druck als Teil der Gesamtkomposition. Ich arbeite mit Digitaldruck, Siebdruck und Handmalerei.",
         "features": [
           "Druckkonzeptentwicklung",
           "Integration in Konstruktion",
@@ -704,7 +704,7 @@
       "label": "Anfrage",
       "title": "Beginnen wir die",
       "titleItalic": "Zusammenarbeit",
-      "description": "Füllen Sie das Formular aus und ich werde mich mit Ihnen in Verbindung setzen",
+      "description": "Füllen Sie das Formular aus — ich melde mich bei Ihnen, um Ihr Projekt zu besprechen",
       "name": "Ihr Name",
       "email": "E-Mail",
       "phone": "Telefon",
@@ -735,9 +735,9 @@
       "badge3": "Vollzyklus"
     },
     "story": {
-      "p1": "Ich bin Nataliia NKN Khreshkova, Gründerin und Leiterin eines Design-Ateliers nach Art eines „Modehauses“ (Ukraine).",
-      "p2": "Schnittmacherin für Damen- und Herrenbekleidung jeder Komplexität. 37 Jahre Berufspraxis. Designerin exklusiver Stoffdrucke und Autorin eines eigenen Online-Schneidersystems.",
-      "p3": "Ich schaffe nicht nur Kleidung - ich schaffe Zustand durch Form, die die Persönlichkeit verstärkt und offenbart. Ich arbeite mit Kunden weltweit. Heute entwickle ich mein eigenes Atelier in Deutschland.",
+      "p1": "Ich bin Nataliia Khreshkova, Gründerin und Leiterin eines Design-Ateliers, das nach Art eines Modehauses arbeitete — zunächst in der Ukraine.",
+      "p2": "Schnittmacherin für Damen- und Herrenbekleidung jeder Komplexität. 37 Jahre Berufspraxis. Designerin exklusiver Stoffdrucke und Entwicklerin eines eigenen Systems für Maßarbeit auf Distanz.",
+      "p3": "Ich fertige nicht einfach Kleidung — ich schaffe ein Lebensgefühl durch Form, die die Persönlichkeit stärkt und sichtbar macht. Ich arbeite mit Kundinnen und Kunden weltweit. Heute baue ich mein eigenes Atelier in Deutschland auf.",
       "p4": "",
       "footer": "37+ Jahre im Schneiderhandwerk und in der Atelier-Praxis"
     },
@@ -745,13 +745,13 @@
       "label": "Position",
       "title": "Jeder Mensch ist einzigartig",
       "text1": "Jeder Mensch ist von Natur aus einzigartig. Für mich ist Kleidung die Balance zwischen Innerem und Äußerem. Das äußere Erscheinungsbild soll die Tiefe der Persönlichkeit widerspiegeln und ihre Fortsetzung werden.",
-      "text2": "Durch Konstruktion, Silhouette und Proportionen verstärke ich die Individualität und helfe der Persönlichkeit, sich zu zeigen. Wenn das Äußere dem Inneren entspricht, entsteht ein Zustand von Halt und natürlicher Ganzheit."
+      "text2": "Über Konstruktion, Silhouette und Proportionen verstärke ich die Individualität und helfe der Persönlichkeit, sich zu zeigen. Wenn das Äußere dem Inneren entspricht, entsteht ein Gefühl von Sicherheit und natürlicher Ganzheit."
     },
     "professional": {
       "label": "Professionelle Grundlage",
       "title": "Jeder Auftrag beginnt mit dem Dialog",
-      "text1": "Es ist mir wichtig, den Menschen zu hören - seinen Charakter, Lebensstil und inneren Rhythmus zu verstehen. Auch wenn es Ihnen schwerfällt genau zu formulieren, welches Stück Sie wollen, kann ich Ihre Anfrage hören und verstehen.",
-      "text2": "In der gemeinsamen Arbeit finden wir das Stück, das für Sie ideal wird. Die Arbeit ist tief und systematisch, in warmer und respektvoller Atmosphäre. Jedes Detail im Stück spiegelt die Persönlichkeit wider und verstärkt ihre Wirkung. Mein Motto: Ästhetik, Komfort und Funktionalität."
+      "text1": "Mir ist wichtig, dem Menschen wirklich zuzuhören — seinen Charakter, seinen Lebensstil und seinen inneren Rhythmus zu verstehen. Auch wenn es Ihnen schwerfällt, genau zu benennen, welches Stück Sie möchten, verstehe ich, worauf es Ihnen ankommt.",
+      "text2": "Gemeinsam finden wir das Stück, das für Sie das richtige ist. Die Arbeit ist gründlich und systematisch, in einer warmen und respektvollen Atmosphäre. Jedes Detail spiegelt die Persönlichkeit wider und verstärkt ihre Wirkung. Mein Leitsatz: Ästhetik, Komfort und Funktionalität."
     },
     "philosophy": {
       "label": "Philosophie",
@@ -777,7 +777,7 @@
     "process": {
       "title": "Vollzyklus",
       "titleItalic": "Atelier-Praxis",
-      "subtitle": "Vom ersten Gespräch bis zur Endanprobe - jeder Schritt ist persönlich und präzise",
+      "subtitle": "Vom ersten Gespräch bis zur Endanprobe — jeder Schritt ist persönlich und präzise",
       "steps": {
         "01": {
           "step": "Idee",
@@ -826,7 +826,7 @@
     "cta": {
       "title": "Arbeiten Sie",
       "titleItalic": "mit mir",
-      "description": "Wenn Sie einen persönlichen Ansatz und durchdachte Arbeit mit Form suchen - hinterlassen Sie eine Anfrage",
+      "description": "Wenn Sie einen persönlichen Ansatz und durchdachte Arbeit mit Form suchen — hinterlassen Sie eine Anfrage",
       "button": "Anfrage hinterlassen"
     },
     "seo": {
@@ -837,7 +837,7 @@
     "modal": {
       "title": "Lassen Sie uns",
       "titleItalic": "reden",
-      "description": "Erzählen Sie mir von Ihrem Projekt - ich melde mich persönlich bei Ihnen",
+      "description": "Erzählen Sie mir von Ihrem Projekt — ich melde mich persönlich bei Ihnen",
       "name": "Ihr Name",
       "contact": "Bevorzugter Kontakt",
       "contactPlaceholder": "Methode wählen",
@@ -863,7 +863,7 @@
       "messagePlaceholder": "Beschreiben Sie Ihre Idee oder Ihr Projekt...",
       "submit": "Anfrage senden"
     },
-    "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden.",
+    "success": "Vielen Dank! Ich melde mich persönlich bei Ihnen.",
     "imageAlt": "Nataliia Khreshkova, Gründerin des NKN Atelier, bei der Arbeit"
   },
   "collaborationPage": {
@@ -898,7 +898,7 @@
     "directions": {
       "01": {
         "title": "Individueller Druck für Sie",
-        "description": "Entwicklung Ihres eigenen Drucks möglich - in jedem Thema, unter Berücksichtigung Ihrer Wünsche und der Stückaufgabe. Der Druck entsteht als Teil des Gesamtkonzepts. Thema, Platzierung und Größe werden detailliert ausgearbeitet. Aus einem solchen Druck entsteht ein einzigartiges Stück, das Sie widerspiegelt."
+        "description": "Entwicklung Ihres eigenen Drucks möglich — in jedem Thema, unter Berücksichtigung Ihrer Wünsche und der Stückaufgabe. Der Druck entsteht als Teil des Gesamtkonzepts. Thema, Platzierung und Größe werden detailliert ausgearbeitet. Aus einem solchen Druck entsteht ein einzigartiges Stück, das Sie widerspiegelt."
       },
       "02": {
         "title": "Fertige Designer-Drucke",
@@ -911,7 +911,7 @@
     },
     "ctaButton": "Projekt besprechen",
     "ctaTitle": "Druck oder Kollektion besprechen?",
-    "ctaDescription": "Beschreiben Sie kurz Ihre Aufgabe - ich antworte persönlich mit dem nächsten Schritt.",
+    "ctaDescription": "Beschreiben Sie kurz Ihre Aufgabe — ich antworte persönlich mit dem nächsten Schritt.",
     "ctaNote": "Antwort innerhalb 24–48 Std. · Hamburg",
     "seo": {
       "title": "Exklusive Stoffdrucke & eigenes Stoffdesign",
@@ -925,7 +925,7 @@
       "label": "Kontakt",
       "title": "Beginnen Sie das",
       "titleItalic": "Gespräch",
-      "description": "Beschreiben Sie Ihre Anfrage - ich antworte persönlich."
+      "description": "Beschreiben Sie Ihre Anfrage — ich antworte persönlich."
     },
     "telegram": {
       "title": "Telegram",
@@ -941,7 +941,7 @@
       "label": "Anfrage",
       "title": "Atelier",
       "titleItalic": "Anfrage",
-      "description": "Erzählen Sie von Ihrem Projekt - ich antworte persönlich",
+      "description": "Erzählen Sie von Ihrem Projekt — ich antworte persönlich",
       "servicesLabel": "Wofür interessieren Sie sich?",
       "services": [
         "Maßschneiderei",
@@ -989,7 +989,7 @@
       "description": "Termin im Atelier vereinbaren oder online anfragen: Telefon, E-Mail, Telegram und WhatsApp. Antwort persönlich innerhalb von 24–48 Stunden."
     },
     "seoText": "Möchten Sie Maßschneiderei, Upcycling, einen exklusiven Stoffdruck oder eine Markenkooperation besprechen? Schreiben Sie mir auf Telegram, per E-Mail oder senden Sie eine Anfrage — ich antworte persönlich mit dem nächsten Schritt. Das Atelier ist in Hamburg, Beratungen sind auch online möglich. Je genauer Sie Ziel und Zeitrahmen beschreiben, desto schneller finden wir den passenden Ablauf.",
-    "success": "Vielen Dank! Ich werde mich persönlich bei Ihnen melden.",
+    "success": "Vielen Dank! Ich melde mich persönlich bei Ihnen.",
     "imageAlt": "NKN Atelier bei Hamburg — Beratung und Terminvereinbarung"
   },
   "privacyPage": {
@@ -1036,7 +1036,7 @@
     "title": "Nutzungsbedingungen",
     "lastUpdated": "Letzte Aktualisierung: Februar 2026",
     "seo": {
-      "title": "Nutzungsbedingungen - NKN Atelier + Nataliia Khreshkova",
+      "title": "Nutzungsbedingungen — NKN Atelier + Nataliia Khreshkova",
       "description": "Nutzungsbedingungen für die Website von NKN Atelier: Dienstleistungen, Inhalte und Haftung."
     },
     "seoText": "Diese Nutzungsbedingungen erläutern, wie Inhalte der Website von NKN Atelier verwendet werden dürfen, und beschreiben grundlegende Verantwortlichkeiten. Wenn Sie Atelier-Services bestellen oder als Marke kooperieren möchten, werden die finalen Projektbedingungen immer individuell schriftlich vereinbart, bevor die Arbeit beginnt.",
@@ -1048,7 +1048,7 @@
       },
       "content": {
         "title": "Inhalte",
-        "content": "Alle Materialien der Website - Fotos, Texte, Design - sind geistiges Eigentum von NKN Atelier und urheberrechtlich geschützt."
+        "content": "Alle Materialien der Website — Fotos, Texte, Design — sind geistiges Eigentum von NKN Atelier und urheberrechtlich geschützt."
       },
       "links": {
         "title": "Links",
@@ -1061,14 +1061,14 @@
     }
   },
   "agbPage": {
-    "title": "AGB - Allgemeine Geschäftsbedingungen",
+    "title": "AGB — Allgemeine Geschäftsbedingungen",
     "lastUpdated": "Letzte Aktualisierung: Februar 2026",
     "seo": {
-      "title": "AGB - Allgemeine Bedingungen für Atelier-Services NKN Atelier + Nataliia Khreshkova",
+      "title": "AGB — Allgemeine Bedingungen für Atelier-Services NKN Atelier + Nataliia Khreshkova",
       "description": "Allgemeine Bedingungen für die Bestellung von Atelier-Services: Anfertigung, Anproben, Zeitrahmen, Zahlung und Änderungen."
     },
     "seoText": "Diese AGB beschreiben die allgemeinen Regeln für die Zusammenarbeit mit NKN Atelier: wie Aufträge und Zeitrahmen abgestimmt werden, wie Anproben organisiert sind, welche Zahlungsformen möglich sind und wie Anpassungen erfolgen. Bei Maßanfertigungen werden Details immer auf das konkrete Projekt zugeschnitten — dieser Abschnitt schafft vorab Klarheit.",
-    "intro": "Diese Bedingungen regeln die Zusammenarbeit bei der Bestellung von NKN Atelier-Dienstleistungen - Maßschneiderei, Unikate, Upcycling und Beratungen.",
+    "intro": "Diese Bedingungen regeln die Zusammenarbeit bei der Bestellung von NKN Atelier-Dienstleistungen — Maßschneiderei, Unikate, Upcycling und Beratungen.",
     "sections": {
       "order": {
         "title": "Bestellung und Vereinbarungen",
@@ -1084,7 +1084,7 @@
       },
       "payment": {
         "title": "Zahlung",
-        "content": "Die Zahlung erfolgt wie vereinbart - in Raten oder vollständig. Überweisung und andere Zahlungsmethoden werden nach Vereinbarung akzeptiert."
+        "content": "Die Zahlung erfolgt wie vereinbart — in Raten oder vollständig. Überweisung und andere Zahlungsmethoden werden nach Vereinbarung akzeptiert."
       },
       "returns": {
         "title": "Rückgabe und Änderungen",
@@ -1122,7 +1122,7 @@
       },
       "scope": {
         "title": "Geltungsbereich dieses Impressums",
-        "content": "Dieses Impressum gilt für folgende Onlinepräsenzen:\n– Instagram: https://www.instagram.com/nataliiakhreshkovanatalina/\n– Facebook: https://www.facebook.com/share/1V1AQqDcp5/?mibextid=wwXIfr\n– TikTok: https://www.tiktok.com/@nataliia.khreshkov?r=1&t=ZM-92318YqysVH"
+        "content": "Dieses Impressum gilt für folgende Onlinepräsenzen:\n– Instagram: https://www.instagram.com/nataliia_khreshkova_natalina/\n– Facebook: https://www.facebook.com/share/1V1AQqDcp5/?mibextid=wwXIfr\n– TikTok: https://www.tiktok.com/@nataliia.khreshkov?r=1&t=ZM-92318YqysVH"
       }
     },
     "seo": {

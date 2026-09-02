@@ -53,8 +53,8 @@ export const GEO = {
 
 /** `sameAs` profiles. Consistency here is what links the site to the brand's social identity. */
 export const SOCIAL = [
-  'https://www.instagram.com/nataliiakhreshkovanatalina/',
-  'https://www.facebook.com/share/1V1AQqDcp5/',
+  'https://www.instagram.com/nataliia_khreshkova_natalina/',
+  'https://www.facebook.com/profile.php?id=100041099863380',
   'https://www.tiktok.com/@nataliia.khreshkov',
   'https://t.me/NataliiaKhreshkova',
 ] as const;

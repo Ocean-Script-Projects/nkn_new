@@ -59,17 +59,18 @@ export default function ImpressumPage() {
                     <h2 className="text-xl sm:text-2xl font-medium text-[#1a1a1a] mb-4 tracking-tight">
                       {t(`sections.${key}.title`)}
                     </h2>
-                    <div className="text-base text-[#4A4A4A] leading-relaxed whitespace-pre-line">
+                    <div className="text-base text-[#4A4A4A] leading-relaxed whitespace-pre-line [overflow-wrap:anywhere]">
                       {t(`sections.${key}.content`)}
                     </div>
                   </motion.div>
                 ))}
               </div>
 
-              <SeoIntro text={String(t('seoText'))} />
             </motion.div>
           </div>
         </section>
+
+        <SeoIntro text={String(t('seoText'))} />
       </div>
       <Footer />
     </div>

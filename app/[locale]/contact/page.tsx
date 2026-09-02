@@ -12,6 +12,7 @@ import { submitSiteRequest } from '@/lib/submit-site-request';
 import SeoIntro from '@/components/seo/SeoIntro';
 import PageBreadcrumbs from '@/components/seo/PageBreadcrumbs';
 import FaqJsonLd from '@/components/seo/FaqJsonLd';
+import { CONTACT } from '@/lib/site-config';
 
 /** Та же фотография, что на главной: `public/images/hero.jpg` */
 const CONTACT_HERO_SRC = '/images/models/natalia_img5.webp';
@@ -207,7 +208,7 @@ export default function ContactPage() {
                 </p>
 
                 <motion.a
-                  href="mailto:hreshkovanat@gmail.com"
+                  href={`mailto:${CONTACT.email}`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-black/10 rounded-full text-sm sm:text-base tracking-wider shadow hover:shadow-lg transition-shadow font-medium"

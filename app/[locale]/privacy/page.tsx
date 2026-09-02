@@ -58,7 +58,7 @@ export default function PrivacyPage() {
                     <h2 className="text-xl sm:text-2xl font-medium text-[#1a1a1a] mb-4 tracking-tight">
                       {t(`sections.${key}.title`)}
                     </h2>
-                    <div className="text-base text-[#8B8B8B] leading-relaxed whitespace-pre-line">
+                    <div className="text-base text-[#8B8B8B] leading-relaxed whitespace-pre-line [overflow-wrap:anywhere]">
                       {t(`sections.${key}.content`)}
                     </div>
                   </motion.div>

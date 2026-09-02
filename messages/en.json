@@ -45,11 +45,11 @@
     "title": "Clothing as",
     "titleItalic": "extension",
     "titleEnd": "of personality",
-    "description": "For me, costume, silhouette, fabric - this is a way to support a person, their inner world, character and energy. Form, color, print and proportions come together so that the image harmoniously merges with the personality and enhances it.",
+    "description": "For me, clothing, silhouette and fabric are a way to support a person — their inner world, their character, their energy. Form, colour, print and proportion come together so the finished look merges with the personality and amplifies it.",
     "values": {
       "depth": {
         "title": "Depth",
-        "text": "Each piece is created with an understanding of the person - their figure, inner state and character."
+        "text": "Every piece is built around an understanding of the person — their figure, their frame of mind, their character."
       },
       "meaning": {
         "title": "Meaning",
@@ -65,7 +65,7 @@
     "label": "Events",
     "title": "Upcoming",
     "titleItalic": "Events",
-    "description": "Exhibitions, workshops, trunk shows. Join us for unique fashion experiences.",
+    "description": "Exhibitions, workshops, trunk shows. Come and meet the atelier in person.",
     "viewAll": "View all events"
   },
   "featuredPieces": {
@@ -100,7 +100,7 @@
       },
       "05": {
         "title": "Signature prints",
-        "description": "I create prints taking into account the construction of the piece. The print is designed and placed strictly in those zones where it is conceived by the designer or client."
+        "description": "I develop prints to suit the construction of the garment. The print is designed and placed exactly where we agreed it should sit."
       },
       "06": {
         "title": "Full cycle",
@@ -143,9 +143,9 @@
     "label": "About me",
     "name": "Nataliia",
     "nameItalic": "Khreshkova",
-    "description1": "Founder and director of the design atelier «Nataliia», working on the principle of a European fashion house.",
+    "description1": "Founder and director of the design atelier “Nataliia”, working on the principle of a European fashion house.",
     "description2": "The basis of my work is the ability to feel a person: their figure, inner state, character and how they want to feel in the created image.",
-    "description3": "Each project is built as an individual process, in which not only form and construction are important, but also the inner request of the client.",
+    "description3": "Every project is an individual process, where form and construction matter — and so does what the client is really asking for.",
     "experience": "years of experience",
     "unique": "unique pieces",
     "certification": "Certification",
@@ -162,7 +162,7 @@
     "description": "Contact me for consultation and discussion of your project",
     "email": {
       "title": "Email",
-      "value": "hreshkovanat@gmail.com"
+      "value": "khreshkovanataliia@gmail.com"
     },
     "phone": {
       "title": "Phone",
@@ -241,7 +241,7 @@
     "cta": {
       "title": "Looking for a",
       "titleItalic": "custom piece?",
-      "description": "Describe your idea - I will suggest a solution",
+      "description": "Describe your idea — I will suggest a solution",
       "button": "Request a piece"
     },
     "modal": {
@@ -273,7 +273,7 @@
     "titleEnd": "transformation",
     "subtitle1": "Giving existing garments new form,",
     "subtitle2": "function and energy",
-    "description": "I work with items that you already have. I recut and rethink them - with new energy, modern aesthetics and deep respect for the history of the piece.",
+    "description": "I work with garments you already own, recutting and rethinking them — with new energy, a contemporary aesthetic and deep respect for the history of the piece.",
     "seo": {
       "title": "Clothing Upcycling & Remaking in Hamburg",
       "description": "A second life for garments you already own: recutting, new silhouette and restoration. Sustainable fashion with an artistic approach. First consult is free."
@@ -367,17 +367,17 @@
       },
       "04": {
         "question": "Do you work with both women's and men's clothing?",
-        "answer": "Yes, I work with all types of garments regardless of original gender categorization. What matters is the quality of the fabric, the construction potential, and your vision for transformation."
+        "answer": "Yes, I work with every kind of garment, whether or not it was originally cut as menswear or womenswear. What matters is the quality of the fabric, its structural potential, and your vision for the transformation."
       },
       "05": {
         "question": "What if the fabric is damaged?",
-        "answer": "Damaged areas can often be incorporated into the new design or removed during reconstruction. Sometimes imperfections become part of the story. I will assess the condition during consultation and suggest the best approach."
+        "answer": "Damaged areas can often be worked into the new design, or removed during reconstruction. Sometimes the wear itself becomes part of the story. I assess the condition during the consultation and suggest the best approach."
       }
     },
     "cta": {
       "title": "Start the",
       "titleItalic": "transformation",
-      "description": "Describe the garment and your idea - I will suggest a solution"
+      "description": "Describe the garment and your idea — I will suggest a solution"
     },
     "form": {
       "garment": "What do you want to transform?",
@@ -405,9 +405,9 @@
     "label": "Events",
     "title": "Creative",
     "titleItalic": "Events",
-    "description": "Exhibitions, workshops, trunk shows and open studio days. Join us for unique fashion experiences.",
+    "description": "Exhibitions, workshops, trunk shows and open studio days. Come and meet the atelier in person.",
     "seo": {
-      "title": "Atelier events - NKN Atelier by Nataliia Khreshkova | Hamburg",
+      "title": "Atelier events — NKN Atelier by Nataliia Khreshkova | Hamburg",
       "description": "Calendar of exhibitions, workshops, trunk shows and open studio days. Join creative moments at NKN Atelier in Hamburg."
     },
     "sectionLabel": "Upcoming",
@@ -523,7 +523,7 @@
         },
         "02": {
           "title": "First meeting",
-          "description": "We set date and time - online. We define the model, purpose of the piece, fabric and all details. If needed we agree on the print."
+          "description": "We set date and time — online. We define the model, purpose of the piece, fabric and all details. If needed we agree on the print."
         },
         "03": {
           "title": "Taking measurements",
@@ -531,7 +531,7 @@
         },
         "04": {
           "title": "Construction and remote fitting",
-          "description": "The piece is developed to individual construction. The work is accompanied by regular contact. The number of approval stages depends on the complexity of the model."
+          "description": "The piece is made to an individual construction, with regular contact throughout. How many approval stages are needed depends on the complexity of the model."
         },
         "05": {
           "title": "Finished piece",
@@ -550,7 +550,7 @@
         },
         "02": {
           "question": "How long does made-to-measure tailoring take?",
-          "answer": "It depends on the model and complexity — typically 2 to 8 weeks from the moment the sketch is agreed. Tight deadlines (a wedding or a shoot) we discuss on the consultation."
+          "answer": "It depends on the model and its complexity — typically 2 to 8 weeks from the moment the design is agreed. Tight deadlines, such as a wedding or a shoot, we discuss in the consultation."
         },
         "03": {
           "question": "What kind of clothing do you make?",
@@ -562,7 +562,7 @@
         },
         "05": {
           "question": "How much does bespoke tailoring cost?",
-          "answer": "Price depends on the model, construction, fabric and the number of fittings. On a free 30-minute consultation we discuss the project and agree the quote before the work starts."
+          "answer": "The price depends on the model, the construction, the fabric and the number of fittings. In a free 30-minute consultation we go through the project and agree on the quote before any work starts."
         },
         "06": {
           "question": "Do you speak Russian and German?",
@@ -571,7 +571,7 @@
       }
     },
     "cta": {
-      "description": "Leave a request - I will hold a free consultation and we will discuss your project.",
+      "description": "Send a request — I will call you for a free consultation and we will talk through your project.",
       "button": "Book a consultation"
     },
     "seo": {
@@ -587,7 +587,7 @@
       "title": "Seven",
       "titleItalic": "directions",
       "subtitle": "From bespoke tailoring to brand consulting",
-      "description": "Each direction is deep work with form, construction and meaning. From bespoke tailoring to brand consulting.",
+      "description": "Each discipline means thorough work with form, construction and meaning. From bespoke tailoring to brand consulting.",
       "badge1": "full cycle",
       "badge2": "37+ years",
       "badge3": "atelier practice",
@@ -599,7 +599,7 @@
         "title": "Custom tailoring",
         "subtitle": "Custom Tailoring",
         "shortDesc": "I create clothing to individual measurements, considering figure, lifestyle and inner state.",
-        "fullDesc": "I work with form, proportions, fit and comfort. Each piece is created with deep understanding of the person - their figure, character, lifestyle. I conduct several fittings for perfect fit. I select fabrics and hardware, considering both aesthetics and practicality.",
+        "fullDesc": "I work with form, proportions, fit and comfort. Each piece is created with deep understanding of the person — their figure, character, lifestyle. I conduct several fittings for perfect fit. I select fabrics and hardware, considering both aesthetics and practicality.",
         "features": [
           "Individual measurements",
           "Sketch development",
@@ -612,7 +612,7 @@
       "02": {
         "title": "Signature pieces One-of-One",
         "subtitle": "Unique Pieces",
-        "shortDesc": "I develop and sew unique pieces in a single copy - from idea to final stitch.",
+        "shortDesc": "I develop and sew unique pieces in a single copy — from idea to final stitch.",
         "fullDesc": "Each One-of-One piece is an artistic statement. I create the concept, think through form, construction and decorative elements. I work with unusual fabrics, combine textures, apply signature techniques.",
         "features": [
           "Unique concept",
@@ -626,7 +626,7 @@
       "03": {
         "title": "Limited series",
         "subtitle": "Limited Series",
-        "shortDesc": "I create limited series of pieces - each model is thoughtfully designed constructively and aesthetically.",
+        "shortDesc": "I create limited runs of pieces — each model resolved both structurally and aesthetically.",
         "fullDesc": "I develop capsule collections of 3 to 15 pieces. Each model goes through full development cycle: from sketch to pattern making.",
         "features": [
           "3-15 pieces per series",
@@ -654,8 +654,8 @@
       "05": {
         "title": "Signature prints",
         "subtitle": "Custom Prints",
-        "shortDesc": "I create prints considering the construction - the print is placed exactly where intended.",
-        "fullDesc": "I design the print as part of the overall composition. I work with digital print, screen printing, hand painting.",
+        "shortDesc": "I create prints considering the construction — the print is placed exactly where intended.",
+        "fullDesc": "I design the print as part of the overall composition. I work with digital printing, screen printing and hand painting.",
         "features": [
           "Print concept development",
           "Integration with construction",
@@ -704,7 +704,7 @@
       "label": "Request",
       "title": "Let's start",
       "titleItalic": "collaboration",
-      "description": "Fill out the form and I will contact you to discuss your project details",
+      "description": "Fill in the form and I will get back to you to discuss your project",
       "name": "Your name",
       "email": "Email",
       "phone": "Phone",
@@ -735,23 +735,23 @@
       "badge3": "full cycle"
     },
     "story": {
-      "p1": "I am Nataliia NKN Khreshkova, founder and director of a design atelier in the style of a «fashion house» (Ukraine).",
-      "p2": "Pattern maker for women's and men's clothing of any complexity. 37 years of professional practice. Designer of original fabric prints and author of her own online tailoring system.",
-      "p3": "I create not just clothing - I create state through form that strengthens and reveals personality. I work with clients worldwide. Today I am developing my own atelier in Germany.",
+      "p1": "I am Nataliia Khreshkova, founder and director of a design atelier run on the model of a fashion house — first in Ukraine.",
+      "p2": "Pattern maker for women’s and men’s clothing of any complexity. 37 years of professional practice. Designer of original fabric prints, and the author of my own system for made-to-measure work at a distance.",
+      "p3": "I do not simply make clothing — I create a way of feeling, through form that strengthens and reveals the personality. I work with clients worldwide. Today I am building my own atelier in Germany.",
       "p4": "",
       "footer": "37+ years in tailoring and atelier practice"
     },
     "position": {
       "label": "Position",
       "title": "Everyone is unique",
-      "text1": "Everyone is unique by nature. For me, clothing is the balance of inner and outer. Outer image should reflect the depth of personality and become its continuation.",
-      "text2": "Through construction, silhouette and proportions I strengthen individuality and help personality to show. When the outer matches the inner, a state of support and natural wholeness appears."
+      "text1": "Everyone is unique by nature. For me, clothing is the balance between inner and outer: how you look should reflect the depth of who you are, and carry it further.",
+      "text2": "Through construction, silhouette and proportion I strengthen individuality and help the person come through. When the outside matches the inside, there is a sense of steadiness and natural wholeness."
     },
     "professional": {
       "label": "Professional basis",
       "title": "Every order begins with dialogue",
-      "text1": "It is important for me to hear the person - to understand their character, lifestyle and inner rhythm. Even if you find it hard to say exactly what piece you want, I can hear and understand your request.",
-      "text2": "In the process of working together we find the piece that becomes ideal for you. The work is deep and systematic, in a warm and respectful atmosphere. Every detail in the piece reflects personality and strengthens its expression. My motto: aesthetics, comfort and functionality."
+      "text1": "It matters to me to really listen — to understand your character, your way of life and your inner rhythm. Even if it is hard to say exactly what you want made, I can understand what you are after.",
+      "text2": "Working together, we find the piece that is right for you. The work is thorough and methodical, in a warm and respectful atmosphere. Every detail reflects the personality and strengthens its expression. My guiding principle: aesthetics, comfort and function."
     },
     "philosophy": {
       "label": "Philosophy",
@@ -777,7 +777,7 @@
     "process": {
       "title": "Full cycle",
       "titleItalic": "atelier practice",
-      "subtitle": "From the first conversation to the final fitting - every step is personal and precise",
+      "subtitle": "From the first conversation to the final fitting — every step is personal and precise",
       "steps": {
         "01": {
           "step": "Idea",
@@ -826,7 +826,7 @@
     "cta": {
       "title": "Work",
       "titleItalic": "with me",
-      "description": "If you are looking for a personal approach and thoughtful work with form - leave a request",
+      "description": "If you are looking for a personal approach and thoughtful work with form — leave a request",
       "button": "Leave a request"
     },
     "seo": {
@@ -898,7 +898,7 @@
     "directions": {
       "01": {
         "title": "Individual print for you",
-        "description": "Development of your own print is possible - in any theme, considering your wishes and the piece's purpose. The print is created as part of the overall concept. Theme, placement and size are worked out in detail. From such a print a unique piece is born that reflects you."
+        "description": "Development of your own print is possible — in any theme, considering your wishes and the piece's purpose. The print is created as part of the overall concept. Theme, placement and size are worked out in detail. From such a print a unique piece is born that reflects you."
       },
       "02": {
         "title": "Ready designer prints",
@@ -911,7 +911,7 @@
     },
     "ctaButton": "Discuss project",
     "ctaTitle": "Ready to talk about a print or collection?",
-    "ctaDescription": "In a few words, describe what you need - I’ll reply personally with a next step.",
+    "ctaDescription": "In a few words, describe what you need — I’ll reply personally with a next step.",
     "ctaNote": "Reply within 24–48h · Hamburg",
     "seo": {
       "title": "Signature Prints & Custom Fabric Design",
@@ -925,7 +925,7 @@
       "label": "Contact",
       "title": "Start the",
       "titleItalic": "conversation",
-      "description": "Describe your request - I will respond personally."
+      "description": "Describe your request — I will respond personally."
     },
     "telegram": {
       "title": "Telegram",
@@ -1036,7 +1036,7 @@
     "title": "Terms of Use",
     "lastUpdated": "Last updated: February 2026",
     "seo": {
-      "title": "Website Terms - NKN Atelier by Nataliia Khreshkova",
+      "title": "Website Terms — NKN Atelier by Nataliia Khreshkova",
       "description": "Terms of use for the NKN Atelier website: services, content and liability."
     },
     "seoText": "These terms of use clarify how the NKN Atelier website content may be used and outline basic responsibilities. If you plan to order atelier services or collaborate as a brand, the final project terms are always agreed individually in writing before work starts.",
@@ -1048,7 +1048,7 @@
       },
       "content": {
         "title": "Content",
-        "content": "All site materials - photos, texts, design - are the intellectual property of NKN Atelier and are protected by copyright."
+        "content": "All site materials — photos, texts, design — are the intellectual property of NKN Atelier and are protected by copyright."
       },
       "links": {
         "title": "Links",
@@ -1064,11 +1064,11 @@
     "title": "Terms & Conditions",
     "lastUpdated": "Last updated: February 2026",
     "seo": {
-      "title": "AGB - General Terms for Atelier Services NKN Atelier by Nataliia Khreshkova",
+      "title": "AGB — General Terms for Atelier Services NKN Atelier by Nataliia Khreshkova",
       "description": "General terms for ordering atelier services: tailoring, fittings, timelines, payment and alterations."
     },
     "seoText": "These Terms & Conditions (AGB) describe the general rules for working with NKN Atelier: how orders and timelines are agreed, how fittings are handled, what payment formats are possible and how adjustments are managed. For bespoke pieces, details are always tailored to the specific project — this section helps set expectations in advance.",
-    "intro": "These terms govern the collaboration when ordering NKN atelier services - bespoke tailoring, signature pieces, upcycling and consultations.",
+    "intro": "These terms govern the collaboration when ordering NKN atelier services — bespoke tailoring, signature pieces, upcycling and consultations.",
     "sections": {
       "order": {
         "title": "Order and agreements",
@@ -1084,7 +1084,7 @@
       },
       "payment": {
         "title": "Payment",
-        "content": "Payment is made as agreed - in stages or in full. Bank transfer and other methods are accepted by agreement."
+        "content": "Payment is made as agreed — in stages or in full. Bank transfer and other methods are accepted by agreement."
       },
       "returns": {
         "title": "Returns and alterations",
@@ -1122,7 +1122,7 @@
       },
       "scope": {
         "title": "Scope",
-        "content": "This impressum applies to the following online presences:\n– Instagram: https://www.instagram.com/nataliiakhreshkovanatalina/\n– Facebook: https://www.facebook.com/share/1V1AQqDcp5/?mibextid=wwXIfr\n– TikTok: https://www.tiktok.com/@nataliia.khreshkov?r=1&t=ZM-92318YqysVH"
+        "content": "This impressum applies to the following online presences:\n– Instagram: https://www.instagram.com/nataliia_khreshkova_natalina/\n– Facebook: https://www.facebook.com/share/1V1AQqDcp5/?mibextid=wwXIfr\n– TikTok: https://www.tiktok.com/@nataliia.khreshkov?r=1&t=ZM-92318YqysVH"
       }
     },
     "seo": {

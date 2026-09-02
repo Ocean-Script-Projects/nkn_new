@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import { Instagram, Send, Facebook, Music2 } from 'lucide-react';
+import { SOCIAL } from '@/lib/site-config';
 
 const footerNavItems = [
   { key: 'bespoke', href: '/bespoke' },
@@ -17,10 +18,9 @@ const footerNavItems = [
   { key: 'contact', href: '/contact' },
 ];
 
-const TELEGRAM_URL = 'https://t.me/NataliiaKhreshkova';
-const INSTAGRAM_URL = 'https://www.instagram.com/nataliia_khreshkova_natalina?igsh=MThudWNpOXEwMnR0Mg==';
-const FACEBOOK_URL = 'https://www.facebook.com/share/1V1AQqDcp5/?mibextid=wwXIfr';
-const TIKTOK_URL = 'https://www.tiktok.com/@nataliia.khreshkov?r=1&t=ZM-92318YqysVH';
+// Kept in lib/site-config.ts so the footer, the Impressum and the `sameAs`
+// list in the structured data can never drift apart.
+const [INSTAGRAM_URL, FACEBOOK_URL, TIKTOK_URL, TELEGRAM_URL] = SOCIAL;
 
 export default function Footer() {
   const altT = useTranslations('alt');
@@ -44,8 +44,8 @@ export default function Footer() {
 
       <div className="relative max-w-7xl mx-auto">
         <div className="flex flex-col gap-8">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex flex-col items-center gap-3 text-center lg:flex-row lg:text-left">
+          <div className="flex flex-col gap-8 lg:flex-row lg:flex-wrap lg:items-center lg:justify-between lg:gap-y-7">
+            <div className="flex flex-col items-center gap-3 text-center lg:order-1 lg:flex-row lg:text-left">
               <Link
                 href={`/${locale}/`}
                 className="group inline-flex items-center gap-3"
@@ -68,7 +68,7 @@ export default function Footer() {
               </p>
             </div>
 
-            <nav className="flex flex-col items-center gap-4 text-center text-[11px] uppercase tracking-[0.24em] text-white/55 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-3 lg:flex lg:flex-row lg:flex-wrap lg:items-center lg:justify-start lg:gap-x-5 lg:gap-y-2 lg:text-left">
+            <nav className="flex flex-col items-center gap-4 text-center text-[11px] uppercase tracking-[0.24em] text-white/55 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-3 lg:order-3 lg:flex lg:w-full lg:flex-row lg:flex-wrap lg:items-center lg:justify-center lg:gap-x-6 lg:gap-y-2 lg:text-center">
               {footerNavItems.map((item) => (
                 <Link
                   key={item.key}
@@ -80,7 +80,7 @@ export default function Footer() {
               ))}
             </nav>
 
-            <div className="flex items-center justify-center gap-3">
+            <div className="flex items-center justify-center gap-3 lg:order-2">
               <a
                 href={INSTAGRAM_URL}
                 target="_blank"
