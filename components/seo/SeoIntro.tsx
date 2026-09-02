@@ -1,12 +1,6 @@
 'use client';
 
-import { useLocale } from '@/lib/i18n';
-
-const HEADINGS = {
-  de: { eyebrow: 'Atelier', title: 'Über das NKN Atelier' },
-  en: { eyebrow: 'Atelier', title: 'About the NKN Atelier' },
-  ru: { eyebrow: 'Ателье', title: 'Об ателье NKN' },
-} as const;
+import { useTranslations } from '@/lib/i18n';
 
 /**
  * Closing editorial block.
@@ -16,11 +10,12 @@ const HEADINGS = {
  * lower and users never read it.
  */
 export default function SeoIntro({ text }: { text: string }) {
-  const locale = useLocale();
+  // Headings live in the message files so they are translatable and editable
+  // from the admin like the rest of the copy.
+  const t = useTranslations('seoIntro');
 
   if (!text?.trim()) return null;
 
-  const ui = HEADINGS[locale] ?? HEADINGS.de;
   const paragraphs = text
     .split(/\n{2,}/)
     .map((p) => p.trim())
@@ -34,7 +29,7 @@ export default function SeoIntro({ text }: { text: string }) {
         <div className="mb-5 flex items-center gap-3">
           <div className="h-px w-8 bg-gradient-to-r from-brand-mustard to-transparent sm:w-12" />
           <span className="text-[10px] uppercase tracking-[0.28em] text-brand-sage sm:text-[11px]">
-            {ui.eyebrow}
+            {String(t('eyebrow'))}
           </span>
         </div>
 
@@ -42,7 +37,7 @@ export default function SeoIntro({ text }: { text: string }) {
           className="mb-5 text-2xl tracking-tight text-neutral-900 sm:text-3xl"
           style={{ fontFamily: 'serif' }}
         >
-          {ui.title}
+          {String(t('title'))}
         </h2>
 
         <div className="space-y-4">

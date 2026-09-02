@@ -7,12 +7,14 @@ import {
   ChevronDown,
   ChevronUp,
   LayoutGrid,
+  Languages,
   Package,
   Pencil,
   Sparkles,
   Trash2,
 } from 'lucide-react';
 import { ImageWithFallback } from '@/components/image-with-fallback';
+import ContentEditor from '@/components/admin/ContentEditor';
 import { withBasePath, uploadCatalogImage } from '@/lib/admin-api';
 import type { CatalogCategory, CatalogPiece, PieceType } from '@/lib/catalog-types';
 import type { Locale } from '@/lib/i18n-config';
@@ -119,7 +121,7 @@ export default function AdminPage() {
   const [authChecked, setAuthChecked] = useState(false);
   const [status, setStatus] = useState<AdminStatus | null>(null);
   const [secret, setSecret] = useState('');
-  const [tab, setTab] = useState<'pieces' | 'categories'>('pieces');
+  const [tab, setTab] = useState<'pieces' | 'categories' | 'content'>('pieces');
   const [pieces, setPieces] = useState<CatalogPiece[]>([]);
   const [categories, setCategories] = useState<CatalogCategory[]>([]);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -584,6 +586,23 @@ export default function AdminPage() {
                   <LayoutGrid className="w-4 h-4 opacity-90" aria-hidden />
                   Категории
                 </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setTab('content');
+                    setEditingPieceId(null);
+                    setEditingCategoryId(null);
+                    setCategoryDraft(null);
+                  }}
+                  className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all ${
+                    tab === 'content'
+                      ? 'bg-black text-white shadow-md'
+                      : 'text-[#8B8B8B] hover:text-black'
+                  }`}
+                >
+                  <Languages className="w-4 h-4 opacity-90" aria-hidden />
+                  Тексты
+                </button>
               </div>
               {saveMessage ? (
                 <p className="text-sm text-[#666] sm:text-right sm:max-w-md leading-relaxed">
@@ -940,7 +959,7 @@ export default function AdminPage() {
                   })()
                 )}
               </div>
-            ) : (
+            ) : tab === 'categories' ? (
               <div className="space-y-6">
                 <div className="flex flex-wrap items-center gap-3">
                   {!categoryDraft && !editingCategoryId ? (
@@ -1207,6 +1226,8 @@ export default function AdminPage() {
                   })()
                 )}
               </div>
+            ) : (
+              <ContentEditor secret={hdr()} />
             )}
           </>
         ) : null}

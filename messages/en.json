@@ -1134,5 +1134,9 @@
   "alt": {
     "process": "A step in the NKN Atelier process",
     "logo": "NKN Atelier logo"
+  },
+  "seoIntro": {
+    "eyebrow": "Atelier",
+    "title": "About the NKN Atelier"
   }
 }

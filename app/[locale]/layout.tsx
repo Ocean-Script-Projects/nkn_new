@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { I18nProvider } from '@/lib/i18n';
 import { locales, type Locale } from '@/lib/i18n-config';
+import { getSiteMessages } from '@/lib/messages-store';
 import RequestModalProviderWrapper from '@/components/providers/RequestModalProviderWrapper';
 import LocaleHtmlLang from '@/components/shared/LocaleHtmlLang';
 import SiteJsonLd from '@/components/seo/SiteJsonLd';
@@ -37,8 +38,12 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  // Loaded server-side and passed down so the text is in the initial HTML and the
+  // client provider hydrates from the exact same object.
+  const messages = await getSiteMessages(locale);
+
   return (
-    <I18nProvider locale={locale}>
+    <I18nProvider locale={locale} messages={messages}>
       <SiteJsonLd locale={locale as Locale} />
       <LocaleHtmlLang locale={locale} />
       <RequestModalProviderWrapper>

@@ -73,7 +73,7 @@ export default function HeroSection() {
         {/* Одна карточка: фото + лид + CTA; фото flex-1 — заполняет высоту первого экрана */}
         <div className="relative flex min-h-0 flex-1 flex-col">
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={
               reduceMotion ? { duration: 0 } : { duration: 0.55, ease: [0.22, 1, 0.36, 1] }
@@ -110,7 +110,7 @@ export default function HeroSection() {
                   </span>
                   <motion.span
                     className="block text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.45)]"
-                    initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={
                       reduceMotion
@@ -122,7 +122,7 @@ export default function HeroSection() {
                   </motion.span>
                   <motion.span
                     className="mt-2 block text-[0.96em] font-normal italic leading-[1.12] text-amber-100 [text-shadow:0_1px_3px_rgba(0,0,0,0.85),0_2px_24px_rgba(0,0,0,0.55)] sm:mt-2.5"
-                    initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+                    initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={
                       reduceMotion
@@ -142,7 +142,7 @@ export default function HeroSection() {
             </div>
 
             <motion.div
-              initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={
                 reduceMotion

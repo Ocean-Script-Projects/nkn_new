@@ -40,3 +40,6 @@ next-env.d.ts
 # local admin uploads (optional: remove these lines to commit images)
 public/uploads/pieces/*
 !public/uploads/pieces/.gitkeep
+
+# admin text overrides — dev fallback only; production writes to Spaces
+/data/content/

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { absolutePublicUrl } from '@/lib/site-url';
 import { locales, defaultLocale, type Locale } from '@/lib/i18n-config';
 import { BRAND, OG_IMAGE } from '@/lib/site-config';
+import { getSiteMessages } from '@/lib/messages-store';
 
 export type PageSeoId =
   | 'home'
@@ -57,14 +58,8 @@ function getNested(obj: unknown, path: string[]): unknown {
 }
 
 async function loadMessages(locale: string) {
-  switch (locale) {
-    case 'en':
-      return (await import('@/messages/en.json')).default;
-    case 'ru':
-      return (await import('@/messages/ru.json')).default;
-    default:
-      return (await import('@/messages/de.json')).default;
-  }
+  // Merged base + admin overrides, so edited SEO titles/descriptions take effect.
+  return getSiteMessages(locale);
 }
 
 function normalizeLocale(locale: string): Locale {

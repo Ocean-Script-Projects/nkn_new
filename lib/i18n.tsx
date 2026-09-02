@@ -25,12 +25,19 @@ const I18nContext = createContext<I18nContextType | null>(null);
 export function I18nProvider({
   children,
   locale,
+  messages: provided,
 }: {
   children: ReactNode;
   locale: string;
+  /**
+   * Merged messages from the server (base + admin overrides). When omitted the
+   * bundled files are used — keeps the provider usable outside the localized
+   * layout (e.g. the not-found boundary).
+   */
+  messages?: Messages;
 }) {
   const validLocale = (locale in messagesMap ? locale : defaultLocale) as Locale;
-  const messages = messagesMap[validLocale];
+  const messages = provided ?? messagesMap[validLocale];
 
   return (
     <I18nContext.Provider value={{ locale: validLocale, messages }}>
