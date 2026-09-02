@@ -3,7 +3,8 @@
 import { motion } from 'motion/react';
 import { cn } from '@/lib/utils';
 
-export type Category = 'all' | 'belts' | 'corsets' | 'scarves' | 'dresses' | 'mini-series' | 'one-of-one';
+/** Category ids come from catalog/categories.json and are managed in the admin. */
+export type Category = string;
 
 interface CategoryFilterProps {
   categories: { id: Category; label: string }[];

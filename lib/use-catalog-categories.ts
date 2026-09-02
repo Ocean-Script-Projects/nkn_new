@@ -47,8 +47,11 @@ export function useCatalogCategories() {
       const data: unknown = await res.json();
       setCategories(normalizeCategories(data));
     } catch (e) {
+      // Network/CORS failure — fall back to the bundled list rather than
+      // leaving the page with no filters at all. An empty *successful*
+      // response is respected as-is.
       setError(e instanceof Error ? e.message : 'Failed to load categories');
-      setCategories([]);
+      setCategories(normalizeCategories(staticCategories));
     } finally {
       setLoading(false);
     }

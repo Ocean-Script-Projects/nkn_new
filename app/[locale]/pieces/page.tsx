@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import { ImageWithFallback } from '@/components/image-with-fallback';
@@ -8,6 +8,7 @@ import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import PieceCard from '@/components/pieces/PieceCard';
 import CategoryFilter, { Category } from '@/components/pieces/CategoryFilter';
+import { useCatalogCategories, filterTabsForLocale } from '@/lib/use-catalog-categories';
 import PieceDetailModal from '@/components/pieces/PieceDetailModal';
 import PageHeader from '@/components/shared/PageHeader';
 import CTASection from '@/components/shared/CTASection';
@@ -38,19 +39,24 @@ export default function PiecesPage() {
   const t = useTranslations('pieces');
   const locale = useLocale();
   const { pieces: allPieces, loading, error } = usePiecesList();
+  // Tabs come from catalog/categories.json — the same list the admin edits.
+  const { categories: catalogCategories } = useCatalogCategories();
   const [selectedCategory, setSelectedCategory] = useState<Category>('all');
   const [selectedPieceForDetail, setSelectedPieceForDetail] =
     useState<CatalogPiece | null>(null);
 
-  const categories: { id: Category; label: string }[] = [
-    { id: 'all', label: String(t('categories.all')) },
-    { id: 'belts', label: String(t('categories.belts')) },
-    { id: 'corsets', label: String(t('categories.corsets')) },
-    { id: 'scarves', label: String(t('categories.scarves')) },
-    { id: 'dresses', label: String(t('categories.dresses')) },
-    { id: 'mini-series', label: String(t('categories.miniSeries')) },
-    { id: 'one-of-one', label: String(t('categories.oneOfOne')) },
-  ];
+  const categories = useMemo(
+    () => filterTabsForLocale(catalogCategories, locale),
+    [catalogCategories, locale],
+  );
+
+  // A category can be removed in the admin while it is the active tab.
+  useEffect(() => {
+    if (categories.length === 0) return;
+    if (!categories.some((c) => c.id === selectedCategory)) {
+      setSelectedCategory(categories[0].id);
+    }
+  }, [categories, selectedCategory]);
 
   const filteredPieces = useMemo(() => {
     if (selectedCategory === 'all') return allPieces;
