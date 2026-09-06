@@ -71,7 +71,7 @@ export default function EventDetailModal({ event, isOpen, onClose }: EventDetail
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                transition={{ type: 'spring', duration: 0.5 }}
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                 className="relative bg-white rounded-[2.5rem] max-w-2xl w-full shadow-2xl my-8 flex flex-col"
                 onClick={(e) => e.stopPropagation()}
               >

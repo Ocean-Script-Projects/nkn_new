@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, X, ChevronDown } from 'lucide-react';
+import { ArrowRight, X, ChevronDown, Check } from 'lucide-react';
 import { useTranslations, useLocale } from '@/lib/i18n';
 import { submitSiteRequest } from '@/lib/submit-site-request';
 import { Button } from '@/components/ui/button';
@@ -100,10 +100,15 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
     }
 
     setFormData({ name: '', contactMethod: 'telegram', contact: '', projectType: '', message: '' });
-    onClose();
     setShowSuccess(true);
-    setTimeout(() => setShowSuccess(false), 5000);
     setIsSubmitting(false);
+  };
+
+  /** Reset back to the form so the next open doesn't land on the confirmation. */
+  const handleClose = () => {
+    setShowSuccess(false);
+    setSubmitError(null);
+    onClose();
   };
 
   return (
@@ -117,25 +122,48 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-3 backdrop-blur-sm sm:p-5"
-              onClick={onClose}
+              onClick={handleClose}
             >
               <div className="relative z-[1] flex max-h-full w-full min-h-0 items-center justify-center overflow-x-hidden overflow-y-auto">
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.97, y: 10 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.97, y: 10 }}
-                  transition={{ type: 'spring', duration: 0.45 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                   role="dialog"
                   aria-modal="true"
                   className="relative mx-auto w-full max-w-2xl flex-shrink-0 rounded-2xl bg-white shadow-2xl sm:rounded-3xl"
                   onClick={(e) => e.stopPropagation()}
                 >
               <button
-                onClick={onClose}
+                onClick={handleClose}
                 className="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-white hover:bg-gray-50 shadow-lg flex items-center justify-center transition-colors"
               >
                   <X className="w-5 h-5" />
                 </button>
+                {showSuccess ? (
+                  <div className="p-6 sm:p-8 lg:p-10 pt-14 sm:pt-16 text-center">
+                    <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-brand-mustard/15 text-brand-mustard">
+                      <Check className="h-7 w-7" aria-hidden />
+                    </div>
+                    <h3
+                      className="mb-3 text-2xl tracking-tight sm:text-3xl"
+                      style={{ fontFamily: 'serif' }}
+                    >
+                      {String(t('modal.successTitle'))}
+                    </h3>
+                    <p className="mx-auto max-w-md text-sm leading-relaxed text-[#8B8B8B] sm:text-base">
+                      {String(t('modal.successText'))}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={handleClose}
+                      className="mt-7 rounded-full bg-black px-7 py-3 text-sm font-medium tracking-wide text-white transition-opacity hover:opacity-90"
+                    >
+                      {String(t('modal.successClose'))}
+                    </button>
+                  </div>
+                ) : (
                 <div className="p-6 sm:p-8 lg:p-10 pt-14 sm:pt-16">
                   <div className="mb-5 sm:mb-6">
                     <h3
@@ -322,29 +350,11 @@ export default function ContactRequestModal({ isOpen, onClose, context }: Contac
                     </Button>
                   </form>
                 </div>
+                )}
               </motion.div>
               </div>
             </motion.div>
           </>
-        )}
-      </AnimatePresence>
-      <AnimatePresence>
-        {showSuccess && (
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
-            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[102]"
-          >
-            <div className="bg-brand-mustard text-brand-mustard-foreground px-8 py-4 rounded-full shadow-2xl flex items-center gap-3">
-              <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <span className="text-sm sm:text-base tracking-wide">{String(t('success'))}</span>
-            </div>
-          </motion.div>
         )}
       </AnimatePresence>
     </>

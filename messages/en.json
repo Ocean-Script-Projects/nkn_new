@@ -395,7 +395,7 @@
       "submit": "Submit request",
       "footer": "I will get back to you personally within 24 hours"
     },
-    "success": "Thank you! I will get back to you personally.",
+    "success": "Thank you! Your request has arrived — I will get back to you shortly.",
     "imageAlt": "Upcycling at the NKN Atelier: a garment before and after transformation",
     "imageAltDetails": "Close-up of handcraft at the NKN Atelier near Hamburg",
     "imageAltBefore": "Garment before upcycling at the NKN Atelier",
@@ -722,7 +722,8 @@
       "description": "Seven services: bespoke tailoring, one-of-one pieces, small series, upcycling, signature prints, full development cycle and brand consulting. Quotes on request."
     },
     "seoText": "NKN Atelier services in Hamburg cover the full cycle of working with clothing: from bespoke tailoring and one-of-one pieces to upcycling, signature prints and brand consulting. The focus is always on construction, fit, fabric and details — everything is adapted to the person and the purpose. If you are looking for a professional atelier in Hamburg, leave a request and we will start with a consultation.",
-    "imageAlt": "Workspace at the NKN Atelier: patterns, fabrics and sewing machine"
+    "imageAlt": "Workspace at the NKN Atelier: patterns, fabrics and sewing machine",
+    "success": "Thank you! Your request has arrived — I will get back to you shortly."
   },
   "aboutPage": {
     "hero": {
@@ -861,9 +862,12 @@
       },
       "message": "Tell me about your project",
       "messagePlaceholder": "Describe your idea or project...",
-      "submit": "Send request"
+      "submit": "Send request",
+      "successTitle": "Request sent",
+      "successText": "Thank you! Your request has arrived. I will get back to you personally very soon — usually within 24–48 hours.",
+      "successClose": "Close"
     },
-    "success": "Thank you! I will get back to you personally.",
+    "success": "Thank you! Your request has arrived — I will get back to you shortly.",
     "imageAlt": "Nataliia Khreshkova, founder of the NKN Atelier, at work"
   },
   "collaborationPage": {
@@ -989,7 +993,7 @@
       "description": "Book a visit to the atelier near Hamburg or ask online: phone, email, Telegram and WhatsApp. A personal reply within 24–48 hours, in German, English or Russian."
     },
     "seoText": "Want to discuss bespoke tailoring, upcycling, a signature print, or brand collaboration? Message me on Telegram, email, or leave a request — I reply personally with a next step. The atelier is in Hamburg, and consultations are also possible online. The more details you share about your goal and timing, the faster we can define the best process.",
-    "success": "Thank you! I will get back to you personally.",
+    "success": "Thank you! Your request has arrived — I will get back to you shortly.",
     "imageAlt": "NKN Atelier near Hamburg — consultation and appointments"
   },
   "privacyPage": {

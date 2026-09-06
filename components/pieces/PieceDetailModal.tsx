@@ -148,7 +148,7 @@ export default function PieceDetailModal({ piece, isOpen, onClose }: PieceDetail
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ type: 'spring', duration: 0.5 }}
+              transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
               className="relative flex max-h-[min(94vh,800px)] w-full max-w-md flex-col overflow-hidden rounded-2xl bg-white shadow-2xl sm:max-w-lg sm:rounded-[2rem] md:max-h-[min(92vh,760px)] md:max-w-5xl md:grid md:grid-cols-[minmax(0,1.65fr)_minmax(14rem,1fr)] md:rounded-[2rem] min-w-0"
               onClick={(e) => e.stopPropagation()}
             >

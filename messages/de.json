@@ -395,7 +395,7 @@
       "submit": "Anfrage senden",
       "footer": "Ich melde mich persönlich innerhalb von 24 Stunden bei Ihnen"
     },
-    "success": "Vielen Dank! Ich melde mich persönlich bei Ihnen.",
+    "success": "Vielen Dank! Ihre Anfrage ist angekommen — ich melde mich in Kürze bei Ihnen.",
     "imageAlt": "Upcycling im NKN Atelier: Kleidungsstück vor und nach der Umgestaltung",
     "imageAltDetails": "Detailaufnahme der Handarbeit im NKN Atelier bei Hamburg",
     "imageAltBefore": "Kleidungsstück vor dem Upcycling im NKN Atelier",
@@ -722,7 +722,8 @@
       "description": "Sieben Leistungen im Atelier: Maßschneiderei, Unikate, Kleinserien, Upcycling, Stoffdrucke, Entwicklungszyklus und Markenberatung. Preise auf Anfrage."
     },
     "seoText": "Die Dienstleistungen von NKN Atelier in Hamburg decken den gesamten Prozess rund um Kleidung ab: von Maßschneiderei und Unikaten bis zu Upcycling, exklusiven Stoffdrucken und Markenberatung. Im Mittelpunkt stehen Konstruktion, Passform, Stoff und Details — alles wird auf Person und Zweck abgestimmt. Wenn Sie ein professionelles Atelier in Hamburg suchen, senden Sie eine Anfrage und wir beginnen mit einer Beratung.",
-    "imageAlt": "Arbeitsplatz im NKN Atelier: Schnittmuster, Stoffe und Nähmaschine"
+    "imageAlt": "Arbeitsplatz im NKN Atelier: Schnittmuster, Stoffe und Nähmaschine",
+    "success": "Vielen Dank! Ihre Anfrage ist angekommen — ich melde mich in Kürze bei Ihnen."
   },
   "aboutPage": {
     "hero": {
@@ -861,9 +862,12 @@
       },
       "message": "Erzählen Sie von Ihrem Projekt",
       "messagePlaceholder": "Beschreiben Sie Ihre Idee oder Ihr Projekt...",
-      "submit": "Anfrage senden"
+      "submit": "Anfrage senden",
+      "successTitle": "Anfrage gesendet",
+      "successText": "Vielen Dank! Ihre Anfrage ist angekommen. Ich melde mich in Kürze persönlich bei Ihnen — in der Regel innerhalb von 24–48 Stunden.",
+      "successClose": "Schließen"
     },
-    "success": "Vielen Dank! Ich melde mich persönlich bei Ihnen.",
+    "success": "Vielen Dank! Ihre Anfrage ist angekommen — ich melde mich in Kürze bei Ihnen.",
     "imageAlt": "Nataliia Khreshkova, Gründerin des NKN Atelier, bei der Arbeit"
   },
   "collaborationPage": {
@@ -989,7 +993,7 @@
       "description": "Termin im Atelier vereinbaren oder online anfragen: Telefon, E-Mail, Telegram und WhatsApp. Antwort persönlich innerhalb von 24–48 Stunden."
     },
     "seoText": "Möchten Sie Maßschneiderei, Upcycling, einen exklusiven Stoffdruck oder eine Markenkooperation besprechen? Schreiben Sie mir auf Telegram, per E-Mail oder senden Sie eine Anfrage — ich antworte persönlich mit dem nächsten Schritt. Das Atelier ist in Hamburg, Beratungen sind auch online möglich. Je genauer Sie Ziel und Zeitrahmen beschreiben, desto schneller finden wir den passenden Ablauf.",
-    "success": "Vielen Dank! Ich melde mich persönlich bei Ihnen.",
+    "success": "Vielen Dank! Ihre Anfrage ist angekommen — ich melde mich in Kürze bei Ihnen.",
     "imageAlt": "NKN Atelier bei Hamburg — Beratung und Terminvereinbarung"
   },
   "privacyPage": {

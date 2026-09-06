@@ -76,6 +76,7 @@ export default function ServicesPage() {
   const locale = useLocale();
   const [selectedService, setSelectedService] = useState<number | null>(null);
   const [formError, setFormError] = useState<string | null>(null);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [formSubmitting, setFormSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -127,6 +128,8 @@ export default function ServicesPage() {
     }
 
     setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+    setShowSuccessMessage(true);
+    setTimeout(() => setShowSuccessMessage(false), 6000);
   };
 
   return (
@@ -537,6 +540,25 @@ export default function ServicesPage() {
         </section>
       </div>
       <SeoIntro text={String(t('seoText'))} />
+
+      <AnimatePresence>
+        {showSuccessMessage && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-4"
+          >
+            <div className="flex items-center gap-3 rounded-full bg-[#C4A574] px-6 py-4 text-white shadow-2xl sm:px-8">
+              <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/20">
+                <Check className="h-4 w-4" />
+              </div>
+              <span className="text-sm tracking-wide sm:text-base">{String(t('success'))}</span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <Footer />
     </div>
   );
